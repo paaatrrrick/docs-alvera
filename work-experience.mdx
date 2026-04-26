@@ -1,0 +1,68 @@
+---
+title: "Work experience"
+description: "Recent additions to the work experience section on the personal website"
+---
+
+## Overview
+
+The work experience section displays a chronological list of roles on the personal website's home page. Each entry is rendered from the `workExperience` array and shows a title, optional description, optional logo image, and a timeline string.
+
+This page documents recent additions to that list so visitors and contributors know what changed and how new entries are configured.
+
+## What changed
+
+Two new roles were added to the top of the work experience list:
+
+<Card title="SWE at OpenAI" icon="microchip-ai">
+  Software engineering role focused on building large language models.
+
+  **Timeline:** May - August 2025. Seattle, WA
+</Card>
+
+<Card title="GoDaddy Software Engineer Intern" icon="code">
+  A/B tested features on GoDaddy's checkout page.
+
+  **Timeline:** May - August 2023. Seattle, WA
+</Card>
+
+## Entry schema
+
+Each entry in the `workExperience` array supports the following fields:
+
+| Field      | Type   | Required | Description                                                  |
+| ---------- | ------ | -------- | ------------------------------------------------------------ |
+| `title`    | string | Yes      | Role and company name shown as the entry header.             |
+| `text`     | string | No       | Short description of responsibilities or accomplishments.    |
+| `image`    | string | No       | Public URL of a company or role logo.                        |
+| `timeLine` | string | Yes      | Human-readable timeframe and location.                       |
+
+## Adding a new entry
+
+Open `src/constants/work.js` and prepend a new object to the `workExperience` array. New entries appear at the top of the list on the home page.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'SWE at OpenAI',
+        text: `Built big LLMs`,
+        timeLine: 'May - August 2025. Seattle, WA',
+    },
+    {
+        title: 'GoDaddy Software Engineer Intern:',
+        text: `A/B Tested features on GoDaddy's Checkout Page.`,
+        image: "https://res.cloudinary.com/dlk3ezbal/image/upload/v1702062289/gd_zdghmr.png",
+        timeLine: 'May - August 2023. Seattle, WA',
+    },
+    // ...existing entries
+]
+
+export default workExperience
+```
+
+<Tip>
+Omit the `image` field for roles without a logo. The layout adjusts automatically.
+</Tip>
+
+## When to update this list
+
+Add a new entry whenever you start, finish, or want to highlight a role on the personal website. Order entries reverse-chronologically so the most recent role appears first.
