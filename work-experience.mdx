@@ -1,17 +1,47 @@
 ---
 title: "Work experience"
-description: "Recent additions to the work experience section on the personal website"
+description: "Recent additions and updates to the work experience section on the personal website"
 ---
 
 ## Overview
 
 The work experience section displays a chronological list of roles on the personal website's home page. Each entry is rendered from the `workExperience` array and shows a title, optional description, optional logo image, and a timeline string.
 
-This page documents recent additions to that list so visitors and contributors know what changed and how new entries are configured.
+This page documents recent additions and edits to that list so visitors and contributors know what changed and how entries are configured.
 
 ## What changed
 
-Two new roles were added to the top of the work experience list:
+The Anthropic role entry was expanded with a more detailed description covering training infrastructure, evaluation pipelines, and cross-team collaboration. Entries for several other roles were also added recently.
+
+<Card title="SWE at Anthropic" icon="microchip-ai">
+  Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.
+
+  **Timeline:** May - August 2026. San Francisco, CA
+</Card>
+
+<Card title="SWE at Tesla" icon="car">
+  Worked on Autopilot perception systems.
+
+  **Timeline:** May - August 2027. Palo Alto, CA
+</Card>
+
+<Card title="SWE at SpaceX" icon="rocket">
+  Worked on Starlink ground software.
+
+  **Timeline:** May - August 2028. Hawthorne, CA
+</Card>
+
+<Card title="SWE at Stripe" icon="credit-card">
+  Worked on payments infrastructure.
+
+  **Timeline:** May - August 2024. San Francisco, CA
+</Card>
+
+<Card title="SWE at Meta" icon="meta">
+  Worked on Instagram ranking systems.
+
+  **Timeline:** May - August 2023. Menlo Park, CA
+</Card>
 
 <Card title="SWE at OpenAI" icon="microchip-ai">
   Software engineering role focused on building large language models.
@@ -36,6 +66,22 @@ Each entry in the `workExperience` array supports the following fields:
 | `image`    | string | No       | Public URL of a company or role logo.                        |
 | `timeLine` | string | Yes      | Human-readable timeframe and location.                       |
 
+## Editing an entry
+
+To update the description for an existing role, edit the `text` field of the matching object in `src/constants/work.js`. The home page picks up changes on the next build.
+
+```js src/constants/work.js
+{
+    title: 'SWE at Anthropic',
+    text: `Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.`,
+    timeLine: 'May - August 2026. San Francisco, CA',
+},
+```
+
+<Tip>
+Keep `text` to one or two sentences focused on impact. Mention the systems or teams you worked with for context.
+</Tip>
+
 ## Adding a new entry
 
 Open `src/constants/work.js` and prepend a new object to the `workExperience` array. New entries appear at the top of the list on the home page.
@@ -43,9 +89,9 @@ Open `src/constants/work.js` and prepend a new object to the `workExperience` ar
 ```js src/constants/work.js
 const workExperience = [
     {
-        title: 'SWE at OpenAI',
-        text: `Built big LLMs`,
-        timeLine: 'May - August 2025. Seattle, WA',
+        title: 'SWE at Anthropic',
+        text: `Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.`,
+        timeLine: 'May - August 2026. San Francisco, CA',
     },
     {
         title: 'GoDaddy Software Engineer Intern:',
@@ -65,4 +111,4 @@ Omit the `image` field for roles without a logo. The layout adjusts automaticall
 
 ## When to update this list
 
-Add a new entry whenever you start, finish, or want to highlight a role on the personal website. Order entries reverse-chronologically so the most recent role appears first.
+Add a new entry whenever you start, finish, or want to highlight a role on the personal website. Update an existing entry's `text` when responsibilities or scope change and you want the description to reflect the current story. Order entries reverse-chronologically so the most recent role appears first.
