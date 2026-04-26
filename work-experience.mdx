@@ -1,0 +1,79 @@
+---
+title: "Work experience"
+description: "Reference for the work experience entries displayed on the personal website."
+---
+
+The personal website renders a timeline of work experience entries from a single configuration file. Each entry is an object in the `workExperience` array, and the site automatically displays them in array order.
+
+Use this page when you need to add, edit, or reorder roles shown on the site.
+
+## Entry shape
+
+Each entry supports the following fields:
+
+| Field      | Type   | Required | Description                                                                 |
+| ---------- | ------ | -------- | --------------------------------------------------------------------------- |
+| `title`    | string | Yes      | Role and company. Displayed as the entry heading.                           |
+| `text`     | string | Yes      | Short description of the work. Supports template literals for multi-line.   |
+| `timeLine` | string | Yes      | Time period and location. Example: `May - August 2026. San Francisco, CA`. |
+| `image`    | string | No       | Absolute URL to a logo or image associated with the role.                   |
+
+## Recently added roles
+
+Three new entries were added to highlight large-company software engineering experience. None include an `image` field, so they render with the default styling.
+
+<CodeGroup>
+
+```js Anthropic
+{
+    title: 'SWE at Anthropic',
+    text: `Built Claude.`,
+    timeLine: 'May - August 2026. San Francisco, CA',
+}
+```
+
+```js Stripe
+{
+    title: 'SWE at Stripe',
+    text: `Worked on payments infrastructure.`,
+    timeLine: 'May - August 2024. San Francisco, CA',
+}
+```
+
+```js Meta
+{
+    title: 'SWE at Meta',
+    text: `Worked on Instagram ranking systems.`,
+    timeLine: 'May - August 2023. Menlo Park, CA',
+}
+```
+
+</CodeGroup>
+
+## Add a new entry
+
+1. Open `src/constants/work.js`.
+2. Add a new object to the `workExperience` array. Place it where you want it to appear in the timeline — entries render top-to-bottom in array order.
+3. Provide `title`, `text`, and `timeLine`. Add an `image` URL if you want a logo to appear alongside the entry.
+4. Save the file. The site picks up changes on the next build.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'SWE at Anthropic',
+        text: `Built Claude.`,
+        timeLine: 'May - August 2026. San Francisco, CA',
+    },
+    // ...existing entries
+]
+
+export default workExperience
+```
+
+## Ordering
+
+Entries are not sorted automatically. The order in the array is the order on the page. To reorder, move objects within the array.
+
+<Tip>
+  Keep the most recent or most prominent role at the top of the array so it appears first in the timeline.
+</Tip>
