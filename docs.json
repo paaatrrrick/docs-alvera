@@ -22,6 +22,12 @@
             ]
           },
           {
+            "group": "Personal website",
+            "pages": [
+              "work-experience"
+            ]
+          },
+          {
             "group": "Customization",
             "pages": [
               "essentials/settings",
