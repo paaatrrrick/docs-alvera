@@ -11,7 +11,19 @@ This page documents recent additions to that list so visitors and contributors k
 
 ## What changed
 
-Two new "career pivot" entries were added to the top of the work experience list. These describe transition periods between roles rather than a specific job at a company, so they intentionally omit the `image` field.
+Several "career pivot" and "career sabbatical" entries have been added to the top of the work experience list. These describe transition periods or intentional breaks rather than a specific job at a company, so they intentionally omit the `image` field.
+
+<Card title="Career Sabbatical — Travel & Writing" icon="umbrella-beach">
+  An intentional six-month sabbatical between roles to travel, recharge, and write. Spent the time documenting lessons from prior startup work into a public essay series and reconnecting with what the next chapter should look like before jumping back in.
+
+  **Timeline:** 2030. International
+</Card>
+
+<Card title="Career Pivot — IC Engineer to Tech Lead" icon="users-line">
+  Stepped from an individual contributor track into a tech-lead role on a six-person team. Spent less time writing code and more time reviewing designs, unblocking teammates, and owning quarterly planning. The transition forced sharper prioritization and async written communication.
+
+  **Timeline:** 2030 - 2031. San Francisco, CA
+</Card>
 
 <Card title="Career Pivot — Independent Builder" icon="compass">
   Stepped back from full-time engineering roles to spend a year as an independent builder. Shipped two consumer AI side-projects from zero, ran user interviews end-to-end, and used the time to figure out what kind of problems to spend the next decade on. Coming out the other side, focused on small teams shipping AI tooling for developers.
@@ -57,6 +69,16 @@ Open `src/constants/work.js` and prepend a new object to the `workExperience` ar
 ```js src/constants/work.js
 const workExperience = [
     {
+        title: 'Career Sabbatical — Travel & Writing',
+        text: `Took an intentional six-month sabbatical between roles to travel, recharge, and write...`,
+        timeLine: '2030. International',
+    },
+    {
+        title: 'Career Pivot — IC Engineer to Tech Lead',
+        text: `Stepped from an individual contributor track into a tech-lead role on a six-person team...`,
+        timeLine: '2030 - 2031. San Francisco, CA',
+    },
+    {
         title: 'Career Pivot — Independent Builder',
         text: `Stepped back from full-time engineering roles to spend a year as an independent builder...`,
         timeLine: '2028 - 2029. Remote',
@@ -84,18 +106,18 @@ export default workExperience
 ```
 
 <Tip>
-Omit the `image` field for roles without a logo, including transition or "career pivot" entries. The layout adjusts automatically.
+Omit the `image` field for entries without a logo, including transition entries like "career pivot" and "career sabbatical". The layout adjusts automatically.
 </Tip>
 
-## Documenting career pivots
+## Documenting career pivots and sabbaticals
 
-Career pivot entries describe a transition period rather than a specific job. Use them when a meaningful gap or shift in focus belongs on the timeline.
+Career pivot and sabbatical entries describe a transition period or intentional break rather than a specific job. Use them when a meaningful shift in focus or a deliberate gap belongs on the timeline.
 
-- Prefix the `title` with `Career Pivot —` so visitors can scan the list and immediately tell pivots apart from standard roles.
+- Prefix the `title` with `Career Pivot —` for transitions between role types (for example, IC to tech lead) or `Career Sabbatical —` for intentional breaks like travel, writing, or recharging.
 - Use `text` to explain the motivation, what you shipped or learned during the period, and how it shaped your next move.
-- Set `timeLine` to a year range (for example, `2028 - 2029. Remote`) and use `Present` for an ongoing pivot.
-- Leave out `image` since pivots aren't tied to a single company.
+- Set `timeLine` to a year range (for example, `2030 - 2031. San Francisco, CA`), a single year for shorter breaks (`2030. International`), or use `Present` for an ongoing pivot.
+- Leave out `image` since these entries aren't tied to a single company.
 
 ## When to update this list
 
-Add a new entry whenever you start, finish, or want to highlight a role or career pivot on the personal website. Order entries reverse-chronologically so the most recent entry appears first.
+Add a new entry whenever you start, finish, or want to highlight a role, career pivot, or sabbatical on the personal website. Order entries reverse-chronologically so the most recent entry appears first.
