@@ -11,7 +11,21 @@ This page documents recent additions to that list so visitors and contributors k
 
 ## What changed
 
-Two new roles were added to the top of the work experience list:
+Two new "career pivot" entries were added to the top of the work experience list. These describe transition periods between roles rather than a specific job at a company, so they intentionally omit the `image` field.
+
+<Card title="Career Pivot — Independent Builder" icon="compass">
+  Stepped back from full-time engineering roles to spend a year as an independent builder. Shipped two consumer AI side-projects from zero, ran user interviews end-to-end, and used the time to figure out what kind of problems to spend the next decade on. Coming out the other side, focused on small teams shipping AI tooling for developers.
+
+  **Timeline:** 2028 - 2029. Remote
+</Card>
+
+<Card title="Career Pivot — Engineer to Founding PM" icon="route">
+  Moved from a pure SWE track into a founding product role at an early-stage startup. Owned the 0-to-1 roadmap, ran weekly customer discovery calls, and translated learnings back into engineering priorities. The pivot reshaped how to think about scope, velocity, and what "shipped" actually means.
+
+  **Timeline:** 2029 - Present. San Francisco, CA
+</Card>
+
+Earlier additions (still present) include:
 
 <Card title="SWE at OpenAI" icon="microchip-ai">
   Software engineering role focused on building large language models.
@@ -43,6 +57,16 @@ Open `src/constants/work.js` and prepend a new object to the `workExperience` ar
 ```js src/constants/work.js
 const workExperience = [
     {
+        title: 'Career Pivot — Independent Builder',
+        text: `Stepped back from full-time engineering roles to spend a year as an independent builder...`,
+        timeLine: '2028 - 2029. Remote',
+    },
+    {
+        title: 'Career Pivot — Engineer to Founding PM',
+        text: `Moved from a pure SWE track into a founding product role at an early-stage startup...`,
+        timeLine: '2029 - Present. San Francisco, CA',
+    },
+    {
         title: 'SWE at OpenAI',
         text: `Built big LLMs`,
         timeLine: 'May - August 2025. Seattle, WA',
@@ -60,9 +84,18 @@ export default workExperience
 ```
 
 <Tip>
-Omit the `image` field for roles without a logo. The layout adjusts automatically.
+Omit the `image` field for roles without a logo, including transition or "career pivot" entries. The layout adjusts automatically.
 </Tip>
+
+## Documenting career pivots
+
+Career pivot entries describe a transition period rather than a specific job. Use them when a meaningful gap or shift in focus belongs on the timeline.
+
+- Prefix the `title` with `Career Pivot —` so visitors can scan the list and immediately tell pivots apart from standard roles.
+- Use `text` to explain the motivation, what you shipped or learned during the period, and how it shaped your next move.
+- Set `timeLine` to a year range (for example, `2028 - 2029. Remote`) and use `Present` for an ongoing pivot.
+- Leave out `image` since pivots aren't tied to a single company.
 
 ## When to update this list
 
-Add a new entry whenever you start, finish, or want to highlight a role on the personal website. Order entries reverse-chronologically so the most recent role appears first.
+Add a new entry whenever you start, finish, or want to highlight a role or career pivot on the personal website. Order entries reverse-chronologically so the most recent entry appears first.
