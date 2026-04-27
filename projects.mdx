@@ -1,0 +1,70 @@
+---
+title: "Projects section: structure and updates"
+description: "How the personal website's projects list is configured from the myProjects array, plus a changelog of recent copy edits and entry updates."
+---
+
+## Overview
+
+The projects section showcases featured side projects on the personal website. Each entry is rendered from the `myProjects` array and shows a title, one or more description lines, an image or video preview, and a list of related links.
+
+This page documents the schema for project entries and tracks recent updates to project copy.
+
+## What changed
+
+The Wordsmith entry's description was corrected from "more efftective" to "more effective" so the projects list reads cleanly on the home page.
+
+<Card title="AI Writing Assistant" icon="pen-nib">
+  Wordsmith is a Chrome extension that uses GPT to rewrite text on any website to be more effective by simply highlighting it.
+</Card>
+
+## Entry schema
+
+Each entry in the `myProjects` array supports the following fields:
+
+| Field     | Type     | Required | Description                                                                                       |
+| --------- | -------- | -------- | ------------------------------------------------------------------------------------------------- |
+| `title`   | string   | Yes      | Project name shown as the entry header. May include a leading emoji.                              |
+| `text`    | string[] | Yes      | One or more description lines. Lines starting with `-` render as bullet points.                   |
+| `image`   | string   | Yes      | Public URL of a preview image or video for the project.                                           |
+| `isVideo` | boolean  | Yes      | Set to `true` when `image` points to a video file so the home page renders it as a video player. |
+| `links`   | object[] | Yes      | List of related links. Each entry has a `text` label and an `href` URL.                           |
+
+## Adding a new entry
+
+Open `src/constants/projects.js` and add a new object to the `myProjects` array. Entries appear in the order they are listed.
+
+```js src/constants/projects.js
+const myProjects = [
+    {
+        title: 'AI Writing Assistant',
+        text: ["Wordsmith is a chrome extension that uses GPT to rewrite text on any website to be more effective by simply highlighting it."],
+        image: "https://res.cloudinary.com/dlk3ezbal/image/upload/v1693158626/wordsmith_z5rsxt.png",
+        isVideo: false,
+        links: [
+            { text: 'Website', href: 'https://try-wordsmith.netlify.app/' },
+            { text: 'Github', href: 'https://github.com/paaatrrrick/wordsmith-client' },
+            { text: 'Chrome Extension', href: 'https://chrome.google.com/webstore/detail/wordsmith/ffjginbaonjceegjiapjgopplicfpbcm' },
+        ],
+    },
+    // ...existing entries
+]
+
+export default myProjects;
+```
+
+<Tip>
+Use a video URL with `isVideo: true` for projects that benefit from motion, such as gesture or animation demos.
+</Tip>
+
+## Writing project descriptions
+
+Use the `text` array to communicate impact and what the project does.
+
+- Lead with a one-sentence summary of what the project is and who it is for.
+- Use bullet points (lines starting with `-`) to list awards, milestones, or feature highlights.
+- Keep copy tight so the projects list stays scannable on the home page.
+- Proofread for typos before shipping; the projects section is one of the most-viewed parts of the site.
+
+## When to update this list
+
+Update the projects list when you ship a new project, add a noteworthy milestone to an existing project, or correct copy. Comment out an entry instead of deleting it if you might bring it back later.
