@@ -11,19 +11,23 @@ This page documents recent additions to that list so visitors and contributors k
 
 ## What changed
 
-Two new roles were added to the top of the work experience list:
+The Anthropic and Stripe role descriptions were expanded with additional detail about responsibilities and team collaboration. Existing entries can be edited the same way as new ones — only the `text` field changes.
 
-<Card title="SWE at OpenAI" icon="microchip-ai">
-  Software engineering role focused on building large language models.
+<Card title="SWE at Anthropic" icon="microchip-ai">
+  Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.
 
-  **Timeline:** May - August 2025. Seattle, WA
+  **Timeline:** May - August 2026. San Francisco, CA
 </Card>
 
-<Card title="GoDaddy Software Engineer Intern" icon="code">
-  A/B tested features on GoDaddy's checkout page.
+<Card title="SWE at Stripe" icon="credit-card">
+  Worked on payments infrastructure. Helped build and ship features on the core payments API, with a focus on reliability and latency. Partnered with the platform team on internal tooling that streamlined deploys.
 
-  **Timeline:** May - August 2023. Seattle, WA
+  **Timeline:** May - August 2024. San Francisco, CA
 </Card>
+
+<Tip>
+Keep `text` to one or two short sentences focused on impact. Mention the team or system you worked on, then the outcome you contributed to.
+</Tip>
 
 ## Entry schema
 
@@ -43,21 +47,22 @@ Open `src/constants/work.js` and prepend a new object to the `workExperience` ar
 ```js src/constants/work.js
 const workExperience = [
     {
-        title: 'SWE at OpenAI',
-        text: `Built big LLMs`,
-        timeLine: 'May - August 2025. Seattle, WA',
+        title: 'SWE at Anthropic',
+        text: `Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.`,
+        timeLine: 'May - August 2026. San Francisco, CA',
     },
     {
-        title: 'GoDaddy Software Engineer Intern:',
-        text: `A/B Tested features on GoDaddy's Checkout Page.`,
-        image: "https://res.cloudinary.com/dlk3ezbal/image/upload/v1702062289/gd_zdghmr.png",
-        timeLine: 'May - August 2023. Seattle, WA',
+        title: 'SWE at Stripe',
+        text: `Worked on payments infrastructure. Helped build and ship features on the core payments API, with a focus on reliability and latency. Partnered with the platform team on internal tooling that streamlined deploys.`,
+        timeLine: 'May - August 2024. San Francisco, CA',
     },
     // ...existing entries
 ]
 
 export default workExperience
 ```
+
+To update an existing role instead of adding one, find the matching object in the array and edit its `text` field in place. The order of entries is preserved.
 
 <Tip>
 Omit the `image` field for roles without a logo. The layout adjusts automatically.
