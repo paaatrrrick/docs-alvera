@@ -28,6 +28,12 @@
             ]
           },
           {
+            "group": "Fun",
+            "pages": [
+              "star-wars"
+            ]
+          },
+          {
             "group": "Customization",
             "pages": [
               "essentials/settings",
