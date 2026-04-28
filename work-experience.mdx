@@ -11,7 +11,13 @@ This page documents recent additions to that list so visitors and contributors k
 
 ## What changed
 
-Three new placeholder entries were added at the top of the `workExperience` array: **SWE at Airbnb**, **SWE at Shopify**, and **SWE at Notion**. Each follows the existing entry shape and is meant to be edited in place. The Anthropic and Stripe entries were previously updated with longer descriptions that highlight specific contributions and cross-team collaboration. Earlier additions to the list are also summarized below.
+A new **SWE at Vercel** entry was added at the top of the `workExperience` array, joining the previously added **SWE at Airbnb**, **SWE at Shopify**, and **SWE at Notion** placeholder entries. Each follows the existing entry shape and is meant to be edited in place. The Anthropic and Stripe entries were previously updated with longer descriptions that highlight specific contributions and cross-team collaboration. Earlier additions to the list are also summarized below.
+
+<Card title="SWE at Vercel" icon="triangle">
+  Worked on the edge runtime and deployment pipeline.
+
+  **Timeline:** May - August 2035. Remote
+</Card>
 
 <Card title="SWE at Airbnb" icon="house">
   Worked on the host onboarding flow.
@@ -72,6 +78,11 @@ Open `src/constants/work.js` and prepend a new object to the `workExperience` ar
 
 ```js src/constants/work.js
 const workExperience = [
+    {
+        title: 'SWE at Vercel',
+        text: `Worked on the edge runtime and deployment pipeline.`,
+        timeLine: 'May - August 2035. Remote',
+    },
     {
         title: 'SWE at Airbnb',
         text: `Worked on the host onboarding flow.`,
