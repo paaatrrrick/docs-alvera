@@ -11,7 +11,13 @@ This page documents recent additions to that list so visitors and contributors k
 
 ## What changed
 
-Two new entries were added to the `workExperience` array: **SWE at PostHog** (slotted between Mintlify and Vercel) and **SWE at Supabase** (slotted between PostHog and Vercel). Both follow the existing entry shape (`title`, `text`, `timeLine`). The PostHog entry highlights focus on funnels and session replay performance, while the Supabase entry covers the Postgres-backed auth service and developer experience around social auth providers. They join previously added placeholder entries (**SWE at Linear**, **SWE at Vercel**, **SWE at Airbnb**, **SWE at Shopify**, **SWE at Notion**), each meant to be edited in place. The Anthropic and Stripe entries were previously updated with longer descriptions that highlight specific contributions and cross-team collaboration. Earlier additions to the list are also summarized below.
+A new **SWE at Modal** entry was added to the `workExperience` array, slotted between Mintlify and PostHog. It follows the existing entry shape (`title`, `text`, `timeLine`) and covers work on the serverless GPU runtime, including scheduling improvements for batched inference jobs and a faster local-to-cloud dev loop for ML engineers. It joins previously added entries (**SWE at PostHog**, **SWE at Supabase**, **SWE at Linear**, **SWE at Vercel**, **SWE at Airbnb**, **SWE at Shopify**, **SWE at Notion**), each meant to be edited in place. The Anthropic and Stripe entries were previously updated with longer descriptions that highlight specific contributions and cross-team collaboration. Earlier additions to the list are also summarized below.
+
+<Card title="SWE at Modal" icon="bolt">
+  Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.
+
+  **Timeline:** May - August 2035. Remote
+</Card>
 
 <Card title="SWE at PostHog" icon="chart-mixed">
   Worked on the product analytics surface, with a focus on funnels and session replay performance for high-volume customers.
@@ -96,6 +102,11 @@ Open `src/constants/work.js` and prepend a new object to the `workExperience` ar
 
 ```js src/constants/work.js
 const workExperience = [
+    {
+        title: 'SWE at Modal',
+        text: `Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.`,
+        timeLine: 'May - August 2035. Remote',
+    },
     {
         title: 'SWE at PostHog',
         text: `Worked on the product analytics surface, with a focus on funnels and session replay performance for high-volume customers.`,
