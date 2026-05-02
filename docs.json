@@ -35,6 +35,13 @@
             ]
           },
           {
+            "group": "Summaries",
+            "pages": [
+              "summaries/game-of-thrones-summary",
+              "summaries/star-wars-summary"
+            ]
+          },
+          {
             "group": "Customization",
             "pages": [
               "essentials/settings",
