@@ -29,6 +29,13 @@
             ]
           },
           {
+            "group": "Summaries",
+            "pages": [
+              "summaries/game-of-thrones-summary",
+              "summaries/creating-an-incident-summary"
+            ]
+          },
+          {
             "group": "Fun",
             "pages": [
               "star-wars"
