@@ -1,0 +1,89 @@
+---
+title: "How Mintlify works"
+description: "Understand the architecture behind Mintlify and how your docs go from MDX files to a published site."
+---
+
+Mintlify turns a Git repository of MDX files into a fast, searchable documentation site. This page explains the moving pieces so you know what is happening under the hood.
+
+## The core pieces
+
+<CardGroup cols={2}>
+  <Card title="Content" icon="file-lines">
+    MDX pages and a `docs.json` config live in your Git repository.
+  </Card>
+  <Card title="Build pipeline" icon="gears">
+    Mintlify compiles your content into a static site whenever you push.
+  </Card>
+  <Card title="Hosted site" icon="globe">
+    The compiled site is served on a Mintlify subdomain or your custom domain.
+  </Card>
+  <Card title="Dashboard" icon="gauge">
+    The dashboard manages deployments, analytics, and integrations.
+  </Card>
+</CardGroup>
+
+## From commit to published page
+
+1. **You write content.** Pages are authored in MDX, which is Markdown plus React components like `<Card>`, `<Tabs>`, and `<Accordion>`.
+2. **You configure navigation.** `docs.json` defines tabs, groups, theming, and global elements like the navbar and footer.
+3. **You push to GitHub.** Mintlify's GitHub app detects the change on your deploy branch.
+4. **Mintlify builds the site.** Content is validated, links are checked, and the site is compiled into static assets.
+5. **The site goes live.** The new build is deployed to your domain, usually within seconds.
+
+## Local development
+
+Use the Mintlify CLI to preview changes before pushing:
+
+```bash
+mint dev
+```
+
+This serves your docs at `http://localhost:3000` with hot reload. To catch issues early, run:
+
+```bash
+mint validate
+mint broken-links
+```
+
+## Authoring model
+
+- **MDX files** — every page is an `.mdx` file with YAML frontmatter (`title`, `description`).
+- **Components** — Mintlify ships built-in components for callouts, tabs, code groups, accordions, cards, and more.
+- **Snippets** — reusable content lives in `snippets/` and can be imported into any page.
+- **Images and assets** — referenced by relative path from the repo root.
+
+## Configuration
+
+`docs.json` is the single source of truth for site structure:
+
+- `navigation` — tabs, groups, and page ordering.
+- `colors`, `logo`, `favicon` — branding.
+- `navbar`, `footer` — global links and socials.
+- `contextual` — controls the "Copy / Open in ChatGPT" menu on each page.
+
+## Search and AI
+
+Every published site includes:
+
+- **Full-text search** indexed automatically on each build.
+- **AI chat** that answers questions using your docs as context.
+- **MCP and LLM integrations** so tools like Cursor and Claude can reference your docs.
+
+## Deployment environments
+
+| Environment | Trigger | Use it for |
+| ----------- | ------- | ---------- |
+| Local | `mint dev` | Drafting and previewing changes |
+| Preview | Pull request | Reviewing changes before merging |
+| Production | Merge to deploy branch | Your live site |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up your site in three steps.
+  </Card>
+  <Card title="Writing content" icon="pen" href="/essentials/markdown">
+    Learn the MDX components available to you.
+  </Card>
+</CardGroup>
