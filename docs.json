@@ -9,74 +9,112 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Guides",
-        "groups": [
+        "language": "en",
+        "default": true,
+        "tabs": [
           {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development",
-              "how-mintlify-works"
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting started",
+                "pages": [
+                  "index",
+                  "quickstart",
+                  "development",
+                  "how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Personal website",
+                "pages": [
+                  "work-experience",
+                  "game-of-thrones"
+                ]
+              },
+              {
+                "group": "Fun",
+                "pages": [
+                  "star-wars"
+                ]
+              },
+              {
+                "group": "Customization",
+                "pages": [
+                  "essentials/settings",
+                  "essentials/navigation"
+                ]
+              },
+              {
+                "group": "Writing content",
+                "pages": [
+                  "essentials/markdown",
+                  "essentials/code",
+                  "essentials/images",
+                  "essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "AI tools",
+                "pages": [
+                  "ai-tools/cursor",
+                  "ai-tools/claude-code",
+                  "ai-tools/windsurf"
+                ]
+              }
             ]
           },
           {
-            "group": "Personal website",
-            "pages": [
-              "work-experience",
-              "game-of-thrones"
-            ]
-          },
-          {
-            "group": "Fun",
-            "pages": [
-              "star-wars"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+            "tab": "API reference",
+            "groups": [
+              {
+                "group": "API documentation",
+                "pages": [
+                  "api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Endpoint examples",
+                "pages": [
+                  "api-reference/endpoint/get",
+                  "api-reference/endpoint/create",
+                  "api-reference/endpoint/delete",
+                  "api-reference/endpoint/webhook"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "language": "es",
+        "tabs": [
           {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+            "tab": "Guías",
+            "groups": [
+              {
+                "group": "Primeros pasos",
+                "pages": [
+                  "es/how-mintlify-works"
+                ]
+              }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "language": "fr",
+        "tabs": [
           {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Démarrage",
+                "pages": [
+                  "fr/how-mintlify-works"
+                ]
+              }
             ]
           }
         ]
