@@ -1,0 +1,96 @@
+---
+title: "Career timeline page: interactive work history view"
+description: "How the /timeline route renders an interactive, filterable view of every role from workExperience, including remote and on-site filters."
+---
+
+## Overview
+
+The career timeline is a dedicated page at **`/timeline`** that visualizes every role in the `workExperience` array as a single, scannable journey. Unlike the home page — which shows two roles by default and hides the rest behind a "Show All" toggle — the timeline always shows the full career arc, including pivots and sabbaticals.
+
+Use this page when you want visitors to see the shape of the career over time rather than scan a flat list.
+
+## When to use the timeline
+
+- You want to highlight career progression, not just the latest role.
+- You want a discoverable home for older roles without cluttering the home page.
+- You want to surface remote vs. on-site patterns at a glance.
+
+The home page links to the timeline through a **View timeline →** affordance next to the Experiences header, so visitors can jump in without leaving the main flow.
+
+## What the page shows
+
+Each entry is derived automatically from `src/constants/work.js`. No data shape changes are required — the timeline parses fields you already use.
+
+| Element              | Source                                               |
+| -------------------- | ---------------------------------------------------- |
+| Role title           | `title`                                              |
+| Role description     | `text`                                               |
+| Year label           | First 4-digit year parsed from `timeLine`            |
+| Location             | Trailing segment of `timeLine` after the last `.`    |
+| Remote / On-site tag | Presence of "remote" (case-insensitive) in `timeLine`|
+
+The header summarizes:
+
+- **Roles** — total number of entries.
+- **Years spanned** — difference between the earliest and latest year found across all entries.
+- **Remote** — count of entries tagged remote.
+
+## Filters
+
+Three filter chips control which entries appear:
+
+- **All** — every role, sorted by start year descending.
+- **Remote** — entries whose `timeLine` contains "remote".
+- **On-site** — every other entry.
+
+If no entries match the active filter, the list shows "No roles match this filter."
+
+## Sorting behavior
+
+Entries are sorted chronologically by the earliest 4-digit year in `timeLine`, then by the latest. Entries with no year fall to the bottom. If `timeLine` contains the word "present", the end year resolves to the current year so ongoing roles render with a `→ now` suffix.
+
+## Adding entries
+
+You do not need to edit the timeline page to add a new role. Add the entry to `workExperience` in `src/constants/work.js` and it appears on `/timeline` automatically.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'SWE at Linear',
+        text: `Worked on the issue triage workflow.`,
+        timeLine: 'May - August 2036. Remote',
+    },
+    // ...existing entries
+]
+
+export default workExperience
+```
+
+<Tip>
+Include a 4-digit year in `timeLine` so the timeline can place the entry on the correct year. Append `Remote` or a city to drive the location label and the remote badge.
+</Tip>
+
+## Writing `timeLine` strings for the timeline
+
+The same `timeLine` string powers the home page and the timeline, so keep it short and predictable:
+
+- Start with the date range, for example `May - August 2034`.
+- End with a single period followed by the location, for example `. Remote` or `. San Francisco, CA`.
+- Use `Present` for ongoing roles to opt into the `→ now` label.
+
+```js
+// Renders as: 2034 · Remote
+timeLine: 'May - August 2034. Remote'
+
+// Renders as: 2024 → now · San Francisco, CA
+timeLine: 'January 2024 - Present. San Francisco, CA'
+```
+
+## Route registration
+
+The route is registered alongside the home route so the timeline is reachable directly by URL and from the home-page link.
+
+```js src/App.js
+<Route path="/" element={<Home />} />
+<Route path="/timeline" element={<Timeline />} />
+```
