@@ -1,0 +1,84 @@
+---
+title: "Testimonials section: structure and updates"
+description: "How the personal website's 'What people say' section is sourced from the testimonials array, rendered by the Testimonials component, and how to add new quotes."
+---
+
+## Overview
+
+The testimonials section ("What people say") appears at the bottom of the home page and shows short quotes from people who have worked with Patrick. Each quote is rendered as a card with the speaker's name and role.
+
+Quotes are sourced from the `testimonials` array in `src/constants/testimonials.js` and rendered by the `Testimonials` component (`src/components/Testimonials.js`), which uses its own stylesheet at `src/components/testimonials.css`.
+
+## What changed
+
+A new **What people say** section was added to the home page. It introduces:
+
+- A `testimonials` constant that holds the quote list.
+- A `Testimonials` React component that renders the section heading, divider, and a responsive grid of quote cards.
+- A `testimonials.css` stylesheet that styles the grid and individual cards.
+
+The section is mounted at the bottom of `Home.js` and ships with three starter quotes that you can edit or replace.
+
+## Entry schema
+
+Each entry in the `testimonials` array supports the following fields:
+
+| Field   | Type   | Required | Description                                                            |
+| ------- | ------ | -------- | ---------------------------------------------------------------------- |
+| `quote` | string | Yes      | The quote text. Rendered inside curly quotes; do not include your own. |
+| `name`  | string | Yes      | The speaker's name. Used as the React key and shown in bold.           |
+| `role`  | string | Yes      | The speaker's title and company, shown below their name.               |
+
+<Tip>
+  `name` is used as the React key for each card, so keep names unique within the array.
+</Tip>
+
+## Adding a new quote
+
+Open `src/constants/testimonials.js` and add a new object to the `testimonials` array. Entries render in the order they appear.
+
+```js src/constants/testimonials.js
+const testimonials = [
+    {
+        quote: `Patrick has this rare combination of moving fast and actually caring whether what he ships works. He'd close three issues in the time it took the rest of us to debate one.`,
+        name: 'Jordan Lee',
+        role: 'Engineering Manager, Mintlify',
+    },
+    {
+        quote: `He treats every feature like it's a product. You can hand him a half-spec'd idea and get back something a customer would actually pay for.`,
+        name: 'Mara Chen',
+        role: 'Founding PM, PostHog',
+    },
+    {
+        quote: `Best code-review partner I've worked with. He asks the questions that save you a week, two weeks later.`,
+        name: 'Sam Patel',
+        role: 'Staff Engineer, Supabase',
+    },
+];
+
+export default testimonials;
+```
+
+## Writing testimonial quotes
+
+Use the `quote` field to capture a specific, credible observation rather than generic praise.
+
+- Lead with the trait or behavior the quote is about.
+- Keep each quote to one or two sentences so the grid stays scannable.
+- Prefer concrete examples ("closed three issues in the time...") over adjectives.
+- Match the speaker's voice; light contractions and natural phrasing are fine.
+- Use straight quotes and apostrophes in the source — the component wraps each quote in curly quotes automatically.
+
+## How it renders
+
+The `Testimonials` component renders:
+
+- A `<section>` with the heading **What people say** and a horizontal divider.
+- A responsive CSS grid (`testimonialsGrid`) that fits as many cards per row as the viewport allows, with a minimum card width of 260px.
+- Each entry as a `<figure>` containing a `<blockquote>` for the quote and a `<figcaption>` with the name and role.
+
+Styling lives in `src/components/testimonials.css`. Update that file to change card colors, spacing, or the grid breakpoint.
+
+## When to update this list
+
+Add a new entry whenever someone gives you a quote you want to feature, or edit existing entries to refresh the wording. Remove a quote by deleting its object from the array — there is no hidden or "draft" state.
