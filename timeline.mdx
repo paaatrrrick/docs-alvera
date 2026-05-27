@@ -1,0 +1,83 @@
+---
+title: "Timeline page: filters, stats, and configuration"
+description: "How the /timeline route derives an interactive career timeline from work entries, including Remote and On-site badges, filter chips, decade dropdown, and summary stats."
+---
+
+## Overview
+
+The `/timeline` route renders an interactive career timeline that visualizes every entry in `workExperience` end to end. It reuses the same `src/constants/work.js` data that powers the home page, so adding a role updates both surfaces at once.
+
+Use this page to understand how timeline entries are parsed, sorted, and filtered, and how visitors discover the page from the home Experiences header.
+
+## What ships on the page
+
+- **Summary header.** Shows the total role count, total years spanned, and remote role count, computed from the parsed `workExperience` array.
+- **Filter chips.** `All`, `Remote`, and `On-site` chips narrow the list by work mode.
+- **Decade dropdown.** A `<select>` with `All decades` plus one option per decade present in the data (for example, `2020s`, `2030s`).
+- **Timeline cards.** Each role renders as a card with a start year (and `→ now` when ongoing), a `Remote` or `On-site` badge, the role title, location, and description.
+- **Empty state.** When no entry matches the active filters, the list shows `No roles match this filter.`
+- **Back link.** A `← back home` link returns to `/`.
+
+## How the timeline is derived
+
+The timeline is computed from `workExperience` at render time. No additional configuration is required.
+
+- **Year parsing.** Every 4-digit number in `timeLine` is extracted. The smallest becomes the start year, the largest becomes the end year.
+- **Present roles.** If `timeLine` contains the word `present` (case-insensitive), the end year is set to the current year and the card shows `→ now`.
+- **Sort order.** Entries are sorted by start year descending, then end year descending, so the most recent role appears at the top.
+- **Location.** Everything after the final `.` in `timeLine` is treated as the location label.
+- **Remote detection.** If `timeLine` contains `remote` (case-insensitive), the entry is tagged `Remote`; otherwise it renders as `On-site`.
+- **Decades.** Each start year is bucketed into its decade (for example, `2034` → `2030s`). The dropdown lists every decade that appears in the data.
+
+Because parsing is driven entirely by the `timeLine` string, you only need to follow the existing format on `workExperience` entries to get correct badges, years, and decade grouping.
+
+## `timeLine` string format
+
+Keep the format consistent so parsing produces the right badge and decade.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'SWE at Linear',
+        text: 'Worked on the issue triage workflow.',
+        timeLine: 'May - August 2036. Remote',
+    },
+    {
+        title: 'SWE at Airbnb',
+        text: 'Worked on the host onboarding flow.',
+        timeLine: 'May - August 2031. San Francisco, CA',
+    },
+    {
+        title: 'Founding engineer at Acme',
+        text: 'Built the first version of the platform.',
+        timeLine: '2029 - present. Remote',
+    },
+]
+
+export default workExperience
+```
+
+| Input on `timeLine`             | Resulting card                          |
+| ------------------------------- | --------------------------------------- |
+| `May - August 2036. Remote`     | Year `2036`, badge `Remote`, decade `2030s`  |
+| `May - August 2031. San Francisco, CA` | Year `2031`, badge `On-site`, location `San Francisco, CA` |
+| `2029 - present. Remote`        | Year `2029 → now`, badge `Remote`       |
+
+<Tip>
+Always include at least one 4-digit year in `timeLine`. Entries without a year fall back to year `—` and are grouped at the bottom of the list.
+</Tip>
+
+## Discoverability from the home page
+
+The home Experiences header includes a `View timeline →` link next to the `Show all experiences` toggle. The link points at `/timeline` and uses the `.timelineLink` class. Its color was darkened from `#4C3AFF` to `#2E1FD1` to improve contrast against the section background.
+
+If you rename the route, update both `src/App.js` and the `href` on the `View timeline →` link in `src/Home.js`.
+
+## When to update this page
+
+Update this page if you:
+
+- Change the route path from `/timeline`.
+- Add, rename, or remove a filter chip or the decade dropdown.
+- Change which stats appear in the summary header.
+- Change the `timeLine` parsing rules (year extraction, remote detection, or location split).
