@@ -5,13 +5,13 @@ description: "How the personal website's /uses page is wired up, what each secti
 
 ## Overview
 
-The personal website now ships a dedicated **`/uses`** page — a running list of the hardware, editor, terminal, and apps the site's owner reaches for day-to-day. It's a single top-level route, modeled after the popular `uses.tech` convention, and it's meant to be edited in place whenever something gets swapped out.
+The personal website now ships a dedicated **`/uses`** page — a running list of the hardware, editor, terminal, apps, and audio gear the site's owner reaches for day-to-day. It's a single top-level route, modeled after the popular `uses.tech` convention, and it's meant to be edited in place whenever something gets swapped out.
 
 Visit it at `/uses` (for example, `https://yourdomain.com/uses`).
 
 ## What the page contains
 
-The page renders three sections from a `sections` array, in this order:
+The page renders sections from a `sections` array, in this order:
 
 <Card title="Editor & Terminal" icon="terminal">
   Editor, terminal emulator, and shell setup. Defaults to VS Code with the Vim extension, the Ghostty terminal, and a Zsh + Starship prompt.
@@ -23,6 +23,14 @@ The page renders three sections from a `sections` array, in this order:
 
 <Card title="Apps I open every day" icon="grid-2">
   Daily software. Defaults to Linear for issue tracking, Raycast as a Spotlight replacement, and Arc as the primary browser.
+</Card>
+
+<Card title="Productivity & writing" icon="pen-to-square">
+  Long-form notes, journaling, task management, and Markdown drafting. Covers Notion, Obsidian, Things 3, and iA Writer.
+</Card>
+
+<Card title="Audio & focus" icon="headphones">
+  Headphones and focus audio for deep work. Covers the Sony WH-1000XM5, Endel soundscapes, Apple Music classical, and Krisp noise filtering on calls.
 </Card>
 
 Each section has a heading and a list of items. Every item has a `name` (rendered bold) and a `detail` (a short sentence explaining the choice).
@@ -69,6 +77,15 @@ const sections = [
         ],
     },
     // ...other sections
+    {
+        heading: 'Audio & focus',
+        items: [
+            { name: 'Sony WH-1000XM5', detail: 'Noise-cancelling headphones for deep work and travel.' },
+            { name: 'Endel', detail: 'Generative focus soundscapes — replaced every "lo-fi beats" playlist for me.' },
+            { name: 'Apple Music classical', detail: 'Default soundtrack while coding. The catalog metadata is the best of any service.' },
+            { name: 'Krisp', detail: 'Background-noise filtering on every call.' },
+        ],
+    },
 ];
 ```
 
@@ -87,4 +104,4 @@ Keep `detail` to a single sentence. The layout assumes one line of context per t
 
 ## When to update this page
 
-Refresh `/uses` whenever you change your daily setup: a new laptop, a different terminal, a fresh keyboard, or a swapped-out app. The header copy already promises the page is "updated whenever I swap something out," so keep it honest.
+Refresh `/uses` whenever you change your daily setup: a new laptop, a different terminal, a fresh keyboard, swapped-out apps, or new headphones. The header copy already promises the page is "updated whenever I swap something out," so keep it honest.
