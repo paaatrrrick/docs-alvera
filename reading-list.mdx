@@ -1,0 +1,98 @@
+---
+title: "Reading list page: structure and updates"
+description: "How the /reading-list route renders books from src/constants/reading.js, the entry shape, status filter chips, and how contributors add or update titles."
+---
+
+## Overview
+
+The reading list is a top-level route at `/reading-list` on the personal website. It renders the books you're reading, just finished, or keep coming back to, sourced from a single `reading` array.
+
+The page is built from three pieces:
+
+- `src/components/ReadingList.js` — the React component that renders the page.
+- `src/components/readingList.css` — the styles for the page layout, filter chips, and entry cards.
+- `src/constants/reading.js` — the seed list of book entries.
+
+The route is registered in `src/App.js` as `<Route exact path='/reading-list' component={ReadingList} />`.
+
+## What the page does
+
+- Displays a header (`Reading list`), a short description, and a `← Back home` link.
+- Renders one card per book with the title, author, current status, and a short note.
+- Shows a row of filter chips — **All**, **In progress**, **Finished**, **Re-reading** — that narrow the list to a single status.
+- Shows a fallback (`Nothing in this bucket right now.`) when a filter produces no matches.
+
+Use it as a lightweight, hand-curated alternative to a Goodreads or Storygraph embed when you want full control over voice and ordering.
+
+## Status filter chips
+
+The filter chips at the top of the page let you scope the list to one status at a time. The available statuses are defined in `ReadingList.js`:
+
+```js src/components/ReadingList.js
+const STATUSES = ['All', 'In progress', 'Finished', 'Re-reading'];
+```
+
+| Chip          | Shows                                                                     |
+| ------------- | ------------------------------------------------------------------------- |
+| `All`         | Every entry in the `reading` array, in the order they're declared.        |
+| `In progress` | Entries where `status` equals `'In progress'`.                            |
+| `Finished`    | Entries where `status` equals `'Finished'`.                               |
+| `Re-reading`  | Entries where `status` equals `'Re-reading'`.                             |
+
+The active chip is styled with the `active` class. Selecting a chip updates local component state — there's no URL parameter, so filter selection isn't shareable or preserved across page loads.
+
+<Note>
+If you add a new status string to an entry that isn't in the `STATUSES` array, the entry still shows up under `All` but won't get its own filter chip. To add a new status, update both `STATUSES` in `ReadingList.js` and the corresponding CSS class in `readingList.css`.
+</Note>
+
+## Entry schema
+
+Each entry in the `reading` array supports the following fields. All fields are required.
+
+| Field    | Type   | Description                                                                                       |
+| -------- | ------ | ------------------------------------------------------------------------------------------------- |
+| `title`  | string | Book title. Used as the card heading and as the React `key`, so it must be unique within the list. |
+| `author` | string | Author name. Rendered below the title. Use `&` to join co-authors (for example, `Andrew Hunt & David Thomas`). |
+| `status` | string | One of `'In progress'`, `'Finished'`, or `'Re-reading'`. Drives the status pill and filter behavior. |
+| `note`   | string | One- or two-sentence take on the book. Keep it short so cards stay scannable.                     |
+
+The status string is also slugified (lowercased, spaces replaced with `-`) and appended to the `readingListStatus` class on each card, so `In progress` becomes `readingListStatus in-progress`. This lets `readingList.css` color each status pill differently.
+
+## Adding or updating an entry
+
+Open `src/constants/reading.js` and edit the `reading` array. Entries render in the order they're declared, so put the books you want to highlight first.
+
+```js src/constants/reading.js
+const reading = [
+    {
+        title: 'Designing Data-Intensive Applications',
+        author: 'Martin Kleppmann',
+        status: 'Re-reading',
+        note: 'The reference for anyone shipping anything stateful at non-trivial scale.',
+    },
+    {
+        title: 'Working in Public',
+        author: 'Nadia Eghbal',
+        status: 'In progress',
+        note: 'Reframes how to think about open source maintainership.',
+    },
+    // ...more entries
+];
+
+export default reading;
+```
+
+To update an existing entry — for example, moving a book from `In progress` to `Finished` — edit the `status` field in place and, if needed, rewrite the `note` to reflect your finished take.
+
+<Tip>
+Treat the `note` field like a one-line review. Lead with why the book is worth reading (or re-reading), not a plot summary.
+</Tip>
+
+## When to update this list
+
+- You started a new book — add it with `status: 'In progress'`.
+- You finished a book — flip its `status` to `'Finished'` and tighten the `note`.
+- You're revisiting a book — set `status: 'Re-reading'` so it shows up under that chip.
+- You no longer want a book on the page — remove the entry from the array.
+
+Keep the list curated. The page is a recommendation surface, not an exhaustive log of everything you've ever read.
