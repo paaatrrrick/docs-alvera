@@ -1,0 +1,135 @@
+---
+title: "Blog system: registering articles and adding new posts"
+description: "How blog articles are registered in the articles list so they show up on /blog and become reachable at /blog/<slug> on the personal website."
+---
+
+## Overview
+
+The personal website ships a lightweight blog. The `/blog` route renders the list of posts and `/blog/<slug>` renders a single article. Both views are powered by a single registry in `src/constants/articles.js` that maps a stable `id` (the URL slug) to an article module under `src/constants/articles/`.
+
+Use this page when you want to publish a new post, rename an existing slug, or understand why an article is or isn't showing up on the site.
+
+## How articles are registered
+
+`src/constants/articles.js` is the single source of truth for what appears on the blog. It does two things:
+
+1. Exports an `articles` array of `{ title, date, id }` entries, in the order posts should appear on `/blog`.
+2. Exports a `getArticle(id)` lookup that returns the JSX `content` for a single post. `ViewBlog` calls this with the `id` route param when rendering `/blog/<slug>`.
+
+Each article module under `src/constants/articles/` exports a default object with three fields:
+
+| Field     | Type   | Required | Description                                                                 |
+| --------- | ------ | -------- | --------------------------------------------------------------------------- |
+| `title`   | string | Yes      | Post title shown in the list and on the article page.                       |
+| `date`    | string | Yes      | Human-readable publish date (for example, `"February 2026"`).               |
+| `content` | JSX    | Yes      | The rendered article body. Wrap it in a `<main>` element.                   |
+
+The `id` used in the registry is the URL slug. A post registered with `id: 'side-projects'` is reachable at `/blog/side-projects`.
+
+## Example: the "How I actually ship side projects" post
+
+The newest post — *How I actually ship side projects* — is a good end-to-end example.
+
+The article module lives at `src/constants/articles/sideProjects.js` and exports `title`, `date`, and a JSX `content` block:
+
+```js src/constants/articles/sideProjects.js
+const sideProjectsTitle = 'How I actually ship side projects';
+const sideProjectsDate = 'February 2026';
+
+const content =
+<main>
+    <h1>{sideProjectsTitle}</h1>
+    <date>{sideProjectsDate}</date>
+    <p>
+        Most of my side projects used to die in the same place — somewhere
+        between "the auth flow works" and "real users could touch this."
+        The three rules below are what finally got me past it.
+    </p>
+    <h2>1. Pick something you can demo in a single screenshot</h2>
+    <p>...</p>
+    <h2>2. Deploy before you build</h2>
+    <p>...</p>
+    <h2>3. Ship to one real person on day one</h2>
+    <p>...</p>
+</main>;
+
+const sideProjects = {
+    title: sideProjectsTitle,
+    date: sideProjectsDate,
+    content,
+};
+
+export default sideProjects;
+```
+
+It is wired into the registry alongside the existing `netflix` post:
+
+```js src/constants/articles.js
+import netflix from './articles/netflix';
+import sideProjects from './articles/sideProjects';
+
+const articles = [
+    { title: netflix.title, date: netflix.date, id: 'netflix' },
+    { title: sideProjects.title, date: sideProjects.date, id: 'side-projects' },
+];
+
+const idsAndArticles = {
+    'netflix': netflix.content,
+    'side-projects': sideProjects.content,
+};
+
+const getArticle = (id) => {
+    return idsAndArticles[id];
+};
+
+export { articles, getArticle };
+```
+
+With those two files in place, the post shows up on `/blog` and is reachable at `/blog/side-projects`.
+
+## Adding a new post
+
+1. Create `src/constants/articles/<name>.js` that default-exports `{ title, date, content }`. Keep the body inside a single `<main>` element so it picks up the existing blog styles.
+2. Open `src/constants/articles.js` and:
+   - Import the new module.
+   - Push an entry into the `articles` array with the slug you want in the URL.
+   - Add the same slug to `idsAndArticles`, mapped to the module's `content`.
+3. Confirm the post renders at `/blog` and at `/blog/<slug>` locally before deploying.
+
+```js src/constants/articles.js
+import netflix from './articles/netflix';
+import sideProjects from './articles/sideProjects';
+import newPost from './articles/newPost';
+
+const articles = [
+    { title: netflix.title, date: netflix.date, id: 'netflix' },
+    { title: sideProjects.title, date: sideProjects.date, id: 'side-projects' },
+    { title: newPost.title, date: newPost.date, id: 'new-post' },
+];
+
+const idsAndArticles = {
+    'netflix': netflix.content,
+    'side-projects': sideProjects.content,
+    'new-post': newPost.content,
+};
+```
+
+<Tip>
+Pick the slug deliberately — it's the permanent URL. Use lowercase, hyphen-separated words that match the post topic (for example, `side-projects`, not `sideProjects` or `how-i-actually-ship-side-projects`).
+</Tip>
+
+## Choosing the slug
+
+The slug is the `id` you set in the `articles` array and the key you use in `idsAndArticles`. Both must match exactly, and the slug becomes the final segment of the URL at `/blog/<slug>`.
+
+- Keep slugs short and descriptive.
+- Don't change a slug after a post is live — it breaks existing links.
+- If a post needs a new title, update `title` in the article module and leave the slug alone.
+
+## When `getArticle` returns nothing
+
+`ViewBlog` looks up the article with `getArticle(id)` using the URL param. If you visit `/blog/<slug>` and see a blank page, the slug in the URL doesn't have a matching entry in `idsAndArticles`. Check that:
+
+- The slug in the `articles` array entry matches the key in `idsAndArticles`.
+- The imported module actually exports a `content` field.
+- You added both entries — it's easy to add the post to one map and forget the other.
