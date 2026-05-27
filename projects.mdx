@@ -1,0 +1,104 @@
+---
+title: "Projects section: structure and updates"
+description: "How the personal website's projects list is configured from the myProjects array, plus a changelog of recently added projects."
+---
+
+## Overview
+
+The projects section displays a list of personal projects on the home page. Each entry is rendered from the `myProjects` array and shows a title, one or more text lines, a media asset (image or video), and a set of external links.
+
+This page documents how to add a new project and summarizes recent additions to the list.
+
+## What changed
+
+Two new projects were added to the `myProjects` array:
+
+- **AI Calendar Assistant** — a local-first calendar that reads your inbox and proactively suggests when to schedule, reschedule, or decline meetings.
+- **Realtime Chess** — multiplayer chess with no turns, where both players move whenever they want, subject to a per-piece cooldown timer.
+
+Both follow the existing entry shape (`title`, `text`, `image`, `isVideo`, `links`) and appear at the top of the projects list.
+
+<Card title="📅 AI Calendar Assistant" icon="calendar">
+  A calendar that reads your inbox and proactively suggests when to schedule, reschedule, or decline.
+
+  - LLM-powered intent extraction from email threads
+  - One-click Google Calendar writes via OAuth
+  - Local-first storage — no thread content ever leaves your laptop
+
+  **Links:** [GitHub](https://github.com/paaatrrrick/ai-calendar)
+</Card>
+
+<Card title="♟️ Realtime Chess" icon="chess">
+  Multiplayer chess with no turns — both players move whenever they want, with a per-piece cooldown timer.
+
+  - Built with React and a Node WebSocket server
+  - Custom matchmaking and ELO
+  - Spectator mode with delayed board state
+
+  **Links:** [GitHub](https://github.com/paaatrrrick/realtime-chess)
+</Card>
+
+## Entry schema
+
+Each entry in the `myProjects` array supports the following fields:
+
+| Field     | Type                                     | Required | Description                                                                                          |
+| --------- | ---------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| `title`   | string                                   | Yes      | Project name shown as the card header. Emoji prefixes are supported.                                 |
+| `text`    | string \| string[]                       | Yes      | Description of the project. Pass an array to render multiple lines, including bullet-style strings.  |
+| `image`   | string                                   | Yes      | Public URL of an image or video asset (Cloudinary is used today).                                    |
+| `isVideo` | boolean                                  | Yes      | Set to `true` when `image` points to a video file so the player renders correctly.                   |
+| `links`   | array of `{ text: string, href: string }` | Yes      | External links shown on the card, such as GitHub, a live demo, or a Chrome Web Store listing.        |
+
+## Adding a new entry
+
+Open `src/constants/projects.js` and prepend a new object to the `myProjects` array. New entries appear at the top of the projects section on the home page.
+
+```js src/constants/projects.js
+const myProjects = [
+    {
+        title: '📅 AI Calendar Assistant',
+        text: [
+            'A calendar that reads your inbox and proactively suggests when to schedule, reschedule, or decline.',
+            '- LLM-powered intent extraction from email threads',
+            '- One-click Google Calendar writes via OAuth',
+            '- Local-first storage, no thread content ever leaves your laptop',
+        ],
+        image: 'https://res.cloudinary.com/dlk3ezbal/image/upload/v1702057000/Untitled_design_y9npsz.png',
+        isVideo: false,
+        links: [{ text: 'Github', href: 'https://github.com/paaatrrrick/ai-calendar' }],
+    },
+    {
+        title: '♟️ Realtime Chess',
+        text: [
+            'Multiplayer chess with no turns — both players move whenever they want, with a per-piece cooldown timer.',
+            '- Built with React and a Node WebSocket server',
+            '- Custom matchmaking + ELO',
+            '- Spectator mode with delayed board state',
+        ],
+        image: 'https://res.cloudinary.com/dlk3ezbal/image/upload/v1702057000/Untitled_design_y9npsz.png',
+        isVideo: false,
+        links: [{ text: 'Github', href: 'https://github.com/paaatrrrick/realtime-chess' }],
+    },
+    // ...existing entries
+]
+
+export default myProjects;
+```
+
+<Tip>
+  Use a video asset (for example, an `.mov` or `.mp4` on Cloudinary) and set `isVideo: true` when a short clip explains the project better than a still image.
+</Tip>
+
+## Writing project descriptions
+
+Use the `text` field to communicate what the project does and why it stands out.
+
+- Lead with a one-sentence summary of what the project is.
+- Follow with two to four bullet-style lines (each as its own string in the array) that highlight the tech stack, distinguishing features, or outcomes.
+- Keep the entry short so the home page stays scannable.
+- Provide at least one link — usually GitHub, plus a live website or extension listing when available.
+
+## When to update this list
+
+Add a new entry whenever you ship a project worth showcasing, and remove or comment out entries that no longer represent your current work. Order entries so the most recent or highest-signal projects appear first.
