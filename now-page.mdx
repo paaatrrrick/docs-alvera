@@ -1,0 +1,91 @@
+---
+title: "Now page: snapshot of current focus"
+description: "How the personal website's /now route is wired up, what each section covers, and how to keep it fresh as your focus changes."
+---
+
+## Overview
+
+The `/now` page is a snapshot of what you're currently working on, learning, and doing outside of work. It follows [Derek Sivers' /now page convention](https://nownownow.com/about): a single page a friend can read to know what you'd tell them if they asked, "What are you up to right now?"
+
+Use this page when you want a low-pressure place to share current focus without committing to a full blog post or changelog entry.
+
+## What's on the page
+
+The route renders a short header followed by three sections of bulleted items:
+
+- **Working on** — projects and work-related focus.
+- **Learning** — books, languages, or skills you're picking up.
+- **Outside of work** — hobbies, training, and personal projects.
+
+A "Last updated" line near the top tells visitors how recent the snapshot is.
+
+## How it's wired up
+
+The page is a top-level route registered in `src/App.js` and rendered by the `Now` component.
+
+```js src/App.js
+import Now from "./components/Now";
+
+<Route exact path='/now' component={Now} />
+```
+
+The component lives at `src/components/Now.js` and imports its styles from `src/components/now.css`. Both files are self-contained — no shared layout or constants module — so updates to the page only touch these two files.
+
+## Updating the page
+
+All content lives in two constants at the top of `src/components/Now.js`:
+
+- `updatedAt` — the month-and-year string shown under the heading.
+- `sections` — an array of `{ heading, items }` objects rendered in order.
+
+Edit those values and redeploy.
+
+```js src/components/Now.js
+const updatedAt = 'May 2026';
+
+const sections = [
+    {
+        heading: 'Working on',
+        items: [
+            'Shipping AI-assisted editing features at Mintlify.',
+            'Writing a short essay series on what one year of agent-driven dev tooling actually changed.',
+        ],
+    },
+    {
+        heading: 'Learning',
+        items: [
+            'Reading Designing Data-Intensive Applications, again, this time slower.',
+            'Picking up enough Rust to be useful in a code review.',
+        ],
+    },
+    {
+        heading: 'Outside of work',
+        items: [
+            'Training for a half marathon in the fall.',
+            'Slowly fixing up a 1973 Vespa.',
+        ],
+    },
+];
+```
+
+<Tip>
+Bump `updatedAt` whenever you edit the items, even for small changes. The timestamp is the main signal that the page is still current.
+</Tip>
+
+### Adding or renaming sections
+
+To add a section, append a new `{ heading, items }` object to `sections`. To rename one, change the `heading` string — the React `key` is derived from it, so avoid duplicate headings.
+
+### Item guidelines
+
+- Write items as full sentences, in first person, the way you'd say them out loud.
+- Keep each item to one line where possible so the page stays scannable.
+- Aim for two to four items per section. If a section grows past that, prune the oldest items instead of letting it sprawl.
+
+## Styling
+
+Layout and typography live in `src/components/now.css`. The page uses a 720-pixel max-width column and the system font stack. Adjust colors and spacing there if you restyle the rest of the site — there are no shared layout primitives to worry about.
+
+## When to update
+
+Refresh the page roughly every one to three months, or whenever a section becomes stale enough that you'd correct someone reading it out loud. The point of a /now page is honesty about the present, not exhaustive history — old items belong in a blog post or timeline entry, not here.
