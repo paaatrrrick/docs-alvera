@@ -29,6 +29,7 @@
               {
                 "group": "Personal website",
                 "pages": [
+                  "personal-website-overview",
                   "work-experience",
                   "game-of-thrones",
                   "latest-email"
