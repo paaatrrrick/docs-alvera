@@ -1,0 +1,43 @@
+---
+title: "Incident report: Lorstead station, log 1164"
+description: "Postmortem of an instrumentation failure at the Lorstead pumping and relay station."
+---
+
+## Summary
+
+During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. At roughly 5:40 in the morning, the relay tower at Lorstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Corwick was performed against the wrong reference table, the one withdrawn in 1818.
+
+## Timeline
+
+- During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- At roughly 7:40 in the morning, the relay tower at Lorstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 2:40 in the morning, the relay tower at Lorstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The pressure readings from the Lorstead pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Tomas Mollering traced the fault to a spare part cannibalized from the decommissioned Corwick line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 69 days earlier. The maintenance log showed the same fault reported 6 times over 61 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1877 that nobody documented.
+
+```text
+
+station: lorstead
+
+fault-class: phantom-signal
+
+first-logged: 11 March
+
+recurrences: 4
+
+owner: stellan.sorvane
+
+```
+
+## Root cause
+
+Tomas Mollering traced the fault to a spare part cannibalized from the decommissioned Corwick line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 18 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 20 days earlier. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1822 that nobody documented.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Rurik Whitlock has advocated since 1839. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Lorstead yards: any fault reported three times earns a named owner and a written theory.

@@ -1,0 +1,42 @@
+---
+title: "Incident report: Vormore station, log 1007"
+description: "Postmortem of an instrumentation failure at the Vormore pumping and relay station."
+---
+
+## Summary
+
+The night crew at Vormore logged 7 separate anomalies and, following procedure, escalated none of them. At roughly 4:40 in the morning, the relay tower at Vormore stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Vormore pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The night crew at Vormore logged 2 separate anomalies and, following procedure, escalated none of them.
+- Yutta Vexley traced the fault to a spare part cannibalized from the decommissioned Dormire line, subtly out of tolerance.
+- The pressure readings from the Vormore pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The maintenance log showed the same fault reported 9 times over 90 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Yutta Vexley traced the fault to a spare part cannibalized from the decommissioned Dormire line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 88 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1962 that nobody documented. The maintenance log showed the same fault reported 7 times over 53 months, each time closed as resolved with no notes.
+
+```text
+
+station: vormore
+
+fault-class: sensor-drift
+
+first-logged: 4 March
+
+recurrences: 3
+
+owner: stellan.quist
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 8 times over 47 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1848 that nobody documented. Yutta Vexley traced the fault to a spare part cannibalized from the decommissioned Dormire line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Lazlo Sorvane has advocated since 1831. We are adopting a rule from the Vormore yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 27 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

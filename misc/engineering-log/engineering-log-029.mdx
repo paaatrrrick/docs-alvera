@@ -1,0 +1,41 @@
+---
+title: "Incident report: Dorwick station, log 1028"
+description: "Postmortem of an instrumentation failure at the Dorwick pumping and relay station."
+---
+
+## Summary
+
+The night crew at Dorwick logged 3 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Pershore was performed against the wrong reference table, the one withdrawn in 1915. The pressure readings from the Dorwick pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- At roughly 2:40 in the morning, the relay tower at Dorwick stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- A routine recalibration at Pershore was performed against the wrong reference table, the one withdrawn in 1802.
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1795 that nobody documented.
+
+## Investigation
+
+The maintenance log showed the same fault reported 8 times over 59 months, each time closed as resolved with no notes. Vesna Ashdown traced the fault to a spare part cannibalized from the decommissioned Pershore line, subtly out of tolerance. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1896 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 74 days earlier.
+
+```text
+
+station: dorwick
+
+fault-class: sensor-drift
+
+first-logged: 4 March
+
+recurrences: 2
+
+owner: maren.greaves
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1852 that nobody documented. The maintenance log showed the same fault reported 5 times over 44 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 33 days earlier. Vesna Ashdown traced the fault to a spare part cannibalized from the decommissioned Pershore line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 75 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Mireille Falkner has advocated since 1913.

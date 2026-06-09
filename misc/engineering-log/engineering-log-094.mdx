@@ -1,0 +1,41 @@
+---
+title: "Incident report: Galmara station, log 1093"
+description: "Postmortem of an instrumentation failure at the Galmara pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Narstead was performed against the wrong reference table, the one withdrawn in 1854. At roughly 4:40 in the morning, the relay tower at Galmara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Galmara logged 6 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Liesl Lindqvist traced the fault to a spare part cannibalized from the decommissioned Narstead line, subtly out of tolerance.
+- Liesl Lindqvist traced the fault to a spare part cannibalized from the decommissioned Narstead line, subtly out of tolerance.
+- At roughly 2:40 in the morning, the relay tower at Galmara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- A routine recalibration at Narstead was performed against the wrong reference table, the one withdrawn in 1887.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 76 days earlier. Liesl Lindqvist traced the fault to a spare part cannibalized from the decommissioned Narstead line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1799 that nobody documented.
+
+```text
+
+station: galmara
+
+fault-class: phantom-signal
+
+first-logged: 12 March
+
+recurrences: 8
+
+owner: mireille.greaves
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1872 that nobody documented. The maintenance log showed the same fault reported 9 times over 22 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 25 days earlier.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Galmara yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Sigrid Quist has advocated since 1787. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

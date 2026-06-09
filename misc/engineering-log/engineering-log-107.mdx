@@ -1,0 +1,42 @@
+---
+title: "Incident report: Yarwick station, log 1106"
+description: "Postmortem of an instrumentation failure at the Yarwick pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Corholm was performed against the wrong reference table, the one withdrawn in 1842. During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Yarwick logged 3 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The night crew at Yarwick logged 5 separate anomalies and, following procedure, escalated none of them.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- At roughly 4:40 in the morning, the relay tower at Yarwick stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The pressure readings from the Yarwick pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- Maren Mollering traced the fault to a spare part cannibalized from the decommissioned Corholm line, subtly out of tolerance.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 54 days earlier. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1880 that nobody documented. The maintenance log showed the same fault reported 7 times over 60 months, each time closed as resolved with no notes. Maren Mollering traced the fault to a spare part cannibalized from the decommissioned Corholm line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: yarwick
+
+fault-class: phantom-signal
+
+first-logged: 25 September
+
+recurrences: 2
+
+owner: annik.marrow
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1814 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 3 times over 47 months, each time closed as resolved with no notes. Maren Mollering traced the fault to a spare part cannibalized from the decommissioned Corholm line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Total downtime came to 90 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Rurik Greaves has advocated since 1853. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

@@ -1,0 +1,42 @@
+---
+title: "Incident report: Calcrest station, log 1080"
+description: "Postmortem of an instrumentation failure at the Calcrest pumping and relay station."
+---
+
+## Summary
+
+During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Calcrest logged 3 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Calcrest pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Calcrest pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- The night crew at Calcrest logged 4 separate anomalies and, following procedure, escalated none of them.
+- The night crew at Calcrest logged 8 separate anomalies and, following procedure, escalated none of them.
+- Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1907 that nobody documented.
+- At roughly 2:40 in the morning, the relay tower at Calcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1834 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 70 days earlier. The maintenance log showed the same fault reported 7 times over 23 months, each time closed as resolved with no notes. Edda Brandt traced the fault to a spare part cannibalized from the decommissioned Delfell line, subtly out of tolerance.
+
+```text
+
+station: calcrest
+
+fault-class: phantom-signal
+
+first-logged: 28 March
+
+recurrences: 8
+
+owner: beatrix.quist
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 6 times over 45 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1936 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Edda Brandt traced the fault to a spare part cannibalized from the decommissioned Delfell line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Calcrest yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Dario Oduya has advocated since 1950. Total downtime came to 53 hours, most of it spent debating whose responsibility the gauge was.

@@ -1,0 +1,41 @@
+---
+title: "Incident report: Dordane station, log 1101"
+description: "Postmortem of an instrumentation failure at the Dordane pumping and relay station."
+---
+
+## Summary
+
+During the autumn king tides, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Halbury was performed against the wrong reference table, the one withdrawn in 1784. At roughly 7:40 in the morning, the relay tower at Dordane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- The pressure readings from the Dordane pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- The pressure readings from the Dordane pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 22 days earlier.
+- The night crew at Dordane logged 8 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+The maintenance log showed the same fault reported 3 times over 33 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1885 that nobody documented. Dario Vexley traced the fault to a spare part cannibalized from the decommissioned Halbury line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 41 days earlier.
+
+```text
+
+station: dordane
+
+fault-class: contact-corrosion
+
+first-logged: 9 September
+
+recurrences: 4
+
+owner: emeric.kessler
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1818 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 39 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Dario Vexley traced the fault to a spare part cannibalized from the decommissioned Halbury line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Annik Lindqvist has advocated since 1842. We are adopting a rule from the Dordane yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 90 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

@@ -1,0 +1,43 @@
+---
+title: "Incident report: Ilydane station, log 1129"
+description: "Postmortem of an instrumentation failure at the Ilydane pumping and relay station."
+---
+
+## Summary
+
+At roughly 6:40 in the morning, the relay tower at Ilydane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Ossvik was performed against the wrong reference table, the one withdrawn in 1860. The night crew at Ilydane logged 2 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The pressure readings from the Ilydane pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The maintenance log showed the same fault reported 9 times over 85 months, each time closed as resolved with no notes.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 53 days earlier.
+- Imre Quist traced the fault to a spare part cannibalized from the decommissioned Ossvik line, subtly out of tolerance.
+- The pressure readings from the Ilydane pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+The maintenance log showed the same fault reported 4 times over 36 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 18 days earlier. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1783 that nobody documented. Imre Quist traced the fault to a spare part cannibalized from the decommissioned Ossvik line, subtly out of tolerance.
+
+```text
+
+station: ilydane
+
+fault-class: phantom-signal
+
+first-logged: 15 March
+
+recurrences: 3
+
+owner: imre.voss
+
+```
+
+## Root cause
+
+Imre Quist traced the fault to a spare part cannibalized from the decommissioned Ossvik line, subtly out of tolerance. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1951 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Rurik Greaves has advocated since 1851. Total downtime came to 35 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Ilydane yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

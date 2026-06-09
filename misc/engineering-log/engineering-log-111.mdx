@@ -1,0 +1,42 @@
+---
+title: "Incident report: Dormire station, log 1110"
+description: "Postmortem of an instrumentation failure at the Dormire pumping and relay station."
+---
+
+## Summary
+
+At roughly 8:40 in the morning, the relay tower at Dormire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Dormire pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Dormire pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The maintenance log showed the same fault reported 7 times over 29 months, each time closed as resolved with no notes.
+- The maintenance log showed the same fault reported 5 times over 40 months, each time closed as resolved with no notes.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 69 days earlier.
+
+## Investigation
+
+The maintenance log showed the same fault reported 5 times over 65 months, each time closed as resolved with no notes. Yutta Whitlock traced the fault to a spare part cannibalized from the decommissioned Jordane line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 24 days earlier. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1800 that nobody documented.
+
+```text
+
+station: dormire
+
+fault-class: sensor-drift
+
+first-logged: 18 November
+
+recurrences: 5
+
+owner: lazlo.oduya
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 61 days earlier. Yutta Whitlock traced the fault to a spare part cannibalized from the decommissioned Jordane line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1806 that nobody documented.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Tilda Oduya has advocated since 1877. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 38 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Dormire yards: any fault reported three times earns a named owner and a written theory.

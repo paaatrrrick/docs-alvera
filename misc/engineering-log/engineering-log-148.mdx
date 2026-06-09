@@ -1,0 +1,41 @@
+---
+title: "Incident report: Quilford station, log 1147"
+description: "Postmortem of an instrumentation failure at the Quilford pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Brendane was performed against the wrong reference table, the one withdrawn in 1841. The night crew at Quilford logged 3 separate anomalies and, following procedure, escalated none of them. At roughly 4:40 in the morning, the relay tower at Quilford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 3:40 in the morning, the relay tower at Quilford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 7:40 in the morning, the relay tower at Quilford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The maintenance log showed the same fault reported 6 times over 61 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1835 that nobody documented. The maintenance log showed the same fault reported 5 times over 31 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 53 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: quilford
+
+fault-class: phantom-signal
+
+first-logged: 10 June
+
+recurrences: 3
+
+owner: tomas.lindqvist
+
+```
+
+## Root cause
+
+Annik Whitlock traced the fault to a spare part cannibalized from the decommissioned Brendane line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 52 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 20 days earlier.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Vesna Voss has advocated since 1858. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Quilford yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 78 hours, most of it spent debating whose responsibility the gauge was.

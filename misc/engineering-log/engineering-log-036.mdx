@@ -1,0 +1,42 @@
+---
+title: "Incident report: Corwick station, log 1035"
+description: "Postmortem of an instrumentation failure at the Corwick pumping and relay station."
+---
+
+## Summary
+
+During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. At roughly 4:40 in the morning, the relay tower at Corwick stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Corwick logged 5 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Tomas Voss traced the fault to a spare part cannibalized from the decommissioned Correach line, subtly out of tolerance.
+- The night crew at Corwick logged 4 separate anomalies and, following procedure, escalated none of them.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- At roughly 9:40 in the morning, the relay tower at Corwick stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Tomas Voss traced the fault to a spare part cannibalized from the decommissioned Correach line, subtly out of tolerance.
+
+## Investigation
+
+The maintenance log showed the same fault reported 3 times over 50 months, each time closed as resolved with no notes. Tomas Voss traced the fault to a spare part cannibalized from the decommissioned Correach line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 57 days earlier.
+
+```text
+
+station: corwick
+
+fault-class: sensor-drift
+
+first-logged: 7 November
+
+recurrences: 7
+
+owner: imre.falkner
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 87 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 5 times over 57 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1810 that nobody documented.
+
+## Lessons and follow-up
+
+Total downtime came to 86 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Halvard Oduya has advocated since 1832. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Corwick yards: any fault reported three times earns a named owner and a written theory.

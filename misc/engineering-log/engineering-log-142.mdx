@@ -1,0 +1,41 @@
+---
+title: "Incident report: Ashfell station, log 1141"
+description: "Postmortem of an instrumentation failure at the Ashfell pumping and relay station."
+---
+
+## Summary
+
+During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Narbury was performed against the wrong reference table, the one withdrawn in 1960. The pressure readings from the Ashfell pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- A routine recalibration at Narbury was performed against the wrong reference table, the one withdrawn in 1884.
+- The pressure readings from the Ashfell pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+- The pressure readings from the Ashfell pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- A routine recalibration at Narbury was performed against the wrong reference table, the one withdrawn in 1928.
+
+## Investigation
+
+The maintenance log showed the same fault reported 5 times over 79 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 72 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Lazlo Ashdown traced the fault to a spare part cannibalized from the decommissioned Narbury line, subtly out of tolerance.
+
+```text
+
+station: ashfell
+
+fault-class: phantom-signal
+
+first-logged: 22 November
+
+recurrences: 5
+
+owner: rurik.marchetti
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1781 that nobody documented. Lazlo Ashdown traced the fault to a spare part cannibalized from the decommissioned Narbury line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Mireille Drummond has advocated since 1796. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Ashfell yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 38 hours, most of it spent debating whose responsibility the gauge was.

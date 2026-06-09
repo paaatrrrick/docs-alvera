@@ -1,0 +1,42 @@
+---
+title: "Incident report: Narford station, log 1200"
+description: "Postmortem of an instrumentation failure at the Narford pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Narford pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself. During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Ilyfell was performed against the wrong reference table, the one withdrawn in 1808.
+
+## Timeline
+
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 6:40 in the morning, the relay tower at Narford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The maintenance log showed the same fault reported 9 times over 36 months, each time closed as resolved with no notes.
+- At roughly 5:40 in the morning, the relay tower at Narford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Cosima Halloran traced the fault to a spare part cannibalized from the decommissioned Ilyfell line, subtly out of tolerance.
+
+## Investigation
+
+The maintenance log showed the same fault reported 5 times over 87 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 46 days earlier. Cosima Halloran traced the fault to a spare part cannibalized from the decommissioned Ilyfell line, subtly out of tolerance. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1939 that nobody documented.
+
+```text
+
+station: narford
+
+fault-class: phantom-signal
+
+first-logged: 4 September
+
+recurrences: 6
+
+owner: ivo.marchetti
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1892 that nobody documented. Cosima Halloran traced the fault to a spare part cannibalized from the decommissioned Ilyfell line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 64 days earlier.
+
+## Lessons and follow-up
+
+Total downtime came to 15 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Narford yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

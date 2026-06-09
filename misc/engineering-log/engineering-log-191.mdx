@@ -1,0 +1,43 @@
+---
+title: "Incident report: Ossstead station, log 1190"
+description: "Postmortem of an instrumentation failure at the Ossstead pumping and relay station."
+---
+
+## Summary
+
+During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Eriford was performed against the wrong reference table, the one withdrawn in 1831. At roughly 5:40 in the morning, the relay tower at Ossstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Edda Mollering traced the fault to a spare part cannibalized from the decommissioned Eriford line, subtly out of tolerance.
+- Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1825 that nobody documented.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 87 days earlier.
+- A routine recalibration at Eriford was performed against the wrong reference table, the one withdrawn in 1898.
+- Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1912 that nobody documented.
+- The pressure readings from the Ossstead pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1848 that nobody documented. The maintenance log showed the same fault reported 2 times over 48 months, each time closed as resolved with no notes. Edda Mollering traced the fault to a spare part cannibalized from the decommissioned Eriford line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: ossstead
+
+fault-class: contact-corrosion
+
+first-logged: 10 June
+
+recurrences: 4
+
+owner: rurik.holloway
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 55 days earlier. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1923 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 6 times over 41 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Ossstead yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 43 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Halvard Sorvane has advocated since 1831. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

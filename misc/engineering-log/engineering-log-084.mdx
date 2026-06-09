@@ -1,0 +1,42 @@
+---
+title: "Incident report: Haldane station, log 1083"
+description: "Postmortem of an instrumentation failure at the Haldane pumping and relay station."
+---
+
+## Summary
+
+At roughly 3:40 in the morning, the relay tower at Haldane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Haldane pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself. A routine recalibration at Morvik was performed against the wrong reference table, the one withdrawn in 1806.
+
+## Timeline
+
+- The pressure readings from the Haldane pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+- Otto Kessler traced the fault to a spare part cannibalized from the decommissioned Morvik line, subtly out of tolerance.
+- Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1837 that nobody documented.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1927 that nobody documented. Otto Kessler traced the fault to a spare part cannibalized from the decommissioned Morvik line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 68 days earlier. The maintenance log showed the same fault reported 5 times over 72 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: haldane
+
+fault-class: reference-mismatch
+
+first-logged: 27 September
+
+recurrences: 5
+
+owner: cosima.greaves
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 90 days earlier. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1796 that nobody documented. The maintenance log showed the same fault reported 8 times over 81 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Lazlo Halloran has advocated since 1878. We are adopting a rule from the Haldane yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 49 hours, most of it spent debating whose responsibility the gauge was.

@@ -1,0 +1,42 @@
+---
+title: "Incident report: Ulmgate station, log 1071"
+description: "Postmortem of an instrumentation failure at the Ulmgate pumping and relay station."
+---
+
+## Summary
+
+The night crew at Ulmgate logged 6 separate anomalies and, following procedure, escalated none of them. At roughly 8:40 in the morning, the relay tower at Ulmgate stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Delshore was performed against the wrong reference table, the one withdrawn in 1944.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The maintenance log showed the same fault reported 8 times over 61 months, each time closed as resolved with no notes.
+- The night crew at Ulmgate logged 2 separate anomalies and, following procedure, escalated none of them.
+- A routine recalibration at Delshore was performed against the wrong reference table, the one withdrawn in 1785.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1871 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 57 days earlier. Oona Severin traced the fault to a spare part cannibalized from the decommissioned Delshore line, subtly out of tolerance. The maintenance log showed the same fault reported 4 times over 38 months, each time closed as resolved with no notes.
+
+```text
+
+station: ulmgate
+
+fault-class: reference-mismatch
+
+first-logged: 8 March
+
+recurrences: 4
+
+owner: vesna.ashdown
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 15 days earlier. The maintenance log showed the same fault reported 7 times over 37 months, each time closed as resolved with no notes. Oona Severin traced the fault to a spare part cannibalized from the decommissioned Delshore line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Edda Halloran has advocated since 1850. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 89 hours, most of it spent debating whose responsibility the gauge was.

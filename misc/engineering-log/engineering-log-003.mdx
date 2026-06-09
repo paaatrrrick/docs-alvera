@@ -1,0 +1,42 @@
+---
+title: "Incident report: Dorbury station, log 1002"
+description: "Postmortem of an instrumentation failure at the Dorbury pumping and relay station."
+---
+
+## Summary
+
+The night crew at Dorbury logged 9 separate anomalies and, following procedure, escalated none of them. At roughly 9:40 in the morning, the relay tower at Dorbury stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1960 that nobody documented.
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- A routine recalibration at Ashcrest was performed against the wrong reference table, the one withdrawn in 1879.
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1937 that nobody documented.
+
+## Investigation
+
+Sanna Brandt traced the fault to a spare part cannibalized from the decommissioned Ashcrest line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1920 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 73 days earlier. The maintenance log showed the same fault reported 7 times over 33 months, each time closed as resolved with no notes.
+
+```text
+
+station: dorbury
+
+fault-class: reference-mismatch
+
+first-logged: 20 June
+
+recurrences: 7
+
+owner: mireille.quist
+
+```
+
+## Root cause
+
+Sanna Brandt traced the fault to a spare part cannibalized from the decommissioned Ashcrest line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 74 days earlier. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1829 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Total downtime came to 22 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Anselm Halloran has advocated since 1941. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Dorbury yards: any fault reported three times earns a named owner and a written theory.

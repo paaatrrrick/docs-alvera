@@ -1,0 +1,43 @@
+---
+title: "Incident report: Wrenfell station, log 1020"
+description: "Postmortem of an instrumentation failure at the Wrenfell pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Kelton was performed against the wrong reference table, the one withdrawn in 1813. At roughly 9:40 in the morning, the relay tower at Wrenfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During the autumn king tides, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- Edda Brandt traced the fault to a spare part cannibalized from the decommissioned Kelton line, subtly out of tolerance.
+- The pressure readings from the Wrenfell pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 3 times over 53 months, each time closed as resolved with no notes.
+- The pressure readings from the Wrenfell pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- At roughly 5:40 in the morning, the relay tower at Wrenfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Edda Brandt traced the fault to a spare part cannibalized from the decommissioned Kelton line, subtly out of tolerance.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1932 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 65 days earlier. Edda Brandt traced the fault to a spare part cannibalized from the decommissioned Kelton line, subtly out of tolerance. The maintenance log showed the same fault reported 2 times over 29 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: wrenfell
+
+fault-class: sensor-drift
+
+first-logged: 19 June
+
+recurrences: 9
+
+owner: mireille.brandt
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1959 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Edda Brandt traced the fault to a spare part cannibalized from the decommissioned Kelton line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 33 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Sanna Voss has advocated since 1831. We are adopting a rule from the Wrenfell yards: any fault reported three times earns a named owner and a written theory.

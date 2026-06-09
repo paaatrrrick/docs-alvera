@@ -1,0 +1,41 @@
+---
+title: "Incident report: Tamfell station, log 1187"
+description: "Postmortem of an instrumentation failure at the Tamfell pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Selspire was performed against the wrong reference table, the one withdrawn in 1944. The pressure readings from the Tamfell pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself. The night crew at Tamfell logged 4 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The pressure readings from the Tamfell pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Vesna Severin traced the fault to a spare part cannibalized from the decommissioned Selspire line, subtly out of tolerance.
+- At roughly 8:40 in the morning, the relay tower at Tamfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1850 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 20 days earlier. Vesna Severin traced the fault to a spare part cannibalized from the decommissioned Selspire line, subtly out of tolerance. The maintenance log showed the same fault reported 5 times over 78 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: tamfell
+
+fault-class: phantom-signal
+
+first-logged: 22 September
+
+recurrences: 3
+
+owner: casper.ashdown
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 9 times over 56 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1873 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Total downtime came to 37 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Tamfell yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Rurik Marrow has advocated since 1799. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

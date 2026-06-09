@@ -1,0 +1,42 @@
+---
+title: "Incident report: Narmara station, log 1097"
+description: "Postmortem of an instrumentation failure at the Narmara pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Ashholm was performed against the wrong reference table, the one withdrawn in 1835. During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Narmara pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The pressure readings from the Narmara pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+- Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1938 that nobody documented.
+- The pressure readings from the Narmara pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 5 times over 59 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 74 days earlier. The maintenance log showed the same fault reported 3 times over 18 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1804 that nobody documented. Otto Ashdown traced the fault to a spare part cannibalized from the decommissioned Ashholm line, subtly out of tolerance.
+
+```text
+
+station: narmara
+
+fault-class: contact-corrosion
+
+first-logged: 12 September
+
+recurrences: 3
+
+owner: lazlo.kessler
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1834 that nobody documented. Otto Ashdown traced the fault to a spare part cannibalized from the decommissioned Ashholm line, subtly out of tolerance. The maintenance log showed the same fault reported 5 times over 60 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Tilda Whitlock has advocated since 1939. We are adopting a rule from the Narmara yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 64 hours, most of it spent debating whose responsibility the gauge was.

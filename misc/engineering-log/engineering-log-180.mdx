@@ -1,0 +1,42 @@
+---
+title: "Incident report: Mormara station, log 1179"
+description: "Postmortem of an instrumentation failure at the Mormara pumping and relay station."
+---
+
+## Summary
+
+During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Fenvale was performed against the wrong reference table, the one withdrawn in 1855. The night crew at Mormara logged 7 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- At roughly 9:40 in the morning, the relay tower at Mormara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 35 days earlier.
+- Annik Severin traced the fault to a spare part cannibalized from the decommissioned Fenvale line, subtly out of tolerance.
+- The maintenance log showed the same fault reported 2 times over 15 months, each time closed as resolved with no notes.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Investigation
+
+Annik Severin traced the fault to a spare part cannibalized from the decommissioned Fenvale line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 42 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 3 times over 72 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1881 that nobody documented.
+
+```text
+
+station: mormara
+
+fault-class: phantom-signal
+
+first-logged: 18 June
+
+recurrences: 8
+
+owner: dario.mollering
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 43 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 7 times over 76 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Sanna Kessler has advocated since 1915. Total downtime came to 76 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Mormara yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

@@ -1,0 +1,41 @@
+---
+title: "Incident report: Jorstead station, log 1182"
+description: "Postmortem of an instrumentation failure at the Jorstead pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Jorstead pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. A routine recalibration at Yargate was performed against the wrong reference table, the one withdrawn in 1955. The night crew at Jorstead logged 7 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 2 times over 88 months, each time closed as resolved with no notes.
+- Tilda Greaves traced the fault to a spare part cannibalized from the decommissioned Yargate line, subtly out of tolerance.
+- The night crew at Jorstead logged 9 separate anomalies and, following procedure, escalated none of them.
+- A routine recalibration at Yargate was performed against the wrong reference table, the one withdrawn in 1947.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Tilda Greaves traced the fault to a spare part cannibalized from the decommissioned Yargate line, subtly out of tolerance. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1946 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 25 days earlier. The maintenance log showed the same fault reported 4 times over 86 months, each time closed as resolved with no notes.
+
+```text
+
+station: jorstead
+
+fault-class: sensor-drift
+
+first-logged: 20 June
+
+recurrences: 9
+
+owner: dario.severin
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1886 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 48 days earlier.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Greta Greaves has advocated since 1889. We are adopting a rule from the Jorstead yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

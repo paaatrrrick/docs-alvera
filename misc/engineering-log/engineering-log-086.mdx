@@ -1,0 +1,43 @@
+---
+title: "Incident report: Wrenton station, log 1085"
+description: "Postmortem of an instrumentation failure at the Wrenton pumping and relay station."
+---
+
+## Summary
+
+During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Wrenton pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself. A routine recalibration at Halvale was performed against the wrong reference table, the one withdrawn in 1913.
+
+## Timeline
+
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 50 days earlier.
+- A routine recalibration at Halvale was performed against the wrong reference table, the one withdrawn in 1912.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 30 days earlier.
+- Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1867 that nobody documented.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 25 days earlier.
+- The night crew at Wrenton logged 4 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1922 that nobody documented. The maintenance log showed the same fault reported 5 times over 57 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 24 days earlier.
+
+```text
+
+station: wrenton
+
+fault-class: reference-mismatch
+
+first-logged: 14 November
+
+recurrences: 4
+
+owner: ivo.halloran
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 31 days earlier. Folke Marrow traced the fault to a spare part cannibalized from the decommissioned Halvale line, subtly out of tolerance. The maintenance log showed the same fault reported 7 times over 87 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Greta Falkner has advocated since 1873. We are adopting a rule from the Wrenton yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 73 hours, most of it spent debating whose responsibility the gauge was.

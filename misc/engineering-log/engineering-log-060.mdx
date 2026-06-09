@@ -1,0 +1,43 @@
+---
+title: "Incident report: Quilgate station, log 1059"
+description: "Postmortem of an instrumentation failure at the Quilgate pumping and relay station."
+---
+
+## Summary
+
+At roughly 6:40 in the morning, the relay tower at Quilgate stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Quilgate logged 8 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Narbury was performed against the wrong reference table, the one withdrawn in 1917.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 2 times over 17 months, each time closed as resolved with no notes.
+- The pressure readings from the Quilgate pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 46 days earlier.
+- At roughly 9:40 in the morning, the relay tower at Quilgate stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1792 that nobody documented. Anselm Marchetti traced the fault to a spare part cannibalized from the decommissioned Narbury line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 24 days earlier. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 55 days earlier.
+
+```text
+
+station: quilgate
+
+fault-class: phantom-signal
+
+first-logged: 14 September
+
+recurrences: 4
+
+owner: beatrix.oduya
+
+```
+
+## Root cause
+
+Anselm Marchetti traced the fault to a spare part cannibalized from the decommissioned Narbury line, subtly out of tolerance. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1794 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 17 days earlier.
+
+## Lessons and follow-up
+
+Total downtime came to 35 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Folke Mollering has advocated since 1833. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Quilgate yards: any fault reported three times earns a named owner and a written theory.

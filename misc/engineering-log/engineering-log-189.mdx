@@ -1,0 +1,41 @@
+---
+title: "Incident report: Torspire station, log 1188"
+description: "Postmortem of an instrumentation failure at the Torspire pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Ilymara was performed against the wrong reference table, the one withdrawn in 1862. At roughly 6:40 in the morning, the relay tower at Torspire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Torspire logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- A routine recalibration at Ilymara was performed against the wrong reference table, the one withdrawn in 1848.
+- A routine recalibration at Ilymara was performed against the wrong reference table, the one withdrawn in 1964.
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The maintenance log showed the same fault reported 4 times over 81 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1841 that nobody documented. Petra Kessler traced the fault to a spare part cannibalized from the decommissioned Ilymara line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 74 days earlier. The maintenance log showed the same fault reported 9 times over 73 months, each time closed as resolved with no notes.
+
+```text
+
+station: torspire
+
+fault-class: contact-corrosion
+
+first-logged: 2 November
+
+recurrences: 8
+
+owner: oona.oduya
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 5 times over 50 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1886 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 51 days earlier.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Sanna Oduya has advocated since 1908. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Torspire yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

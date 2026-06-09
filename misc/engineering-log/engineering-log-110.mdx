@@ -1,0 +1,43 @@
+---
+title: "Incident report: Dorhollow station, log 1109"
+description: "Postmortem of an instrumentation failure at the Dorhollow pumping and relay station."
+---
+
+## Summary
+
+At roughly 8:40 in the morning, the relay tower at Dorhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Galdane was performed against the wrong reference table, the one withdrawn in 1813. The pressure readings from the Dorhollow pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 15 days earlier.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1832 that nobody documented.
+- A routine recalibration at Galdane was performed against the wrong reference table, the one withdrawn in 1932.
+- At roughly 8:40 in the morning, the relay tower at Dorhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 3:40 in the morning, the relay tower at Dorhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 24 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 8 times over 34 months, each time closed as resolved with no notes. Tomas Quist traced the fault to a spare part cannibalized from the decommissioned Galdane line, subtly out of tolerance. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1818 that nobody documented.
+
+```text
+
+station: dorhollow
+
+fault-class: sensor-drift
+
+first-logged: 7 June
+
+recurrences: 7
+
+owner: annik.vexley
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 2 times over 12 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1854 that nobody documented. Tomas Quist traced the fault to a spare part cannibalized from the decommissioned Galdane line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 51 days earlier.
+
+## Lessons and follow-up
+
+Total downtime came to 20 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Dorhollow yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Tilda Kessler has advocated since 1871.

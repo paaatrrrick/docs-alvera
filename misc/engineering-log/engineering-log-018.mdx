@@ -1,0 +1,41 @@
+---
+title: "Incident report: Eristead station, log 1017"
+description: "Postmortem of an instrumentation failure at the Eristead pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Lorford was performed against the wrong reference table, the one withdrawn in 1811. At roughly 4:40 in the morning, the relay tower at Eristead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 2 times over 75 months, each time closed as resolved with no notes.
+- The maintenance log showed the same fault reported 4 times over 45 months, each time closed as resolved with no notes.
+- Mireille Vexley traced the fault to a spare part cannibalized from the decommissioned Lorford line, subtly out of tolerance.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Investigation
+
+Mireille Vexley traced the fault to a spare part cannibalized from the decommissioned Lorford line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 56 days earlier. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1861 that nobody documented.
+
+```text
+
+station: eristead
+
+fault-class: reference-mismatch
+
+first-logged: 16 September
+
+recurrences: 8
+
+owner: oona.halloran
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 6 times over 16 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 18 days earlier.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Eristead yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 51 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Stellan Greaves has advocated since 1902. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

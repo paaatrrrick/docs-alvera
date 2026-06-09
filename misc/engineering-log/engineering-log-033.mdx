@@ -1,0 +1,43 @@
+---
+title: "Incident report: Calholm station, log 1032"
+description: "Postmortem of an instrumentation failure at the Calholm pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Calholm pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself. At roughly 3:40 in the morning, the relay tower at Calholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Eriford was performed against the wrong reference table, the one withdrawn in 1927.
+
+## Timeline
+
+- The pressure readings from the Calholm pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The maintenance log showed the same fault reported 5 times over 82 months, each time closed as resolved with no notes.
+- The pressure readings from the Calholm pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+- A routine recalibration at Eriford was performed against the wrong reference table, the one withdrawn in 1942.
+- The night crew at Calholm logged 4 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 64 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Joren Voss traced the fault to a spare part cannibalized from the decommissioned Eriford line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 29 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1787 that nobody documented.
+
+```text
+
+station: calholm
+
+fault-class: contact-corrosion
+
+first-logged: 3 March
+
+recurrences: 6
+
+owner: edda.kessler
+
+```
+
+## Root cause
+
+Joren Voss traced the fault to a spare part cannibalized from the decommissioned Eriford line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1902 that nobody documented. The maintenance log showed the same fault reported 8 times over 23 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Calholm yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Annik Holloway has advocated since 1954.

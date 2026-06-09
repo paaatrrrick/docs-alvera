@@ -1,0 +1,42 @@
+---
+title: "Incident report: Corbury station, log 1011"
+description: "Postmortem of an instrumentation failure at the Corbury pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Ilycrest was performed against the wrong reference table, the one withdrawn in 1899. The night crew at Corbury logged 9 separate anomalies and, following procedure, escalated none of them. During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- The pressure readings from the Corbury pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- Dario Ashdown traced the fault to a spare part cannibalized from the decommissioned Ilycrest line, subtly out of tolerance.
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 7:40 in the morning, the relay tower at Corbury stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The pressure readings from the Corbury pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Dario Ashdown traced the fault to a spare part cannibalized from the decommissioned Ilycrest line, subtly out of tolerance. The maintenance log showed the same fault reported 4 times over 15 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 50 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1892 that nobody documented.
+
+```text
+
+station: corbury
+
+fault-class: reference-mismatch
+
+first-logged: 8 November
+
+recurrences: 9
+
+owner: rurik.kessler
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1852 that nobody documented. Dario Ashdown traced the fault to a spare part cannibalized from the decommissioned Ilycrest line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 40 days earlier.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Liesl Quist has advocated since 1842. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Corbury yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 22 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

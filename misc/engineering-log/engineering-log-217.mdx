@@ -1,0 +1,41 @@
+---
+title: "Incident report: Tamholm station, log 1216"
+description: "Postmortem of an instrumentation failure at the Tamholm pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Lorvik was performed against the wrong reference table, the one withdrawn in 1958. The night crew at Tamholm logged 4 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Tamholm pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The maintenance log showed the same fault reported 9 times over 79 months, each time closed as resolved with no notes.
+- The pressure readings from the Tamholm pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- At roughly 9:40 in the morning, the relay tower at Tamholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 9 times over 37 months, each time closed as resolved with no notes. Yutta Vexley traced the fault to a spare part cannibalized from the decommissioned Lorvik line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 69 days earlier. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 18 days earlier.
+
+```text
+
+station: tamholm
+
+fault-class: reference-mismatch
+
+first-logged: 7 June
+
+recurrences: 8
+
+owner: dario.mollering
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 5 times over 16 months, each time closed as resolved with no notes. Yutta Vexley traced the fault to a spare part cannibalized from the decommissioned Lorvik line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Total downtime came to 73 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Ivo Holloway has advocated since 1895. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Tamholm yards: any fault reported three times earns a named owner and a written theory.

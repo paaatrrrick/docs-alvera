@@ -1,0 +1,41 @@
+---
+title: "Incident report: Corvale station, log 1235"
+description: "Postmortem of an instrumentation failure at the Corvale pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Ossgate was performed against the wrong reference table, the one withdrawn in 1820. At roughly 8:40 in the morning, the relay tower at Corvale stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Corvale logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 84 days earlier.
+- At roughly 4:40 in the morning, the relay tower at Corvale stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1940 that nobody documented.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 74 days earlier. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1840 that nobody documented. The maintenance log showed the same fault reported 9 times over 82 months, each time closed as resolved with no notes. Anselm Sorvane traced the fault to a spare part cannibalized from the decommissioned Ossgate line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: corvale
+
+fault-class: reference-mismatch
+
+first-logged: 21 September
+
+recurrences: 9
+
+owner: liesl.marchetti
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1859 that nobody documented. The maintenance log showed the same fault reported 4 times over 73 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 49 days earlier.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Halvard Holloway has advocated since 1829. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Corvale yards: any fault reported three times earns a named owner and a written theory.

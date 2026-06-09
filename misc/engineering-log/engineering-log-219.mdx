@@ -1,0 +1,41 @@
+---
+title: "Incident report: Kelton station, log 1218"
+description: "Postmortem of an instrumentation failure at the Kelton pumping and relay station."
+---
+
+## Summary
+
+During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Kelton logged 8 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Kelton pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- At roughly 5:40 in the morning, the relay tower at Kelton stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- A routine recalibration at Erimire was performed against the wrong reference table, the one withdrawn in 1896.
+- During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Maren Severin traced the fault to a spare part cannibalized from the decommissioned Erimire line, subtly out of tolerance. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1936 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 82 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 7 times over 52 months, each time closed as resolved with no notes.
+
+```text
+
+station: kelton
+
+fault-class: reference-mismatch
+
+first-logged: 20 June
+
+recurrences: 2
+
+owner: imre.sorvane
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 6 times over 25 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1930 that nobody documented.
+
+## Lessons and follow-up
+
+Total downtime came to 45 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Mireille Holloway has advocated since 1934. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Kelton yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

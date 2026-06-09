@@ -1,0 +1,43 @@
+---
+title: "Incident report: Permara station, log 1004"
+description: "Postmortem of an instrumentation failure at the Permara pumping and relay station."
+---
+
+## Summary
+
+At roughly 2:40 in the morning, the relay tower at Permara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Permara logged 3 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Permara pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Permara pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 32 days earlier.
+- At roughly 6:40 in the morning, the relay tower at Permara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1786 that nobody documented.
+- A routine recalibration at Corfell was performed against the wrong reference table, the one withdrawn in 1922.
+
+## Investigation
+
+Cosima Marchetti traced the fault to a spare part cannibalized from the decommissioned Corfell line, subtly out of tolerance. The maintenance log showed the same fault reported 5 times over 55 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 21 days earlier. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1947 that nobody documented.
+
+```text
+
+station: permara
+
+fault-class: phantom-signal
+
+first-logged: 4 November
+
+recurrences: 4
+
+owner: sigrid.halloran
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 79 days earlier. The maintenance log showed the same fault reported 5 times over 51 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1881 that nobody documented. Cosima Marchetti traced the fault to a spare part cannibalized from the decommissioned Corfell line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Permara yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 89 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Petra Lindqvist has advocated since 1799.

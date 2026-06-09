@@ -1,0 +1,41 @@
+---
+title: "Incident report: Quilspire station, log 1220"
+description: "Postmortem of an instrumentation failure at the Quilspire pumping and relay station."
+---
+
+## Summary
+
+During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Marhollow was performed against the wrong reference table, the one withdrawn in 1797. The night crew at Quilspire logged 3 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 2 times over 61 months, each time closed as resolved with no notes.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- At roughly 6:40 in the morning, the relay tower at Quilspire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Quilspire logged 3 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 83 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 2 times over 82 months, each time closed as resolved with no notes. Oona Marchetti traced the fault to a spare part cannibalized from the decommissioned Marhollow line, subtly out of tolerance.
+
+```text
+
+station: quilspire
+
+fault-class: sensor-drift
+
+first-logged: 12 March
+
+recurrences: 2
+
+owner: sanna.quist
+
+```
+
+## Root cause
+
+Oona Marchetti traced the fault to a spare part cannibalized from the decommissioned Marhollow line, subtly out of tolerance. The maintenance log showed the same fault reported 4 times over 19 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 13 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Ivo Whitlock has advocated since 1850. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Quilspire yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

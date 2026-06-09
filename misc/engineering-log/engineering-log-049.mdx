@@ -1,0 +1,41 @@
+---
+title: "Incident report: Halrun station, log 1048"
+description: "Postmortem of an instrumentation failure at the Halrun pumping and relay station."
+---
+
+## Summary
+
+The night crew at Halrun logged 2 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Ulmvik was performed against the wrong reference table, the one withdrawn in 1819. At roughly 4:40 in the morning, the relay tower at Halrun stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- The pressure readings from the Halrun pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- The night crew at Halrun logged 9 separate anomalies and, following procedure, escalated none of them.
+- Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1846 that nobody documented.
+- Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1875 that nobody documented.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1887 that nobody documented. The maintenance log showed the same fault reported 6 times over 67 months, each time closed as resolved with no notes. Ivo Petrov traced the fault to a spare part cannibalized from the decommissioned Ulmvik line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: halrun
+
+fault-class: contact-corrosion
+
+first-logged: 4 March
+
+recurrences: 5
+
+owner: yutta.whitlock
+
+```
+
+## Root cause
+
+Ivo Petrov traced the fault to a spare part cannibalized from the decommissioned Ulmvik line, subtly out of tolerance. The maintenance log showed the same fault reported 4 times over 43 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 20 days earlier.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Halrun yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Imre Sorvane has advocated since 1910. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 28 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

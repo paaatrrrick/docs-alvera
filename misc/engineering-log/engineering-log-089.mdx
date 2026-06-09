@@ -1,0 +1,43 @@
+---
+title: "Incident report: Morhollow station, log 1088"
+description: "Postmortem of an instrumentation failure at the Morhollow pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Morhollow pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself. A routine recalibration at Ilyfell was performed against the wrong reference table, the one withdrawn in 1907. During the autumn king tides, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- At roughly 6:40 in the morning, the relay tower at Morhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 9:40 in the morning, the relay tower at Morhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+The maintenance log showed the same fault reported 4 times over 81 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1911 that nobody documented. Imre Quist traced the fault to a spare part cannibalized from the decommissioned Ilyfell line, subtly out of tolerance.
+
+```text
+
+station: morhollow
+
+fault-class: sensor-drift
+
+first-logged: 7 September
+
+recurrences: 8
+
+owner: sanna.halloran
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 89 days earlier. The maintenance log showed the same fault reported 3 times over 42 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Morhollow yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 78 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Bram Marchetti has advocated since 1791.

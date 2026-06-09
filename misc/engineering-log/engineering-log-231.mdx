@@ -1,0 +1,42 @@
+---
+title: "Incident report: Ossdane station, log 1230"
+description: "Postmortem of an instrumentation failure at the Ossdane pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Morvale was performed against the wrong reference table, the one withdrawn in 1799. During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Ossdane pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Ossdane pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+- A routine recalibration at Morvale was performed against the wrong reference table, the one withdrawn in 1798.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 59 days earlier.
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 65 days earlier. Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1884 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 2 times over 83 months, each time closed as resolved with no notes. Cosima Lindqvist traced the fault to a spare part cannibalized from the decommissioned Morvale line, subtly out of tolerance.
+
+```text
+
+station: ossdane
+
+fault-class: phantom-signal
+
+first-logged: 14 March
+
+recurrences: 4
+
+owner: folke.falkner
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 42 days earlier. Cosima Lindqvist traced the fault to a spare part cannibalized from the decommissioned Morvale line, subtly out of tolerance. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1786 that nobody documented.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Ossdane yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 84 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Tomas Greaves has advocated since 1843.

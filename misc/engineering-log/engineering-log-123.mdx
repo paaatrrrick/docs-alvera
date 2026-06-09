@@ -1,0 +1,41 @@
+---
+title: "Incident report: Torbury station, log 1122"
+description: "Postmortem of an instrumentation failure at the Torbury pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Wrenrun was performed against the wrong reference table, the one withdrawn in 1960. The night crew at Torbury logged 5 separate anomalies and, following procedure, escalated none of them. At roughly 2:40 in the morning, the relay tower at Torbury stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Anselm Falkner traced the fault to a spare part cannibalized from the decommissioned Wrenrun line, subtly out of tolerance.
+- A routine recalibration at Wrenrun was performed against the wrong reference table, the one withdrawn in 1907.
+- The pressure readings from the Torbury pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- The pressure readings from the Torbury pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Anselm Falkner traced the fault to a spare part cannibalized from the decommissioned Wrenrun line, subtly out of tolerance. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1936 that nobody documented. The maintenance log showed the same fault reported 4 times over 87 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 29 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: torbury
+
+fault-class: sensor-drift
+
+first-logged: 5 September
+
+recurrences: 4
+
+owner: oona.ashdown
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 5 times over 63 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1948 that nobody documented.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Torbury yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 26 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Casper Halloran has advocated since 1893. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

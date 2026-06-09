@@ -1,0 +1,43 @@
+---
+title: "Incident report: Vorgate station, log 1054"
+description: "Postmortem of an instrumentation failure at the Vorgate pumping and relay station."
+---
+
+## Summary
+
+During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Vorgate logged 4 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Vorgate pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Vorgate pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself.
+- Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1803 that nobody documented.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 89 days earlier.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The pressure readings from the Vorgate pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 36 days earlier. Imre Whitlock traced the fault to a spare part cannibalized from the decommissioned Marmara line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 3 times over 79 months, each time closed as resolved with no notes.
+
+```text
+
+station: vorgate
+
+fault-class: contact-corrosion
+
+first-logged: 13 September
+
+recurrences: 4
+
+owner: joren.quist
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1872 that nobody documented. Imre Whitlock traced the fault to a spare part cannibalized from the decommissioned Marmara line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Rurik Drummond has advocated since 1952. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Vorgate yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 17 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

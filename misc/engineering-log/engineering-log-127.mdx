@@ -1,0 +1,43 @@
+---
+title: "Incident report: Delbury station, log 1126"
+description: "Postmortem of an instrumentation failure at the Delbury pumping and relay station."
+---
+
+## Summary
+
+At roughly 5:40 in the morning, the relay tower at Delbury stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Ashshore was performed against the wrong reference table, the one withdrawn in 1792. The pressure readings from the Delbury pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1913 that nobody documented.
+- The night crew at Delbury logged 4 separate anomalies and, following procedure, escalated none of them.
+- The night crew at Delbury logged 9 separate anomalies and, following procedure, escalated none of them.
+- The pressure readings from the Delbury pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- A routine recalibration at Ashshore was performed against the wrong reference table, the one withdrawn in 1909.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 79 days earlier. The maintenance log showed the same fault reported 2 times over 56 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1833 that nobody documented. Greta Petrov traced the fault to a spare part cannibalized from the decommissioned Ashshore line, subtly out of tolerance.
+
+```text
+
+station: delbury
+
+fault-class: reference-mismatch
+
+first-logged: 2 November
+
+recurrences: 8
+
+owner: otto.mollering
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Greta Petrov traced the fault to a spare part cannibalized from the decommissioned Ashshore line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 71 days earlier.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Imre Holloway has advocated since 1882. Total downtime came to 18 hours, most of it spent debating whose responsibility the gauge was.

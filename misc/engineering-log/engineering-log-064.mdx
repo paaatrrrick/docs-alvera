@@ -1,0 +1,41 @@
+---
+title: "Incident report: Jorcrest station, log 1063"
+description: "Postmortem of an instrumentation failure at the Jorcrest pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Yarwick was performed against the wrong reference table, the one withdrawn in 1957. The pressure readings from the Jorcrest pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. The night crew at Jorcrest logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 7 times over 77 months, each time closed as resolved with no notes.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- A routine recalibration at Yarwick was performed against the wrong reference table, the one withdrawn in 1899.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1854 that nobody documented. Dario Marchetti traced the fault to a spare part cannibalized from the decommissioned Yarwick line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 88 days earlier. The maintenance log showed the same fault reported 8 times over 47 months, each time closed as resolved with no notes.
+
+```text
+
+station: jorcrest
+
+fault-class: contact-corrosion
+
+first-logged: 16 November
+
+recurrences: 7
+
+owner: ivo.quist
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 35 days earlier. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1943 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 9 times over 81 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Folke Quist has advocated since 1825. We are adopting a rule from the Jorcrest yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 16 hours, most of it spent debating whose responsibility the gauge was.

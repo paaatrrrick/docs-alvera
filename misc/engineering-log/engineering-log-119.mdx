@@ -1,0 +1,41 @@
+---
+title: "Incident report: Marmore station, log 1118"
+description: "Postmortem of an instrumentation failure at the Marmore pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Dorfell was performed against the wrong reference table, the one withdrawn in 1898. During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Marmore pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- At roughly 8:40 in the morning, the relay tower at Marmore stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1906 that nobody documented.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 42 days earlier.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 36 days earlier. Cosima Marrow traced the fault to a spare part cannibalized from the decommissioned Dorfell line, subtly out of tolerance. The maintenance log showed the same fault reported 8 times over 34 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: marmore
+
+fault-class: phantom-signal
+
+first-logged: 14 September
+
+recurrences: 8
+
+owner: anselm.marrow
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 2 times over 27 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 57 days earlier. Cosima Marrow traced the fault to a spare part cannibalized from the decommissioned Dorfell line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Emeric Lindqvist has advocated since 1872. We are adopting a rule from the Marmore yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

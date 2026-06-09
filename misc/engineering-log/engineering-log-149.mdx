@@ -1,0 +1,41 @@
+---
+title: "Incident report: Zelgate station, log 1148"
+description: "Postmortem of an instrumentation failure at the Zelgate pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Velholm was performed against the wrong reference table, the one withdrawn in 1918. The night crew at Zelgate logged 6 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Zelgate pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Zelgate pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+- Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1844 that nobody documented.
+- Beatrix Whitlock traced the fault to a spare part cannibalized from the decommissioned Velholm line, subtly out of tolerance.
+- The night crew at Zelgate logged 5 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+The maintenance log showed the same fault reported 8 times over 46 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Beatrix Whitlock traced the fault to a spare part cannibalized from the decommissioned Velholm line, subtly out of tolerance. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1801 that nobody documented.
+
+```text
+
+station: zelgate
+
+fault-class: sensor-drift
+
+first-logged: 6 June
+
+recurrences: 4
+
+owner: tomas.mollering
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 24 days earlier. The maintenance log showed the same fault reported 5 times over 55 months, each time closed as resolved with no notes. Beatrix Whitlock traced the fault to a spare part cannibalized from the decommissioned Velholm line, subtly out of tolerance. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1959 that nobody documented.
+
+## Lessons and follow-up
+
+Total downtime came to 48 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Bram Voss has advocated since 1854. We are adopting a rule from the Zelgate yards: any fault reported three times earns a named owner and a written theory.

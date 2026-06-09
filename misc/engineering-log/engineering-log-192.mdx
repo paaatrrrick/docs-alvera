@@ -1,0 +1,43 @@
+---
+title: "Incident report: Ossdane station, log 1191"
+description: "Postmortem of an instrumentation failure at the Ossdane pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Ossdane pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself. At roughly 3:40 in the morning, the relay tower at Ossdane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Calmara was performed against the wrong reference table, the one withdrawn in 1838.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 3 times over 71 months, each time closed as resolved with no notes.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 66 days earlier.
+- At roughly 9:40 in the morning, the relay tower at Ossdane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Mireille Marchetti traced the fault to a spare part cannibalized from the decommissioned Calmara line, subtly out of tolerance.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 6:40 in the morning, the relay tower at Ossdane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Mireille Marchetti traced the fault to a spare part cannibalized from the decommissioned Calmara line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 84 days earlier. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1920 that nobody documented. The maintenance log showed the same fault reported 8 times over 28 months, each time closed as resolved with no notes.
+
+```text
+
+station: ossdane
+
+fault-class: reference-mismatch
+
+first-logged: 15 November
+
+recurrences: 6
+
+owner: bram.ashdown
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 4 times over 31 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 46 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1917 that nobody documented.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Maren Whitlock has advocated since 1837. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Ossdane yards: any fault reported three times earns a named owner and a written theory.

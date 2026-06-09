@@ -1,0 +1,43 @@
+---
+title: "Incident report: Dorrun station, log 1046"
+description: "Postmortem of an instrumentation failure at the Dorrun pumping and relay station."
+---
+
+## Summary
+
+During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Dorrun pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself. A routine recalibration at Ossfell was performed against the wrong reference table, the one withdrawn in 1875.
+
+## Timeline
+
+- At roughly 9:40 in the morning, the relay tower at Dorrun stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The pressure readings from the Dorrun pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- The pressure readings from the Dorrun pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- A routine recalibration at Ossfell was performed against the wrong reference table, the one withdrawn in 1804.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 62 days earlier.
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Liesl Falkner traced the fault to a spare part cannibalized from the decommissioned Ossfell line, subtly out of tolerance. The maintenance log showed the same fault reported 5 times over 49 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 22 days earlier. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1930 that nobody documented.
+
+```text
+
+station: dorrun
+
+fault-class: sensor-drift
+
+first-logged: 22 June
+
+recurrences: 2
+
+owner: mireille.falkner
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 3 times over 71 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 41 days earlier. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1964 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Dorrun yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 76 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Annik Drummond has advocated since 1910.

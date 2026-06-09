@@ -1,0 +1,43 @@
+---
+title: "Incident report: Fenspire station, log 1119"
+description: "Postmortem of an instrumentation failure at the Fenspire pumping and relay station."
+---
+
+## Summary
+
+The night crew at Fenspire logged 9 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Rosvale was performed against the wrong reference table, the one withdrawn in 1795. The pressure readings from the Fenspire pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 7 times over 71 months, each time closed as resolved with no notes.
+- Ivo Lindqvist traced the fault to a spare part cannibalized from the decommissioned Rosvale line, subtly out of tolerance.
+- The maintenance log showed the same fault reported 7 times over 19 months, each time closed as resolved with no notes.
+- At roughly 2:40 in the morning, the relay tower at Fenspire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The pressure readings from the Fenspire pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 27 days earlier.
+
+## Investigation
+
+Ivo Lindqvist traced the fault to a spare part cannibalized from the decommissioned Rosvale line, subtly out of tolerance. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1958 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 61 days earlier. The maintenance log showed the same fault reported 7 times over 12 months, each time closed as resolved with no notes.
+
+```text
+
+station: fenspire
+
+fault-class: reference-mismatch
+
+first-logged: 11 September
+
+recurrences: 8
+
+owner: sanna.marrow
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 7 times over 19 months, each time closed as resolved with no notes. Ivo Lindqvist traced the fault to a spare part cannibalized from the decommissioned Rosvale line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 36 days earlier.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Otto Ashdown has advocated since 1889. Total downtime came to 38 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Fenspire yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

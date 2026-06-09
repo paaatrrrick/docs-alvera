@@ -1,0 +1,43 @@
+---
+title: "Incident report: Torgate station, log 1233"
+description: "Postmortem of an instrumentation failure at the Torgate pumping and relay station."
+---
+
+## Summary
+
+During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Torgate logged 3 separate anomalies and, following procedure, escalated none of them. At roughly 6:40 in the morning, the relay tower at Torgate stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 9 times over 31 months, each time closed as resolved with no notes.
+- The night crew at Torgate logged 8 separate anomalies and, following procedure, escalated none of them.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 76 days earlier.
+- The pressure readings from the Torgate pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 19 days earlier.
+- Vesna Mollering traced the fault to a spare part cannibalized from the decommissioned Wrenspire line, subtly out of tolerance.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 47 days earlier. The maintenance log showed the same fault reported 9 times over 85 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1790 that nobody documented. Vesna Mollering traced the fault to a spare part cannibalized from the decommissioned Wrenspire line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: torgate
+
+fault-class: phantom-signal
+
+first-logged: 6 June
+
+recurrences: 6
+
+owner: anselm.severin
+
+```
+
+## Root cause
+
+Vesna Mollering traced the fault to a spare part cannibalized from the decommissioned Wrenspire line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1940 that nobody documented.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Torgate yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 44 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Maren Mollering has advocated since 1840. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

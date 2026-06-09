@@ -1,0 +1,42 @@
+---
+title: "Incident report: Corvik station, log 1113"
+description: "Postmortem of an instrumentation failure at the Corvik pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Galmire was performed against the wrong reference table, the one withdrawn in 1869. At roughly 4:40 in the morning, the relay tower at Corvik stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- At roughly 4:40 in the morning, the relay tower at Corvik stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Corvik logged 5 separate anomalies and, following procedure, escalated none of them.
+- Rurik Brandt traced the fault to a spare part cannibalized from the decommissioned Galmire line, subtly out of tolerance.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 5:40 in the morning, the relay tower at Corvik stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+The maintenance log showed the same fault reported 2 times over 85 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1811 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 32 days earlier. Rurik Brandt traced the fault to a spare part cannibalized from the decommissioned Galmire line, subtly out of tolerance.
+
+```text
+
+station: corvik
+
+fault-class: sensor-drift
+
+first-logged: 14 September
+
+recurrences: 9
+
+owner: lazlo.sorvane
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 31 days earlier. The maintenance log showed the same fault reported 7 times over 68 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1855 that nobody documented.
+
+## Lessons and follow-up
+
+Total downtime came to 26 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Corvik yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Folke Vexley has advocated since 1837. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

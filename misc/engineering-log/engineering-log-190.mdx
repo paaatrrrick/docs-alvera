@@ -1,0 +1,43 @@
+---
+title: "Incident report: Brenstead station, log 1189"
+description: "Postmortem of an instrumentation failure at the Brenstead pumping and relay station."
+---
+
+## Summary
+
+During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Brenstead pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself. At roughly 8:40 in the morning, the relay tower at Brenstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 56 days earlier.
+- Vesna Drummond traced the fault to a spare part cannibalized from the decommissioned Ashton line, subtly out of tolerance.
+- Vesna Drummond traced the fault to a spare part cannibalized from the decommissioned Ashton line, subtly out of tolerance.
+- A routine recalibration at Ashton was performed against the wrong reference table, the one withdrawn in 1841.
+- Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1939 that nobody documented.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1854 that nobody documented. The maintenance log showed the same fault reported 7 times over 27 months, each time closed as resolved with no notes. Vesna Drummond traced the fault to a spare part cannibalized from the decommissioned Ashton line, subtly out of tolerance.
+
+```text
+
+station: brenstead
+
+fault-class: sensor-drift
+
+first-logged: 19 March
+
+recurrences: 4
+
+owner: cosima.mollering
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1864 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 6 times over 59 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 70 days earlier.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Brenstead yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Joren Greaves has advocated since 1784. Total downtime came to 16 hours, most of it spent debating whose responsibility the gauge was.

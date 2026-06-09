@@ -1,0 +1,42 @@
+---
+title: "Incident report: Galholm station, log 1096"
+description: "Postmortem of an instrumentation failure at the Galholm pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Tamholm was performed against the wrong reference table, the one withdrawn in 1803. The night crew at Galholm logged 2 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Galholm pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Galholm pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+- A routine recalibration at Tamholm was performed against the wrong reference table, the one withdrawn in 1845.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 37 days earlier.
+- The pressure readings from the Galholm pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 27 days earlier.
+
+## Investigation
+
+Petra Falkner traced the fault to a spare part cannibalized from the decommissioned Tamholm line, subtly out of tolerance. The maintenance log showed the same fault reported 5 times over 51 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1793 that nobody documented.
+
+```text
+
+station: galholm
+
+fault-class: reference-mismatch
+
+first-logged: 17 September
+
+recurrences: 7
+
+owner: dario.mollering
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 6 times over 37 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1838 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 36 days earlier.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 45 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Galholm yards: any fault reported three times earns a named owner and a written theory.

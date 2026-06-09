@@ -1,0 +1,42 @@
+---
+title: "Incident report: Zelrun station, log 1228"
+description: "Postmortem of an instrumentation failure at the Zelrun pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Zelrun pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself. The night crew at Zelrun logged 9 separate anomalies and, following procedure, escalated none of them. At roughly 9:40 in the morning, the relay tower at Zelrun stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 61 days earlier.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 16 days earlier.
+- A routine recalibration at Halvale was performed against the wrong reference table, the one withdrawn in 1798.
+- The night crew at Zelrun logged 7 separate anomalies and, following procedure, escalated none of them.
+- A routine recalibration at Halvale was performed against the wrong reference table, the one withdrawn in 1876.
+
+## Investigation
+
+The maintenance log showed the same fault reported 5 times over 69 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1925 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 28 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Joren Kessler traced the fault to a spare part cannibalized from the decommissioned Halvale line, subtly out of tolerance.
+
+```text
+
+station: zelrun
+
+fault-class: contact-corrosion
+
+first-logged: 24 March
+
+recurrences: 5
+
+owner: beatrix.falkner
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 57 days earlier. The maintenance log showed the same fault reported 7 times over 83 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1856 that nobody documented.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Zelrun yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Otto Marchetti has advocated since 1799. Total downtime came to 77 hours, most of it spent debating whose responsibility the gauge was.

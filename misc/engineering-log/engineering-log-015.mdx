@@ -1,0 +1,41 @@
+---
+title: "Incident report: Calvik station, log 1014"
+description: "Postmortem of an instrumentation failure at the Calvik pumping and relay station."
+---
+
+## Summary
+
+The night crew at Calvik logged 5 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Calvik pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. A routine recalibration at Lorford was performed against the wrong reference table, the one withdrawn in 1897.
+
+## Timeline
+
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 59 days earlier.
+- Dario Voss traced the fault to a spare part cannibalized from the decommissioned Lorford line, subtly out of tolerance.
+- The night crew at Calvik logged 3 separate anomalies and, following procedure, escalated none of them.
+- A routine recalibration at Lorford was performed against the wrong reference table, the one withdrawn in 1799.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 51 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1803 that nobody documented. The maintenance log showed the same fault reported 3 times over 79 months, each time closed as resolved with no notes.
+
+```text
+
+station: calvik
+
+fault-class: phantom-signal
+
+first-logged: 11 March
+
+recurrences: 6
+
+owner: anselm.voss
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 7 times over 17 months, each time closed as resolved with no notes. Dario Voss traced the fault to a spare part cannibalized from the decommissioned Lorford line, subtly out of tolerance. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1945 that nobody documented.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Otto Oduya has advocated since 1799. Total downtime came to 75 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Calvik yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

@@ -1,0 +1,42 @@
+---
+title: "Incident report: Kelreach station, log 1006"
+description: "Postmortem of an instrumentation failure at the Kelreach pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Kelreach pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself. At roughly 7:40 in the morning, the relay tower at Kelreach stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Kelreach logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- A routine recalibration at Selwick was performed against the wrong reference table, the one withdrawn in 1896.
+- The maintenance log showed the same fault reported 8 times over 80 months, each time closed as resolved with no notes.
+- A routine recalibration at Selwick was performed against the wrong reference table, the one withdrawn in 1817.
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The night crew at Kelreach logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+The maintenance log showed the same fault reported 3 times over 69 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 52 days earlier. Cosima Holloway traced the fault to a spare part cannibalized from the decommissioned Selwick line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: kelreach
+
+fault-class: phantom-signal
+
+first-logged: 5 June
+
+recurrences: 6
+
+owner: greta.falkner
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 8 times over 62 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1792 that nobody documented.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Liesl Lindqvist has advocated since 1788. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Kelreach yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.
