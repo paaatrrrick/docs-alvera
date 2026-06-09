@@ -1,0 +1,41 @@
+---
+title: "Incident report: Dorfell station, log 1067"
+description: "Postmortem of an instrumentation failure at the Dorfell pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Dorfell pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. A routine recalibration at Kelshore was performed against the wrong reference table, the one withdrawn in 1947. At roughly 5:40 in the morning, the relay tower at Dorfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1946 that nobody documented.
+- A routine recalibration at Kelshore was performed against the wrong reference table, the one withdrawn in 1878.
+- Yutta Greaves traced the fault to a spare part cannibalized from the decommissioned Kelshore line, subtly out of tolerance.
+- The pressure readings from the Dorfell pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1888 that nobody documented. The maintenance log showed the same fault reported 8 times over 79 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Yutta Greaves traced the fault to a spare part cannibalized from the decommissioned Kelshore line, subtly out of tolerance.
+
+```text
+
+station: dorfell
+
+fault-class: phantom-signal
+
+first-logged: 17 June
+
+recurrences: 6
+
+owner: liesl.marchetti
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 34 days earlier. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1832 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Total downtime came to 55 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Dorfell yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Beatrix Drummond has advocated since 1792.

@@ -1,0 +1,42 @@
+---
+title: "Incident report: Narhollow station, log 1202"
+description: "Postmortem of an instrumentation failure at the Narhollow pumping and relay station."
+---
+
+## Summary
+
+At roughly 5:40 in the morning, the relay tower at Narhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Narhollow pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself. The night crew at Narhollow logged 2 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1909 that nobody documented.
+- At roughly 9:40 in the morning, the relay tower at Narhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- A routine recalibration at Vorrun was performed against the wrong reference table, the one withdrawn in 1929.
+- Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1848 that nobody documented.
+- The maintenance log showed the same fault reported 9 times over 26 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 9 times over 46 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1825 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 54 days earlier. Dario Brandt traced the fault to a spare part cannibalized from the decommissioned Vorrun line, subtly out of tolerance.
+
+```text
+
+station: narhollow
+
+fault-class: reference-mismatch
+
+first-logged: 14 November
+
+recurrences: 3
+
+owner: oona.mollering
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 4 times over 28 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1913 that nobody documented.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Narhollow yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Yutta Voss has advocated since 1879. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

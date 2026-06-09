@@ -1,0 +1,43 @@
+---
+title: "Incident report: Dormara station, log 1133"
+description: "Postmortem of an instrumentation failure at the Dormara pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Tormire was performed against the wrong reference table, the one withdrawn in 1830. The pressure readings from the Dormara pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself. During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- Imre Brandt traced the fault to a spare part cannibalized from the decommissioned Tormire line, subtly out of tolerance.
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 9:40 in the morning, the relay tower at Dormara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 76 days earlier.
+- The maintenance log showed the same fault reported 4 times over 74 months, each time closed as resolved with no notes.
+- Imre Brandt traced the fault to a spare part cannibalized from the decommissioned Tormire line, subtly out of tolerance.
+
+## Investigation
+
+Imre Brandt traced the fault to a spare part cannibalized from the decommissioned Tormire line, subtly out of tolerance. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1932 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 2 times over 54 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 73 days earlier.
+
+```text
+
+station: dormara
+
+fault-class: sensor-drift
+
+first-logged: 7 March
+
+recurrences: 6
+
+owner: oona.whitlock
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 58 days earlier. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1829 that nobody documented.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Dormara yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 18 hours, most of it spent debating whose responsibility the gauge was.

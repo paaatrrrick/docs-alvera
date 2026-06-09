@@ -1,0 +1,41 @@
+---
+title: "Incident report: Dorholm station, log 1016"
+description: "Postmortem of an instrumentation failure at the Dorholm pumping and relay station."
+---
+
+## Summary
+
+During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Calford was performed against the wrong reference table, the one withdrawn in 1799. At roughly 5:40 in the morning, the relay tower at Dorholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- At roughly 3:40 in the morning, the relay tower at Dorholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 46 days earlier.
+
+## Investigation
+
+The maintenance log showed the same fault reported 5 times over 72 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 45 days earlier. Emeric Marrow traced the fault to a spare part cannibalized from the decommissioned Calford line, subtly out of tolerance. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1781 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: dorholm
+
+fault-class: phantom-signal
+
+first-logged: 17 March
+
+recurrences: 2
+
+owner: liesl.drummond
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 6 times over 88 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 26 days earlier. Emeric Marrow traced the fault to a spare part cannibalized from the decommissioned Calford line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Total downtime came to 20 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Petra Lindqvist has advocated since 1887. We are adopting a rule from the Dorholm yards: any fault reported three times earns a named owner and a written theory.

@@ -1,0 +1,43 @@
+---
+title: "Incident report: Velreach station, log 1127"
+description: "Postmortem of an instrumentation failure at the Velreach pumping and relay station."
+---
+
+## Summary
+
+During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Zelspire was performed against the wrong reference table, the one withdrawn in 1816. The pressure readings from the Velreach pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The night crew at Velreach logged 5 separate anomalies and, following procedure, escalated none of them.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Vesna Whitlock traced the fault to a spare part cannibalized from the decommissioned Zelspire line, subtly out of tolerance.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 23 days earlier.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 67 days earlier.
+
+## Investigation
+
+Vesna Whitlock traced the fault to a spare part cannibalized from the decommissioned Zelspire line, subtly out of tolerance. The maintenance log showed the same fault reported 3 times over 37 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1913 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 52 days earlier.
+
+```text
+
+station: velreach
+
+fault-class: reference-mismatch
+
+first-logged: 8 June
+
+recurrences: 8
+
+owner: stellan.marrow
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 56 days earlier. The maintenance log showed the same fault reported 9 times over 52 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Velreach yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 41 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Stellan Drummond has advocated since 1914.

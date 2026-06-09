@@ -1,0 +1,43 @@
+---
+title: "Incident report: Dorreach station, log 1209"
+description: "Postmortem of an instrumentation failure at the Dorreach pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Wrenshore was performed against the wrong reference table, the one withdrawn in 1783. The night crew at Dorreach logged 9 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Dorreach pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1821 that nobody documented.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The night crew at Dorreach logged 2 separate anomalies and, following procedure, escalated none of them.
+- The night crew at Dorreach logged 5 separate anomalies and, following procedure, escalated none of them.
+- A routine recalibration at Wrenshore was performed against the wrong reference table, the one withdrawn in 1883.
+
+## Investigation
+
+Tilda Mollering traced the fault to a spare part cannibalized from the decommissioned Wrenshore line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 26 days earlier. The maintenance log showed the same fault reported 5 times over 90 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: dorreach
+
+fault-class: reference-mismatch
+
+first-logged: 19 March
+
+recurrences: 2
+
+owner: halvard.quist
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Tilda Mollering traced the fault to a spare part cannibalized from the decommissioned Wrenshore line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 47 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+Total downtime came to 75 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Bram Sorvane has advocated since 1941. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Dorreach yards: any fault reported three times earns a named owner and a written theory.

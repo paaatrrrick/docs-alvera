@@ -1,0 +1,42 @@
+---
+title: "Incident report: Corhollow station, log 1128"
+description: "Postmortem of an instrumentation failure at the Corhollow pumping and relay station."
+---
+
+## Summary
+
+At roughly 5:40 in the morning, the relay tower at Corhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Corhollow logged 2 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Corhollow pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1856 that nobody documented.
+- The maintenance log showed the same fault reported 2 times over 88 months, each time closed as resolved with no notes.
+- The night crew at Corhollow logged 4 separate anomalies and, following procedure, escalated none of them.
+- The maintenance log showed the same fault reported 2 times over 21 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1871 that nobody documented. The maintenance log showed the same fault reported 4 times over 17 months, each time closed as resolved with no notes. Dario Vexley traced the fault to a spare part cannibalized from the decommissioned Quilhollow line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 31 days earlier. The maintenance log showed the same fault reported 2 times over 18 months, each time closed as resolved with no notes.
+
+```text
+
+station: corhollow
+
+fault-class: sensor-drift
+
+first-logged: 13 March
+
+recurrences: 8
+
+owner: ivo.drummond
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 5 times over 45 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 60 days earlier.
+
+## Lessons and follow-up
+
+Total downtime came to 82 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Joren Sorvane has advocated since 1794. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Corhollow yards: any fault reported three times earns a named owner and a written theory.

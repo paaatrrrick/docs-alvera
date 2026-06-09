@@ -1,0 +1,42 @@
+---
+title: "Incident report: Velwick station, log 1163"
+description: "Postmortem of an instrumentation failure at the Velwick pumping and relay station."
+---
+
+## Summary
+
+At roughly 6:40 in the morning, the relay tower at Velwick stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Velwick pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- Bram Oduya traced the fault to a spare part cannibalized from the decommissioned Zelholm line, subtly out of tolerance.
+- A routine recalibration at Zelholm was performed against the wrong reference table, the one withdrawn in 1936.
+- Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1835 that nobody documented.
+- A routine recalibration at Zelholm was performed against the wrong reference table, the one withdrawn in 1790.
+- At roughly 7:40 in the morning, the relay tower at Velwick stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Bram Oduya traced the fault to a spare part cannibalized from the decommissioned Zelholm line, subtly out of tolerance. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1851 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 78 days earlier. The maintenance log showed the same fault reported 5 times over 88 months, each time closed as resolved with no notes.
+
+```text
+
+station: velwick
+
+fault-class: contact-corrosion
+
+first-logged: 12 November
+
+recurrences: 2
+
+owner: otto.marrow
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1920 that nobody documented. The maintenance log showed the same fault reported 9 times over 63 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 35 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Velwick yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Sigrid Sorvane has advocated since 1927.

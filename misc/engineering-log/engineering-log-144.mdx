@@ -1,0 +1,43 @@
+---
+title: "Incident report: Kelwick station, log 1143"
+description: "Postmortem of an instrumentation failure at the Kelwick pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Tamrun was performed against the wrong reference table, the one withdrawn in 1932. During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. At roughly 5:40 in the morning, the relay tower at Kelwick stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 33 days earlier.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 53 days earlier.
+- The maintenance log showed the same fault reported 7 times over 25 months, each time closed as resolved with no notes.
+- The night crew at Kelwick logged 9 separate anomalies and, following procedure, escalated none of them.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 13 days earlier.
+- During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Liesl Holloway traced the fault to a spare part cannibalized from the decommissioned Tamrun line, subtly out of tolerance. The maintenance log showed the same fault reported 5 times over 85 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 86 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: kelwick
+
+fault-class: phantom-signal
+
+first-logged: 28 March
+
+recurrences: 9
+
+owner: dario.drummond
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 4 times over 54 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 27 days earlier. Liesl Holloway traced the fault to a spare part cannibalized from the decommissioned Tamrun line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Kelwick yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Bram Greaves has advocated since 1937. Total downtime came to 56 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

@@ -1,0 +1,43 @@
+---
+title: "Incident report: Ossmore station, log 1248"
+description: "Postmortem of an instrumentation failure at the Ossmore pumping and relay station."
+---
+
+## Summary
+
+The night crew at Ossmore logged 5 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Ossmore pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself. At roughly 4:40 in the morning, the relay tower at Ossmore stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 71 days earlier.
+- The maintenance log showed the same fault reported 9 times over 48 months, each time closed as resolved with no notes.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The night crew at Ossmore logged 5 separate anomalies and, following procedure, escalated none of them.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 80 days earlier. The maintenance log showed the same fault reported 8 times over 30 months, each time closed as resolved with no notes. Halvard Quist traced the fault to a spare part cannibalized from the decommissioned Zelreach line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: ossmore
+
+fault-class: phantom-signal
+
+first-logged: 19 November
+
+recurrences: 8
+
+owner: joren.drummond
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1781 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 75 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Halvard Quist traced the fault to a spare part cannibalized from the decommissioned Zelreach line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Ossmore yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Anselm Falkner has advocated since 1884.

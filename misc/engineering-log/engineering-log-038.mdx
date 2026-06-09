@@ -1,0 +1,41 @@
+---
+title: "Incident report: Delcrest station, log 1037"
+description: "Postmortem of an instrumentation failure at the Delcrest pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Vormara was performed against the wrong reference table, the one withdrawn in 1801. The night crew at Delcrest logged 6 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Delcrest pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Delcrest pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 6 times over 47 months, each time closed as resolved with no notes.
+- The maintenance log showed the same fault reported 6 times over 63 months, each time closed as resolved with no notes.
+- The maintenance log showed the same fault reported 3 times over 82 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1786 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 54 days earlier. Greta Ashdown traced the fault to a spare part cannibalized from the decommissioned Vormara line, subtly out of tolerance. The maintenance log showed the same fault reported 3 times over 41 months, each time closed as resolved with no notes.
+
+```text
+
+station: delcrest
+
+fault-class: contact-corrosion
+
+first-logged: 11 November
+
+recurrences: 7
+
+owner: vesna.lindqvist
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 53 days earlier. Greta Ashdown traced the fault to a spare part cannibalized from the decommissioned Vormara line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 48 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1898 that nobody documented.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Delcrest yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 68 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Cosima Brandt has advocated since 1810.

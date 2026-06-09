@@ -1,0 +1,43 @@
+---
+title: "Incident report: Galfell station, log 1165"
+description: "Postmortem of an instrumentation failure at the Galfell pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Torhollow was performed against the wrong reference table, the one withdrawn in 1858. The pressure readings from the Galfell pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself. At roughly 6:40 in the morning, the relay tower at Galfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1882 that nobody documented.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The night crew at Galfell logged 3 separate anomalies and, following procedure, escalated none of them.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 37 days earlier.
+
+## Investigation
+
+Tomas Lindqvist traced the fault to a spare part cannibalized from the decommissioned Torhollow line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 89 days earlier. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1859 that nobody documented. The maintenance log showed the same fault reported 8 times over 52 months, each time closed as resolved with no notes.
+
+```text
+
+station: galfell
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 6
+
+owner: mireille.kessler
+
+```
+
+## Root cause
+
+Tomas Lindqvist traced the fault to a spare part cannibalized from the decommissioned Torhollow line, subtly out of tolerance. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1944 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 47 days earlier. The maintenance log showed the same fault reported 7 times over 60 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 56 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Galfell yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Ivo Oduya has advocated since 1945.

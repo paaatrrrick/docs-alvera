@@ -1,0 +1,41 @@
+---
+title: "Incident report: Velmara station, log 1193"
+description: "Postmortem of an instrumentation failure at the Velmara pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Halfell was performed against the wrong reference table, the one withdrawn in 1899. At roughly 4:40 in the morning, the relay tower at Velmara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- A routine recalibration at Halfell was performed against the wrong reference table, the one withdrawn in 1796.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 88 days earlier.
+- The night crew at Velmara logged 3 separate anomalies and, following procedure, escalated none of them.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 56 days earlier.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1962 that nobody documented. The maintenance log showed the same fault reported 5 times over 42 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 17 days earlier. Tomas Marrow traced the fault to a spare part cannibalized from the decommissioned Halfell line, subtly out of tolerance.
+
+```text
+
+station: velmara
+
+fault-class: contact-corrosion
+
+first-logged: 24 November
+
+recurrences: 6
+
+owner: beatrix.petrov
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Tomas Marrow traced the fault to a spare part cannibalized from the decommissioned Halfell line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 46 days earlier. The maintenance log showed the same fault reported 3 times over 29 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Velmara yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Lazlo Oduya has advocated since 1905. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 64 hours, most of it spent debating whose responsibility the gauge was.

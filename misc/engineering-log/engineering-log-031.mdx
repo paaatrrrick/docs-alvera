@@ -1,0 +1,42 @@
+---
+title: "Incident report: Vorford station, log 1030"
+description: "Postmortem of an instrumentation failure at the Vorford pumping and relay station."
+---
+
+## Summary
+
+At roughly 5:40 in the morning, the relay tower at Vorford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Vorford logged 5 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Calreach was performed against the wrong reference table, the one withdrawn in 1930.
+
+## Timeline
+
+- A routine recalibration at Calreach was performed against the wrong reference table, the one withdrawn in 1797.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The maintenance log showed the same fault reported 4 times over 69 months, each time closed as resolved with no notes.
+- A routine recalibration at Calreach was performed against the wrong reference table, the one withdrawn in 1855.
+- Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1850 that nobody documented.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 39 days earlier. The maintenance log showed the same fault reported 6 times over 12 months, each time closed as resolved with no notes. Sigrid Vexley traced the fault to a spare part cannibalized from the decommissioned Calreach line, subtly out of tolerance. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1939 that nobody documented.
+
+```text
+
+station: vorford
+
+fault-class: contact-corrosion
+
+first-logged: 12 March
+
+recurrences: 6
+
+owner: rurik.brandt
+
+```
+
+## Root cause
+
+Sigrid Vexley traced the fault to a spare part cannibalized from the decommissioned Calreach line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 19 days earlier. The maintenance log showed the same fault reported 5 times over 45 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Vorford yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Annik Voss has advocated since 1872. Total downtime came to 78 hours, most of it spent debating whose responsibility the gauge was.

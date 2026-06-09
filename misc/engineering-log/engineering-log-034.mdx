@@ -1,0 +1,43 @@
+---
+title: "Incident report: Cormire station, log 1033"
+description: "Postmortem of an instrumentation failure at the Cormire pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Erimire was performed against the wrong reference table, the one withdrawn in 1890. During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Cormire logged 4 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 7 times over 71 months, each time closed as resolved with no notes.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The maintenance log showed the same fault reported 4 times over 85 months, each time closed as resolved with no notes.
+- Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1837 that nobody documented.
+- At roughly 9:40 in the morning, the relay tower at Cormire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1834 that nobody documented. Folke Brandt traced the fault to a spare part cannibalized from the decommissioned Erimire line, subtly out of tolerance. The maintenance log showed the same fault reported 3 times over 70 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 18 days earlier.
+
+```text
+
+station: cormire
+
+fault-class: reference-mismatch
+
+first-logged: 28 June
+
+recurrences: 9
+
+owner: beatrix.marchetti
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1812 that nobody documented. The maintenance log showed the same fault reported 4 times over 74 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 32 days earlier.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Cormire yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 30 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Imre Marrow has advocated since 1960. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

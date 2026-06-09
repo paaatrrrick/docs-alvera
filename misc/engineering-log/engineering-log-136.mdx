@@ -1,0 +1,42 @@
+---
+title: "Incident report: Halholm station, log 1135"
+description: "Postmortem of an instrumentation failure at the Halholm pumping and relay station."
+---
+
+## Summary
+
+The night crew at Halholm logged 9 separate anomalies and, following procedure, escalated none of them. During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Halholm pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- At roughly 5:40 in the morning, the relay tower at Halholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Halholm logged 9 separate anomalies and, following procedure, escalated none of them.
+- A routine recalibration at Zelmore was performed against the wrong reference table, the one withdrawn in 1886.
+- At roughly 6:40 in the morning, the relay tower at Halholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 18 days earlier.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1791 that nobody documented. Beatrix Drummond traced the fault to a spare part cannibalized from the decommissioned Zelmore line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 54 days earlier. The maintenance log showed the same fault reported 6 times over 65 months, each time closed as resolved with no notes.
+
+```text
+
+station: halholm
+
+fault-class: sensor-drift
+
+first-logged: 13 June
+
+recurrences: 8
+
+owner: sigrid.vexley
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 60 days earlier. Beatrix Drummond traced the fault to a spare part cannibalized from the decommissioned Zelmore line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 25 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Halholm yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Beatrix Severin has advocated since 1875. Total downtime came to 61 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

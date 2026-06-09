@@ -1,0 +1,41 @@
+---
+title: "Incident report: Narrun station, log 1098"
+description: "Postmortem of an instrumentation failure at the Narrun pumping and relay station."
+---
+
+## Summary
+
+At roughly 2:40 in the morning, the relay tower at Narrun stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Narrun logged 3 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- At roughly 8:40 in the morning, the relay tower at Narrun stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Sanna Whitlock traced the fault to a spare part cannibalized from the decommissioned Seldane line, subtly out of tolerance.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 36 days earlier.
+
+## Investigation
+
+Sanna Whitlock traced the fault to a spare part cannibalized from the decommissioned Seldane line, subtly out of tolerance. The maintenance log showed the same fault reported 8 times over 16 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1810 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 27 days earlier.
+
+```text
+
+station: narrun
+
+fault-class: contact-corrosion
+
+first-logged: 20 November
+
+recurrences: 4
+
+owner: emeric.quist
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 5 times over 48 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 59 days earlier. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1809 that nobody documented.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 63 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Maren Whitlock has advocated since 1825. We are adopting a rule from the Narrun yards: any fault reported three times earns a named owner and a written theory.

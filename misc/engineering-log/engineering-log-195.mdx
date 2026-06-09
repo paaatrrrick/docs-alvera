@@ -1,0 +1,41 @@
+---
+title: "Incident report: Tamrun station, log 1194"
+description: "Postmortem of an instrumentation failure at the Tamrun pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Ossholm was performed against the wrong reference table, the one withdrawn in 1787. At roughly 2:40 in the morning, the relay tower at Tamrun stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Tamrun logged 4 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The pressure readings from the Tamrun pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 6 times over 43 months, each time closed as resolved with no notes.
+- A routine recalibration at Ossholm was performed against the wrong reference table, the one withdrawn in 1787.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 27 days earlier.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1799 that nobody documented. The maintenance log showed the same fault reported 4 times over 12 months, each time closed as resolved with no notes. Ivo Lindqvist traced the fault to a spare part cannibalized from the decommissioned Ossholm line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 43 days earlier.
+
+```text
+
+station: tamrun
+
+fault-class: contact-corrosion
+
+first-logged: 27 November
+
+recurrences: 9
+
+owner: tomas.marchetti
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 2 times over 49 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Ivo Lindqvist traced the fault to a spare part cannibalized from the decommissioned Ossholm line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 25 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Halvard Vexley has advocated since 1852.

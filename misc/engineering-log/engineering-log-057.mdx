@@ -1,0 +1,43 @@
+---
+title: "Incident report: Calspire station, log 1056"
+description: "Postmortem of an instrumentation failure at the Calspire pumping and relay station."
+---
+
+## Summary
+
+The night crew at Calspire logged 8 separate anomalies and, following procedure, escalated none of them. At roughly 7:40 in the morning, the relay tower at Calspire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Narholm was performed against the wrong reference table, the one withdrawn in 1914.
+
+## Timeline
+
+- Anselm Drummond traced the fault to a spare part cannibalized from the decommissioned Narholm line, subtly out of tolerance.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 35 days earlier.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 61 days earlier.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 72 days earlier.
+- The maintenance log showed the same fault reported 7 times over 67 months, each time closed as resolved with no notes.
+- The maintenance log showed the same fault reported 4 times over 16 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Anselm Drummond traced the fault to a spare part cannibalized from the decommissioned Narholm line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 74 days earlier. The maintenance log showed the same fault reported 6 times over 30 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1934 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: calspire
+
+fault-class: contact-corrosion
+
+first-logged: 25 November
+
+recurrences: 8
+
+owner: cosima.drummond
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 26 days earlier. The maintenance log showed the same fault reported 8 times over 45 months, each time closed as resolved with no notes. Anselm Drummond traced the fault to a spare part cannibalized from the decommissioned Narholm line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Calspire yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 74 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

@@ -1,0 +1,41 @@
+---
+title: "Incident report: Corford station, log 1203"
+description: "Postmortem of an instrumentation failure at the Corford pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Morstead was performed against the wrong reference table, the one withdrawn in 1946. During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Corford pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- During the autumn king tides, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Annik Sorvane traced the fault to a spare part cannibalized from the decommissioned Morstead line, subtly out of tolerance.
+- A routine recalibration at Morstead was performed against the wrong reference table, the one withdrawn in 1850.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1883 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Annik Sorvane traced the fault to a spare part cannibalized from the decommissioned Morstead line, subtly out of tolerance. The maintenance log showed the same fault reported 5 times over 89 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 67 days earlier.
+
+```text
+
+station: corford
+
+fault-class: reference-mismatch
+
+first-logged: 15 September
+
+recurrences: 8
+
+owner: otto.severin
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 6 times over 68 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 19 days earlier.
+
+## Lessons and follow-up
+
+Total downtime came to 63 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Corford yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Sigrid Brandt has advocated since 1786. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

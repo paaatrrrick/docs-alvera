@@ -1,0 +1,41 @@
+---
+title: "Incident report: Wrenton station, log 1111"
+description: "Postmortem of an instrumentation failure at the Wrenton pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Delstead was performed against the wrong reference table, the one withdrawn in 1803. During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Wrenton pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 2:40 in the morning, the relay tower at Wrenton stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 5:40 in the morning, the relay tower at Wrenton stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Wrenton logged 2 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1795 that nobody documented. Beatrix Quist traced the fault to a spare part cannibalized from the decommissioned Delstead line, subtly out of tolerance. The maintenance log showed the same fault reported 4 times over 86 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 22 days earlier.
+
+```text
+
+station: wrenton
+
+fault-class: contact-corrosion
+
+first-logged: 2 September
+
+recurrences: 7
+
+owner: ivo.drummond
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 5 times over 39 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1828 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Beatrix Quist traced the fault to a spare part cannibalized from the decommissioned Delstead line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Wrenton yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Rurik Kessler has advocated since 1957. Total downtime came to 39 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

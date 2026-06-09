@@ -1,0 +1,43 @@
+---
+title: "Incident report: Perford station, log 1139"
+description: "Postmortem of an instrumentation failure at the Perford pumping and relay station."
+---
+
+## Summary
+
+During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Velwick was performed against the wrong reference table, the one withdrawn in 1833. The pressure readings from the Perford pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Tomas Marrow traced the fault to a spare part cannibalized from the decommissioned Velwick line, subtly out of tolerance.
+- Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1909 that nobody documented.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 34 days earlier.
+- At roughly 9:40 in the morning, the relay tower at Perford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 9:40 in the morning, the relay tower at Perford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+The maintenance log showed the same fault reported 2 times over 86 months, each time closed as resolved with no notes. Tomas Marrow traced the fault to a spare part cannibalized from the decommissioned Velwick line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 90 days earlier. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1791 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: perford
+
+fault-class: phantom-signal
+
+first-logged: 20 June
+
+recurrences: 8
+
+owner: tilda.lindqvist
+
+```
+
+## Root cause
+
+Tomas Marrow traced the fault to a spare part cannibalized from the decommissioned Velwick line, subtly out of tolerance. The maintenance log showed the same fault reported 4 times over 42 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 47 days earlier.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Edda Kessler has advocated since 1838. We are adopting a rule from the Perford yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 72 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

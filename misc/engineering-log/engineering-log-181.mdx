@@ -1,0 +1,41 @@
+---
+title: "Incident report: Brencrest station, log 1180"
+description: "Postmortem of an instrumentation failure at the Brencrest pumping and relay station."
+---
+
+## Summary
+
+At roughly 6:40 in the morning, the relay tower at Brencrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Brencrest logged 8 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Brencrest pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- Otto Severin traced the fault to a spare part cannibalized from the decommissioned Selford line, subtly out of tolerance.
+- During the autumn king tides, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The night crew at Brencrest logged 2 separate anomalies and, following procedure, escalated none of them.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 37 days earlier.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1790 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 59 days earlier. Otto Severin traced the fault to a spare part cannibalized from the decommissioned Selford line, subtly out of tolerance. The maintenance log showed the same fault reported 7 times over 75 months, each time closed as resolved with no notes.
+
+```text
+
+station: brencrest
+
+fault-class: sensor-drift
+
+first-logged: 9 September
+
+recurrences: 8
+
+owner: yutta.ashdown
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 7 times over 39 months, each time closed as resolved with no notes. Otto Severin traced the fault to a spare part cannibalized from the decommissioned Selford line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1823 that nobody documented.
+
+## Lessons and follow-up
+
+Total downtime came to 32 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Greta Brandt has advocated since 1821.

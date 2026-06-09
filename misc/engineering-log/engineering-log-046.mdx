@@ -1,0 +1,42 @@
+---
+title: "Incident report: Ossgate station, log 1045"
+description: "Postmortem of an instrumentation failure at the Ossgate pumping and relay station."
+---
+
+## Summary
+
+At roughly 7:40 in the morning, the relay tower at Ossgate stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Erivik was performed against the wrong reference table, the one withdrawn in 1937. During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 3 times over 47 months, each time closed as resolved with no notes.
+- Folke Oduya traced the fault to a spare part cannibalized from the decommissioned Erivik line, subtly out of tolerance.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Folke Oduya traced the fault to a spare part cannibalized from the decommissioned Erivik line, subtly out of tolerance.
+- At roughly 8:40 in the morning, the relay tower at Ossgate stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 71 days earlier. Folke Oduya traced the fault to a spare part cannibalized from the decommissioned Erivik line, subtly out of tolerance. The maintenance log showed the same fault reported 8 times over 13 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1894 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: ossgate
+
+fault-class: sensor-drift
+
+first-logged: 20 November
+
+recurrences: 3
+
+owner: ivo.kessler
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 83 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Folke Oduya traced the fault to a spare part cannibalized from the decommissioned Erivik line, subtly out of tolerance. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1907 that nobody documented.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Otto Quist has advocated since 1852. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 51 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Ossgate yards: any fault reported three times earns a named owner and a written theory.

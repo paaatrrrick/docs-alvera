@@ -1,0 +1,43 @@
+---
+title: "Incident report: Kelvik station, log 1100"
+description: "Postmortem of an instrumentation failure at the Kelvik pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Kelvik pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself. At roughly 3:40 in the morning, the relay tower at Kelvik stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Delmara was performed against the wrong reference table, the one withdrawn in 1870.
+
+## Timeline
+
+- The pressure readings from the Kelvik pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- Casper Oduya traced the fault to a spare part cannibalized from the decommissioned Delmara line, subtly out of tolerance.
+- Casper Oduya traced the fault to a spare part cannibalized from the decommissioned Delmara line, subtly out of tolerance.
+- The maintenance log showed the same fault reported 8 times over 47 months, each time closed as resolved with no notes.
+- Casper Oduya traced the fault to a spare part cannibalized from the decommissioned Delmara line, subtly out of tolerance.
+- At roughly 2:40 in the morning, the relay tower at Kelvik stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 75 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1854 that nobody documented. The maintenance log showed the same fault reported 2 times over 13 months, each time closed as resolved with no notes.
+
+```text
+
+station: kelvik
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 6
+
+owner: imre.oduya
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 35 days earlier. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1900 that nobody documented.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Kelvik yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Yutta Marrow has advocated since 1895.

@@ -1,0 +1,43 @@
+---
+title: "Incident report: Delford station, log 1038"
+description: "Postmortem of an instrumentation failure at the Delford pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Delford pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself. At roughly 9:40 in the morning, the relay tower at Delford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Delford logged 6 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The night crew at Delford logged 7 separate anomalies and, following procedure, escalated none of them.
+- The maintenance log showed the same fault reported 8 times over 54 months, each time closed as resolved with no notes.
+- A routine recalibration at Erihollow was performed against the wrong reference table, the one withdrawn in 1830.
+- The night crew at Delford logged 2 separate anomalies and, following procedure, escalated none of them.
+- The pressure readings from the Delford pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- The night crew at Delford logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+The maintenance log showed the same fault reported 3 times over 18 months, each time closed as resolved with no notes. Liesl Voss traced the fault to a spare part cannibalized from the decommissioned Erihollow line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 43 days earlier. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1839 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: delford
+
+fault-class: phantom-signal
+
+first-logged: 12 June
+
+recurrences: 4
+
+owner: otto.oduya
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 42 days earlier. The maintenance log showed the same fault reported 6 times over 68 months, each time closed as resolved with no notes. Liesl Voss traced the fault to a spare part cannibalized from the decommissioned Erihollow line, subtly out of tolerance. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1825 that nobody documented.
+
+## Lessons and follow-up
+
+Total downtime came to 51 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Delford yards: any fault reported three times earns a named owner and a written theory.

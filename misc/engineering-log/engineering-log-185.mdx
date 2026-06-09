@@ -1,0 +1,41 @@
+---
+title: "Incident report: Osston station, log 1184"
+description: "Postmortem of an instrumentation failure at the Osston pumping and relay station."
+---
+
+## Summary
+
+At roughly 3:40 in the morning, the relay tower at Osston stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Osston pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself. A routine recalibration at Galfell was performed against the wrong reference table, the one withdrawn in 1882.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 3 times over 64 months, each time closed as resolved with no notes.
+- At roughly 2:40 in the morning, the relay tower at Osston stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The maintenance log showed the same fault reported 3 times over 48 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1801 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 39 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 8 times over 70 months, each time closed as resolved with no notes.
+
+```text
+
+station: osston
+
+fault-class: contact-corrosion
+
+first-logged: 14 March
+
+recurrences: 2
+
+owner: vesna.vexley
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 23 days earlier. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1896 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Otto Oduya traced the fault to a spare part cannibalized from the decommissioned Galfell line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Bram Whitlock has advocated since 1905. We are adopting a rule from the Osston yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 32 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

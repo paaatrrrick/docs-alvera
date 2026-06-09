@@ -1,0 +1,42 @@
+---
+title: "Incident report: Brenreach station, log 1134"
+description: "Postmortem of an instrumentation failure at the Brenreach pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Corholm was performed against the wrong reference table, the one withdrawn in 1948. During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. At roughly 7:40 in the morning, the relay tower at Brenreach stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 8 times over 19 months, each time closed as resolved with no notes.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The night crew at Brenreach logged 4 separate anomalies and, following procedure, escalated none of them.
+- The pressure readings from the Brenreach pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 47 days earlier. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1871 that nobody documented. The maintenance log showed the same fault reported 4 times over 15 months, each time closed as resolved with no notes. Tomas Marrow traced the fault to a spare part cannibalized from the decommissioned Corholm line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: brenreach
+
+fault-class: sensor-drift
+
+first-logged: 13 September
+
+recurrences: 6
+
+owner: tilda.marrow
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 5 times over 40 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Tomas Marrow traced the fault to a spare part cannibalized from the decommissioned Corholm line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Total downtime came to 77 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Brenreach yards: any fault reported three times earns a named owner and a written theory.

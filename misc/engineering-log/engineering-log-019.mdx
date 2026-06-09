@@ -1,0 +1,42 @@
+---
+title: "Incident report: Velmara station, log 1018"
+description: "Postmortem of an instrumentation failure at the Velmara pumping and relay station."
+---
+
+## Summary
+
+At roughly 7:40 in the morning, the relay tower at Velmara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Jorrun was performed against the wrong reference table, the one withdrawn in 1819. The night crew at Velmara logged 3 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- A routine recalibration at Jorrun was performed against the wrong reference table, the one withdrawn in 1822.
+- The night crew at Velmara logged 5 separate anomalies and, following procedure, escalated none of them.
+- Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1839 that nobody documented.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The maintenance log showed the same fault reported 5 times over 38 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 3 times over 90 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1887 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 39 days earlier. Otto Marrow traced the fault to a spare part cannibalized from the decommissioned Jorrun line, subtly out of tolerance.
+
+```text
+
+station: velmara
+
+fault-class: contact-corrosion
+
+first-logged: 19 November
+
+recurrences: 2
+
+owner: stellan.petrov
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1814 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 41 days earlier.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Velmara yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 55 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

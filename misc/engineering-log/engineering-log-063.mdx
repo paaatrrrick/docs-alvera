@@ -1,0 +1,42 @@
+---
+title: "Incident report: Wrenford station, log 1062"
+description: "Postmortem of an instrumentation failure at the Wrenford pumping and relay station."
+---
+
+## Summary
+
+At roughly 8:40 in the morning, the relay tower at Wrenford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Eriford was performed against the wrong reference table, the one withdrawn in 1908. The night crew at Wrenford logged 7 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The pressure readings from the Wrenford pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+- Tomas Falkner traced the fault to a spare part cannibalized from the decommissioned Eriford line, subtly out of tolerance.
+- The night crew at Wrenford logged 2 separate anomalies and, following procedure, escalated none of them.
+- The pressure readings from the Wrenford pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 2 times over 57 months, each time closed as resolved with no notes.
+
+## Investigation
+
+The maintenance log showed the same fault reported 6 times over 13 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 36 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Tomas Falkner traced the fault to a spare part cannibalized from the decommissioned Eriford line, subtly out of tolerance. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1815 that nobody documented.
+
+```text
+
+station: wrenford
+
+fault-class: sensor-drift
+
+first-logged: 10 September
+
+recurrences: 2
+
+owner: casper.petrov
+
+```
+
+## Root cause
+
+Tomas Falkner traced the fault to a spare part cannibalized from the decommissioned Eriford line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 38 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 33 days earlier. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1849 that nobody documented.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Annik Vexley has advocated since 1806. Total downtime came to 64 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Wrenford yards: any fault reported three times earns a named owner and a written theory.

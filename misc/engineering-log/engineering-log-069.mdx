@@ -1,0 +1,41 @@
+---
+title: "Incident report: Jorford station, log 1068"
+description: "Postmortem of an instrumentation failure at the Jorford pumping and relay station."
+---
+
+## Summary
+
+During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Zelwick was performed against the wrong reference table, the one withdrawn in 1854. At roughly 5:40 in the morning, the relay tower at Jorford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- A routine recalibration at Zelwick was performed against the wrong reference table, the one withdrawn in 1844.
+- The pressure readings from the Jorford pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- The pressure readings from the Jorford pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- The night crew at Jorford logged 2 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Anselm Falkner traced the fault to a spare part cannibalized from the decommissioned Zelwick line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1883 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 51 days earlier. The maintenance log showed the same fault reported 7 times over 65 months, each time closed as resolved with no notes.
+
+```text
+
+station: jorford
+
+fault-class: phantom-signal
+
+first-logged: 9 June
+
+recurrences: 7
+
+owner: liesl.petrov
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 2 times over 27 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 60 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 82 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Jorford yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Oona Marrow has advocated since 1803.

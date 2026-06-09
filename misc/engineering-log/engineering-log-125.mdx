@@ -1,0 +1,42 @@
+---
+title: "Incident report: Lormara station, log 1124"
+description: "Postmortem of an instrumentation failure at the Lormara pumping and relay station."
+---
+
+## Summary
+
+At roughly 5:40 in the morning, the relay tower at Lormara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Narvik was performed against the wrong reference table, the one withdrawn in 1835.
+
+## Timeline
+
+- The night crew at Lormara logged 9 separate anomalies and, following procedure, escalated none of them.
+- The maintenance log showed the same fault reported 6 times over 71 months, each time closed as resolved with no notes.
+- Lazlo Whitlock traced the fault to a spare part cannibalized from the decommissioned Narvik line, subtly out of tolerance.
+- At roughly 8:40 in the morning, the relay tower at Lormara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+The maintenance log showed the same fault reported 7 times over 37 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Lazlo Whitlock traced the fault to a spare part cannibalized from the decommissioned Narvik line, subtly out of tolerance. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1795 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 82 days earlier.
+
+```text
+
+station: lormara
+
+fault-class: reference-mismatch
+
+first-logged: 21 June
+
+recurrences: 9
+
+owner: halvard.kessler
+
+```
+
+## Root cause
+
+Lazlo Whitlock traced the fault to a spare part cannibalized from the decommissioned Narvik line, subtly out of tolerance. The maintenance log showed the same fault reported 2 times over 80 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Lormara yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Otto Severin has advocated since 1925.

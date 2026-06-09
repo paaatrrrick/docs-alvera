@@ -1,0 +1,41 @@
+---
+title: "Incident report: Ossvale station, log 1031"
+description: "Postmortem of an instrumentation failure at the Ossvale pumping and relay station."
+---
+
+## Summary
+
+At roughly 8:40 in the morning, the relay tower at Ossvale stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Ossvale pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself. During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- Mireille Sorvane traced the fault to a spare part cannibalized from the decommissioned Vormara line, subtly out of tolerance.
+- At roughly 6:40 in the morning, the relay tower at Ossvale stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 35 days earlier.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+The maintenance log showed the same fault reported 8 times over 40 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Mireille Sorvane traced the fault to a spare part cannibalized from the decommissioned Vormara line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 37 days earlier. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1820 that nobody documented.
+
+```text
+
+station: ossvale
+
+fault-class: reference-mismatch
+
+first-logged: 17 November
+
+recurrences: 9
+
+owner: emeric.kessler
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 5 times over 73 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 58 days earlier. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1783 that nobody documented. Mireille Sorvane traced the fault to a spare part cannibalized from the decommissioned Vormara line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Ossvale yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Casper Vexley has advocated since 1793. Total downtime came to 43 hours, most of it spent debating whose responsibility the gauge was.

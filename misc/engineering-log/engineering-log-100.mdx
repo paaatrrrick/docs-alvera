@@ -1,0 +1,43 @@
+---
+title: "Incident report: Ilycrest station, log 1099"
+description: "Postmortem of an instrumentation failure at the Ilycrest pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Ilycrest pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. A routine recalibration at Yarbury was performed against the wrong reference table, the one withdrawn in 1880. At roughly 7:40 in the morning, the relay tower at Ilycrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 39 days earlier.
+- The pressure readings from the Ilycrest pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+- The night crew at Ilycrest logged 8 separate anomalies and, following procedure, escalated none of them.
+- A routine recalibration at Yarbury was performed against the wrong reference table, the one withdrawn in 1926.
+- A routine recalibration at Yarbury was performed against the wrong reference table, the one withdrawn in 1836.
+- Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1944 that nobody documented.
+
+## Investigation
+
+Vesna Halloran traced the fault to a spare part cannibalized from the decommissioned Yarbury line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 84 days earlier. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1892 that nobody documented.
+
+```text
+
+station: ilycrest
+
+fault-class: sensor-drift
+
+first-logged: 11 March
+
+recurrences: 6
+
+owner: mireille.kessler
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 73 days earlier. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1866 that nobody documented. Vesna Halloran traced the fault to a spare part cannibalized from the decommissioned Yarbury line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Halvard Quist has advocated since 1861. We are adopting a rule from the Ilycrest yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 55 hours, most of it spent debating whose responsibility the gauge was.

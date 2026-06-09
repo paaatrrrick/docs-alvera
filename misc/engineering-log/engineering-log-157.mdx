@@ -1,0 +1,42 @@
+---
+title: "Incident report: Lorstead station, log 1156"
+description: "Postmortem of an instrumentation failure at the Lorstead pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Lorstead pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself. At roughly 9:40 in the morning, the relay tower at Lorstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Delton was performed against the wrong reference table, the one withdrawn in 1916.
+
+## Timeline
+
+- At roughly 9:40 in the morning, the relay tower at Lorstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 9:40 in the morning, the relay tower at Lorstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The maintenance log showed the same fault reported 2 times over 80 months, each time closed as resolved with no notes.
+- During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- During the autumn king tides, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 81 days earlier. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1782 that nobody documented. Beatrix Petrov traced the fault to a spare part cannibalized from the decommissioned Delton line, subtly out of tolerance.
+
+```text
+
+station: lorstead
+
+fault-class: phantom-signal
+
+first-logged: 10 November
+
+recurrences: 5
+
+owner: beatrix.oduya
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1960 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 7 times over 25 months, each time closed as resolved with no notes. Beatrix Petrov traced the fault to a spare part cannibalized from the decommissioned Delton line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Imre Marchetti has advocated since 1885. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Lorstead yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 14 hours, most of it spent debating whose responsibility the gauge was.

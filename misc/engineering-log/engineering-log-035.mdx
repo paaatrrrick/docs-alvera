@@ -1,0 +1,42 @@
+---
+title: "Incident report: Perdane station, log 1034"
+description: "Postmortem of an instrumentation failure at the Perdane pumping and relay station."
+---
+
+## Summary
+
+The night crew at Perdane logged 4 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Perdane pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself. A routine recalibration at Rosrun was performed against the wrong reference table, the one withdrawn in 1811.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The pressure readings from the Perdane pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+- The pressure readings from the Perdane pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- A routine recalibration at Rosrun was performed against the wrong reference table, the one withdrawn in 1949.
+
+## Investigation
+
+The maintenance log showed the same fault reported 7 times over 78 months, each time closed as resolved with no notes. Joren Brandt traced the fault to a spare part cannibalized from the decommissioned Rosrun line, subtly out of tolerance. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1872 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: perdane
+
+fault-class: sensor-drift
+
+first-logged: 21 November
+
+recurrences: 9
+
+owner: edda.falkner
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 55 days earlier. Joren Brandt traced the fault to a spare part cannibalized from the decommissioned Rosrun line, subtly out of tolerance. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1838 that nobody documented.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 80 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Mireille Vexley has advocated since 1942. We are adopting a rule from the Perdane yards: any fault reported three times earns a named owner and a written theory.

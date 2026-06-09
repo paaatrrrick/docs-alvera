@@ -1,0 +1,41 @@
+---
+title: "Incident report: Ossspire station, log 1075"
+description: "Postmortem of an instrumentation failure at the Ossspire pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Pervale was performed against the wrong reference table, the one withdrawn in 1925. The pressure readings from the Ossspire pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself. During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- A routine recalibration at Pervale was performed against the wrong reference table, the one withdrawn in 1946.
+- A routine recalibration at Pervale was performed against the wrong reference table, the one withdrawn in 1884.
+- The night crew at Ossspire logged 5 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 87 days earlier. Oona Vexley traced the fault to a spare part cannibalized from the decommissioned Pervale line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 43 months, each time closed as resolved with no notes.
+
+```text
+
+station: ossspire
+
+fault-class: phantom-signal
+
+first-logged: 18 March
+
+recurrences: 5
+
+owner: tomas.oduya
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1919 that nobody documented. The maintenance log showed the same fault reported 8 times over 89 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 83 days earlier. Oona Vexley traced the fault to a spare part cannibalized from the decommissioned Pervale line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Ossspire yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 79 hours, most of it spent debating whose responsibility the gauge was.

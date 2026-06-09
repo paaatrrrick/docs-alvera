@@ -1,0 +1,41 @@
+---
+title: "Incident report: Zelcrest station, log 1084"
+description: "Postmortem of an instrumentation failure at the Zelcrest pumping and relay station."
+---
+
+## Summary
+
+At roughly 6:40 in the morning, the relay tower at Zelcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Rosrun was performed against the wrong reference table, the one withdrawn in 1960. The pressure readings from the Zelcrest pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- At roughly 8:40 in the morning, the relay tower at Zelcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Rurik Marrow traced the fault to a spare part cannibalized from the decommissioned Rosrun line, subtly out of tolerance.
+- The pressure readings from the Zelcrest pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1880 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 83 days earlier. The maintenance log showed the same fault reported 3 times over 34 months, each time closed as resolved with no notes. Rurik Marrow traced the fault to a spare part cannibalized from the decommissioned Rosrun line, subtly out of tolerance.
+
+```text
+
+station: zelcrest
+
+fault-class: reference-mismatch
+
+first-logged: 21 September
+
+recurrences: 3
+
+owner: mireille.greaves
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1822 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 69 days earlier. Rurik Marrow traced the fault to a spare part cannibalized from the decommissioned Rosrun line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Total downtime came to 86 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Ivo Petrov has advocated since 1826. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

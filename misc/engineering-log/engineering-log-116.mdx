@@ -1,0 +1,42 @@
+---
+title: "Incident report: Ilyrun station, log 1115"
+description: "Postmortem of an instrumentation failure at the Ilyrun pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Ilyrun pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself. The night crew at Ilyrun logged 7 separate anomalies and, following procedure, escalated none of them. During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- A routine recalibration at Yarstead was performed against the wrong reference table, the one withdrawn in 1929.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1964 that nobody documented.
+- A routine recalibration at Yarstead was performed against the wrong reference table, the one withdrawn in 1845.
+- The maintenance log showed the same fault reported 7 times over 74 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1840 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 2 times over 68 months, each time closed as resolved with no notes. Yutta Petrov traced the fault to a spare part cannibalized from the decommissioned Yarstead line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 17 days earlier.
+
+```text
+
+station: ilyrun
+
+fault-class: sensor-drift
+
+first-logged: 7 September
+
+recurrences: 3
+
+owner: stellan.greaves
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1834 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 48 days earlier. The maintenance log showed the same fault reported 2 times over 19 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+Total downtime came to 44 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Sanna Halloran has advocated since 1865. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

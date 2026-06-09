@@ -1,0 +1,43 @@
+---
+title: "Incident report: Seldane station, log 1123"
+description: "Postmortem of an instrumentation failure at the Seldane pumping and relay station."
+---
+
+## Summary
+
+At roughly 9:40 in the morning, the relay tower at Seldane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Seldane pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself. The night crew at Seldane logged 2 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1825 that nobody documented.
+- The maintenance log showed the same fault reported 4 times over 64 months, each time closed as resolved with no notes.
+- At roughly 4:40 in the morning, the relay tower at Seldane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Seldane logged 6 separate anomalies and, following procedure, escalated none of them.
+- A routine recalibration at Vorwick was performed against the wrong reference table, the one withdrawn in 1897.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 30 days earlier.
+
+## Investigation
+
+The maintenance log showed the same fault reported 9 times over 38 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Emeric Petrov traced the fault to a spare part cannibalized from the decommissioned Vorwick line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 15 days earlier. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1920 that nobody documented.
+
+```text
+
+station: seldane
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 2
+
+owner: tomas.sorvane
+
+```
+
+## Root cause
+
+Emeric Petrov traced the fault to a spare part cannibalized from the decommissioned Vorwick line, subtly out of tolerance. The maintenance log showed the same fault reported 2 times over 17 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Otto Kessler has advocated since 1818. We are adopting a rule from the Seldane yards: any fault reported three times earns a named owner and a written theory.

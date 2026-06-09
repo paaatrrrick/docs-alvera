@@ -1,0 +1,41 @@
+---
+title: "Incident report: Quilton station, log 1049"
+description: "Postmortem of an instrumentation failure at the Quilton pumping and relay station."
+---
+
+## Summary
+
+At roughly 4:40 in the morning, the relay tower at Quilton stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Rosgate was performed against the wrong reference table, the one withdrawn in 1819. The night crew at Quilton logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The pressure readings from the Quilton pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- Anselm Greaves traced the fault to a spare part cannibalized from the decommissioned Rosgate line, subtly out of tolerance.
+- Anselm Greaves traced the fault to a spare part cannibalized from the decommissioned Rosgate line, subtly out of tolerance.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 84 days earlier.
+
+## Investigation
+
+The maintenance log showed the same fault reported 5 times over 58 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1791 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 66 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Anselm Greaves traced the fault to a spare part cannibalized from the decommissioned Rosgate line, subtly out of tolerance.
+
+```text
+
+station: quilton
+
+fault-class: phantom-signal
+
+first-logged: 17 March
+
+recurrences: 7
+
+owner: folke.sorvane
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 7 times over 29 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1833 that nobody documented.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Tomas Marchetti has advocated since 1952. Total downtime came to 44 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Quilton yards: any fault reported three times earns a named owner and a written theory.

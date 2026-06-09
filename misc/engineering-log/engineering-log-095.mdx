@@ -1,0 +1,43 @@
+---
+title: "Incident report: Rosvik station, log 1094"
+description: "Postmortem of an instrumentation failure at the Rosvik pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Brenvik was performed against the wrong reference table, the one withdrawn in 1785. During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Rosvik logged 3 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- At roughly 2:40 in the morning, the relay tower at Rosvik stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 7:40 in the morning, the relay tower at Rosvik stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Rosvik logged 8 separate anomalies and, following procedure, escalated none of them.
+- At roughly 7:40 in the morning, the relay tower at Rosvik stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1867 that nobody documented.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1855 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 87 days earlier. The maintenance log showed the same fault reported 6 times over 61 months, each time closed as resolved with no notes. Maren Falkner traced the fault to a spare part cannibalized from the decommissioned Brenvik line, subtly out of tolerance.
+
+```text
+
+station: rosvik
+
+fault-class: contact-corrosion
+
+first-logged: 13 March
+
+recurrences: 3
+
+owner: anselm.severin
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 9 times over 40 months, each time closed as resolved with no notes. Maren Falkner traced the fault to a spare part cannibalized from the decommissioned Brenvik line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1804 that nobody documented.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Rosvik yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Lazlo Brandt has advocated since 1846. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

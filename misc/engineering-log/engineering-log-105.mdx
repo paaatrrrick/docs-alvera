@@ -1,0 +1,43 @@
+---
+title: "Incident report: Dorcrest station, log 1104"
+description: "Postmortem of an instrumentation failure at the Dorcrest pumping and relay station."
+---
+
+## Summary
+
+The night crew at Dorcrest logged 2 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Dorcrest pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. At roughly 5:40 in the morning, the relay tower at Dorcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1892 that nobody documented.
+- At roughly 2:40 in the morning, the relay tower at Dorcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Dorcrest logged 2 separate anomalies and, following procedure, escalated none of them.
+- Liesl Lindqvist traced the fault to a spare part cannibalized from the decommissioned Ilymara line, subtly out of tolerance.
+- The pressure readings from the Dorcrest pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- At roughly 4:40 in the morning, the relay tower at Dorcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 7 times over 79 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1782 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 55 days earlier.
+
+```text
+
+station: dorcrest
+
+fault-class: sensor-drift
+
+first-logged: 18 March
+
+recurrences: 5
+
+owner: beatrix.petrov
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 29 days earlier. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1896 that nobody documented. The maintenance log showed the same fault reported 7 times over 74 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 48 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Dorcrest yards: any fault reported three times earns a named owner and a written theory.

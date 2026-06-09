@@ -1,0 +1,43 @@
+---
+title: "Incident report: Morcrest station, log 1091"
+description: "Postmortem of an instrumentation failure at the Morcrest pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Zelton was performed against the wrong reference table, the one withdrawn in 1958. The pressure readings from the Morcrest pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself. The night crew at Morcrest logged 8 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- At roughly 6:40 in the morning, the relay tower at Morcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Tomas Voss traced the fault to a spare part cannibalized from the decommissioned Zelton line, subtly out of tolerance.
+- The pressure readings from the Morcrest pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- The pressure readings from the Morcrest pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- At roughly 6:40 in the morning, the relay tower at Morcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 3:40 in the morning, the relay tower at Morcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+The maintenance log showed the same fault reported 8 times over 83 months, each time closed as resolved with no notes. Tomas Voss traced the fault to a spare part cannibalized from the decommissioned Zelton line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 31 days earlier. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1954 that nobody documented.
+
+```text
+
+station: morcrest
+
+fault-class: contact-corrosion
+
+first-logged: 19 June
+
+recurrences: 4
+
+owner: liesl.greaves
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 8 times over 24 months, each time closed as resolved with no notes. Tomas Voss traced the fault to a spare part cannibalized from the decommissioned Zelton line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Total downtime came to 63 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Dario Marchetti has advocated since 1786. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Morcrest yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

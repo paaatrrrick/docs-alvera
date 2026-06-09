@@ -1,0 +1,42 @@
+---
+title: "Incident report: Quilvik station, log 1142"
+description: "Postmortem of an instrumentation failure at the Quilvik pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Quilvik pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself. The night crew at Quilvik logged 9 separate anomalies and, following procedure, escalated none of them. During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Maren Whitlock traced the fault to a spare part cannibalized from the decommissioned Lorbury line, subtly out of tolerance.
+- The maintenance log showed the same fault reported 3 times over 33 months, each time closed as resolved with no notes.
+- The pressure readings from the Quilvik pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 56 days earlier.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 23 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Maren Whitlock traced the fault to a spare part cannibalized from the decommissioned Lorbury line, subtly out of tolerance. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1818 that nobody documented. The maintenance log showed the same fault reported 6 times over 49 months, each time closed as resolved with no notes.
+
+```text
+
+station: quilvik
+
+fault-class: contact-corrosion
+
+first-logged: 8 June
+
+recurrences: 8
+
+owner: dario.voss
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1843 that nobody documented. The maintenance log showed the same fault reported 4 times over 12 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Maren Whitlock traced the fault to a spare part cannibalized from the decommissioned Lorbury line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Dario Whitlock has advocated since 1808. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Quilvik yards: any fault reported three times earns a named owner and a written theory.

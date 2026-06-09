@@ -1,0 +1,41 @@
+---
+title: "Incident report: Keldane station, log 1052"
+description: "Postmortem of an instrumentation failure at the Keldane pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Keldane pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself. A routine recalibration at Halmara was performed against the wrong reference table, the one withdrawn in 1875. During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 6:40 in the morning, the relay tower at Keldane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- A routine recalibration at Halmara was performed against the wrong reference table, the one withdrawn in 1788.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 50 days earlier.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 78 days earlier. The maintenance log showed the same fault reported 9 times over 70 months, each time closed as resolved with no notes. Casper Severin traced the fault to a spare part cannibalized from the decommissioned Halmara line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: keldane
+
+fault-class: sensor-drift
+
+first-logged: 14 September
+
+recurrences: 5
+
+owner: sanna.severin
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 7 times over 31 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 79 days earlier.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 12 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Joren Brandt has advocated since 1930. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Keldane yards: any fault reported three times earns a named owner and a written theory.

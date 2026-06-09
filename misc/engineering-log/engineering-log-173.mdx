@@ -1,0 +1,43 @@
+---
+title: "Incident report: Halvale station, log 1172"
+description: "Postmortem of an instrumentation failure at the Halvale pumping and relay station."
+---
+
+## Summary
+
+At roughly 7:40 in the morning, the relay tower at Halvale stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Roscrest was performed against the wrong reference table, the one withdrawn in 1785. During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- A routine recalibration at Roscrest was performed against the wrong reference table, the one withdrawn in 1878.
+- The maintenance log showed the same fault reported 4 times over 42 months, each time closed as resolved with no notes.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The night crew at Halvale logged 5 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Joren Whitlock traced the fault to a spare part cannibalized from the decommissioned Roscrest line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 56 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 38 days earlier. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1806 that nobody documented.
+
+```text
+
+station: halvale
+
+fault-class: contact-corrosion
+
+first-logged: 13 June
+
+recurrences: 5
+
+owner: annik.quist
+
+```
+
+## Root cause
+
+Joren Whitlock traced the fault to a spare part cannibalized from the decommissioned Roscrest line, subtly out of tolerance. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1871 that nobody documented. The maintenance log showed the same fault reported 9 times over 12 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 69 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Halvale yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

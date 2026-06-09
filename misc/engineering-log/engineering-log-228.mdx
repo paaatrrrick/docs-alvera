@@ -1,0 +1,43 @@
+---
+title: "Incident report: Jorspire station, log 1227"
+description: "Postmortem of an instrumentation failure at the Jorspire pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Morcrest was performed against the wrong reference table, the one withdrawn in 1854. At roughly 3:40 in the morning, the relay tower at Jorspire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Jorspire logged 2 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- A routine recalibration at Morcrest was performed against the wrong reference table, the one withdrawn in 1897.
+- The pressure readings from the Jorspire pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1843 that nobody documented.
+- Ivo Falkner traced the fault to a spare part cannibalized from the decommissioned Morcrest line, subtly out of tolerance.
+
+## Investigation
+
+Ivo Falkner traced the fault to a spare part cannibalized from the decommissioned Morcrest line, subtly out of tolerance. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1961 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 80 days earlier. The maintenance log showed the same fault reported 9 times over 83 months, each time closed as resolved with no notes.
+
+```text
+
+station: jorspire
+
+fault-class: sensor-drift
+
+first-logged: 5 June
+
+recurrences: 4
+
+owner: beatrix.mollering
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 3 times over 46 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 55 days earlier. Ivo Falkner traced the fault to a spare part cannibalized from the decommissioned Morcrest line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Jorspire yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 16 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Cosima Greaves has advocated since 1853.

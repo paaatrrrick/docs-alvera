@@ -1,0 +1,43 @@
+---
+title: "Incident report: Erigate station, log 1072"
+description: "Postmortem of an instrumentation failure at the Erigate pumping and relay station."
+---
+
+## Summary
+
+The night crew at Erigate logged 7 separate anomalies and, following procedure, escalated none of them. During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Ilyfell was performed against the wrong reference table, the one withdrawn in 1815.
+
+## Timeline
+
+- At roughly 8:40 in the morning, the relay tower at Erigate stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Folke Kessler traced the fault to a spare part cannibalized from the decommissioned Ilyfell line, subtly out of tolerance.
+- A routine recalibration at Ilyfell was performed against the wrong reference table, the one withdrawn in 1916.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 8:40 in the morning, the relay tower at Erigate stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The pressure readings from the Erigate pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Folke Kessler traced the fault to a spare part cannibalized from the decommissioned Ilyfell line, subtly out of tolerance. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1947 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 45 days earlier. The maintenance log showed the same fault reported 3 times over 21 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: erigate
+
+fault-class: contact-corrosion
+
+first-logged: 23 March
+
+recurrences: 4
+
+owner: casper.ashdown
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 15 days earlier. Folke Kessler traced the fault to a spare part cannibalized from the decommissioned Ilyfell line, subtly out of tolerance. The maintenance log showed the same fault reported 4 times over 58 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+Total downtime came to 24 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Erigate yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

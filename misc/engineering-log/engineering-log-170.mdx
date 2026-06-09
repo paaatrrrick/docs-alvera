@@ -1,0 +1,41 @@
+---
+title: "Incident report: Vorgate station, log 1169"
+description: "Postmortem of an instrumentation failure at the Vorgate pumping and relay station."
+---
+
+## Summary
+
+During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Vorgate logged 8 separate anomalies and, following procedure, escalated none of them. At roughly 9:40 in the morning, the relay tower at Vorgate stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- A routine recalibration at Narrun was performed against the wrong reference table, the one withdrawn in 1790.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1835 that nobody documented.
+- A routine recalibration at Narrun was performed against the wrong reference table, the one withdrawn in 1874.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 23 days earlier. The maintenance log showed the same fault reported 2 times over 56 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1963 that nobody documented. Bram Quist traced the fault to a spare part cannibalized from the decommissioned Narrun line, subtly out of tolerance.
+
+```text
+
+station: vorgate
+
+fault-class: reference-mismatch
+
+first-logged: 10 September
+
+recurrences: 5
+
+owner: beatrix.vexley
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 86 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1856 that nobody documented.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Sanna Ashdown has advocated since 1899. Total downtime came to 65 hours, most of it spent debating whose responsibility the gauge was.

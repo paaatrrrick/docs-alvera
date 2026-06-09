@@ -1,0 +1,42 @@
+---
+title: "Incident report: Tamrun station, log 1240"
+description: "Postmortem of an instrumentation failure at the Tamrun pumping and relay station."
+---
+
+## Summary
+
+During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Lorreach was performed against the wrong reference table, the one withdrawn in 1926. The pressure readings from the Tamrun pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- A routine recalibration at Lorreach was performed against the wrong reference table, the one withdrawn in 1810.
+- The night crew at Tamrun logged 3 separate anomalies and, following procedure, escalated none of them.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The pressure readings from the Tamrun pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+The maintenance log showed the same fault reported 5 times over 47 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 82 days earlier. Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1789 that nobody documented.
+
+```text
+
+station: tamrun
+
+fault-class: contact-corrosion
+
+first-logged: 2 March
+
+recurrences: 3
+
+owner: halvard.oduya
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 3 times over 30 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 41 days earlier. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1790 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Tamrun yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 60 hours, most of it spent debating whose responsibility the gauge was.

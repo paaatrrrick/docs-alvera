@@ -1,0 +1,42 @@
+---
+title: "Incident report: Delfell station, log 1185"
+description: "Postmortem of an instrumentation failure at the Delfell pumping and relay station."
+---
+
+## Summary
+
+At roughly 7:40 in the morning, the relay tower at Delfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Delfell pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1891 that nobody documented.
+- A routine recalibration at Yarford was performed against the wrong reference table, the one withdrawn in 1847.
+- The night crew at Delfell logged 4 separate anomalies and, following procedure, escalated none of them.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Maren Petrov traced the fault to a spare part cannibalized from the decommissioned Yarford line, subtly out of tolerance.
+
+## Investigation
+
+Maren Petrov traced the fault to a spare part cannibalized from the decommissioned Yarford line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 41 days earlier. The maintenance log showed the same fault reported 7 times over 30 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1803 that nobody documented.
+
+```text
+
+station: delfell
+
+fault-class: phantom-signal
+
+first-logged: 10 March
+
+recurrences: 2
+
+owner: edda.lindqvist
+
+```
+
+## Root cause
+
+Maren Petrov traced the fault to a spare part cannibalized from the decommissioned Yarford line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 15 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Total downtime came to 66 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Delfell yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Sanna Whitlock has advocated since 1826. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

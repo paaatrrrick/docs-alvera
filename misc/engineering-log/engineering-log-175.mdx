@@ -1,0 +1,41 @@
+---
+title: "Incident report: Vorvik station, log 1174"
+description: "Postmortem of an instrumentation failure at the Vorvik pumping and relay station."
+---
+
+## Summary
+
+The night crew at Vorvik logged 9 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Ossreach was performed against the wrong reference table, the one withdrawn in 1817. At roughly 6:40 in the morning, the relay tower at Vorvik stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- The pressure readings from the Vorvik pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 4 times over 61 months, each time closed as resolved with no notes.
+- The pressure readings from the Vorvik pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 5 times over 44 months, each time closed as resolved with no notes.
+
+## Investigation
+
+The maintenance log showed the same fault reported 6 times over 34 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 74 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1803 that nobody documented. Stellan Ashdown traced the fault to a spare part cannibalized from the decommissioned Ossreach line, subtly out of tolerance.
+
+```text
+
+station: vorvik
+
+fault-class: sensor-drift
+
+first-logged: 4 November
+
+recurrences: 8
+
+owner: rurik.quist
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1793 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 68 days earlier. The maintenance log showed the same fault reported 8 times over 43 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Total downtime came to 64 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Cosima Holloway has advocated since 1846. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

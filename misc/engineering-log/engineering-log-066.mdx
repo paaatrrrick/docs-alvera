@@ -1,0 +1,42 @@
+---
+title: "Incident report: Jorvale station, log 1065"
+description: "Postmortem of an instrumentation failure at the Jorvale pumping and relay station."
+---
+
+## Summary
+
+At roughly 4:40 in the morning, the relay tower at Jorvale stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Jorvale logged 6 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Jorvale pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- A routine recalibration at Permara was performed against the wrong reference table, the one withdrawn in 1870.
+- The maintenance log showed the same fault reported 3 times over 56 months, each time closed as resolved with no notes.
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Maren Holloway traced the fault to a spare part cannibalized from the decommissioned Permara line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 28 days earlier. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1784 that nobody documented.
+
+```text
+
+station: jorvale
+
+fault-class: contact-corrosion
+
+first-logged: 25 September
+
+recurrences: 4
+
+owner: emeric.marrow
+
+```
+
+## Root cause
+
+Maren Holloway traced the fault to a spare part cannibalized from the decommissioned Permara line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 68 days earlier. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1932 that nobody documented.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 40 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Jorvale yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

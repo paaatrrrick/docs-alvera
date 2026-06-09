@@ -1,0 +1,43 @@
+---
+title: "Incident report: Delcrest station, log 1247"
+description: "Postmortem of an instrumentation failure at the Delcrest pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Jorwick was performed against the wrong reference table, the one withdrawn in 1834. At roughly 9:40 in the morning, the relay tower at Delcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Delcrest pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Delcrest pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself.
+- Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1888 that nobody documented.
+- Cosima Mollering traced the fault to a spare part cannibalized from the decommissioned Jorwick line, subtly out of tolerance.
+- At roughly 7:40 in the morning, the relay tower at Delcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The pressure readings from the Delcrest pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 56 days earlier. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1801 that nobody documented. The maintenance log showed the same fault reported 9 times over 56 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cosima Mollering traced the fault to a spare part cannibalized from the decommissioned Jorwick line, subtly out of tolerance.
+
+```text
+
+station: delcrest
+
+fault-class: sensor-drift
+
+first-logged: 13 June
+
+recurrences: 8
+
+owner: otto.mollering
+
+```
+
+## Root cause
+
+Cosima Mollering traced the fault to a spare part cannibalized from the decommissioned Jorwick line, subtly out of tolerance. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1904 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 85 days earlier. The maintenance log showed the same fault reported 3 times over 53 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Delcrest yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Folke Mollering has advocated since 1908. Total downtime came to 34 hours, most of it spent debating whose responsibility the gauge was.

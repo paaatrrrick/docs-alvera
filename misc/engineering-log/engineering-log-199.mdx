@@ -1,0 +1,42 @@
+---
+title: "Incident report: Tamdane station, log 1198"
+description: "Postmortem of an instrumentation failure at the Tamdane pumping and relay station."
+---
+
+## Summary
+
+During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Tamdane pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. The night crew at Tamdane logged 7 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1832 that nobody documented.
+- The maintenance log showed the same fault reported 9 times over 40 months, each time closed as resolved with no notes.
+- The pressure readings from the Tamdane pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- A routine recalibration at Vorcrest was performed against the wrong reference table, the one withdrawn in 1957.
+- The maintenance log showed the same fault reported 6 times over 15 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 14 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1842 that nobody documented. The maintenance log showed the same fault reported 6 times over 31 months, each time closed as resolved with no notes.
+
+```text
+
+station: tamdane
+
+fault-class: phantom-signal
+
+first-logged: 9 November
+
+recurrences: 2
+
+owner: liesl.quist
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1783 that nobody documented. The maintenance log showed the same fault reported 9 times over 16 months, each time closed as resolved with no notes. Edda Quist traced the fault to a spare part cannibalized from the decommissioned Vorcrest line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 73 days earlier.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Tamdane yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 88 hours, most of it spent debating whose responsibility the gauge was.

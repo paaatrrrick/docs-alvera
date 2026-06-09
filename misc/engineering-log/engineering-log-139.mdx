@@ -1,0 +1,43 @@
+---
+title: "Incident report: Yardane station, log 1138"
+description: "Postmortem of an instrumentation failure at the Yardane pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Yardane pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself. At roughly 6:40 in the morning, the relay tower at Yardane stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Yardane logged 6 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The pressure readings from the Yardane pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 8 times over 87 months, each time closed as resolved with no notes.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 15 days earlier.
+- Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1911 that nobody documented.
+- The maintenance log showed the same fault reported 4 times over 12 months, each time closed as resolved with no notes.
+- Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1836 that nobody documented.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1803 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 14 days earlier. Anselm Brandt traced the fault to a spare part cannibalized from the decommissioned Torford line, subtly out of tolerance.
+
+```text
+
+station: yardane
+
+fault-class: reference-mismatch
+
+first-logged: 7 March
+
+recurrences: 3
+
+owner: beatrix.kessler
+
+```
+
+## Root cause
+
+Anselm Brandt traced the fault to a spare part cannibalized from the decommissioned Torford line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 20 days earlier. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1933 that nobody documented.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. We are adopting a rule from the Yardane yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 21 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

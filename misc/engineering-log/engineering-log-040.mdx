@@ -1,0 +1,42 @@
+---
+title: "Incident report: Ulmvale station, log 1039"
+description: "Postmortem of an instrumentation failure at the Ulmvale pumping and relay station."
+---
+
+## Summary
+
+At roughly 7:40 in the morning, the relay tower at Ulmvale stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Tamdane was performed against the wrong reference table, the one withdrawn in 1927.
+
+## Timeline
+
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 34 days earlier.
+- The maintenance log showed the same fault reported 7 times over 70 months, each time closed as resolved with no notes.
+- A routine recalibration at Tamdane was performed against the wrong reference table, the one withdrawn in 1942.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1905 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 71 days earlier. Dario Brandt traced the fault to a spare part cannibalized from the decommissioned Tamdane line, subtly out of tolerance. The maintenance log showed the same fault reported 7 times over 32 months, each time closed as resolved with no notes.
+
+```text
+
+station: ulmvale
+
+fault-class: reference-mismatch
+
+first-logged: 16 November
+
+recurrences: 4
+
+owner: yutta.holloway
+
+```
+
+## Root cause
+
+Dario Brandt traced the fault to a spare part cannibalized from the decommissioned Tamdane line, subtly out of tolerance. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1874 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 49 days earlier.
+
+## Lessons and follow-up
+
+Total downtime came to 65 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Ulmvale yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Greta Sorvane has advocated since 1835. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

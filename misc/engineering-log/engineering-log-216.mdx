@@ -1,0 +1,42 @@
+---
+title: "Incident report: Zelvale station, log 1215"
+description: "Postmortem of an instrumentation failure at the Zelvale pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Zelvale pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself. During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The night crew at Zelvale logged 5 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The pressure readings from the Zelvale pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+- During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Maren Drummond traced the fault to a spare part cannibalized from the decommissioned Vormire line, subtly out of tolerance.
+- The pressure readings from the Zelvale pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself.
+- The night crew at Zelvale logged 8 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+The maintenance log showed the same fault reported 4 times over 49 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1894 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 48 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Maren Drummond traced the fault to a spare part cannibalized from the decommissioned Vormire line, subtly out of tolerance.
+
+```text
+
+station: zelvale
+
+fault-class: phantom-signal
+
+first-logged: 1 June
+
+recurrences: 5
+
+owner: ivo.sorvane
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1862 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 5 times over 85 months, each time closed as resolved with no notes. Maren Drummond traced the fault to a spare part cannibalized from the decommissioned Vormire line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Otto Greaves has advocated since 1881. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 68 hours, most of it spent debating whose responsibility the gauge was.

@@ -1,0 +1,43 @@
+---
+title: "Incident report: Vorford station, log 1136"
+description: "Postmortem of an instrumentation failure at the Vorford pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Vorford pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. At roughly 7:40 in the morning, the relay tower at Vorford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The pressure readings from the Vorford pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- A routine recalibration at Halstead was performed against the wrong reference table, the one withdrawn in 1926.
+- Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1884 that nobody documented.
+- During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- A routine recalibration at Halstead was performed against the wrong reference table, the one withdrawn in 1954.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1824 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 4 times over 55 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 52 days earlier.
+
+```text
+
+station: vorford
+
+fault-class: reference-mismatch
+
+first-logged: 13 September
+
+recurrences: 8
+
+owner: mireille.halloran
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 4 times over 26 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1947 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Dario Vexley has advocated since 1912. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 66 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Vorford yards: any fault reported three times earns a named owner and a written theory.

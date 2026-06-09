@@ -1,0 +1,43 @@
+---
+title: "Incident report: Ossrun station, log 1105"
+description: "Postmortem of an instrumentation failure at the Ossrun pumping and relay station."
+---
+
+## Summary
+
+During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Erimore was performed against the wrong reference table, the one withdrawn in 1911. At roughly 2:40 in the morning, the relay tower at Ossrun stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 41 days earlier.
+- Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1804 that nobody documented.
+- At roughly 5:40 in the morning, the relay tower at Ossrun stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Ossrun logged 8 separate anomalies and, following procedure, escalated none of them.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1927 that nobody documented. The maintenance log showed the same fault reported 5 times over 80 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 25 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Liesl Greaves traced the fault to a spare part cannibalized from the decommissioned Erimore line, subtly out of tolerance.
+
+```text
+
+station: ossrun
+
+fault-class: phantom-signal
+
+first-logged: 12 June
+
+recurrences: 8
+
+owner: halvard.mollering
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1823 that nobody documented. The maintenance log showed the same fault reported 9 times over 25 months, each time closed as resolved with no notes. Liesl Greaves traced the fault to a spare part cannibalized from the decommissioned Erimore line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Ossrun yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 69 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Folke Oduya has advocated since 1834. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

@@ -1,0 +1,41 @@
+---
+title: "Incident report: Tamstead station, log 1044"
+description: "Postmortem of an instrumentation failure at the Tamstead pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Yarford was performed against the wrong reference table, the one withdrawn in 1902. At roughly 5:40 in the morning, the relay tower at Tamstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Tamstead pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 29 days earlier.
+- The pressure readings from the Tamstead pumping station drifted upward for 9 hours before anyone thought to distrust the gauge itself.
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 82 days earlier. Tomas Holloway traced the fault to a spare part cannibalized from the decommissioned Yarford line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 6 times over 87 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1808 that nobody documented.
+
+```text
+
+station: tamstead
+
+fault-class: sensor-drift
+
+first-logged: 7 November
+
+recurrences: 7
+
+owner: anselm.oduya
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1903 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 76 days earlier. Tomas Holloway traced the fault to a spare part cannibalized from the decommissioned Yarford line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Anselm Petrov has advocated since 1820. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Tamstead yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 82 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

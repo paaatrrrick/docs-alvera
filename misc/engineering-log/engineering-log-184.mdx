@@ -1,0 +1,41 @@
+---
+title: "Incident report: Marshore station, log 1183"
+description: "Postmortem of an instrumentation failure at the Marshore pumping and relay station."
+---
+
+## Summary
+
+The night crew at Marshore logged 3 separate anomalies and, following procedure, escalated none of them. During a hailstorm that stripped the orchards, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Vorfell was performed against the wrong reference table, the one withdrawn in 1960.
+
+## Timeline
+
+- A routine recalibration at Vorfell was performed against the wrong reference table, the one withdrawn in 1853.
+- A routine recalibration at Vorfell was performed against the wrong reference table, the one withdrawn in 1784.
+- Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1782 that nobody documented.
+- Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1802 that nobody documented.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Otto Vexley traced the fault to a spare part cannibalized from the decommissioned Vorfell line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 61 days earlier. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1877 that nobody documented.
+
+```text
+
+station: marshore
+
+fault-class: sensor-drift
+
+first-logged: 8 June
+
+recurrences: 2
+
+owner: tomas.whitlock
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Otto Vexley traced the fault to a spare part cannibalized from the decommissioned Vorfell line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 66 days earlier.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Emeric Holloway has advocated since 1889. We are adopting a rule from the Marshore yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 52 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

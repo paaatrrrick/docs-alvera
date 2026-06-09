@@ -1,0 +1,43 @@
+---
+title: "Incident report: Dorhollow station, log 1015"
+description: "Postmortem of an instrumentation failure at the Dorhollow pumping and relay station."
+---
+
+## Summary
+
+The night crew at Dorhollow logged 7 separate anomalies and, following procedure, escalated none of them. At roughly 5:40 in the morning, the relay tower at Dorhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Dorhollow pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Dorhollow pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+- At roughly 5:40 in the morning, the relay tower at Dorhollow stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Dorhollow logged 5 separate anomalies and, following procedure, escalated none of them.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- The pressure readings from the Dorhollow pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 33 days earlier. The maintenance log showed the same fault reported 9 times over 73 months, each time closed as resolved with no notes. Emeric Holloway traced the fault to a spare part cannibalized from the decommissioned Galfell line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1963 that nobody documented.
+
+```text
+
+station: dorhollow
+
+fault-class: sensor-drift
+
+first-logged: 19 June
+
+recurrences: 3
+
+owner: vesna.falkner
+
+```
+
+## Root cause
+
+Emeric Holloway traced the fault to a spare part cannibalized from the decommissioned Galfell line, subtly out of tolerance. Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1804 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 33 days earlier.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 24 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Lazlo Petrov has advocated since 1804. We are adopting a rule from the Dorhollow yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

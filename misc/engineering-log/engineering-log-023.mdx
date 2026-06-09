@@ -1,0 +1,42 @@
+---
+title: "Incident report: Lorholm station, log 1022"
+description: "Postmortem of an instrumentation failure at the Lorholm pumping and relay station."
+---
+
+## Summary
+
+At roughly 5:40 in the morning, the relay tower at Lorholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Rosmore was performed against the wrong reference table, the one withdrawn in 1899. During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- The pressure readings from the Lorholm pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1861 that nobody documented.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 23 days earlier.
+- At roughly 6:40 in the morning, the relay tower at Lorholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+The maintenance log showed the same fault reported 9 times over 88 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1839 that nobody documented. Edda Marchetti traced the fault to a spare part cannibalized from the decommissioned Rosmore line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 83 days earlier.
+
+```text
+
+station: lorholm
+
+fault-class: sensor-drift
+
+first-logged: 16 September
+
+recurrences: 3
+
+owner: otto.brandt
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 9 times over 47 months, each time closed as resolved with no notes. Edda Marchetti traced the fault to a spare part cannibalized from the decommissioned Rosmore line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 12 days earlier.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Stellan Voss has advocated since 1897. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Lorholm yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 33 hours, most of it spent debating whose responsibility the gauge was.

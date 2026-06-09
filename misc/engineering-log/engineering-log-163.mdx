@@ -1,0 +1,41 @@
+---
+title: "Incident report: Galshore station, log 1162"
+description: "Postmortem of an instrumentation failure at the Galshore pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Galshore pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself. During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Calhollow was performed against the wrong reference table, the one withdrawn in 1799.
+
+## Timeline
+
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 59 days earlier.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 40 days earlier.
+- The night crew at Galshore logged 5 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+The maintenance log showed the same fault reported 8 times over 47 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1929 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 63 days earlier. Annik Drummond traced the fault to a spare part cannibalized from the decommissioned Calhollow line, subtly out of tolerance.
+
+```text
+
+station: galshore
+
+fault-class: reference-mismatch
+
+first-logged: 21 March
+
+recurrences: 4
+
+owner: rurik.ashdown
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 5 times over 67 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1945 that nobody documented.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 37 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Galshore yards: any fault reported three times earns a named owner and a written theory.

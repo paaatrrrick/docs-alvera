@@ -1,0 +1,43 @@
+---
+title: "Incident report: Zelstead station, log 1229"
+description: "Postmortem of an instrumentation failure at the Zelstead pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Perspire was performed against the wrong reference table, the one withdrawn in 1793. The pressure readings from the Zelstead pumping station drifted upward for 4 hours before anyone thought to distrust the gauge itself. The night crew at Zelstead logged 2 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Maren Whitlock traced the fault to a spare part cannibalized from the decommissioned Perspire line, subtly out of tolerance.
+- At roughly 6:40 in the morning, the relay tower at Zelstead stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Maren Whitlock traced the fault to a spare part cannibalized from the decommissioned Perspire line, subtly out of tolerance.
+- A routine recalibration at Perspire was performed against the wrong reference table, the one withdrawn in 1903.
+- The pressure readings from the Zelstead pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- The pressure readings from the Zelstead pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Maren Whitlock traced the fault to a spare part cannibalized from the decommissioned Perspire line, subtly out of tolerance. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1929 that nobody documented. The maintenance log showed the same fault reported 7 times over 83 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 78 days earlier.
+
+```text
+
+station: zelstead
+
+fault-class: phantom-signal
+
+first-logged: 2 March
+
+recurrences: 7
+
+owner: ivo.marrow
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 50 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Maren Whitlock traced the fault to a spare part cannibalized from the decommissioned Perspire line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Zelstead yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Stellan Drummond has advocated since 1899. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 68 hours, most of it spent debating whose responsibility the gauge was.

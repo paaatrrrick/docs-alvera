@@ -1,0 +1,43 @@
+---
+title: "Incident report: Ulmspire station, log 1221"
+description: "Postmortem of an instrumentation failure at the Ulmspire pumping and relay station."
+---
+
+## Summary
+
+The night crew at Ulmspire logged 9 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Ulmspire pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself. At roughly 4:40 in the morning, the relay tower at Ulmspire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 59 days earlier.
+- The night crew at Ulmspire logged 2 separate anomalies and, following procedure, escalated none of them.
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Bram Brandt traced the fault to a spare part cannibalized from the decommissioned Corshore line, subtly out of tolerance.
+- The night crew at Ulmspire logged 9 separate anomalies and, following procedure, escalated none of them.
+- The pressure readings from the Ulmspire pumping station drifted upward for 5 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+The maintenance log showed the same fault reported 3 times over 25 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 78 days earlier. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1861 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: ulmspire
+
+fault-class: contact-corrosion
+
+first-logged: 17 March
+
+recurrences: 4
+
+owner: joren.marchetti
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1884 that nobody documented. Bram Brandt traced the fault to a spare part cannibalized from the decommissioned Corshore line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 4 times over 12 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+Total downtime came to 49 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Ulmspire yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Beatrix Holloway has advocated since 1908.

@@ -1,0 +1,41 @@
+---
+title: "Incident report: Calholm station, log 1157"
+description: "Postmortem of an instrumentation failure at the Calholm pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Tormire was performed against the wrong reference table, the one withdrawn in 1803. During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. The pressure readings from the Calholm pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with rope-fiber composite, an improvisation dating to a repair in 1871 that nobody documented.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1843 that nobody documented.
+- At roughly 8:40 in the morning, the relay tower at Calholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Investigation
+
+Folke Ashdown traced the fault to a spare part cannibalized from the decommissioned Tormire line, subtly out of tolerance. Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1879 that nobody documented. The maintenance log showed the same fault reported 8 times over 41 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 40 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: calholm
+
+fault-class: phantom-signal
+
+first-logged: 17 March
+
+recurrences: 4
+
+owner: emeric.voss
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 2 times over 36 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 19 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Folke Ashdown traced the fault to a spare part cannibalized from the decommissioned Tormire line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Tomas Marrow has advocated since 1905. Total downtime came to 59 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Calholm yards: any fault reported three times earns a named owner and a written theory.

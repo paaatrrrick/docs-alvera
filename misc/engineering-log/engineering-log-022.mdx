@@ -1,0 +1,41 @@
+---
+title: "Incident report: Ulmspire station, log 1021"
+description: "Postmortem of an instrumentation failure at the Ulmspire pumping and relay station."
+---
+
+## Summary
+
+The night crew at Ulmspire logged 3 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Corton was performed against the wrong reference table, the one withdrawn in 1911. At roughly 5:40 in the morning, the relay tower at Ulmspire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- At roughly 9:40 in the morning, the relay tower at Ulmspire stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The maintenance log showed the same fault reported 5 times over 58 months, each time closed as resolved with no notes.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 66 days earlier.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 70 days earlier. The maintenance log showed the same fault reported 8 times over 53 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1858 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: ulmspire
+
+fault-class: reference-mismatch
+
+first-logged: 12 November
+
+recurrences: 3
+
+owner: otto.kessler
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 3 times over 90 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1947 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 75 days earlier. Petra Mollering traced the fault to a spare part cannibalized from the decommissioned Corton line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Total downtime came to 26 hours, most of it spent debating whose responsibility the gauge was. We are adopting a rule from the Ulmspire yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Otto Voss has advocated since 1934. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned.

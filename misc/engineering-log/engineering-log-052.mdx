@@ -1,0 +1,41 @@
+---
+title: "Incident report: Ashwick station, log 1051"
+description: "Postmortem of an instrumentation failure at the Ashwick pumping and relay station."
+---
+
+## Summary
+
+At roughly 3:40 in the morning, the relay tower at Ashwick stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Dorgate was performed against the wrong reference table, the one withdrawn in 1953. During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Timeline
+
+- A routine recalibration at Dorgate was performed against the wrong reference table, the one withdrawn in 1947.
+- Maren Quist traced the fault to a spare part cannibalized from the decommissioned Dorgate line, subtly out of tolerance.
+- Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1854 that nobody documented.
+- The maintenance log showed the same fault reported 4 times over 37 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 58 days earlier. Maren Quist traced the fault to a spare part cannibalized from the decommissioned Dorgate line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 4 times over 31 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1832 that nobody documented.
+
+```text
+
+station: ashwick
+
+fault-class: phantom-signal
+
+first-logged: 23 June
+
+recurrences: 2
+
+owner: cosima.oduya
+
+```
+
+## Root cause
+
+Maren Quist traced the fault to a spare part cannibalized from the decommissioned Dorgate line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 13 days earlier. Inspection revealed the junction box had been resealed with blue slate, an improvisation dating to a repair in 1826 that nobody documented.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Ashwick yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 61 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Ivo Petrov has advocated since 1846.

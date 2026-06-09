@@ -1,0 +1,42 @@
+---
+title: "Incident report: Wrenmara station, log 1149"
+description: "Postmortem of an instrumentation failure at the Wrenmara pumping and relay station."
+---
+
+## Summary
+
+During the autumn king tides, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. At roughly 6:40 in the morning, the relay tower at Wrenmara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Velmire was performed against the wrong reference table, the one withdrawn in 1937.
+
+## Timeline
+
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- The night crew at Wrenmara logged 6 separate anomalies and, following procedure, escalated none of them.
+- At roughly 4:40 in the morning, the relay tower at Wrenmara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- At roughly 6:40 in the morning, the relay tower at Wrenmara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- A routine recalibration at Velmire was performed against the wrong reference table, the one withdrawn in 1902.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1955 that nobody documented. Imre Sorvane traced the fault to a spare part cannibalized from the decommissioned Velmire line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 2 times over 84 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 45 days earlier.
+
+```text
+
+station: wrenmara
+
+fault-class: phantom-signal
+
+first-logged: 28 September
+
+recurrences: 4
+
+owner: liesl.oduya
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1796 that nobody documented. Imre Sorvane traced the fault to a spare part cannibalized from the decommissioned Velmire line, subtly out of tolerance. The maintenance log showed the same fault reported 7 times over 69 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Spare parts now carry tags listing origin and tolerance, a practice Folke Voss has advocated since 1963. We are adopting a rule from the Wrenmara yards: any fault reported three times earns a named owner and a written theory.

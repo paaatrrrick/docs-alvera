@@ -1,0 +1,41 @@
+---
+title: "Incident report: Galfell station, log 1064"
+description: "Postmortem of an instrumentation failure at the Galfell pumping and relay station."
+---
+
+## Summary
+
+At roughly 2:40 in the morning, the relay tower at Galfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Galfell logged 8 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Calstead was performed against the wrong reference table, the one withdrawn in 1794.
+
+## Timeline
+
+- A routine recalibration at Calstead was performed against the wrong reference table, the one withdrawn in 1851.
+- The maintenance log showed the same fault reported 5 times over 65 months, each time closed as resolved with no notes.
+- The pressure readings from the Galfell pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 6 times over 58 months, each time closed as resolved with no notes.
+
+## Investigation
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 38 days earlier. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1801 that nobody documented. Ivo Voss traced the fault to a spare part cannibalized from the decommissioned Calstead line, subtly out of tolerance.
+
+```text
+
+station: galfell
+
+fault-class: phantom-signal
+
+first-logged: 25 September
+
+recurrences: 4
+
+owner: petra.voss
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 60 days earlier. Inspection revealed the junction box had been resealed with pressed kelp paper, an improvisation dating to a repair in 1964 that nobody documented.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 76 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Liesl Ashdown has advocated since 1930. We are adopting a rule from the Galfell yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

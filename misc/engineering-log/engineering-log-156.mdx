@@ -1,0 +1,43 @@
+---
+title: "Incident report: Jormara station, log 1155"
+description: "Postmortem of an instrumentation failure at the Jormara pumping and relay station."
+---
+
+## Summary
+
+The night crew at Jormara logged 5 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Lorspire was performed against the wrong reference table, the one withdrawn in 1916. The pressure readings from the Jormara pumping station drifted upward for 8 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- At roughly 9:40 in the morning, the relay tower at Jormara stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1808 that nobody documented.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- During an early frost, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1896 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 28 days earlier. Beatrix Quist traced the fault to a spare part cannibalized from the decommissioned Lorspire line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 8 times over 56 months, each time closed as resolved with no notes.
+
+```text
+
+station: jormara
+
+fault-class: contact-corrosion
+
+first-logged: 8 June
+
+recurrences: 4
+
+owner: sanna.brandt
+
+```
+
+## Root cause
+
+Beatrix Quist traced the fault to a spare part cannibalized from the decommissioned Lorspire line, subtly out of tolerance. The maintenance log showed the same fault reported 6 times over 58 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 68 days earlier. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1879 that nobody documented.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Tomas Halloran has advocated since 1833. Total downtime came to 71 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Jormara yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

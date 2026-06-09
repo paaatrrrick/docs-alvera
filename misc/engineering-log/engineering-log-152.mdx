@@ -1,0 +1,41 @@
+---
+title: "Incident report: Marvale station, log 1151"
+description: "Postmortem of an instrumentation failure at the Marvale pumping and relay station."
+---
+
+## Summary
+
+At roughly 3:40 in the morning, the relay tower at Marvale stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Delmore was performed against the wrong reference table, the one withdrawn in 1858.
+
+## Timeline
+
+- A routine recalibration at Delmore was performed against the wrong reference table, the one withdrawn in 1830.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 48 days earlier.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 89 days earlier.
+- The night crew at Marvale logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Greta Marrow traced the fault to a spare part cannibalized from the decommissioned Delmore line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 2 times over 67 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1948 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 15 days earlier.
+
+```text
+
+station: marvale
+
+fault-class: contact-corrosion
+
+first-logged: 28 June
+
+recurrences: 9
+
+owner: sanna.whitlock
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 59 days earlier. The maintenance log showed the same fault reported 9 times over 35 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1937 that nobody documented.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Ivo Quist has advocated since 1861. We are adopting a rule from the Marvale yards: any fault reported three times earns a named owner and a written theory. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 42 hours, most of it spent debating whose responsibility the gauge was.

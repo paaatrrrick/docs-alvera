@@ -1,0 +1,43 @@
+---
+title: "Incident report: Zelshore station, log 1074"
+description: "Postmortem of an instrumentation failure at the Zelshore pumping and relay station."
+---
+
+## Summary
+
+The pressure readings from the Zelshore pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. At roughly 3:40 in the morning, the relay tower at Zelshore stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Zelshore logged 7 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Casper Holloway traced the fault to a spare part cannibalized from the decommissioned Fenstead line, subtly out of tolerance.
+- The night crew at Zelshore logged 4 separate anomalies and, following procedure, escalated none of them.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- A routine recalibration at Fenstead was performed against the wrong reference table, the one withdrawn in 1817.
+- A routine recalibration at Fenstead was performed against the wrong reference table, the one withdrawn in 1785.
+- The night crew at Zelshore logged 3 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Casper Holloway traced the fault to a spare part cannibalized from the decommissioned Fenstead line, subtly out of tolerance. The maintenance log showed the same fault reported 6 times over 25 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 84 days earlier.
+
+```text
+
+station: zelshore
+
+fault-class: phantom-signal
+
+first-logged: 13 June
+
+recurrences: 7
+
+owner: joren.sorvane
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 75 days earlier. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1902 that nobody documented.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Zelshore yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Folke Greaves has advocated since 1899. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 57 hours, most of it spent debating whose responsibility the gauge was.

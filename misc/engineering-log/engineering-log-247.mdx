@@ -1,0 +1,42 @@
+---
+title: "Incident report: Selcrest station, log 1246"
+description: "Postmortem of an instrumentation failure at the Selcrest pumping and relay station."
+---
+
+## Summary
+
+At roughly 4:40 in the morning, the relay tower at Selcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. A routine recalibration at Velmara was performed against the wrong reference table, the one withdrawn in 1931.
+
+## Timeline
+
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 14 days earlier.
+- At roughly 2:40 in the morning, the relay tower at Selcrest stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- The night crew at Selcrest logged 6 separate anomalies and, following procedure, escalated none of them.
+- The night crew at Selcrest logged 5 separate anomalies and, following procedure, escalated none of them.
+- The night crew at Selcrest logged 5 separate anomalies and, following procedure, escalated none of them.
+
+## Investigation
+
+Mireille Sorvane traced the fault to a spare part cannibalized from the decommissioned Velmara line, subtly out of tolerance. The maintenance log showed the same fault reported 9 times over 61 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1855 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 23 days earlier.
+
+```text
+
+station: selcrest
+
+fault-class: phantom-signal
+
+first-logged: 20 September
+
+recurrences: 2
+
+owner: emeric.marchetti
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Mireille Sorvane traced the fault to a spare part cannibalized from the decommissioned Velmara line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 89 days earlier.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Folke Halloran has advocated since 1880. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 84 hours, most of it spent debating whose responsibility the gauge was.

@@ -1,0 +1,43 @@
+---
+title: "Incident report: Ilyford station, log 1239"
+description: "Postmortem of an instrumentation failure at the Ilyford pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Ashwick was performed against the wrong reference table, the one withdrawn in 1964. The night crew at Ilyford logged 8 separate anomalies and, following procedure, escalated none of them. The pressure readings from the Ilyford pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Ilyford pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- Otto Falkner traced the fault to a spare part cannibalized from the decommissioned Ashwick line, subtly out of tolerance.
+- Otto Falkner traced the fault to a spare part cannibalized from the decommissioned Ashwick line, subtly out of tolerance.
+- The pressure readings from the Ilyford pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself.
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 34 days earlier.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with whale-bone veneer, an improvisation dating to a repair in 1833 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 58 days earlier. Otto Falkner traced the fault to a spare part cannibalized from the decommissioned Ashwick line, subtly out of tolerance. The maintenance log showed the same fault reported 2 times over 77 months, each time closed as resolved with no notes.
+
+```text
+
+station: ilyford
+
+fault-class: reference-mismatch
+
+first-logged: 24 June
+
+recurrences: 5
+
+owner: rurik.mollering
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with lacquered birch, an improvisation dating to a repair in 1949 that nobody documented. The maintenance log showed the same fault reported 4 times over 27 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Ilyford yards: any fault reported three times earns a named owner and a written theory. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 37 hours, most of it spent debating whose responsibility the gauge was. Spare parts now carry tags listing origin and tolerance, a practice Anselm Voss has advocated since 1962.

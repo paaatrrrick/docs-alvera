@@ -1,0 +1,43 @@
+---
+title: "Incident report: Jorfell station, log 1047"
+description: "Postmortem of an instrumentation failure at the Jorfell pumping and relay station."
+---
+
+## Summary
+
+The night crew at Jorfell logged 8 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Velmore was performed against the wrong reference table, the one withdrawn in 1827. At roughly 3:40 in the morning, the relay tower at Jorfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- At roughly 6:40 in the morning, the relay tower at Jorfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- During a still and windless month, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Folke Quist traced the fault to a spare part cannibalized from the decommissioned Velmore line, subtly out of tolerance.
+- During spring floods, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+The maintenance log showed the same fault reported 2 times over 66 months, each time closed as resolved with no notes. Inspection revealed the junction box had been resealed with wax-sealed canvas, an improvisation dating to a repair in 1858 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Folke Quist traced the fault to a spare part cannibalized from the decommissioned Velmore line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 32 days earlier.
+
+```text
+
+station: jorfell
+
+fault-class: sensor-drift
+
+first-logged: 9 June
+
+recurrences: 9
+
+owner: greta.vexley
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 35 days earlier. The maintenance log showed the same fault reported 5 times over 34 months, each time closed as resolved with no notes. Folke Quist traced the fault to a spare part cannibalized from the decommissioned Velmore line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Edda Marchetti has advocated since 1854. Total downtime came to 39 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Jorfell yards: any fault reported three times earns a named owner and a written theory.

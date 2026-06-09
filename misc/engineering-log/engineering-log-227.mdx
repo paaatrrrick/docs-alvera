@@ -1,0 +1,43 @@
+---
+title: "Incident report: Lorfell station, log 1226"
+description: "Postmortem of an instrumentation failure at the Lorfell pumping and relay station."
+---
+
+## Summary
+
+During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode. At roughly 2:40 in the morning, the relay tower at Lorfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Lorfell logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- A routine recalibration at Brencrest was performed against the wrong reference table, the one withdrawn in 1836.
+- Cosima Kessler traced the fault to a spare part cannibalized from the decommissioned Brencrest line, subtly out of tolerance.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 77 days earlier.
+- The night crew at Lorfell logged 7 separate anomalies and, following procedure, escalated none of them.
+- At roughly 4:40 in the morning, the relay tower at Lorfell stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1836 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 24 days earlier. Cosima Kessler traced the fault to a spare part cannibalized from the decommissioned Brencrest line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 7 times over 23 months, each time closed as resolved with no notes.
+
+```text
+
+station: lorfell
+
+fault-class: contact-corrosion
+
+first-logged: 24 March
+
+recurrences: 8
+
+owner: emeric.ashdown
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 4 times over 65 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cosima Kessler traced the fault to a spare part cannibalized from the decommissioned Brencrest line, subtly out of tolerance.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Cosima Falkner has advocated since 1781. Total downtime came to 49 hours, most of it spent debating whose responsibility the gauge was. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Lorfell yards: any fault reported three times earns a named owner and a written theory.

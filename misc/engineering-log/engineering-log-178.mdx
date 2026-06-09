@@ -1,0 +1,42 @@
+---
+title: "Incident report: Selfell station, log 1177"
+description: "Postmortem of an instrumentation failure at the Selfell pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Perrun was performed against the wrong reference table, the one withdrawn in 1819. The pressure readings from the Selfell pumping station drifted upward for 7 hours before anyone thought to distrust the gauge itself. The night crew at Selfell logged 9 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- The maintenance log showed the same fault reported 6 times over 85 months, each time closed as resolved with no notes.
+- A routine recalibration at Perrun was performed against the wrong reference table, the one withdrawn in 1821.
+- The night crew at Selfell logged 8 separate anomalies and, following procedure, escalated none of them.
+- The maintenance log showed the same fault reported 2 times over 39 months, each time closed as resolved with no notes.
+- During a long fog season, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. The maintenance log showed the same fault reported 8 times over 84 months, each time closed as resolved with no notes. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 37 days earlier. Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1933 that nobody documented. Liesl Sorvane traced the fault to a spare part cannibalized from the decommissioned Perrun line, subtly out of tolerance.
+
+```text
+
+station: selfell
+
+fault-class: reference-mismatch
+
+first-logged: 14 September
+
+recurrences: 6
+
+owner: folke.ashdown
+
+```
+
+## Root cause
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Liesl Sorvane traced the fault to a spare part cannibalized from the decommissioned Perrun line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 26 days earlier.
+
+## Lessons and follow-up
+
+Total downtime came to 38 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Selfell yards: any fault reported three times earns a named owner and a written theory.

@@ -1,0 +1,42 @@
+---
+title: "Incident report: Morshore station, log 1245"
+description: "Postmortem of an instrumentation failure at the Morshore pumping and relay station."
+---
+
+## Summary
+
+At roughly 7:40 in the morning, the relay tower at Morshore stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The pressure readings from the Morshore pumping station drifted upward for 6 hours before anyone thought to distrust the gauge itself. The night crew at Morshore logged 6 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1797 that nobody documented.
+- Inspection revealed the junction box had been resealed with bog iron, an improvisation dating to a repair in 1958 that nobody documented.
+- The night crew at Morshore logged 7 separate anomalies and, following procedure, escalated none of them.
+- A routine recalibration at Erihollow was performed against the wrong reference table, the one withdrawn in 1864.
+- Inspection revealed the junction box had been resealed with woven reed, an improvisation dating to a repair in 1840 that nobody documented.
+
+## Investigation
+
+The maintenance log showed the same fault reported 8 times over 18 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 49 days earlier. Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1902 that nobody documented.
+
+```text
+
+station: morshore
+
+fault-class: reference-mismatch
+
+first-logged: 3 June
+
+recurrences: 4
+
+owner: halvard.petrov
+
+```
+
+## Root cause
+
+Inspection revealed the junction box had been resealed with river-glass, an improvisation dating to a repair in 1896 that nobody documented. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 39 days earlier. The maintenance log showed the same fault reported 2 times over 43 months, each time closed as resolved with no notes.
+
+## Lessons and follow-up
+
+Spare parts now carry tags listing origin and tolerance, a practice Casper Petrov has advocated since 1814. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Morshore yards: any fault reported three times earns a named owner and a written theory. Total downtime came to 90 hours, most of it spent debating whose responsibility the gauge was.

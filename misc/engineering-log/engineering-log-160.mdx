@@ -1,0 +1,43 @@
+---
+title: "Incident report: Wrenholm station, log 1159"
+description: "Postmortem of an instrumentation failure at the Wrenholm pumping and relay station."
+---
+
+## Summary
+
+The night crew at Wrenholm logged 6 separate anomalies and, following procedure, escalated none of them. A routine recalibration at Yarhollow was performed against the wrong reference table, the one withdrawn in 1893. At roughly 9:40 in the morning, the relay tower at Wrenholm stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+
+## Timeline
+
+- The night crew at Wrenholm logged 7 separate anomalies and, following procedure, escalated none of them.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 85 days earlier.
+- The pressure readings from the Wrenholm pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+- The maintenance log showed the same fault reported 6 times over 77 months, each time closed as resolved with no notes.
+- Cross-checking the gauge against a portable reference took twenty minutes and should have happened 80 days earlier.
+- The pressure readings from the Wrenholm pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+
+## Investigation
+
+Tomas Oduya traced the fault to a spare part cannibalized from the decommissioned Yarhollow line, subtly out of tolerance. Inspection revealed the junction box had been resealed with fired clay, an improvisation dating to a repair in 1882 that nobody documented. The maintenance log showed the same fault reported 4 times over 31 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: wrenholm
+
+fault-class: sensor-drift
+
+first-logged: 22 June
+
+recurrences: 7
+
+owner: dario.marchetti
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 3 times over 63 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Tomas Oduya traced the fault to a spare part cannibalized from the decommissioned Yarhollow line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 75 days earlier.
+
+## Lessons and follow-up
+
+We are adopting a rule from the Wrenholm yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Folke Falkner has advocated since 1798. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Total downtime came to 27 hours, most of it spent debating whose responsibility the gauge was.

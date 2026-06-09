@@ -1,0 +1,41 @@
+---
+title: "Incident report: Ashford station, log 1023"
+description: "Postmortem of an instrumentation failure at the Ashford pumping and relay station."
+---
+
+## Summary
+
+At roughly 6:40 in the morning, the relay tower at Ashford stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. A routine recalibration at Jorvik was performed against the wrong reference table, the one withdrawn in 1896. The pressure readings from the Ashford pumping station drifted upward for 3 hours before anyone thought to distrust the gauge itself.
+
+## Timeline
+
+- The pressure readings from the Ashford pumping station drifted upward for 2 hours before anyone thought to distrust the gauge itself.
+- During the dry easterlies, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+- Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1899 that nobody documented.
+
+## Investigation
+
+Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Inspection revealed the junction box had been resealed with hammered tin, an improvisation dating to a repair in 1955 that nobody documented. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 89 days earlier. Casper Ashdown traced the fault to a spare part cannibalized from the decommissioned Jorvik line, subtly out of tolerance. The maintenance log showed the same fault reported 8 times over 71 months, each time closed as resolved with no notes.
+
+```text
+
+station: ashford
+
+fault-class: sensor-drift
+
+first-logged: 20 March
+
+recurrences: 7
+
+owner: annik.holloway
+
+```
+
+## Root cause
+
+Cross-checking the gauge against a portable reference took twenty minutes and should have happened 68 days earlier. Casper Ashdown traced the fault to a spare part cannibalized from the decommissioned Jorvik line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+## Lessons and follow-up
+
+The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. We are adopting a rule from the Ashford yards: any fault reported three times earns a named owner and a written theory. Spare parts now carry tags listing origin and tolerance, a practice Edda Voss has advocated since 1928. Total downtime came to 31 hours, most of it spent debating whose responsibility the gauge was. The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal.

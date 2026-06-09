@@ -1,0 +1,41 @@
+---
+title: "Incident report: Zelreach station, log 1005"
+description: "Postmortem of an instrumentation failure at the Zelreach pumping and relay station."
+---
+
+## Summary
+
+A routine recalibration at Permore was performed against the wrong reference table, the one withdrawn in 1822. At roughly 6:40 in the morning, the relay tower at Zelreach stopped acknowledging heartbeats, and the operators assumed the usual corroded contact. The night crew at Zelreach logged 4 separate anomalies and, following procedure, escalated none of them.
+
+## Timeline
+
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- At roughly 7:40 in the morning, the relay tower at Zelreach stopped acknowledging heartbeats, and the operators assumed the usual corroded contact.
+- During the autumn king tides, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+- During weeks of sideways rain, the signal cable along the towpath shorted intermittently, producing phantom readings that matched no known failure mode.
+
+## Investigation
+
+Inspection revealed the junction box had been resealed with salt-cured oak, an improvisation dating to a repair in 1933 that nobody documented. Lazlo Holloway traced the fault to a spare part cannibalized from the decommissioned Permore line, subtly out of tolerance. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 78 days earlier. The maintenance log showed the same fault reported 5 times over 48 months, each time closed as resolved with no notes. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years.
+
+```text
+
+station: zelreach
+
+fault-class: sensor-drift
+
+first-logged: 21 June
+
+recurrences: 4
+
+owner: emeric.marchetti
+
+```
+
+## Root cause
+
+The maintenance log showed the same fault reported 5 times over 27 months, each time closed as resolved with no notes. Lazlo Holloway traced the fault to a spare part cannibalized from the decommissioned Permore line, subtly out of tolerance. Interviews established that the procedure existed, was correct, was printed, and was pinned behind a cabinet where nobody had seen it for years. Cross-checking the gauge against a portable reference took twenty minutes and should have happened 70 days earlier.
+
+## Lessons and follow-up
+
+The deeper failure was organizational: the station treated recurring anomalies as weather rather than as signal. Spare parts now carry tags listing origin and tolerance, a practice Sanna Whitlock has advocated since 1920. The reference tables have been consolidated; the withdrawn editions were collected and, with some ceremony, burned. Total downtime came to 77 hours, most of it spent debating whose responsibility the gauge was.
