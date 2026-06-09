@@ -1,0 +1,147 @@
+---
+title: "Colophon page: stack, hosting, and principles"
+description: "How the /colophon route is wired into the personal website and how to update the Built with, Hosted on, and Principles lists."
+---
+
+## Overview
+
+The colophon is a short static page at `/colophon` that explains how the personal website is built. It documents the stack, where the site is hosted, and the small set of principles the site is held to — the kind of "about this site" page readers reach for when they want to know what's under the hood.
+
+Use this page when you want to:
+
+- Link a reader to a single, plain explanation of how the site works.
+- Capture a decision about the stack, hosting, or site-wide principles so future-you remembers why it's that way.
+- Refresh the freshness date after a meaningful change to the site.
+
+## What's on the page
+
+The page is rendered by the `Colophon` component and styled with a dedicated `colophon.css` stylesheet. The layout has two parts:
+
+- A header with a **← Back home** link, the page title, a `Last updated` line, and a one-sentence intro.
+- A series of sections — **Built with**, **Hosted on**, and **Principles** — each rendered as a heading and a bulleted list.
+
+<Card title="Built with" icon="screwdriver-wrench">
+- React, bootstrapped with Create React App.
+- `react-router-dom` for client-side routing.
+- Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+- Netlify, deployed straight from the `master` branch on GitHub.
+- A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+- No analytics, no cookies, no tracking. Just pages.
+- Every page should load fast and read well on a phone.
+- Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+## How the route is wired
+
+The page is registered as a top-level route in `src/App.js`, alongside the other personal-website pages (`/uses`, `/now`, `/reading-list`, `/talks`, `/timeline`).
+
+```js src/App.js
+import Colophon from "./components/Colophon";
+
+function App() {
+  return (
+    <div className="App">
+      <Switch>
+        {/* ...other routes */}
+        <Route exact path='/talks' component={Talks} />
+        <Route exact path='/colophon' component={Colophon} />
+        <Route exact path='/magic-the-gathering' component={Haus} />
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+  );
+}
+```
+
+The component itself lives at `src/components/Colophon.js` and imports its styles from `src/components/colophon.css`. There are no props — everything the page renders comes from constants defined at the top of the file.
+
+## The `sections` data structure
+
+All visible body content is driven by a single `sections` array. Each entry has a `heading` and a list of `items`, and the component maps over the array to render each section as an `<h2>` plus a `<ul>`.
+
+```js src/components/Colophon.js
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    {
+        heading: 'Principles',
+        items: [
+            'No analytics, no cookies, no tracking. Just pages.',
+            'Every page should load fast and read well on a phone.',
+            'Content lives in plain JS constants so it is easy to edit.',
+        ],
+    },
+];
+```
+
+### Section schema
+
+| Field     | Type       | Required | Description                                                       |
+| --------- | ---------- | -------- | ----------------------------------------------------------------- |
+| `heading` | string     | Yes      | Section title rendered as an `<h2>`. Used as the React key.       |
+| `items`   | string[]   | Yes      | List of bullet strings rendered as `<li>` elements.               |
+
+<Tip>
+`heading` and each `item` are used as React keys, so keep them unique within the page. If you need two bullets that read identically, vary the wording slightly.
+</Tip>
+
+## Updating the page
+
+All edits happen in `src/components/Colophon.js`.
+
+### Edit an existing bullet
+
+Find the relevant `heading` in the `sections` array and edit the string inside `items`. Keep each bullet to a single sentence so the page stays scannable.
+
+### Add a new bullet
+
+Append a new string to the `items` array for the section it belongs to. Prefer the existing section over a new one when the bullet fits.
+
+### Add a new section
+
+Append a new object to `sections` with a fresh `heading` and at least one `item`. The component renders sections in array order, so place it where you want it to appear on the page.
+
+```js src/components/Colophon.js
+const sections = [
+    // ...existing sections
+    {
+        heading: 'Fonts',
+        items: [
+            'System UI stack — no web fonts, no FOUT.',
+        ],
+    },
+];
+```
+
+### Refresh the `updatedAt` string
+
+The header shows a `Last updated {updatedAt}.` line driven by the `updatedAt` constant at the top of the file. Update it whenever you make a meaningful change to the page — a new section, a stack swap, a hosting change.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+```
+
+Use a `Month YYYY` string. The value is rendered verbatim, so the format you pick is the format readers see.
+
+## When to update this page
+
+Update the colophon when something about how the site is built actually changes — a new framework, a hosting move, a principle you want to commit to. Small content tweaks elsewhere on the site don't need a colophon update.
