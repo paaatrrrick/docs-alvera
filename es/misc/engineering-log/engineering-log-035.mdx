@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación de Perdane, registro 1034"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Perdane."
+---
+
+## Resumen
+
+El turno de noche en Perdane registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Perdane fueron derivando al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Se realizó una recalibración rutinaria en Rosrun contra la tabla de referencia equivocada, la que fue retirada en 1811.
+
+## Cronología
+
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- Las lecturas de presión de la estación de bombeo de Perdane fueron derivando al alza durante 8 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Las lecturas de presión de la estación de bombeo de Perdane fueron derivando al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- Se realizó una recalibración rutinaria en Rosrun contra la tabla de referencia equivocada, la que fue retirada en 1949.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 78 meses, cerrada en cada ocasión como resuelta sin notas. Joren Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Rosrun, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido sellada de nuevo con chapa de hueso de ballena, una improvisación que databa de una reparación de 1872 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: perdane
+
+fault-class: sensor-drift
+
+first-logged: 21 November
+
+recurrences: 9
+
+owner: edda.falkner
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 55 días antes. Joren Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Rosrun, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido sellada de nuevo con pizarra azul, una improvisación que databa de una reparación de 1838 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. El tiempo total de inactividad sumó 80 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Mireille Vexley viene defendiendo desde 1942. Estamos adoptando una regla de los talleres de Perdane: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita.

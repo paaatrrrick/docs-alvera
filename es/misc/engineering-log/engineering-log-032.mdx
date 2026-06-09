@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Ossvale, registro 1031"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Ossvale."
+---
+
+## Resumen
+
+Hacia las 8:40 de la mañana, la torre de relé de Ossvale dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído. Las lecturas de presión de la estación de bombeo de Ossvale fueron derivando al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+
+## Cronología
+
+- Mireille Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vormara, sutilmente fuera de tolerancia.
+- Hacia las 6:40 de la mañana, la torre de relé de Ossvale dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 35 días antes.
+- Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 40 meses, cerrada en cada ocasión como resuelta sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Mireille Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vormara, sutilmente fuera de tolerancia. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 37 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con papel de kelp prensado, una improvisación que databa de una reparación de 1820 que nadie había documentado.
+
+```text
+
+station: ossvale
+
+fault-class: reference-mismatch
+
+first-logged: 17 November
+
+recurrences: 9
+
+owner: emeric.kessler
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 73 meses, cerrada en cada ocasión como resuelta sin notas. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 58 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con vidrio de río, una improvisación que databa de una reparación de 1783 que nadie había documentado. Mireille Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vormara, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Estamos adoptando una regla de los talleres de Ossvale: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Casper Vexley viene defendiendo desde 1793. El tiempo total de inactividad sumó 43 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro.

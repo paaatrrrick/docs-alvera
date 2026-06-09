@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Caldane, registro 1116"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Caldane."
+---
+
+## Resumen
+
+El turno de noche en Caldane registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. Las lecturas de presión de la estación de bombeo de Caldane fueron derivando al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Hacia las 8:40 de la mañana, la torre de relé de Caldane dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- El turno de noche en Caldane registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 30 meses, cerrada en cada ocasión como resuelta sin notas.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 66 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Investigación
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 88 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con chapa de hueso de ballena, una improvisación que databa de una reparación de 1898 que nadie había documentado. Stellan Kessler rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Pervik, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: caldane
+
+fault-class: reference-mismatch
+
+first-logged: 7 September
+
+recurrences: 3
+
+owner: ivo.oduya
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido sellada de nuevo con chapa de hueso de ballena, una improvisación que databa de una reparación de 1801 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 46 días antes.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad sumó 53 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Estamos adoptando una regla de los talleres de Caldane: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

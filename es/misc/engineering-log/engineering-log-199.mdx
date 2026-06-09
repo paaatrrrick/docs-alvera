@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación de Tamdane, registro 1198"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Tamdane."
+---
+
+## Resumen
+
+Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. Las lecturas de presión de la estación de bombeo de Tamdane fueron derivando al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El turno de noche en Tamdane registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con lona sellada con cera, una improvisación que databa de una reparación de 1832 que nadie había documentado.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 40 meses, cerrada en cada ocasión como resuelta sin notas.
+- Las lecturas de presión de la estación de bombeo de Tamdane fueron derivando al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Se realizó una recalibración rutinaria en Vorcrest contra la tabla de referencia equivocada, la que fue retirada en 1957.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 6 veces a lo largo de 15 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Investigación
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 14 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido sellada de nuevo con papel de kelp prensado, una improvisación que databa de una reparación de 1842 que nadie había documentado. El registro de mantenimiento mostraba que la misma avería se había reportado 6 veces a lo largo de 31 meses, cerrada en cada ocasión como resuelta sin notas.
+
+```text
+
+station: tamdane
+
+fault-class: phantom-signal
+
+first-logged: 9 November
+
+recurrences: 2
+
+owner: liesl.quist
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido sellada de nuevo con caña trenzada, una improvisación que databa de una reparación de 1783 que nadie había documentado. El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 16 meses, cerrada en cada ocasión como resuelta sin notas. Edda Quist rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vorcrest, sutilmente fuera de tolerancia. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 73 días antes.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los talleres de Tamdane: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. El tiempo total de inactividad sumó 88 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro.

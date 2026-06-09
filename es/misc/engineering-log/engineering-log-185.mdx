@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Osston, registro 1184"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Osston."
+---
+
+## Resumen
+
+Hacia las 3:40 de la mañana, la torre de relé de Osston dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído. Las lecturas de presión de la estación de bombeo de Osston fueron derivando al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Se realizó una recalibración rutinaria en Galfell contra la tabla de referencia equivocada, la que fue retirada en 1882.
+
+## Cronología
+
+- El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 64 meses, cerrada en cada ocasión como resuelta sin notas.
+- Hacia las 2:40 de la mañana, la torre de relé de Osston dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 48 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido sellada de nuevo con caña trenzada, una improvisación que databa de una reparación de 1801 que nadie había documentado. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 39 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 70 meses, cerrada en cada ocasión como resuelta sin notas.
+
+```text
+
+station: osston
+
+fault-class: contact-corrosion
+
+first-logged: 14 March
+
+recurrences: 2
+
+owner: vesna.vexley
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 23 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con chapa de hueso de ballena, una improvisación que databa de una reparación de 1896 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Otto Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Galfell, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Bram Whitlock viene defendiendo desde 1905. Estamos adoptando una regla de los talleres de Osston: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. El tiempo total de inactividad sumó 32 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

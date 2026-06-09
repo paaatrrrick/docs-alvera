@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Ulmvale, registro 1168"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Ulmvale."
+---
+
+## Resumen
+
+Hacia las 4:40 de la mañana, la torre de relé de Ulmvale dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído. El turno de noche en Ulmvale registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Durante una helada temprana, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+
+## Cronología
+
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con hierro de turbera, una improvisación que databa de una reparación de 1830 que nadie había documentado.
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 47 días antes.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 4 veces a lo largo de 48 meses, cerrada en cada ocasión como resuelta sin notas.
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con abedul lacado, una improvisación que databa de una reparación de 1962 que nadie había documentado.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 6 veces a lo largo de 44 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con vidrio de río, una improvisación que databa de una reparación de 1895 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Greta Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Corstead, sutilmente fuera de tolerancia.
+
+```text
+
+station: ulmvale
+
+fault-class: phantom-signal
+
+first-logged: 28 March
+
+recurrences: 9
+
+owner: dario.mollering
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 33 meses, cerrada en cada ocasión como resuelta sin notas. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 76 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los talleres de Ulmvale: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Lazlo Petrov viene defendiendo desde 1843. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. El tiempo total de inactividad sumó 34 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro.

@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación de Morcrest, registro 1091"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Morcrest."
+---
+
+## Resumen
+
+Se realizó una recalibración rutinaria en Zelton contra la tabla de referencia equivocada, la que fue retirada en 1958. Las lecturas de presión de la estación de bombeo de Morcrest fueron derivando al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El turno de noche en Morcrest registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- Hacia las 6:40 de la mañana, la torre de relé de Morcrest dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- Tomas Voss rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Zelton, sutilmente fuera de tolerancia.
+- Las lecturas de presión de la estación de bombeo de Morcrest fueron derivando al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Las lecturas de presión de la estación de bombeo de Morcrest fueron derivando al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Hacia las 6:40 de la mañana, la torre de relé de Morcrest dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- Hacia las 3:40 de la mañana, la torre de relé de Morcrest dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 83 meses, cerrada en cada ocasión como resuelta sin notas. Tomas Voss rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Zelton, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 31 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con compuesto de fibra de cuerda, una improvisación que databa de una reparación de 1954 que nadie había documentado.
+
+```text
+
+station: morcrest
+
+fault-class: contact-corrosion
+
+first-logged: 19 June
+
+recurrences: 4
+
+owner: liesl.greaves
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 24 meses, cerrada en cada ocasión como resuelta sin notas. Tomas Voss rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Zelton, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad sumó 63 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Dario Marchetti viene defendiendo desde 1786. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los talleres de Morcrest: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal.

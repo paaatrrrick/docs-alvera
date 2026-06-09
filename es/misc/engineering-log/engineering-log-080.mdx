@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Erireach, registro 1079"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Erireach."
+---
+
+## Resumen
+
+El turno de noche en Erireach registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. Se realizó una recalibración rutinaria en Delmore contra la tabla de referencia equivocada, la que fue retirada en 1785.
+
+## Cronología
+
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- El turno de noche en Erireach registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 6 veces a lo largo de 58 meses, cerrada en cada ocasión como resuelta sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido sellada de nuevo con papel de kelp prensado, una improvisación que databa de una reparación de 1948 que nadie había documentado. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 85 días antes. Halvard Mollering rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Delmore, sutilmente fuera de tolerancia.
+
+```text
+
+station: erireach
+
+fault-class: reference-mismatch
+
+first-logged: 1 June
+
+recurrences: 4
+
+owner: edda.voss
+
+```
+
+## Causa raíz
+
+Halvard Mollering rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Delmore, sutilmente fuera de tolerancia. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 87 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 67 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con compuesto de fibra de cuerda, una improvisación que databa de una reparación de 1861 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los talleres de Erireach: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Tomas Petrov viene defendiendo desde 1876. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. El tiempo total de inactividad sumó 88 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro.

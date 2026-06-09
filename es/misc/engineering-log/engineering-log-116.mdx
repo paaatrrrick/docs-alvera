@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación de Ilyrun, registro 1115"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Ilyrun."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Ilyrun fueron derivando al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El turno de noche en Ilyrun registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+
+## Cronología
+
+- Se realizó una recalibración rutinaria en Yarstead contra la tabla de referencia equivocada, la que fue retirada en 1929.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con papel de kelp prensado, una improvisación que databa de una reparación de 1964 que nadie había documentado.
+- Se realizó una recalibración rutinaria en Yarstead contra la tabla de referencia equivocada, la que fue retirada en 1845.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 74 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido sellada de nuevo con pizarra azul, una improvisación que databa de una reparación de 1840 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 2 veces a lo largo de 68 meses, cerrada en cada ocasión como resuelta sin notas. Yutta Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Yarstead, sutilmente fuera de tolerancia. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 17 días antes.
+
+```text
+
+station: ilyrun
+
+fault-class: sensor-drift
+
+first-logged: 7 September
+
+recurrences: 3
+
+owner: stellan.greaves
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido sellada de nuevo con caña trenzada, una improvisación que databa de una reparación de 1834 que nadie había documentado. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 48 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 2 veces a lo largo de 19 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad sumó 44 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Sanna Halloran viene defendiendo desde 1865. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal.

@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Fenhollow, registro 1107"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Fenhollow."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Fenhollow fueron derivando al alza durante 5 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Se realizó una recalibración rutinaria en Lorvik contra la tabla de referencia equivocada, la que fue retirada en 1797. Hacia las 5:40 de la mañana, la torre de relé de Fenhollow dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Fenhollow fueron derivando al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 43 días antes.
+- Las lecturas de presión de la estación de bombeo de Fenhollow fueron derivando al alza durante 8 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Lazlo Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Lorvik, sutilmente fuera de tolerancia.
+
+## Investigación
+
+Lazlo Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Lorvik, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 89 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con hierro de turbera, una improvisación que databa de una reparación de 1782 que nadie había documentado.
+
+```text
+
+station: fenhollow
+
+fault-class: sensor-drift
+
+first-logged: 8 November
+
+recurrences: 8
+
+owner: anselm.ashdown
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido sellada de nuevo con papel de kelp prensado, una improvisación que databa de una reparación de 1785 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 35 días antes.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Cosima Petrov viene defendiendo desde 1838. El tiempo total de inactividad sumó 36 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Estamos adoptando una regla de los talleres de Fenhollow: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

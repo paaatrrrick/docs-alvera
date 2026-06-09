@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Marshore, registro 1183"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Marshore."
+---
+
+## Resumen
+
+El turno de noche en Marshore registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. Se realizó una recalibración rutinaria en Vorfell contra la tabla de referencia equivocada, la que fue retirada en 1960.
+
+## Cronología
+
+- Se realizó una recalibración rutinaria en Vorfell contra la tabla de referencia equivocada, la que fue retirada en 1853.
+- Se realizó una recalibración rutinaria en Vorfell contra la tabla de referencia equivocada, la que fue retirada en 1784.
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con vidrio de río, una improvisación que databa de una reparación de 1782 que nadie había documentado.
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con pizarra azul, una improvisación que databa de una reparación de 1802 que nadie había documentado.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Otto Vexley rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vorfell, sutilmente fuera de tolerancia. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 61 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con vidrio de río, una improvisación que databa de una reparación de 1877 que nadie había documentado.
+
+```text
+
+station: marshore
+
+fault-class: sensor-drift
+
+first-logged: 8 June
+
+recurrences: 2
+
+owner: tomas.whitlock
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Otto Vexley rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vorfell, sutilmente fuera de tolerancia. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 66 días antes.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Emeric Holloway viene defendiendo desde 1889. Estamos adoptando una regla de los talleres de Marshore: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. El tiempo total de inactividad sumó 52 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

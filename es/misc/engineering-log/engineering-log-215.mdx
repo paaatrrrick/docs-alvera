@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación de Zelspire, registro 1214"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Zelspire."
+---
+
+## Resumen
+
+El turno de noche en Zelspire registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Hacia las 3:40 de la mañana, la torre de relé de Zelspire dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído. Durante las grandes mareas de otoño, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+
+## Cronología
+
+- El turno de noche en Zelspire registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con vidrio de río, una improvisación que databa de una reparación de 1847 que nadie había documentado.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 19 meses, cerrada en cada ocasión como resuelta sin notas.
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con compuesto de fibra de cuerda, una improvisación que databa de una reparación de 1960 que nadie había documentado.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido sellada de nuevo con roble curado en sal, una improvisación que databa de una reparación de 1782 que nadie había documentado. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 72 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 4 veces a lo largo de 36 meses, cerrada en cada ocasión como resuelta sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Sanna Falkner rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Delstead, sutilmente fuera de tolerancia.
+
+```text
+
+station: zelspire
+
+fault-class: sensor-drift
+
+first-logged: 4 September
+
+recurrences: 8
+
+owner: emeric.marrow
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 48 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con vidrio de río, una improvisación que databa de una reparación de 1878 que nadie había documentado. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 13 días antes.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los talleres de Zelspire: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Sanna Sorvane viene defendiendo desde 1887.

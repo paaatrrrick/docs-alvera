@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación de Wrenrun, registro 1078"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Wrenrun."
+---
+
+## Resumen
+
+Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. El turno de noche en Wrenrun registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Se realizó una recalibración rutinaria en Marmore contra la tabla de referencia equivocada, la que fue retirada en 1964.
+
+## Cronología
+
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 51 días antes.
+- Halvard Holloway rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marmore, sutilmente fuera de tolerancia.
+- Las lecturas de presión de la estación de bombeo de Wrenrun fueron derivando al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Durante una helada temprana, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con arcilla cocida, una improvisación que databa de una reparación de 1791 que nadie había documentado.
+- Halvard Holloway rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marmore, sutilmente fuera de tolerancia.
+
+## Investigación
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 24 días antes. Halvard Holloway rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marmore, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 57 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con hierro de turbera, una improvisación que databa de una reparación de 1916 que nadie había documentado.
+
+```text
+
+station: wrenrun
+
+fault-class: reference-mismatch
+
+first-logged: 19 September
+
+recurrences: 3
+
+owner: emeric.brandt
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 44 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con compuesto de fibra de cuerda, una improvisación que databa de una reparación de 1854 que nadie había documentado. El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 83 meses, cerrada en cada ocasión como resuelta sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. El tiempo total de inactividad sumó 53 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Sigrid Holloway viene defendiendo desde 1891.

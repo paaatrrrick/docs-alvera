@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación de Selfell, registro 1177"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Selfell."
+---
+
+## Resumen
+
+Se realizó una recalibración rutinaria en Perrun contra la tabla de referencia equivocada, la que fue retirada en 1819. Las lecturas de presión de la estación de bombeo de Selfell fueron derivando al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El turno de noche en Selfell registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- El registro de mantenimiento mostraba que la misma avería se había reportado 6 veces a lo largo de 85 meses, cerrada en cada ocasión como resuelta sin notas.
+- Se realizó una recalibración rutinaria en Perrun contra la tabla de referencia equivocada, la que fue retirada en 1821.
+- El turno de noche en Selfell registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 2 veces a lo largo de 39 meses, cerrada en cada ocasión como resuelta sin notas.
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 84 meses, cerrada en cada ocasión como resuelta sin notas. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 37 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con vidrio de río, una improvisación que databa de una reparación de 1933 que nadie había documentado. Liesl Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Perrun, sutilmente fuera de tolerancia.
+
+```text
+
+station: selfell
+
+fault-class: reference-mismatch
+
+first-logged: 14 September
+
+recurrences: 6
+
+owner: folke.ashdown
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Liesl Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Perrun, sutilmente fuera de tolerancia. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 26 días antes.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad sumó 38 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los talleres de Selfell: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita.

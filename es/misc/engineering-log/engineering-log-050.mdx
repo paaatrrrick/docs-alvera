@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Quilton, registro 1049"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Quilton."
+---
+
+## Resumen
+
+Hacia las 4:40 de la mañana, la torre de relé de Quilton dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído. Se realizó una recalibración rutinaria en Rosgate contra la tabla de referencia equivocada, la que fue retirada en 1819. El turno de noche en Quilton registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Quilton fueron derivando al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Anselm Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Rosgate, sutilmente fuera de tolerancia.
+- Anselm Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Rosgate, sutilmente fuera de tolerancia.
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 84 días antes.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 58 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con hierro de turbera, una improvisación que databa de una reparación de 1791 que nadie había documentado. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 66 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Anselm Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Rosgate, sutilmente fuera de tolerancia.
+
+```text
+
+station: quilton
+
+fault-class: phantom-signal
+
+first-logged: 17 March
+
+recurrences: 7
+
+owner: folke.sorvane
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 29 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con hierro de turbera, una improvisación que databa de una reparación de 1833 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Tomas Marchetti viene defendiendo desde 1952. El tiempo total de inactividad sumó 44 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Estamos adoptando una regla de los talleres de Quilton: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita.

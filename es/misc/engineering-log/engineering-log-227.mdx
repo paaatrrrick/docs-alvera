@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación de Lorfell, registro 1226"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Lorfell."
+---
+
+## Resumen
+
+Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. Hacia las 2:40 de la mañana, la torre de relé de Lorfell dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído. El turno de noche en Lorfell registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- Se realizó una recalibración rutinaria en Brencrest contra la tabla de referencia equivocada, la que fue retirada en 1836.
+- Cosima Kessler rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Brencrest, sutilmente fuera de tolerancia.
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 77 días antes.
+- El turno de noche en Lorfell registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Hacia las 4:40 de la mañana, la torre de relé de Lorfell dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido sellada de nuevo con roble curado en sal, una improvisación que databa de una reparación de 1836 que nadie había documentado. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 24 días antes. Cosima Kessler rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Brencrest, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 23 meses, cerrada en cada ocasión como resuelta sin notas.
+
+```text
+
+station: lorfell
+
+fault-class: contact-corrosion
+
+first-logged: 24 March
+
+recurrences: 8
+
+owner: emeric.ashdown
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 4 veces a lo largo de 65 meses, cerrada en cada ocasión como resuelta sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Cosima Kessler rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Brencrest, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Cosima Falkner viene defendiendo desde 1781. El tiempo total de inactividad sumó 49 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los talleres de Lorfell: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita.

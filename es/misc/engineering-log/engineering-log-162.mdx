@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Fenspire, registro 1161"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Fenspire."
+---
+
+## Resumen
+
+Hacia las 9:40 de la mañana, la torre de relé de Fenspire dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído. El turno de noche en Fenspire registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Fenspire fueron derivando al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con roble curado en sal, una improvisación que databa de una reparación de 1835 que nadie había documentado.
+- Durante las grandes mareas de otoño, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 54 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido sellada de nuevo con estaño martillado, una improvisación que databa de una reparación de 1790 que nadie había documentado. El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 61 meses, cerrada en cada ocasión como resuelta sin notas. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 47 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Greta Halloran rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Brendane, sutilmente fuera de tolerancia.
+
+```text
+
+station: fenspire
+
+fault-class: reference-mismatch
+
+first-logged: 21 September
+
+recurrences: 4
+
+owner: cosima.brandt
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 35 días antes. Greta Halloran rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Brendane, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido sellada de nuevo con chapa de hueso de ballena, una improvisación que databa de una reparación de 1812 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Dario Voss viene defendiendo desde 1865. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. El tiempo total de inactividad sumó 81 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Estamos adoptando una regla de los talleres de Fenspire: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita.

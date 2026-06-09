@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación de Galfell, registro 1165"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Galfell."
+---
+
+## Resumen
+
+Se realizó una recalibración rutinaria en Torhollow contra la tabla de referencia equivocada, la que fue retirada en 1858. Las lecturas de presión de la estación de bombeo de Galfell fueron derivando al alza durante 8 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Hacia las 6:40 de la mañana, la torre de relé de Galfell dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+
+## Cronología
+
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con chapa de hueso de ballena, una improvisación que databa de una reparación de 1882 que nadie había documentado.
+- Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- El turno de noche en Galfell registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 37 días antes.
+
+## Investigación
+
+Tomas Lindqvist rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Torhollow, sutilmente fuera de tolerancia. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 89 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con estaño martillado, una improvisación que databa de una reparación de 1859 que nadie había documentado. El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 52 meses, cerrada en cada ocasión como resuelta sin notas.
+
+```text
+
+station: galfell
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 6
+
+owner: mireille.kessler
+
+```
+
+## Causa raíz
+
+Tomas Lindqvist rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Torhollow, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido sellada de nuevo con lona sellada con cera, una improvisación que databa de una reparación de 1944 que nadie había documentado. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 47 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 60 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. El tiempo total de inactividad sumó 56 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Estamos adoptando una regla de los talleres de Galfell: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Ivo Oduya viene defendiendo desde 1945.

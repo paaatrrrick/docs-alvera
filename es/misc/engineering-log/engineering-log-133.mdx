@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Perrun, registro 1132"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Perrun."
+---
+
+## Resumen
+
+El turno de noche en Perrun registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Se realizó una recalibración rutinaria en Zelholm contra la tabla de referencia equivocada, la que fue retirada en 1943. Las lecturas de presión de la estación de bombeo de Perrun fueron derivando al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- El turno de noche en Perrun registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- El turno de noche en Perrun registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Durante las grandes mareas de otoño, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 90 días antes.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido sellada de nuevo con estaño martillado, una improvisación que databa de una reparación de 1916 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 41 meses, cerrada en cada ocasión como resuelta sin notas. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 41 días antes. Lazlo Halloran rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Zelholm, sutilmente fuera de tolerancia.
+
+```text
+
+station: perrun
+
+fault-class: reference-mismatch
+
+first-logged: 3 June
+
+recurrences: 8
+
+owner: ivo.kessler
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Lazlo Halloran rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Zelholm, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido sellada de nuevo con pizarra azul, una improvisación que databa de una reparación de 1872 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad sumó 38 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Maren Kessler viene defendiendo desde 1820. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

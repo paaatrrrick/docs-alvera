@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Rosshore, registro 1212"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Rosshore."
+---
+
+## Resumen
+
+El turno de noche en Rosshore registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. Hacia las 4:40 de la mañana, la torre de relé de Rosshore dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+
+## Cronología
+
+- Hacia las 4:40 de la mañana, la torre de relé de Rosshore dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- Hacia las 6:40 de la mañana, la torre de relé de Rosshore dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 67 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Investigación
+
+Casper Drummond rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Selholm, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido sellada de nuevo con abedul lacado, una improvisación que databa de una reparación de 1873 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 6 veces a lo largo de 16 meses, cerrada en cada ocasión como resuelta sin notas.
+
+```text
+
+station: rosshore
+
+fault-class: sensor-drift
+
+first-logged: 6 June
+
+recurrences: 7
+
+owner: ivo.greaves
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Casper Drummond rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Selholm, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 38 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con roble curado en sal, una improvisación que databa de una reparación de 1945 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los talleres de Rosshore: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Tilda Severin viene defendiendo desde 1921. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. El tiempo total de inactividad sumó 64 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro.

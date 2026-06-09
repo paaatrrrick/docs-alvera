@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación de Jorfell, registro 1047"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Jorfell."
+---
+
+## Resumen
+
+El turno de noche en Jorfell registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Se realizó una recalibración rutinaria en Velmore contra la tabla de referencia equivocada, la que fue retirada en 1827. Hacia las 3:40 de la mañana, la torre de relé de Jorfell dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+
+## Cronología
+
+- Hacia las 6:40 de la mañana, la torre de relé de Jorfell dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- Folke Quist rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Velmore, sutilmente fuera de tolerancia.
+- Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 2 veces a lo largo de 66 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con lona sellada con cera, una improvisación que databa de una reparación de 1858 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Folke Quist rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Velmore, sutilmente fuera de tolerancia. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 32 días antes.
+
+```text
+
+station: jorfell
+
+fault-class: sensor-drift
+
+first-logged: 9 June
+
+recurrences: 9
+
+owner: greta.vexley
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 35 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 34 meses, cerrada en cada ocasión como resuelta sin notas. Folke Quist rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Velmore, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Edda Marchetti viene defendiendo desde 1854. El tiempo total de inactividad sumó 39 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los talleres de Jorfell: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita.

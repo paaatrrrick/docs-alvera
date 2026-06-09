@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación de Calgate, registro 1076"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Calgate."
+---
+
+## Resumen
+
+Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. Las lecturas de presión de la estación de bombeo de Calgate fueron derivando al alza durante 6 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Hacia las 5:40 de la mañana, la torre de relé de Calgate dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+
+## Cronología
+
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 20 días antes.
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con lona sellada con cera, una improvisación que databa de una reparación de 1803 que nadie había documentado.
+- El turno de noche en Calgate registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 29 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Investigación
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 51 días antes. Tomas Holloway rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Lorford, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido sellada de nuevo con compuesto de fibra de cuerda, una improvisación que databa de una reparación de 1908 que nadie había documentado.
+
+```text
+
+station: calgate
+
+fault-class: contact-corrosion
+
+first-logged: 10 March
+
+recurrences: 9
+
+owner: liesl.severin
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 83 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 23 meses, cerrada en cada ocasión como resuelta sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido sellada de nuevo con chapa de hueso de ballena, una improvisación que databa de una reparación de 1943 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Annik Marrow viene defendiendo desde 1899. Estamos adoptando una regla de los talleres de Calgate: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. El tiempo total de inactividad sumó 85 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro.

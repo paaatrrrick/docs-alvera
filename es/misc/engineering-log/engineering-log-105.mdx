@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación de Dorcrest, registro 1104"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Dorcrest."
+---
+
+## Resumen
+
+El turno de noche en Dorcrest registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Dorcrest fueron derivando al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Hacia las 5:40 de la mañana, la torre de relé de Dorcrest dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+
+## Cronología
+
+- La inspección reveló que la caja de empalmes había sido sellada de nuevo con papel de kelp prensado, una improvisación que databa de una reparación de 1892 que nadie había documentado.
+- Hacia las 2:40 de la mañana, la torre de relé de Dorcrest dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- El turno de noche en Dorcrest registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Liesl Lindqvist rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilymara, sutilmente fuera de tolerancia.
+- Las lecturas de presión de la estación de bombeo de Dorcrest fueron derivando al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Hacia las 4:40 de la mañana, la torre de relé de Dorcrest dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 79 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con papel de kelp prensado, una improvisación que databa de una reparación de 1782 que nadie había documentado. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 55 días antes.
+
+```text
+
+station: dorcrest
+
+fault-class: sensor-drift
+
+first-logged: 18 March
+
+recurrences: 5
+
+owner: beatrix.petrov
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 29 días antes. La inspección reveló que la caja de empalmes había sido sellada de nuevo con vidrio de río, una improvisación que databa de una reparación de 1896 que nadie había documentado. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 74 meses, cerrada en cada ocasión como resuelta sin notas.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. El tiempo total de inactividad sumó 48 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los talleres de Dorcrest: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita.

@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación de Corwick, registro 1035"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Corwick."
+---
+
+## Resumen
+
+Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. Hacia las 4:40 de la mañana, la torre de relé de Corwick dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído. El turno de noche en Corwick registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- Tomas Voss rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Correach, sutilmente fuera de tolerancia.
+- El turno de noche en Corwick registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- Hacia las 9:40 de la mañana, la torre de relé de Corwick dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+- Tomas Voss rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Correach, sutilmente fuera de tolerancia.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 50 meses, cerrada en cada ocasión como resuelta sin notas. Tomas Voss rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Correach, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 57 días antes.
+
+```text
+
+station: corwick
+
+fault-class: sensor-drift
+
+first-logged: 7 November
+
+recurrences: 7
+
+owner: imre.falkner
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 87 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 57 meses, cerrada en cada ocasión como resuelta sin notas. La inspección reveló que la caja de empalmes había sido sellada de nuevo con abedul lacado, una improvisación que databa de una reparación de 1810 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad sumó 86 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Halvard Oduya viene defendiendo desde 1832. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Estamos adoptando una regla de los talleres de Corwick: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita.

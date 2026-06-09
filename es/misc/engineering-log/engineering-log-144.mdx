@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación de Kelwick, registro 1143"
+description: "Análisis postmortem de un fallo de instrumentación en la estación de bombeo y relé de Kelwick."
+---
+
+## Resumen
+
+Se realizó una recalibración rutinaria en Tamrun contra la tabla de referencia equivocada, la que fue retirada en 1932. Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido. Hacia las 5:40 de la mañana, la torre de relé de Kelwick dejó de responder a las señales de pulso, y los operadores supusieron el habitual contacto corroído.
+
+## Cronología
+
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 33 días antes.
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 53 días antes.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 25 meses, cerrada en cada ocasión como resuelta sin notas.
+- El turno de noche en Kelwick registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 13 días antes.
+- Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no encajaban con ningún modo de fallo conocido.
+
+## Investigación
+
+Liesl Holloway rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Tamrun, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 85 meses, cerrada en cada ocasión como resuelta sin notas. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 86 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: kelwick
+
+fault-class: phantom-signal
+
+first-logged: 28 March
+
+recurrences: 9
+
+owner: dario.drummond
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 4 veces a lo largo de 54 meses, cerrada en cada ocasión como resuelta sin notas. Cotejar el manómetro contra una referencia portátil llevó veinte minutos y debería haberse hecho 27 días antes. Liesl Holloway rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Tamrun, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los talleres de Kelwick: cualquier fallo reportado tres veces se gana un responsable nombrado y una teoría escrita. Las piezas de repuesto llevan ahora etiquetas que indican el origen y la tolerancia, una práctica que Bram Greaves viene defendiendo desde 1937. El tiempo total de inactividad sumó 56 horas, la mayor parte dedicado a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología, no como señal. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.
