@@ -1,0 +1,147 @@
+---
+title: "Page colophon : stack, hébergement et principes"
+description: "Comment la route /colophon est intégrée au site personnel et comment mettre à jour les listes Construit avec, Hébergé sur et Principes."
+---
+
+## Vue d'ensemble
+
+Le colophon est une courte page statique à l'adresse `/colophon` qui explique comment le site personnel est construit. Elle documente la stack, où le site est hébergé et le petit ensemble de principes auxquels le site se tient — le genre de page « à propos de ce site » que les lecteurs consultent quand ils veulent savoir ce qui se passe en coulisses.
+
+Utilisez cette page quand vous voulez :
+
+- Renvoyer un lecteur vers une explication unique et claire du fonctionnement du site.
+- Acter une décision sur la stack, l'hébergement ou les principes du site pour que votre vous futur se souvienne du pourquoi.
+- Rafraîchir la date de mise à jour après un changement notable sur le site.
+
+## Ce qu'on trouve sur la page
+
+La page est rendue par le composant `Colophon` et stylisée avec une feuille de styles dédiée `colophon.css`. La mise en page a deux parties :
+
+- Un en-tête avec un lien **← Back home**, le titre de la page, une ligne `Last updated` et une introduction d'une phrase.
+- Une série de sections — **Built with**, **Hosted on** et **Principles** — chacune rendue sous forme de titre suivi d'une liste à puces.
+
+<Card title="Built with" icon="screwdriver-wrench">
+- React, initialisé avec Create React App.
+- `react-router-dom` pour le routage côté client.
+- CSS brut, une feuille de styles par page — pas de framework, pas de préprocesseur.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+- Netlify, déployé directement depuis la branche `master` sur GitHub.
+- Un nom de domaine personnalisé enregistré chez GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+- Pas d'analytics, pas de cookies, pas de tracking. Juste des pages.
+- Chaque page doit charger vite et bien se lire sur un téléphone.
+- Le contenu vit dans de simples constantes JS pour rester facile à éditer.
+</Card>
+
+## Comment la route est branchée
+
+La page est enregistrée comme une route de premier niveau dans `src/App.js`, à côté des autres pages du site personnel (`/uses`, `/now`, `/reading-list`, `/talks`, `/timeline`).
+
+```js src/App.js
+import Colophon from "./components/Colophon";
+
+function App() {
+  return (
+    <div className="App">
+      <Switch>
+        {/* ...other routes */}
+        <Route exact path='/talks' component={Talks} />
+        <Route exact path='/colophon' component={Colophon} />
+        <Route exact path='/magic-the-gathering' component={Haus} />
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+  );
+}
+```
+
+Le composant lui-même se trouve dans `src/components/Colophon.js` et importe ses styles depuis `src/components/colophon.css`. Il n'a pas de props — tout ce que la page affiche provient de constantes définies en haut du fichier.
+
+## La structure de données `sections`
+
+Tout le contenu visible du corps est piloté par un seul tableau `sections`. Chaque entrée a un `heading` et une liste d'`items`, et le composant parcourt le tableau pour rendre chaque section sous forme d'un `<h2>` suivi d'un `<ul>`.
+
+```js src/components/Colophon.js
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    {
+        heading: 'Principles',
+        items: [
+            'No analytics, no cookies, no tracking. Just pages.',
+            'Every page should load fast and read well on a phone.',
+            'Content lives in plain JS constants so it is easy to edit.',
+        ],
+    },
+];
+```
+
+### Schéma d'une section
+
+| Champ     | Type       | Requis | Description                                                              |
+| --------- | ---------- | ------ | ------------------------------------------------------------------------ |
+| `heading` | string     | Oui    | Titre de la section rendu sous forme de `<h2>`. Utilisé comme clé React. |
+| `items`   | string[]   | Oui    | Liste de chaînes rendues comme des éléments `<li>`.                      |
+
+<Tip>
+`heading` et chaque `item` servent de clés React, donc gardez-les uniques dans la page. Si vous avez besoin de deux puces qui se lisent à l'identique, variez légèrement la formulation.
+</Tip>
+
+## Mettre à jour la page
+
+Toutes les modifications se font dans `src/components/Colophon.js`.
+
+### Modifier une puce existante
+
+Trouvez le `heading` concerné dans le tableau `sections` et modifiez la chaîne à l'intérieur d'`items`. Gardez chaque puce sur une seule phrase pour que la page reste facile à parcourir.
+
+### Ajouter une nouvelle puce
+
+Ajoutez une nouvelle chaîne au tableau `items` de la section à laquelle elle appartient. Préférez la section existante plutôt qu'une nouvelle quand la puce s'y intègre.
+
+### Ajouter une nouvelle section
+
+Ajoutez un nouvel objet à `sections` avec un `heading` nouveau et au moins un `item`. Le composant rend les sections dans l'ordre du tableau, donc placez-la où vous voulez qu'elle apparaisse sur la page.
+
+```js src/components/Colophon.js
+const sections = [
+    // ...existing sections
+    {
+        heading: 'Fonts',
+        items: [
+            'System UI stack — no web fonts, no FOUT.',
+        ],
+    },
+];
+```
+
+### Rafraîchir la chaîne `updatedAt`
+
+L'en-tête affiche une ligne `Last updated {updatedAt}.` pilotée par la constante `updatedAt` en haut du fichier. Mettez-la à jour chaque fois que vous faites un changement notable sur la page — une nouvelle section, un changement de stack, un changement d'hébergement.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+```
+
+Utilisez une chaîne au format `Month YYYY`. La valeur est rendue telle quelle, donc le format que vous choisissez est celui que verront les lecteurs.
+
+## Quand mettre à jour cette page
+
+Mettez à jour le colophon quand quelque chose dans la façon dont le site est construit change réellement — un nouveau framework, un changement d'hébergement, un principe que vous voulez acter. Les petites retouches de contenu ailleurs sur le site n'ont pas besoin d'une mise à jour du colophon.

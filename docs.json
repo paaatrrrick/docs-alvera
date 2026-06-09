@@ -114,6 +114,12 @@
                 "pages": [
                   "es/how-mintlify-works"
                 ]
+              },
+              {
+                "group": "Sitio personal",
+                "pages": [
+                  "es/colophon"
+                ]
               }
             ]
           }
@@ -129,6 +135,12 @@
                 "group": "Démarrage",
                 "pages": [
                   "fr/how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Site personnel",
+                "pages": [
+                  "fr/colophon"
                 ]
               }
             ]
