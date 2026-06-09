@@ -1,0 +1,108 @@
+---
+title: "Colophon page: what it is and how to update it"
+description: "How the /colophon page on the personal website is structured, what content lives there, and how to edit the stack, hosting, and principles sections."
+---
+
+## Overview
+
+The `/colophon` page is a static page on the personal website that explains how the site is built — the stack it runs on, where it's hosted, and the handful of principles it follows. It matches the existing pattern used by `/now` and `/uses`: a standalone component, its own stylesheet, and a route added to the app.
+
+Visitors land here when they want a quick read on what powers the site. Contributors land here when they want to keep that read accurate.
+
+## What's on the page
+
+The page is organized into a short header and three list sections.
+
+<Card title="Header" icon="heading">
+  A back link to the home page, the page title, a "last updated" line, and a one-paragraph intro.
+</Card>
+
+<Card title="Built with" icon="screwdriver-wrench">
+  The tools the site is built on — React, the router, and the stylesheet approach.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  Where the site is deployed and how the domain is registered.
+</Card>
+
+<Card title="Principles" icon="list-check">
+  The handful of rules the site follows — no analytics, fast pages, plain-text content.
+</Card>
+
+## Section schema
+
+Each section in the `sections` array uses the same shape:
+
+| Field     | Type     | Required | Description                                              |
+| --------- | -------- | -------- | -------------------------------------------------------- |
+| `heading` | string   | Yes      | The section heading rendered as an `<h2>`.               |
+| `items`   | string[] | Yes      | The bullet points rendered inside the section's `<ul>`.  |
+
+The `updatedAt` constant at the top of the component controls the "Last updated" line in the header.
+
+## Editing the page
+
+Open `src/components/Colophon.js` and update the `sections` array or the `updatedAt` string. Items render in the order they appear.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    {
+        heading: 'Principles',
+        items: [
+            'No analytics, no cookies, no tracking. Just pages.',
+            'Every page should load fast and read well on a phone.',
+            'Content lives in plain JS constants so it is easy to edit.',
+        ],
+    },
+];
+```
+
+<Tip>
+Bump `updatedAt` whenever you change a section so visitors can see the page reflects the current state of the site.
+</Tip>
+
+## Adding a new section
+
+Append a new object to the `sections` array. There is no cap — but keep the page short. The point of a colophon is a quick read, not an exhaustive spec.
+
+```js
+{
+    heading: 'Fonts',
+    items: [
+        'System UI stack for body copy.',
+        'A single display face for headings, loaded from a local file.',
+    ],
+},
+```
+
+## Writing guidance
+
+- Use short, factual sentences. The page is a reference, not a sales pitch.
+- Prefer concrete tools and versions over vague descriptions (for example, "Netlify" instead of "a static host").
+- Keep principles to things the site actually does. If a principle stops being true, edit or remove it.
+- Avoid duplicating content from `/uses` (personal tools) or `/now` (current focus). The colophon is specifically about the site itself.
+
+## When to update this page
+
+Update the page whenever:
+
+- You swap a tool in the stack (for example, switching hosts or routers).
+- You add or drop a principle the site follows.
+- The "last updated" date is more than a few months stale.
