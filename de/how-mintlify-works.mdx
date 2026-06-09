@@ -1,0 +1,89 @@
+---
+title: "Wie Mintlify funktioniert"
+description: "Verstehen Sie die Architektur hinter Mintlify und wie Ihre Docs von MDX-Dateien zu einer veröffentlichten Seite werden."
+---
+
+Mintlify verwandelt ein Git-Repository aus MDX-Dateien in eine schnelle, durchsuchbare Dokumentationsseite. Diese Seite erklärt die beweglichen Teile, damit Sie wissen, was unter der Haube passiert.
+
+## Die zentralen Bestandteile
+
+<CardGroup cols={2}>
+  <Card title="Inhalt" icon="file-lines">
+    MDX-Seiten und eine `docs.json`-Konfiguration leben in Ihrem Git-Repository.
+  </Card>
+  <Card title="Build-Pipeline" icon="gears">
+    Mintlify kompiliert Ihren Inhalt jedes Mal, wenn Sie pushen, in eine statische Seite.
+  </Card>
+  <Card title="Gehostete Seite" icon="globe">
+    Die kompilierte Seite wird auf einer Mintlify-Subdomain oder Ihrer eigenen Domain bereitgestellt.
+  </Card>
+  <Card title="Dashboard" icon="gauge">
+    Das Dashboard verwaltet Deployments, Analytik und Integrationen.
+  </Card>
+</CardGroup>
+
+## Vom Commit zur veröffentlichten Seite
+
+1. **Sie schreiben Inhalt.** Seiten werden in MDX verfasst, das Markdown plus React-Komponenten wie `<Card>`, `<Tabs>` und `<Accordion>` ist.
+2. **Sie konfigurieren die Navigation.** `docs.json` definiert Tabs, Gruppen, Theming und globale Elemente wie die Navbar und den Footer.
+3. **Sie pushen zu GitHub.** Die Mintlify-GitHub-App erkennt die Änderung auf Ihrem Deploy-Branch.
+4. **Mintlify baut die Seite.** Inhalte werden validiert, Links geprüft und die Seite in statische Assets kompiliert.
+5. **Die Seite geht live.** Der neue Build wird auf Ihre Domain bereitgestellt, in der Regel innerhalb von Sekunden.
+
+## Lokale Entwicklung
+
+Verwenden Sie die Mintlify-CLI, um Änderungen vor dem Pushen in der Vorschau zu sehen:
+
+```bash
+mint dev
+```
+
+Dies stellt Ihre Docs unter `http://localhost:3000` mit Hot Reload bereit. Um Probleme früh zu erkennen, führen Sie aus:
+
+```bash
+mint validate
+mint broken-links
+```
+
+## Authoring-Modell
+
+- **MDX-Dateien** — jede Seite ist eine `.mdx`-Datei mit YAML-Frontmatter (`title`, `description`).
+- **Komponenten** — Mintlify liefert eingebaute Komponenten für Hinweisboxen, Tabs, Code-Gruppen, Accordions, Karten und mehr.
+- **Snippets** — wiederverwendbare Inhalte liegen in `snippets/` und können in jede Seite importiert werden.
+- **Bilder und Assets** — werden über relative Pfade vom Repo-Root referenziert.
+
+## Konfiguration
+
+`docs.json` ist die einzige Quelle der Wahrheit für die Seitenstruktur:
+
+- `navigation` — Tabs, Gruppen und Seitenreihenfolge.
+- `colors`, `logo`, `favicon` — Branding.
+- `navbar`, `footer` — globale Links und soziale Profile.
+- `contextual` — steuert das Menü „Kopieren / In ChatGPT öffnen“ auf jeder Seite.
+
+## Suche und KI
+
+Jede veröffentlichte Seite enthält:
+
+- **Volltextsuche**, die bei jedem Build automatisch indiziert wird.
+- **KI-Chat**, der Fragen mit Ihren Docs als Kontext beantwortet.
+- **MCP- und LLM-Integrationen**, sodass Tools wie Cursor und Claude auf Ihre Docs verweisen können.
+
+## Bereitstellungsumgebungen
+
+| Umgebung | Auslöser | Verwendung für |
+| -------- | -------- | -------------- |
+| Lokal | `mint dev` | Entwürfe erstellen und Änderungen in der Vorschau ansehen |
+| Vorschau | Pull Request | Änderungen vor dem Mergen überprüfen |
+| Produktion | Merge in Deploy-Branch | Ihre Live-Seite |
+
+## Nächste Schritte
+
+<CardGroup cols={2}>
+  <Card title="Schnellstart" icon="rocket" href="/quickstart">
+    Richten Sie Ihre Seite in drei Schritten ein.
+  </Card>
+  <Card title="Inhalte schreiben" icon="pen" href="/essentials/markdown">
+    Lernen Sie die MDX-Komponenten, die Ihnen zur Verfügung stehen, kennen.
+  </Card>
+</CardGroup>

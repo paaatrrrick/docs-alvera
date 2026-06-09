@@ -1,31 +1,31 @@
 ---
 title: "Cómo funciona Mintlify"
-description: "Comprende la arquitectura de Mintlify y cómo tus documentos pasan de archivos MDX a un sitio publicado."
+description: "Comprende la arquitectura detrás de Mintlify y cómo tu documentación pasa de archivos MDX a un sitio publicado."
 ---
 
-Mintlify convierte un repositorio Git de archivos MDX en un sitio de documentación rápido y con búsqueda. Esta página explica las piezas que lo componen para que sepas qué ocurre internamente.
+Mintlify convierte un repositorio Git de archivos MDX en un sitio de documentación rápido y con búsqueda. Esta página explica las piezas en movimiento para que sepas qué ocurre bajo el capó.
 
-## Las piezas principales
+## Las piezas fundamentales
 
 <CardGroup cols={2}>
   <Card title="Contenido" icon="file-lines">
-    Las páginas MDX y un archivo `docs.json` de configuración viven en tu repositorio Git.
+    Las páginas MDX y un archivo de configuración `docs.json` viven en tu repositorio Git.
   </Card>
-  <Card title="Pipeline de compilación" icon="gears">
+  <Card title="Canal de compilación" icon="gears">
     Mintlify compila tu contenido en un sitio estático cada vez que haces push.
   </Card>
   <Card title="Sitio alojado" icon="globe">
     El sitio compilado se sirve en un subdominio de Mintlify o en tu dominio personalizado.
   </Card>
   <Card title="Panel de control" icon="gauge">
-    El panel gestiona los despliegues, las analíticas y las integraciones.
+    El panel de control gestiona los despliegues, la analítica y las integraciones.
   </Card>
 </CardGroup>
 
 ## Del commit a la página publicada
 
-1. **Escribes contenido.** Las páginas se escriben en MDX, que es Markdown más componentes de React como `<Card>`, `<Tabs>` y `<Accordion>`.
-2. **Configuras la navegación.** `docs.json` define las pestañas, los grupos, los temas y los elementos globales como la barra de navegación y el pie de página.
+1. **Tú escribes contenido.** Las páginas se redactan en MDX, que es Markdown más componentes de React como `<Card>`, `<Tabs>` y `<Accordion>`.
+2. **Tú configuras la navegación.** `docs.json` define pestañas, grupos, temas y elementos globales como la barra de navegación y el pie de página.
 3. **Haces push a GitHub.** La aplicación de GitHub de Mintlify detecta el cambio en tu rama de despliegue.
 4. **Mintlify compila el sitio.** El contenido se valida, se comprueban los enlaces y el sitio se compila en activos estáticos.
 5. **El sitio se publica.** La nueva compilación se despliega en tu dominio, normalmente en cuestión de segundos.
@@ -38,7 +38,7 @@ Usa la CLI de Mintlify para previsualizar los cambios antes de hacer push:
 mint dev
 ```
 
-Esto sirve tus documentos en `http://localhost:3000` con recarga en caliente. Para detectar problemas pronto, ejecuta:
+Esto sirve tu documentación en `http://localhost:3000` con recarga en caliente. Para detectar problemas pronto, ejecuta:
 
 ```bash
 mint validate
@@ -47,35 +47,35 @@ mint broken-links
 
 ## Modelo de autoría
 
-- **Archivos MDX** — cada página es un archivo `.mdx` con frontmatter en YAML (`title`, `description`).
-- **Componentes** — Mintlify incluye componentes integrados para avisos, pestañas, grupos de código, acordeones, tarjetas y más.
-- **Snippets** — el contenido reutilizable vive en `snippets/` y puede importarse en cualquier página.
-- **Imágenes y recursos** — se referencian por ruta relativa desde la raíz del repositorio.
+- **Archivos MDX** — cada página es un archivo `.mdx` con frontmatter YAML (`title`, `description`).
+- **Componentes** — Mintlify incluye componentes integrados para llamadas, pestañas, grupos de código, acordeones, tarjetas y más.
+- **Fragmentos** — el contenido reutilizable vive en `snippets/` y se puede importar en cualquier página.
+- **Imágenes y activos** — se referencian por ruta relativa desde la raíz del repositorio.
 
 ## Configuración
 
 `docs.json` es la única fuente de verdad para la estructura del sitio:
 
-- `navigation` — pestañas, grupos y orden de las páginas.
+- `navigation` — pestañas, grupos y orden de páginas.
 - `colors`, `logo`, `favicon` — branding.
 - `navbar`, `footer` — enlaces globales y redes sociales.
-- `contextual` — controla el menú "Copiar / Abrir en ChatGPT" de cada página.
+- `contextual` — controla el menú "Copiar / Abrir en ChatGPT" en cada página.
 
 ## Búsqueda e IA
 
 Cada sitio publicado incluye:
 
 - **Búsqueda de texto completo** indexada automáticamente en cada compilación.
-- **Chat con IA** que responde preguntas usando tus documentos como contexto.
-- **Integraciones con MCP y LLM** para que herramientas como Cursor y Claude puedan consultar tus documentos.
+- **Chat con IA** que responde a preguntas usando tu documentación como contexto.
+- **Integraciones de MCP y LLM** para que herramientas como Cursor y Claude puedan hacer referencia a tu documentación.
 
 ## Entornos de despliegue
 
-| Entorno | Disparador | Úsalo para |
-| ------- | ---------- | ---------- |
-| Local | `mint dev` | Redactar y previsualizar cambios |
-| Vista previa | Pull request | Revisar cambios antes de fusionarlos |
-| Producción | Merge a la rama de despliegue | Tu sitio en vivo |
+| Entorno     | Activador             | Úsalo para                          |
+| ----------- | --------------------- | ----------------------------------- |
+| Local       | `mint dev`            | Redactar y previsualizar cambios    |
+| Vista previa | Pull request         | Revisar cambios antes de fusionar   |
+| Producción  | Fusión a la rama de despliegue | Tu sitio en vivo            |
 
 ## Próximos pasos
 
@@ -84,6 +84,6 @@ Cada sitio publicado incluye:
     Configura tu sitio en tres pasos.
   </Card>
   <Card title="Escribir contenido" icon="pen" href="/essentials/markdown">
-    Aprende los componentes MDX disponibles.
+    Aprende los componentes MDX disponibles para ti.
   </Card>
 </CardGroup>

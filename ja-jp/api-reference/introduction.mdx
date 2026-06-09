@@ -1,0 +1,33 @@
+---
+title: 'Plant Store API リファレンス概要'
+description: 'Plant Store サンプル API の紹介。ベース URL、認証方式、生成されるエンドポイントページの構成について説明します。'
+---
+
+<Note>
+  API リファレンスドキュメントを作成しない場合は、api-reference フォルダを削除することで
+  このセクションを取り除くことができます。
+</Note>
+
+## ようこそ
+
+API ドキュメントを作成する方法は 2 つあります: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) と [MDX コンポーネント](https://mintlify.com/docs/api-playground/mdx/configuration)です。スターターキットでは、以下の OpenAPI 仕様を使用しています。
+
+<Card
+  title="Plant Store エンドポイント"
+  icon="leaf"
+  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
+>
+  OpenAPI 仕様ファイルを表示
+</Card>
+
+## 認証
+
+すべての API エンドポイントは Bearer トークンを使用して認証され、仕様ファイルから読み込まれます。
+
+```json
+"security": [
+  {
+    "bearerAuth": []
+  }
+]
+```

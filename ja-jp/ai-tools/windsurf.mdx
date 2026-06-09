@@ -1,0 +1,39 @@
+---
+title: "Mintlify ドキュメント向けに Windsurf Cascade をセットアップする"
+description: "Windsurf の Cascade AI アシスタントにプロジェクトルールとワークスペースのコンテキストを設定し、Mintlify ドキュメントページの執筆と編集をサポートしてもらいましょう。"
+icon: "water"
+---
+
+Windsurf の Cascade AI アシスタントをセットアップして、Mintlify ドキュメントの執筆とメンテナンスをサポートしてもらいましょう。
+
+## 前提条件
+
+- Windsurf エディタがインストールされていること
+
+## セットアップ
+
+<Steps>
+<Step title="Windsurf でドキュメントディレクトリを開く">
+  `docs.json` が配置されているドキュメントリポジトリのルートを開きます。
+</Step>
+
+<Step title="Mintlify スキルをインストールする">
+  統合ターミナルで次を実行します:
+
+  ```bash
+  npx skills add https://mintlify.com/docs
+  ```
+
+  これにより、Windsurf に Mintlify のコンポーネントリファレンス、執筆規約、
+  ワークフローガイダンスが提供されます。
+</Step>
+
+<Step title="プロジェクト指示をカスタマイズする">
+  プロジェクトルートの `AGENTS.md` を編集して、プロジェクト固有の用語、
+  スタイルの好み、コンテンツの範囲を追加します。
+</Step>
+
+<Step title="Cascade で執筆を開始する">
+  ファイルを開き、Cascade を使ってドキュメントを下書き・編集します。
+</Step>
+</Steps>

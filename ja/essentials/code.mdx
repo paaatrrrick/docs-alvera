@@ -1,0 +1,35 @@
+---
+title: 'コードブロックとシンタックスハイライト'
+description: 'Mintlify ドキュメントでインラインコード、複数行のコードブロック、シンタックスハイライト、行番号、グループ化されたコード例を整形する方法を説明します。'
+icon: 'code'
+---
+
+## インラインコード
+
+`単語`や`フレーズ`をコードとして示すには、バッククォート（`）で囲みます。
+
+```
+To denote a `word` or `phrase` as code, enclose it in backticks (`).
+```
+
+## コードブロック
+
+[フェンス付きコードブロック](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)は、コードをバッククォート 3 つで囲み、先頭のバッククォートに続けてスニペットのプログラミング言語を記述することで、シンタックスハイライトを有効にできます。任意で、プログラミング言語のあとにコードの名前を書くこともできます。
+
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+````md
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+````

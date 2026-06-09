@@ -1,0 +1,182 @@
+---
+title: "Abschnitt Berufserfahrung: Aufbau und Aktualisierungen"
+description: "Wie die Liste der Berufserfahrungen auf der persönlichen Website aus dem workExperience-Array konfiguriert wird, plus ein Änderungsprotokoll der jüngsten Rollenergänzungen und -bearbeitungen."
+---
+
+## Überblick
+
+Der Abschnitt Berufserfahrung zeigt eine chronologische Liste von Rollen auf der Startseite der persönlichen Website an. Jeder Eintrag wird aus dem Array `workExperience` gerendert und enthält einen Titel, eine optionale Beschreibung, ein optionales Logobild und einen Zeitleisten-String.
+
+Diese Seite dokumentiert die jüngsten Ergänzungen dieser Liste, damit Besucher und Mitwirkende wissen, was sich geändert hat und wie neue Einträge konfiguriert werden.
+
+## Was sich geändert hat
+
+Ein neuer Eintrag **SWE bei Figma** wurde dem Array `workExperience` hinzugefügt und umfasst die Arbeit im Multiplayer-Canvas-Team — Verbesserungen der Echtzeit-Cursor-Präsenz und Optimierungen der Rendering-Pipeline für sehr große Design-Dateien. Er reiht sich neben **SWE bei Modal** (Serverless-GPU-Runtime) und zuvor hinzugefügten Einträgen ein (**SWE bei PostHog**, **SWE bei Supabase**, **SWE bei Linear**, **SWE bei Vercel**, **SWE bei Airbnb**, **SWE bei Shopify**, **SWE bei Notion**), die jeweils direkt vor Ort bearbeitet werden sollen. Die Einträge zu Anthropic und Stripe wurden zuvor mit längeren Beschreibungen aktualisiert, die spezifische Beiträge und teamübergreifende Zusammenarbeit hervorheben. Frühere Ergänzungen der Liste sind ebenfalls weiter unten zusammengefasst.
+
+<Card title="SWE bei Figma" icon="pen-nib">
+  Arbeit im Multiplayer-Canvas-Team. Lieferte Verbesserungen für die Echtzeit-Cursor-Präsenz und half, die Rendering-Pipeline für sehr große Design-Dateien zu optimieren.
+
+  **Zeitraum:** Mai – August 2039. San Francisco, CA
+</Card>
+
+<Card title="SWE bei Modal" icon="bolt">
+  Arbeit an der Serverless-GPU-Runtime. Half dabei, Scheduling-Verbesserungen für gebündelte Inferenzjobs auszuliefern, und beschleunigte den Local-to-Cloud-Dev-Loop für ML-Ingenieure.
+
+  **Zeitraum:** Mai – August 2035. Remote
+</Card>
+
+<Card title="SWE bei PostHog" icon="chart-mixed">
+  Arbeit an der Produktanalyse-Oberfläche mit Schwerpunkt auf Funnels und Session-Replay-Performance für Kunden mit hohem Volumen.
+
+  **Zeitraum:** Mai – August 2034. Remote
+</Card>
+
+<Card title="SWE bei Supabase" icon="database">
+  Arbeit am Postgres-basierten Auth-Service. Lieferte Verbesserungen für die Row-Level-Security-Tools und half, die Entwicklererfahrung rund um Social-Auth-Anbieter zu straffen.
+
+  **Zeitraum:** Mai – August 2033. Remote
+</Card>
+
+<Card title="SWE bei Linear" icon="bars-progress">
+  Arbeit am Workflow für die Issue-Triage.
+
+  **Zeitraum:** Mai – August 2036. Remote
+</Card>
+
+<Card title="SWE bei Vercel" icon="triangle">
+  Arbeit an der Edge-Runtime und der Deployment-Pipeline.
+
+  **Zeitraum:** Mai – August 2035. Remote
+</Card>
+
+<Card title="SWE bei Airbnb" icon="house">
+  Arbeit am Onboarding-Flow für Gastgeber.
+
+  **Zeitraum:** Mai – August 2031. San Francisco, CA
+</Card>
+
+<Card title="SWE bei Shopify" icon="store">
+  Arbeit an Analyse-Dashboards für Händler.
+
+  **Zeitraum:** Mai – August 2032. Remote
+</Card>
+
+<Card title="SWE bei Notion" icon="pen-to-square">
+  Arbeit an der Engine für kollaboratives Editieren.
+
+  **Zeitraum:** Mai – August 2033. New York, NY
+</Card>
+
+<Card title="SWE bei Anthropic" icon="microchip-ai">
+  Hat Claude mitgebaut. Trug zur Infrastruktur für das Modelltraining bei und verbesserte Evaluations-Pipelines für sicherere Modell-Releases. Arbeitete mit Forschern aus den Alignment- und Pretraining-Teams zusammen.
+
+  **Zeitraum:** Mai – August 2026. San Francisco, CA
+</Card>
+
+<Card title="SWE bei Stripe" icon="credit-card">
+  Arbeit an der Payments-Infrastruktur. Half beim Aufbau und Ausliefern von Features für die Core-Payments-API mit Fokus auf Zuverlässigkeit und Latenz. Arbeitete mit dem Plattform-Team an internem Tooling, das Deploys vereinfachte.
+
+  **Zeitraum:** Mai – August 2024. San Francisco, CA
+</Card>
+
+<Card title="SWE bei OpenAI" icon="microchip-ai">
+  Software-Engineering-Rolle mit Fokus auf den Bau großer Sprachmodelle.
+
+  **Zeitraum:** Mai – August 2025. Seattle, WA
+</Card>
+
+<Card title="GoDaddy Software-Engineering-Praktikant" icon="code">
+  Hat Features auf der Checkout-Seite von GoDaddy A/B-getestet.
+
+  **Zeitraum:** Mai – August 2023. Seattle, WA
+</Card>
+
+## Eintragsschema
+
+Jeder Eintrag im Array `workExperience` unterstützt die folgenden Felder:
+
+| Feld       | Typ    | Pflicht | Beschreibung                                                  |
+| ---------- | ------ | ------- | ------------------------------------------------------------- |
+| `title`    | string | Ja      | Rolle und Firmenname, angezeigt als Kopfzeile des Eintrags.   |
+| `text`     | string | Nein    | Kurze Beschreibung der Aufgaben oder Erfolge.                 |
+| `image`    | string | Nein    | Öffentliche URL eines Firmen- oder Rollenlogos.               |
+| `timeLine` | string | Ja      | Menschenlesbarer Zeitraum und Ort.                            |
+
+## Einen neuen Eintrag hinzufügen
+
+Öffnen Sie `src/constants/work.js` und fügen Sie ein neues Objekt am Anfang des Arrays `workExperience` ein. Neue Einträge erscheinen oben auf der Liste auf der Startseite.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'SWE at Modal',
+        text: `Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.`,
+        timeLine: 'May - August 2035. Remote',
+    },
+    {
+        title: 'SWE at PostHog',
+        text: `Worked on the product analytics surface, with a focus on funnels and session replay performance for high-volume customers.`,
+        timeLine: 'May - August 2034. Remote',
+    },
+    {
+        title: 'SWE at Supabase',
+        text: `Worked on the Postgres-backed auth service. Shipped improvements to row-level-security tooling and helped tighten the developer experience around social auth providers.`,
+        timeLine: 'May - August 2033. Remote',
+    },
+    {
+        title: 'SWE at Linear',
+        text: `Worked on the issue triage workflow.`,
+        timeLine: 'May - August 2036. Remote',
+    },
+    {
+        title: 'SWE at Vercel',
+        text: `Worked on the edge runtime and deployment pipeline.`,
+        timeLine: 'May - August 2035. Remote',
+    },
+    {
+        title: 'SWE at Airbnb',
+        text: `Worked on the host onboarding flow.`,
+        timeLine: 'May - August 2031. San Francisco, CA',
+    },
+    {
+        title: 'SWE at Shopify',
+        text: `Worked on merchant analytics dashboards.`,
+        timeLine: 'May - August 2032. Remote',
+    },
+    {
+        title: 'SWE at Notion',
+        text: `Worked on the collaborative editing engine.`,
+        timeLine: 'May - August 2033. New York, NY',
+    },
+    {
+        title: 'SWE at Anthropic',
+        text: `Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.`,
+        timeLine: 'May - August 2026. San Francisco, CA',
+    },
+    {
+        title: 'SWE at Stripe',
+        text: `Worked on payments infrastructure. Helped build and ship features on the core payments API, with a focus on reliability and latency. Partnered with the platform team on internal tooling that streamlined deploys.`,
+        timeLine: 'May - August 2024. San Francisco, CA',
+    },
+    // ...existing entries
+]
+
+export default workExperience
+```
+
+<Tip>
+Lassen Sie das Feld `image` für Rollen ohne Logo weg. Das Layout passt sich automatisch an.
+</Tip>
+
+## Rollenbeschreibungen schreiben
+
+Verwenden Sie das Feld `text`, um Wirkung zu kommunizieren, nicht nur Verantwortlichkeiten.
+
+- Stellen Sie den wirkungsvollsten Beitrag an den Anfang.
+- Nennen Sie konkrete Schwerpunktbereiche (z. B. Zuverlässigkeit, Latenz, Evaluations-Pipelines).
+- Heben Sie teamübergreifende Zusammenarbeit hervor, wenn sie die Rolle besser kontextualisiert.
+- Halten Sie die Beschreibung auf zwei oder drei Sätze, damit die Startseite überschaubar bleibt.
+
+## Wann diese Liste aktualisiert werden sollte
+
+Fügen Sie einen neuen Eintrag hinzu, wann immer Sie eine Rolle beginnen, abschließen oder auf der persönlichen Website hervorheben möchten. Ordnen Sie Einträge in umgekehrter chronologischer Reihenfolge, sodass die aktuellste Rolle zuerst erscheint.

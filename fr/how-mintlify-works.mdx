@@ -1,6 +1,6 @@
 ---
 title: "Comment fonctionne Mintlify"
-description: "Comprenez l'architecture de Mintlify et comment votre documentation passe des fichiers MDX à un site publié."
+description: "Comprenez l'architecture de Mintlify et comment votre documentation passe de fichiers MDX à un site publié."
 ---
 
 Mintlify transforme un dépôt Git de fichiers MDX en un site de documentation rapide et indexé pour la recherche. Cette page explique les différents éléments pour que vous sachiez ce qui se passe en coulisses.
@@ -9,7 +9,7 @@ Mintlify transforme un dépôt Git de fichiers MDX en un site de documentation r
 
 <CardGroup cols={2}>
   <Card title="Contenu" icon="file-lines">
-    Les pages MDX et un fichier `docs.json` de configuration vivent dans votre dépôt Git.
+    Les pages MDX et un fichier de configuration `docs.json` vivent dans votre dépôt Git.
   </Card>
   <Card title="Pipeline de build" icon="gears">
     Mintlify compile votre contenu en un site statique à chaque push.
@@ -48,33 +48,33 @@ mint broken-links
 ## Modèle de rédaction
 
 - **Fichiers MDX** — chaque page est un fichier `.mdx` avec un frontmatter YAML (`title`, `description`).
-- **Composants** — Mintlify fournit des composants intégrés pour les encadrés, onglets, groupes de code, accordéons, cartes, et plus encore.
-- **Snippets** — le contenu réutilisable vit dans `snippets/` et peut être importé dans n'importe quelle page.
+- **Composants** — Mintlify fournit des composants intégrés pour les encadrés, les onglets, les groupes de code, les accordéons, les cartes et plus encore.
+- **Snippets** — le contenu réutilisable se trouve dans `snippets/` et peut être importé dans n'importe quelle page.
 - **Images et ressources** — référencées par chemin relatif depuis la racine du dépôt.
 
 ## Configuration
 
-`docs.json` est la source unique de vérité pour la structure du site :
+`docs.json` est la seule source de vérité pour la structure du site :
 
 - `navigation` — onglets, groupes et ordre des pages.
-- `colors`, `logo`, `favicon` — identité visuelle.
+- `colors`, `logo`, `favicon` — branding.
 - `navbar`, `footer` — liens globaux et réseaux sociaux.
-- `contextual` — contrôle le menu "Copier / Ouvrir dans ChatGPT" de chaque page.
+- `contextual` — contrôle le menu « Copier / Ouvrir dans ChatGPT » de chaque page.
 
 ## Recherche et IA
 
 Chaque site publié inclut :
 
-- **Recherche en texte intégral** indexée automatiquement à chaque build.
+- **Recherche plein texte** indexée automatiquement à chaque build.
 - **Chat IA** qui répond aux questions en utilisant votre documentation comme contexte.
-- **Intégrations MCP et LLM** pour que des outils comme Cursor et Claude puissent consulter votre documentation.
+- **Intégrations MCP et LLM** pour que des outils comme Cursor et Claude puissent référencer votre documentation.
 
 ## Environnements de déploiement
 
 | Environnement | Déclencheur | À utiliser pour |
-| ------------- | ----------- | --------------- |
+| ----------- | ------- | ---------- |
 | Local | `mint dev` | Rédiger et prévisualiser les changements |
-| Aperçu | Pull request | Examiner les changements avant la fusion |
+| Prévisualisation | Pull request | Relire les changements avant la fusion |
 | Production | Fusion sur la branche de déploiement | Votre site en ligne |
 
 ## Étapes suivantes

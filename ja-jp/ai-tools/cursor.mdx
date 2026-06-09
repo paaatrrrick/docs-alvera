@@ -1,0 +1,39 @@
+---
+title: "Mintlify ドキュメント向けに Cursor をセットアップする"
+description: "Cursor AI エディタにプロジェクトルールとコンテキストファイルを設定し、Mintlify ドキュメントページの下書き、リファクタリング、レビューを効率的に行いましょう。"
+icon: "arrow-pointer"
+---
+
+Cursor をセットアップして、Mintlify ドキュメントの執筆とメンテナンスをサポートしてもらいましょう。
+
+## 前提条件
+
+- Cursor エディタがインストールされていること
+
+## セットアップ
+
+<Steps>
+<Step title="Cursor でドキュメントディレクトリを開く">
+  `docs.json` が配置されているドキュメントリポジトリのルートを開きます。
+</Step>
+
+<Step title="Mintlify スキルをインストールする">
+  統合ターミナルで次を実行します:
+
+  ```bash
+  npx skills add https://mintlify.com/docs
+  ```
+
+  これにより、Cursor に Mintlify のコンポーネントリファレンス、執筆規約、
+  ワークフローガイダンスが提供されます。
+</Step>
+
+<Step title="プロジェクト指示をカスタマイズする">
+  プロジェクトルートの `AGENTS.md` を編集して、プロジェクト固有の用語、
+  スタイルの好み、コンテンツの範囲を追加します。
+</Step>
+
+<Step title="Cursor で執筆を開始する">
+  ファイルを開き、Cursor の AI 機能を使ってドキュメントを下書き・編集します。
+</Step>
+</Steps>

@@ -1,0 +1,182 @@
+---
+title: "Work experience セクション: 構造と更新内容"
+description: "個人サイトの work experience リストが workExperience 配列からどのように構成されるか、そして最近のロール追加・編集の変更履歴を解説します。"
+---
+
+## 概要
+
+work experience セクションは、個人サイトのホームページ上に時系列順のロール一覧を表示します。各エントリは `workExperience` 配列からレンダリングされ、タイトル、任意の説明、任意のロゴ画像、タイムライン文字列を表示します。
+
+このページは、リストへの最近の追加を文書化し、訪問者や貢献者が何が変わったのか、新しいエントリがどのように設定されているのかを把握できるようにするためのものです。
+
+## 変更内容
+
+`workExperience` 配列に新しい **SWE at Figma** エントリが追加されました。マルチプレイヤーキャンバスチームでの業務(リアルタイムカーソルプレゼンスの改善と、非常に大きなデザインファイル向けのレンダリングパイプラインの最適化)を扱っています。これは **SWE at Modal**(サーバーレス GPU ランタイム)や、それ以前に追加されたエントリ(**SWE at PostHog**、**SWE at Supabase**、**SWE at Linear**、**SWE at Vercel**、**SWE at Airbnb**、**SWE at Shopify**、**SWE at Notion**)と並びます。これらはいずれも、その場で編集することを想定しています。Anthropic と Stripe のエントリは以前に、具体的な貢献やチーム間コラボレーションを強調した、より長い説明文に更新されました。それ以前の追加についても、下記にまとめてあります。
+
+<Card title="SWE at Figma" icon="pen-nib">
+  マルチプレイヤーキャンバスチームに所属。リアルタイムカーソルプレゼンスの改善を出荷し、非常に大きなデザインファイル向けのレンダリングパイプラインの最適化を支援しました。
+
+  **タイムライン:** 2039 年 5 月 - 8 月。San Francisco, CA
+</Card>
+
+<Card title="SWE at Modal" icon="bolt">
+  サーバーレス GPU ランタイムに従事。バッチ推論ジョブのスケジューリング改善を実装し、ML エンジニア向けにローカルからクラウドへの開発ループの高速化に貢献しました。
+
+  **タイムライン:** 2035 年 5 月 - 8 月。リモート
+</Card>
+
+<Card title="SWE at PostHog" icon="chart-mixed">
+  プロダクトアナリティクスの画面に取り組み、特に大規模顧客向けのファネルとセッションリプレイのパフォーマンスに注力しました。
+
+  **タイムライン:** 2034 年 5 月 - 8 月。リモート
+</Card>
+
+<Card title="SWE at Supabase" icon="database">
+  Postgres ベースの認証サービスに取り組みました。Row Level Security ツールの改善を出荷し、ソーシャル認証プロバイダー周辺の開発体験の向上を支援しました。
+
+  **タイムライン:** 2033 年 5 月 - 8 月。リモート
+</Card>
+
+<Card title="SWE at Linear" icon="bars-progress">
+  Issue トリアージのワークフローに取り組みました。
+
+  **タイムライン:** 2036 年 5 月 - 8 月。リモート
+</Card>
+
+<Card title="SWE at Vercel" icon="triangle">
+  エッジランタイムとデプロイパイプラインに取り組みました。
+
+  **タイムライン:** 2035 年 5 月 - 8 月。リモート
+</Card>
+
+<Card title="SWE at Airbnb" icon="house">
+  ホストのオンボーディングフローに取り組みました。
+
+  **タイムライン:** 2031 年 5 月 - 8 月。San Francisco, CA
+</Card>
+
+<Card title="SWE at Shopify" icon="store">
+  マーチャント向けのアナリティクスダッシュボードに取り組みました。
+
+  **タイムライン:** 2032 年 5 月 - 8 月。リモート
+</Card>
+
+<Card title="SWE at Notion" icon="pen-to-square">
+  コラボレーティブな編集エンジンに取り組みました。
+
+  **タイムライン:** 2033 年 5 月 - 8 月。New York, NY
+</Card>
+
+<Card title="SWE at Anthropic" icon="microchip-ai">
+  Claude を構築しました。モデルトレーニングのインフラストラクチャに貢献し、より安全なモデルリリースに向けた評価パイプラインを改善しました。アライメントチームと事前学習チームの研究者と連携しました。
+
+  **タイムライン:** 2026 年 5 月 - 8 月。San Francisco, CA
+</Card>
+
+<Card title="SWE at Stripe" icon="credit-card">
+  決済インフラストラクチャに取り組みました。信頼性とレイテンシに重点を置き、コア決済 API の機能の構築と出荷に貢献。プラットフォームチームと連携し、デプロイを効率化する内部ツールにも携わりました。
+
+  **タイムライン:** 2024 年 5 月 - 8 月。San Francisco, CA
+</Card>
+
+<Card title="SWE at OpenAI" icon="microchip-ai">
+  大規模言語モデルの構築に注力したソフトウェアエンジニアリングのロール。
+
+  **タイムライン:** 2025 年 5 月 - 8 月。Seattle, WA
+</Card>
+
+<Card title="GoDaddy Software Engineer Intern" icon="code">
+  GoDaddy のチェックアウトページで機能の A/B テストを実施しました。
+
+  **タイムライン:** 2023 年 5 月 - 8 月。Seattle, WA
+</Card>
+
+## エントリスキーマ
+
+`workExperience` 配列の各エントリは、以下のフィールドをサポートしています:
+
+| フィールド | 型     | 必須 | 説明                                                |
+| ---------- | ------ | ---- | --------------------------------------------------- |
+| `title`    | string | はい | エントリ見出しとして表示されるロールと会社名。      |
+| `text`     | string | いいえ | 責務や成果の短い説明。                              |
+| `image`    | string | いいえ | 会社またはロールのロゴの公開 URL。                  |
+| `timeLine` | string | はい | 読みやすい形式の期間と勤務地。                      |
+
+## 新しいエントリの追加
+
+`src/constants/work.js` を開き、`workExperience` 配列の先頭に新しいオブジェクトを追加します。新しいエントリはホームページのリスト最上部に表示されます。
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'SWE at Modal',
+        text: `Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.`,
+        timeLine: 'May - August 2035. Remote',
+    },
+    {
+        title: 'SWE at PostHog',
+        text: `Worked on the product analytics surface, with a focus on funnels and session replay performance for high-volume customers.`,
+        timeLine: 'May - August 2034. Remote',
+    },
+    {
+        title: 'SWE at Supabase',
+        text: `Worked on the Postgres-backed auth service. Shipped improvements to row-level-security tooling and helped tighten the developer experience around social auth providers.`,
+        timeLine: 'May - August 2033. Remote',
+    },
+    {
+        title: 'SWE at Linear',
+        text: `Worked on the issue triage workflow.`,
+        timeLine: 'May - August 2036. Remote',
+    },
+    {
+        title: 'SWE at Vercel',
+        text: `Worked on the edge runtime and deployment pipeline.`,
+        timeLine: 'May - August 2035. Remote',
+    },
+    {
+        title: 'SWE at Airbnb',
+        text: `Worked on the host onboarding flow.`,
+        timeLine: 'May - August 2031. San Francisco, CA',
+    },
+    {
+        title: 'SWE at Shopify',
+        text: `Worked on merchant analytics dashboards.`,
+        timeLine: 'May - August 2032. Remote',
+    },
+    {
+        title: 'SWE at Notion',
+        text: `Worked on the collaborative editing engine.`,
+        timeLine: 'May - August 2033. New York, NY',
+    },
+    {
+        title: 'SWE at Anthropic',
+        text: `Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.`,
+        timeLine: 'May - August 2026. San Francisco, CA',
+    },
+    {
+        title: 'SWE at Stripe',
+        text: `Worked on payments infrastructure. Helped build and ship features on the core payments API, with a focus on reliability and latency. Partnered with the platform team on internal tooling that streamlined deploys.`,
+        timeLine: 'May - August 2024. San Francisco, CA',
+    },
+    // ...existing entries
+]
+
+export default workExperience
+```
+
+<Tip>
+ロゴがないロールでは `image` フィールドを省略してください。レイアウトは自動的に調整されます。
+</Tip>
+
+## ロール説明の書き方
+
+`text` フィールドでは、責務だけでなくインパクトを伝えるようにします。
+
+- 最もインパクトの大きい貢献を最初に書きます。
+- 信頼性、レイテンシ、評価パイプラインなどの具体的な注力領域に言及します。
+- ロールの文脈を補強する場合は、チーム間のコラボレーションについて触れます。
+- ホームページがざっと閲覧できるよう、説明は 2〜3 文に収めます。
+
+## このリストを更新するタイミング
+
+新しいロールを開始したとき、終了したとき、または個人サイトで強調したいときに新しいエントリを追加します。最新のロールが最初に表示されるよう、エントリは時系列の逆順で並べてください。

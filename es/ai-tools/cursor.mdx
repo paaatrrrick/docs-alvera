@@ -1,0 +1,39 @@
+---
+title: "Configurar Cursor para la documentación de Mintlify"
+description: "Configura el editor de IA Cursor con reglas de proyecto y archivos de contexto para redactar, refactorizar y revisar páginas de documentación de Mintlify de forma eficiente."
+icon: "arrow-pointer"
+---
+
+Configura Cursor para ayudarte a escribir y mantener tu documentación de Mintlify.
+
+## Requisitos previos
+
+- Editor Cursor instalado
+
+## Configuración
+
+<Steps>
+<Step title="Abrir el directorio de tus documentos en Cursor">
+  Abre la raíz del repositorio de tu documentación, donde se encuentra `docs.json`.
+</Step>
+
+<Step title="Instalar la skill de Mintlify">
+  En la terminal integrada, ejecuta:
+
+  ```bash
+  npx skills add https://mintlify.com/docs
+  ```
+
+  Esto proporciona a Cursor la referencia de componentes de Mintlify, los estándares de escritura
+  y la guía de flujo de trabajo.
+</Step>
+
+<Step title="Personalizar las instrucciones del proyecto">
+  Edita `AGENTS.md` en la raíz de tu proyecto para añadir terminología específica del proyecto,
+  preferencias de estilo y límites de contenido.
+</Step>
+
+<Step title="Empezar a escribir con Cursor">
+  Abre un archivo y utiliza las funciones de IA de Cursor para redactar y editar la documentación.
+</Step>
+</Steps>

@@ -1,0 +1,111 @@
+---
+title: "Créer des extraits de contenu réutilisables"
+description: "Définissez des snippets MDX réutilisables, importez-les dans plusieurs pages et passez des props ou variables pour garder le contenu de la documentation synchronisé sans duplication."
+icon: "recycle"
+---
+
+import SnippetIntro from '/snippets/snippet-intro.mdx';
+
+<SnippetIntro />
+
+## Créer un snippet personnalisé
+
+**Pré-requis** : vous devez créer votre fichier snippet dans le répertoire `snippets`.
+
+<Note>
+  Toute page du répertoire `snippets` sera traitée comme un snippet et ne sera
+  pas rendue en tant que page autonome. Si vous voulez créer une page autonome
+  à partir du snippet, importez-le dans un autre fichier et appelez-le comme
+  un composant.
+</Note>
+
+### Export par défaut
+
+1. Ajoutez à votre fichier snippet le contenu que vous voulez réutiliser à plusieurs
+   endroits. Vous pouvez aussi ajouter des variables qui pourront être renseignées
+   via des props lors de l'import du snippet.
+
+```mdx snippets/my-snippet.mdx
+Hello world! This is my content I want to reuse across pages. My keyword of the
+day is {word}.
+```
+
+<Warning>
+  Le contenu que vous souhaitez réutiliser doit se trouver dans le répertoire
+  `snippets` pour que l'import fonctionne.
+</Warning>
+
+2. Importez le snippet dans votre fichier de destination.
+
+```mdx destination-file.mdx
+---
+title: My title
+description: My Description
+---
+
+import MySnippet from '/snippets/path/to/my-snippet.mdx';
+
+## Header
+
+Lorem ipsum dolor sit amet.
+
+<MySnippet word="bananas" />
+```
+
+### Variables réutilisables
+
+1. Exportez une variable depuis votre fichier snippet :
+
+```mdx snippets/path/to/custom-variables.mdx
+export const myName = 'my name';
+
+export const myObject = { fruit: 'strawberries' };
+```
+
+2. Importez le snippet depuis votre fichier de destination et utilisez la variable :
+
+```mdx destination-file.mdx
+---
+title: My title
+description: My Description
+---
+
+import { myName, myObject } from '/snippets/path/to/custom-variables.mdx';
+
+Hello, my name is {myName} and I like {myObject.fruit}.
+```
+
+### Composants réutilisables
+
+1. Dans votre fichier snippet, créez un composant qui prend des props en
+   exportant votre composant sous la forme d'une fonction fléchée.
+
+```mdx snippets/custom-component.mdx
+export const MyComponent = ({ title }) => (
+  <div>
+    <h1>{title}</h1>
+    <p>... snippet content ...</p>
+  </div>
+);
+```
+
+<Warning>
+  MDX ne se compile pas à l'intérieur du corps d'une fonction fléchée. Restez sur
+  la syntaxe HTML quand vous le pouvez, ou utilisez un export par défaut si vous
+  devez utiliser du MDX.
+</Warning>
+
+2. Importez le snippet dans votre fichier de destination et passez les props
+
+```mdx destination-file.mdx
+---
+title: My title
+description: My Description
+---
+
+import { MyComponent } from '/snippets/custom-component.mdx';
+
+Lorem ipsum dolor sit amet.
+
+<MyComponent title={'Custom title'} />
+```

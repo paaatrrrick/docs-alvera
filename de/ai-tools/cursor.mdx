@@ -1,0 +1,39 @@
+---
+title: "Cursor für Mintlify-Dokumentation einrichten"
+description: "Konfigurieren Sie den Cursor-KI-Editor mit Projektregeln und Kontextdateien, um Mintlify-Dokumentationsseiten effizient zu entwerfen, zu refaktorieren und zu prüfen."
+icon: "arrow-pointer"
+---
+
+Richten Sie Cursor ein, um beim Schreiben und Pflegen Ihrer Mintlify-Dokumentation zu helfen.
+
+## Voraussetzungen
+
+- Cursor-Editor installiert
+
+## Einrichtung
+
+<Steps>
+<Step title="Öffnen Sie Ihr Docs-Verzeichnis in Cursor">
+  Öffnen Sie den Stamm Ihres Dokumentations-Repositorys, in dem sich `docs.json` befindet.
+</Step>
+
+<Step title="Mintlify-Skill installieren">
+  Führen Sie im integrierten Terminal aus:
+
+  ```bash
+  npx skills add https://mintlify.com/docs
+  ```
+
+  Damit erhält Cursor Mintlifys Komponentenreferenz, Schreibstandards
+  und Workflow-Anleitung.
+</Step>
+
+<Step title="Projektanweisungen anpassen">
+  Bearbeiten Sie `AGENTS.md` im Stammverzeichnis Ihres Projekts, um projektspezifische Terminologie,
+  Stilpräferenzen und Inhaltsgrenzen hinzuzufügen.
+</Step>
+
+<Step title="Mit Cursor zu schreiben beginnen">
+  Öffnen Sie eine Datei und nutzen Sie die KI-Funktionen von Cursor, um Dokumentation zu entwerfen und zu bearbeiten.
+</Step>
+</Steps>

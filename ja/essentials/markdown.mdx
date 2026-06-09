@@ -1,0 +1,88 @@
+---
+title: 'Mintlify 向け Markdown 構文リファレンス'
+description: 'Mintlify ドキュメントページで利用できる見出し、テキストスタイル、リスト、リンク、引用、その他の標準的な Markdown 書式のリファレンスです。'
+icon: 'text-size'
+---
+
+## タイトル
+
+セクション見出しに最適です。
+
+```md
+## Titles
+```
+
+### サブタイトル
+
+サブセクション見出しに最適です。
+
+```md
+### Subtitles
+```
+
+<Tip>
+
+**タイトル**と**サブタイトル**はアンカーを生成し、右側の目次にも表示されます。
+
+</Tip>
+
+## テキストの書式
+
+ほとんどの Markdown 書式に対応しています。テキストを `**`、`_`、`~` で囲むだけで書式を適用できます。
+
+| スタイル | 書き方 | 結果 |
+| ------- | ------ | ---- |
+| 太字 | `**bold**` | **bold** |
+| 斜体 | `_italic_` | _italic_ |
+| 取り消し線 | `~strikethrough~` | ~strikethrough~ |
+
+これらは組み合わせることもできます。たとえば `**_bold and italic_**` と書けば、**_bold and italic_** のテキストになります。
+
+上付き文字や下付き文字は HTML を使う必要があります。テキストを `<sup>` または `<sub>` で囲んでください。
+
+| 文字サイズ | 書き方 | 結果 |
+| -------- | ------ | ---- |
+| 上付き | `<sup>superscript</sup>` | <sup>superscript</sup> |
+| 下付き | `<sub>subscript</sub>` | <sub>subscript</sub> |
+
+## ページへのリンク
+
+テキストを `[]()` で囲むことでリンクを追加できます。たとえば `[link to google](https://google.com)` と書けば [link to google](https://google.com) へのリンクになります。
+
+ドキュメント内のページへのリンクは、ルート相対パスで指定する必要があります。基本的にはフォルダパス全体を含めてください。たとえば `[link to text](/writing-content/text)` は、コンポーネントセクションの「Text」ページへリンクします。
+
+`[link to text](../text)` のような相対リンクは、最適化が難しいため表示が遅くなります。
+
+## 引用
+
+### 1 行
+
+引用を作成するには、段落の前に `>` を付けます。
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### 複数行
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify は Latex コンポーネントを通じて [LaTeX](https://www.latex-project.org) をサポートしています。
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```

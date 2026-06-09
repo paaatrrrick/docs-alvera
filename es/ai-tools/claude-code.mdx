@@ -1,0 +1,43 @@
+---
+title: "Configurar Claude Code para la documentación de Mintlify"
+description: "Instala y configura la CLI de Claude Code de Anthropic para escribir, editar y mantener documentación de Mintlify directamente desde tu terminal."
+icon: "asterisk"
+---
+
+Configura Claude Code para ayudarte a escribir y mantener tu documentación de Mintlify.
+
+## Requisitos previos
+
+- Suscripción activa de Claude (Pro, Max o acceso a la API)
+
+## Configuración
+
+<Steps>
+<Step title="Instalar Claude Code">
+  ```bash
+  npm install -g @anthropic-ai/claude-code
+  ```
+</Step>
+
+<Step title="Instalar la skill de Mintlify">
+  En el directorio de tus documentos, ejecuta:
+
+  ```bash
+  npx skills add https://mintlify.com/docs
+  ```
+
+  Esto proporciona a Claude Code la referencia de componentes de Mintlify, los estándares de escritura
+  y la guía de flujo de trabajo.
+</Step>
+
+<Step title="Personalizar las instrucciones del proyecto">
+  Edita `AGENTS.md` en la raíz de tu proyecto para añadir terminología específica del proyecto,
+  preferencias de estilo y límites de contenido.
+</Step>
+
+<Step title="Empezar a escribir con Claude Code">
+  ```bash
+  claude
+  ```
+</Step>
+</Steps>

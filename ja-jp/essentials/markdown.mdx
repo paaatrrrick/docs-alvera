@@ -1,0 +1,88 @@
+---
+title: 'Mintlify 向け Markdown 構文リファレンス'
+description: 'Mintlify ドキュメントページでサポートされている見出し、テキスト装飾、リスト、リンク、引用、その他の標準的な Markdown フォーマットのリファレンスです。'
+icon: 'text-size'
+---
+
+## タイトル
+
+セクションヘッダーに最適です。
+
+```md
+## Titles
+```
+
+### サブタイトル
+
+サブセクションヘッダーに最適です。
+
+```md
+### Subtitles
+```
+
+<Tip>
+
+各**タイトル**と**サブタイトル**はアンカーを作成し、右側の目次にも表示されます。
+
+</Tip>
+
+## テキストフォーマット
+
+ほとんどの Markdown フォーマットをサポートしています。テキストの周りに `**`、`_`、または `~` を追加するだけでフォーマットできます。
+
+| スタイル       | 書き方            | 結果            |
+| ------------- | ----------------- | --------------- |
+| 太字          | `**bold**`        | **bold**        |
+| 斜体          | `_italic_`        | _italic_        |
+| 取り消し線     | `~strikethrough~` | ~strikethrough~ |
+
+これらを組み合わせることもできます。たとえば、`**_bold and italic_**` と書くと **_bold and italic_** のテキストになります。
+
+上付き文字や下付き文字を書くには HTML を使う必要があります。つまり、テキストの周りに `<sup>` または `<sub>` を追加します。
+
+| テキストサイズ | 書き方                   | 結果                   |
+| ------------- | ------------------------ | ---------------------- |
+| 上付き文字    | `<sup>superscript</sup>` | <sup>superscript</sup> |
+| 下付き文字    | `<sub>subscript</sub>`   | <sub>subscript</sub>   |
+
+## ページへのリンク
+
+テキストを `[]()` で囲むことでリンクを追加できます。たとえば、`[link to google](https://google.com)` と書くと [link to google](https://google.com) になります。
+
+ドキュメント内のページへのリンクはルート相対パスである必要があります。基本的には、フォルダパス全体を含める必要があります。たとえば、`[link to text](/writing-content/text)` はコンポーネントセクションの「Text」ページにリンクします。
+
+`[link to text](../text)` のような相対リンクは最適化が困難なため、開くのが遅くなります。
+
+## 引用
+
+### 単一行
+
+引用を作成するには、段落の前に `>` を追加します。
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### 複数行
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify は Latex コンポーネントを通じて [LaTeX](https://www.latex-project.org) をサポートしています。
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```

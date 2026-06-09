@@ -1,0 +1,182 @@
+---
+title: "Sección de experiencia laboral: estructura y actualizaciones"
+description: "Cómo se configura la lista de experiencia laboral del sitio web personal a partir del array workExperience, junto con un registro de cambios de las recientes incorporaciones y ediciones de puestos."
+---
+
+## Resumen
+
+La sección de experiencia laboral muestra una lista cronológica de puestos en la página de inicio del sitio web personal. Cada entrada se renderiza desde el array `workExperience` y muestra un título, una descripción opcional, una imagen de logotipo opcional y una cadena de cronología.
+
+Esta página documenta las incorporaciones recientes a esa lista para que visitantes y colaboradores sepan qué cambió y cómo se configuran las nuevas entradas.
+
+## Qué cambió
+
+Se ha añadido una nueva entrada **SWE en Figma** al array `workExperience`, que abarca el trabajo en el equipo de lienzo multijugador: mejoras en la presencia de cursores en tiempo real y optimizaciones del pipeline de renderizado para archivos de diseño muy grandes. Se une a **SWE en Modal** (runtime de GPU serverless) y a entradas añadidas previamente (**SWE en PostHog**, **SWE en Supabase**, **SWE en Linear**, **SWE en Vercel**, **SWE en Airbnb**, **SWE en Shopify**, **SWE en Notion**), cada una pensada para editarse en su lugar. Las entradas de Anthropic y Stripe se actualizaron anteriormente con descripciones más largas que destacan contribuciones específicas y colaboración entre equipos. Las incorporaciones anteriores a la lista también se resumen a continuación.
+
+<Card title="SWE en Figma" icon="pen-nib">
+  Trabajé en el equipo de lienzo multijugador. Lancé mejoras en la presencia de cursores en tiempo real y ayudé a optimizar el pipeline de renderizado para archivos de diseño muy grandes.
+
+  **Cronología:** mayo - agosto de 2039. San Francisco, CA
+</Card>
+
+<Card title="SWE en Modal" icon="bolt">
+  Trabajé en el runtime de GPU serverless. Ayudé a lanzar mejoras de planificación para trabajos de inferencia por lotes e hice más rápido el bucle de desarrollo local-a-nube para ingenieros de ML.
+
+  **Cronología:** mayo - agosto de 2035. Remoto
+</Card>
+
+<Card title="SWE en PostHog" icon="chart-mixed">
+  Trabajé en la superficie de análisis de producto, con un enfoque en embudos y rendimiento del replay de sesión para clientes de alto volumen.
+
+  **Cronología:** mayo - agosto de 2034. Remoto
+</Card>
+
+<Card title="SWE en Supabase" icon="database">
+  Trabajé en el servicio de autenticación respaldado por Postgres. Lancé mejoras en las herramientas de seguridad a nivel de fila y ayudé a mejorar la experiencia de desarrollador en torno a los proveedores de autenticación social.
+
+  **Cronología:** mayo - agosto de 2033. Remoto
+</Card>
+
+<Card title="SWE en Linear" icon="bars-progress">
+  Trabajé en el flujo de trabajo de clasificación de incidencias.
+
+  **Cronología:** mayo - agosto de 2036. Remoto
+</Card>
+
+<Card title="SWE en Vercel" icon="triangle">
+  Trabajé en el runtime de edge y el pipeline de despliegue.
+
+  **Cronología:** mayo - agosto de 2035. Remoto
+</Card>
+
+<Card title="SWE en Airbnb" icon="house">
+  Trabajé en el flujo de incorporación de anfitriones.
+
+  **Cronología:** mayo - agosto de 2031. San Francisco, CA
+</Card>
+
+<Card title="SWE en Shopify" icon="store">
+  Trabajé en los paneles de análisis de comerciantes.
+
+  **Cronología:** mayo - agosto de 2032. Remoto
+</Card>
+
+<Card title="SWE en Notion" icon="pen-to-square">
+  Trabajé en el motor de edición colaborativa.
+
+  **Cronología:** mayo - agosto de 2033. Nueva York, NY
+</Card>
+
+<Card title="SWE en Anthropic" icon="microchip-ai">
+  Construí Claude. Contribuí a la infraestructura de entrenamiento de modelos y mejoré los pipelines de evaluación para lanzamientos de modelos más seguros. Colaboré con investigadores de los equipos de alineación y preentrenamiento.
+
+  **Cronología:** mayo - agosto de 2026. San Francisco, CA
+</Card>
+
+<Card title="SWE en Stripe" icon="credit-card">
+  Trabajé en la infraestructura de pagos. Ayudé a construir y lanzar funciones en la API principal de pagos, con un enfoque en fiabilidad y latencia. Colaboré con el equipo de plataforma en herramientas internas que agilizaron los despliegues.
+
+  **Cronología:** mayo - agosto de 2024. San Francisco, CA
+</Card>
+
+<Card title="SWE en OpenAI" icon="microchip-ai">
+  Puesto de ingeniería de software centrado en la construcción de grandes modelos de lenguaje.
+
+  **Cronología:** mayo - agosto de 2025. Seattle, WA
+</Card>
+
+<Card title="Becario de Ingeniería de Software en GoDaddy" icon="code">
+  Realicé pruebas A/B de funciones en la página de checkout de GoDaddy.
+
+  **Cronología:** mayo - agosto de 2023. Seattle, WA
+</Card>
+
+## Esquema de entrada
+
+Cada entrada del array `workExperience` admite los siguientes campos:
+
+| Campo      | Tipo   | Obligatorio | Descripción                                                  |
+| ---------- | ------ | ----------- | ------------------------------------------------------------ |
+| `title`    | string | Sí          | Puesto y nombre de la empresa mostrado como cabecera de la entrada. |
+| `text`     | string | No          | Breve descripción de las responsabilidades o logros.         |
+| `image`    | string | No          | URL pública del logotipo de la empresa o del puesto.         |
+| `timeLine` | string | Sí          | Marco temporal y ubicación legibles por humanos.             |
+
+## Añadir una nueva entrada
+
+Abre `src/constants/work.js` y antepón un nuevo objeto al array `workExperience`. Las nuevas entradas aparecen en la parte superior de la lista en la página de inicio.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'SWE at Modal',
+        text: `Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.`,
+        timeLine: 'May - August 2035. Remote',
+    },
+    {
+        title: 'SWE at PostHog',
+        text: `Worked on the product analytics surface, with a focus on funnels and session replay performance for high-volume customers.`,
+        timeLine: 'May - August 2034. Remote',
+    },
+    {
+        title: 'SWE at Supabase',
+        text: `Worked on the Postgres-backed auth service. Shipped improvements to row-level-security tooling and helped tighten the developer experience around social auth providers.`,
+        timeLine: 'May - August 2033. Remote',
+    },
+    {
+        title: 'SWE at Linear',
+        text: `Worked on the issue triage workflow.`,
+        timeLine: 'May - August 2036. Remote',
+    },
+    {
+        title: 'SWE at Vercel',
+        text: `Worked on the edge runtime and deployment pipeline.`,
+        timeLine: 'May - August 2035. Remote',
+    },
+    {
+        title: 'SWE at Airbnb',
+        text: `Worked on the host onboarding flow.`,
+        timeLine: 'May - August 2031. San Francisco, CA',
+    },
+    {
+        title: 'SWE at Shopify',
+        text: `Worked on merchant analytics dashboards.`,
+        timeLine: 'May - August 2032. Remote',
+    },
+    {
+        title: 'SWE at Notion',
+        text: `Worked on the collaborative editing engine.`,
+        timeLine: 'May - August 2033. New York, NY',
+    },
+    {
+        title: 'SWE at Anthropic',
+        text: `Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.`,
+        timeLine: 'May - August 2026. San Francisco, CA',
+    },
+    {
+        title: 'SWE at Stripe',
+        text: `Worked on payments infrastructure. Helped build and ship features on the core payments API, with a focus on reliability and latency. Partnered with the platform team on internal tooling that streamlined deploys.`,
+        timeLine: 'May - August 2024. San Francisco, CA',
+    },
+    // ...existing entries
+]
+
+export default workExperience
+```
+
+<Tip>
+Omite el campo `image` para puestos sin logotipo. El diseño se ajusta automáticamente.
+</Tip>
+
+## Cómo redactar descripciones de puestos
+
+Usa el campo `text` para comunicar el impacto, no solo las responsabilidades.
+
+- Empieza con la contribución de mayor impacto.
+- Menciona áreas de enfoque concretas (por ejemplo, fiabilidad, latencia, pipelines de evaluación).
+- Destaca la colaboración entre equipos cuando aporta contexto al puesto.
+- Mantén la descripción en dos o tres frases para que la página de inicio siga siendo fácil de escanear.
+
+## Cuándo actualizar esta lista
+
+Añade una nueva entrada cada vez que empieces, termines o quieras destacar un puesto en el sitio web personal. Ordena las entradas en orden cronológico inverso para que el puesto más reciente aparezca primero.

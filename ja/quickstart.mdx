@@ -1,0 +1,80 @@
+---
+title: "クイックスタート: Mintlify ドキュメントサイトを公開する"
+description: "ローカルに Mintlify 環境を構築し、最初のカスタマイズを行い、3 つの手順で新しいドキュメントサイトを Web に公開しましょう。"
+---
+
+## 3 ステップで始める
+
+ドキュメントサイトをローカルで動かし、最初のカスタマイズを行いましょう。
+
+### ステップ 1: ローカル環境のセットアップ
+
+<AccordionGroup>
+  <Accordion icon="copy" title="ドキュメントをローカルにクローン">
+    オンボーディング中に、まだ持っていなければ、ドキュメントの内容を保管する GitHub リポジトリが作成されています。このリポジトリへのリンクは[ダッシュボード](https://dashboard.mintlify.com)から確認できます。
+    
+    ドキュメントへの変更を加えてプレビューできるようにローカルへリポジトリをクローンするには、GitHub ドキュメントの[リポジトリのクローン](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)ガイドを参照してください。
+  </Accordion>
+  <Accordion icon="rectangle-terminal" title="プレビューサーバーを起動">
+    1. Mintlify CLI をインストールします: `npm i -g mint`
+    2. ドキュメントのディレクトリに移動し、次を実行します: `mint dev`
+    3. `http://localhost:3000` を開いてドキュメントを確認しましょう！
+    
+    <Tip>ファイルを編集すると、プレビューは自動的に更新されます。</Tip>
+  </Accordion>
+</AccordionGroup>
+
+### ステップ 2: 変更をデプロイする
+
+<AccordionGroup>
+  <Accordion icon="github" title="GitHub アプリをインストール">
+    [ダッシュボード](https://dashboard.mintlify.com/settings/organization/github-app)から Mintlify の GitHub アプリをインストールします。
+    
+    GitHub アプリが変更を自動的にドキュメントサイトへデプロイするため、デプロイを自分で管理する必要はありません。
+</Accordion>
+<Accordion icon="palette" title="サイト名とカラーを更新">
+    最初の変更として、ドキュメントサイトの名前とカラーを更新してみましょう。
+
+    1. エディタで `docs.json` を開きます。
+    2. `"name"` フィールドをプロジェクト名に変更します。
+    3. `"colors"` をブランドに合わせて更新します。
+    4. 保存すれば、`http://localhost:3000` で変更内容をすぐに確認できます。
+
+    <Tip>プライマリカラーを変更して、変化をすぐに体感してみましょう！</Tip>
+  </Accordion>
+</AccordionGroup>
+
+### ステップ 3: 公開する
+
+<Accordion icon="rocket" title="ドキュメントを公開">
+  1. 変更をコミットしてプッシュします。
+  2. 数分以内にドキュメントが更新され、公開されます！
+</Accordion>
+
+## 次のステップ
+
+ドキュメントが動き始めたら、以下の主要機能をぜひ試してみてください。
+
+<CardGroup cols={2}>
+
+<Card title="コンテンツを書く" icon="pen-to-square" href="/essentials/markdown">
+  MDX 構文を学んで、ドキュメントを書き始めましょう。
+</Card>
+
+<Card title="スタイルをカスタマイズ" icon="palette" href="/essentials/settings">
+  ドキュメントをブランドに完全にマッチさせましょう。
+</Card>
+
+<Card title="コード例を追加" icon="square-code" href="/essentials/code">
+  シンタックスハイライト付きのコードブロックを追加できます。
+</Card>
+
+<Card title="API ドキュメント" icon="code" href="/api-reference/introduction">
+  OpenAPI 仕様から API ドキュメントを自動生成できます。
+</Card>
+
+</CardGroup>
+
+<Note>
+  **困ったときは？** [完全なドキュメント](https://mintlify.com/docs)を参照するか、[コミュニティ](https://mintlify.com/community)に参加してください。
+</Note>

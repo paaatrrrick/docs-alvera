@@ -1,0 +1,94 @@
+---
+title: 'Mint CLI を使ったローカル開発'
+description: 'Mint CLI のインストール、ホットリロード付きのローカルプレビューサーバーの実行、そして Mintlify ドキュメントサイト開発時のよくある問題のトラブルシューティングについて説明します。'
+---
+
+<Info>
+  **前提条件**:
+  - Node.js バージョン 19 以上
+  - `docs.json` ファイルを含むドキュメントリポジトリ
+</Info>
+
+ご利用の OS で Mintlify をインストールして実行するには、以下の手順に従ってください。
+
+<Steps>
+<Step title="Mintlify CLI をインストール">
+
+```bash
+npm i -g mint
+```
+</Step>
+
+<Step title="ローカルでプレビュー">
+
+`docs.json` があるドキュメントディレクトリに移動し、次のコマンドを実行します:
+
+```bash
+mint dev
+```
+
+ドキュメントのローカルプレビューが `http://localhost:3000` で利用できるようになります。
+
+</Step>
+</Steps>
+
+## カスタムポート
+
+デフォルトでは、Mintlify はポート 3000 を使用します。`--port` フラグを使うと、Mintlify が動作するポートを変更できます。たとえばポート 3333 で実行するには、次のコマンドを使います:
+
+```bash
+mint dev --port 3333
+```
+
+すでに使用中のポートで Mintlify を起動しようとすると、次に利用可能なポートが使われます:
+
+```md
+Port 3000 is already in use. Trying 3001 instead.
+```
+
+## Mintlify のバージョン
+
+CLI の各リリースは特定の Mintlify のバージョンに対応しています。ローカルプレビューが本番バージョンと一致しない場合は、CLI を更新してください:
+
+```bash
+npm mint update
+```
+
+## リンクの検証
+
+CLI はドキュメント内のリンク検証に役立ちます。リンク切れを検出するには、次のコマンドを使います:
+
+```bash
+mint broken-links
+```
+
+## デプロイ
+
+デプロイが成功すると、次のような表示が出ます:
+
+<Frame>
+  <img src="/images/checks-passed.png" alt="「All checks have passed.（すべてのチェックに合格しました）」と表示されたデプロイ確認メッセージのスクリーンショット。" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+## コードのフォーマット
+
+MDX を認識・整形するための拡張機能を IDE に導入することをおすすめします。VSCode をお使いなら、シンタックスハイライト用に [MDX VSCode 拡張機能](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)、コードフォーマット用に [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) を検討してください。
+
+## トラブルシューティング
+
+<AccordionGroup>
+  <Accordion title='エラー: darwin-arm64 ランタイムで "sharp" モジュールを読み込めませんでした'>
+
+    Node のバージョンが古いことが原因の可能性があります。以下を試してください:
+    1. 現在インストールされている CLI を削除します: `npm remove -g mint`
+    2. Node を v19 以上にアップグレードします。
+    3. CLI を再インストールします: `npm i -g mint`
+  </Accordion>
+
+  <Accordion title="問題: 原因不明のエラーが発生する">
+  
+    解決方法: デバイスのルートへ移動し、`~/.mintlify` フォルダを削除してください。その後、再度 `mint dev` を実行します。
+  </Accordion>
+</AccordionGroup>
+
+最新の CLI バージョンの変更点を知りたいですか？ [CLI チェンジログ](https://www.npmjs.com/package/mintlify?activeTab=versions)をご覧ください。

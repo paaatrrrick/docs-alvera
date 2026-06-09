@@ -1,0 +1,43 @@
+---
+title: "Mintlify ドキュメント向けに Claude Code をセットアップする"
+description: "Anthropic の Claude Code CLI をインストールして設定し、Mintlify ドキュメントをターミナルから直接執筆、編集、メンテナンスしましょう。"
+icon: "asterisk"
+---
+
+Claude Code をセットアップして、Mintlify ドキュメントの執筆とメンテナンスをサポートしてもらいましょう。
+
+## 前提条件
+
+- 有効な Claude サブスクリプション(Pro、Max、または API アクセス)
+
+## セットアップ
+
+<Steps>
+<Step title="Claude Code をインストールする">
+  ```bash
+  npm install -g @anthropic-ai/claude-code
+  ```
+</Step>
+
+<Step title="Mintlify スキルをインストールする">
+  ドキュメントディレクトリで次を実行します:
+
+  ```bash
+  npx skills add https://mintlify.com/docs
+  ```
+
+  これにより、Claude Code に Mintlify のコンポーネントリファレンス、執筆規約、
+  ワークフローガイダンスが提供されます。
+</Step>
+
+<Step title="プロジェクト指示をカスタマイズする">
+  プロジェクトルートの `AGENTS.md` を編集して、プロジェクト固有の用語、
+  スタイルの好み、コンテンツの範囲を追加します。
+</Step>
+
+<Step title="Claude Code で執筆を開始する">
+  ```bash
+  claude
+  ```
+</Step>
+</Steps>
