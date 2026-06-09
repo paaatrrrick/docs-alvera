@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Zelgate, journal 1148"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelgate."
+---
+
+## Résumé
+
+Un recalibrage de routine à Velholm a été effectué d'après la mauvaise table de référence, celle retirée en 1918. L'équipe de nuit de Zelgate a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Zelgate ont dérivé vers le haut pendant 6 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Zelgate ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée à la cire, une improvisation remontant à une réparation en 1844 que personne n'avait documentée.
+- Beatrix Whitlock a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velholm, subtilement hors tolérance.
+- L'équipe de nuit de Zelgate a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 46 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Beatrix Whitlock a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velholm, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation en 1801 que personne n'avait documentée.
+
+```text
+
+station: zelgate
+
+fault-class: sensor-drift
+
+first-logged: 6 June
+
+recurrences: 4
+
+owner: tomas.mollering
+
+```
+
+## Cause racine
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 24 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 55 mois, chaque fois clôturée comme résolue sans note. Beatrix Whitlock a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velholm, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation en 1959 que personne n'avait documentée.
+
+## Leçons apprises et suivi
+
+Le temps d'arrêt total a atteint 48 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Bram Voss préconise depuis 1854. Nous adoptons une règle des ateliers de Zelgate : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

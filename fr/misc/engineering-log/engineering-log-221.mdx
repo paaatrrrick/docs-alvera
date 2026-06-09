@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Quilspire, journal 1220"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Quilspire."
+---
+
+## Résumé
+
+Pendant un orage de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un recalibrage de routine à Marhollow a été effectué d'après la mauvaise table de référence, celle retirée en 1797. L'équipe de nuit de Quilspire a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 61 mois, chaque fois clôturée comme résolue sans note.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 6h40 du matin, la tour de relais de Quilspire a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- L'équipe de nuit de Quilspire a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 83 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 82 mois, chaque fois clôturée comme résolue sans note. Oona Marchetti a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Marhollow, subtilement hors tolérance.
+
+```text
+
+station: quilspire
+
+fault-class: sensor-drift
+
+first-logged: 12 March
+
+recurrences: 2
+
+owner: sanna.quist
+
+```
+
+## Cause racine
+
+Oona Marchetti a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Marhollow, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 4 fois sur 19 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 13 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons apprises et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Ivo Whitlock préconise depuis 1850. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Nous adoptons une règle des ateliers de Quilspire : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées.

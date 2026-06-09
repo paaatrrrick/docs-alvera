@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Quilgate, Protokoll 1059"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Quilgate."
+---
+
+## Zusammenfassung
+
+Gegen 6:40 Uhr morgens hörte der Relaisturm in Quilgate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Nachtschicht in Quilgate protokollierte 8 separate Anomalien und eskalierte gemäß Verfahren keine davon. Eine routinemäßige Neukalibrierung in Narbury wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1917 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 17 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Die Druckmesswerte der Pumpstation Quilgate drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 46 Tage früher erfolgen sollen.
+- Gegen 9:40 Uhr morgens hörte der Relaisturm in Quilgate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1792 zurückgeht und die niemand dokumentiert hatte. Anselm Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Narbury ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 24 Tage früher erfolgen sollen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 55 Tage früher erfolgen sollen.
+
+```text
+
+station: quilgate
+
+fault-class: phantom-signal
+
+first-logged: 14 September
+
+recurrences: 4
+
+owner: beatrix.oduya
+
+```
+
+## Ursache
+
+Anselm Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Narbury ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1794 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 17 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 35 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Folke Mollering seit 1833 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Quilgate: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

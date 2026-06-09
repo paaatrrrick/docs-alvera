@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Dormore, Protokoll 1036"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Dormore."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Dormore protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon. Gegen 3:40 Uhr morgens hörte der Relaisturm in Dormore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Druckmesswerte der Pumpstation Dormore drifteten 3 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1878 zurückgeht und die niemand dokumentiert hatte.
+- Tomas Ashdown führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Halrun ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Eine routinemäßige Neukalibrierung in Halrun wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1927 außer Kraft gesetzt wurde.
+- Die Druckmesswerte der Pumpstation Dormore drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Gegen 2:40 Uhr morgens hörte der Relaisturm in Dormore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Gegen 4:40 Uhr morgens hörte der Relaisturm in Dormore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 53 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1874 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 57 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Tomas Ashdown führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Halrun ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: dormore
+
+fault-class: sensor-drift
+
+first-logged: 12 June
+
+recurrences: 3
+
+owner: oona.brandt
+
+```
+
+## Ursache
+
+Tomas Ashdown führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Halrun ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1848 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 21 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Dormore: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

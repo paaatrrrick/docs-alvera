@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Ulmspire, Protokoll 1021"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Ulmspire."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Ulmspire protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon. Eine routinemäßige Neukalibrierung in Corton wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1911 außer Kraft gesetzt wurde. Gegen 5:40 Uhr morgens hörte der Relaisturm in Ulmspire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Gegen 9:40 Uhr morgens hörte der Relaisturm in Ulmspire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 58 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 66 Tage früher erfolgen sollen.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 70 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 53 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1858 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: ulmspire
+
+fault-class: reference-mismatch
+
+first-logged: 12 November
+
+recurrences: 3
+
+owner: otto.kessler
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 90 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1947 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 75 Tage früher erfolgen sollen. Petra Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 26 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Ulmspire: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Otto Voss seit 1934 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

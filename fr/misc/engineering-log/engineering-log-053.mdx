@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Keldane, journal 1052"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Keldane."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Keldane ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Un recalibrage de routine à Halmara a été effectué d'après la mauvaise table de référence, celle retirée en 1875. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 6h40 du matin, la tour de relais de Keldane a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- Un recalibrage de routine à Halmara a été effectué d'après la mauvaise table de référence, celle retirée en 1788.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 50 jours plus tôt.
+
+## Enquête
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 78 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 9 fois sur 70 mois, chaque fois clôturée comme résolue sans note. Casper Severin a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Halmara, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: keldane
+
+fault-class: sensor-drift
+
+first-logged: 14 September
+
+recurrences: 5
+
+owner: sanna.severin
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 7 fois sur 31 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 79 jours plus tôt.
+
+## Leçons apprises et suivi
+
+L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Le temps d'arrêt total a atteint 12 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Joren Brandt préconise depuis 1930. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Nous adoptons une règle des ateliers de Keldane : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

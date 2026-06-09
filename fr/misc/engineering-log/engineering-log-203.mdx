@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Narhollow, journal 1202"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Narhollow."
+---
+
+## Résumé
+
+Vers 5h40 du matin, la tour de relais de Narhollow a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. Les relevés de pression de la station de pompage de Narhollow ont dérivé vers le haut pendant 2 heures avant que quiconque ne songe à se méfier de la jauge elle-même. L'équipe de nuit de Narhollow a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation en 1909 que personne n'avait documentée.
+- Vers 9h40 du matin, la tour de relais de Narhollow a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- Un recalibrage de routine à Vorrun a été effectué d'après la mauvaise table de référence, celle retirée en 1929.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation en 1848 que personne n'avait documentée.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 9 fois sur 26 mois, chaque fois clôturée comme résolue sans note.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 9 fois sur 46 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation en 1825 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 54 jours plus tôt. Dario Brandt a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vorrun, subtilement hors tolérance.
+
+```text
+
+station: narhollow
+
+fault-class: reference-mismatch
+
+first-logged: 14 November
+
+recurrences: 3
+
+owner: oona.mollering
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 4 fois sur 28 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation en 1913 que personne n'avait documentée.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Nous adoptons une règle des ateliers de Narhollow : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Yutta Voss préconise depuis 1879. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal.

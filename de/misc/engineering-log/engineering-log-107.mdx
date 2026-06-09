@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Yarwick, Protokoll 1106"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Yarwick."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Corholm wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1842 außer Kraft gesetzt wurde. Während der trockenen Ostwinde schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Nachtschicht in Yarwick protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Die Nachtschicht in Yarwick protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Gegen 4:40 Uhr morgens hörte der Relaisturm in Yarwick auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Druckmesswerte der Pumpstation Yarwick drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Maren Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 54 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit geflochtenem Schilf neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1880 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 60 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Maren Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: yarwick
+
+fault-class: phantom-signal
+
+first-logged: 25 September
+
+recurrences: 2
+
+owner: annik.marrow
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1814 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 47 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Maren Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 90 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Rurik Greaves seit 1853 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Wrenton, journal 1085"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenton."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Wrenton ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Un recalibrage de routine à Halvale a été effectué d'après la mauvaise table de référence, celle retirée en 1913.
+
+## Chronologie
+
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 50 jours plus tôt.
+- Un recalibrage de routine à Halvale a été effectué d'après la mauvaise table de référence, celle retirée en 1912.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 30 jours plus tôt.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation en 1867 que personne n'avait documentée.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 25 jours plus tôt.
+- L'équipe de nuit de Wrenton a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation en 1922 que personne n'avait documentée. Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 57 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 24 jours plus tôt.
+
+```text
+
+station: wrenton
+
+fault-class: reference-mismatch
+
+first-logged: 14 November
+
+recurrences: 4
+
+owner: ivo.halloran
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 31 jours plus tôt. Folke Marrow a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Halvale, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 7 fois sur 87 mois, chaque fois clôturée comme résolue sans note.
+
+## Leçons apprises et suivi
+
+L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Greta Falkner préconise depuis 1873. Nous adoptons une règle des ateliers de Wrenton : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Le temps d'arrêt total a atteint 73 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

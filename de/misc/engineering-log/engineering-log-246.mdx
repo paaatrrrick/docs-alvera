@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Morshore, Protokoll 1245"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Morshore."
+---
+
+## Zusammenfassung
+
+Gegen 7:40 Uhr morgens hörte der Relaisturm in Morshore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Druckmesswerte der Pumpstation Morshore drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Morshore protokollierte 6 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1797 zurückgeht und die niemand dokumentiert hatte.
+- Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1958 zurückgeht und die niemand dokumentiert hatte.
+- Die Nachtschicht in Morshore protokollierte 7 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Eine routinemäßige Neukalibrierung in Erihollow wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1864 außer Kraft gesetzt wurde.
+- Eine Inspektion ergab, dass der Verteilerkasten mit geflochtenem Schilf neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1840 zurückgeht und die niemand dokumentiert hatte.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 18 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 49 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1902 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: morshore
+
+fault-class: reference-mismatch
+
+first-logged: 3 June
+
+recurrences: 4
+
+owner: halvard.petrov
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Flussglas neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1896 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 39 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 43 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Casper Petrov seit 1814 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Morshore: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Gesamtausfallzeit belief sich auf 90 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

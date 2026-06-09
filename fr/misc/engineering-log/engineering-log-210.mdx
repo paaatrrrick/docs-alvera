@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Dorreach, journal 1209"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Dorreach."
+---
+
+## Résumé
+
+Un recalibrage de routine à Wrenshore a été effectué d'après la mauvaise table de référence, celle retirée en 1783. L'équipe de nuit de Dorreach a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Dorreach ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Pendant un orage de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation en 1821 que personne n'avait documentée.
+- Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'équipe de nuit de Dorreach a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- L'équipe de nuit de Dorreach a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Un recalibrage de routine à Wrenshore a été effectué d'après la mauvaise table de référence, celle retirée en 1883.
+
+## Enquête
+
+Tilda Mollering a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Wrenshore, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 26 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 90 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: dorreach
+
+fault-class: reference-mismatch
+
+first-logged: 19 March
+
+recurrences: 2
+
+owner: halvard.quist
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Tilda Mollering a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Wrenshore, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 9 fois sur 47 mois, chaque fois clôturée comme résolue sans note.
+
+## Leçons apprises et suivi
+
+Le temps d'arrêt total a atteint 75 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Bram Sorvane préconise depuis 1941. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Nous adoptons une règle des ateliers de Dorreach : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Jorspire, Protokoll 1227"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Jorspire."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Morcrest wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1854 außer Kraft gesetzt wurde. Gegen 3:40 Uhr morgens hörte der Relaisturm in Jorspire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Nachtschicht in Jorspire protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Morcrest wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1897 außer Kraft gesetzt wurde.
+- Die Druckmesswerte der Pumpstation Jorspire drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1843 zurückgeht und die niemand dokumentiert hatte.
+- Ivo Falkner führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Morcrest ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Untersuchung
+
+Ivo Falkner führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Morcrest ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1961 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 80 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 83 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: jorspire
+
+fault-class: sensor-drift
+
+first-logged: 5 June
+
+recurrences: 4
+
+owner: beatrix.mollering
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 46 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 55 Tage früher erfolgen sollen. Ivo Falkner führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Morcrest ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Jorspire: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Gesamtausfallzeit belief sich auf 16 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Cosima Greaves seit 1853 einsetzt.

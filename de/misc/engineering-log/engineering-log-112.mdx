@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Wrenton, Protokoll 1111"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Wrenton."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Delstead wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1803 außer Kraft gesetzt wurde. Während der trockenen Ostwinde schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Druckmesswerte der Pumpstation Wrenton drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Während der trockenen Ostwinde schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Gegen 2:40 Uhr morgens hörte der Relaisturm in Wrenton auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Gegen 5:40 Uhr morgens hörte der Relaisturm in Wrenton auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Nachtschicht in Wrenton protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1795 zurückgeht und die niemand dokumentiert hatte. Beatrix Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Delstead ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 86 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 22 Tage früher erfolgen sollen.
+
+```text
+
+station: wrenton
+
+fault-class: contact-corrosion
+
+first-logged: 2 September
+
+recurrences: 7
+
+owner: ivo.drummond
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 39 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit geflochtenem Schilf neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1828 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Beatrix Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Delstead ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Wrenton: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Rurik Kessler seit 1957 einsetzt. Die Gesamtausfallzeit belief sich auf 39 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Erigate, Protokoll 1072"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Erigate."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Erigate protokollierte 7 separate Anomalien und eskalierte gemäß Verfahren keine davon. Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Eine routinemäßige Neukalibrierung in Ilyfell wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1815 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Gegen 8:40 Uhr morgens hörte der Relaisturm in Erigate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Folke Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ilyfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Eine routinemäßige Neukalibrierung in Ilyfell wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1916 außer Kraft gesetzt wurde.
+- Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Gegen 8:40 Uhr morgens hörte der Relaisturm in Erigate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Druckmesswerte der Pumpstation Erigate drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Untersuchung
+
+Folke Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ilyfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1947 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 45 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 21 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: erigate
+
+fault-class: contact-corrosion
+
+first-logged: 23 March
+
+recurrences: 4
+
+owner: casper.ashdown
+
+```
+
+## Ursache
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 15 Tage früher erfolgen sollen. Folke Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ilyfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 58 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 24 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Erigate: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

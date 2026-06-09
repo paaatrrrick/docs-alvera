@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Yarholm, journal 1095"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Yarholm."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Yarholm ont dérivé vers le haut pendant 2 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Un recalibrage de routine à Halvik a été effectué d'après la mauvaise table de référence, celle retirée en 1854. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 9h40 du matin, la tour de relais de Yarholm a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 72 jours plus tôt.
+- L'équipe de nuit de Yarholm a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 83 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 36 jours plus tôt. Bram Ashdown a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Halvik, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation en 1952 que personne n'avait documentée.
+
+```text
+
+station: yarholm
+
+fault-class: sensor-drift
+
+first-logged: 27 June
+
+recurrences: 6
+
+owner: vesna.ashdown
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 6 fois sur 76 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation en 1951 que personne n'avait documentée. Bram Ashdown a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Halvik, subtilement hors tolérance.
+
+## Leçons apprises et suivi
+
+Nous adoptons une règle des ateliers de Yarholm : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Halvard Mollering préconise depuis 1847. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Le temps d'arrêt total a atteint 50 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

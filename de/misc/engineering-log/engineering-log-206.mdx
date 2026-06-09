@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Zelmire, Protokoll 1205"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Zelmire."
+---
+
+## Zusammenfassung
+
+Gegen 9:40 Uhr morgens hörte der Relaisturm in Zelmire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Calrun wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1918 außer Kraft gesetzt wurde. Während der herbstlichen Springfluten schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1964 zurückgeht und die niemand dokumentiert hatte.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 37 Tage früher erfolgen sollen.
+- Gegen 5:40 Uhr morgens hörte der Relaisturm in Zelmire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Nachtschicht in Zelmire protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Die Nachtschicht in Zelmire protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 30 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 72 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 22 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Vesna Halloran führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Calrun ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: zelmire
+
+fault-class: reference-mismatch
+
+first-logged: 1 September
+
+recurrences: 7
+
+owner: sigrid.holloway
+
+```
+
+## Ursache
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit Flussglas neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1855 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 86 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 88 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Zelmire: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Gesamtausfallzeit belief sich auf 23 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Dario Sorvane seit 1854 einsetzt.

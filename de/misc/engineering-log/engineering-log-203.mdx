@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Narhollow, Protokoll 1202"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Narhollow."
+---
+
+## Zusammenfassung
+
+Gegen 5:40 Uhr morgens hörte der Relaisturm in Narhollow auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Druckmesswerte der Pumpstation Narhollow drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Narhollow protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1909 zurückgeht und die niemand dokumentiert hatte.
+- Gegen 9:40 Uhr morgens hörte der Relaisturm in Narhollow auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Eine routinemäßige Neukalibrierung in Vorrun wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1929 außer Kraft gesetzt wurde.
+- Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1848 zurückgeht und die niemand dokumentiert hatte.
+- Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 26 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 46 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1825 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 54 Tage früher erfolgen sollen. Dario Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Vorrun ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: narhollow
+
+fault-class: reference-mismatch
+
+first-logged: 14 November
+
+recurrences: 3
+
+owner: oona.mollering
+
+```
+
+## Ursache
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 28 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1913 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Narhollow: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Yutta Voss seit 1879 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

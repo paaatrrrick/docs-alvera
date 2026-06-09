@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Calspire, Protokoll 1056"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Calspire."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Calspire protokollierte 8 separate Anomalien und eskalierte gemäß Verfahren keine davon. Gegen 7:40 Uhr morgens hörte der Relaisturm in Calspire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Narholm wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1914 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Anselm Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Narholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 35 Tage früher erfolgen sollen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 61 Tage früher erfolgen sollen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 72 Tage früher erfolgen sollen.
+- Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 67 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 16 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Untersuchung
+
+Anselm Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Narholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 74 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 30 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1934 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: calspire
+
+fault-class: contact-corrosion
+
+first-logged: 25 November
+
+recurrences: 8
+
+owner: cosima.drummond
+
+```
+
+## Ursache
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 26 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 45 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Anselm Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Narholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Calspire: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Gesamtausfallzeit belief sich auf 74 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

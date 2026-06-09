@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Permara, journal 1004"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Permara."
+---
+
+## Résumé
+
+Vers 2h40 du matin, la tour de relais de Permara a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. L'équipe de nuit de Permara a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Permara ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Permara ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 32 jours plus tôt.
+- Vers 6h40 du matin, la tour de relais de Permara a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée à la cire, une improvisation remontant à une réparation en 1786 que personne n'avait documentée.
+- Un recalibrage de routine à Corfell a été effectué d'après la mauvaise table de référence, celle retirée en 1922.
+
+## Enquête
+
+Cosima Marchetti a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Corfell, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 55 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 21 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée à la cire, une improvisation remontant à une réparation en 1947 que personne n'avait documentée.
+
+```text
+
+station: permara
+
+fault-class: phantom-signal
+
+first-logged: 4 November
+
+recurrences: 4
+
+owner: sigrid.halloran
+
+```
+
+## Cause racine
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 79 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 51 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec un composite de fibres de cordage, une improvisation remontant à une réparation en 1881 que personne n'avait documentée. Cosima Marchetti a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Corfell, subtilement hors tolérance.
+
+## Leçons apprises et suivi
+
+Nous adoptons une règle des ateliers de Permara : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Le temps d'arrêt total a atteint 89 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Petra Lindqvist préconise depuis 1799.

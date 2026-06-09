@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Zelrun, journal 1228"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelrun."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Zelrun ont dérivé vers le haut pendant 6 heures avant que quiconque ne songe à se méfier de la jauge elle-même. L'équipe de nuit de Zelrun a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Vers 9h40 du matin, la tour de relais de Zelrun a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 61 jours plus tôt.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 16 jours plus tôt.
+- Un recalibrage de routine à Halvale a été effectué d'après la mauvaise table de référence, celle retirée en 1798.
+- L'équipe de nuit de Zelrun a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Un recalibrage de routine à Halvale a été effectué d'après la mauvaise table de référence, celle retirée en 1876.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 69 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation en 1925 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 28 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Joren Kessler a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Halvale, subtilement hors tolérance.
+
+```text
+
+station: zelrun
+
+fault-class: contact-corrosion
+
+first-logged: 24 March
+
+recurrences: 5
+
+owner: beatrix.falkner
+
+```
+
+## Cause racine
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 57 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 7 fois sur 83 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation en 1856 que personne n'avait documentée.
+
+## Leçons apprises et suivi
+
+Nous adoptons une règle des ateliers de Zelrun : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Otto Marchetti préconise depuis 1799. Le temps d'arrêt total a atteint 77 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

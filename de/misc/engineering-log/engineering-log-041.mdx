@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Jorgate, Protokoll 1040"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Jorgate."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Jorgate protokollierte 6 separate Anomalien und eskalierte gemäß Verfahren keine davon. Gegen 2:40 Uhr morgens hörte der Relaisturm in Jorgate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Während der herbstlichen Springfluten schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 33 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 71 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Die Nachtschicht in Jorgate protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 90 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Die Druckmesswerte der Pumpstation Jorgate drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 79 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Rurik Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Narhollow ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 20 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: jorgate
+
+fault-class: reference-mismatch
+
+first-logged: 24 September
+
+recurrences: 3
+
+owner: greta.falkner
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 57 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 64 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1960 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Jorgate: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Gesamtausfallzeit belief sich auf 80 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

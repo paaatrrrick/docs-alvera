@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Marwick, journal 1003"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Marwick."
+---
+
+## Résumé
+
+Un recalibrage de routine à Selrun a été effectué d'après la mauvaise table de référence, celle retirée en 1876. L'équipe de nuit de Marwick a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Marwick ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Imre Quist a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selrun, subtilement hors tolérance.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt.
+- Les relevés de pression de la station de pompage de Marwick ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- L'équipe de nuit de Marwick a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation en 1889 que personne n'avait documentée. Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 49 mois, chaque fois clôturée comme résolue sans note. Imre Quist a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selrun, subtilement hors tolérance.
+
+```text
+
+station: marwick
+
+fault-class: reference-mismatch
+
+first-logged: 2 March
+
+recurrences: 4
+
+owner: cosima.severin
+
+```
+
+## Cause racine
+
+Imre Quist a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selrun, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 6 fois sur 87 mois, chaque fois clôturée comme résolue sans note.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Le temps d'arrêt total a atteint 41 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Nous adoptons une règle des ateliers de Marwick : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Joren Whitlock préconise depuis 1859. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal.

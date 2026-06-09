@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Galholm, Protokoll 1096"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Galholm."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Tamholm wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1803 außer Kraft gesetzt wurde. Die Nachtschicht in Galholm protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon. Die Druckmesswerte der Pumpstation Galholm drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Galholm drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Eine routinemäßige Neukalibrierung in Tamholm wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1845 außer Kraft gesetzt wurde.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 37 Tage früher erfolgen sollen.
+- Die Druckmesswerte der Pumpstation Galholm drifteten 3 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 27 Tage früher erfolgen sollen.
+
+## Untersuchung
+
+Petra Falkner führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Tamholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 51 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1793 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: galholm
+
+fault-class: reference-mismatch
+
+first-logged: 17 September
+
+recurrences: 7
+
+owner: dario.mollering
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 37 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1838 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 36 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 45 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Galholm: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

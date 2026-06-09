@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Zelgate, Protokoll 1181"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Zelgate."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Marvale wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1847 außer Kraft gesetzt wurde. Die Nachtschicht in Zelgate protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon. Gegen 5:40 Uhr morgens hörte der Relaisturm in Zelgate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Gegen 8:40 Uhr morgens hörte der Relaisturm in Zelgate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 53 Tage früher erfolgen sollen.
+- Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1794 zurückgeht und die niemand dokumentiert hatte.
+- Während der herbstlichen Springfluten schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Eine routinemäßige Neukalibrierung in Marvale wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1803 außer Kraft gesetzt wurde.
+
+## Untersuchung
+
+Halvard Sorvane führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Marvale ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1835 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 21 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: zelgate
+
+fault-class: reference-mismatch
+
+first-logged: 17 June
+
+recurrences: 8
+
+owner: rurik.severin
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Flussglas neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1852 zurückgeht und die niemand dokumentiert hatte. Halvard Sorvane führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Marvale ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 50 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Zelgate: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Joren Oduya seit 1946 einsetzt. Die Gesamtausfallzeit belief sich auf 22 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

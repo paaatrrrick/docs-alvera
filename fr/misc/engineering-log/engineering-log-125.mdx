@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Lormara, journal 1124"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Lormara."
+---
+
+## Résumé
+
+Vers 5h40 du matin, la tour de relais de Lormara a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un recalibrage de routine à Narvik a été effectué d'après la mauvaise table de référence, celle retirée en 1835.
+
+## Chronologie
+
+- L'équipe de nuit de Lormara a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 6 fois sur 71 mois, chaque fois clôturée comme résolue sans note.
+- Lazlo Whitlock a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narvik, subtilement hors tolérance.
+- Vers 8h40 du matin, la tour de relais de Lormara a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 7 fois sur 37 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Lazlo Whitlock a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narvik, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation en 1795 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 82 jours plus tôt.
+
+```text
+
+station: lormara
+
+fault-class: reference-mismatch
+
+first-logged: 21 June
+
+recurrences: 9
+
+owner: halvard.kessler
+
+```
+
+## Cause racine
+
+Lazlo Whitlock a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narvik, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 80 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons apprises et suivi
+
+Nous adoptons une règle des ateliers de Lormara : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Otto Severin préconise depuis 1925.

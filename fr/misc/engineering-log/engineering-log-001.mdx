@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Wrencrest, journal 1000"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrencrest."
+---
+
+## Résumé
+
+Un recalibrage de routine à Torbury a été effectué d'après la mauvaise table de référence, celle retirée en 1919. Les relevés de pression de la station de pompage de Wrencrest ont dérivé vers le haut pendant 5 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Vers 8h40 du matin, la tour de relais de Wrencrest a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation en 1880 que personne n'avait documentée.
+- Pendant une gelée précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 8h40 du matin, la tour de relais de Wrencrest a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- Les relevés de pression de la station de pompage de Wrencrest ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- L'équipe de nuit de Wrencrest a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Les relevés de pression de la station de pompage de Wrencrest ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 41 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation en 1806 que personne n'avait documentée. Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 31 mois, chaque fois clôturée comme résolue sans note. Sigrid Kessler a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Torbury, subtilement hors tolérance.
+
+```text
+
+station: wrencrest
+
+fault-class: contact-corrosion
+
+first-logged: 14 September
+
+recurrences: 5
+
+owner: rurik.quist
+
+```
+
+## Cause racine
+
+Sigrid Kessler a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Torbury, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 3 fois sur 53 mois, chaque fois clôturée comme résolue sans note.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Nous adoptons une règle des ateliers de Wrencrest : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Vesna Brandt préconise depuis 1909.

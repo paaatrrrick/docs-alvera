@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Wrencrest, Protokoll 1244"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Wrencrest."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Wrencrest protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon. Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Eine routinemäßige Neukalibrierung in Dordane wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1884 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 30 Tage früher erfolgen sollen.
+- Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 84 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Gegen 5:40 Uhr morgens hörte der Relaisturm in Wrencrest auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1822 zurückgeht und die niemand dokumentiert hatte. Bram Lindqvist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dordane ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 88 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 36 Tage früher erfolgen sollen.
+
+```text
+
+station: wrencrest
+
+fault-class: contact-corrosion
+
+first-logged: 16 March
+
+recurrences: 5
+
+owner: liesl.halloran
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit geflochtenem Schilf neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1860 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 49 Tage früher erfolgen sollen. Bram Lindqvist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dordane ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Casper Drummond seit 1804 einsetzt. Die Gesamtausfallzeit belief sich auf 52 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

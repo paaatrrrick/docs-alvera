@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Narford, Protokoll 1200"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Narford."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Narford drifteten 3 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Während der trockenen Ostwinde schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Eine routinemäßige Neukalibrierung in Ilyfell wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1808 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Narford auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 36 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Gegen 5:40 Uhr morgens hörte der Relaisturm in Narford auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Cosima Halloran führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ilyfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 87 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 46 Tage früher erfolgen sollen. Cosima Halloran führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ilyfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1939 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: narford
+
+fault-class: phantom-signal
+
+first-logged: 4 September
+
+recurrences: 6
+
+owner: ivo.marchetti
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1892 zurückgeht und die niemand dokumentiert hatte. Cosima Halloran führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ilyfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 64 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 15 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Narford: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

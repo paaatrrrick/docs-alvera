@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Zelstead, Protokoll 1229"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Zelstead."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Perspire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1793 außer Kraft gesetzt wurde. Die Druckmesswerte der Pumpstation Zelstead drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Zelstead protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Maren Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Perspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Zelstead auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Maren Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Perspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Eine routinemäßige Neukalibrierung in Perspire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1903 außer Kraft gesetzt wurde.
+- Die Druckmesswerte der Pumpstation Zelstead drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Die Druckmesswerte der Pumpstation Zelstead drifteten 3 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Untersuchung
+
+Maren Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Perspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1929 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 83 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 78 Tage früher erfolgen sollen.
+
+```text
+
+station: zelstead
+
+fault-class: phantom-signal
+
+first-logged: 2 March
+
+recurrences: 7
+
+owner: ivo.marrow
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 50 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Maren Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Perspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Zelstead: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Stellan Drummond seit 1899 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Gesamtausfallzeit belief sich auf 68 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

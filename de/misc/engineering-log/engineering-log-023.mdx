@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Lorholm, Protokoll 1022"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Lorholm."
+---
+
+## Zusammenfassung
+
+Gegen 5:40 Uhr morgens hörte der Relaisturm in Lorholm auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Rosmore wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1899 außer Kraft gesetzt wurde. Während des Frühlingshochwassers schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Lorholm drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1861 zurückgeht und die niemand dokumentiert hatte.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 23 Tage früher erfolgen sollen.
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Lorholm auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 88 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1839 zurückgeht und die niemand dokumentiert hatte. Edda Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Rosmore ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 83 Tage früher erfolgen sollen.
+
+```text
+
+station: lorholm
+
+fault-class: sensor-drift
+
+first-logged: 16 September
+
+recurrences: 3
+
+owner: otto.brandt
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 47 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Edda Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Rosmore ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 12 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Stellan Voss seit 1897 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Lorholm: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Gesamtausfallzeit belief sich auf 33 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

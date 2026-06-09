@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Cormore, Protokoll 1042"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Cormore."
+---
+
+## Zusammenfassung
+
+Gegen 6:40 Uhr morgens hörte der Relaisturm in Cormore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Druckmesswerte der Pumpstation Cormore drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 16 Tage früher erfolgen sollen.
+- Eine Inspektion ergab, dass der Verteilerkasten mit Flussglas neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1849 zurückgeht und die niemand dokumentiert hatte.
+- Die Druckmesswerte der Pumpstation Cormore drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Sigrid Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ulmvale ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Eine routinemäßige Neukalibrierung in Ulmvale wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1953 außer Kraft gesetzt wurde.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1799 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 63 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 23 Tage früher erfolgen sollen.
+
+```text
+
+station: cormore
+
+fault-class: reference-mismatch
+
+first-logged: 8 November
+
+recurrences: 6
+
+owner: anselm.holloway
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1886 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 88 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 16 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Cormore: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Gesamtausfallzeit belief sich auf 52 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Dario Mollering seit 1835 einsetzt.

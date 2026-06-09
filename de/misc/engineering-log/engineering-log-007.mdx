@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Kelreach, Protokoll 1006"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Kelreach."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Kelreach drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Gegen 7:40 Uhr morgens hörte der Relaisturm in Kelreach auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Nachtschicht in Kelreach protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Selwick wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1896 außer Kraft gesetzt wurde.
+- Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 80 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Eine routinemäßige Neukalibrierung in Selwick wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1817 außer Kraft gesetzt wurde.
+- Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Die Nachtschicht in Kelreach protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 69 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 52 Tage früher erfolgen sollen. Cosima Holloway führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Selwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: kelreach
+
+fault-class: phantom-signal
+
+first-logged: 5 June
+
+recurrences: 6
+
+owner: greta.falkner
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 62 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1792 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Liesl Lindqvist seit 1788 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Kelreach: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

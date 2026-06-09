@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Ossmore, Protokoll 1248"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Ossmore."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Ossmore protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon. Die Druckmesswerte der Pumpstation Ossmore drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Gegen 4:40 Uhr morgens hörte der Relaisturm in Ossmore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Während der trockenen Ostwinde schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 71 Tage früher erfolgen sollen.
+- Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 48 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Die Nachtschicht in Ossmore protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 80 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 30 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Halvard Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Zelreach ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: ossmore
+
+fault-class: phantom-signal
+
+first-logged: 19 November
+
+recurrences: 8
+
+owner: joren.drummond
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1781 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 75 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Halvard Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Zelreach ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Ossmore: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Anselm Falkner seit 1884 einsetzt.

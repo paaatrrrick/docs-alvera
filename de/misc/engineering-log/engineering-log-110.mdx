@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Dorhollow, Protokoll 1109"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Dorhollow."
+---
+
+## Zusammenfassung
+
+Gegen 8:40 Uhr morgens hörte der Relaisturm in Dorhollow auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Galdane wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1813 außer Kraft gesetzt wurde. Die Druckmesswerte der Pumpstation Dorhollow drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 15 Tage früher erfolgen sollen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1832 zurückgeht und die niemand dokumentiert hatte.
+- Eine routinemäßige Neukalibrierung in Galdane wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1932 außer Kraft gesetzt wurde.
+- Gegen 8:40 Uhr morgens hörte der Relaisturm in Dorhollow auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Gegen 3:40 Uhr morgens hörte der Relaisturm in Dorhollow auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 24 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 34 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Tomas Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Galdane ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1818 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: dorhollow
+
+fault-class: sensor-drift
+
+first-logged: 7 June
+
+recurrences: 7
+
+owner: annik.vexley
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 12 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1854 zurückgeht und die niemand dokumentiert hatte. Tomas Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Galdane ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 51 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 20 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Dorhollow: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Tilda Kessler seit 1871 einsetzt.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Ossspire, journal 1075"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Ossspire."
+---
+
+## Résumé
+
+Un recalibrage de routine à Pervale a été effectué d'après la mauvaise table de référence, celle retirée en 1925. Les relevés de pression de la station de pompage de Ossspire ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Un recalibrage de routine à Pervale a été effectué d'après la mauvaise table de référence, celle retirée en 1946.
+- Un recalibrage de routine à Pervale a été effectué d'après la mauvaise table de référence, celle retirée en 1884.
+- L'équipe de nuit de Ossspire a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 87 jours plus tôt. Oona Vexley a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Pervale, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 9 fois sur 43 mois, chaque fois clôturée comme résolue sans note.
+
+```text
+
+station: ossspire
+
+fault-class: phantom-signal
+
+first-logged: 18 March
+
+recurrences: 5
+
+owner: tomas.oduya
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation en 1919 que personne n'avait documentée. Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 89 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 83 jours plus tôt. Oona Vexley a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Pervale, subtilement hors tolérance.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Nous adoptons une règle des ateliers de Ossspire : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Le temps d'arrêt total a atteint 79 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Jorford, journal 1068"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Jorford."
+---
+
+## Résumé
+
+Pendant un orage de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un recalibrage de routine à Zelwick a été effectué d'après la mauvaise table de référence, celle retirée en 1854. Vers 5h40 du matin, la tour de relais de Jorford a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- Un recalibrage de routine à Zelwick a été effectué d'après la mauvaise table de référence, celle retirée en 1844.
+- Les relevés de pression de la station de pompage de Jorford ont dérivé vers le haut pendant 3 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Les relevés de pression de la station de pompage de Jorford ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- L'équipe de nuit de Jorford a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Anselm Falkner a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Zelwick, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation en 1883 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 51 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 7 fois sur 65 mois, chaque fois clôturée comme résolue sans note.
+
+```text
+
+station: jorford
+
+fault-class: phantom-signal
+
+first-logged: 9 June
+
+recurrences: 7
+
+owner: liesl.petrov
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 27 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 60 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Le temps d'arrêt total a atteint 82 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Nous adoptons une règle des ateliers de Jorford : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Oona Marrow préconise depuis 1803.

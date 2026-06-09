@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Ulmspire, Protokoll 1221"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Ulmspire."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Ulmspire protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon. Die Druckmesswerte der Pumpstation Ulmspire drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Gegen 4:40 Uhr morgens hörte der Relaisturm in Ulmspire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 59 Tage früher erfolgen sollen.
+- Die Nachtschicht in Ulmspire protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Bram Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corshore ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Die Nachtschicht in Ulmspire protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Die Druckmesswerte der Pumpstation Ulmspire drifteten 5 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 25 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 78 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1861 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: ulmspire
+
+fault-class: contact-corrosion
+
+first-logged: 17 March
+
+recurrences: 4
+
+owner: joren.marchetti
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1884 zurückgeht und die niemand dokumentiert hatte. Bram Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corshore ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 12 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 49 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Ulmspire: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Beatrix Holloway seit 1908 einsetzt.

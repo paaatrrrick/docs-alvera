@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Ulmshore, Protokoll 1043"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Ulmshore."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Ulmshore protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon. Die Druckmesswerte der Pumpstation Ulmshore drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Eine routinemäßige Neukalibrierung in Fengate wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1888 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Sanna Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Fengate ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Sanna Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Fengate ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 38 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Sanna Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Fengate ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 76 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1788 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: ulmshore
+
+fault-class: phantom-signal
+
+first-logged: 23 November
+
+recurrences: 5
+
+owner: casper.voss
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 52 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1884 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 61 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Petra Voss seit 1930 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 85 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Ulmshore: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

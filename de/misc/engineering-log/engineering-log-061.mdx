@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Lorreach, Protokoll 1060"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Lorreach."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Lorreach drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Lorreach protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon. Während der trockenen Ostwinde schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Die Druckmesswerte der Pumpstation Lorreach drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Die Nachtschicht in Lorreach protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Eine Inspektion ergab, dass der Verteilerkasten mit geflochtenem Schilf neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1937 zurückgeht und die niemand dokumentiert hatte.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 38 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 72 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1793 zurückgeht und die niemand dokumentiert hatte. Otto Ashdown führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Haldane ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: lorreach
+
+fault-class: contact-corrosion
+
+first-logged: 20 September
+
+recurrences: 8
+
+owner: bram.kessler
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 68 Tage früher erfolgen sollen. Otto Ashdown führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Haldane ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 28 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1885 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 17 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Lorreach: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Folke Brandt seit 1797 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

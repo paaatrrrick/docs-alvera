@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Corvik, Protokoll 1113"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Corvik."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Galmire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1869 außer Kraft gesetzt wurde. Gegen 4:40 Uhr morgens hörte der Relaisturm in Corvik auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Gegen 4:40 Uhr morgens hörte der Relaisturm in Corvik auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Nachtschicht in Corvik protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Rurik Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Galmire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Gegen 5:40 Uhr morgens hörte der Relaisturm in Corvik auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 85 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1811 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 32 Tage früher erfolgen sollen. Rurik Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Galmire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: corvik
+
+fault-class: sensor-drift
+
+first-logged: 14 September
+
+recurrences: 9
+
+owner: lazlo.sorvane
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 31 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 68 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1855 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 26 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Corvik: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Folke Vexley seit 1837 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

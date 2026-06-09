@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Jorwick, Protokoll 1050"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Jorwick."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Jorwick drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Nachtschicht in Jorwick protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Ashspire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1925 außer Kraft gesetzt wurde.
+- Gegen 9:40 Uhr morgens hörte der Relaisturm in Jorwick auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 70 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 36 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Gegen 8:40 Uhr morgens hörte der Relaisturm in Jorwick auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Eine routinemäßige Neukalibrierung in Ashspire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1935 außer Kraft gesetzt wurde.
+
+## Untersuchung
+
+Folke Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ashspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 75 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1818 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 35 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: jorwick
+
+fault-class: sensor-drift
+
+first-logged: 4 June
+
+recurrences: 3
+
+owner: emeric.falkner
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 83 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1901 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 46 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Jorwick: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Yutta Falkner seit 1952 einsetzt. Die Gesamtausfallzeit belief sich auf 66 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

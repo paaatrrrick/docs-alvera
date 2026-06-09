@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Delholm, Protokoll 1001"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Delholm."
+---
+
+## Zusammenfassung
+
+Gegen 8:40 Uhr morgens hörte der Relaisturm in Delholm auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Fenspire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1793 außer Kraft gesetzt wurde. Während des Frühlingshochwassers schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Die Nachtschicht in Delholm protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Die Druckmesswerte der Pumpstation Delholm drifteten 7 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Eine routinemäßige Neukalibrierung in Fenspire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1859 außer Kraft gesetzt wurde.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 46 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 39 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1937 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: delholm
+
+fault-class: sensor-drift
+
+first-logged: 26 November
+
+recurrences: 5
+
+owner: halvard.sorvane
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 32 Tage früher erfolgen sollen. Sanna Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Fenspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Mireille Brandt seit 1910 einsetzt. Die Gesamtausfallzeit belief sich auf 54 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Delholm: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

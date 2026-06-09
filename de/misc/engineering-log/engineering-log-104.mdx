@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Lorcrest, Protokoll 1103"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Lorcrest."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Lorcrest drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Lorcrest protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon. Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Permara wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1929 außer Kraft gesetzt wurde.
+- Die Nachtschicht in Lorcrest protokollierte 4 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Die Druckmesswerte der Pumpstation Lorcrest drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 67 Tage früher erfolgen sollen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Gegen 7:40 Uhr morgens hörte der Relaisturm in Lorcrest auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Untersuchung
+
+Lazlo Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Permara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 35 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 68 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1801 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: lorcrest
+
+fault-class: phantom-signal
+
+first-logged: 21 March
+
+recurrences: 5
+
+owner: greta.marrow
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1781 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 39 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Lazlo Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Permara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 55 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Lorcrest: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Sigrid Mollering seit 1799 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Brenmara, Protokoll 1160"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Brenmara."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Brenmara drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Während der trockenen Ostwinde schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Eine routinemäßige Neukalibrierung in Dormire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1893 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Annik Greaves führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dormire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 27 Tage früher erfolgen sollen.
+- Die Nachtschicht in Brenmara protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Während einer langen Nebelzeit schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Untersuchung
+
+Annik Greaves führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dormire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1847 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 41 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 52 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: brenmara
+
+fault-class: reference-mismatch
+
+first-logged: 19 November
+
+recurrences: 3
+
+owner: petra.mollering
+
+```
+
+## Ursache
+
+Annik Greaves führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dormire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 83 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Brenmara: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Maren Mollering seit 1813 einsetzt. Die Gesamtausfallzeit belief sich auf 88 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

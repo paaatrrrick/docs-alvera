@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Ilyrun, Protokoll 1115"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Ilyrun."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Ilyrun drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Ilyrun protokollierte 7 separate Anomalien und eskalierte gemäß Verfahren keine davon. Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Yarstead wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1929 außer Kraft gesetzt wurde.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1964 zurückgeht und die niemand dokumentiert hatte.
+- Eine routinemäßige Neukalibrierung in Yarstead wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1845 außer Kraft gesetzt wurde.
+- Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 74 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1840 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 68 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Yutta Petrov führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Yarstead ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 17 Tage früher erfolgen sollen.
+
+```text
+
+station: ilyrun
+
+fault-class: sensor-drift
+
+first-logged: 7 September
+
+recurrences: 3
+
+owner: stellan.greaves
+
+```
+
+## Ursache
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit geflochtenem Schilf neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1834 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 48 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 19 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 44 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Sanna Halloran seit 1865 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

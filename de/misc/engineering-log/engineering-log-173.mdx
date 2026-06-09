@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Halvale, Protokoll 1172"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Halvale."
+---
+
+## Zusammenfassung
+
+Gegen 7:40 Uhr morgens hörte der Relaisturm in Halvale auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Roscrest wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1785 außer Kraft gesetzt wurde. Während einer langen Nebelzeit schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Eine routinemäßige Neukalibrierung in Roscrest wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1878 außer Kraft gesetzt wurde.
+- Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 42 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Die Nachtschicht in Halvale protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Joren Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Roscrest ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 56 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 38 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1806 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: halvale
+
+fault-class: contact-corrosion
+
+first-logged: 13 June
+
+recurrences: 5
+
+owner: annik.quist
+
+```
+
+## Ursache
+
+Joren Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Roscrest ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1871 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 12 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 69 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Halvale: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

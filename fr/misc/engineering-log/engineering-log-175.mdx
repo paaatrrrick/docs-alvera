@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Vorvik, journal 1174"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Vorvik."
+---
+
+## Résumé
+
+L'équipe de nuit de Vorvik a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Un recalibrage de routine à Ossreach a été effectué d'après la mauvaise table de référence, celle retirée en 1817. Vers 6h40 du matin, la tour de relais de Vorvik a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Vorvik ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 4 fois sur 61 mois, chaque fois clôturée comme résolue sans note.
+- Les relevés de pression de la station de pompage de Vorvik ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 44 mois, chaque fois clôturée comme résolue sans note.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 6 fois sur 34 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation en 1803 que personne n'avait documentée. Stellan Ashdown a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Ossreach, subtilement hors tolérance.
+
+```text
+
+station: vorvik
+
+fault-class: sensor-drift
+
+first-logged: 4 November
+
+recurrences: 8
+
+owner: rurik.quist
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation en 1793 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 43 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons apprises et suivi
+
+Le temps d'arrêt total a atteint 64 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Cosima Holloway préconise depuis 1846. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées.

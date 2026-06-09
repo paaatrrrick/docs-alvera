@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Zelgate, journal 1181"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelgate."
+---
+
+## Résumé
+
+Un recalibrage de routine à Marvale a été effectué d'après la mauvaise table de référence, celle retirée en 1847. L'équipe de nuit de Zelgate a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Vers 5h40 du matin, la tour de relais de Zelgate a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- Vers 8h40 du matin, la tour de relais de Zelgate a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 53 jours plus tôt.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation en 1794 que personne n'avait documentée.
+- Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Un recalibrage de routine à Marvale a été effectué d'après la mauvaise table de référence, celle retirée en 1803.
+
+## Enquête
+
+Halvard Sorvane a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Marvale, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation en 1835 que personne n'avait documentée. Le journal de maintenance montrait que la même défaillance avait été signalée 7 fois sur 21 mois, chaque fois clôturée comme résolue sans note.
+
+```text
+
+station: zelgate
+
+fault-class: reference-mismatch
+
+first-logged: 17 June
+
+recurrences: 8
+
+owner: rurik.severin
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation en 1852 que personne n'avait documentée. Halvard Sorvane a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Marvale, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 50 mois, chaque fois clôturée comme résolue sans note.
+
+## Leçons apprises et suivi
+
+Nous adoptons une règle des ateliers de Zelgate : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Joren Oduya préconise depuis 1946. Le temps d'arrêt total a atteint 22 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal.

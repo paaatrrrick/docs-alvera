@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Brenstead, Protokoll 1189"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Brenstead."
+---
+
+## Zusammenfassung
+
+Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Druckmesswerte der Pumpstation Brenstead drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Gegen 8:40 Uhr morgens hörte der Relaisturm in Brenstead auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 56 Tage früher erfolgen sollen.
+- Vesna Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ashton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Vesna Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ashton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Eine routinemäßige Neukalibrierung in Ashton wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1841 außer Kraft gesetzt wurde.
+- Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1939 zurückgeht und die niemand dokumentiert hatte.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1854 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 27 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Vesna Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ashton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: brenstead
+
+fault-class: sensor-drift
+
+first-logged: 19 March
+
+recurrences: 4
+
+owner: cosima.mollering
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1864 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 59 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 70 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Brenstead: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Joren Greaves seit 1784 einsetzt. Die Gesamtausfallzeit belief sich auf 16 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

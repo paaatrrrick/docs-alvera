@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Ashwick, Protokoll 1051"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Ashwick."
+---
+
+## Zusammenfassung
+
+Gegen 3:40 Uhr morgens hörte der Relaisturm in Ashwick auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Dorgate wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1953 außer Kraft gesetzt wurde. Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Dorgate wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1947 außer Kraft gesetzt wurde.
+- Maren Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dorgate ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1854 zurückgeht und die niemand dokumentiert hatte.
+- Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 37 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 58 Tage früher erfolgen sollen. Maren Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dorgate ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 31 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1832 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: ashwick
+
+fault-class: phantom-signal
+
+first-logged: 23 June
+
+recurrences: 2
+
+owner: cosima.oduya
+
+```
+
+## Ursache
+
+Maren Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dorgate ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 13 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1826 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Ashwick: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Gesamtausfallzeit belief sich auf 61 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Ivo Petrov seit 1846 einsetzt.

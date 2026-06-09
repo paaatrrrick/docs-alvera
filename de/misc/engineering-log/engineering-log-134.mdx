@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Dormara, Protokoll 1133"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Dormara."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Tormire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1830 außer Kraft gesetzt wurde. Die Druckmesswerte der Pumpstation Dormara drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Imre Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Tormire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Gegen 9:40 Uhr morgens hörte der Relaisturm in Dormara auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 76 Tage früher erfolgen sollen.
+- Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 74 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Imre Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Tormire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Untersuchung
+
+Imre Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Tormire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1932 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 54 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 73 Tage früher erfolgen sollen.
+
+```text
+
+station: dormara
+
+fault-class: sensor-drift
+
+first-logged: 7 March
+
+recurrences: 6
+
+owner: oona.whitlock
+
+```
+
+## Ursache
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 58 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1829 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Dormara: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 18 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

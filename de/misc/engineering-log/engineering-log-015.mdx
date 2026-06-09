@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Calvik, Protokoll 1014"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Calvik."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Calvik protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon. Die Druckmesswerte der Pumpstation Calvik drifteten 7 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Eine routinemäßige Neukalibrierung in Lorford wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1897 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 59 Tage früher erfolgen sollen.
+- Dario Voss führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Lorford ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Die Nachtschicht in Calvik protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Eine routinemäßige Neukalibrierung in Lorford wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1799 außer Kraft gesetzt wurde.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 51 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1803 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 79 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: calvik
+
+fault-class: phantom-signal
+
+first-logged: 11 March
+
+recurrences: 6
+
+owner: anselm.voss
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 17 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Dario Voss führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Lorford ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1945 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Otto Oduya seit 1799 einsetzt. Die Gesamtausfallzeit belief sich auf 75 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Calvik: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

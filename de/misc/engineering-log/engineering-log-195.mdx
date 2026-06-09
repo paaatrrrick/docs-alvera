@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Tamrun, Protokoll 1194"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Tamrun."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Ossholm wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1787 außer Kraft gesetzt wurde. Gegen 2:40 Uhr morgens hörte der Relaisturm in Tamrun auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Nachtschicht in Tamrun protokollierte 4 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Tamrun drifteten 5 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 43 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Eine routinemäßige Neukalibrierung in Ossholm wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1787 außer Kraft gesetzt wurde.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 27 Tage früher erfolgen sollen.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1799 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 12 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Ivo Lindqvist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ossholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 43 Tage früher erfolgen sollen.
+
+```text
+
+station: tamrun
+
+fault-class: contact-corrosion
+
+first-logged: 27 November
+
+recurrences: 9
+
+owner: tomas.marchetti
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 49 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Ivo Lindqvist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ossholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Gesamtausfallzeit belief sich auf 25 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Halvard Vexley seit 1852 einsetzt.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Galshore, journal 1162"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Galshore."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Galshore ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un recalibrage de routine à Calhollow a été effectué d'après la mauvaise table de référence, celle retirée en 1799.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 59 jours plus tôt.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 40 jours plus tôt.
+- L'équipe de nuit de Galshore a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 47 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée à la cire, une improvisation remontant à une réparation en 1929 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 63 jours plus tôt. Annik Drummond a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Calhollow, subtilement hors tolérance.
+
+```text
+
+station: galshore
+
+fault-class: reference-mismatch
+
+first-logged: 21 March
+
+recurrences: 4
+
+owner: rurik.ashdown
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 67 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation en 1945 que personne n'avait documentée.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Le temps d'arrêt total a atteint 37 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Nous adoptons une règle des ateliers de Galshore : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

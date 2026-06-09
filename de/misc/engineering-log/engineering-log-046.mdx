@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Ossgate, Protokoll 1045"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Ossgate."
+---
+
+## Zusammenfassung
+
+Gegen 7:40 Uhr morgens hörte der Relaisturm in Ossgate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Erivik wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1937 außer Kraft gesetzt wurde. Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Zeitachse
+
+- Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 47 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Folke Oduya führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Erivik ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Folke Oduya führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Erivik ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Gegen 8:40 Uhr morgens hörte der Relaisturm in Ossgate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 71 Tage früher erfolgen sollen. Folke Oduya führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Erivik ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 13 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1894 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: ossgate
+
+fault-class: sensor-drift
+
+first-logged: 20 November
+
+recurrences: 3
+
+owner: ivo.kessler
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 83 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Folke Oduya führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Erivik ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1907 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Otto Quist seit 1852 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Gesamtausfallzeit belief sich auf 51 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Ossgate: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

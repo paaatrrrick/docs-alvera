@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Lorstead, Protokoll 1164"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Lorstead."
+---
+
+## Zusammenfassung
+
+Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Gegen 5:40 Uhr morgens hörte der Relaisturm in Lorstead auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Corwick wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1818 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Während des Frühlingshochwassers schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Gegen 7:40 Uhr morgens hörte der Relaisturm in Lorstead auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Gegen 2:40 Uhr morgens hörte der Relaisturm in Lorstead auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Druckmesswerte der Pumpstation Lorstead drifteten 7 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Tomas Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 69 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 61 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1877 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: lorstead
+
+fault-class: phantom-signal
+
+first-logged: 11 March
+
+recurrences: 4
+
+owner: stellan.sorvane
+
+```
+
+## Ursache
+
+Tomas Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 18 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 20 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1822 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Rurik Whitlock seit 1839 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Lorstead: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Narfell, Protokoll 1102"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Narfell."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Narfell protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon. Gegen 6:40 Uhr morgens hörte der Relaisturm in Narfell auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Druckmesswerte der Pumpstation Narfell drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Selton wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1824 außer Kraft gesetzt wurde.
+- Maren Marrow führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Selton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 52 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 22 Tage früher erfolgen sollen.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 68 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 73 Tage früher erfolgen sollen. Maren Marrow führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Selton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1932 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: narfell
+
+fault-class: sensor-drift
+
+first-logged: 20 June
+
+recurrences: 8
+
+owner: petra.mollering
+
+```
+
+## Ursache
+
+Maren Marrow führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Selton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 28 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 39 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Sanna Kessler seit 1915 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

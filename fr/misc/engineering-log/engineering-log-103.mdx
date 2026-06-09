@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Narfell, journal 1102"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Narfell."
+---
+
+## Résumé
+
+L'équipe de nuit de Narfell a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Vers 6h40 du matin, la tour de relais de Narfell a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. Les relevés de pression de la station de pompage de Narfell ont dérivé vers le haut pendant 2 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Un recalibrage de routine à Selton a été effectué d'après la mauvaise table de référence, celle retirée en 1824.
+- Maren Marrow a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selton, subtilement hors tolérance.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 9 fois sur 52 mois, chaque fois clôturée comme résolue sans note.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 22 jours plus tôt.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 68 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 73 jours plus tôt. Maren Marrow a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selton, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation en 1932 que personne n'avait documentée.
+
+```text
+
+station: narfell
+
+fault-class: sensor-drift
+
+first-logged: 20 June
+
+recurrences: 8
+
+owner: petra.mollering
+
+```
+
+## Cause racine
+
+Maren Marrow a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selton, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 28 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons apprises et suivi
+
+Le temps d'arrêt total a atteint 39 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Sanna Kessler préconise depuis 1915. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal.

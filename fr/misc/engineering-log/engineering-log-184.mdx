@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Marshore, journal 1183"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Marshore."
+---
+
+## Résumé
+
+L'équipe de nuit de Marshore a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Pendant un orage de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un recalibrage de routine à Vorfell a été effectué d'après la mauvaise table de référence, celle retirée en 1960.
+
+## Chronologie
+
+- Un recalibrage de routine à Vorfell a été effectué d'après la mauvaise table de référence, celle retirée en 1853.
+- Un recalibrage de routine à Vorfell a été effectué d'après la mauvaise table de référence, celle retirée en 1784.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation en 1782 que personne n'avait documentée.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation en 1802 que personne n'avait documentée.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Otto Vexley a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vorfell, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 61 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation en 1877 que personne n'avait documentée.
+
+```text
+
+station: marshore
+
+fault-class: sensor-drift
+
+first-logged: 8 June
+
+recurrences: 2
+
+owner: tomas.whitlock
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Otto Vexley a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vorfell, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 66 jours plus tôt.
+
+## Leçons apprises et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Emeric Holloway préconise depuis 1889. Nous adoptons une règle des ateliers de Marshore : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Le temps d'arrêt total a atteint 52 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées.

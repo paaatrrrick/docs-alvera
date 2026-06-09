@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Torgate, Protokoll 1233"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Torgate."
+---
+
+## Zusammenfassung
+
+Während der trockenen Ostwinde schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Nachtschicht in Torgate protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon. Gegen 6:40 Uhr morgens hörte der Relaisturm in Torgate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 31 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Die Nachtschicht in Torgate protokollierte 8 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 76 Tage früher erfolgen sollen.
+- Die Druckmesswerte der Pumpstation Torgate drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 19 Tage früher erfolgen sollen.
+- Vesna Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Wrenspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 47 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 85 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1790 zurückgeht und die niemand dokumentiert hatte. Vesna Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Wrenspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: torgate
+
+fault-class: phantom-signal
+
+first-logged: 6 June
+
+recurrences: 6
+
+owner: anselm.severin
+
+```
+
+## Ursache
+
+Vesna Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Wrenspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1940 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Torgate: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 44 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Maren Mollering seit 1840 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

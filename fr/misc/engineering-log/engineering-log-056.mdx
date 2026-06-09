@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Eristead, journal 1055"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Eristead."
+---
+
+## Résumé
+
+Un recalibrage de routine à Rosmore a été effectué d'après la mauvaise table de référence, celle retirée en 1941. Les relevés de pression de la station de pompage de Eristead ont dérivé vers le haut pendant 3 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- L'équipe de nuit de Eristead a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Les relevés de pression de la station de pompage de Eristead ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Greta Whitlock a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosmore, subtilement hors tolérance.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 3 fois sur 81 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation en 1803 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 89 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Greta Whitlock a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosmore, subtilement hors tolérance.
+
+```text
+
+station: eristead
+
+fault-class: reference-mismatch
+
+first-logged: 15 November
+
+recurrences: 3
+
+owner: imre.ashdown
+
+```
+
+## Cause racine
+
+Greta Whitlock a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosmore, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 16 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation en 1789 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons apprises et suivi
+
+L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Nous adoptons une règle des ateliers de Eristead : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Le temps d'arrêt total a atteint 52 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Yutta Ashdown préconise depuis 1861.

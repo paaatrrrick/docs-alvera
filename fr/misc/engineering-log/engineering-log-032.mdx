@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Ossvale, journal 1031"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Ossvale."
+---
+
+## Résumé
+
+Vers 8h40 du matin, la tour de relais de Ossvale a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. Les relevés de pression de la station de pompage de Ossvale ont dérivé vers le haut pendant 3 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Mireille Sorvane a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vormara, subtilement hors tolérance.
+- Vers 6h40 du matin, la tour de relais de Ossvale a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 35 jours plus tôt.
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 40 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Mireille Sorvane a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vormara, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 37 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation en 1820 que personne n'avait documentée.
+
+```text
+
+station: ossvale
+
+fault-class: reference-mismatch
+
+first-logged: 17 November
+
+recurrences: 9
+
+owner: emeric.kessler
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 73 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 58 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation en 1783 que personne n'avait documentée. Mireille Sorvane a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vormara, subtilement hors tolérance.
+
+## Leçons apprises et suivi
+
+L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Nous adoptons une règle des ateliers de Ossvale : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Casper Vexley préconise depuis 1793. Le temps d'arrêt total a atteint 43 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

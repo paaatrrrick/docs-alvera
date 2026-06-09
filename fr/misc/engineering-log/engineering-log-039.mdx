@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Delford, journal 1038"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Delford."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Delford ont dérivé vers le haut pendant 6 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Vers 9h40 du matin, la tour de relais de Delford a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. L'équipe de nuit de Delford a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- L'équipe de nuit de Delford a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 54 mois, chaque fois clôturée comme résolue sans note.
+- Un recalibrage de routine à Erihollow a été effectué d'après la mauvaise table de référence, celle retirée en 1830.
+- L'équipe de nuit de Delford a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Les relevés de pression de la station de pompage de Delford ont dérivé vers le haut pendant 3 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- L'équipe de nuit de Delford a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 3 fois sur 18 mois, chaque fois clôturée comme résolue sans note. Liesl Voss a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Erihollow, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 43 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation en 1839 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: delford
+
+fault-class: phantom-signal
+
+first-logged: 12 June
+
+recurrences: 4
+
+owner: otto.oduya
+
+```
+
+## Cause racine
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 42 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 6 fois sur 68 mois, chaque fois clôturée comme résolue sans note. Liesl Voss a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Erihollow, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation en 1825 que personne n'avait documentée.
+
+## Leçons apprises et suivi
+
+Le temps d'arrêt total a atteint 51 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Nous adoptons une règle des ateliers de Delford : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

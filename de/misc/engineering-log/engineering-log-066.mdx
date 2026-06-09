@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Jorvale, Protokoll 1065"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Jorvale."
+---
+
+## Zusammenfassung
+
+Gegen 4:40 Uhr morgens hörte der Relaisturm in Jorvale auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Nachtschicht in Jorvale protokollierte 6 separate Anomalien und eskalierte gemäß Verfahren keine davon. Die Druckmesswerte der Pumpstation Jorvale drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Permara wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1870 außer Kraft gesetzt wurde.
+- Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 56 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Während einer langen Nebelzeit schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Während einer langen Nebelzeit schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Maren Holloway führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Permara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 28 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1784 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: jorvale
+
+fault-class: contact-corrosion
+
+first-logged: 25 September
+
+recurrences: 4
+
+owner: emeric.marrow
+
+```
+
+## Ursache
+
+Maren Holloway führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Permara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 68 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1932 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 40 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Jorvale: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

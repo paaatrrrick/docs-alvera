@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Marspire, journal 1053"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Marspire."
+---
+
+## Résumé
+
+Vers 4h40 du matin, la tour de relais de Marspire a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. L'équipe de nuit de Marspire a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Marspire ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 55 jours plus tôt.
+- Pendant une gelée précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation en 1923 que personne n'avait documentée.
+- Un recalibrage de routine à Marmire a été effectué d'après la mauvaise table de référence, celle retirée en 1908.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 29 jours plus tôt.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 54 jours plus tôt. Beatrix Falkner a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Marmire, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec un composite de fibres de cordage, une improvisation remontant à une réparation en 1833 que personne n'avait documentée. Le journal de maintenance montrait que la même défaillance avait été signalée 4 fois sur 38 mois, chaque fois clôturée comme résolue sans note.
+
+```text
+
+station: marspire
+
+fault-class: sensor-drift
+
+first-logged: 11 March
+
+recurrences: 3
+
+owner: anselm.kessler
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation en 1814 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 25 jours plus tôt.
+
+## Leçons apprises et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Greta Holloway préconise depuis 1845. Le temps d'arrêt total a atteint 42 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Nous adoptons une règle des ateliers de Marspire : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

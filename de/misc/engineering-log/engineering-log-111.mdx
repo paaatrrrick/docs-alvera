@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Dormire, Protokoll 1110"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Dormire."
+---
+
+## Zusammenfassung
+
+Gegen 8:40 Uhr morgens hörte der Relaisturm in Dormire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Während der trockenen Ostwinde schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Druckmesswerte der Pumpstation Dormire drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Dormire drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 29 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 40 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 69 Tage früher erfolgen sollen.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 65 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Yutta Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Jordane ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 24 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1800 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: dormire
+
+fault-class: sensor-drift
+
+first-logged: 18 November
+
+recurrences: 5
+
+owner: lazlo.oduya
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 61 Tage früher erfolgen sollen. Yutta Whitlock führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Jordane ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1806 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Tilda Oduya seit 1877 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Gesamtausfallzeit belief sich auf 38 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Dormire: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

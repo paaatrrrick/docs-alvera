@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Narton, Protokoll 1026"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Narton."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Narton drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Narton protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon. Gegen 9:40 Uhr morgens hörte der Relaisturm in Narton auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Narton drifteten 3 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Eine routinemäßige Neukalibrierung in Mormire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1860 außer Kraft gesetzt wurde.
+- Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1817 zurückgeht und die niemand dokumentiert hatte.
+- Casper Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Mormire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 32 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Casper Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Mormire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 63 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1809 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: narton
+
+fault-class: phantom-signal
+
+first-logged: 27 June
+
+recurrences: 4
+
+owner: liesl.kessler
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 24 Tage früher erfolgen sollen. Casper Brandt führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Mormire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 41 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Stellan Sorvane seit 1910 einsetzt. Wir übernehmen eine Regel aus den Werkhöfen von Narton: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

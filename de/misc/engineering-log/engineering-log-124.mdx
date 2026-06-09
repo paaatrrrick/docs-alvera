@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Seldane, Protokoll 1123"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Seldane."
+---
+
+## Zusammenfassung
+
+Gegen 9:40 Uhr morgens hörte der Relaisturm in Seldane auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Druckmesswerte der Pumpstation Seldane drifteten 5 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Seldane protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1825 zurückgeht und die niemand dokumentiert hatte.
+- Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 64 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Gegen 4:40 Uhr morgens hörte der Relaisturm in Seldane auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Nachtschicht in Seldane protokollierte 6 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Eine routinemäßige Neukalibrierung in Vorwick wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1897 außer Kraft gesetzt wurde.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 30 Tage früher erfolgen sollen.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 38 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Emeric Petrov führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Vorwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 15 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1920 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: seldane
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 2
+
+owner: tomas.sorvane
+
+```
+
+## Ursache
+
+Emeric Petrov führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Vorwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 17 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Otto Kessler seit 1818 einsetzt. Wir übernehmen eine Regel aus den Werkhöfen von Seldane: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

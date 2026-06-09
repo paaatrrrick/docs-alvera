@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Vorgate, journal 1169"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Vorgate."
+---
+
+## Résumé
+
+Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Vorgate a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Vers 9h40 du matin, la tour de relais de Vorgate a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- Un recalibrage de routine à Narrun a été effectué d'après la mauvaise table de référence, celle retirée en 1790.
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation en 1835 que personne n'avait documentée.
+- Un recalibrage de routine à Narrun a été effectué d'après la mauvaise table de référence, celle retirée en 1874.
+
+## Enquête
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 23 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 56 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée à la cire, une improvisation remontant à une réparation en 1963 que personne n'avait documentée. Bram Quist a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narrun, subtilement hors tolérance.
+
+```text
+
+station: vorgate
+
+fault-class: reference-mismatch
+
+first-logged: 10 September
+
+recurrences: 5
+
+owner: beatrix.vexley
+
+```
+
+## Cause racine
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 86 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation en 1856 que personne n'avait documentée.
+
+## Leçons apprises et suivi
+
+L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Sanna Ashdown préconise depuis 1899. Le temps d'arrêt total a atteint 65 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

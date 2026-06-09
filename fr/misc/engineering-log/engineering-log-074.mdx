@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Torholm, journal 1073"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Torholm."
+---
+
+## Résumé
+
+Pendant une gelée précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Torholm ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier de la jauge elle-même. L'équipe de nuit de Torholm a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Torholm ont dérivé vers le haut pendant 2 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 3 fois sur 86 mois, chaque fois clôturée comme résolue sans note.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 16 jours plus tôt.
+- Sanna Marrow a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosdane, subtilement hors tolérance.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation en 1934 que personne n'avait documentée. Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 58 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt.
+
+```text
+
+station: torholm
+
+fault-class: reference-mismatch
+
+first-logged: 16 March
+
+recurrences: 4
+
+owner: ivo.ashdown
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation en 1837 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 17 jours plus tôt. Sanna Marrow a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosdane, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 6 fois sur 18 mois, chaque fois clôturée comme résolue sans note.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Nous adoptons une règle des ateliers de Torholm : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Folke Kessler préconise depuis 1813. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Le temps d'arrêt total a atteint 73 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

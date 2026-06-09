@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Fengate, journal 1158"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Fengate."
+---
+
+## Résumé
+
+L'équipe de nuit de Fengate a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Un recalibrage de routine à Narmore a été effectué d'après la mauvaise table de référence, celle retirée en 1872. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Un recalibrage de routine à Narmore a été effectué d'après la mauvaise table de référence, celle retirée en 1784.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 21 mois, chaque fois clôturée comme résolue sans note.
+- L'équipe de nuit de Fengate a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- L'équipe de nuit de Fengate a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Pendant un orage de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée à la cire, une improvisation remontant à une réparation en 1904 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 22 jours plus tôt. Petra Greaves a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narmore, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: fengate
+
+fault-class: sensor-drift
+
+first-logged: 1 June
+
+recurrences: 6
+
+owner: anselm.marrow
+
+```
+
+## Cause racine
+
+Petra Greaves a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narmore, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation en 1914 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 16 jours plus tôt.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Sanna Voss préconise depuis 1955. Le temps d'arrêt total a atteint 43 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

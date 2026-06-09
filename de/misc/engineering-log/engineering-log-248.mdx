@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Delcrest, Protokoll 1247"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Delcrest."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Jorwick wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1834 außer Kraft gesetzt wurde. Gegen 9:40 Uhr morgens hörte der Relaisturm in Delcrest auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Druckmesswerte der Pumpstation Delcrest drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Delcrest drifteten 7 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1888 zurückgeht und die niemand dokumentiert hatte.
+- Cosima Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Jorwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Gegen 7:40 Uhr morgens hörte der Relaisturm in Delcrest auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Druckmesswerte der Pumpstation Delcrest drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 56 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit Flussglas neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1801 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 56 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Cosima Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Jorwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: delcrest
+
+fault-class: sensor-drift
+
+first-logged: 13 June
+
+recurrences: 8
+
+owner: otto.mollering
+
+```
+
+## Ursache
+
+Cosima Mollering führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Jorwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1904 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 85 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 53 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Delcrest: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Folke Mollering seit 1908 einsetzt. Die Gesamtausfallzeit belief sich auf 34 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

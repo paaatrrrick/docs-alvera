@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Kelvik, Protokoll 1100"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Kelvik."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Kelvik drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Gegen 3:40 Uhr morgens hörte der Relaisturm in Kelvik auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Delmara wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1870 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Kelvik drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Casper Oduya führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Delmara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Casper Oduya führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Delmara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 47 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Casper Oduya führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Delmara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Gegen 2:40 Uhr morgens hörte der Relaisturm in Kelvik auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 75 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1854 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 13 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: kelvik
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 6
+
+owner: imre.oduya
+
+```
+
+## Ursache
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 35 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1900 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Kelvik: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Yutta Marrow seit 1895 einsetzt.

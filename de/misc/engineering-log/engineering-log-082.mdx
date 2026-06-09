@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Halfell, Protokoll 1081"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Halfell."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Quilhollow wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1868 außer Kraft gesetzt wurde. Die Druckmesswerte der Pumpstation Halfell drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Gegen 2:40 Uhr morgens hörte der Relaisturm in Halfell auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Edda Ashdown führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Quilhollow ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Eine routinemäßige Neukalibrierung in Quilhollow wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1803 außer Kraft gesetzt wurde.
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Die Druckmesswerte der Pumpstation Halfell drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Die Nachtschicht in Halfell protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Edda Ashdown führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Quilhollow ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 45 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1946 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 50 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: halfell
+
+fault-class: reference-mismatch
+
+first-logged: 14 November
+
+recurrences: 3
+
+owner: yutta.holloway
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 84 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Edda Ashdown führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Quilhollow ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1803 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Halfell: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Imre Kessler seit 1821 einsetzt.

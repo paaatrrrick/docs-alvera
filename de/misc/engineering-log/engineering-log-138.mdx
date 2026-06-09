@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Selton, Protokoll 1137"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Selton."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Selton protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon. Eine routinemäßige Neukalibrierung in Rosmire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1905 außer Kraft gesetzt wurde. Gegen 8:40 Uhr morgens hörte der Relaisturm in Selton auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Gegen 9:40 Uhr morgens hörte der Relaisturm in Selton auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Tilda Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Rosmire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Tilda Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Rosmire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1836 zurückgeht und die niemand dokumentiert hatte.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1935 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Tilda Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Rosmire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 39 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 59 Tage früher erfolgen sollen.
+
+```text
+
+station: selton
+
+fault-class: reference-mismatch
+
+first-logged: 20 November
+
+recurrences: 5
+
+owner: mireille.petrov
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 34 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1805 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 76 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Gesamtausfallzeit belief sich auf 74 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Selton: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

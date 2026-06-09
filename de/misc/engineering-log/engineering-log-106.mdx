@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Ossrun, Protokoll 1105"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Ossrun."
+---
+
+## Zusammenfassung
+
+Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Eine routinemäßige Neukalibrierung in Erimore wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1911 außer Kraft gesetzt wurde. Gegen 2:40 Uhr morgens hörte der Relaisturm in Ossrun auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 41 Tage früher erfolgen sollen.
+- Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1804 zurückgeht und die niemand dokumentiert hatte.
+- Gegen 5:40 Uhr morgens hörte der Relaisturm in Ossrun auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Nachtschicht in Ossrun protokollierte 8 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1927 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 80 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 25 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Liesl Greaves führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Erimore ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: ossrun
+
+fault-class: phantom-signal
+
+first-logged: 12 June
+
+recurrences: 8
+
+owner: halvard.mollering
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1823 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 25 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Liesl Greaves führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Erimore ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Ossrun: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Gesamtausfallzeit belief sich auf 69 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Folke Oduya seit 1834 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

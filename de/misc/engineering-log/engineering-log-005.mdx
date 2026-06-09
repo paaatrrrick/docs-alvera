@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Permara, Protokoll 1004"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Permara."
+---
+
+## Zusammenfassung
+
+Gegen 2:40 Uhr morgens hörte der Relaisturm in Permara auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Nachtschicht in Permara protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon. Die Druckmesswerte der Pumpstation Permara drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Permara drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 32 Tage früher erfolgen sollen.
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Permara auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1786 zurückgeht und die niemand dokumentiert hatte.
+- Eine routinemäßige Neukalibrierung in Corfell wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1922 außer Kraft gesetzt wurde.
+
+## Untersuchung
+
+Cosima Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 55 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 21 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1947 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: permara
+
+fault-class: phantom-signal
+
+first-logged: 4 November
+
+recurrences: 4
+
+owner: sigrid.halloran
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 79 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 51 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1881 zurückgeht und die niemand dokumentiert hatte. Cosima Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Corfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Permara: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Gesamtausfallzeit belief sich auf 89 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Petra Lindqvist seit 1799 einsetzt.

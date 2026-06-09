@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Fenshore, Protokoll 1086"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Fenshore."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Perford wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1820 außer Kraft gesetzt wurde. Die Druckmesswerte der Pumpstation Fenshore drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Fenshore protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Fenshore drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Die Nachtschicht in Fenshore protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Eine routinemäßige Neukalibrierung in Perford wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1904 außer Kraft gesetzt wurde.
+- Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 73 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Die Druckmesswerte der Pumpstation Fenshore drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Untersuchung
+
+Edda Vexley führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Perford ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1812 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 31 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 42 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: fenshore
+
+fault-class: sensor-drift
+
+first-logged: 14 September
+
+recurrences: 3
+
+owner: folke.kessler
+
+```
+
+## Ursache
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1944 zurückgeht und die niemand dokumentiert hatte. Edda Vexley führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Perford ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Fenshore: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Gesamtausfallzeit belief sich auf 16 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

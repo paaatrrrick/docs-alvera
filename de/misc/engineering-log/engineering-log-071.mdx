@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Corvale, Protokoll 1070"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Corvale."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Ashwick wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1846 außer Kraft gesetzt wurde. Während der herbstlichen Springfluten schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Nachtschicht in Corvale protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Ashwick wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1901 außer Kraft gesetzt wurde.
+- Die Druckmesswerte der Pumpstation Corvale drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Gegen 2:40 Uhr morgens hörte der Relaisturm in Corvale auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 74 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Lazlo Greaves führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ashwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1853 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 64 Tage früher erfolgen sollen.
+
+```text
+
+station: corvale
+
+fault-class: sensor-drift
+
+first-logged: 4 June
+
+recurrences: 8
+
+owner: vesna.vexley
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1942 zurückgeht und die niemand dokumentiert hatte. Lazlo Greaves führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ashwick ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Corvale: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Joren Greaves seit 1809 einsetzt. Die Gesamtausfallzeit belief sich auf 36 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

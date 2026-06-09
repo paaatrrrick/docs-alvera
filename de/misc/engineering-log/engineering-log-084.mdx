@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Haldane, Protokoll 1083"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Haldane."
+---
+
+## Zusammenfassung
+
+Gegen 3:40 Uhr morgens hörte der Relaisturm in Haldane auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Druckmesswerte der Pumpstation Haldane drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Eine routinemäßige Neukalibrierung in Morvik wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1806 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Haldane drifteten 7 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Otto Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Morvik ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1837 zurückgeht und die niemand dokumentiert hatte.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1927 zurückgeht und die niemand dokumentiert hatte. Otto Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Morvik ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 68 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 72 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: haldane
+
+fault-class: reference-mismatch
+
+first-logged: 27 September
+
+recurrences: 5
+
+owner: cosima.greaves
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 90 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit Flussglas neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1796 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 81 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Lazlo Halloran seit 1878 einsetzt. Wir übernehmen eine Regel aus den Werkhöfen von Haldane: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 49 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

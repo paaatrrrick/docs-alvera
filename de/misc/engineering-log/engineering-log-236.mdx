@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Corvale, Protokoll 1235"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Corvale."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Ossgate wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1820 außer Kraft gesetzt wurde. Gegen 8:40 Uhr morgens hörte der Relaisturm in Corvale auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Nachtschicht in Corvale protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 84 Tage früher erfolgen sollen.
+- Gegen 4:40 Uhr morgens hörte der Relaisturm in Corvale auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1940 zurückgeht und die niemand dokumentiert hatte.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 74 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1840 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 82 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Anselm Sorvane führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ossgate ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: corvale
+
+fault-class: reference-mismatch
+
+first-logged: 21 September
+
+recurrences: 9
+
+owner: liesl.marchetti
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1859 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 73 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 49 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Halvard Holloway seit 1829 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Corvale: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

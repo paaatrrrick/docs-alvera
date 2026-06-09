@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Selfell, journal 1177"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Selfell."
+---
+
+## Résumé
+
+Un recalibrage de routine à Perrun a été effectué d'après la mauvaise table de référence, celle retirée en 1819. Les relevés de pression de la station de pompage de Selfell ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même. L'équipe de nuit de Selfell a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Le journal de maintenance montrait que la même défaillance avait été signalée 6 fois sur 85 mois, chaque fois clôturée comme résolue sans note.
+- Un recalibrage de routine à Perrun a été effectué d'après la mauvaise table de référence, celle retirée en 1821.
+- L'équipe de nuit de Selfell a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 39 mois, chaque fois clôturée comme résolue sans note.
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 84 mois, chaque fois clôturée comme résolue sans note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 37 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation en 1933 que personne n'avait documentée. Liesl Sorvane a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Perrun, subtilement hors tolérance.
+
+```text
+
+station: selfell
+
+fault-class: reference-mismatch
+
+first-logged: 14 September
+
+recurrences: 6
+
+owner: folke.ashdown
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Liesl Sorvane a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Perrun, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 26 jours plus tôt.
+
+## Leçons apprises et suivi
+
+Le temps d'arrêt total a atteint 38 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Nous adoptons une règle des ateliers de Selfell : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

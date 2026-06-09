@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Wrenmara, Protokoll 1149"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Wrenmara."
+---
+
+## Zusammenfassung
+
+Während der herbstlichen Springfluten schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Gegen 6:40 Uhr morgens hörte der Relaisturm in Wrenmara auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Velmire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1937 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Die Nachtschicht in Wrenmara protokollierte 6 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Gegen 4:40 Uhr morgens hörte der Relaisturm in Wrenmara auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Wrenmara auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Eine routinemäßige Neukalibrierung in Velmire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1902 außer Kraft gesetzt wurde.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1955 zurückgeht und die niemand dokumentiert hatte. Imre Sorvane führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Velmire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 84 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 45 Tage früher erfolgen sollen.
+
+```text
+
+station: wrenmara
+
+fault-class: phantom-signal
+
+first-logged: 28 September
+
+recurrences: 4
+
+owner: liesl.oduya
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit geflochtenem Schilf neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1796 zurückgeht und die niemand dokumentiert hatte. Imre Sorvane führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Velmire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 69 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Folke Voss seit 1963 einsetzt. Wir übernehmen eine Regel aus den Werkhöfen von Wrenmara: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.

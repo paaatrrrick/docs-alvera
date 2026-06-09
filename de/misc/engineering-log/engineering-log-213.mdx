@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Rosshore, Protokoll 1212"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Rosshore."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Rosshore protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon. Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Gegen 4:40 Uhr morgens hörte der Relaisturm in Rosshore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Gegen 4:40 Uhr morgens hörte der Relaisturm in Rosshore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Rosshore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 67 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Untersuchung
+
+Casper Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Selholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1873 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 16 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: rosshore
+
+fault-class: sensor-drift
+
+first-logged: 6 June
+
+recurrences: 7
+
+owner: ivo.greaves
+
+```
+
+## Ursache
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Casper Drummond führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Selholm ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 38 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1945 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Rosshore: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Tilda Severin seit 1921 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 64 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

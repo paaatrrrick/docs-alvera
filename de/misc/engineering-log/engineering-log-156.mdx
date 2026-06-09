@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Jormara, Protokoll 1155"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Jormara."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Jormara protokollierte 5 separate Anomalien und eskalierte gemäß Verfahren keine davon. Eine routinemäßige Neukalibrierung in Lorspire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1916 außer Kraft gesetzt wurde. Die Druckmesswerte der Pumpstation Jormara drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Gegen 9:40 Uhr morgens hörte der Relaisturm in Jormara auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1808 zurückgeht und die niemand dokumentiert hatte.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1896 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 28 Tage früher erfolgen sollen. Beatrix Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Lorspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 56 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: jormara
+
+fault-class: contact-corrosion
+
+first-logged: 8 June
+
+recurrences: 4
+
+owner: sanna.brandt
+
+```
+
+## Ursache
+
+Beatrix Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Lorspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 58 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 68 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1879 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Tomas Halloran seit 1833 einsetzt. Die Gesamtausfallzeit belief sich auf 71 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Jormara: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

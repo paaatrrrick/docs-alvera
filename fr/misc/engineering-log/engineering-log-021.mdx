@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Wrenfell, journal 1020"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenfell."
+---
+
+## Résumé
+
+Un recalibrage de routine à Kelton a été effectué d'après la mauvaise table de référence, celle retirée en 1813. Vers 9h40 du matin, la tour de relais de Wrenfell a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Edda Brandt a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelton, subtilement hors tolérance.
+- Les relevés de pression de la station de pompage de Wrenfell ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 3 fois sur 53 mois, chaque fois clôturée comme résolue sans note.
+- Les relevés de pression de la station de pompage de Wrenfell ont dérivé vers le haut pendant 3 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Vers 5h40 du matin, la tour de relais de Wrenfell a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- Edda Brandt a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelton, subtilement hors tolérance.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation en 1932 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 65 jours plus tôt. Edda Brandt a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelton, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 29 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: wrenfell
+
+fault-class: sensor-drift
+
+first-logged: 19 June
+
+recurrences: 9
+
+owner: mireille.brandt
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation en 1959 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Edda Brandt a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelton, subtilement hors tolérance.
+
+## Leçons apprises et suivi
+
+L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Le temps d'arrêt total a atteint 33 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Sanna Voss préconise depuis 1831. Nous adoptons une règle des ateliers de Wrenfell : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

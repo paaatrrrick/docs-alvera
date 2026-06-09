@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Narvik, Protokoll 1027"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Narvik."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Narvik protokollierte 6 separate Anomalien und eskalierte gemäß Verfahren keine davon. Eine routinemäßige Neukalibrierung in Vorspire wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1945 außer Kraft gesetzt wurde. Die Druckmesswerte der Pumpstation Narvik drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 36 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Bram Petrov führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Vorspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Während einer langen Nebelzeit schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Bram Petrov führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Vorspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Während des Frühlingshochwassers schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 60 Tage früher erfolgen sollen.
+
+## Untersuchung
+
+Bram Petrov führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Vorspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1846 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 42 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 63 Tage früher erfolgen sollen.
+
+```text
+
+station: narvik
+
+fault-class: phantom-signal
+
+first-logged: 14 September
+
+recurrences: 5
+
+owner: ivo.petrov
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1808 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 19 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Narvik: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Edda Marrow seit 1958 einsetzt. Die Gesamtausfallzeit belief sich auf 54 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

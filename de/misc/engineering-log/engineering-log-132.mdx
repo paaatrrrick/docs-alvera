@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Dorshore, Protokoll 1131"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Dorshore."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Dorshore drifteten 7 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Dorshore protokollierte 7 separate Anomalien und eskalierte gemäß Verfahren keine davon. Gegen 5:40 Uhr morgens hörte der Relaisturm in Dorshore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Die Nachtschicht in Dorshore protokollierte 8 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Liesl Falkner führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Jorspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 74 Tage früher erfolgen sollen.
+- Eine Inspektion ergab, dass der Verteilerkasten mit lackierter Birke neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1964 zurückgeht und die niemand dokumentiert hatte.
+- Während der herbstlichen Springfluten schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+
+## Untersuchung
+
+Liesl Falkner führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Jorspire ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 51 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1831 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: dorshore
+
+fault-class: reference-mismatch
+
+first-logged: 5 November
+
+recurrences: 3
+
+owner: rurik.quist
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit gehämmertem Zinn neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1870 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 25 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 82 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Wir übernehmen eine Regel aus den Werkhöfen von Dorshore: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Gesamtausfallzeit belief sich auf 51 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Tilda Voss seit 1863 einsetzt.

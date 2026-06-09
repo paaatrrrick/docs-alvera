@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Caldane, Protokoll 1116"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Caldane."
+---
+
+## Zusammenfassung
+
+Die Nachtschicht in Caldane protokollierte 7 separate Anomalien und eskalierte gemäß Verfahren keine davon. Während des Frühlingshochwassers schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Druckmesswerte der Pumpstation Caldane drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Gegen 8:40 Uhr morgens hörte der Relaisturm in Caldane auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Nachtschicht in Caldane protokollierte 6 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 30 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 66 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 88 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1898 zurückgeht und die niemand dokumentiert hatte. Stellan Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Pervik ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: caldane
+
+fault-class: reference-mismatch
+
+first-logged: 7 September
+
+recurrences: 3
+
+owner: ivo.oduya
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1801 zurückgeht und die niemand dokumentiert hatte. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 46 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 53 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Caldane: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

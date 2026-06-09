@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Erireach, journal 1079"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Erireach."
+---
+
+## Résumé
+
+L'équipe de nuit de Erireach a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Pendant les crues de printemps, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un recalibrage de routine à Delmore a été effectué d'après la mauvaise table de référence, celle retirée en 1785.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'équipe de nuit de Erireach a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Le journal de maintenance montrait que la même défaillance avait été signalée 6 fois sur 58 mois, chaque fois clôturée comme résolue sans note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation en 1948 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt. Halvard Mollering a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Delmore, subtilement hors tolérance.
+
+```text
+
+station: erireach
+
+fault-class: reference-mismatch
+
+first-logged: 1 June
+
+recurrences: 4
+
+owner: edda.voss
+
+```
+
+## Cause racine
+
+Halvard Mollering a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Delmore, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 87 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 3 fois sur 67 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec un composite de fibres de cordage, une improvisation remontant à une réparation en 1861 que personne n'avait documentée.
+
+## Leçons apprises et suivi
+
+Nous adoptons une règle des ateliers de Erireach : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Tomas Petrov préconise depuis 1876. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Le temps d'arrêt total a atteint 88 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

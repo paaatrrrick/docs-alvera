@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Vorgate, Protokoll 1169"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Vorgate."
+---
+
+## Zusammenfassung
+
+Während einer langen Nebelzeit schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Nachtschicht in Vorgate protokollierte 8 separate Anomalien und eskalierte gemäß Verfahren keine davon. Gegen 9:40 Uhr morgens hörte der Relaisturm in Vorgate auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Narrun wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1790 außer Kraft gesetzt wurde.
+- Während wochenlangen Schlagregens schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1835 zurückgeht und die niemand dokumentiert hatte.
+- Eine routinemäßige Neukalibrierung in Narrun wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1874 außer Kraft gesetzt wurde.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 23 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 56 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit wachsversiegelter Leinwand neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1963 zurückgeht und die niemand dokumentiert hatte. Bram Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Narrun ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: vorgate
+
+fault-class: reference-mismatch
+
+first-logged: 10 September
+
+recurrences: 5
+
+owner: beatrix.vexley
+
+```
+
+## Ursache
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 86 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit Sumpferz neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1856 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Sanna Ashdown seit 1899 einsetzt. Die Gesamtausfallzeit belief sich auf 65 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war.

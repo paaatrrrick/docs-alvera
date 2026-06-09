@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Marmore, Protokoll 1118"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Marmore."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Dorfell wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1898 außer Kraft gesetzt wurde. Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Druckmesswerte der Pumpstation Marmore drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Gegen 8:40 Uhr morgens hörte der Relaisturm in Marmore auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1906 zurückgeht und die niemand dokumentiert hatte.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 42 Tage früher erfolgen sollen.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 36 Tage früher erfolgen sollen. Cosima Marrow führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dorfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 34 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+```text
+
+station: marmore
+
+fault-class: phantom-signal
+
+first-logged: 14 September
+
+recurrences: 8
+
+owner: anselm.marrow
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 27 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 57 Tage früher erfolgen sollen. Cosima Marrow führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Dorfell ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Emeric Lindqvist seit 1872 einsetzt. Wir übernehmen eine Regel aus den Werkhöfen von Marmore: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

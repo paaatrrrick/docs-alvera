@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Delfell, Protokoll 1185"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Delfell."
+---
+
+## Zusammenfassung
+
+Gegen 7:40 Uhr morgens hörte der Relaisturm in Delfell auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Die Druckmesswerte der Pumpstation Delfell drifteten 5 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Eine Inspektion ergab, dass der Verteilerkasten mit Blauschiefer neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1891 zurückgeht und die niemand dokumentiert hatte.
+- Eine routinemäßige Neukalibrierung in Yarford wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1847 außer Kraft gesetzt wurde.
+- Die Nachtschicht in Delfell protokollierte 4 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Maren Petrov führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Yarford ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Untersuchung
+
+Maren Petrov führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Yarford ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 41 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 7 Mal über 30 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1803 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: delfell
+
+fault-class: phantom-signal
+
+first-logged: 10 March
+
+recurrences: 2
+
+owner: edda.lindqvist
+
+```
+
+## Ursache
+
+Maren Petrov führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Yarford ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 15 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 66 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Delfell: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Sanna Whitlock seit 1826 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

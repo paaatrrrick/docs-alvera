@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Quilspire, Protokoll 1220"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Quilspire."
+---
+
+## Zusammenfassung
+
+Während eines Hagelsturms, der die Obstgärten kahlfegte, schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Eine routinemäßige Neukalibrierung in Marhollow wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1797 außer Kraft gesetzt wurde. Die Nachtschicht in Quilspire protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 61 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Quilspire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Nachtschicht in Quilspire protokollierte 3 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 83 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 2 Mal über 82 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Oona Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Marhollow ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: quilspire
+
+fault-class: sensor-drift
+
+first-logged: 12 March
+
+recurrences: 2
+
+owner: sanna.quist
+
+```
+
+## Ursache
+
+Oona Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Marhollow ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 19 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 13 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Ivo Whitlock seit 1850 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Quilspire: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

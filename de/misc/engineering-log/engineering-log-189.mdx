@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Torspire, Protokoll 1188"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Torspire."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Ilymara wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1862 außer Kraft gesetzt wurde. Gegen 6:40 Uhr morgens hörte der Relaisturm in Torspire auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Die Nachtschicht in Torspire protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Eine routinemäßige Neukalibrierung in Ilymara wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1848 außer Kraft gesetzt wurde.
+- Eine routinemäßige Neukalibrierung in Ilymara wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1964 außer Kraft gesetzt wurde.
+- Während einer langen Nebelzeit schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 81 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Untersuchung
+
+Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1841 zurückgeht und die niemand dokumentiert hatte. Petra Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Ilymara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 74 Tage früher erfolgen sollen. Das Wartungsprotokoll zeigte denselben Fehler 9 Mal über 73 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: torspire
+
+fault-class: contact-corrosion
+
+first-logged: 2 November
+
+recurrences: 8
+
+owner: oona.oduya
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 50 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1886 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 51 Tage früher erfolgen sollen.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Sanna Oduya seit 1908 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Wir übernehmen eine Regel aus den Werkhöfen von Torspire: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Ulmvale, journal 1039"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Ulmvale."
+---
+
+## Résumé
+
+Vers 7h40 du matin, la tour de relais de Ulmvale a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. Pendant un orage de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un recalibrage de routine à Tamdane a été effectué d'après la mauvaise table de référence, celle retirée en 1927.
+
+## Chronologie
+
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 34 jours plus tôt.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 7 fois sur 70 mois, chaque fois clôturée comme résolue sans note.
+- Un recalibrage de routine à Tamdane a été effectué d'après la mauvaise table de référence, celle retirée en 1942.
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation en 1905 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 71 jours plus tôt. Dario Brandt a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Tamdane, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 7 fois sur 32 mois, chaque fois clôturée comme résolue sans note.
+
+```text
+
+station: ulmvale
+
+fault-class: reference-mismatch
+
+first-logged: 16 November
+
+recurrences: 4
+
+owner: yutta.holloway
+
+```
+
+## Cause racine
+
+Dario Brandt a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Tamdane, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation en 1874 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 49 jours plus tôt.
+
+## Leçons apprises et suivi
+
+Le temps d'arrêt total a atteint 65 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Nous adoptons une règle des ateliers de Ulmvale : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Greta Sorvane préconise depuis 1835. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal.

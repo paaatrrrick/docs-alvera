@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Ilyrun, journal 1115"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Ilyrun."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Ilyrun ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier de la jauge elle-même. L'équipe de nuit de Ilyrun a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Un recalibrage de routine à Yarstead a été effectué d'après la mauvaise table de référence, celle retirée en 1929.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation en 1964 que personne n'avait documentée.
+- Un recalibrage de routine à Yarstead a été effectué d'après la mauvaise table de référence, celle retirée en 1845.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 7 fois sur 74 mois, chaque fois clôturée comme résolue sans note.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation en 1840 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 68 mois, chaque fois clôturée comme résolue sans note. Yutta Petrov a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Yarstead, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 17 jours plus tôt.
+
+```text
+
+station: ilyrun
+
+fault-class: sensor-drift
+
+first-logged: 7 September
+
+recurrences: 3
+
+owner: stellan.greaves
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation en 1834 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 48 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 2 fois sur 19 mois, chaque fois clôturée comme résolue sans note.
+
+## Leçons apprises et suivi
+
+Le temps d'arrêt total a atteint 44 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Sanna Halloran préconise depuis 1865. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal.

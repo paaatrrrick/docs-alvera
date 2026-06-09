@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Velton, journal 1222"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Velton."
+---
+
+## Résumé
+
+Vers 7h40 du matin, la tour de relais de Velton a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel. Un recalibrage de routine à Kelhollow a été effectué d'après la mauvaise table de référence, celle retirée en 1899. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation en 1864 que personne n'avait documentée.
+- L'équipe de nuit de Velton a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt.
+- Vers 7h40 du matin, la tour de relais de Velton a cessé d'accuser réception des battements, et les opérateurs ont supposé le contact corrodé habituel.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Edda Quist a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelhollow, subtilement hors tolérance.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation en 1829 que personne n'avait documentée. Edda Quist a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelhollow, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 50 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 44 mois, chaque fois clôturée comme résolue sans note.
+
+```text
+
+station: velton
+
+fault-class: reference-mismatch
+
+first-logged: 20 September
+
+recurrences: 9
+
+owner: yutta.petrov
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. Edda Quist a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelhollow, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 33 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 3 fois sur 54 mois, chaque fois clôturée comme résolue sans note.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Joren Brandt préconise depuis 1821. Le temps d'arrêt total a atteint 81 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Nous adoptons une règle des ateliers de Velton : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

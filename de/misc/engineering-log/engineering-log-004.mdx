@@ -1,0 +1,42 @@
+---
+title: "Störfallbericht: Station Marwick, Protokoll 1003"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Marwick."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Selrun wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1876 außer Kraft gesetzt wurde. Die Nachtschicht in Marwick protokollierte 8 separate Anomalien und eskalierte gemäß Verfahren keine davon. Die Druckmesswerte der Pumpstation Marwick drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Zeitachse
+
+- Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+- Imre Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Selrun ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 68 Tage früher erfolgen sollen.
+- Die Druckmesswerte der Pumpstation Marwick drifteten 7 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Die Nachtschicht in Marwick protokollierte 9 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Untersuchung
+
+Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 27 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit Flussglas neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1889 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 49 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Imre Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Selrun ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: marwick
+
+fault-class: reference-mismatch
+
+first-logged: 2 March
+
+recurrences: 4
+
+owner: cosima.severin
+
+```
+
+## Ursache
+
+Imre Quist führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Selrun ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 6 Mal über 87 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Die Gesamtausfallzeit belief sich auf 41 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Wir übernehmen eine Regel aus den Werkhöfen von Marwick: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Joren Whitlock seit 1859 einsetzt. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

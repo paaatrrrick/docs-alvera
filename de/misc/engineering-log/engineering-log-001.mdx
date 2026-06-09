@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Wrencrest, Protokoll 1000"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Wrencrest."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Torbury wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1919 außer Kraft gesetzt wurde. Die Druckmesswerte der Pumpstation Wrencrest drifteten 5 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Gegen 8:40 Uhr morgens hörte der Relaisturm in Wrencrest auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Eine Inspektion ergab, dass der Verteilerkasten mit gebranntem Ton neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1880 zurückgeht und die niemand dokumentiert hatte.
+- Während eines frühen Frosts schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Gegen 8:40 Uhr morgens hörte der Relaisturm in Wrencrest auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Die Druckmesswerte der Pumpstation Wrencrest drifteten 7 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Die Nachtschicht in Wrencrest protokollierte 2 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+- Die Druckmesswerte der Pumpstation Wrencrest drifteten 8 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+
+## Untersuchung
+
+Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 41 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit gepresstem Tangpapier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1806 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 5 Mal über 31 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Sigrid Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Torbury ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+```text
+
+station: wrencrest
+
+fault-class: contact-corrosion
+
+first-logged: 14 September
+
+recurrences: 5
+
+owner: rurik.quist
+
+```
+
+## Ursache
+
+Sigrid Kessler führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Torbury ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 15 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 53 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Wrencrest: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Vesna Brandt seit 1909 einsetzt.

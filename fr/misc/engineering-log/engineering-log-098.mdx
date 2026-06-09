@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Narmara, journal 1097"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Narmara."
+---
+
+## Résumé
+
+Un recalibrage de routine à Ashholm a été effectué d'après la mauvaise table de référence, celle retirée en 1835. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Narmara ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Les relevés de pression de la station de pompage de Narmara ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation en 1938 que personne n'avait documentée.
+- Les relevés de pression de la station de pompage de Narmara ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 59 mois, chaque fois clôturée comme résolue sans note.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 3 fois sur 18 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec un composite de fibres de cordage, une improvisation remontant à une réparation en 1804 que personne n'avait documentée. Otto Ashdown a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Ashholm, subtilement hors tolérance.
+
+```text
+
+station: narmara
+
+fault-class: contact-corrosion
+
+first-logged: 12 September
+
+recurrences: 3
+
+owner: lazlo.kessler
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation en 1834 que personne n'avait documentée. Otto Ashdown a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Ashholm, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 5 fois sur 60 mois, chaque fois clôturée comme résolue sans note.
+
+## Leçons apprises et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Tilda Whitlock préconise depuis 1939. Nous adoptons une règle des ateliers de Narmara : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Le temps d'arrêt total a atteint 64 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Lorreach, journal 1060"
+description: "Post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Lorreach."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Lorreach ont dérivé vers le haut pendant 2 heures avant que quiconque ne songe à se méfier de la jauge elle-même. L'équipe de nuit de Lorreach a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Pendant un orage de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les relevés de pression de la station de pompage de Lorreach ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- L'équipe de nuit de Lorreach a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation en 1937 que personne n'avait documentée.
+
+## Enquête
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 38 jours plus tôt. Le journal de maintenance montrait que la même défaillance avait été signalée 9 fois sur 72 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation en 1793 que personne n'avait documentée. Otto Ashdown a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Haldane, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: lorreach
+
+fault-class: contact-corrosion
+
+first-logged: 20 September
+
+recurrences: 8
+
+owner: bram.kessler
+
+```
+
+## Cause racine
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt. Otto Ashdown a tracé la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Haldane, subtilement hors tolérance. Le journal de maintenance montrait que la même défaillance avait été signalée 8 fois sur 28 mois, chaque fois clôturée comme résolue sans note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation en 1885 que personne n'avait documentée.
+
+## Leçons apprises et suivi
+
+Le temps d'arrêt total a atteint 17 heures, dont la majeure partie passée à débattre de qui était responsable de la jauge. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme du temps qu'il fait plutôt que comme un signal. Nous adoptons une règle des ateliers de Lorreach : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Folke Brandt préconise depuis 1797. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées.

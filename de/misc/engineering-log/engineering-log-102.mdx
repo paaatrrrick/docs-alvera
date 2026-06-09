@@ -1,0 +1,41 @@
+---
+title: "Störfallbericht: Station Dordane, Protokoll 1101"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Dordane."
+---
+
+## Zusammenfassung
+
+Während der herbstlichen Springfluten schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen. Eine routinemäßige Neukalibrierung in Halbury wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1784 außer Kraft gesetzt wurde. Gegen 7:40 Uhr morgens hörte der Relaisturm in Dordane auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Zeitachse
+
+- Die Druckmesswerte der Pumpstation Dordane drifteten 2 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Die Druckmesswerte der Pumpstation Dordane drifteten 9 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 22 Tage früher erfolgen sollen.
+- Die Nachtschicht in Dordane protokollierte 8 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 33 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit Walknochenfurnier neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1885 zurückgeht und die niemand dokumentiert hatte. Dario Vexley führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Halbury ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 41 Tage früher erfolgen sollen.
+
+```text
+
+station: dordane
+
+fault-class: contact-corrosion
+
+first-logged: 9 September
+
+recurrences: 4
+
+owner: emeric.kessler
+
+```
+
+## Ursache
+
+Eine Inspektion ergab, dass der Verteilerkasten mit Flussglas neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1818 zurückgeht und die niemand dokumentiert hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 39 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Dario Vexley führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Halbury ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+
+## Erkenntnisse und Nachverfolgung
+
+Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Annik Lindqvist seit 1842 einsetzt. Wir übernehmen eine Regel aus den Werkhöfen von Dordane: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Die Gesamtausfallzeit belief sich auf 90 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt.

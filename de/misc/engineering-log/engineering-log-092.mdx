@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Morcrest, Protokoll 1091"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Morcrest."
+---
+
+## Zusammenfassung
+
+Eine routinemäßige Neukalibrierung in Zelton wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1958 außer Kraft gesetzt wurde. Die Druckmesswerte der Pumpstation Morcrest drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Die Nachtschicht in Morcrest protokollierte 8 separate Anomalien und eskalierte gemäß Verfahren keine davon.
+
+## Zeitachse
+
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Morcrest auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Tomas Voss führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Zelton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Die Druckmesswerte der Pumpstation Morcrest drifteten 4 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Die Druckmesswerte der Pumpstation Morcrest drifteten 3 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen.
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Morcrest auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Gegen 3:40 Uhr morgens hörte der Relaisturm in Morcrest auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Untersuchung
+
+Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 83 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Tomas Voss führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Zelton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 31 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit einem Verbundstoff aus Seilfasern neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1954 zurückgeht und die niemand dokumentiert hatte.
+
+```text
+
+station: morcrest
+
+fault-class: contact-corrosion
+
+first-logged: 19 June
+
+recurrences: 4
+
+owner: liesl.greaves
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 24 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Tomas Voss führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Zelton ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Die Gesamtausfallzeit belief sich auf 63 Stunden, die größtenteils mit Diskussionen darüber verbracht wurden, wessen Verantwortung das Messgerät war. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Dario Marchetti seit 1786 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Morcrest: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie. Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal.

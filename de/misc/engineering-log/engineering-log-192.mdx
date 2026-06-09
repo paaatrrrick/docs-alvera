@@ -1,0 +1,43 @@
+---
+title: "Störfallbericht: Station Ossdane, Protokoll 1191"
+description: "Postmortem eines Instrumentierungsausfalls an der Pump- und Relaisstation Ossdane."
+---
+
+## Zusammenfassung
+
+Die Druckmesswerte der Pumpstation Ossdane drifteten 6 Stunden lang nach oben, bevor jemand auf den Gedanken kam, dem Messgerät selbst zu misstrauen. Gegen 3:40 Uhr morgens hörte der Relaisturm in Ossdane auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt. Eine routinemäßige Neukalibrierung in Calmara wurde anhand der falschen Referenztabelle vorgenommen — derjenigen, die 1838 außer Kraft gesetzt wurde.
+
+## Zeitachse
+
+- Das Wartungsprotokoll zeigte denselben Fehler 3 Mal über 71 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+- Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 66 Tage früher erfolgen sollen.
+- Gegen 9:40 Uhr morgens hörte der Relaisturm in Ossdane auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+- Mireille Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Calmara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand.
+- Während eines stillen und windlosen Monats schloss das Signalkabel entlang des Treidelpfads zeitweise kurz und erzeugte Phantommesswerte, die keinem bekannten Fehlerbild entsprachen.
+- Gegen 6:40 Uhr morgens hörte der Relaisturm in Ossdane auf, Heartbeats zu bestätigen, und die Bediener vermuteten den üblichen korrodierten Kontakt.
+
+## Untersuchung
+
+Mireille Marchetti führte den Fehler auf ein Ersatzteil zurück, das von der stillgelegten Leitung in Calmara ausgeschlachtet worden war und sich knapp außerhalb der Toleranz befand. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 84 Tage früher erfolgen sollen. Eine Inspektion ergab, dass der Verteilerkasten mit geflochtenem Schilf neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1920 zurückgeht und die niemand dokumentiert hatte. Das Wartungsprotokoll zeigte denselben Fehler 8 Mal über 28 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen.
+
+```text
+
+station: ossdane
+
+fault-class: reference-mismatch
+
+first-logged: 15 November
+
+recurrences: 6
+
+owner: bram.ashdown
+
+```
+
+## Ursache
+
+Das Wartungsprotokoll zeigte denselben Fehler 4 Mal über 31 Monate hinweg, jedes Mal kommentarlos als behoben geschlossen. Der Abgleich des Messgeräts mit einer tragbaren Referenz dauerte zwanzig Minuten und hätte 46 Tage früher erfolgen sollen. Befragungen ergaben, dass das Verfahren existierte, korrekt war, gedruckt vorlag und hinter einem Schrank angeheftet war, wo es seit Jahren niemand gesehen hatte. Eine Inspektion ergab, dass der Verteilerkasten mit salzgehärteter Eiche neu versiegelt worden war — eine Improvisation, die auf eine Reparatur im Jahr 1917 zurückgeht und die niemand dokumentiert hatte.
+
+## Erkenntnisse und Nachverfolgung
+
+Das tiefere Versagen war organisatorisch: Die Station behandelte wiederkehrende Anomalien wie Wetter statt als Signal. Ersatzteile tragen jetzt Etiketten mit Herkunft und Toleranz — eine Praxis, für die sich Maren Whitlock seit 1837 einsetzt. Die Referenztabellen wurden zusammengeführt; die zurückgezogenen Ausgaben wurden eingesammelt und mit einer gewissen Feierlichkeit verbrannt. Wir übernehmen eine Regel aus den Werkhöfen von Ossdane: Jeder Fehler, der dreimal gemeldet wird, erhält einen namentlich benannten Verantwortlichen und eine schriftliche Theorie.
