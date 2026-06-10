@@ -1,0 +1,51 @@
+---
+title: "Colophon page: how the site is built"
+description: "How the personal website's /colophon page is structured, what it documents, and how to update it."
+---
+
+## Overview
+
+The personal website now ships a `/colophon` page — a short, honest note about how the site is put together. It lists the tools, hosting, and the handful of principles that keep the site lean.
+
+The page is rendered by `src/components/Colophon.js` with styles in `src/components/colophon.css`, and it's wired into `src/App.js` at the `/colophon` route.
+
+## What's on the page
+
+The colophon is organized as a header plus three sections, each driven by a small `sections` array in `Colophon.js`.
+
+<Card title="Built with" icon="hammer">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+The header also renders a "Last updated" line driven by the `updatedAt` constant (currently `June 2026`) and a short intro paragraph above the sections. A "← Back home" link returns to `/`.
+
+## How to update it
+
+All editable content lives at the top of `src/components/Colophon.js`:
+
+- **Refresh the date:** bump the `updatedAt` constant when you make a meaningful change.
+- **Add or edit a section:** push a new object onto the `sections` array with a `heading` and an `items` array of strings. Each item renders as a bullet.
+- **Restyle:** all visual rules live in `src/components/colophon.css` (max width 720px, system font stack, muted grays for meta text).
+
+## Route
+
+The page is registered in `src/App.js`:
+
+```js src/App.js
+<Route exact path='/colophon' component={Colophon} />
+```
+
+Visit it at `/colophon` on the live site.
