@@ -1,0 +1,52 @@
+---
+title: "Page colophon : comment le site est construit"
+description: "Présentation de la nouvelle page colophon ajoutée au site personnel — les outils utilisés pour construire le site, son hébergement et les principes qui le gardent léger."
+---
+
+## Vue d'ensemble
+
+Le site personnel dispose désormais d'une page **Colophon** qui documente la façon dont le site lui-même est assemblé. C'est une page courte, en texte brut, qui couvre la chaîne d'outils, la configuration d'hébergement et le petit ensemble de règles que le site essaie de respecter.
+
+La page se trouve à `/colophon`, est rendue par `src/components/Colophon.js` et est stylisée par `src/components/colophon.css`.
+
+## Ce qui figure sur la page
+
+Le colophon est organisé en trois sections :
+
+### Construit avec
+
+- React, initialisé avec Create React App.
+- `react-router-dom` pour le routage côté client.
+- CSS simple, une feuille de style par page — pas de framework, pas de préprocesseur.
+
+### Hébergé sur
+
+- Netlify, déployé directement depuis la branche `master` sur GitHub.
+- Un domaine personnalisé enregistré via GoDaddy.
+
+### Principes
+
+- Pas d'analytique, pas de cookies, pas de suivi. Juste des pages.
+- Chaque page doit se charger rapidement et se lire correctement sur un téléphone.
+- Le contenu vit dans des constantes JS simples pour être facile à modifier.
+
+## Structure de la page
+
+Le composant rend un bloc `<main className="colophon">` contenant :
+
+- Un en-tête avec un lien "← Retour à l'accueil", un `<h1>Colophon</h1>`, un horodatage de dernière mise à jour (`Juin 2026`) et un paragraphe d'introduction.
+- Une `<section>` par groupe ci-dessus, chacune avec un titre `<h2>` et une liste à puces.
+
+Le contenu des sections est piloté par un tableau `sections` local, donc ajouter ou modifier des entrées revient à mettre à jour ce tableau dans `Colophon.js`.
+
+## Mettre à jour la page
+
+Pour modifier ce que dit le colophon :
+
+1. Modifiez le tableau `sections` dans `src/components/Colophon.js` pour ajouter, supprimer ou réorganiser les éléments.
+2. Mettez à jour la constante `updatedAt` en haut du même fichier lorsque le contenu change de manière significative.
+3. N'ajustez `src/components/colophon.css` que si la mise en page visuelle doit changer — le composant réutilise les conventions typographiques existantes.
+
+## Journal des modifications
+
+- **Juin 2026** — Page colophon initiale ajoutée (PR [#69](https://github.com/paaatrrrick/personalwebsite/pull/69)) avec les sections Construit avec, Hébergé sur et Principes.

@@ -1,0 +1,52 @@
+---
+title: "Página de colofón: cómo está construido el sitio"
+description: "Resumen de la nueva página de colofón añadida al sitio web personal: las herramientas usadas para construir el sitio, dónde se aloja y los principios que lo mantienen ligero."
+---
+
+## Resumen
+
+El sitio web personal ahora tiene una página de **Colofón** que documenta cómo está montado el propio sitio. Es una página breve y en texto plano que cubre las herramientas, la configuración de alojamiento y el pequeño conjunto de reglas que el sitio intenta seguir.
+
+La página se encuentra en `/colophon`, se renderiza desde `src/components/Colophon.js` y se estiliza con `src/components/colophon.css`.
+
+## Qué hay en la página
+
+El colofón está organizado en tres secciones:
+
+### Construido con
+
+- React, inicializado con Create React App.
+- `react-router-dom` para el enrutamiento del lado del cliente.
+- CSS plano, una hoja de estilos por página — sin framework, sin preprocesador.
+
+### Alojado en
+
+- Netlify, desplegado directamente desde la rama `master` en GitHub.
+- Un dominio personalizado registrado a través de GoDaddy.
+
+### Principios
+
+- Sin analíticas, sin cookies, sin seguimiento. Solo páginas.
+- Cada página debe cargar rápido y leerse bien en un teléfono.
+- El contenido vive en constantes de JS planas para que sea fácil de editar.
+
+## Estructura de la página
+
+El componente renderiza un bloque `<main className="colophon">` con:
+
+- Una cabecera que contiene un enlace "← Volver al inicio", un `<h1>Colophon</h1>`, una marca de última actualización (`Junio de 2026`) y un párrafo de introducción.
+- Una `<section>` por cada grupo anterior, cada una con un encabezado `<h2>` y una lista con viñetas.
+
+El contenido de las secciones se obtiene de un array `sections` local, así que añadir o editar entradas es cuestión de actualizar ese array en `Colophon.js`.
+
+## Actualizar la página
+
+Para cambiar lo que dice el colofón:
+
+1. Edita el array `sections` en `src/components/Colophon.js` para añadir, eliminar o reordenar elementos.
+2. Actualiza la constante `updatedAt` al principio del mismo archivo cuando el contenido cambie de forma significativa.
+3. Ajusta `src/components/colophon.css` solo si el diseño visual necesita cambiar — el componente reutiliza las convenciones tipográficas existentes.
+
+## Registro de cambios
+
+- **Junio de 2026** — Página de colofón inicial añadida (PR [#69](https://github.com/paaatrrrick/personalwebsite/pull/69)) con las secciones Construido con, Alojado en y Principios.
