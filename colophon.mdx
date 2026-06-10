@@ -1,0 +1,107 @@
+---
+title: "Colophon page: structure and updates"
+description: "How the personal website's /colophon page is configured from the sections array, plus a changelog of what the page currently says."
+---
+
+## Overview
+
+The colophon is a standalone page on the personal website that explains how the site is put together — the tools used to build it, where it's hosted, and the principles behind it. It lives at `/colophon` and is linked from the home page.
+
+The page is rendered by `src/components/Colophon.js` from a local `sections` array, with one section per heading. Each section has a `heading` and a list of `items` rendered as a bulleted list.
+
+This page documents the current contents of the colophon so visitors and contributors know what is on the page and how to update it.
+
+## What changed
+
+A new `/colophon` page was added to the personal website. It is registered in `src/App.js` and rendered by `src/components/Colophon.js`, with styles in `src/components/colophon.css`.
+
+The page currently has three sections — **Built with**, **Hosted on**, and **Principles** — and reports a `Last updated` date in the header.
+
+<Card title="Built with" icon="wrench">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+<Tip>
+The header also renders a `← Back home` link to `/` and a `Last updated {updatedAt}` line. Both are controlled by the `updatedAt` constant at the top of `Colophon.js`.
+</Tip>
+
+## Section schema
+
+Each entry in the `sections` array supports the following fields:
+
+| Field     | Type     | Required | Description                                                  |
+| --------- | -------- | -------- | ------------------------------------------------------------ |
+| `heading` | string   | Yes      | Heading shown above the section's bulleted list.             |
+| `items`   | string[] | Yes      | Lines rendered as `<li>` entries under the heading.          |
+
+## Adding or editing a section
+
+Open `src/components/Colophon.js` and edit the `sections` array. Sections render in array order, top to bottom, so reorder entries to change the order on the page.
+
+```js src/components/Colophon.js
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    {
+        heading: 'Principles',
+        items: [
+            'No analytics, no cookies, no tracking. Just pages.',
+            'Every page should load fast and read well on a phone.',
+            'Content lives in plain JS constants so it is easy to edit.',
+        ],
+    },
+];
+```
+
+## Updating the "Last updated" date
+
+The header line `Last updated {updatedAt}` is driven by the `updatedAt` string constant in `Colophon.js`. Update it whenever you change the page content so the timestamp stays honest.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+```
+
+## Writing colophon items
+
+Items are short, declarative sentences. Keep the page readable on a phone.
+
+- One idea per bullet.
+- Lead with the tool or principle, then the why.
+- Avoid marketing language — the page is a note, not a pitch.
+- Prefer present tense, matching the rest of the site's voice.
+
+## When to update this page
+
+Update the colophon whenever:
+
+- The site changes hosts, framework, or routing library.
+- A new principle starts shaping decisions on the site.
+- An existing item stops being true.
+
+Bump `updatedAt` in the same change so the header reflects the edit.
