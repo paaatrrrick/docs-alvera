@@ -1,0 +1,111 @@
+---
+title: "Contact form section: setup and customization"
+description: "How the homepage Contact section collects visitor messages, opens a pre-filled mailto draft on submit, and where to change the recipient address and copy."
+---
+
+## Overview
+
+The Contact section is a new block at the bottom of the personal website's home page. It gives visitors a small form to send a message without leaving the site. On submit, the form opens the visitor's default mail client with a draft pre-filled with their name, email, and message — there is no backend or third-party form service involved.
+
+Use this section when you want a low-friction "get in touch" surface that you fully control, without managing API keys, spam filtering, or a hosted form provider.
+
+## How it works
+
+The `Contact` component renders three required fields (Name, Email, Message) and a Send button. Submitting the form:
+
+1. Validates that all three fields are non-empty. If any field is blank, an inline error appears and nothing else happens.
+2. URL-encodes the visitor's input into a `mailto:` link with the subject `Hello from {name}` and a body that includes the message plus a signature line with the name and email.
+3. Navigates the browser to that `mailto:` link, which hands off to the visitor's mail client.
+4. Shows a brief "Opening your mail app…" confirmation.
+
+Because the handoff is `mailto:`-based, the visitor must have a mail client configured for the link to open. The site never stores or transmits the form data itself.
+
+## Where it lives
+
+The component is rendered from `Home.js` as the last section, directly below `Testimonials`:
+
+```jsx src/Home.js
+import Testimonials from './components/Testimonials';
+import Contact from './components/Contact';
+
+// ...
+
+<Testimonials />
+<Contact />
+```
+
+The component and its styles live in:
+
+- `src/components/Contact.js` — form markup, state, and submit handler.
+- `src/components/contact.css` — layout, field styles, and button styles.
+
+## Form fields
+
+| Field     | Type       | Required | Notes                                                            |
+| --------- | ---------- | -------- | ---------------------------------------------------------------- |
+| `name`    | `text`     | Yes      | Used in the email subject and signature line.                    |
+| `email`   | `email`    | Yes      | Included in the signature line so you can reply.                 |
+| `message` | `textarea` | Yes      | Becomes the body of the email draft.                             |
+
+All three fields are validated client-side. Empty or whitespace-only values trigger the inline error message and prevent the `mailto:` handoff.
+
+## Customizing the recipient address
+
+The recipient is hard-coded in the submit handler in `Contact.js`. Change the address in the `mailto:` URL to point at your own inbox:
+
+```js src/components/Contact.js
+const onSubmit = (e) => {
+    e.preventDefault();
+    if (!name.trim() || !email.trim() || !message.trim()) {
+        setStatus('error');
+        return;
+    }
+    const subject = encodeURIComponent(`Hello from ${name}`);
+    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+    window.location.href = `mailto:you@yourdomain.com?subject=${subject}&body=${body}`;
+    setStatus('sent');
+};
+```
+
+<Tip>
+Keep `encodeURIComponent` around the subject and body. Without it, line breaks and special characters break the `mailto:` link in some mail clients.
+</Tip>
+
+## Customizing the copy
+
+The visible copy lives directly in the JSX. Update these strings to change tone or language:
+
+- Heading: `Get in touch`
+- Field labels: `Name`, `Email`, `Message`
+- Placeholders: `Your name`, `you@somewhere.com`, `What's on your mind?`
+- Button label: `Send`
+- Error state: `Please fill in all three fields.`
+- Success state: `Opening your mail app…`
+
+For example, to tighten the heading and prompt:
+
+```jsx src/components/Contact.js
+<div className="contactHeader">
+    <h2>Say hi</h2>
+    <hr />
+</div>
+{/* ... */}
+<textarea
+    rows={4}
+    value={message}
+    onChange={(e) => setMessage(e.target.value)}
+    placeholder="Tell me about your project"
+/>
+```
+
+## Styling
+
+`contact.css` constrains the section to a 720px max width and stacks fields vertically with a 16px gap. Inputs use an 8px border radius and a `#4567DB` focus outline; the submit button uses the same blue. Adjust those values to match the rest of your site's palette — none of the class names are referenced outside `Contact.js`, so changes are local to the section.
+
+## When to update this page
+
+Update this page when you:
+
+- Change the recipient address or default subject line.
+- Add, remove, or rename a form field.
+- Replace the `mailto:` handoff with a real backend or form provider — at that point, the behavior section above no longer applies and should be rewritten.
