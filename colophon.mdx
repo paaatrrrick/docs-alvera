@@ -1,0 +1,35 @@
+---
+title: "Colophon page: how the site is built"
+description: "How the personal website's new Colophon page is structured, plus a short changelog of the tools, hosting, and principles it documents."
+---
+
+## Overview
+
+The Colophon page is a standalone route on the personal website that explains how the site itself is built. It lives at `src/components/Colophon.js`, with its own stylesheet at `src/components/colophon.css`, and renders a short intro followed by three sections of bullet points.
+
+This page documents the new Colophon route so visitors and contributors know what it covers and how to update it.
+
+## What changed
+
+A new **Colophon** page was added to the personal website. The page is wired up through `react-router-dom` and reachable from the site footer. It lists the tools the site is built with, where it is hosted, and the handful of principles it tries to follow. Content lives in a `sections` array inside `Colophon.js` so each bullet can be edited in place. A `Last updated` line — currently **June 2026** — sits below the heading and should be bumped whenever the content changes.
+
+<Card title="Built with" icon="screwdriver-wrench">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+## How to update it
+
+To change the page, edit the `sections` array in `src/components/Colophon.js`. Each section has a `heading` and an `items` array of strings; add, remove, or rewrite items in place. Bump the `updatedAt` constant at the top of the file when you publish a meaningful change. Styling lives in `src/components/colophon.css` and follows the one-stylesheet-per-page convention used throughout the site.
