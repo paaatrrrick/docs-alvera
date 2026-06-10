@@ -1,0 +1,51 @@
+---
+title: "Page de colophon : comment le site est construit"
+description: "Comment la page /colophon du site personnel est structurée, ce qu'elle documente, et comment la mettre à jour."
+---
+
+## Vue d'ensemble
+
+Le site personnel propose désormais une page `/colophon` — une note courte et honnête sur la façon dont le site est assemblé. Elle liste les outils, l'hébergement et la poignée de principes qui maintiennent le site léger.
+
+La page est rendue par `src/components/Colophon.js` avec les styles dans `src/components/colophon.css`, et elle est branchée dans `src/App.js` sur la route `/colophon`.
+
+## Ce qui figure sur la page
+
+Le colophon est organisé en un en-tête plus trois sections, chacune alimentée par un petit tableau `sections` dans `Colophon.js`.
+
+<Card title="Built with" icon="hammer">
+  - React, initialisé avec Create React App.
+  - `react-router-dom` pour le routage côté client.
+  - CSS simple, une feuille de style par page — pas de framework, pas de préprocesseur.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, déployé directement depuis la branche `master` sur GitHub.
+  - Un domaine personnalisé enregistré via GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Pas d'analytique, pas de cookies, pas de suivi. Juste des pages.
+  - Chaque page doit se charger rapidement et bien se lire sur un téléphone.
+  - Le contenu vit dans de simples constantes JS pour qu'il soit facile à modifier.
+</Card>
+
+L'en-tête affiche aussi une ligne "Last updated" pilotée par la constante `updatedAt` (actuellement `June 2026`) et un court paragraphe d'introduction au-dessus des sections. Un lien "← Back home" renvoie vers `/`.
+
+## Comment la mettre à jour
+
+Tout le contenu modifiable vit en haut de `src/components/Colophon.js` :
+
+- **Rafraîchir la date :** incrémentez la constante `updatedAt` lorsque vous apportez un changement significatif.
+- **Ajouter ou modifier une section :** ajoutez un nouvel objet au tableau `sections` avec un `heading` et un tableau `items` de chaînes. Chaque élément est rendu sous forme de puce.
+- **Restyler :** toutes les règles visuelles vivent dans `src/components/colophon.css` (largeur max 720 px, pile de polices système, gris sourds pour le texte méta).
+
+## Route
+
+La page est enregistrée dans `src/App.js` :
+
+```js src/App.js
+<Route exact path='/colophon' component={Colophon} />
+```
+
+Visitez-la à `/colophon` sur le site en ligne.
