@@ -1,0 +1,49 @@
+---
+title: "Colophon page: structure and content"
+description: "How the personal website's colophon page is built, what it documents, and how to keep it in sync with the codebase."
+---
+
+## Overview
+
+The colophon page is a short note on how the personal website is put together — the tools used to build it, where it's hosted, and the handful of principles the site is held to. It lives at `/colophon` on the site and is rendered from `src/components/Colophon.js`.
+
+This page documents what the colophon contains and how to update it.
+
+## Sections
+
+The colophon is composed of three sections, each rendered from an entry in the `sections` array inside `Colophon.js`.
+
+<Card title="Built with" icon="hammer">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="server">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+## Updating the page
+
+To change the content, edit `src/components/Colophon.js`:
+
+- Update the `updatedAt` constant when you change anything substantive.
+- Add, remove, or reorder entries in the `sections` array. Each section is an object with a `heading` and an `items` array of plain strings.
+- Styles live alongside the component in `src/components/colophon.css`.
+
+## Routing
+
+The page is mounted in `src/App.js` under the `/colophon` route and is linked back to the home page through the `← Back home` link in the component's header.
+
+## Changelog
+
+<Update label="June 2026" tags={["new-page"]}>
+  Added the colophon page in [#69](https://github.com/paaatrrrick/personalwebsite/pull/69). It introduces three sections (Built with, Hosted on, Principles), a `/colophon` route, and a dedicated `colophon.css` stylesheet.
+</Update>
