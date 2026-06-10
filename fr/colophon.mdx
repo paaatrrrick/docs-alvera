@@ -1,0 +1,49 @@
+---
+title: "Page colophon : structure et contenu"
+description: "Comment la page colophon du site personnel est construite, ce qu'elle documente et comment la garder synchronisée avec le code."
+---
+
+## Vue d'ensemble
+
+La page colophon est une courte note sur la façon dont le site personnel est assemblé — les outils utilisés pour le construire, l'endroit où il est hébergé et la poignée de principes auxquels il reste fidèle. Elle se trouve à `/colophon` sur le site et est rendue depuis `src/components/Colophon.js`.
+
+Cette page documente ce que contient le colophon et comment le mettre à jour.
+
+## Sections
+
+Le colophon est composé de trois sections, chacune rendue à partir d'une entrée du tableau `sections` dans `Colophon.js`.
+
+<Card title="Built with" icon="hammer">
+  - React, initialisé avec Create React App.
+  - `react-router-dom` pour le routage côté client.
+  - CSS pur, une feuille de styles par page — pas de framework, pas de préprocesseur.
+</Card>
+
+<Card title="Hosted on" icon="server">
+  - Netlify, déployé directement depuis la branche `master` sur GitHub.
+  - Un domaine personnalisé enregistré via GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Pas d'analytique, pas de cookies, pas de pistage. Juste des pages.
+  - Chaque page doit se charger rapidement et bien se lire sur un téléphone.
+  - Le contenu vit dans de simples constantes JS pour rester facile à éditer.
+</Card>
+
+## Mettre à jour la page
+
+Pour modifier le contenu, éditez `src/components/Colophon.js` :
+
+- Mettez à jour la constante `updatedAt` quand vous changez quelque chose d'important.
+- Ajoutez, supprimez ou réordonnez les entrées du tableau `sections`. Chaque section est un objet avec un `heading` et un tableau `items` de chaînes simples.
+- Les styles vivent à côté du composant dans `src/components/colophon.css`.
+
+## Routage
+
+La page est montée dans `src/App.js` sous la route `/colophon` et renvoie à la page d'accueil via le lien `← Back home` dans l'en-tête du composant.
+
+## Journal des modifications
+
+<Update label="Juin 2026" tags={["new-page"]}>
+  Ajout de la page colophon dans [#69](https://github.com/paaatrrrick/personalwebsite/pull/69). Elle introduit trois sections (Built with, Hosted on, Principles), une route `/colophon` et une feuille de styles `colophon.css` dédiée.
+</Update>
