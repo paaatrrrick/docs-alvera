@@ -1,0 +1,52 @@
+---
+title: "Colophon page: how the site is built"
+description: "Overview of the new Colophon page added to the personal website — the tools used to build the site, where it's hosted, and the principles that keep it lean."
+---
+
+## Overview
+
+The personal website now has a **Colophon** page that documents how the site itself is put together. It's a short, plain-text page covering the toolchain, hosting setup, and the small set of rules the site tries to follow.
+
+The page lives at `/colophon`, is rendered by `src/components/Colophon.js`, and is styled by `src/components/colophon.css`.
+
+## What's on the page
+
+The Colophon is organized into three sections:
+
+### Built with
+
+- React, bootstrapped with Create React App.
+- `react-router-dom` for client-side routing.
+- Plain CSS, one stylesheet per page — no framework, no preprocessor.
+
+### Hosted on
+
+- Netlify, deployed straight from the `master` branch on GitHub.
+- A custom domain registered through GoDaddy.
+
+### Principles
+
+- No analytics, no cookies, no tracking. Just pages.
+- Every page should load fast and read well on a phone.
+- Content lives in plain JS constants so it is easy to edit.
+
+## Page structure
+
+The component renders a `<main className="colophon">` block with:
+
+- A header containing a "← Back home" link, an `<h1>Colophon</h1>`, a last-updated timestamp (`June 2026`), and a one-paragraph intro.
+- One `<section>` per group above, each with an `<h2>` heading and a bulleted list.
+
+Section content is driven by a local `sections` array, so adding or editing entries is a matter of updating that array in `Colophon.js`.
+
+## Updating the page
+
+To change what the Colophon says:
+
+1. Edit the `sections` array in `src/components/Colophon.js` to add, remove, or reorder items.
+2. Update the `updatedAt` constant at the top of the same file when the content meaningfully changes.
+3. Adjust `src/components/colophon.css` only if the visual layout needs to change — the component reuses existing typographic conventions.
+
+## Changelog
+
+- **June 2026** — Initial Colophon page added (PR [#69](https://github.com/paaatrrrick/personalwebsite/pull/69)) with the Built with, Hosted on, and Principles sections.
