@@ -1,0 +1,26 @@
+---
+title: "Glossaire"
+description: "Définitions des termes courants utilisés dans cette documentation."
+---
+
+Ce glossaire définit les termes que vous rencontrerez dans la documentation. Utilisez-le comme référence rapide lorsqu'un terme ne vous est pas familier.
+
+## MDX
+
+Un format de fichier qui combine [Markdown](https://www.markdownguide.org/) avec JSX, ce qui vous permet d'intégrer des composants de style React directement dans votre contenu. Toutes les pages de documentation de ce site sont rédigées en fichiers `.mdx` avec un frontmatter YAML.
+
+## Frontmatter
+
+Le bloc YAML en haut d'un fichier MDX, délimité par `---`, qui définit les métadonnées de la page telles que `title` et `description`. Mintlify utilise le frontmatter pour générer les en-têtes de page, les balises SEO et les libellés de navigation.
+
+## Navigation
+
+La structure qui organise les pages en onglets, groupes et entrées dans la barre latérale. La navigation est configurée dans [`docs.json`](/essentials/navigation) et contrôle la façon dont les lecteurs parcourent la documentation.
+
+## Composant
+
+Un bloc d'interface réutilisable (tel que `<Card>`, `<Columns>` ou `<Note>`) que vous pouvez insérer dans MDX pour créer des mises en page riches sans écrire de code personnalisé. Consultez [Syntaxe Markdown](/essentials/markdown) pour la liste complète des composants disponibles.
+
+## Snippet
+
+Un fragment de contenu réutilisable stocké dans `snippets/` qui peut être importé dans plusieurs pages. Les snippets regroupent le texte, le code ou les composants partagés au même endroit afin que les mises à jour se propagent partout où ils sont utilisés. Pour en savoir plus, consultez [Snippets réutilisables](/essentials/reusable-snippets).

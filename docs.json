@@ -23,7 +23,8 @@
                   "index",
                   "quickstart",
                   "development",
-                  "how-mintlify-works"
+                  "how-mintlify-works",
+                  "glossary"
                 ]
               },
               {
@@ -2516,7 +2517,8 @@
               {
                 "group": "Primeros pasos",
                 "pages": [
-                  "es/how-mintlify-works"
+                  "es/how-mintlify-works",
+                  "es/glossary"
                 ]
               }
             ]
@@ -2532,7 +2534,8 @@
               {
                 "group": "Démarrage",
                 "pages": [
-                  "fr/how-mintlify-works"
+                  "fr/how-mintlify-works",
+                  "fr/glossary"
                 ]
               }
             ]
