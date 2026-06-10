@@ -2519,6 +2519,12 @@
                 "pages": [
                   "es/how-mintlify-works"
                 ]
+              },
+              {
+                "group": "Sitio web personal",
+                "pages": [
+                  "es/pokemon"
+                ]
               }
             ]
           }
@@ -2534,6 +2540,12 @@
                 "group": "Démarrage",
                 "pages": [
                   "fr/how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Site web personnel",
+                "pages": [
+                  "fr/pokemon"
                 ]
               }
             ]
