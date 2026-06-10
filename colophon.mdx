@@ -1,0 +1,56 @@
+---
+title: "Colophon page"
+description: "How the personal website's /colophon page is built, what it documents, and the principles behind the site."
+---
+
+## Overview
+
+The personal website now has a **Colophon** page at [`/colophon`](https://patrickfoster.dev/colophon) that documents how the site itself is put together — the stack, the hosting, and the principles guiding it.
+
+The page is rendered by `src/components/Colophon.js` and styled by `src/components/colophon.css`. Content is defined in a local `sections` array inside the component, so edits are a single-file change.
+
+## What changed
+
+A new route was added to `src/App.js`:
+
+```js
+<Route exact path='/colophon' component={Colophon} />
+```
+
+This makes `/colophon` reachable from anywhere on the site. The page also includes a "← Back home" link to `/` at the top.
+
+## Page structure
+
+The page is grouped into three sections, each rendered from a `{ heading, items }` object in the `sections` array:
+
+<Card title="Built with" icon="hammer">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+## Editing the page
+
+To update the colophon:
+
+1. Open `src/components/Colophon.js`.
+2. Edit the `sections` array to add, remove, or reword bullets. Each section is `{ heading: string, items: string[] }`.
+3. Update the `updatedAt` constant (currently `'June 2026'`) when content meaningfully changes.
+4. Adjust copy in the `colophonIntro` paragraph if the framing of the page shifts.
+
+Styling lives in `src/components/colophon.css` and is scoped via the `.colophon`, `.colophonHeader`, `.colophonMeta`, `.colophonIntro`, and `.colophonSection` class names.
+
+## Related routes
+
+The colophon joins the existing set of routes registered in `src/App.js`: `/`, `/blog`, `/blog/:id`, `/timeline`, `/uses`, `/now`, `/reading-list`, `/talks`, and `/magic-the-gathering`. Unmatched paths fall through to the `NotFound` component.
