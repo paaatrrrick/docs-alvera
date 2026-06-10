@@ -1,0 +1,56 @@
+---
+title: "Página de colofón"
+description: "Cómo se construye la página /colophon del sitio web personal, qué documenta y los principios que guían el sitio."
+---
+
+## Descripción general
+
+El sitio web personal ahora tiene una página de **Colofón** en [`/colophon`](https://patrickfoster.dev/colophon) que documenta cómo está construido el propio sitio: la tecnología, el alojamiento y los principios que lo guían.
+
+La página se renderiza desde `src/components/Colophon.js` y se estiliza con `src/components/colophon.css`. El contenido se define en un arreglo `sections` local dentro del componente, así que las ediciones son un cambio de un solo archivo.
+
+## Qué cambió
+
+Se añadió una nueva ruta a `src/App.js`:
+
+```js
+<Route exact path='/colophon' component={Colophon} />
+```
+
+Esto hace que `/colophon` sea accesible desde cualquier parte del sitio. La página también incluye un enlace "← Volver al inicio" a `/` en la parte superior.
+
+## Estructura de la página
+
+La página se agrupa en tres secciones, cada una renderizada desde un objeto `{ heading, items }` del arreglo `sections`:
+
+<Card title="Built with" icon="hammer">
+  - React, inicializado con Create React App.
+  - `react-router-dom` para el enrutamiento del lado del cliente.
+  - CSS plano, una hoja de estilos por página: sin framework, sin preprocesador.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, desplegado directamente desde la rama `master` en GitHub.
+  - Un dominio personalizado registrado a través de GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Sin analíticas, sin cookies, sin seguimiento. Solo páginas.
+  - Cada página debe cargar rápido y leerse bien en un teléfono.
+  - El contenido vive en constantes de JS planas para que sea fácil de editar.
+</Card>
+
+## Editar la página
+
+Para actualizar el colofón:
+
+1. Abre `src/components/Colophon.js`.
+2. Edita el arreglo `sections` para añadir, eliminar o reformular viñetas. Cada sección es `{ heading: string, items: string[] }`.
+3. Actualiza la constante `updatedAt` (actualmente `'June 2026'`) cuando el contenido cambie de forma significativa.
+4. Ajusta el texto del párrafo `colophonIntro` si el enfoque de la página cambia.
+
+Los estilos viven en `src/components/colophon.css` y están delimitados mediante los nombres de clase `.colophon`, `.colophonHeader`, `.colophonMeta`, `.colophonIntro` y `.colophonSection`.
+
+## Rutas relacionadas
+
+El colofón se suma al conjunto existente de rutas registradas en `src/App.js`: `/`, `/blog`, `/blog/:id`, `/timeline`, `/uses`, `/now`, `/reading-list`, `/talks` y `/magic-the-gathering`. Las rutas no coincidentes pasan al componente `NotFound`.
