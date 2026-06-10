@@ -1,0 +1,35 @@
+---
+title: "Page colophon : comment le site est construit"
+description: "Comment la nouvelle page colophon du site personnel est structurée, ainsi qu'un court journal des modifications des outils, de l'hébergement et des principes qu'elle documente."
+---
+
+## Vue d'ensemble
+
+La page colophon est une route indépendante du site personnel qui explique comment le site lui-même est construit. Elle se trouve dans `src/components/Colophon.js`, avec sa propre feuille de style dans `src/components/colophon.css`, et affiche une courte introduction suivie de trois sections à puces.
+
+Cette page documente la nouvelle route colophon afin que les visiteurs et les contributeurs sachent ce qu'elle couvre et comment la mettre à jour.
+
+## Ce qui a changé
+
+Une nouvelle page **Colophon** a été ajoutée au site personnel. La page est connectée via `react-router-dom` et accessible depuis le pied de page du site. Elle énumère les outils avec lesquels le site est construit, où il est hébergé et la poignée de principes qu'il essaie de suivre. Le contenu vit dans un tableau `sections` à l'intérieur de `Colophon.js` afin que chaque puce puisse être modifiée sur place. Une ligne `Last updated` — actuellement **juin 2026** — se trouve sous le titre et doit être mise à jour chaque fois que le contenu change.
+
+<Card title="Built with" icon="screwdriver-wrench">
+  - React, initialisé avec Create React App.
+  - `react-router-dom` pour le routage côté client.
+  - CSS simple, une feuille de style par page — sans framework, sans préprocesseur.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, déployé directement depuis la branche `master` sur GitHub.
+  - Un domaine personnalisé enregistré via GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Pas d'analytique, pas de cookies, pas de suivi. Juste des pages.
+  - Chaque page doit se charger rapidement et bien se lire sur un téléphone.
+  - Le contenu vit dans des constantes JS simples afin qu'il soit facile à modifier.
+</Card>
+
+## Comment la mettre à jour
+
+Pour modifier la page, éditez le tableau `sections` dans `src/components/Colophon.js`. Chaque section a un `heading` et un tableau `items` de chaînes ; ajoutez, supprimez ou réécrivez les éléments sur place. Mettez à jour la constante `updatedAt` en haut du fichier lorsque vous publiez un changement significatif. Le style vit dans `src/components/colophon.css` et suit la convention d'une feuille de style par page utilisée dans tout le site.

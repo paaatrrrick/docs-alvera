@@ -1,0 +1,35 @@
+---
+title: "Página de colofón: cómo está construido el sitio"
+description: "Cómo está estructurada la nueva página de colofón del sitio web personal, junto con un breve registro de cambios de las herramientas, el alojamiento y los principios que documenta."
+---
+
+## Resumen
+
+La página de colofón es una ruta independiente en el sitio web personal que explica cómo está construido el propio sitio. Se encuentra en `src/components/Colophon.js`, con su propia hoja de estilos en `src/components/colophon.css`, y muestra una breve introducción seguida de tres secciones con viñetas.
+
+Esta página documenta la nueva ruta del colofón para que las personas que visitan y contribuyen sepan qué cubre y cómo actualizarla.
+
+## Qué cambió
+
+Se añadió una nueva página de **Colofón** al sitio web personal. La página está conectada a través de `react-router-dom` y se accede desde el pie de página del sitio. Enumera las herramientas con las que está construido el sitio, dónde está alojado y el puñado de principios que intenta seguir. El contenido vive en un array `sections` dentro de `Colophon.js` para que cada viñeta pueda editarse en el sitio. Una línea `Last updated` —actualmente **junio de 2026**— se sitúa debajo del título y debe actualizarse cada vez que cambie el contenido.
+
+<Card title="Built with" icon="screwdriver-wrench">
+  - React, inicializado con Create React App.
+  - `react-router-dom` para el enrutamiento del lado del cliente.
+  - CSS plano, una hoja de estilos por página: sin framework, sin preprocesador.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, desplegado directamente desde la rama `master` en GitHub.
+  - Un dominio personalizado registrado a través de GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Sin analíticas, sin cookies, sin seguimiento. Solo páginas.
+  - Cada página debe cargar rápido y leerse bien en un teléfono.
+  - El contenido vive en constantes JS planas para que sea fácil de editar.
+</Card>
+
+## Cómo actualizarla
+
+Para cambiar la página, edita el array `sections` en `src/components/Colophon.js`. Cada sección tiene un `heading` y un array `items` de cadenas; añade, elimina o reescribe los elementos directamente. Actualiza la constante `updatedAt` en la parte superior del archivo cuando publiques un cambio significativo. El estilo vive en `src/components/colophon.css` y sigue la convención de una hoja de estilos por página utilizada en todo el sitio.
