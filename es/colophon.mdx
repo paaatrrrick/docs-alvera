@@ -1,0 +1,147 @@
+---
+title: "Página de colofón: stack, hosting y principios"
+description: "Cómo se conecta la ruta /colophon en el sitio personal y cómo actualizar las listas Construido con, Alojado en y Principios."
+---
+
+## Resumen
+
+El colofón es una página estática breve en `/colophon` que explica cómo está construido el sitio personal. Documenta el stack, dónde está alojado el sitio y el pequeño conjunto de principios a los que se ciñe — el tipo de página "sobre este sitio" a la que recurren los lectores cuando quieren saber qué hay bajo el capó.
+
+Usa esta página cuando quieras:
+
+- Enlazar a un lector con una explicación única y sencilla de cómo funciona el sitio.
+- Capturar una decisión sobre el stack, el hosting o los principios del sitio para que tu yo del futuro recuerde por qué es así.
+- Actualizar la fecha de frescura tras un cambio relevante en el sitio.
+
+## Qué hay en la página
+
+La página la renderiza el componente `Colophon` y se estiliza con una hoja de estilos dedicada `colophon.css`. El diseño tiene dos partes:
+
+- Un encabezado con un enlace **← Back home**, el título de la página, una línea `Last updated` y una introducción de una sola frase.
+- Una serie de secciones — **Built with**, **Hosted on** y **Principles** — cada una renderizada como un encabezado y una lista con viñetas.
+
+<Card title="Built with" icon="screwdriver-wrench">
+- React, inicializado con Create React App.
+- `react-router-dom` para el enrutamiento en el cliente.
+- CSS plano, una hoja de estilos por página — sin framework, sin preprocesador.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+- Netlify, desplegado directamente desde la rama `master` en GitHub.
+- Un dominio personalizado registrado a través de GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+- Sin analíticas, sin cookies, sin tracking. Solo páginas.
+- Cada página debería cargar rápido y leerse bien en un teléfono.
+- El contenido vive en constantes JS planas para que sea fácil de editar.
+</Card>
+
+## Cómo se conecta la ruta
+
+La página se registra como una ruta de nivel superior en `src/App.js`, junto a las otras páginas del sitio personal (`/uses`, `/now`, `/reading-list`, `/talks`, `/timeline`).
+
+```js src/App.js
+import Colophon from "./components/Colophon";
+
+function App() {
+  return (
+    <div className="App">
+      <Switch>
+        {/* ...other routes */}
+        <Route exact path='/talks' component={Talks} />
+        <Route exact path='/colophon' component={Colophon} />
+        <Route exact path='/magic-the-gathering' component={Haus} />
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+  );
+}
+```
+
+El componente vive en `src/components/Colophon.js` e importa sus estilos desde `src/components/colophon.css`. No tiene props — todo lo que la página renderiza viene de constantes definidas al inicio del archivo.
+
+## La estructura de datos `sections`
+
+Todo el contenido visible del cuerpo se controla con un único array `sections`. Cada entrada tiene un `heading` y una lista de `items`, y el componente recorre el array para renderizar cada sección como un `<h2>` seguido de un `<ul>`.
+
+```js src/components/Colophon.js
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    {
+        heading: 'Principles',
+        items: [
+            'No analytics, no cookies, no tracking. Just pages.',
+            'Every page should load fast and read well on a phone.',
+            'Content lives in plain JS constants so it is easy to edit.',
+        ],
+    },
+];
+```
+
+### Esquema de una sección
+
+| Campo     | Tipo       | Obligatorio | Descripción                                                          |
+| --------- | ---------- | ----------- | -------------------------------------------------------------------- |
+| `heading` | string     | Sí          | Título de la sección renderizado como `<h2>`. Se usa como key de React. |
+| `items`   | string[]   | Sí          | Lista de cadenas que se renderizan como elementos `<li>`.            |
+
+<Tip>
+`heading` y cada `item` se usan como keys de React, así que mantenlos únicos dentro de la página. Si necesitas dos viñetas que dicen lo mismo, varía ligeramente la redacción.
+</Tip>
+
+## Actualizar la página
+
+Todas las ediciones ocurren en `src/components/Colophon.js`.
+
+### Editar una viñeta existente
+
+Busca el `heading` relevante en el array `sections` y edita la cadena dentro de `items`. Mantén cada viñeta en una sola frase para que la página siga siendo fácil de escanear.
+
+### Añadir una nueva viñeta
+
+Añade una nueva cadena al array `items` de la sección a la que pertenece. Prefiere la sección existente antes que crear una nueva cuando la viñeta encaje.
+
+### Añadir una nueva sección
+
+Añade un nuevo objeto a `sections` con un `heading` nuevo y al menos un `item`. El componente renderiza las secciones en el orden del array, así que colócala donde quieras que aparezca en la página.
+
+```js src/components/Colophon.js
+const sections = [
+    // ...existing sections
+    {
+        heading: 'Fonts',
+        items: [
+            'System UI stack — no web fonts, no FOUT.',
+        ],
+    },
+];
+```
+
+### Actualizar la cadena `updatedAt`
+
+El encabezado muestra una línea `Last updated {updatedAt}.` controlada por la constante `updatedAt` al inicio del archivo. Actualízala siempre que hagas un cambio relevante en la página — una nueva sección, un cambio de stack, un cambio de hosting.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+```
+
+Usa una cadena con formato `Month YYYY`. El valor se renderiza tal cual, así que el formato que elijas es el que verán los lectores.
+
+## Cuándo actualizar esta página
+
+Actualiza el colofón cuando algo sobre cómo está construido el sitio cambie de verdad — un nuevo framework, un cambio de hosting, un principio al que quieras comprometerte. Los retoques pequeños de contenido en otras partes del sitio no necesitan una actualización del colofón.
