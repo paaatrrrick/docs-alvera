@@ -31,7 +31,8 @@
                 "pages": [
                   "work-experience",
                   "game-of-thrones",
-                  "latest-email"
+                  "latest-email",
+                  "colophon"
                 ]
               },
               {
@@ -2518,6 +2519,12 @@
                 "pages": [
                   "es/how-mintlify-works"
                 ]
+              },
+              {
+                "group": "Sitio web personal",
+                "pages": [
+                  "es/colophon"
+                ]
               }
             ]
           }
@@ -2533,6 +2540,12 @@
                 "group": "Démarrage",
                 "pages": [
                   "fr/how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Site personnel",
+                "pages": [
+                  "fr/colophon"
                 ]
               }
             ]
