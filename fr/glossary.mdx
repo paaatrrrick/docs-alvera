@@ -1,0 +1,26 @@
+---
+title: "Glossaire"
+description: "Définitions des termes courants utilisés dans la documentation."
+---
+
+Ce glossaire définit les termes clés que vous rencontrerez dans la documentation. Utilisez-le comme référence rapide lorsque vous tombez sur une terminologie inconnue.
+
+## MDX
+
+MDX est un format de fichier qui combine Markdown et JSX, vous permettant d'intégrer des composants de style React directement dans votre prose. Toutes les pages de contenu de cette documentation sont rédigées sous forme de fichiers `.mdx` afin que vous puissiez combiner des titres, des listes et des blocs de code avec des composants interactifs comme [`<Card>`](/essentials/markdown) et [`<Columns>`](/essentials/markdown).
+
+## Frontmatter
+
+Le frontmatter est le bloc YAML au début de chaque page MDX, délimité par `---`. Il définit les métadonnées au niveau de la page, telles que `title` et `description`, que Mintlify utilise pour afficher l'en-tête de la page, générer les balises SEO et alimenter les résultats de recherche. Consultez [Syntaxe Markdown](/essentials/markdown) pour la liste complète des champs pris en charge.
+
+## Navigation
+
+La navigation désigne la façon dont les pages sont organisées en onglets, groupes et ancres dans la barre latérale gauche et la barre supérieure. Elle est configurée dans [`docs.json`](/essentials/navigation) sous la clé `navigation`. Ajouter une nouvelle page à la documentation implique presque toujours d'ajouter son slug à un tableau `pages` dans ce fichier.
+
+## Snippet
+
+Un snippet est un morceau réutilisable de MDX stocké dans le répertoire `snippets/` que vous pouvez importer dans plusieurs pages. Les snippets permettent de conserver le contenu partagé — comme les instructions d'installation ou les mentions légales — dans une source unique de vérité. Consultez [Snippets réutilisables](/essentials/reusable-snippets) pour leur utilisation.
+
+## Référence d'API
+
+La référence d'API est la section de la documentation qui décrit vos endpoints HTTP, y compris les paramètres, les formes de requête et de réponse, et des exemples d'appels. Mintlify peut générer automatiquement ces pages à partir d'une spécification OpenAPI. Consultez [Documentation d'API](/api-reference/introduction) pour commencer.
