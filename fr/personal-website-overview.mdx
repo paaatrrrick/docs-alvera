@@ -1,0 +1,85 @@
+---
+title: "Présentation du site personnel"
+description: "Ce que contient le dépôt personalwebsite : un site monopage Create React App avec des routes React Router pour le blog, la chronologie, uses, now, la liste de lecture, les conférences et une page Magic: The Gathering."
+---
+
+## Vue d'ensemble
+
+Le dépôt `personalwebsite` est le site personnel de Patrick Foster, déployé sur [patrickrfoster.com](https://www.patrickrfoster.com). Il s'agit d'une application React monopage initialisée avec Create React App et utilisant `react-router-dom` pour le routage.
+
+## Stack technique
+
+- **Framework :** React 18 (Create React App via `react-scripts` 5)
+- **Routage :** `react-router-dom` v4 (`Switch` + `Route`)
+- **Hébergement :** Netlify (script de build `netlify` avec `_redirects` dans `public/`)
+- **Styles :** Fichiers CSS par composant (aucun framework CSS)
+
+## Routes
+
+Définies dans `src/App.js` :
+
+| Chemin | Composant |
+| --- | --- |
+| `/` | `Home` |
+| `/blog` | `Blog` |
+| `/blog/:id` | `ViewBlog` |
+| `/timeline` | `Timeline` |
+| `/uses` | `Uses` |
+| `/now` | `Now` |
+| `/reading-list` | `ReadingList` |
+| `/talks` | `Talks` |
+| `/magic-the-gathering` | `Haus` |
+| _par défaut_ | `NotFound` |
+
+## Structure du projet
+
+```
+personalwebsite/
+├── public/              # static assets, Netlify _redirects
+├── src/
+│   ├── App.js           # router
+│   ├── Home.js          # landing page (hero, work, projects, contact)
+│   ├── Home.css
+│   ├── index.js
+│   ├── components/      # Blog, Card, Contact, Footer, Haus, NotFound,
+│   │                    # Now, ReadingList, Talks, Testimonials,
+│   │                    # Timeline, Uses, ViewBlog, Work + matching .css
+│   ├── constants/       # data files driving the UI
+│   │   ├── articles/    # blog post content
+│   │   ├── articles.js
+│   │   ├── projects.js
+│   │   ├── reading.js
+│   │   ├── talks.js
+│   │   ├── testimonials.js
+│   │   └── work.js
+│   └── images/          # author photos and inline assets
+└── package.json
+```
+
+## Page d'accueil
+
+`src/Home.js` compose l'expérience de la page d'accueil :
+
+- Hero animé avec les titres "Hello, I'm Patrick"
+- Liste des expériences professionnelles affichée à partir de `constants/work.js` (repliable — affiche 2 entrées, puis les développe toutes)
+- Grille de projets affichée à partir de `constants/projects.js` (même comportement de repliement)
+- Témoignages, section de contact avec copie de l'e-mail au clic, et pied de page
+
+## Modèle de contenu
+
+La majeure partie du contenu des pages est pilotée par les données. Pour mettre à jour le site, vous modifiez généralement un fichier dans `src/constants/` plutôt qu'un composant :
+
+- `work.js` — entrées d'expérience professionnelle
+- `projects.js` — cartes de projets
+- `reading.js` — liste de lecture
+- `talks.js` — conférences
+- `testimonials.js` — témoignages
+- `articles.js` + `articles/` — articles de blog
+
+## Développement local
+
+```bash
+npm start      # dev server
+npm run build  # production build
+npm run netlify  # Netlify build (CI=false)
+```

@@ -29,6 +29,7 @@
               {
                 "group": "Personal website",
                 "pages": [
+                  "personal-website-overview",
                   "work-experience",
                   "game-of-thrones",
                   "latest-email"
@@ -2517,7 +2518,8 @@
               {
                 "group": "Primeros pasos",
                 "pages": [
-                  "es/how-mintlify-works"
+                  "es/how-mintlify-works",
+                  "es/personal-website-overview"
                 ]
               }
             ]
@@ -2533,7 +2535,8 @@
               {
                 "group": "Démarrage",
                 "pages": [
-                  "fr/how-mintlify-works"
+                  "fr/how-mintlify-works",
+                  "fr/personal-website-overview"
                 ]
               }
             ]

@@ -1,0 +1,85 @@
+---
+title: "Resumen del sitio web personal"
+description: "Qué contiene el repositorio personalwebsite: un sitio de una sola página creado con Create React App, con rutas de React Router para el blog, la línea de tiempo, uses, now, lista de lectura, charlas y una página de Magic: The Gathering."
+---
+
+## Resumen
+
+El repositorio `personalwebsite` es el sitio personal de Patrick Foster, desplegado en [patrickrfoster.com](https://www.patrickrfoster.com). Es una aplicación React de una sola página, inicializada con Create React App y enrutada con `react-router-dom`.
+
+## Stack
+
+- **Framework:** React 18 (Create React App mediante `react-scripts` 5)
+- **Enrutamiento:** `react-router-dom` v4 (`Switch` + `Route`)
+- **Hosting:** Netlify (script de build `netlify` con `_redirects` en `public/`)
+- **Estilos:** archivos CSS por componente (sin framework de CSS)
+
+## Rutas
+
+Definidas en `src/App.js`:
+
+| Ruta | Componente |
+| --- | --- |
+| `/` | `Home` |
+| `/blog` | `Blog` |
+| `/blog/:id` | `ViewBlog` |
+| `/timeline` | `Timeline` |
+| `/uses` | `Uses` |
+| `/now` | `Now` |
+| `/reading-list` | `ReadingList` |
+| `/talks` | `Talks` |
+| `/magic-the-gathering` | `Haus` |
+| _fallback_ | `NotFound` |
+
+## Estructura del proyecto
+
+```
+personalwebsite/
+├── public/              # static assets, Netlify _redirects
+├── src/
+│   ├── App.js           # router
+│   ├── Home.js          # landing page (hero, work, projects, contact)
+│   ├── Home.css
+│   ├── index.js
+│   ├── components/      # Blog, Card, Contact, Footer, Haus, NotFound,
+│   │                    # Now, ReadingList, Talks, Testimonials,
+│   │                    # Timeline, Uses, ViewBlog, Work + matching .css
+│   ├── constants/       # data files driving the UI
+│   │   ├── articles/    # blog post content
+│   │   ├── articles.js
+│   │   ├── projects.js
+│   │   ├── reading.js
+│   │   ├── talks.js
+│   │   ├── testimonials.js
+│   │   └── work.js
+│   └── images/          # author photos and inline assets
+└── package.json
+```
+
+## Página de inicio
+
+`src/Home.js` compone la experiencia de la página de inicio:
+
+- Hero animado con los títulos "Hello, I'm Patrick"
+- Lista de experiencia laboral renderizada desde `constants/work.js` (colapsable — muestra 2 y se expande a todas)
+- Cuadrícula de proyectos renderizada desde `constants/projects.js` (mismo patrón de colapso)
+- Testimonios, sección de contacto con email de copia al hacer clic y pie de página
+
+## Modelo de contenido
+
+La mayor parte del contenido de las páginas se basa en datos. Para actualizar el sitio, normalmente editas un archivo en `src/constants/` en lugar de un componente:
+
+- `work.js` — entradas de experiencia laboral
+- `projects.js` — tarjetas de proyectos
+- `reading.js` — lista de lectura
+- `talks.js` — charlas
+- `testimonials.js` — testimonios
+- `articles.js` + `articles/` — entradas del blog
+
+## Desarrollo local
+
+```bash
+npm start      # dev server
+npm run build  # production build
+npm run netlify  # Netlify build (CI=false)
+```

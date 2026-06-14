@@ -1,0 +1,85 @@
+---
+title: "Personal website overview"
+description: "What's inside the personalwebsite repo: a Create React App single-page site with React Router routes for blog, timeline, uses, now, reading list, talks, and a Magic: The Gathering page."
+---
+
+## Overview
+
+The `personalwebsite` repo is Patrick Foster's personal site, deployed at [patrickrfoster.com](https://www.patrickrfoster.com). It's a single-page React app bootstrapped with Create React App and routed with `react-router-dom`.
+
+## Stack
+
+- **Framework:** React 18 (Create React App via `react-scripts` 5)
+- **Routing:** `react-router-dom` v4 (`Switch` + `Route`)
+- **Hosting:** Netlify (`netlify` build script with `_redirects` in `public/`)
+- **Styling:** Per-component CSS files (no CSS framework)
+
+## Routes
+
+Defined in `src/App.js`:
+
+| Path | Component |
+| --- | --- |
+| `/` | `Home` |
+| `/blog` | `Blog` |
+| `/blog/:id` | `ViewBlog` |
+| `/timeline` | `Timeline` |
+| `/uses` | `Uses` |
+| `/now` | `Now` |
+| `/reading-list` | `ReadingList` |
+| `/talks` | `Talks` |
+| `/magic-the-gathering` | `Haus` |
+| _fallback_ | `NotFound` |
+
+## Project structure
+
+```
+personalwebsite/
+├── public/              # static assets, Netlify _redirects
+├── src/
+│   ├── App.js           # router
+│   ├── Home.js          # landing page (hero, work, projects, contact)
+│   ├── Home.css
+│   ├── index.js
+│   ├── components/      # Blog, Card, Contact, Footer, Haus, NotFound,
+│   │                    # Now, ReadingList, Talks, Testimonials,
+│   │                    # Timeline, Uses, ViewBlog, Work + matching .css
+│   ├── constants/       # data files driving the UI
+│   │   ├── articles/    # blog post content
+│   │   ├── articles.js
+│   │   ├── projects.js
+│   │   ├── reading.js
+│   │   ├── talks.js
+│   │   ├── testimonials.js
+│   │   └── work.js
+│   └── images/          # author photos and inline assets
+└── package.json
+```
+
+## Home page
+
+`src/Home.js` composes the landing experience:
+
+- Animated hero with "Hello, I'm Patrick" headings
+- Work experience list rendered from `constants/work.js` (collapsible — shows 2, expands to all)
+- Projects grid rendered from `constants/projects.js` (same collapse pattern)
+- Testimonials, contact section with click-to-copy email, and footer
+
+## Content model
+
+Most page content is data-driven. To update the site you typically edit a file under `src/constants/` rather than a component:
+
+- `work.js` — work experience entries
+- `projects.js` — project cards
+- `reading.js` — reading list
+- `talks.js` — talks
+- `testimonials.js` — testimonials
+- `articles.js` + `articles/` — blog posts
+
+## Local development
+
+```bash
+npm start      # dev server
+npm run build  # production build
+npm run netlify  # Netlify build (CI=false)
+```
