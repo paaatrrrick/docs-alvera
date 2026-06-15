@@ -1,0 +1,90 @@
+---
+title: "Aperçu du site web personnel"
+description: "Ce que contient le dépôt personalwebsite : stack, routes, composants et sources de contenu."
+---
+
+## Aperçu
+
+[`paaatrrrick/personalwebsite`](https://github.com/paaatrrrick/personalwebsite) est le code source de [patrickrfoster.com](https://www.patrickrfoster.com). C'est un petit projet Create React App qui utilise React Router pour afficher plusieurs pages à partir de constantes pilotées par les données.
+
+## Stack
+
+- **Framework :** Create React App (`react-scripts` 5.0.1)
+- **UI :** React 18.2
+- **Routage :** `react-router-dom` 4.3.1 (utilise `Switch` et `Route` de l'API v4/v5)
+- **Tests :** `@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`
+- **Hébergement :** Netlify (le script `netlify` exécute `CI=false npm run build`, et `public/_redirects` est versionné)
+
+## Routes
+
+Toutes les routes sont déclarées dans `src/App.js` via un unique `Switch` :
+
+| Chemin | Composant | Rôle |
+| --- | --- | --- |
+| `/` | `Home` | Page d'accueil |
+| `/blog` | `Blog` | Index du blog |
+| `/blog/:id` | `ViewBlog` | Article de blog individuel |
+| `/timeline` | `Timeline` | Chronologie professionnelle et personnelle |
+| `/uses` | `Uses` | Outils et matériel |
+| `/now` | `Now` | Ce sur quoi Patrick travaille actuellement |
+| `/reading-list` | `ReadingList` | Livres et articles |
+| `/talks` | `Talks` | Conférences publiques |
+| `/colophon` | `Colophon` | À propos du site lui-même |
+| `/magic-the-gathering` | `Haus` | Page secondaire MTG |
+| `*` | `NotFound` | Page 404 de repli |
+
+## Organisation du projet
+
+```text
+personalwebsite/
+├── public/              # ressources statiques (favicon, manifest, _redirects, rock.png)
+├── src/
+│   ├── App.js           # routeur
+│   ├── Home.js / Home.css
+│   ├── index.js
+│   ├── components/      # un fichier par route + UI partagée (Card, Footer, Contact, Testimonials...)
+│   ├── constants/       # données à partir desquelles les composants s'affichent
+│   │   ├── articles/    # contenu des articles de blog
+│   │   ├── articles.js
+│   │   ├── projects.js
+│   │   ├── reading.js
+│   │   ├── talks.js
+│   │   ├── testimonials.js
+│   │   └── work.js
+│   └── images/
+└── package.json
+```
+
+## Composants
+
+Le dossier `src/components` contient un composant par route, plus quelques éléments partagés :
+
+- **Composants de route :** `Blog`, `ViewBlog`, `Timeline`, `Uses`, `Now`, `ReadingList`, `Talks`, `Colophon`, `Haus`, `NotFound`, `Work`
+- **UI partagée :** `Card`, `Footer`, `Contact`, `Testimonials`
+
+Chaque composant possède un fichier CSS associé (`blog.css`, `timeline.css`, `uses.css`, etc.) pour des styles à portée de page.
+
+## Sources de contenu
+
+Le contenu des pages provient de simples modules JS dans `src/constants/` :
+
+- `work.js` — postes affichés dans la section expérience professionnelle
+- `projects.js` — projets mis en avant
+- `reading.js` — livres et articles pour `/reading-list`
+- `talks.js` — entrées pour `/talks`
+- `testimonials.js` — témoignages affichés sur la page d'accueil
+- `articles.js` + `articles/` — articles de blog publiés sur `/blog` et `/blog/:id`
+
+## Exécution en local
+
+```bash
+npm start
+```
+
+La build de production Netlify utilise :
+
+```bash
+npm run netlify
+```
+
+qui correspond à `CI=false npm run build` pour que les avertissements ne fassent pas échouer le déploiement.
