@@ -1,0 +1,46 @@
+---
+title: "Colophon page"
+description: "A new /colophon route describing how the personal website is built, hosted, and maintained."
+---
+
+## Overview
+
+The personal website now includes a dedicated `/colophon` page — a short note on how the site is put together, who hosts it, and the principles it follows.
+
+## Route
+
+| Path | Component | Source |
+| --- | --- | --- |
+| `/colophon` | `Colophon` | `src/components/Colophon.js` |
+
+The route is registered in `src/App.js` alongside the other top-level pages.
+
+## Content structure
+
+The page is driven by a `sections` array, where each section has a `heading` and a list of `items`. Editing copy means updating that array — no markup changes required.
+
+The current sections are:
+
+<CardGroup cols={3}>
+  <Card title="Built with" icon="screwdriver-wrench">
+    React (Create React App), `react-router-dom`, and plain CSS — one stylesheet per page.
+  </Card>
+  <Card title="Hosted on" icon="cloud">
+    Netlify, deployed straight from the `master` branch on GitHub. Domain registered through GoDaddy.
+  </Card>
+  <Card title="Principles" icon="compass">
+    No analytics, no cookies, no tracking. Fast on a phone. Content lives in plain JS constants.
+  </Card>
+</CardGroup>
+
+The header also renders a `← Back home` link and a `Last updated` timestamp sourced from the `updatedAt` constant at the top of `Colophon.js`.
+
+## Updating the page
+
+- **Change copy or add a section:** edit the `sections` array in `src/components/Colophon.js`.
+- **Bump the "last updated" date:** edit the `updatedAt` constant.
+- **Restyle:** edit `src/components/colophon.css`.
+
+## Changelog
+
+- **June 2026** — Added `/colophon` route, `Colophon` component, and `colophon.css` (PR #69).

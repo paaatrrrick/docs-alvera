@@ -1,0 +1,46 @@
+---
+title: "Page colophon"
+description: "Une nouvelle route /colophon décrivant comment le site personnel est construit, hébergé et maintenu."
+---
+
+## Vue d'ensemble
+
+Le site personnel inclut désormais une page dédiée `/colophon` — une courte note sur la façon dont le site est assemblé, qui l'héberge et les principes qu'il suit.
+
+## Route
+
+| Chemin | Composant | Source |
+| --- | --- | --- |
+| `/colophon` | `Colophon` | `src/components/Colophon.js` |
+
+La route est enregistrée dans `src/App.js` aux côtés des autres pages de premier niveau.
+
+## Structure du contenu
+
+La page est pilotée par un tableau `sections`, où chaque section possède un `heading` et une liste d'`items`. Modifier le texte revient à mettre à jour ce tableau — aucune modification du balisage n'est nécessaire.
+
+Les sections actuelles sont :
+
+<CardGroup cols={3}>
+  <Card title="Built with" icon="screwdriver-wrench">
+    React (Create React App), `react-router-dom` et CSS pur — une feuille de style par page.
+  </Card>
+  <Card title="Hosted on" icon="cloud">
+    Netlify, déployé directement depuis la branche `master` sur GitHub. Domaine enregistré via GoDaddy.
+  </Card>
+  <Card title="Principles" icon="compass">
+    Pas d'analyse, pas de cookies, pas de suivi. Rapide sur mobile. Le contenu vit dans des constantes JS simples.
+  </Card>
+</CardGroup>
+
+L'en-tête affiche également un lien `← Back home` et un horodatage `Last updated` provenant de la constante `updatedAt` en haut de `Colophon.js`.
+
+## Mettre à jour la page
+
+- **Modifier le texte ou ajouter une section :** modifiez le tableau `sections` dans `src/components/Colophon.js`.
+- **Mettre à jour la date de « dernière mise à jour » :** modifiez la constante `updatedAt`.
+- **Changer le style :** modifiez `src/components/colophon.css`.
+
+## Journal des modifications
+
+- **Juin 2026** — Ajout de la route `/colophon`, du composant `Colophon` et de `colophon.css` (PR #69).
