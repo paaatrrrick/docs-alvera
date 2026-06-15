@@ -1,0 +1,90 @@
+---
+title: "Personal website overview"
+description: "What lives in the personalwebsite repo: stack, routes, components, and content sources."
+---
+
+## Overview
+
+[`paaatrrrick/personalwebsite`](https://github.com/paaatrrrick/personalwebsite) is the source for [patrickrfoster.com](https://www.patrickrfoster.com). It's a small Create React App project that uses React Router to render a handful of pages from data-driven constants.
+
+## Stack
+
+- **Framework:** Create React App (`react-scripts` 5.0.1)
+- **UI:** React 18.2
+- **Routing:** `react-router-dom` 4.3.1 (uses `Switch` and `Route` from the v4/v5 API)
+- **Testing:** `@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`
+- **Hosting:** Netlify (custom `netlify` script runs `CI=false npm run build`, and `public/_redirects` is committed)
+
+## Routes
+
+All routes are wired up in `src/App.js` through a single `Switch`:
+
+| Path | Component | Purpose |
+| --- | --- | --- |
+| `/` | `Home` | Landing page |
+| `/blog` | `Blog` | Blog index |
+| `/blog/:id` | `ViewBlog` | Individual blog post |
+| `/timeline` | `Timeline` | Career and life timeline |
+| `/uses` | `Uses` | Tools and gear |
+| `/now` | `Now` | What Patrick is working on now |
+| `/reading-list` | `ReadingList` | Books and articles |
+| `/talks` | `Talks` | Public talks |
+| `/colophon` | `Colophon` | About the site itself |
+| `/magic-the-gathering` | `Haus` | MTG side page |
+| `*` | `NotFound` | 404 fallback |
+
+## Project layout
+
+```text
+personalwebsite/
+├── public/              # static assets (favicon, manifest, _redirects, rock.png)
+├── src/
+│   ├── App.js           # router
+│   ├── Home.js / Home.css
+│   ├── index.js
+│   ├── components/      # one file per route + shared UI (Card, Footer, Contact, Testimonials...)
+│   ├── constants/       # data the components render from
+│   │   ├── articles/    # blog post content
+│   │   ├── articles.js
+│   │   ├── projects.js
+│   │   ├── reading.js
+│   │   ├── talks.js
+│   │   ├── testimonials.js
+│   │   └── work.js
+│   └── images/
+└── package.json
+```
+
+## Components
+
+The `src/components` directory contains one component per route plus a few shared pieces:
+
+- **Route components:** `Blog`, `ViewBlog`, `Timeline`, `Uses`, `Now`, `ReadingList`, `Talks`, `Colophon`, `Haus`, `NotFound`, `Work`
+- **Shared UI:** `Card`, `Footer`, `Contact`, `Testimonials`
+
+Each component has a matching CSS file (`blog.css`, `timeline.css`, `uses.css`, and so on) for page-scoped styling.
+
+## Content sources
+
+Page content is driven by plain JS modules in `src/constants/`:
+
+- `work.js` — roles rendered by the work experience section
+- `projects.js` — featured projects
+- `reading.js` — books and articles for `/reading-list`
+- `talks.js` — entries for `/talks`
+- `testimonials.js` — quotes shown on the home page
+- `articles.js` + `articles/` — blog posts surfaced at `/blog` and `/blog/:id`
+
+## Running locally
+
+```bash
+npm start
+```
+
+The Netlify production build uses:
+
+```bash
+npm run netlify
+```
+
+which expands to `CI=false npm run build` so warnings don't fail the deploy.
