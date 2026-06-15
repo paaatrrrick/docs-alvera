@@ -27,6 +27,12 @@
                 ]
               },
               {
+                "group": "Changelog",
+                "pages": [
+                  "changelog/2026-06-15"
+                ]
+              },
+              {
                 "group": "Personal website",
                 "pages": [
                   "work-experience",
