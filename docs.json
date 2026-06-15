@@ -2521,6 +2521,12 @@
             "tab": "Guías",
             "groups": [
               {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog/2026-06-15"
+                ]
+              },
+              {
                 "group": "Primeros pasos",
                 "pages": [
                   "es/how-mintlify-works"
@@ -2537,9 +2543,63 @@
             "tab": "Guides",
             "groups": [
               {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog/2026-06-15"
+                ]
+              },
+              {
                 "group": "Démarrage",
                 "pages": [
                   "fr/how-mintlify-works"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "ja-jp",
+        "tabs": [
+          {
+            "tab": "ガイド",
+            "groups": [
+              {
+                "group": "変更履歴",
+                "pages": [
+                  "ja-jp/changelog/2026-06-15"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "ja",
+        "tabs": [
+          {
+            "tab": "ガイド",
+            "groups": [
+              {
+                "group": "変更履歴",
+                "pages": [
+                  "ja/changelog/2026-06-15"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "de",
+        "tabs": [
+          {
+            "tab": "Anleitungen",
+            "groups": [
+              {
+                "group": "Änderungsprotokoll",
+                "pages": [
+                  "de/changelog/2026-06-15"
                 ]
               }
             ]
