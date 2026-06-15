@@ -2518,7 +2518,8 @@
               {
                 "group": "Primeros pasos",
                 "pages": [
-                  "es/how-mintlify-works"
+                  "es/how-mintlify-works",
+                  "es/glossary"
                 ]
               }
             ]
@@ -2534,7 +2535,8 @@
               {
                 "group": "Démarrage",
                 "pages": [
-                  "fr/how-mintlify-works"
+                  "fr/how-mintlify-works",
+                  "fr/glossary"
                 ]
               }
             ]

@@ -1,0 +1,26 @@
+---
+title: "Glosario"
+description: "Definiciones de términos comunes utilizados a lo largo de la documentación."
+---
+
+Este glosario define los términos que encontrarás en la documentación.
+
+## docs.json
+
+El archivo de configuración central ubicado en la raíz de tu proyecto. Controla los metadatos del sitio, el tema, la estructura de navegación, los idiomas, los anclajes y la configuración global. Cada página referenciada en la documentación debe aparecer en `docs.json` para incluirse en la navegación. Consulta [Configuración](/essentials/settings) y [Navegación](/essentials/navigation).
+
+## MDX
+
+El formato de archivo utilizado por todas las páginas de este sitio. MDX combina Markdown con JSX, lo que te permite mezclar texto con componentes como `<AccordionGroup>`, `<Card>` y `<CodeGroup>`. Cada archivo MDX empieza con un frontmatter YAML (como `title` y `description`) que genera el encabezado y los metadatos de la página. Consulta [Sintaxis de Markdown](/essentials/markdown).
+
+## Frontmatter
+
+El bloque YAML delimitado por `---` al inicio de cada archivo MDX. Define los metadatos a nivel de página —normalmente `title`, `description` y campos opcionales como `icon` o `sidebarTitle`— que Mintlify utiliza para renderizar el encabezado de la página, las etiquetas SEO y las etiquetas de navegación.
+
+## Grupo de navegación
+
+Una colección de páginas relacionadas que aparecen juntas en la barra lateral. Los grupos se declaran en `docs.json` dentro de una `tab` y contienen un nombre `group` más una lista ordenada de `pages`. Reordenar las páginas de un grupo cambia su orden en la barra lateral. Consulta [Navegación](/essentials/navigation).
+
+## Snippet
+
+Un fragmento MDX reutilizable almacenado en el directorio `snippets/`. Los snippets te permiten escribir contenido una vez e importarlo en varias páginas, manteniendo coherentes las secciones compartidas (como pasos de instalación o avisos) en toda la documentación. Consulta [Snippets reutilizables](/essentials/reusable-snippets).

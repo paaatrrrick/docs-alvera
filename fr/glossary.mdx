@@ -1,0 +1,26 @@
+---
+title: "Glossaire"
+description: "Définitions des termes courants utilisés dans toute la documentation."
+---
+
+Ce glossaire définit les termes que vous rencontrerez dans la documentation.
+
+## docs.json
+
+Le fichier de configuration central situé à la racine de votre projet. Il contrôle les métadonnées du site, le thème, la structure de navigation, les langues, les ancres et les paramètres globaux. Chaque page référencée dans la documentation doit figurer dans `docs.json` pour être incluse dans la navigation. Voir [Paramètres](/essentials/settings) et [Navigation](/essentials/navigation).
+
+## MDX
+
+Le format de fichier utilisé par toutes les pages de ce site. MDX combine Markdown et JSX, ce qui vous permet de mêler du texte à des composants tels que `<AccordionGroup>`, `<Card>` et `<CodeGroup>`. Chaque fichier MDX commence par un frontmatter YAML (comme `title` et `description`) qui alimente l'en-tête de la page et ses métadonnées. Voir [Syntaxe Markdown](/essentials/markdown).
+
+## Frontmatter
+
+Le bloc YAML délimité par `---` en haut de chaque fichier MDX. Il définit les métadonnées au niveau de la page — généralement `title`, `description` et des champs optionnels comme `icon` ou `sidebarTitle` — que Mintlify utilise pour rendre l'en-tête de la page, les balises SEO et les libellés de navigation.
+
+## Groupe de navigation
+
+Un ensemble de pages liées qui apparaissent ensemble dans la barre latérale. Les groupes sont déclarés dans `docs.json` sous un `tab` et contiennent un nom de `group` ainsi qu'une liste ordonnée de `pages`. Réorganiser les pages d'un groupe modifie leur ordre dans la barre latérale. Voir [Navigation](/essentials/navigation).
+
+## Snippet
+
+Un fragment MDX réutilisable stocké dans le répertoire `snippets/`. Les snippets vous permettent d'écrire du contenu une seule fois et de l'importer dans plusieurs pages, en maintenant la cohérence des sections partagées (comme les étapes d'installation ou les encadrés) dans toute la documentation. Voir [Snippets réutilisables](/essentials/reusable-snippets).
