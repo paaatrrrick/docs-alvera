@@ -1,0 +1,26 @@
+---
+title: "Glossary"
+description: "Definitions for common terms used throughout the documentation."
+---
+
+This glossary defines terms you'll encounter across the docs.
+
+## docs.json
+
+The central configuration file at the root of your project. It controls site metadata, theme, navigation structure, languages, anchors, and global settings. Every page referenced in the documentation must appear in `docs.json` to be included in navigation. See [Settings](/essentials/settings) and [Navigation](/essentials/navigation).
+
+## MDX
+
+The file format used for every page in this site. MDX combines Markdown with JSX, letting you mix prose with components like `<AccordionGroup>`, `<Card>`, and `<CodeGroup>`. Each MDX file begins with YAML frontmatter (such as `title` and `description`) that powers the page header and metadata. See [Markdown syntax](/essentials/markdown).
+
+## Frontmatter
+
+The YAML block fenced by `---` at the top of every MDX file. It defines page-level metadata — typically `title`, `description`, and optional fields like `icon` or `sidebarTitle` — that Mintlify uses to render the page header, SEO tags, and navigation labels.
+
+## Navigation group
+
+A collection of related pages that appear together in the sidebar. Groups are declared in `docs.json` under a `tab` and contain a `group` name plus an ordered list of `pages`. Reordering pages in a group changes their order in the sidebar. See [Navigation](/essentials/navigation).
+
+## Snippet
+
+A reusable MDX fragment stored in the `snippets/` directory. Snippets let you write content once and import it into multiple pages, keeping shared sections (like install steps or callouts) consistent across the docs. See [Reusable snippets](/essentials/reusable-snippets).
