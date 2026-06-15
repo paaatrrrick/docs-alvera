@@ -1,0 +1,74 @@
+---
+title: "Colophon page"
+description: "How the personal website's /colophon page is structured — the sections it renders, the data shape behind them, and the route that exposes it."
+---
+
+## Overview
+
+The colophon page is a short note on how the personal website is put together — the tools, the hosting, and the principles behind it. It lives at [`/colophon`](https://patrickfoster.dev/colophon) and is rendered by the `Colophon` component in `src/components/Colophon.js`.
+
+## What changed
+
+A new `Colophon` route and component were added:
+
+- **Route:** `/colophon`, registered in `src/App.js`.
+- **Component:** `src/components/Colophon.js`.
+- **Styles:** `src/components/colophon.css`.
+
+The page displays a header (back link, title, "Last updated" date, intro) followed by a list of sections rendered from a local `sections` array.
+
+## Page structure
+
+The component renders three sections out of the box, each backed by a `{ heading, items }` object:
+
+<Card title="Built with" icon="hammer">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+## Editing the page
+
+To change what the colophon says, edit the constants at the top of `src/components/Colophon.js`:
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+  {
+    heading: 'Built with',
+    items: [
+      'React, bootstrapped with Create React App.',
+      // ...
+    ],
+  },
+  // ...
+];
+```
+
+- Bump `updatedAt` whenever the content changes — it powers the "Last updated" line under the title.
+- Add, remove, or reorder entries in `sections` to change the rendered sections. Each section needs a unique `heading` (used as the React key) and a list of `items` strings.
+- Tweak layout and typography in `src/components/colophon.css`.
+
+## Related routes
+
+The colophon joins the other small "about me" routes registered in `src/App.js`:
+
+| Path            | Component       |
+| --------------- | --------------- |
+| `/now`          | `Now`           |
+| `/uses`         | `Uses`          |
+| `/reading-list` | `ReadingList`   |
+| `/talks`        | `Talks`         |
+| `/colophon`     | `Colophon`      |
