@@ -1,0 +1,26 @@
+---
+title: "Glosario"
+description: "Definiciones de términos comunes utilizados en la documentación."
+---
+
+Este glosario define los términos clave que encontrarás en la documentación.
+
+## MDX
+
+Un formato de archivo que combina Markdown con JSX, lo que te permite incrustar componentes como `<Card>` y `<Columns>` directamente dentro del contenido Markdown. Todas las páginas de documentación de este proyecto se escriben como archivos `.mdx`. Consulta [Sintaxis de Markdown](/essentials/markdown) para conocer las funciones compatibles.
+
+## Frontmatter
+
+El bloque YAML al principio de cada página MDX, delimitado por `---`, que define metadatos a nivel de página como `title` y `description`. Mintlify utiliza el frontmatter para renderizar los encabezados de página, completar la búsqueda y controlar el comportamiento de SEO.
+
+## Navegación
+
+La estructura definida en `docs.json` que controla cómo se agrupan las páginas en pestañas, grupos y anclas en la barra lateral. Actualizar la navegación es la forma de añadir una nueva página al sitio. Consulta [Navegación](/essentials/navigation) para ver los detalles de configuración.
+
+## Snippet
+
+Una pieza reutilizable de contenido MDX almacenada en el directorio `snippets/` e importada en múltiples páginas. Los snippets te permiten escribir el contenido una vez y mantenerlo sincronizado en todos los lugares donde aparece. Consulta [Snippets reutilizables](/essentials/reusable-snippets).
+
+## Referencia de API
+
+Un conjunto de páginas, normalmente generadas a partir de una especificación OpenAPI, que documenta los endpoints, parámetros y respuestas de una API. En este proyecto, las páginas de referencia de API se encuentran en `api-reference/`. Consulta [Documentación de API](/api-reference/introduction).
