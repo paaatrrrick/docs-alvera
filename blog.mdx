@@ -1,0 +1,86 @@
+---
+title: "Blog: articles system and recent posts"
+description: "How the personal website's blog is structured — where articles are registered, how /blog and /blog/<slug> resolve, and how to add a new post."
+---
+
+## Overview
+
+The personal website ships a small blog. Posts are written as JSX content modules, registered in a central articles index, listed on `/blog`, and resolved by slug at `/blog/<slug>`.
+
+This page documents how the system fits together and which articles have shipped.
+
+## How it works
+
+The blog has three moving pieces:
+
+- **Article modules** — one file per post under `src/constants/articles/`. Each module exports `{ title, date, content }`, where `content` is a JSX `<main>` block containing the headline, date, and body.
+- **Articles index** — `src/constants/articles.js` imports every article module and exposes two things: an `articles` array used to render the listing page, and a `getArticle(id)` lookup used by the post page.
+- **Routes** — `/blog` renders the listing from the `articles` array, and `/blog/:id` resolves the post body through `getArticle(id)`. The `id` in the URL is the post's slug.
+
+## Entry schema
+
+Each entry registered in the articles index has the following fields:
+
+| Field     | Type   | Required | Description                                                       |
+| --------- | ------ | -------- | ----------------------------------------------------------------- |
+| `title`   | string | Yes      | Post headline shown on `/blog` and at the top of the post.        |
+| `date`    | string | Yes      | Human-readable publish date (for example, `February 2026`).       |
+| `id`      | string | Yes      | URL slug. The post resolves at `/blog/<id>`.                      |
+
+The `content` JSX block lives on the article module itself and is looked up by `id`, so it is not part of the listing entry.
+
+## Adding a new article
+
+Prerequisites: a title, a publish date string, a URL slug, and the body of the post.
+
+1. Create a new module under `src/constants/articles/` that exports `{ title, date, content }`. Author `content` as a JSX `<main>` block with an `<h1>`, a `<date>`, and the body (`<h2>`, `<p>`, `<ul>`, and so on).
+2. Open `src/constants/articles.js` and:
+   - Import the new module.
+   - Append an entry to the `articles` array with `title`, `date`, and the slug as `id`.
+   - Add the slug → `content` mapping to `idsAndArticles` so `getArticle(id)` can resolve it.
+3. The post is now listed on `/blog` and reachable at `/blog/<slug>`. No route changes are needed.
+
+```js src/constants/articles.js
+import newPost from './articles/newPost';
+
+const articles = [
+    // ...existing entries
+    { title: newPost.title, date: newPost.date, id: 'new-post' },
+];
+
+const idsAndArticles = {
+    // ...existing entries
+    'new-post': newPost.content,
+}
+```
+
+<Tip>
+Pick slugs that are short, lowercase, and hyphenated. The slug is the only identifier — renaming it later breaks any links to the post.
+</Tip>
+
+## Articles that have shipped
+
+<Card title="How I actually ship side projects" icon="rocket" href="/blog/side-projects">
+  Three rules for getting a side project past the "auth flow works but no one has touched it" stage. Published February 2026.
+
+  **Slug:** `side-projects` · **URL:** `/blog/side-projects`
+</Card>
+
+<Card title="What AI dev tools actually changed about my workflow" icon="microchip-ai" href="/blog/ai-dev-tools">
+  What two years of daily AI-assisted coding genuinely changed — and what stayed exactly the same. Published March 2026.
+
+  **Slug:** `ai-dev-tools` · **URL:** `/blog/ai-dev-tools`
+</Card>
+
+<Card title="Annual review: 2025" icon="calendar" href="/blog/annual-review-2025">
+  A look back at 2025 — what went well, what didn't, and what the themes actually turned out to be. Published January 2026.
+
+  **Slug:** `annual-review-2025` · **URL:** `/blog/annual-review-2025`
+</Card>
+
+## Writing posts
+
+- Lead with a short framing paragraph before the first `<h2>`.
+- Use `<h2>` for section headers; reserve `<h1>` for the post title at the top.
+- Keep sections scannable — short paragraphs, lists where they help.
+- Match the tone of the existing posts: direct, first-person, specific.
