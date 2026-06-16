@@ -1,0 +1,26 @@
+---
+title: "Glossaire des termes de documentation"
+description: "Définitions des termes courants de la documentation, notamment MDX, frontmatter, navigation, snippets et pages de référence API."
+---
+
+Ce glossaire définit les termes que vous rencontrerez dans la documentation.
+
+## MDX
+
+Un format de fichier qui étend Markdown avec JSX et vous permet d'intégrer des composants de style React directement dans votre contenu. Les pages Mintlify utilisent l'extension `.mdx` afin que vous puissiez mélanger du texte avec des éléments interactifs comme `<Card>` et `<Columns>`.
+
+## Frontmatter
+
+Le bloc YAML en haut d'un fichier MDX, délimité par `---`. Il définit les métadonnées de la page comme `title` et `description`, que Mintlify utilise pour afficher l'en-tête de la page et alimenter les résultats de recherche.
+
+## Navigation
+
+La structure définie dans `docs.json` qui contrôle la façon dont les pages sont regroupées en onglets, groupes et entrées de la barre latérale. Mettre à jour le champ `navigation` est la façon d'ajouter, de supprimer ou de réorganiser les pages dans la barre latérale de votre site.
+
+## Snippet
+
+Un morceau de MDX réutilisable stocké dans le répertoire `snippets/` qui peut être importé dans plusieurs pages. Les snippets gardent le contenu partagé — comme les étapes de configuration ou les avis — cohérent dans toute la documentation.
+
+## Référence API
+
+Un onglet dédié généré à partir d'une spécification OpenAPI ou de pages d'endpoints individuelles sous `api-reference/`. Il documente les paramètres, les corps de requête et les réponses de chaque endpoint, et propose un terrain de jeu interactif pour tester les appels.

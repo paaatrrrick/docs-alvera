@@ -1,0 +1,26 @@
+---
+title: "Glosario de términos de documentación"
+description: "Definiciones de términos comunes en la documentación, incluidos MDX, frontmatter, navegación, fragmentos y páginas de referencia de API."
+---
+
+Este glosario define los términos que encontrarás en la documentación.
+
+## MDX
+
+Un formato de archivo que amplía Markdown con JSX y te permite incrustar componentes de estilo React directamente en el contenido. Las páginas de Mintlify usan la extensión `.mdx` para que puedas combinar texto con elementos interactivos como `<Card>` y `<Columns>`.
+
+## Frontmatter
+
+El bloque YAML al inicio de un archivo MDX, delimitado por `---`. Define metadatos a nivel de página como `title` y `description`, que Mintlify usa para renderizar el encabezado de la página y poblar los resultados de búsqueda.
+
+## Navegación
+
+La estructura definida en `docs.json` que controla cómo se agrupan las páginas en pestañas, grupos y entradas de la barra lateral. Actualizar el campo `navigation` es la forma de añadir, eliminar o reordenar páginas en la barra lateral de tu sitio.
+
+## Fragmento
+
+Un fragmento reutilizable de MDX almacenado en el directorio `snippets/` que puedes importar en varias páginas. Los fragmentos mantienen el contenido compartido —como pasos de configuración o avisos— coherente en toda la documentación.
+
+## Referencia de API
+
+Una pestaña dedicada generada a partir de una especificación OpenAPI o de páginas de endpoints individuales en `api-reference/`. Documenta los parámetros, cuerpos de solicitud y respuestas de cada endpoint, y admite un entorno interactivo para probar las llamadas.
