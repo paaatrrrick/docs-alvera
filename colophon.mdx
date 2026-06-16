@@ -1,0 +1,49 @@
+---
+title: "Colophon page: how the site is built"
+description: "What the /colophon route on the personal website covers — the stack, hosting, and the principles the site is built around."
+---
+
+## Overview
+
+The personal website includes a static `/colophon` route that describes how the site is put together. It follows the same pattern as the existing `/now` and `/uses` pages: a standalone React component (`src/components/Colophon.js`) paired with its own stylesheet (`src/components/colophon.css`), wired into `src/App.js` as a new route.
+
+The page is meant to be a short, honest note for visitors who want to know what the site runs on and what principles it follows.
+
+## What changed
+
+A new `Colophon` component was added and registered as a route in `App.js`. Visitors can now navigate to `/colophon` to see:
+
+- The stack the site is built with.
+- Where it is hosted and how the domain is managed.
+- A short list of principles the site tries to hold to.
+
+The page header includes a "Back home" link and a "Last updated" timestamp (currently **June 2026**).
+
+## Page contents
+
+<Card title="Built with" icon="code">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+## Updating the page
+
+The content is defined inline in `src/components/Colophon.js` as a `sections` array of `{ heading, items }` objects. To change what the page says:
+
+1. Edit the relevant section's `items` array in `Colophon.js`.
+2. Bump the `updatedAt` constant at the top of the file when the content meaningfully changes.
+3. Adjust styling in `src/components/colophon.css` if needed.
+
+No route changes are required as long as the file path stays the same.
