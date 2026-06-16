@@ -1,0 +1,179 @@
+---
+title: "Pages autonomes : now, liste de lecture, talks et colophon"
+description: "Comment les routes autonomes du site personnel (/now, /reading-list, /talks, /colophon) sont structurées et où modifier le contenu sous-jacent de chacune."
+---
+
+## Vue d'ensemble
+
+Le site personnel embarque quatre routes autonomes qui cohabitent avec la page d'accueil. Chacune est son propre composant React avec un modèle de contenu réduit et autonome — soit un tableau inline dans le composant, soit un fichier de constantes dans `src/constants/`. Elles partagent le même public (les visiteurs qui parcourent la surface indie web du site) et le même schéma de maintenance : tu modifies les données, tu pousses sur `master`, le site se redéploie.
+
+| Route           | Ce que c'est                                                                                       | Modifier                                        |
+| --------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `/now`          | Un instantané de ce sur quoi tu te concentres, dans la [convention /now de Derek Sivers](https://nownownow.com/about). | `src/components/Now.js`                         |
+| `/reading-list` | Des livres avec un filtre par statut : **All**, **In progress**, **Finished**, **Re-reading**.     | `src/constants/reading.js`                      |
+| `/talks`        | Des talks donnés en meetup ou en conférence, avec des liens optionnels vers les slides ou les enregistrements. | `src/constants/talks.js`                        |
+| `/colophon`     | Une courte note sur la façon dont le site est construit — stack, hébergement et quelques principes. | `src/components/Colophon.js`                    |
+
+## /now
+
+Un instantané de ce que tu dirais à un ami s'il te demandait ce que tu fais en ce moment. Découpé en quelques sections (par exemple **Working on**, **Learning**, **Outside of work**), chacune avec une courte liste à puces. Une date `Last updated` figure sous le titre pour qu'on voie immédiatement quand la page a été mise à jour pour la dernière fois.
+
+### Quand la mettre à jour
+
+Rafraîchis `/now` dès que l'instantané n'est plus vrai — environ une fois par mois est un bon rythme. Si tu n'y as pas touché depuis trois mois, l'horodatage fait plus de mal que le contenu n'apporte de bien.
+
+### Comment la mettre à jour
+
+Ouvre `src/components/Now.js` et modifie la chaîne `updatedAt` ainsi que le tableau `sections`. Chaque section est un objet `{ heading, items }` ; `items` est un tableau de chaînes.
+
+```js src/components/Now.js
+const updatedAt = 'May 2026';
+
+const sections = [
+    {
+        heading: 'Working on',
+        items: [
+            'Shipping AI-assisted editing features at Mintlify.',
+            'Writing a short essay series on what one year of agent-driven dev tooling actually changed.',
+        ],
+    },
+    {
+        heading: 'Learning',
+        items: [
+            'Reading Designing Data-Intensive Applications, again, this time slower.',
+            'Picking up enough Rust to be useful in a code review.',
+        ],
+    },
+    // ...add or remove sections here
+];
+```
+
+<Tip>
+  Garde des puces courtes et précises. La page doit se lire comme une mise à jour de statut, pas comme un CV.
+</Tip>
+
+## /reading-list
+
+Une liste de livres avec un `status` par livre, pour que les visiteurs puissent filtrer sur ce que tu lis en ce moment, sur ce que tu as terminé, ou sur ce que tu relis régulièrement. La barre de filtres en haut de la page expose quatre boutons : **All**, **In progress**, **Finished**, **Re-reading**.
+
+### Schéma d'une entrée
+
+Chaque entrée dans `src/constants/reading.js` prend en charge les champs suivants :
+
+| Champ    | Type   | Obligatoire | Description                                                                                  |
+| -------- | ------ | ----------- | -------------------------------------------------------------------------------------------- |
+| `title`  | string | Oui         | Titre du livre affiché en en-tête d'entrée.                                                  |
+| `author` | string | Oui         | Auteur ou autrices.                                                                          |
+| `status` | string | Oui         | L'une des valeurs `In progress`, `Finished` ou `Re-reading`. Pilote le filtre et la pastille de statut. |
+| `note`   | string | Non         | Ton avis en une ligne sur le livre. Évite les résumés génériques — dis ce qui t'a marqué.    |
+
+<Warning>
+  Les boutons de filtre comparent les chaînes `status` à l'identique, casse et espaces compris. Si tu ajoutes une nouvelle valeur de statut, ajoute-la aussi au tableau `STATUSES` dans `src/components/ReadingList.js`, sinon la nouvelle valeur ne sera pas filtrable.
+</Warning>
+
+### Comment la mettre à jour
+
+Ouvre `src/constants/reading.js` et ajoute, modifie ou supprime des entrées. L'ordre dans le fichier est l'ordre sur la page.
+
+```js src/constants/reading.js
+const reading = [
+    {
+        title: 'Designing Data-Intensive Applications',
+        author: 'Martin Kleppmann',
+        status: 'Re-reading',
+        note: 'The reference for anyone shipping anything stateful at non-trivial scale.',
+    },
+    {
+        title: 'Working in Public',
+        author: 'Nadia Eghbal',
+        status: 'In progress',
+        note: 'Reframes how to think about open source maintainership.',
+    },
+    // ...more books
+];
+
+export default reading;
+```
+
+## /talks
+
+Une liste de talks donnés en meetup ou en conférence. Chaque entrée affiche le lieu, la date, le titre et un court résumé, avec un lien optionnel vers les slides ou un enregistrement.
+
+### Schéma d'une entrée
+
+Chaque entrée dans `src/constants/talks.js` prend en charge les champs suivants :
+
+| Champ     | Type   | Obligatoire | Description                                                                  |
+| --------- | ------ | ----------- | ---------------------------------------------------------------------------- |
+| `title`   | string | Oui         | Titre du talk.                                                               |
+| `venue`   | string | Oui         | Nom du meetup, de la conférence ou de l'événement.                           |
+| `date`    | string | Oui         | Date en format lisible, par exemple `November 2025`.                         |
+| `summary` | string | Oui         | Description en une ou deux phrases de ce que le talk a couvert.              |
+| `link`    | string | Non         | URL des slides ou d'un enregistrement. Quand il est présent, le titre devient un lien. |
+
+### Comment la mettre à jour
+
+Ouvre `src/constants/talks.js` et ajoute le nouveau talk en tête du tableau pour que le plus récent apparaisse en premier.
+
+```js src/constants/talks.js
+const talks = [
+    {
+        title: 'Documentation is a product surface',
+        venue: 'Write the Docs SF',
+        date: 'November 2025',
+        summary: 'Why developer docs should be treated as a first-class product surface, not a marketing afterthought.',
+        link: 'https://www.youtube.com/watch?v=example-talk-1',
+    },
+    // ...more talks
+];
+
+export default talks;
+```
+
+<Tip>
+  Omets le champ `link` pour les talks dont aucun enregistrement ni aucune slide ne sont publics pour l'instant. Le titre s'affichera en texte brut et tu pourras déposer le lien plus tard.
+</Tip>
+
+## /colophon
+
+Une courte note sur la façon dont le site est construit — la stack, son hébergement et la poignée de principes qui le maintiennent honnête. Découpée en sections (par exemple **Built with**, **Hosted on**, **Principles**) avec une date `Last updated` en haut.
+
+### Quand la mettre à jour
+
+Touche à `/colophon` chaque fois que la stack sous-jacente ou l'hébergement changent (par exemple, un changement d'hébergeur, l'ajout d'une étape de build ou une modification de la politique d'analytics). Le reste du temps, elle bouge peu.
+
+### Comment la mettre à jour
+
+Ouvre `src/components/Colophon.js` et modifie la chaîne `updatedAt` ainsi que le tableau `sections`. La structure reprend celle de `/now`.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    // ...add or remove sections here
+];
+```
+
+## Conventions partagées
+
+Les quatre pages suivent le même petit ensemble de conventions pour rester faciles à maintenir :
+
+- **Lien de retour.** Chaque page affiche en haut un lien `← Back home` vers `/`, pour que les visiteurs arrivés en profondeur puissent revenir sans utiliser le bouton précédent du navigateur.
+- **CSS simple par page.** Les styles vivent dans une feuille de styles voisine (par exemple `now.css`, `talks.css`) — pas de design system partagé à apprendre.
+- **Le contenu est une donnée.** Le contenu de la page vit soit dans une `const` au niveau supérieur du composant (`/now`, `/colophon`), soit dans un fichier de constantes sous `src/constants/` (`/reading-list`, `/talks`). Modifier le texte ne demande jamais de toucher au JSX.
+- **Routage.** Chaque page est enregistrée comme une route dans `src/App.js`. Si tu ajoutes une nouvelle page autonome, reprends le modèle qui s'y trouve déjà.
