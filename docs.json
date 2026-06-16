@@ -2530,6 +2530,12 @@
                 ]
               },
               {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog/overview"
+                ]
+              },
+              {
                 "group": "Sitio personal",
                 "pages": [
                   "es/work-experience",
@@ -5024,6 +5030,12 @@
                   "fr/quickstart",
                   "fr/development",
                   "fr/how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog/overview"
                 ]
               },
               {
