@@ -1,0 +1,63 @@
+---
+title: "Testimonials section: structure and updates"
+description: "How the 'What people say' section on the home page is configured from the testimonials array, and how to add or edit quotes."
+---
+
+## Overview
+
+The testimonials section displays a grid of short quotes from colleagues under the heading **What people say**. It appears near the bottom of the home page, after the work experience and projects lists and before the contact form and footer.
+
+Each card is rendered from an entry in the `testimonials` array and shows a quote, the speaker's name, and their role. Use this section to surface social proof from people who have worked with you closely.
+
+## What changed
+
+The home page now includes a `Testimonials` component that pulls quotes from the `testimonials` array in `src/constants/testimonials.js`. The list initially launched with three quotes (from an engineering manager at Mintlify, a founding PM at PostHog, and a staff engineer at Supabase) and was extended with two more (a CTO at Vercel and a tech lead at Linear) for a total of five quotes on the live site.
+
+## Entry schema
+
+Each entry in the `testimonials` array supports the following fields:
+
+| Field   | Type   | Required | Description                                                                        |
+| ------- | ------ | -------- | ---------------------------------------------------------------------------------- |
+| `quote` | string | Yes      | The testimonial text. Rendered with smart quotes around it; do not add your own.   |
+| `name`  | string | Yes      | The speaker's full name. Also used as the React key, so it must be unique.         |
+| `role`  | string | Yes      | The speaker's title and company, shown beneath their name.                         |
+
+## Adding a new testimonial
+
+Open `src/constants/testimonials.js` and add a new object to the `testimonials` array. Entries render in array order, left-to-right and top-to-bottom in the grid.
+
+```js src/constants/testimonials.js
+const testimonials = [
+    {
+        quote: `Patrick has this rare combination of moving fast and actually caring whether what he ships works. He'd close three issues in the time it took the rest of us to debate one.`,
+        name: 'Jordan Lee',
+        role: 'Engineering Manager, Mintlify',
+    },
+    {
+        quote: `He treats every feature like it's a product. You can hand him a half-spec'd idea and get back something a customer would actually pay for.`,
+        name: 'Mara Chen',
+        role: 'Founding PM, PostHog',
+    },
+    // ...existing entries
+];
+
+export default testimonials;
+```
+
+<Tip>
+Keep `name` values unique. The component uses `name` as the React key when iterating, so duplicates will trigger a warning and may cause rendering glitches.
+</Tip>
+
+## Writing good testimonials
+
+Use the `quote` field to capture a specific, memorable observation rather than a generic compliment.
+
+- Lead with the trait that makes the person distinct.
+- Keep each quote to one to three sentences so the grid stays scannable.
+- Prefer concrete language ("closed three issues in the time it took us to debate one") over abstractions ("great engineer").
+- Get explicit permission from the person before publishing their name and role.
+
+## When to update this list
+
+Add a new testimonial whenever a colleague offers feedback you would like to highlight. Refresh `role` values when a contributor changes companies so the section stays current.

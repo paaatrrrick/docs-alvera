@@ -30,6 +30,9 @@
                 "group": "Personal website",
                 "pages": [
                   "work-experience",
+                  "testimonials",
+                  "contact-form",
+                  "site-footer",
                   "game-of-thrones",
                   "latest-email"
                 ]

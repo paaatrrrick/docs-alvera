@@ -1,0 +1,49 @@
+---
+title: "Contact form section: behavior and configuration"
+description: "How the 'Get in touch' contact form on the home page validates input and hands off to the visitor's mail client via mailto."
+---
+
+## Overview
+
+The contact form section displays a **Get in touch** heading and a three-field form (Name, Email, Message) on the home page. It sits between the testimonials grid and the footer.
+
+The form does not post to a server. When the visitor submits, the `Contact` component validates that all three fields are non-empty, encodes them into a `mailto:` URL, and navigates the browser to that URL — which opens the visitor's configured mail client with the subject and body pre-filled.
+
+Use this section when you want a low-friction "email me" call to action without setting up a backend or a third-party form service.
+
+## How it works
+
+The component is rendered from `src/components/Contact.js` and lives at the bottom of the home page. On submit:
+
+1. The form prevents the default browser submit.
+2. It trims each field. If `name`, `email`, or `message` is empty, the form sets its status to `error` and shows "Please fill in all three fields." No mail client is opened.
+3. Otherwise it builds a `mailto:` URL with `subject` set to `Hello from {name}` and `body` set to the message followed by a signature line of the form `— {name} ({email})`, both URL-encoded.
+4. It navigates the window to that URL via `window.location.href`, then sets its status to `sent` and shows "Opening your mail app…".
+
+Because the handoff is `mailto:`, there is no server round-trip and no rate limiting. Whether the message is actually sent depends entirely on the visitor having a working mail client configured for `mailto:` links.
+
+## Configuration
+
+The recipient address is hard-coded in `src/components/Contact.js`:
+
+```js src/components/Contact.js
+window.location.href = `mailto:patrick@example.com?subject=${subject}&body=${body}`;
+```
+
+To change the destination address, edit that string. The rest of the form (labels, placeholders, validation rules) is also defined inline in the same component — there is no separate constants file for this section.
+
+### Adjusting validation
+
+The current rule is "all three fields must be non-empty after `.trim()`". To add stricter checks (for example, requiring a valid email format), extend the guard in the `onSubmit` handler before the `mailto:` URL is built. Keep the early `setStatus('error')` return so the mail client does not open with invalid data.
+
+### Adjusting the subject or body
+
+The subject line and body template are also built inside `onSubmit`. Both values are wrapped in `encodeURIComponent`, so newlines and special characters in the message survive the trip into the mail client.
+
+## When to use this section
+
+Keep the contact form when you want visitors to be able to start a draft email without leaving the page or copying an address by hand. Replace it with a different component if you need:
+
+- Server-side delivery (for example, to capture submissions even when the visitor has no mail client).
+- Spam protection beyond what their mail client provides.
+- Attachments or rich-text input — `mailto:` does not support either reliably.

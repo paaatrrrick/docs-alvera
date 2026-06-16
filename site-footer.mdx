@@ -1,0 +1,76 @@
+---
+title: "Site footer: structure and updates"
+description: "How the three-column site footer on the home page is laid out, what each column contains, and how to edit the bio, in-site links, and external profiles."
+---
+
+## Overview
+
+The site footer is the last section of the home page. It renders below the contact form and provides a short bio, a list of in-site navigation links, and a list of external profile links, followed by a copyright line with the current year.
+
+The footer is rendered from `src/components/Footer.js` and is composed of three columns wrapped in `<footer className="siteFooter">`.
+
+## Layout
+
+The footer is split into three columns inside `siteFooterInner`, with a copyright line beneath them.
+
+| Column         | Heading          | Content                                                                                          |
+| -------------- | ---------------- | ------------------------------------------------------------------------------------------------ |
+| Bio            | `Patrick Foster` | One-sentence bio describing role and location.                                                   |
+| In-site nav    | `Site`           | `react-router-dom` `<Link>` entries for Home, Blog, Timeline, Uses, Now, and Reading list.       |
+| External links | `Elsewhere`      | Anchor tags for GitHub, LinkedIn, and an email `mailto:` link. External links open in a new tab. |
+
+The copyright line at the bottom reads `© {year} Patrick Foster. Built with React.`, where `{year}` is computed at render time with `new Date().getFullYear()` so it always reflects the current year without manual updates.
+
+## Editing the footer
+
+All content is defined inline in `src/components/Footer.js` — there is no separate constants file for the footer.
+
+### Updating the bio
+
+Edit the `<p>` inside the first `siteFooterCol`. Keep it to a single sentence so the column heights stay roughly balanced.
+
+```jsx src/components/Footer.js
+<div className="siteFooterCol">
+    <h4>Patrick Foster</h4>
+    <p>Software engineer in San Francisco. Building developer tools at Mintlify.</p>
+</div>
+```
+
+### Adding or removing in-site links
+
+Add or remove `<li>` entries in the **Site** column. Use `react-router-dom`'s `<Link>` for in-site routes so navigation stays client-side.
+
+```jsx src/components/Footer.js
+<ul>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/blog">Blog</Link></li>
+    <li><Link to="/timeline">Timeline</Link></li>
+    {/* ...add new in-site link here */}
+</ul>
+```
+
+Make sure the route already exists in the app's router before adding it to the footer.
+
+### Adding or removing external profiles
+
+Add or remove `<li>` entries in the **Elsewhere** column. Use a plain `<a>` tag and include `target="_blank"` and `rel="noreferrer"` so the link opens in a new tab safely.
+
+```jsx src/components/Footer.js
+<ul>
+    <li><a href="https://github.com/paaatrrrick" target="_blank" rel="noreferrer">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/patrickrfoster" target="_blank" rel="noreferrer">LinkedIn</a></li>
+    <li><a href="mailto:patrick.123.foster@gmail.com">Email</a></li>
+</ul>
+```
+
+For email, use a `mailto:` link without `target="_blank"` so the user's mail client takes over normally.
+
+<Tip>
+The copyright year does not need to be edited each January — it is derived from `new Date().getFullYear()` on every render.
+</Tip>
+
+## When to update the footer
+
+- Update the bio when your role, location, or current focus changes.
+- Update the **Site** column when you add or retire a top-level route.
+- Update the **Elsewhere** column when you add or remove a profile you want to publicize. Remove abandoned profiles instead of leaving dead links.
