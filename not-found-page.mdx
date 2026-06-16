@@ -1,0 +1,85 @@
+---
+title: "404 Not Found page and routing"
+description: "How the personal website handles unknown URLs with a dedicated NotFound 404 page, and how to configure the React Router catch-all route."
+---
+
+## Overview
+
+The personal website now renders a dedicated **NotFound** component for any URL that doesn't match a defined route. Previously, unknown URLs silently redirected back to the home page, which made broken links and typos invisible to visitors.
+
+The new page returns a clear 404 message and offers three links back into the site so visitors don't hit a dead end.
+
+## What changed
+
+The catch-all route in `src/App.js` was replaced. The two greedy wildcard routes that rendered `Home` for any unmatched path were removed, and a single catch-all `Route` now renders the new `NotFound` component instead.
+
+| Before | After |
+| ------ | ----- |
+| Unknown URLs rendered the home page. | Unknown URLs render a dedicated 404 page. |
+| Two wildcard routes (`/*` and `*`) pointing at `Home`. | One unmatched `<Route component={NotFound} />` at the bottom of the `Switch`. |
+| Typos and stale links were invisible. | Visitors see a 404 message with links back into the site. |
+
+## What the NotFound page shows
+
+The page is intentionally short: a large `404` heading, a one-line message, and three navigation links.
+
+- **Go home** → `/`
+- **Read the blog** → `/blog`
+- **See the timeline** → `/timeline`
+
+These three destinations cover the most common reasons someone lands on the site, so a missing URL stays a soft landing instead of a hard stop.
+
+## Route configuration
+
+The catch-all must be the **last** `Route` inside the `Switch`, so every other defined path has a chance to match first.
+
+```jsx src/App.js
+import NotFound from "./components/NotFound";
+
+function App() {
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/blog' component={Blog} />
+        <Route exact path='/talks' component={Talks} />
+        <Route exact path='/magic-the-gathering' component={Haus} />
+        <Route exact path='/blog/:id' render={routeProps => <ViewBlog {...routeProps} />} />
+        {/* Must be last — matches anything not handled above */}
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+  );
+}
+```
+
+<Tip>
+Drop the `path` prop on the catch-all route. A `Route` without a `path` inside a `Switch` matches anything that reaches it.
+</Tip>
+
+## Adding a new route without breaking 404 handling
+
+When you add a new page, insert its `Route` **above** the `NotFound` catch-all. Anything placed below the catch-all is unreachable.
+
+```jsx src/App.js
+<Switch>
+  <Route exact path='/' component={Home} />
+  {/* new page goes here */}
+  <Route exact path='/projects' component={Projects} />
+  <Route component={NotFound} />
+</Switch>
+```
+
+## Customizing the page
+
+The component lives in `src/components/NotFound.js` and its styles in `src/components/notFound.css`. To change the copy or links, edit the `notFoundActions` block:
+
+```jsx src/components/NotFound.js
+<div className="notFoundActions">
+    <Link to="/" className="notFoundBtn primary">Go home</Link>
+    <Link to="/blog" className="notFoundBtn">Read the blog</Link>
+    <Link to="/timeline" className="notFoundBtn">See the timeline</Link>
+</div>
+```
+
+Keep the **primary** action pointing at a high-traffic destination (the home page is a safe default), and use the secondary buttons for sections you most want lost visitors to discover.

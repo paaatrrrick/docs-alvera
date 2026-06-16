@@ -1,0 +1,85 @@
+---
+title: "Página 404 Not Found y enrutamiento"
+description: "Cómo el sitio web personal gestiona URLs desconocidas con una página 404 NotFound dedicada y cómo configurar la ruta comodín en React Router."
+---
+
+## Resumen
+
+El sitio web personal ahora muestra un componente **NotFound** dedicado para cualquier URL que no coincida con una ruta definida. Antes, las URLs desconocidas redirigían silenciosamente a la página de inicio, lo que hacía invisibles los enlaces rotos y los errores tipográficos para los visitantes.
+
+La nueva página devuelve un mensaje 404 claro y ofrece tres enlaces de regreso al sitio para que los visitantes no lleguen a un callejón sin salida.
+
+## Qué cambió
+
+Se reemplazó la ruta comodín en `src/App.js`. Se eliminaron las dos rutas comodín codiciosas que mostraban `Home` para cualquier ruta no coincidente, y ahora una única ruta comodín renderiza el nuevo componente `NotFound` en su lugar.
+
+| Antes | Después |
+| ------ | ----- |
+| Las URLs desconocidas mostraban la página de inicio. | Las URLs desconocidas muestran una página 404 dedicada. |
+| Dos rutas comodín (`/*` y `*`) apuntando a `Home`. | Una `<Route component={NotFound} />` no coincidente al final del `Switch`. |
+| Los errores tipográficos y los enlaces obsoletos eran invisibles. | Los visitantes ven un mensaje 404 con enlaces de regreso al sitio. |
+
+## Qué muestra la página NotFound
+
+La página es intencionadamente breve: un encabezado `404` grande, un mensaje de una línea y tres enlaces de navegación.
+
+- **Ir al inicio** → `/`
+- **Leer el blog** → `/blog`
+- **Ver la cronología** → `/timeline`
+
+Estos tres destinos cubren las razones más comunes por las que alguien llega al sitio, por lo que una URL inexistente sigue siendo un aterrizaje suave en lugar de una parada brusca.
+
+## Configuración de la ruta
+
+La ruta comodín debe ser la **última** `Route` dentro del `Switch`, para que cada una de las demás rutas definidas tenga la oportunidad de coincidir primero.
+
+```jsx src/App.js
+import NotFound from "./components/NotFound";
+
+function App() {
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/blog' component={Blog} />
+        <Route exact path='/talks' component={Talks} />
+        <Route exact path='/magic-the-gathering' component={Haus} />
+        <Route exact path='/blog/:id' render={routeProps => <ViewBlog {...routeProps} />} />
+        {/* Must be last — matches anything not handled above */}
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+  );
+}
+```
+
+<Tip>
+Omite la prop `path` en la ruta comodín. Una `Route` sin `path` dentro de un `Switch` coincide con cualquier cosa que llegue hasta ella.
+</Tip>
+
+## Añadir una nueva ruta sin romper el manejo del 404
+
+Cuando agregues una nueva página, inserta su `Route` **encima** del comodín `NotFound`. Cualquier cosa colocada debajo del comodín queda inalcanzable.
+
+```jsx src/App.js
+<Switch>
+  <Route exact path='/' component={Home} />
+  {/* new page goes here */}
+  <Route exact path='/projects' component={Projects} />
+  <Route component={NotFound} />
+</Switch>
+```
+
+## Personalizar la página
+
+El componente vive en `src/components/NotFound.js` y sus estilos en `src/components/notFound.css`. Para cambiar el texto o los enlaces, edita el bloque `notFoundActions`:
+
+```jsx src/components/NotFound.js
+<div className="notFoundActions">
+    <Link to="/" className="notFoundBtn primary">Go home</Link>
+    <Link to="/blog" className="notFoundBtn">Read the blog</Link>
+    <Link to="/timeline" className="notFoundBtn">See the timeline</Link>
+</div>
+```
+
+Mantén la acción **primary** apuntando a un destino de mucho tráfico (la página de inicio es una opción segura por defecto) y usa los botones secundarios para las secciones que más quieras que los visitantes perdidos descubran.
