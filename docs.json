@@ -31,7 +31,8 @@
                 "pages": [
                   "work-experience",
                   "game-of-thrones",
-                  "latest-email"
+                  "latest-email",
+                  "changelog"
                 ]
               },
               {
@@ -2519,6 +2520,12 @@
                 "pages": [
                   "es/how-mintlify-works"
                 ]
+              },
+              {
+                "group": "Sitio personal",
+                "pages": [
+                  "es/changelog"
+                ]
               }
             ]
           }
@@ -2534,6 +2541,12 @@
                 "group": "Démarrage",
                 "pages": [
                   "fr/how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Site personnel",
+                "pages": [
+                  "fr/changelog"
                 ]
               }
             ]
