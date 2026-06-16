@@ -1,0 +1,26 @@
+---
+title: "Glossary"
+description: "Definitions for common terms used throughout the documentation."
+---
+
+This glossary defines terms you'll encounter across the docs.
+
+## MDX
+
+A file format that extends Markdown with JSX, letting you embed React-style components directly in your content. Mintlify pages use the `.mdx` extension so you can mix prose with interactive elements like `<Card>` and `<Columns>`.
+
+## Frontmatter
+
+The YAML block at the top of an MDX file, delimited by `---`. It sets page-level metadata such as `title` and `description`, which Mintlify uses to render the page header and populate search results.
+
+## Navigation
+
+The structure defined in `docs.json` that controls how pages are grouped into tabs, groups, and sidebar entries. Updating the `navigation` field is how you add, remove, or reorder pages in your site's sidebar.
+
+## Snippet
+
+A reusable piece of MDX stored in the `snippets/` directory that can be imported into multiple pages. Snippets keep shared content—like setup steps or notices—consistent across the docs.
+
+## API reference
+
+A dedicated tab generated from an OpenAPI specification or individual endpoint pages under `api-reference/`. It documents each endpoint's parameters, request bodies, and responses, and supports an interactive playground for testing calls.
