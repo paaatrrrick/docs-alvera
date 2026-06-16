@@ -1,0 +1,51 @@
+---
+title: "Página de colofón: cómo está construido el sitio"
+description: "Cómo está estructurada la página /colophon del sitio web personal, qué documenta y cómo actualizarla."
+---
+
+## Resumen
+
+El sitio web personal ahora incluye una página `/colophon`: una nota breve y honesta sobre cómo está construido el sitio. Enumera las herramientas, el alojamiento y el puñado de principios que mantienen el sitio ligero.
+
+La página se renderiza desde `src/components/Colophon.js` con estilos en `src/components/colophon.css`, y está conectada en `src/App.js` a la ruta `/colophon`.
+
+## Qué hay en la página
+
+El colofón se organiza como una cabecera más tres secciones, cada una alimentada por un pequeño array `sections` en `Colophon.js`.
+
+<Card title="Built with" icon="hammer">
+  - React, inicializado con Create React App.
+  - `react-router-dom` para el enrutamiento del lado del cliente.
+  - CSS plano, una hoja de estilos por página: sin framework, sin preprocesador.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, desplegado directamente desde la rama `master` en GitHub.
+  - Un dominio personalizado registrado a través de GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Sin analíticas, sin cookies, sin seguimiento. Solo páginas.
+  - Cada página debe cargar rápido y leerse bien en un móvil.
+  - El contenido vive en constantes JS planas para que sea fácil de editar.
+</Card>
+
+La cabecera también muestra una línea "Last updated" controlada por la constante `updatedAt` (actualmente `June 2026`) y un breve párrafo de introducción encima de las secciones. Un enlace "← Back home" regresa a `/`.
+
+## Cómo actualizarla
+
+Todo el contenido editable vive en la parte superior de `src/components/Colophon.js`:
+
+- **Actualizar la fecha:** incrementa la constante `updatedAt` cuando hagas un cambio significativo.
+- **Añadir o editar una sección:** añade un nuevo objeto al array `sections` con un `heading` y un array `items` de cadenas. Cada elemento se renderiza como una viñeta.
+- **Restilizar:** todas las reglas visuales viven en `src/components/colophon.css` (ancho máximo 720px, pila de fuentes del sistema, grises tenues para el texto meta).
+
+## Ruta
+
+La página está registrada en `src/App.js`:
+
+```js src/App.js
+<Route exact path='/colophon' component={Colophon} />
+```
+
+Visítala en `/colophon` en el sitio en vivo.
