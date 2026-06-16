@@ -1,0 +1,26 @@
+---
+title: "Glosario"
+description: "Definiciones de términos comunes utilizados en la documentación."
+---
+
+Este glosario define los términos clave que encontrarás en la documentación. Úsalo como referencia rápida cuando te topes con terminología desconocida.
+
+## MDX
+
+MDX es un formato de archivo que combina Markdown con JSX, lo que te permite incrustar componentes al estilo de React directamente en tu prosa. Todas las páginas de contenido de esta documentación están escritas como archivos `.mdx` para que puedas combinar encabezados, listas y bloques de código con componentes interactivos como [`<Card>`](/essentials/markdown) y [`<Columns>`](/essentials/markdown).
+
+## Frontmatter
+
+El frontmatter es el bloque YAML al inicio de cada página MDX, delimitado por `---`. Define los metadatos a nivel de página, como `title` y `description`, que Mintlify utiliza para renderizar el encabezado, generar etiquetas SEO y completar los resultados de búsqueda. Consulta [Sintaxis de Markdown](/essentials/markdown) para ver la lista completa de campos admitidos.
+
+## Navegación
+
+La navegación se refiere a cómo se organizan las páginas en pestañas, grupos y anclas en la barra lateral izquierda y la barra superior. Se configura en [`docs.json`](/essentials/navigation) bajo la clave `navigation`. Agregar una nueva página a la documentación casi siempre implica añadir su slug a un arreglo `pages` en este archivo.
+
+## Snippet
+
+Un snippet es un fragmento reutilizable de MDX almacenado en el directorio `snippets/` que puedes importar en varias páginas. Los snippets mantienen el contenido compartido —como instrucciones de instalación o avisos legales— en una única fuente de verdad. Consulta [Snippets reutilizables](/essentials/reusable-snippets) para su uso.
+
+## Referencia de API
+
+La referencia de API es la sección de la documentación que describe tus endpoints HTTP, incluidos los parámetros, las formas de solicitud y respuesta, y ejemplos de llamadas. Mintlify puede generar estas páginas automáticamente a partir de una especificación OpenAPI. Consulta [Documentación de API](/api-reference/introduction) para comenzar.
