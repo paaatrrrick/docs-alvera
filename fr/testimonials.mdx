@@ -1,0 +1,63 @@
+---
+title: "Section témoignages : structure et mises à jour"
+description: "Comment la section 'What people say' de la page d'accueil du site personnel est configurée à partir du tableau testimonials, et comment ajouter ou modifier des citations."
+---
+
+## Vue d'ensemble
+
+La section témoignages affiche une grille de courtes citations de collègues sous le titre **What people say**. Elle apparaît près du bas de la page d'accueil, après les listes d'expérience professionnelle et de projets, et avant le formulaire de contact et le pied de page.
+
+Chaque carte est rendue à partir d'une entrée du tableau `testimonials` et affiche une citation, le nom de l'intervenant et son poste. Utilise cette section pour mettre en avant des preuves sociales venant de personnes qui ont travaillé étroitement avec toi.
+
+## Ce qui a changé
+
+La page d'accueil inclut désormais un composant `Testimonials` qui récupère les citations depuis le tableau `testimonials` dans `src/constants/testimonials.js`. La liste a été lancée initialement avec trois citations (d'un engineering manager chez Mintlify, d'une founding PM chez PostHog et d'un staff engineer chez Supabase), puis enrichie de deux autres (une CTO chez Vercel et un tech lead chez Linear), pour un total de cinq citations sur le site en ligne.
+
+## Schéma d'une entrée
+
+Chaque entrée du tableau `testimonials` prend en charge les champs suivants :
+
+| Champ   | Type   | Obligatoire | Description                                                                                  |
+| ------- | ------ | ----------- | -------------------------------------------------------------------------------------------- |
+| `quote` | string | Oui         | Le texte du témoignage. Rendu avec des guillemets typographiques ; n'en ajoute pas toi-même. |
+| `name`  | string | Oui         | Le nom complet de l'intervenant. Sert aussi de clé React ; il doit donc être unique.         |
+| `role`  | string | Oui         | Le poste et l'entreprise de l'intervenant, affichés sous son nom.                            |
+
+## Ajouter un nouveau témoignage
+
+Ouvre `src/constants/testimonials.js` et ajoute un nouvel objet au tableau `testimonials`. Les entrées sont rendues dans l'ordre du tableau, de gauche à droite et de haut en bas dans la grille.
+
+```js src/constants/testimonials.js
+const testimonials = [
+    {
+        quote: `Patrick has this rare combination of moving fast and actually caring whether what he ships works. He'd close three issues in the time it took the rest of us to debate one.`,
+        name: 'Jordan Lee',
+        role: 'Engineering Manager, Mintlify',
+    },
+    {
+        quote: `He treats every feature like it's a product. You can hand him a half-spec'd idea and get back something a customer would actually pay for.`,
+        name: 'Mara Chen',
+        role: 'Founding PM, PostHog',
+    },
+    // ...existing entries
+];
+
+export default testimonials;
+```
+
+<Tip>
+Garde des valeurs `name` uniques. Le composant utilise `name` comme clé React lors de l'itération, donc les doublons déclencheront un avertissement et peuvent provoquer des problèmes de rendu.
+</Tip>
+
+## Bien rédiger un témoignage
+
+Utilise le champ `quote` pour capturer une observation précise et mémorable plutôt qu'un compliment générique.
+
+- Commence par le trait qui rend la personne distinctive.
+- Limite chaque citation à une à trois phrases pour que la grille reste facile à parcourir.
+- Préfère un langage concret ("fermé trois tickets dans le temps qu'il nous a fallu pour en débattre d'un seul") aux abstractions ("excellent ingénieur").
+- Demande une autorisation explicite à la personne avant de publier son nom et son poste.
+
+## Quand mettre cette liste à jour
+
+Ajoute un nouveau témoignage chaque fois qu'un collègue te fait un retour que tu souhaites mettre en avant. Rafraîchis les valeurs `role` lorsqu'un contributeur change d'entreprise pour que la section reste à jour.

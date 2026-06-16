@@ -1,0 +1,49 @@
+---
+title: "Sección del formulario de contacto: comportamiento y configuración"
+description: "Cómo el formulario de contacto 'Get in touch' de la página principal valida los campos de nombre, correo y mensaje y delega en el cliente de correo del visitante con mailto."
+---
+
+## Resumen
+
+La sección del formulario de contacto muestra un encabezado **Get in touch** y un formulario de tres campos (Name, Email, Message) en la página principal. Se sitúa entre la cuadrícula de testimonios y el pie de página.
+
+El formulario no envía datos a un servidor. Cuando el visitante lo envía, el componente `Contact` valida que los tres campos no estén vacíos, los codifica en una URL `mailto:` y navega el navegador a esa URL, lo que abre el cliente de correo configurado del visitante con el asunto y el cuerpo ya rellenados.
+
+Usa esta sección cuando quieras ofrecer una llamada a la acción "envíame un correo" de baja fricción sin montar un backend ni un servicio de formularios externo.
+
+## Cómo funciona
+
+El componente se renderiza desde `src/components/Contact.js` y se encuentra en la parte inferior de la página principal. Al enviar:
+
+1. El formulario evita el envío predeterminado del navegador.
+2. Recorta cada campo. Si `name`, `email` o `message` está vacío, el formulario establece su estado a `error` y muestra "Please fill in all three fields." No se abre ningún cliente de correo.
+3. En caso contrario, construye una URL `mailto:` con `subject` igual a `Hello from {name}` y `body` igual al mensaje seguido de una línea de firma con el formato `— {name} ({email})`, ambos codificados en URL.
+4. Navega la ventana a esa URL mediante `window.location.href`, después establece su estado a `sent` y muestra "Opening your mail app…".
+
+Como la entrega se hace mediante `mailto:`, no hay ida y vuelta al servidor ni limitación de tasa. Que el mensaje se envíe realmente depende por completo de que el visitante tenga un cliente de correo configurado para enlaces `mailto:`.
+
+## Configuración
+
+La dirección de destino está codificada directamente en `src/components/Contact.js`:
+
+```js src/components/Contact.js
+window.location.href = `mailto:patrick@example.com?subject=${subject}&body=${body}`;
+```
+
+Para cambiar la dirección de destino, edita esa cadena. El resto del formulario (etiquetas, marcadores de posición, reglas de validación) también está definido en línea en el mismo componente: no hay un archivo de constantes separado para esta sección.
+
+### Ajustar la validación
+
+La regla actual es "los tres campos deben estar no vacíos tras aplicar `.trim()`". Para añadir comprobaciones más estrictas (por ejemplo, exigir un formato de correo válido), amplía el guard del manejador `onSubmit` antes de construir la URL `mailto:`. Mantén el `setStatus('error')` y el return temprano para que el cliente de correo no se abra con datos inválidos.
+
+### Ajustar el asunto o el cuerpo
+
+La línea de asunto y la plantilla del cuerpo también se construyen dentro de `onSubmit`. Ambos valores se envuelven con `encodeURIComponent`, por lo que los saltos de línea y los caracteres especiales del mensaje sobreviven al paso al cliente de correo.
+
+## Cuándo usar esta sección
+
+Mantén el formulario de contacto cuando quieras que los visitantes puedan empezar a redactar un correo sin salir de la página ni copiar una dirección a mano. Sustitúyelo por otro componente si necesitas:
+
+- Entrega del lado del servidor (por ejemplo, para capturar envíos incluso cuando el visitante no tiene un cliente de correo).
+- Protección antispam más allá de la que proporciona su cliente de correo.
+- Adjuntos o entrada con formato enriquecido: `mailto:` no admite ninguno de los dos de forma fiable.

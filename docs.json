@@ -2530,6 +2530,9 @@
                 "group": "Sitio personal",
                 "pages": [
                   "es/work-experience",
+                  "es/testimonials",
+                  "es/contact-form",
+                  "es/site-footer",
                   "es/game-of-thrones",
                   "es/latest-email"
                 ]
@@ -5027,6 +5030,9 @@
                 "group": "Site personnel",
                 "pages": [
                   "fr/work-experience",
+                  "fr/testimonials",
+                  "fr/contact-form",
+                  "fr/site-footer",
                   "fr/game-of-thrones",
                   "fr/latest-email"
                 ]

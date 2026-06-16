@@ -1,0 +1,76 @@
+---
+title: "Pie del sitio: estructura y actualizaciones"
+description: "Cómo está distribuido el pie de página de tres columnas en la página principal, qué contiene cada columna y cómo editar la biografía, los enlaces internos y los perfiles externos."
+---
+
+## Resumen
+
+El pie del sitio es la última sección de la página principal. Se renderiza debajo del formulario de contacto y ofrece una biografía breve, una lista de enlaces de navegación internos y una lista de enlaces a perfiles externos, seguidos de una línea de copyright con el año actual.
+
+El pie se renderiza desde `src/components/Footer.js` y está compuesto por tres columnas envueltas en `<footer className="siteFooter">`.
+
+## Distribución
+
+El pie se divide en tres columnas dentro de `siteFooterInner`, con una línea de copyright debajo.
+
+| Columna           | Encabezado       | Contenido                                                                                                |
+| ----------------- | ---------------- | -------------------------------------------------------------------------------------------------------- |
+| Biografía         | `Patrick Foster` | Biografía de una frase que describe el puesto y la ubicación.                                            |
+| Navegación interna| `Site`           | Entradas `<Link>` de `react-router-dom` para Home, Blog, Timeline, Uses, Now y Reading list.             |
+| Enlaces externos  | `Elsewhere`      | Etiquetas `<a>` para GitHub, LinkedIn y un enlace `mailto:` de correo. Los externos se abren en pestaña nueva. |
+
+La línea de copyright al pie muestra `© {year} Patrick Foster. Built with React.`, donde `{year}` se calcula en tiempo de renderizado con `new Date().getFullYear()`, por lo que siempre refleja el año actual sin actualizaciones manuales.
+
+## Editar el pie
+
+Todo el contenido se define en línea en `src/components/Footer.js`: no hay un archivo de constantes separado para el pie.
+
+### Actualizar la biografía
+
+Edita el `<p>` dentro del primer `siteFooterCol`. Mantenlo en una sola frase para que las alturas de las columnas queden equilibradas.
+
+```jsx src/components/Footer.js
+<div className="siteFooterCol">
+    <h4>Patrick Foster</h4>
+    <p>Software engineer in San Francisco. Building developer tools at Mintlify.</p>
+</div>
+```
+
+### Añadir o quitar enlaces internos
+
+Añade o elimina entradas `<li>` en la columna **Site**. Usa el componente `<Link>` de `react-router-dom` para las rutas internas y que la navegación siga siendo del lado del cliente.
+
+```jsx src/components/Footer.js
+<ul>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/blog">Blog</Link></li>
+    <li><Link to="/timeline">Timeline</Link></li>
+    {/* ...add new in-site link here */}
+</ul>
+```
+
+Asegúrate de que la ruta ya existe en el router de la aplicación antes de añadirla al pie.
+
+### Añadir o quitar perfiles externos
+
+Añade o elimina entradas `<li>` en la columna **Elsewhere**. Usa una etiqueta `<a>` sencilla e incluye `target="_blank"` y `rel="noreferrer"` para que el enlace se abra en una nueva pestaña de forma segura.
+
+```jsx src/components/Footer.js
+<ul>
+    <li><a href="https://github.com/paaatrrrick" target="_blank" rel="noreferrer">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/patrickrfoster" target="_blank" rel="noreferrer">LinkedIn</a></li>
+    <li><a href="mailto:patrick.123.foster@gmail.com">Email</a></li>
+</ul>
+```
+
+Para el correo, usa un enlace `mailto:` sin `target="_blank"` para que el cliente de correo del usuario lo gestione con normalidad.
+
+<Tip>
+No hace falta editar el año de copyright cada enero: se deriva de `new Date().getFullYear()` en cada renderizado.
+</Tip>
+
+## Cuándo actualizar el pie
+
+- Actualiza la biografía cuando cambien tu puesto, ubicación o enfoque actual.
+- Actualiza la columna **Site** cuando añadas o retires una ruta de nivel superior.
+- Actualiza la columna **Elsewhere** cuando añadas o elimines un perfil que quieras dar a conocer. Elimina los perfiles abandonados en lugar de dejar enlaces rotos.

@@ -1,0 +1,63 @@
+---
+title: "Sección de testimonios: estructura y actualizaciones"
+description: "Cómo se configura la sección 'What people say' de la página principal del sitio web personal a partir del array testimonials, y cómo añadir o editar citas."
+---
+
+## Resumen
+
+La sección de testimonios muestra una cuadrícula de citas breves de colegas bajo el encabezado **What people say**. Aparece cerca de la parte inferior de la página principal, después de las listas de experiencia laboral y proyectos, y antes del formulario de contacto y el pie de página.
+
+Cada tarjeta se renderiza a partir de una entrada del array `testimonials` y muestra una cita, el nombre del autor y su puesto. Usa esta sección para destacar pruebas sociales de personas que han trabajado contigo de cerca.
+
+## Qué ha cambiado
+
+La página principal ahora incluye un componente `Testimonials` que extrae citas del array `testimonials` en `src/constants/testimonials.js`. La lista se lanzó inicialmente con tres citas (de un engineering manager en Mintlify, una founding PM en PostHog y un staff engineer en Supabase) y se amplió con dos más (una CTO en Vercel y un tech lead en Linear), lo que da un total de cinco citas en el sitio publicado.
+
+## Esquema de entrada
+
+Cada entrada del array `testimonials` admite los siguientes campos:
+
+| Campo   | Tipo   | Obligatorio | Descripción                                                                                |
+| ------- | ------ | ----------- | ------------------------------------------------------------------------------------------ |
+| `quote` | string | Sí          | El texto del testimonio. Se renderiza con comillas tipográficas; no añadas las tuyas.      |
+| `name`  | string | Sí          | Nombre completo del autor. También se usa como clave de React, por lo que debe ser único.  |
+| `role`  | string | Sí          | Puesto y empresa del autor, que se muestra debajo de su nombre.                            |
+
+## Añadir un nuevo testimonio
+
+Abre `src/constants/testimonials.js` y añade un nuevo objeto al array `testimonials`. Las entradas se renderizan en el orden del array, de izquierda a derecha y de arriba a abajo en la cuadrícula.
+
+```js src/constants/testimonials.js
+const testimonials = [
+    {
+        quote: `Patrick has this rare combination of moving fast and actually caring whether what he ships works. He'd close three issues in the time it took the rest of us to debate one.`,
+        name: 'Jordan Lee',
+        role: 'Engineering Manager, Mintlify',
+    },
+    {
+        quote: `He treats every feature like it's a product. You can hand him a half-spec'd idea and get back something a customer would actually pay for.`,
+        name: 'Mara Chen',
+        role: 'Founding PM, PostHog',
+    },
+    // ...existing entries
+];
+
+export default testimonials;
+```
+
+<Tip>
+Mantén valores `name` únicos. El componente usa `name` como clave de React al iterar, por lo que los duplicados provocarán una advertencia y pueden causar fallos de renderizado.
+</Tip>
+
+## Cómo redactar buenos testimonios
+
+Usa el campo `quote` para capturar una observación concreta y memorable en lugar de un cumplido genérico.
+
+- Empieza por el rasgo que hace distintivo al autor.
+- Limita cada cita a una o tres frases para que la cuadrícula se mantenga fácil de escanear.
+- Prefiere lenguaje concreto ("cerró tres incidencias en el tiempo que nos llevó debatir una") frente a abstracciones ("gran ingeniero").
+- Pide permiso explícito a la persona antes de publicar su nombre y puesto.
+
+## Cuándo actualizar esta lista
+
+Añade un nuevo testimonio siempre que un colega te ofrezca un comentario que quieras destacar. Actualiza los valores de `role` cuando un colaborador cambie de empresa para que la sección se mantenga al día.

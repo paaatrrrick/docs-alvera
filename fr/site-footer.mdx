@@ -1,0 +1,76 @@
+---
+title: "Pied de page du site : structure et mises à jour"
+description: "Comment le pied de page à trois colonnes de la page d'accueil est agencé, ce que contient chaque colonne, et comment modifier la bio, les liens internes et les profils externes."
+---
+
+## Vue d'ensemble
+
+Le pied de page du site est la dernière section de la page d'accueil. Il est rendu sous le formulaire de contact et propose une bio courte, une liste de liens de navigation interne et une liste de liens vers des profils externes, suivie d'une ligne de copyright avec l'année en cours.
+
+Le pied de page est rendu depuis `src/components/Footer.js` et se compose de trois colonnes encapsulées dans `<footer className="siteFooter">`.
+
+## Agencement
+
+Le pied de page est divisé en trois colonnes à l'intérieur de `siteFooterInner`, avec une ligne de copyright en dessous.
+
+| Colonne          | Titre            | Contenu                                                                                          |
+| ---------------- | ---------------- | ------------------------------------------------------------------------------------------------ |
+| Bio              | `Patrick Foster` | Bio d'une phrase décrivant le rôle et la localisation.                                           |
+| Navigation interne | `Site`         | Entrées `<Link>` de `react-router-dom` pour Home, Blog, Timeline, Uses, Now et Reading list.     |
+| Liens externes   | `Elsewhere`      | Balises `<a>` pour GitHub, LinkedIn et un lien `mailto:`. Les liens externes s'ouvrent dans un nouvel onglet. |
+
+La ligne de copyright en bas indique `© {year} Patrick Foster. Built with React.`, où `{year}` est calculé au moment du rendu avec `new Date().getFullYear()` afin de refléter toujours l'année en cours sans mise à jour manuelle.
+
+## Modifier le pied de page
+
+Tout le contenu est défini en ligne dans `src/components/Footer.js` — il n'y a pas de fichier de constantes séparé pour le pied de page.
+
+### Mettre à jour la bio
+
+Modifie le `<p>` à l'intérieur du premier `siteFooterCol`. Garde-la sur une seule phrase pour que les hauteurs de colonnes restent à peu près équilibrées.
+
+```jsx src/components/Footer.js
+<div className="siteFooterCol">
+    <h4>Patrick Foster</h4>
+    <p>Software engineer in San Francisco. Building developer tools at Mintlify.</p>
+</div>
+```
+
+### Ajouter ou supprimer des liens internes
+
+Ajoute ou supprime des entrées `<li>` dans la colonne **Site**. Utilise le `<Link>` de `react-router-dom` pour les routes internes afin que la navigation reste côté client.
+
+```jsx src/components/Footer.js
+<ul>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/blog">Blog</Link></li>
+    <li><Link to="/timeline">Timeline</Link></li>
+    {/* ...add new in-site link here */}
+</ul>
+```
+
+Assure-toi que la route existe déjà dans le routeur de l'application avant de l'ajouter au pied de page.
+
+### Ajouter ou supprimer des profils externes
+
+Ajoute ou supprime des entrées `<li>` dans la colonne **Elsewhere**. Utilise une balise `<a>` simple et inclus `target="_blank"` et `rel="noreferrer"` pour que le lien s'ouvre dans un nouvel onglet en toute sécurité.
+
+```jsx src/components/Footer.js
+<ul>
+    <li><a href="https://github.com/paaatrrrick" target="_blank" rel="noreferrer">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/patrickrfoster" target="_blank" rel="noreferrer">LinkedIn</a></li>
+    <li><a href="mailto:patrick.123.foster@gmail.com">Email</a></li>
+</ul>
+```
+
+Pour l'e-mail, utilise un lien `mailto:` sans `target="_blank"` pour que le client mail de l'utilisateur prenne le relais normalement.
+
+<Tip>
+Pas besoin de modifier l'année de copyright chaque janvier — elle est dérivée de `new Date().getFullYear()` à chaque rendu.
+</Tip>
+
+## Quand mettre à jour le pied de page
+
+- Mets à jour la bio lorsque ton rôle, ta localisation ou ton focus actuel changent.
+- Mets à jour la colonne **Site** lorsque tu ajoutes ou retires une route de premier niveau.
+- Mets à jour la colonne **Elsewhere** lorsque tu ajoutes ou retires un profil que tu souhaites mettre en avant. Supprime les profils abandonnés plutôt que de laisser des liens morts.
