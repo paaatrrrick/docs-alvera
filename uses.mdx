@@ -1,0 +1,137 @@
+---
+title: "Uses page: structure and updates"
+description: "How the personal website's /uses page is configured from the sections array, plus a list of the current hardware, software, and tools."
+---
+
+## Overview
+
+The `/uses` page lists the hardware, software, and tools used day to day on the personal website. It lives at `/uses` and is built from a single `sections` array, where each section has a heading and a list of items. Each item shows a bolded `name` and a short `detail` describing how or why it gets used.
+
+This page documents how that list is structured so contributors know how to add, edit, or reorder entries.
+
+## Sections
+
+The page currently ships with five sections, in order:
+
+<Card title="Editor & Terminal" icon="terminal">
+  The editor, terminal emulator, and shell setup used for day-to-day coding.
+
+  Examples: VS Code with the Vim extension, Ghostty, Zsh with the Starship prompt.
+</Card>
+
+<Card title="Hardware" icon="laptop">
+  The physical machine, display, and peripherals.
+
+  Examples: 14" MacBook Pro (M3 Pro), an LG 27" 4K display, a Keychron K3 Pro keyboard.
+</Card>
+
+<Card title="Apps I open every day" icon="grid-2">
+  Apps that get launched as part of a normal workday.
+
+  Examples: Linear for issue tracking, Raycast as a Spotlight replacement, Arc as the primary browser.
+</Card>
+
+<Card title="Productivity & writing" icon="pen-to-square">
+  Tools for notes, tasks, and long-form writing.
+
+  Examples: Notion, Obsidian, Things 3, iA Writer.
+</Card>
+
+<Card title="Audio & focus" icon="headphones">
+  Headphones, soundscapes, and call-quality tools used to stay heads-down.
+
+  Examples: Sony WH-1000XM5, Endel, Apple Music classical, Krisp.
+</Card>
+
+## When to use this page
+
+Update the `/uses` page whenever you:
+
+- Swap out a piece of hardware (laptop, monitor, keyboard, headphones).
+- Change your editor, terminal, shell, or prompt setup.
+- Add or remove an app from your everyday rotation.
+- Introduce a new category of tools worth grouping into its own section.
+
+Order sections so the most-used categories appear near the top. Within a section, list items in roughly the order you reach for them.
+
+## Section schema
+
+Each entry in the `sections` array supports the following fields:
+
+| Field     | Type   | Required | Description                                                                 |
+| --------- | ------ | -------- | --------------------------------------------------------------------------- |
+| `heading` | string | Yes      | Section title rendered as a heading on the page.                            |
+| `items`   | array  | Yes      | List of tools or pieces of hardware that belong to the section.             |
+
+Each object inside `items` supports:
+
+| Field    | Type   | Required | Description                                                                |
+| -------- | ------ | -------- | -------------------------------------------------------------------------- |
+| `name`   | string | Yes      | Product or tool name shown in bold.                                        |
+| `detail` | string | Yes      | One-sentence description of how or why it gets used.                       |
+
+## Adding or updating an entry
+
+Open `src/components/Uses.js` and edit the `sections` array. To add an item to an existing section, append a new object to that section's `items` array. To introduce a new category, append a new section object with its own `heading` and `items`.
+
+```js src/components/Uses.js
+const sections = [
+    {
+        heading: 'Editor & Terminal',
+        items: [
+            { name: 'VS Code', detail: 'Daily driver editor, with the Vim extension and a heavily tweaked One Dark Pro theme.' },
+            { name: 'Ghostty', detail: 'Terminal of choice — fast, GPU-rendered, and stays out of the way.' },
+            { name: 'Zsh + Starship', detail: 'Minimal prompt with git status and the current Node/Python version.' },
+        ],
+    },
+    {
+        heading: 'Hardware',
+        items: [
+            { name: '14" MacBook Pro (M3 Pro)', detail: '36 GB of RAM. Handles every Node project I throw at it without breaking a sweat.' },
+            { name: 'LG 27" 4K display', detail: 'One external monitor in portrait orientation for docs and code review.' },
+            { name: 'Keychron K3 Pro', detail: 'Low-profile mechanical keyboard with brown switches.' },
+        ],
+    },
+    {
+        heading: 'Apps I open every day',
+        items: [
+            { name: 'Linear', detail: 'Issue tracking. Lightning fast and opinionated in the right places.' },
+            { name: 'Raycast', detail: 'Spotlight replacement, clipboard history, and a hundred small workflows.' },
+            { name: 'Arc', detail: 'Primary browser. Spaces keep work and personal contexts separate.' },
+        ],
+    },
+    {
+        heading: 'Productivity & writing',
+        items: [
+            { name: 'Notion', detail: 'Long-form notes, project planning, and meeting docs.' },
+            { name: 'Obsidian', detail: 'Local-first daily journal and a tangled web of zettelkasten notes.' },
+            { name: 'Things 3', detail: 'Task manager I keep coming back to after trying every alternative.' },
+            { name: 'iA Writer', detail: 'Distraction-free Markdown for drafting blog posts.' },
+        ],
+    },
+    {
+        heading: 'Audio & focus',
+        items: [
+            { name: 'Sony WH-1000XM5', detail: 'Noise-cancelling headphones for deep work and travel.' },
+            { name: 'Endel', detail: 'Generative focus soundscapes — replaced every "lo-fi beats" playlist for me.' },
+            { name: 'Apple Music classical', detail: 'Default soundtrack while coding. The catalog metadata is the best of any service.' },
+            { name: 'Krisp', detail: 'Background-noise filtering on every call.' },
+        ],
+    },
+];
+```
+
+<Tip>
+  Keep each `detail` to a single sentence so the page stays scannable. Lead with what the tool is, then briefly say why you use it.
+</Tip>
+
+## Writing item details
+
+- Lead with the role the tool plays ("Daily driver editor", "Terminal of choice", "Primary browser").
+- Add a single concrete reason it's on the list — a feature, a workflow, or a tradeoff.
+- Avoid marketing language. Describe how it fits into your setup, not what the vendor says about it.
+- Skip version numbers unless they meaningfully change behavior.
+
+## Adding a new section
+
+Append a new object to the `sections` array with a short, title-cased `heading` and at least two or three items. New sections render in array order, so place them where you want them to appear on the page.
