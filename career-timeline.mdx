@@ -1,0 +1,78 @@
+---
+title: "Career timeline page"
+description: "The interactive /timeline page that plots every role from the workExperience array, with filters for remote/on-site, decade, and free-text search."
+---
+
+## Overview
+
+The personal website includes a dedicated `/timeline` route that renders an interactive career timeline. It reads the same `workExperience` array used by the home page, so any role you add through the [work experience flow](/work-experience) automatically shows up on the timeline — no schema changes required.
+
+Use this page when you want to:
+
+- Show every role at once instead of the home page's scrollable list.
+- Highlight career trajectory by year, location, and remote vs. on-site mix.
+- Let visitors narrow the list by decade or search for a specific role.
+
+## What the page shows
+
+The timeline is sorted reverse-chronologically by the earliest year in each entry's `timeLine` string. Each role is rendered as a card with:
+
+- The starting year, plus `→ now` for roles whose `timeLine` includes "present".
+- A **Remote** or **On-site** badge derived from the `timeLine` string.
+- The role title.
+- The location (parsed from the tail of the `timeLine` string, after the last period).
+- The `text` description.
+
+### Summary header
+
+At the top of the page, a stats strip summarizes the dataset:
+
+| Stat            | What it counts                                                                  |
+| --------------- | ------------------------------------------------------------------------------- |
+| `roles`         | Total number of entries in `workExperience`.                                    |
+| `years spanned` | Difference between the earliest start year and the latest end year across all entries. |
+| `remote`        | Number of entries whose `timeLine` string contains "remote" (case-insensitive). |
+
+## Filter controls
+
+Three controls sit under the summary header. They compose — applying more than one narrows the list further.
+
+### Remote / On-site chips
+
+Three buttons — **All**, **Remote**, **On-site** — toggle the location mode. A role counts as remote when its `timeLine` string contains "remote" (case-insensitive); everything else is treated as on-site.
+
+### Decade dropdown
+
+A dropdown lists every decade present in the data (for example, `2020s`, `2030s`), plus an **All decades** default. Selecting a decade keeps only roles whose start year falls inside it. The list is built from the data, so new decades appear automatically as you add roles.
+
+### Search input
+
+A free-text search box matches against the role's `title`, `text`, and `timeLine` fields. Matching is case-insensitive and substring-based, so partial words work. Leading and trailing whitespace is ignored.
+
+When no entry matches the active filters, the timeline shows `No roles match this filter.` in place of the list.
+
+## How entries are parsed
+
+The timeline does not require any new fields on `workExperience` entries. It derives everything it needs from the existing `timeLine` string:
+
+- **Years** — every 4-digit number in `timeLine` is treated as a year. The smallest is the start, the largest is the end. If the string contains "present", the end is set to the current year.
+- **Location** — the text after the last period in `timeLine` is shown under the title. Roles without a trailing location render as `Unknown`.
+- **Remote flag** — set when `timeLine` contains "remote".
+
+Because parsing is driven entirely by `timeLine`, formatting that string consistently is what keeps the timeline accurate. The convention used by existing entries is:
+
+```js src/constants/work.js
+{
+    title: 'SWE at Modal',
+    text: `Worked on the serverless GPU runtime...`,
+    timeLine: 'May - August 2035. Remote',
+}
+```
+
+<Tip>
+Include the year (or both years for multi-year roles) and end the `timeLine` string with the location after a period. Use "Remote" verbatim for remote roles and "present" for ongoing ones so the timeline picks them up correctly.
+</Tip>
+
+## Adding the page
+
+The timeline lives at `/timeline` and is linked from the home page. New work-experience entries appear automatically — there's nothing to edit on the timeline page itself when you add a role. To change what's shown, update the underlying `workExperience` array as described in [Work experience](/work-experience).
