@@ -1,0 +1,39 @@
+---
+title: "Configurer Windsurf Cascade pour la documentation Mintlify"
+description: "Configurez l'assistant IA Cascade de Windsurf avec des règles de projet et un contexte d'espace de travail pour vous aider à rédiger et éditer les pages de documentation Mintlify."
+icon: "water"
+---
+
+Configurez l'assistant IA Cascade de Windsurf pour vous aider à rédiger et maintenir votre documentation Mintlify.
+
+## Prérequis
+
+- L'éditeur Windsurf installé
+
+## Configuration
+
+<Steps>
+<Step title="Ouvrir votre répertoire de documentation dans Windsurf">
+  Ouvrez la racine de votre dépôt de documentation où se trouve `docs.json`.
+</Step>
+
+<Step title="Installer la skill Mintlify">
+  Dans le terminal intégré, exécutez :
+
+  ```bash
+  npx skills add https://mintlify.com/docs
+  ```
+
+  Cela fournit à Windsurf la référence des composants Mintlify, les normes de rédaction
+  et les conseils de workflow.
+</Step>
+
+<Step title="Personnaliser les instructions du projet">
+  Modifiez `AGENTS.md` à la racine de votre projet pour ajouter une terminologie propre au projet,
+  des préférences de style et des limites de contenu.
+</Step>
+
+<Step title="Commencer à rédiger avec Cascade">
+  Ouvrez un fichier et utilisez Cascade pour rédiger et éditer la documentation.
+</Step>
+</Steps>

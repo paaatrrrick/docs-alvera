@@ -1,0 +1,35 @@
+---
+title: 'Blocs de code et coloration syntaxique'
+description: 'Mettez en forme du code en ligne, des blocs de code multilignes, la coloration syntaxique, les numéros de ligne et les exemples de code regroupés dans votre documentation Mintlify.'
+icon: 'code'
+---
+
+## Code en ligne
+
+Pour désigner un `mot` ou une `phrase` comme du code, encadrez-le par des backticks (`).
+
+```
+Pour désigner un `mot` ou une `phrase` comme du code, encadrez-le par des backticks (`).
+```
+
+## Blocs de code
+
+Utilisez des [blocs de code encadrés](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) en entourant le code de trois backticks, et faites suivre les backticks d'ouverture du langage de programmation de votre extrait pour obtenir la coloration syntaxique. Vous pouvez également indiquer le nom de votre code après le langage de programmation.
+
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+````md
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+````

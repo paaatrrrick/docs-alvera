@@ -1,0 +1,88 @@
+---
+title: 'Referencia de sintaxis Markdown para Mintlify'
+description: 'Referencia de encabezados, estilos de texto, listas, enlaces, citas y otros formatos estándar de Markdown compatibles con las páginas de documentación de Mintlify.'
+icon: 'text-size'
+---
+
+## Títulos
+
+Ideales para los encabezados de sección.
+
+```md
+## Títulos
+```
+
+### Subtítulos
+
+Ideales para los encabezados de subsección.
+
+```md
+### Subtítulos
+```
+
+<Tip>
+
+Cada **título** y **subtítulo** crea un anchor y también aparece en la tabla de contenidos de la derecha.
+
+</Tip>
+
+## Formato de texto
+
+Admitimos la mayor parte del formato Markdown. Simplemente añade `**`, `_` o `~` alrededor del texto para darle formato.
+
+| Estilo        | Cómo escribirlo   | Resultado       |
+| ------------- | ----------------- | --------------- |
+| Negrita       | `**bold**`        | **bold**        |
+| Cursiva       | `_italic_`        | _italic_        |
+| Tachado       | `~strikethrough~` | ~strikethrough~ |
+
+Puedes combinarlos. Por ejemplo, escribe `**_bold and italic_**` para obtener texto **_bold and italic_**.
+
+Necesitas usar HTML para escribir texto en superíndice y subíndice. Es decir, añade `<sup>` o `<sub>` alrededor de tu texto.
+
+| Tamaño de texto | Cómo escribirlo          | Resultado              |
+| --------------- | ------------------------ | ---------------------- |
+| Superíndice     | `<sup>superscript</sup>` | <sup>superscript</sup> |
+| Subíndice       | `<sub>subscript</sub>`   | <sub>subscript</sub>   |
+
+## Enlazar a páginas
+
+Puedes añadir un enlace envolviendo el texto en `[]()`. Por ejemplo, escribirías `[link to google](https://google.com)` para obtener un [link to google](https://google.com).
+
+Los enlaces a páginas de tu documentación deben ser relativos a la raíz. Básicamente, debes incluir la ruta completa de la carpeta. Por ejemplo, `[link to text](/writing-content/text)` enlaza con la página "Text" de nuestra sección de componentes.
+
+Los enlaces relativos como `[link to text](../text)` se abrirán más lentamente porque no podemos optimizarlos con la misma facilidad.
+
+## Citas
+
+### Una sola línea
+
+Para crear una cita, añade un `>` delante de un párrafo.
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### Varias líneas
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify admite [LaTeX](https://www.latex-project.org) mediante el componente Latex.
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```
