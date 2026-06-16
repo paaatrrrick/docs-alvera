@@ -1,0 +1,179 @@
+---
+title: "Páginas independientes: now, lectura, charlas y colofón"
+description: "Cómo se estructuran las rutas independientes del sitio personal (/now, /reading-list, /talks, /colophon) y dónde editar el contenido de cada una."
+---
+
+## Descripción general
+
+El sitio web personal incluye cuatro rutas independientes que conviven con la página principal. Cada una es su propio componente de React con un modelo de contenido pequeño y autónomo: o bien un array en línea dentro del componente, o bien un archivo de constantes en `src/constants/`. Comparten el mismo público (visitantes que exploran la superficie de tipo indie web del sitio) y el mismo patrón de mantenimiento: editas los datos, los subes a `master` y el sitio se vuelve a desplegar.
+
+| Ruta            | Qué es                                                                                          | Editar                                          |
+| --------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `/now`          | Una instantánea del foco actual al estilo de la [convención /now de Derek Sivers](https://nownownow.com/about). | `src/components/Now.js`                         |
+| `/reading-list` | Libros con un filtro por estado: **All**, **In progress**, **Finished**, **Re-reading**.        | `src/constants/reading.js`                      |
+| `/talks`        | Charlas en meetups y conferencias, con enlaces opcionales a diapositivas o grabaciones.         | `src/constants/talks.js`                        |
+| `/colophon`     | Una nota breve sobre cómo está construido el sitio: stack, hosting y algunos principios.        | `src/components/Colophon.js`                    |
+
+## /now
+
+Una instantánea de lo que le dirías a un amigo si te preguntara qué estás haciendo ahora mismo. Está agrupada en unas pocas secciones (por ejemplo, **Working on**, **Learning**, **Outside of work**), cada una con una lista corta de viñetas. Una fecha de `Last updated` aparece bajo el encabezado para que quede claro cuándo se actualizó por última vez.
+
+### Cuándo actualizarla
+
+Refresca `/now` cuando la instantánea deje de ser cierta — más o menos cada mes es una buena cadencia. Si no la has tocado en tres meses, la fecha está haciendo más daño del bien que aporta el contenido.
+
+### Cómo actualizarla
+
+Abre `src/components/Now.js` y edita la cadena `updatedAt` y el array `sections`. Cada sección es un objeto `{ heading, items }`; `items` es un array de strings.
+
+```js src/components/Now.js
+const updatedAt = 'May 2026';
+
+const sections = [
+    {
+        heading: 'Working on',
+        items: [
+            'Shipping AI-assisted editing features at Mintlify.',
+            'Writing a short essay series on what one year of agent-driven dev tooling actually changed.',
+        ],
+    },
+    {
+        heading: 'Learning',
+        items: [
+            'Reading Designing Data-Intensive Applications, again, this time slower.',
+            'Picking up enough Rust to be useful in a code review.',
+        ],
+    },
+    // ...add or remove sections here
+];
+```
+
+<Tip>
+  Mantén las viñetas cortas y específicas. La página debe leerse como una actualización de estado, no como un currículum.
+</Tip>
+
+## /reading-list
+
+Una lista de libros con un `status` por libro para que los visitantes puedan filtrar por lo que estás leyendo en este momento, lo que ya has terminado o lo que sueles releer. La barra de filtros en la parte superior muestra cuatro botones: **All**, **In progress**, **Finished**, **Re-reading**.
+
+### Esquema de entrada
+
+Cada entrada en `src/constants/reading.js` admite los siguientes campos:
+
+| Campo    | Tipo   | Obligatorio | Descripción                                                                                  |
+| -------- | ------ | ----------- | -------------------------------------------------------------------------------------------- |
+| `title`  | string | Sí          | Título del libro mostrado como encabezado de la entrada.                                     |
+| `author` | string | Sí          | Autor o autores.                                                                             |
+| `status` | string | Sí          | Uno de `In progress`, `Finished` o `Re-reading`. Determina el filtro y la etiqueta de estado. |
+| `note`   | string | No          | Tu opinión en una línea sobre el libro. Evita resúmenes genéricos — di qué te marcó.         |
+
+<Warning>
+  Los botones de filtro hacen coincidir las cadenas de `status` de forma exacta, incluyendo mayúsculas y espacios. Si añades un nuevo valor de estado, agrégalo también al array `STATUSES` en `src/components/ReadingList.js` o el nuevo valor no podrá filtrarse.
+</Warning>
+
+### Cómo actualizarla
+
+Abre `src/constants/reading.js` y añade, edita o elimina entradas. El orden en el archivo es el orden en la página.
+
+```js src/constants/reading.js
+const reading = [
+    {
+        title: 'Designing Data-Intensive Applications',
+        author: 'Martin Kleppmann',
+        status: 'Re-reading',
+        note: 'The reference for anyone shipping anything stateful at non-trivial scale.',
+    },
+    {
+        title: 'Working in Public',
+        author: 'Nadia Eghbal',
+        status: 'In progress',
+        note: 'Reframes how to think about open source maintainership.',
+    },
+    // ...more books
+];
+
+export default reading;
+```
+
+## /talks
+
+Una lista de charlas en meetups y conferencias. Cada entrada muestra el lugar, la fecha, el título y un resumen breve, con un enlace opcional a las diapositivas o a una grabación.
+
+### Esquema de entrada
+
+Cada entrada en `src/constants/talks.js` admite los siguientes campos:
+
+| Campo     | Tipo   | Obligatorio | Descripción                                                                  |
+| --------- | ------ | ----------- | ---------------------------------------------------------------------------- |
+| `title`   | string | Sí          | Título de la charla.                                                         |
+| `venue`   | string | Sí          | Nombre del meetup, conferencia o evento.                                     |
+| `date`    | string | Sí          | Fecha en formato legible, por ejemplo `November 2025`.                       |
+| `summary` | string | Sí          | Descripción en una o dos frases sobre lo que cubrió la charla.               |
+| `link`    | string | No          | URL de las diapositivas o de una grabación. Si está presente, el título se convierte en un enlace. |
+
+### Cómo actualizarla
+
+Abre `src/constants/talks.js` y añade la nueva charla al principio del array para que la más reciente aparezca primero.
+
+```js src/constants/talks.js
+const talks = [
+    {
+        title: 'Documentation is a product surface',
+        venue: 'Write the Docs SF',
+        date: 'November 2025',
+        summary: 'Why developer docs should be treated as a first-class product surface, not a marketing afterthought.',
+        link: 'https://www.youtube.com/watch?v=example-talk-1',
+    },
+    // ...more talks
+];
+
+export default talks;
+```
+
+<Tip>
+  Omite el campo `link` en las charlas en las que aún no hay grabación ni diapositivas públicas. El título se mostrará como texto plano y podrás añadir el enlace más adelante.
+</Tip>
+
+## /colophon
+
+Una nota breve sobre cómo está construido el sitio: el stack, dónde está alojado y los pocos principios que lo mantienen honesto. Está agrupada en secciones (por ejemplo, **Built with**, **Hosted on**, **Principles**) con una fecha de `Last updated` en la parte superior.
+
+### Cuándo actualizarla
+
+Toca `/colophon` cuando cambien el stack subyacente o el hosting (por ejemplo, al cambiar de proveedor, añadir un paso de build o modificar la política de analítica). Por lo demás, cambia poco.
+
+### Cómo actualizarla
+
+Abre `src/components/Colophon.js` y edita la cadena `updatedAt` y el array `sections`. La estructura es la misma que la de `/now`.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    // ...add or remove sections here
+];
+```
+
+## Convenciones compartidas
+
+Las cuatro páginas siguen el mismo conjunto pequeño de convenciones para que sigan siendo fáciles de mantener:
+
+- **Enlace de vuelta.** Cada página muestra un enlace `← Back home` a `/` en la parte superior, para que los visitantes que llegaron a una página interna puedan volver sin usar el botón de retroceso del navegador.
+- **CSS plano por página.** Los estilos viven en una hoja de estilos hermana (por ejemplo, `now.css`, `talks.css`) — sin un sistema de diseño compartido que aprender.
+- **Contenido como datos.** El contenido de la página vive o bien en una `const` de nivel superior dentro del componente (`/now`, `/colophon`) o bien en un archivo de constantes en `src/constants/` (`/reading-list`, `/talks`). Editar el copy nunca requiere tocar JSX.
+- **Enrutamiento.** Cada página se registra como una ruta en `src/App.js`. Si añades una nueva página independiente, sigue el patrón existente allí.

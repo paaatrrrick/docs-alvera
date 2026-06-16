@@ -30,6 +30,7 @@
                 "group": "Personal website",
                 "pages": [
                   "work-experience",
+                  "standalone-pages",
                   "game-of-thrones",
                   "latest-email"
                 ]
@@ -2519,6 +2520,12 @@
                 "pages": [
                   "es/how-mintlify-works"
                 ]
+              },
+              {
+                "group": "Sitio web personal",
+                "pages": [
+                  "es/standalone-pages"
+                ]
               }
             ]
           }
@@ -2534,6 +2541,12 @@
                 "group": "Démarrage",
                 "pages": [
                   "fr/how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Site personnel",
+                "pages": [
+                  "fr/standalone-pages"
                 ]
               }
             ]
