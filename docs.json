@@ -35,6 +35,12 @@
                 ]
               },
               {
+                "group": "Changelog",
+                "pages": [
+                  "changelog/2026-06-16"
+                ]
+              },
+              {
                 "group": "Fun",
                 "pages": [
                   "star-wars",
