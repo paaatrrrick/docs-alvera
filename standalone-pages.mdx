@@ -1,0 +1,179 @@
+---
+title: "Standalone pages: now, reading list, talks, and colophon"
+description: "How the personal website's standalone routes (/now, /reading-list, /talks, /colophon) are structured and where to edit their underlying content."
+---
+
+## Overview
+
+The personal website ships four standalone routes that sit alongside the home page. Each one is its own React component with a small, self-contained content model — either an inline array inside the component, or a constants file in `src/constants/`. They share the same audience (visitors clicking around the indie-web surface of the site) and the same maintenance pattern: edit the data, push to `master`, the site redeploys.
+
+| Route           | What it is                                                                                | Edit                                            |
+| --------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `/now`          | A current-focus snapshot in the [Derek Sivers /now convention](https://nownownow.com/about). | `src/components/Now.js`                         |
+| `/reading-list` | Books with a status filter: **All**, **In progress**, **Finished**, **Re-reading**.       | `src/constants/reading.js`                      |
+| `/talks`        | Meetup and conference talks, with optional links to slides or recordings.                 | `src/constants/talks.js`                        |
+| `/colophon`     | A short note on how the site is built — stack, hosting, and a few principles.             | `src/components/Colophon.js`                    |
+
+## /now
+
+A snapshot of what you'd tell a friend if they asked what you're up to right now. Grouped into a handful of sections (for example, **Working on**, **Learning**, **Outside of work**), each with a short bullet list. A `Last updated` date sits under the heading so it is obvious when the page was last refreshed.
+
+### When to update
+
+Refresh `/now` whenever the snapshot stops being true — roughly monthly is a good cadence. If you have not touched it in three months, the date stamp is doing more harm than the content is doing good.
+
+### How to update
+
+Open `src/components/Now.js` and edit the `updatedAt` string and the `sections` array. Each section is a `{ heading, items }` object; `items` is an array of strings.
+
+```js src/components/Now.js
+const updatedAt = 'May 2026';
+
+const sections = [
+    {
+        heading: 'Working on',
+        items: [
+            'Shipping AI-assisted editing features at Mintlify.',
+            'Writing a short essay series on what one year of agent-driven dev tooling actually changed.',
+        ],
+    },
+    {
+        heading: 'Learning',
+        items: [
+            'Reading Designing Data-Intensive Applications, again, this time slower.',
+            'Picking up enough Rust to be useful in a code review.',
+        ],
+    },
+    // ...add or remove sections here
+];
+```
+
+<Tip>
+  Keep bullets short and specific. The page is meant to read like a status update, not a resume.
+</Tip>
+
+## /reading-list
+
+A list of books with a per-book `status` so visitors can filter to what you're reading right now, what you've finished, or what you keep coming back to. The filter bar at the top of the page exposes four buttons: **All**, **In progress**, **Finished**, **Re-reading**.
+
+### Entry schema
+
+Each entry in `src/constants/reading.js` supports the following fields:
+
+| Field    | Type   | Required | Description                                                                                  |
+| -------- | ------ | -------- | -------------------------------------------------------------------------------------------- |
+| `title`  | string | Yes      | Book title shown as the entry header.                                                        |
+| `author` | string | Yes      | Author or authors.                                                                           |
+| `status` | string | Yes      | One of `In progress`, `Finished`, or `Re-reading`. Drives the filter and the status pill.    |
+| `note`   | string | No       | One-line take on the book. Skip generic blurbs — say what stuck with you.                    |
+
+<Warning>
+  The filter buttons match `status` strings exactly, including case and spacing. If you add a new status value, also add it to the `STATUSES` array in `src/components/ReadingList.js` or the new value will not be filterable.
+</Warning>
+
+### How to update
+
+Open `src/constants/reading.js` and add, edit, or remove entries. Order in the file is the order on the page.
+
+```js src/constants/reading.js
+const reading = [
+    {
+        title: 'Designing Data-Intensive Applications',
+        author: 'Martin Kleppmann',
+        status: 'Re-reading',
+        note: 'The reference for anyone shipping anything stateful at non-trivial scale.',
+    },
+    {
+        title: 'Working in Public',
+        author: 'Nadia Eghbal',
+        status: 'In progress',
+        note: 'Reframes how to think about open source maintainership.',
+    },
+    // ...more books
+];
+
+export default reading;
+```
+
+## /talks
+
+A list of meetup and conference talks. Each entry shows the venue, date, title, and a short summary, with an optional link out to slides or a recording.
+
+### Entry schema
+
+Each entry in `src/constants/talks.js` supports the following fields:
+
+| Field     | Type   | Required | Description                                                                  |
+| --------- | ------ | -------- | ---------------------------------------------------------------------------- |
+| `title`   | string | Yes      | Talk title.                                                                  |
+| `venue`   | string | Yes      | Meetup, conference, or event name.                                           |
+| `date`    | string | Yes      | Human-readable date, for example `November 2025`.                            |
+| `summary` | string | Yes      | One- or two-sentence description of what the talk covered.                   |
+| `link`    | string | No       | URL to slides or a recording. When present, the title becomes a link.        |
+
+### How to update
+
+Open `src/constants/talks.js` and prepend the new talk to the array so the most recent talk appears first.
+
+```js src/constants/talks.js
+const talks = [
+    {
+        title: 'Documentation is a product surface',
+        venue: 'Write the Docs SF',
+        date: 'November 2025',
+        summary: 'Why developer docs should be treated as a first-class product surface, not a marketing afterthought.',
+        link: 'https://www.youtube.com/watch?v=example-talk-1',
+    },
+    // ...more talks
+];
+
+export default talks;
+```
+
+<Tip>
+  Omit the `link` field for talks where no recording or slides are public yet. The title will render as plain text and you can drop the link in later.
+</Tip>
+
+## /colophon
+
+A short note on how the site is built — the stack, where it's hosted, and the handful of principles that keep it honest. Grouped into sections (for example, **Built with**, **Hosted on**, **Principles**) with a `Last updated` date at the top.
+
+### When to update
+
+Touch `/colophon` whenever the underlying stack or hosting changes (for example, switching hosts, adding a build step, or changing the analytics policy). It is otherwise low-churn.
+
+### How to update
+
+Open `src/components/Colophon.js` and edit the `updatedAt` string and the `sections` array. The structure mirrors `/now`.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    // ...add or remove sections here
+];
+```
+
+## Shared conventions
+
+All four pages follow the same small set of conventions so they stay easy to maintain:
+
+- **Back link.** Each page renders a `← Back home` link to `/` at the top, so visitors who landed deep can get back without using the browser's back button.
+- **Plain CSS per page.** Styles live in a sibling stylesheet (for example, `now.css`, `talks.css`) — no shared design system to learn.
+- **Content as data.** Page content lives either in a top-level `const` inside the component (`/now`, `/colophon`) or in a constants file under `src/constants/` (`/reading-list`, `/talks`). Editing copy never requires touching JSX.
+- **Routing.** Each page is registered as a route in `src/App.js`. If you add a new standalone page, mirror the existing pattern there.
