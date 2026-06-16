@@ -1,0 +1,80 @@
+---
+title: "Démarrage rapide : lancez votre site de documentation Mintlify"
+description: "Mettez en place un environnement Mintlify local, effectuez votre première personnalisation et déployez un nouveau site de documentation sur le web en trois étapes rapides."
+---
+
+## Démarrez en trois étapes
+
+Mettez votre site de documentation en marche en local et effectuez votre première personnalisation.
+
+### Étape 1 : Configurer votre environnement local
+
+<AccordionGroup>
+  <Accordion icon="copy" title="Cloner votre documentation en local">
+    Pendant le processus d'intégration, vous avez créé un dépôt GitHub contenant votre documentation si vous n'en aviez pas déjà un. Vous trouverez un lien vers ce dépôt dans votre [tableau de bord](https://dashboard.mintlify.com).
+    
+    Pour cloner le dépôt en local afin de pouvoir apporter et prévisualiser des modifications à votre documentation, suivez le guide [Cloner un dépôt](https://docs.github.com/fr/repositories/creating-and-managing-repositories/cloning-a-repository) de la documentation GitHub.
+  </Accordion>
+  <Accordion icon="rectangle-terminal" title="Démarrer le serveur de prévisualisation">
+    1. Installez la CLI Mintlify : `npm i -g mint`
+    2. Naviguez vers le répertoire de votre documentation et exécutez : `mint dev`
+    3. Ouvrez `http://localhost:3000` pour voir votre documentation en direct !
+    
+    <Tip>Votre prévisualisation se met à jour automatiquement à mesure que vous modifiez les fichiers.</Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Étape 2 : Déployer vos modifications
+
+<AccordionGroup>
+  <Accordion icon="github" title="Installer notre application GitHub">
+    Installez l'application GitHub Mintlify depuis votre [tableau de bord](https://dashboard.mintlify.com/settings/organization/github-app).
+    
+    Notre application GitHub déploie automatiquement vos modifications sur votre site de documentation, vous n'avez donc pas à gérer les déploiements vous-même.
+</Accordion>
+<Accordion icon="palette" title="Mettre à jour le nom et les couleurs de votre site">
+    Pour une première modification, mettons à jour le nom et les couleurs de votre site de documentation.
+
+    1. Ouvrez `docs.json` dans votre éditeur.
+    2. Modifiez le champ `"name"` avec le nom de votre projet.
+    3. Mettez à jour les `"colors"` pour qu'elles correspondent à votre marque.
+    4. Enregistrez et voyez vos modifications instantanément sur `http://localhost:3000`.
+
+    <Tip>Essayez de changer la couleur principale pour voir une différence immédiate !</Tip>
+  </Accordion>
+</AccordionGroup>
+
+### Étape 3 : Passer en production
+
+<Accordion icon="rocket" title="Publier votre documentation">
+  1. Validez (commit) et poussez vos modifications.
+  2. Votre documentation sera mise à jour et en ligne en un instant !
+</Accordion>
+
+## Étapes suivantes
+
+Maintenant que votre documentation est en cours d'exécution, explorez ces fonctionnalités clés :
+
+<CardGroup cols={2}>
+
+<Card title="Rédiger du contenu" icon="pen-to-square" href="/essentials/markdown">
+  Apprenez la syntaxe MDX et commencez à rédiger votre documentation.
+</Card>
+
+<Card title="Personnaliser le style" icon="palette" href="/essentials/settings">
+  Faites en sorte que votre documentation corresponde parfaitement à votre marque.
+</Card>
+
+<Card title="Ajouter des exemples de code" icon="square-code" href="/essentials/code">
+  Incluez des blocs de code avec coloration syntaxique.
+</Card>
+
+<Card title="Documentation d'API" icon="code" href="/api-reference/introduction">
+  Générez automatiquement la documentation d'API à partir des spécifications OpenAPI.
+</Card>
+
+</CardGroup>
+
+<Note>
+  **Besoin d'aide ?** Consultez notre [documentation complète](https://mintlify.com/docs) ou rejoignez notre [communauté](https://mintlify.com/community).
+</Note>
