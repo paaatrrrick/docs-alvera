@@ -1,0 +1,49 @@
+---
+title: "Page colophon : comment le site est construit"
+description: "Ce que couvre la route /colophon du site personnel : la stack, l'hébergement et les principes sur lesquels le site est construit."
+---
+
+## Vue d'ensemble
+
+Le site personnel inclut une route statique `/colophon` qui décrit comment le site est assemblé. Elle suit le même schéma que les pages existantes `/now` et `/uses` : un composant React autonome (`src/components/Colophon.js`) associé à sa propre feuille de style (`src/components/colophon.css`), branché dans `src/App.js` comme une nouvelle route.
+
+La page se veut une note brève et honnête pour les visiteurs qui souhaitent savoir sur quoi tourne le site et quels principes il suit.
+
+## Ce qui a changé
+
+Un nouveau composant `Colophon` a été ajouté et enregistré comme route dans `App.js`. Les visiteurs peuvent désormais accéder à `/colophon` pour voir :
+
+- La stack avec laquelle le site est construit.
+- Où il est hébergé et comment le domaine est géré.
+- Une courte liste de principes que le site essaie de respecter.
+
+L'en-tête de la page comprend un lien "Retour à l'accueil" et un horodatage "Dernière mise à jour" (actuellement **juin 2026**).
+
+## Contenu de la page
+
+<Card title="Built with" icon="code">
+  - React, initialisé avec Create React App.
+  - `react-router-dom` pour le routage côté client.
+  - CSS pur, une feuille de style par page — pas de framework, pas de préprocesseur.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, déployé directement depuis la branche `master` sur GitHub.
+  - Un domaine personnalisé enregistré via GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Pas d'analytique, pas de cookies, pas de suivi. Juste des pages.
+  - Chaque page doit se charger vite et bien se lire sur un téléphone.
+  - Le contenu vit dans des constantes JS simples pour qu'il soit facile à modifier.
+</Card>
+
+## Mettre à jour la page
+
+Le contenu est défini en ligne dans `src/components/Colophon.js` sous la forme d'un tableau `sections` d'objets `{ heading, items }`. Pour changer ce que dit la page :
+
+1. Modifiez le tableau `items` de la section concernée dans `Colophon.js`.
+2. Mettez à jour la constante `updatedAt` en haut du fichier lorsque le contenu change de manière significative.
+3. Ajustez les styles dans `src/components/colophon.css` si nécessaire.
+
+Aucun changement de route n'est nécessaire tant que le chemin du fichier reste le même.
