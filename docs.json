@@ -2525,6 +2525,12 @@
                 "pages": [
                   "es/how-mintlify-works"
                 ]
+              },
+              {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog/overview"
+                ]
               }
             ]
           }
@@ -2540,6 +2546,12 @@
                 "group": "Démarrage",
                 "pages": [
                   "fr/how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog/overview"
                 ]
               }
             ]
