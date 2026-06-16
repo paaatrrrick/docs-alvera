@@ -1,0 +1,85 @@
+---
+title: "Page 404 Not Found et routage"
+description: "Comment le site web personnel gère les URL inconnues avec une page 404 NotFound dédiée et comment configurer la route fourre-tout dans React Router."
+---
+
+## Vue d'ensemble
+
+Le site web personnel affiche désormais un composant **NotFound** dédié pour toute URL qui ne correspond pas à une route définie. Auparavant, les URL inconnues redirigeaient silencieusement vers la page d'accueil, ce qui rendait les liens cassés et les fautes de frappe invisibles pour les visiteurs.
+
+La nouvelle page renvoie un message 404 clair et propose trois liens vers le site afin que les visiteurs ne se retrouvent pas dans une impasse.
+
+## Ce qui a changé
+
+La route fourre-tout dans `src/App.js` a été remplacée. Les deux routes joker gourmandes qui affichaient `Home` pour tout chemin non correspondant ont été supprimées, et une unique route fourre-tout affiche désormais le nouveau composant `NotFound` à la place.
+
+| Avant | Après |
+| ------ | ----- |
+| Les URL inconnues affichaient la page d'accueil. | Les URL inconnues affichent une page 404 dédiée. |
+| Deux routes joker (`/*` et `*`) pointant vers `Home`. | Une `<Route component={NotFound} />` sans correspondance en bas du `Switch`. |
+| Les fautes de frappe et les liens obsolètes étaient invisibles. | Les visiteurs voient un message 404 avec des liens vers le site. |
+
+## Ce qu'affiche la page NotFound
+
+La page est volontairement courte : un grand titre `404`, un message d'une ligne et trois liens de navigation.
+
+- **Aller à l'accueil** → `/`
+- **Lire le blog** → `/blog`
+- **Voir la chronologie** → `/timeline`
+
+Ces trois destinations couvrent les raisons les plus courantes pour lesquelles quelqu'un arrive sur le site, ce qui transforme une URL manquante en un atterrissage en douceur plutôt qu'en un arrêt brutal.
+
+## Configuration de la route
+
+La route fourre-tout doit être la **dernière** `Route` à l'intérieur du `Switch`, afin que chaque autre chemin défini ait la chance de correspondre en premier.
+
+```jsx src/App.js
+import NotFound from "./components/NotFound";
+
+function App() {
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/blog' component={Blog} />
+        <Route exact path='/talks' component={Talks} />
+        <Route exact path='/magic-the-gathering' component={Haus} />
+        <Route exact path='/blog/:id' render={routeProps => <ViewBlog {...routeProps} />} />
+        {/* Must be last — matches anything not handled above */}
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+  );
+}
+```
+
+<Tip>
+Omets la prop `path` sur la route fourre-tout. Une `Route` sans `path` à l'intérieur d'un `Switch` correspond à tout ce qui l'atteint.
+</Tip>
+
+## Ajouter une nouvelle route sans casser la gestion du 404
+
+Lorsque tu ajoutes une nouvelle page, insère sa `Route` **au-dessus** du fourre-tout `NotFound`. Tout ce qui est placé en dessous du fourre-tout est inaccessible.
+
+```jsx src/App.js
+<Switch>
+  <Route exact path='/' component={Home} />
+  {/* new page goes here */}
+  <Route exact path='/projects' component={Projects} />
+  <Route component={NotFound} />
+</Switch>
+```
+
+## Personnaliser la page
+
+Le composant se trouve dans `src/components/NotFound.js` et ses styles dans `src/components/notFound.css`. Pour modifier le texte ou les liens, édite le bloc `notFoundActions` :
+
+```jsx src/components/NotFound.js
+<div className="notFoundActions">
+    <Link to="/" className="notFoundBtn primary">Go home</Link>
+    <Link to="/blog" className="notFoundBtn">Read the blog</Link>
+    <Link to="/timeline" className="notFoundBtn">See the timeline</Link>
+</div>
+```
+
+Garde l'action **primary** pointant vers une destination à fort trafic (la page d'accueil est un choix par défaut sûr) et utilise les boutons secondaires pour les sections que tu veux le plus faire découvrir aux visiteurs perdus.
