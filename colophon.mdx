@@ -1,0 +1,94 @@
+---
+title: "Colophon page: structure and updates"
+description: "How the personal website's /colophon page is configured from the sections array, plus a changelog of recent additions to the route."
+---
+
+## Overview
+
+The colophon page is a standalone route at `/colophon` that describes how the site is built — the stack, the hosting, and a few principles the site is meant to follow. It mirrors the existing `/now` and `/uses` pages: a single component (`src/components/Colophon.js`) with its own stylesheet (`src/components/colophon.css`) and a route registered in `src/App.js`.
+
+This page documents that component so visitors and contributors know what it shows and how to edit it.
+
+## What changed
+
+A new `/colophon` route was added to the personal website. The page is rendered by `Colophon.js` and pulls its content from a local `sections` array, with a top-of-page `updatedAt` string for the "Last updated" line. The initial release groups content under three headings:
+
+<Card title="Built with" icon="screwdriver-wrench">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="server">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="list-check">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+The page is reachable from the home page in the same way as the other standalone pages and includes a `← Back home` link in its header.
+
+## Section schema
+
+Each entry in the local `sections` array supports the following fields:
+
+| Field     | Type     | Required | Description                                          |
+| --------- | -------- | -------- | ---------------------------------------------------- |
+| `heading` | string   | Yes      | Section title rendered as an `<h2>`.                 |
+| `items`   | string[] | Yes      | Bulleted list of lines shown under the heading.      |
+
+The `updatedAt` constant at the top of the file controls the "Last updated" line in the header.
+
+## Editing the page
+
+Open `src/components/Colophon.js` and edit the `sections` array. Add, remove, or reorder entries as needed; each section renders as a heading followed by a `<ul>`.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    {
+        heading: 'Principles',
+        items: [
+            'No analytics, no cookies, no tracking. Just pages.',
+            'Every page should load fast and read well on a phone.',
+            'Content lives in plain JS constants so it is easy to edit.',
+        ],
+    },
+];
+```
+
+<Tip>
+Bump the `updatedAt` string whenever you meaningfully change the content so the "Last updated" line stays honest.
+</Tip>
+
+## Writing colophon entries
+
+Keep the page short and concrete.
+
+- Name the actual tools and services rather than categories.
+- Prefer one sentence per item so the list scans quickly on mobile.
+- Use the `Principles` section for choices a reader cannot otherwise see (no analytics, no tracking, performance budget).
+
+## When to update this page
+
+Update the colophon whenever the underlying stack, hosting setup, or stated principles change — for example, switching hosts, swapping the routing library, or adding or removing analytics.
