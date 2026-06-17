@@ -1,0 +1,35 @@
+---
+title: 'Bloques de código y resaltado de sintaxis'
+description: 'Da formato a código en línea, bloques de código de varias líneas, resaltado de sintaxis, números de línea y ejemplos de código agrupados en tu documentación de Mintlify.'
+icon: 'code'
+---
+
+## Código en línea
+
+Para indicar que una `palabra` o `frase` es código, enciérrala entre acentos graves (`).
+
+```
+Para indicar que una `palabra` o `frase` es código, enciérrala entre acentos graves (`).
+```
+
+## Bloques de código
+
+Usa [bloques de código con vallas](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) encerrando el código entre tres acentos graves y añadiendo a continuación el lenguaje de programación de tu snippet para obtener resaltado de sintaxis. Opcionalmente, también puedes escribir el nombre de tu código después del lenguaje de programación.
+
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+````md
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+````
