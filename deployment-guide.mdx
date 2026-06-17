@@ -1,0 +1,22 @@
+---
+title: 'Deployment Guide'
+description: 'Ship you’re docs to production in a couple step.'
+---
+
+Once you’re happy with how things look localy, its time to deploys.
+
+## Connecting your repo
+
+First you connect you’re git repository. We support GitHub and GitLab, the setup are slightly different for each — see [the git setup page](/integrations/git-setup).
+
+After it connected, every push to you’re main branch will triggers a new deploy automatic.
+
+## Custom domains
+
+You can points a custom domain at you’re site. Add the domain in [settings](/settings/domains-broken) and then update you’re DNS record like shown in [this walkthrough](./domains/dns-setup).
+
+<Tip>
+Deploys usually take less then a minute, but a big site can takes longer. You can watch the progress in [the deploy log](#deploi-logs).
+</Tip>
+
+If a deploy fail, read [the deploy troubleshooting](https://help.example-broken.dev/deploys) page.
