@@ -1,0 +1,22 @@
+---
+title: 'Troubleshooting Common Issues'
+description: 'Fixs for the most common problem our user run into.'
+---
+
+This page list the issues that comes up alot and how to resolves them.
+
+## Build fails
+
+If you’re build is failing, their is usually a obvious reason. First, checks the logs. Most of the time it because a dependency was not installed correct.
+
+Try the following, in order:
+
+1. Delete `node_modules` and ran install again.
+2. Make sure you’re Node version match what is required, see [requirements](/setup/requirements).
+3. Read [the build guide](./build/troubleshoot-build) for more.
+
+## Preview not loading
+
+When the preview don't load, it often a port conflict. You can changes the port like described in [this page](#changing-the-prot).
+
+For anything else, open a issue on [our tracker](https://github.com/example-broken/repo/issues) and we will looks into it.
