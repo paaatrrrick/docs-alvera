@@ -30,6 +30,7 @@
                 "group": "Personal website",
                 "pages": [
                   "work-experience",
+                  "changelog",
                   "game-of-thrones",
                   "latest-email"
                 ]
@@ -2527,6 +2528,7 @@
                 "group": "Sitio personal",
                 "pages": [
                   "es/work-experience",
+                  "es/changelog",
                   "es/game-of-thrones",
                   "es/latest-email"
                 ]
@@ -5024,6 +5026,7 @@
                 "group": "Site personnel",
                 "pages": [
                   "fr/work-experience",
+                  "fr/changelog",
                   "fr/game-of-thrones",
                   "fr/latest-email"
                 ]
