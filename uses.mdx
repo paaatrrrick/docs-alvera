@@ -1,0 +1,107 @@
+---
+title: "Uses page: hardware, editor, and daily apps"
+description: "How the personal website's /uses page is wired up, what each section contains, and how to update the hardware, editor, and daily-app lists."
+---
+
+## Overview
+
+The personal website now ships a dedicated **`/uses`** page — a running list of the hardware, editor, terminal, apps, and audio gear the site's owner reaches for day-to-day. It's a single top-level route, modeled after the popular `uses.tech` convention, and it's meant to be edited in place whenever something gets swapped out.
+
+Visit it at `/uses` (for example, `https://yourdomain.com/uses`).
+
+## What the page contains
+
+The page renders sections from a `sections` array, in this order:
+
+<Card title="Editor & Terminal" icon="terminal">
+  Editor, terminal emulator, and shell setup. Defaults to VS Code with the Vim extension, the Ghostty terminal, and a Zsh + Starship prompt.
+</Card>
+
+<Card title="Hardware" icon="laptop">
+  Primary machine, displays, and peripherals. Defaults to a 14" MacBook Pro (M3 Pro), an LG 27" 4K display in portrait, and a Keychron K3 Pro keyboard.
+</Card>
+
+<Card title="Apps I open every day" icon="grid-2">
+  Daily software. Defaults to Linear for issue tracking, Raycast as a Spotlight replacement, and Arc as the primary browser.
+</Card>
+
+<Card title="Productivity & writing" icon="pen-to-square">
+  Long-form notes, journaling, task management, and Markdown drafting. Covers Notion, Obsidian, Things 3, and iA Writer.
+</Card>
+
+<Card title="Audio & focus" icon="headphones">
+  Headphones and focus audio for deep work. Covers the Sony WH-1000XM5, Endel soundscapes, Apple Music classical, and Krisp noise filtering on calls.
+</Card>
+
+Each section has a heading and a list of items. Every item has a `name` (rendered bold) and a `detail` (a short sentence explaining the choice).
+
+## How it's wired up
+
+Three things make the page work:
+
+1. **`src/components/Uses.js`** — the React component that renders the page. It defines the `sections` array and maps over it to render each group.
+2. **`src/components/uses.css`** — page-scoped styles. Sets the max width, typography, and the dashed list dividers.
+3. **`src/App.js`** — registers a new route so the page is reachable:
+
+```js src/App.js
+import Uses from "./components/Uses";
+
+<Route exact path='/uses' component={Uses} />
+```
+
+The page also includes a "← Back home" link in the header that points to `/`.
+
+## Section schema
+
+Each entry in the `sections` array supports the following fields:
+
+| Field          | Type   | Required | Description                                                       |
+| -------------- | ------ | -------- | ----------------------------------------------------------------- |
+| `heading`      | string | Yes      | Section title shown as an `<h2>`.                                 |
+| `items`        | array  | Yes      | List of tools in the section.                                     |
+| `items.name`   | string | Yes      | Tool name, rendered in bold as the row label.                     |
+| `items.detail` | string | Yes      | One-sentence explanation of how or why you use it.                |
+
+## Updating the list
+
+Open `src/components/Uses.js` and edit the `sections` array. Changes appear immediately on `/uses` — there's no separate data file.
+
+```js src/components/Uses.js
+const sections = [
+    {
+        heading: 'Editor & Terminal',
+        items: [
+            { name: 'VS Code', detail: 'Daily driver editor, with the Vim extension and a heavily tweaked One Dark Pro theme.' },
+            { name: 'Ghostty', detail: 'Terminal of choice — fast, GPU-rendered, and stays out of the way.' },
+            { name: 'Zsh + Starship', detail: 'Minimal prompt with git status and the current Node/Python version.' },
+        ],
+    },
+    // ...other sections
+    {
+        heading: 'Audio & focus',
+        items: [
+            { name: 'Sony WH-1000XM5', detail: 'Noise-cancelling headphones for deep work and travel.' },
+            { name: 'Endel', detail: 'Generative focus soundscapes — replaced every "lo-fi beats" playlist for me.' },
+            { name: 'Apple Music classical', detail: 'Default soundtrack while coding. The catalog metadata is the best of any service.' },
+            { name: 'Krisp', detail: 'Background-noise filtering on every call.' },
+        ],
+    },
+];
+```
+
+To add a new section, append another object to `sections` with its own `heading` and `items`. To add an item, push a new `{ name, detail }` object onto the relevant `items` array.
+
+<Tip>
+Keep `detail` to a single sentence. The layout assumes one line of context per tool — longer copy starts to crowd the dashed dividers.
+</Tip>
+
+## Writing good entries
+
+- Lead the `detail` with *why* you use it, not just what it is.
+- Mention the specific config or extension that makes the tool yours (for example, "VS Code with the Vim extension").
+- Skip tools you've used once. The page is for things you actually reach for daily.
+- Update entries in place when you swap something out — don't keep a changelog on the page itself.
+
+## When to update this page
+
+Refresh `/uses` whenever you change your daily setup: a new laptop, a different terminal, a fresh keyboard, swapped-out apps, or new headphones. The header copy already promises the page is "updated whenever I swap something out," so keep it honest.
