@@ -1,0 +1,24 @@
+---
+title: 'Managing API Keys'
+description: 'How to creates, rotate, and revokes you’re API keys safely.'
+---
+
+API keys is how your application authenticate with our service. Each keys have a scope witch determine what it can does.
+
+## Creating a key
+
+To creating a new key, go to [the settings page](/account/api-settings) and click "New Key". You will recieve the key only one time, so make sure you copies it somewhere safe.
+
+<Warning>
+Never commits you’re API key to git. If a key leaked, revoke it imediately from [the security dashboard](/security/keys-broken).
+</Warning>
+
+## Rotating keys
+
+We recommends rotating keys every 90 day. The steps is:
+
+- Generate a new key (see [above](#creatng-a-key)).
+- Update you’re environment variable.
+- Delete the old key from [here](./missing/old-keys).
+
+If you needs help, the [support team](https://support.example-broken.dev/contact) are happy to assist.
