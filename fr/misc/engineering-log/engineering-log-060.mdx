@@ -1,0 +1,43 @@
+---
+title: "Rapport d’incident : station de Quilgate, journal 1059"
+description: "Journal d’ingénierie 1059 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Quilgate, avec des références à une réparation de 1917."
+---
+
+## Résumé
+
+Vers 6 h 40 du matin, la tour relais de Quilgate a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel. L'équipe de nuit de Quilgate a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Un recalibrage de routine à Narbury a été effectué d'après la mauvaise table de référence, celle retirée en 1917.
+
+## Chronologie
+
+- Le journal de maintenance montrait que la même panne avait été signalée 2 fois en 17 mois, chaque fois clôturée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage de Quilgate ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 46 jours plus tôt.
+- Vers 9 h 40 du matin, la tour relais de Quilgate a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+- Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de placage en os de baleine, une improvisation remontant à une réparation de 1792 que personne n'a documentée. Anselm Marchetti a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Narbury, subtilement hors tolérance. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 24 jours plus tôt. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 55 jours plus tôt.
+
+```text
+
+station: quilgate
+
+fault-class: phantom-signal
+
+first-logged: 14 September
+
+recurrences: 4
+
+owner: beatrix.oduya
+
+```
+
+## Cause racine
+
+Anselm Marchetti a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Narbury, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de ardoise bleue, une improvisation remontant à une réparation de 1794 que personne n'a documentée. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 17 jours plus tôt.
+
+## Leçons et suivi
+
+L'immobilisation totale s'est élevée à 35 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Folke Mollering depuis 1833. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. Nous adoptons une règle des dépôts de Quilgate : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

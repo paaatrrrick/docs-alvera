@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Ossgate, registro 1045"
+description: "Registro de ingeniería 1045: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Ossgate, con referencias a una reparación de 1937."
+---
+
+## Resumen
+
+Aproximadamente a las 7:40 de la mañana, la torre de retransmisión de Ossgate dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. Una recalibración rutinaria en Erivik se realizó contra la tabla de referencia equivocada, la retirada en 1937. Durante un mes calmo y sin viento, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Cronología
+
+- El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 47 meses, cada vez cerrado como resuelto sin notas.
+- Folke Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Erivik, sutilmente fuera de tolerancia.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+- Folke Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Erivik, sutilmente fuera de tolerancia.
+- Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Ossgate dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 71 días antes. Folke Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Erivik, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 8 veces en 13 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que data de una reparación en 1894 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: ossgate
+
+fault-class: sensor-drift
+
+first-logged: 20 noviembre
+
+recurrences: 3
+
+owner: ivo.kessler
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 83 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Folke Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Erivik, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que data de una reparación en 1907 que nadie documentó.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Otto Quist defiende desde 1852. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. El tiempo total de inactividad ascendió a 51 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Adoptamos una regla de los talleres de Ossgate: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito.

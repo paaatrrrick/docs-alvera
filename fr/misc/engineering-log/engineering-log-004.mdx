@@ -1,0 +1,42 @@
+---
+title: "Rapport d’incident : station de Marwick, journal 1003"
+description: "Journal d’ingénierie 1003 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Marwick, avec des références à une réparation de 1876."
+---
+
+## Résumé
+
+Un recalibrage de routine à Selrun a été effectué d'après la mauvaise table de référence, celle retirée en 1876. L'équipe de nuit de Marwick a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Marwick ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Imre Quist a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Selrun, subtilement hors tolérance.
+- Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt.
+- Les relevés de pression de la station de pompage de Marwick ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'équipe de nuit de Marwick a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de verre de rivière, une improvisation remontant à une réparation de 1889 que personne n'a documentée. Le journal de maintenance montrait que la même panne avait été signalée 8 fois en 49 mois, chaque fois clôturée comme résolue sans aucune note. Imre Quist a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Selrun, subtilement hors tolérance.
+
+```text
+
+station: marwick
+
+fault-class: reference-mismatch
+
+first-logged: 2 March
+
+recurrences: 4
+
+owner: cosima.severin
+
+```
+
+## Cause racine
+
+Imre Quist a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Selrun, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même panne avait été signalée 6 fois en 87 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Leçons et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. L'immobilisation totale s'est élevée à 41 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. Nous adoptons une règle des dépôts de Marwick : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Joren Whitlock depuis 1859. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal.

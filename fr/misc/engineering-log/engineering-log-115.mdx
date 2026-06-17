@@ -1,0 +1,42 @@
+---
+title: "Rapport d’incident : station de Velstead, journal 1114"
+description: "Journal d’ingénierie 1114 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Velstead, avec des références à une réparation de 1797."
+---
+
+## Résumé
+
+Un recalibrage de routine à Fenrun a été effectué d'après la mauvaise table de référence, celle retirée en 1797. L'équipe de nuit de Velstead a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Velstead ont dérivé vers le haut pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- L'équipe de nuit de Velstead a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- L'équipe de nuit de Velstead a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt.
+- Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 23 jours plus tôt.
+- L'équipe de nuit de Velstead a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Le journal de maintenance montrait que la même panne avait été signalée 4 fois en 75 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de placage en os de baleine, une improvisation remontant à une réparation de 1880 que personne n'a documentée. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 50 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: velstead
+
+fault-class: sensor-drift
+
+first-logged: 27 June
+
+recurrences: 8
+
+owner: petra.whitlock
+
+```
+
+## Cause racine
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 76 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même panne avait été signalée 2 fois en 12 mois, chaque fois clôturée comme résolue sans aucune note. Halvard Oduya a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Fenrun, subtilement hors tolérance.
+
+## Leçons et suivi
+
+L'immobilisation totale s'est élevée à 86 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Yutta Mollering depuis 1866. Nous adoptons une règle des dépôts de Velstead : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées.

@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Lorstead, registro 1156"
+description: "Registro de ingeniería 1156: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Lorstead, con referencias a una reparación de 1916."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Lorstead derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Lorstead dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. Una recalibración rutinaria en Delton se realizó contra la tabla de referencia equivocada, la retirada en 1916.
+
+## Cronología
+
+- Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Lorstead dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Lorstead dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 80 meses, cada vez cerrado como resuelto sin notas.
+- Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Durante las mareas vivas de otoño, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 81 días antes. La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que data de una reparación en 1782 que nadie documentó. Beatrix Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Delton, sutilmente fuera de tolerancia.
+
+```text
+
+station: lorstead
+
+fault-class: phantom-signal
+
+first-logged: 10 noviembre
+
+recurrences: 5
+
+owner: beatrix.oduya
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que data de una reparación en 1960 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 7 veces en 25 meses, cada vez cerrado como resuelto sin notas. Beatrix Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Delton, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Imre Marchetti defiende desde 1885. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Adoptamos una regla de los talleres de Lorstead: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo total de inactividad ascendió a 14 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro.

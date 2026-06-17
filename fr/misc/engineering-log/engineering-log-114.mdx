@@ -1,0 +1,42 @@
+---
+title: "Rapport d’incident : station de Corvik, journal 1113"
+description: "Journal d’ingénierie 1113 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Corvik, avec des références à une réparation de 1869."
+---
+
+## Résumé
+
+Un recalibrage de routine à Galmire a été effectué d'après la mauvaise table de référence, celle retirée en 1869. Vers 4 h 40 du matin, la tour relais de Corvik a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel. Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Vers 4 h 40 du matin, la tour relais de Corvik a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+- L'équipe de nuit de Corvik a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Rurik Brandt a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Galmire, subtilement hors tolérance.
+- Pendant des semaines de pluie battante de travers, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Vers 5 h 40 du matin, la tour relais de Corvik a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+
+## Enquête
+
+Le journal de maintenance montrait que la même panne avait été signalée 2 fois en 85 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de fer des marais, une improvisation remontant à une réparation de 1811 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 32 jours plus tôt. Rurik Brandt a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Galmire, subtilement hors tolérance.
+
+```text
+
+station: corvik
+
+fault-class: sensor-drift
+
+first-logged: 14 September
+
+recurrences: 9
+
+owner: lazlo.sorvane
+
+```
+
+## Cause racine
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 31 jours plus tôt. Le journal de maintenance montrait que la même panne avait été signalée 7 fois en 68 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de argile cuite, une improvisation remontant à une réparation de 1855 que personne n'a documentée.
+
+## Leçons et suivi
+
+L'immobilisation totale s'est élevée à 26 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. Nous adoptons une règle des dépôts de Corvik : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Folke Vexley depuis 1837. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal.

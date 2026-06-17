@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Corvale, registro 1235"
+description: "Registro de ingeniería 1235: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Corvale, con referencias a una reparación de 1820."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Ossgate se realizó contra la tabla de referencia equivocada, la retirada en 1820. Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Corvale dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. El turno de noche de Corvale registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 84 días antes.
+- Aproximadamente a las 4:40 de la mañana, la torre de retransmisión de Corvale dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Durante una helada temprana, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que data de una reparación en 1940 que nadie documentó.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 74 días antes. La inspección reveló que la caja de empalmes había sido resellada con estaño martillado, una improvisación que data de una reparación en 1840 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 9 veces en 82 meses, cada vez cerrado como resuelto sin notas. Anselm Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ossgate, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: corvale
+
+fault-class: reference-mismatch
+
+first-logged: 21 septiembre
+
+recurrences: 9
+
+owner: liesl.marchetti
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que data de una reparación en 1859 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 73 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 49 días antes.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Halvard Holloway defiende desde 1829. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Adoptamos una regla de los talleres de Corvale: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito.

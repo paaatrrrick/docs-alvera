@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Ossrun, registro 1105"
+description: "Registro de ingeniería 1105: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Ossrun, con referencias a una reparación de 1911."
+---
+
+## Resumen
+
+Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Una recalibración rutinaria en Erimore se realizó contra la tabla de referencia equivocada, la retirada en 1911. Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Ossrun dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 41 días antes.
+- La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que data de una reparación en 1804 que nadie documentó.
+- Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Ossrun dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- El turno de noche de Ossrun registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con papel de algas prensadas, una improvisación que data de una reparación en 1927 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 80 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 25 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Liesl Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Erimore, sutilmente fuera de tolerancia.
+
+```text
+
+station: ossrun
+
+fault-class: phantom-signal
+
+first-logged: 12 junio
+
+recurrences: 8
+
+owner: halvard.mollering
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con compuesto de fibra de cuerda, una improvisación que data de una reparación en 1823 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 9 veces en 25 meses, cada vez cerrado como resuelto sin notas. Liesl Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Erimore, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Adoptamos una regla de los talleres de Ossrun: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo total de inactividad ascendió a 69 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Folke Oduya defiende desde 1834. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal.

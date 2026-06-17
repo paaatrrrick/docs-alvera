@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Corbury, registro 1011"
+description: "Registro de ingeniería 1011: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Corbury, con referencias a una reparación de 1899."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Ilycrest se realizó contra la tabla de referencia equivocada, la retirada en 1899. El turno de noche de Corbury registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Corbury derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Dario Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilycrest, sutilmente fuera de tolerancia.
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Aproximadamente a las 7:40 de la mañana, la torre de retransmisión de Corbury dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Las lecturas de presión de la estación de bombeo de Corbury derivaron al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Investigación
+
+Dario Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilycrest, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 15 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 50 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que data de una reparación en 1892 que nadie documentó.
+
+```text
+
+station: corbury
+
+fault-class: reference-mismatch
+
+first-logged: 8 noviembre
+
+recurrences: 9
+
+owner: rurik.kessler
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con papel de algas prensadas, una improvisación que data de una reparación en 1852 que nadie documentó. Dario Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilycrest, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 40 días antes.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Liesl Quist defiende desde 1842. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Adoptamos una regla de los talleres de Corbury: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo total de inactividad ascendió a 22 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron.

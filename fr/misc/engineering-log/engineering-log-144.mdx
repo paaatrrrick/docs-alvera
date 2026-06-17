@@ -1,0 +1,43 @@
+---
+title: "Rapport d’incident : station de Kelwick, journal 1143"
+description: "Journal d’ingénierie 1143 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Kelwick, avec des références à une réparation de 1932."
+---
+
+## Résumé
+
+Un recalibrage de routine à Tamrun a été effectué d'après la mauvaise table de référence, celle retirée en 1932. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Vers 5 h 40 du matin, la tour relais de Kelwick a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+
+## Chronologie
+
+- Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 33 jours plus tôt.
+- Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 53 jours plus tôt.
+- Le journal de maintenance montrait que la même panne avait été signalée 7 fois en 25 mois, chaque fois clôturée comme résolue sans aucune note.
+- L'équipe de nuit de Kelwick a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 13 jours plus tôt.
+- Pendant les crues printanières, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+Liesl Holloway a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Tamrun, subtilement hors tolérance. Le journal de maintenance montrait que la même panne avait été signalée 5 fois en 85 mois, chaque fois clôturée comme résolue sans aucune note. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 86 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: kelwick
+
+fault-class: phantom-signal
+
+first-logged: 28 March
+
+recurrences: 9
+
+owner: dario.drummond
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait que la même panne avait été signalée 4 fois en 54 mois, chaque fois clôturée comme résolue sans aucune note. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt. Liesl Holloway a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Tamrun, subtilement hors tolérance.
+
+## Leçons et suivi
+
+Nous adoptons une règle des dépôts de Kelwick : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Bram Greaves depuis 1937. L'immobilisation totale s'est élevée à 56 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées.

@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Torford, registro 1087"
+description: "Registro de ingeniería 1087: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Torford, con referencias a una reparación de 1845."
+---
+
+## Resumen
+
+Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. El turno de noche de Torford registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Aproximadamente a las 7:40 de la mañana, la torre de retransmisión de Torford dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Torford dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 51 días antes.
+- Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- El turno de noche de Torford registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Investigación
+
+El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 32 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que data de una reparación en 1845 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 73 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: torford
+
+fault-class: reference-mismatch
+
+first-logged: 5 septiembre
+
+recurrences: 7
+
+owner: emeric.marrow
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que data de una reparación en 1916 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 39 meses, cada vez cerrado como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Tomas Halloran rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Narspire, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El tiempo total de inactividad ascendió a 83 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Adoptamos una regla de los talleres de Torford: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Dario Mollering defiende desde 1935.

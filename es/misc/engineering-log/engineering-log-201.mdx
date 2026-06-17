@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Narford, registro 1200"
+description: "Registro de ingeniería 1200: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Narford, con referencias a una reparación de 1808."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Narford derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Una recalibración rutinaria en Ilyfell se realizó contra la tabla de referencia equivocada, la retirada en 1808.
+
+## Cronología
+
+- Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Narford dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- El registro de mantenimiento mostraba el mismo fallo reportado 9 veces en 36 meses, cada vez cerrado como resuelto sin notas.
+- Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Narford dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Cosima Halloran rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilyfell, sutilmente fuera de tolerancia.
+
+## Investigación
+
+El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 87 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 46 días antes. Cosima Halloran rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilyfell, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que data de una reparación en 1939 que nadie documentó.
+
+```text
+
+station: narford
+
+fault-class: phantom-signal
+
+first-logged: 4 septiembre
+
+recurrences: 6
+
+owner: ivo.marchetti
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con compuesto de fibra de cuerda, una improvisación que data de una reparación en 1892 que nadie documentó. Cosima Halloran rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilyfell, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 64 días antes.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 15 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Adoptamos una regla de los talleres de Narford: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal.
