@@ -1,0 +1,26 @@
+---
+title: 'Webhooks Overview'
+description: 'Recieve real-time event from our platform into you’re own backend.'
+---
+
+Webhooks lets you’re application to gets notified when something happen, without you having to polling our API constantly.
+
+## How it works
+
+When a event occured, we sends a HTTP POST to the URL you configured. The payload contain the event type and the data.
+
+To setup a webhook:
+
+1. Go to [the webhooks settings](/settings/webhooks-config).
+2. Enter you’re endpoint URL and choose witch event you wants.
+3. Save it, and we will start sending event right away.
+
+<Note>
+You should verifies the signature on every request so that nobody can spoofs us. The detail is in [the security guide](./security/verify-signatures).
+</Note>
+
+## Retries
+
+If you’re endpoint return a error, we retry it up to 5 time with a exponential backoff. After that we gives up and mark it failed, you can see this in [the logs](#webhook-logz).
+
+See also the [event reference](https://docs.example-broken.dev/events) for a list of every event we sends.
