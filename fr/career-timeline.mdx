@@ -1,0 +1,78 @@
+---
+title: "Page de chronologie professionnelle : filtres et comportement"
+description: "Comment la page interactive /timeline trace chaque poste du tableau workExperience, avec son résumé statistique et ses filtres remote, décennie et recherche."
+---
+
+## Vue d'ensemble
+
+Le site personnel inclut une route dédiée `/timeline` qui affiche une chronologie professionnelle interactive. Elle lit le même tableau `workExperience` que la page d'accueil, donc tout poste ajouté via le [flux d'expérience professionnelle](/work-experience) apparaît automatiquement dans la chronologie — sans changement de schéma.
+
+Utilise cette page quand tu veux :
+
+- Afficher tous les postes en une seule fois plutôt que la liste déroulante de la page d'accueil.
+- Mettre en valeur la trajectoire professionnelle par année, lieu et part remote vs. sur site.
+- Permettre aux visiteurs de filtrer la liste par décennie ou de rechercher un poste précis.
+
+## Ce que la page affiche
+
+La chronologie est triée de façon antéchronologique par la plus ancienne année de la chaîne `timeLine` de chaque entrée. Chaque poste est rendu sous forme de carte avec :
+
+- L'année de début, plus `→ now` pour les postes dont la `timeLine` contient "present".
+- Un badge **Remote** ou **On-site** dérivé de la chaîne `timeLine`.
+- Le titre du poste.
+- Le lieu (extrait de la fin de la chaîne `timeLine`, après le dernier point).
+- La description issue de `text`.
+
+### En-tête de synthèse
+
+En haut de la page, un bandeau de statistiques résume le jeu de données :
+
+| Statistique     | Ce qu'elle compte                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------ |
+| `roles`         | Nombre total d'entrées dans `workExperience`.                                                    |
+| `years spanned` | Écart entre la plus ancienne année de début et la plus récente année de fin de toutes les entrées. |
+| `remote`        | Nombre d'entrées dont la chaîne `timeLine` contient "remote" (insensible à la casse).            |
+
+## Contrôles de filtre
+
+Trois contrôles apparaissent sous l'en-tête de synthèse. Ils se combinent — en appliquer plusieurs réduit encore la liste.
+
+### Boutons Remote / On-site
+
+Trois boutons — **All**, **Remote**, **On-site** — basculent le mode de lieu. Un poste compte comme remote quand sa chaîne `timeLine` contient "remote" (insensible à la casse) ; tout le reste est considéré comme sur site.
+
+### Menu déroulant des décennies
+
+Un menu déroulant liste chaque décennie présente dans les données (par exemple, `2020s`, `2030s`), plus une option **All decades** par défaut. Sélectionner une décennie conserve uniquement les postes dont l'année de début s'y trouve. La liste est construite à partir des données, donc les nouvelles décennies apparaissent automatiquement à mesure que tu ajoutes des postes.
+
+### Champ de recherche
+
+Une zone de recherche libre cherche dans les champs `title`, `text` et `timeLine` du poste. La recherche est insensible à la casse et fonctionne par sous-chaîne, donc les mots partiels marchent. Les espaces de début et de fin sont ignorés.
+
+Quand aucune entrée ne correspond aux filtres actifs, la chronologie affiche `No roles match this filter.` à la place de la liste.
+
+## Comment les entrées sont analysées
+
+La chronologie n'exige aucun nouveau champ sur les entrées de `workExperience`. Elle déduit tout ce dont elle a besoin de la chaîne `timeLine` existante :
+
+- **Années** — chaque nombre à 4 chiffres dans `timeLine` est traité comme une année. Le plus petit est le début, le plus grand est la fin. Si la chaîne contient "present", la fin est fixée à l'année en cours.
+- **Lieu** — le texte après le dernier point dans `timeLine` est affiché sous le titre. Les postes sans lieu de fin s'affichent comme `Unknown`.
+- **Indicateur remote** — activé quand `timeLine` contient "remote".
+
+Comme l'analyse repose entièrement sur `timeLine`, formater cette chaîne de façon cohérente est ce qui maintient la chronologie exacte. La convention utilisée par les entrées existantes est :
+
+```js src/constants/work.js
+{
+    title: 'SWE at Modal',
+    text: `Worked on the serverless GPU runtime...`,
+    timeLine: 'May - August 2035. Remote',
+}
+```
+
+<Tip>
+Inclus l'année (ou les deux années pour les postes pluriannuels) et termine la chaîne `timeLine` par le lieu après un point. Utilise "Remote" tel quel pour les postes remote et "present" pour les postes en cours, afin que la chronologie les détecte correctement.
+</Tip>
+
+## À propos de la page
+
+La chronologie vit sur `/timeline` et est liée depuis la page d'accueil. Les nouvelles entrées d'expérience professionnelle apparaissent automatiquement — il n'y a rien à modifier sur la page de chronologie elle-même lorsque tu ajoutes un poste. Pour changer ce qui est affiché, mets à jour le tableau `workExperience` sous-jacent comme décrit dans [Expérience professionnelle](/work-experience).

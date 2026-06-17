@@ -30,6 +30,7 @@
                 "group": "Personal website",
                 "pages": [
                   "work-experience",
+                  "career-timeline",
                   "game-of-thrones",
                   "latest-email"
                 ]
@@ -7501,6 +7502,12 @@
                   "fr/misc/almanac/almanac-248",
                   "fr/misc/almanac/almanac-249",
                   "fr/misc/almanac/almanac-250"
+                ]
+              },
+              {
+                "group": "Site web personnel",
+                "pages": [
+                  "fr/career-timeline"
                 ]
               }
             ]
