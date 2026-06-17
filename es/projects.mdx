@@ -1,0 +1,118 @@
+---
+title: "Sección de proyectos: estructura y actualizaciones"
+description: "Cómo se configura la lista de proyectos del sitio web personal a partir del array myProjects, junto con un registro de los proyectos añadidos recientemente."
+---
+
+## Resumen
+
+La sección de proyectos muestra una lista de proyectos personales en la página principal del sitio web personal. Cada entrada se renderiza a partir del array `myProjects` y muestra un título, una descripción breve (un párrafo o una lista con viñetas), una vista previa en imagen o vídeo, y uno o varios enlaces externos como GitHub, un sitio web en vivo o una ficha de extensión de Chrome.
+
+Esta página documenta las incorporaciones recientes a esa lista para que visitantes y colaboradores sepan qué ha cambiado y cómo se configuran las nuevas entradas.
+
+## Qué ha cambiado
+
+Se han añadido dos nuevos proyectos al principio del array `myProjects`:
+
+<Card title="📅 Asistente de Calendario con IA" icon="calendar">
+  Un calendario que lee tu bandeja de entrada y sugiere proactivamente cuándo agendar, reprogramar o rechazar reuniones.
+
+  - Extracción de intención mediante LLM a partir de hilos de correo
+  - Escrituras en Google Calendar con un solo clic mediante OAuth
+  - Almacenamiento local-first; el contenido de los hilos nunca sale de tu portátil
+
+  **Enlaces:** GitHub
+</Card>
+
+<Card title="♟️ Realtime Chess" icon="chess-knight">
+  Ajedrez multijugador sin turnos: ambos jugadores mueven cuando quieran, con un temporizador de enfriamiento por pieza.
+
+  - Construido con React y un servidor WebSocket en Node
+  - Matchmaking personalizado y ELO
+  - Modo espectador con estado del tablero retardado
+  - Repeticiones exportables como PGN compartibles
+  - Puzzle diario generado a partir de la partida real más caótica del día anterior
+
+  **Enlaces:** GitHub, Play
+</Card>
+
+Realtime Chess se añadió inicialmente con el bucle de juego sin turnos, matchmaking, ELO y modo espectador. Más adelante se amplió con exportación de repeticiones en PGN, un puzzle diario generado a partir de la partida más caótica del día anterior y un enlace `Play` al sitio en vivo.
+
+## Esquema de cada entrada
+
+Cada entrada del array `myProjects` admite los siguientes campos:
+
+| Campo     | Tipo    | Obligatorio | Descripción                                                                                                  |
+| --------- | ------- | ----------- | ------------------------------------------------------------------------------------------------------------ |
+| `title`   | string  | Sí          | Nombre del proyecto que se muestra como cabecera de la entrada. Es habitual añadir un emoji como prefijo.    |
+| `text`    | string \| string[] | Sí | Un párrafo, o un array en el que el primer elemento es un resumen y los demás se renderizan como viñetas.    |
+| `image`   | string  | Sí          | URL pública de una imagen o vídeo de vista previa.                                                           |
+| `isVideo` | boolean | Sí          | `true` si `image` apunta a un archivo de vídeo, `false` si es una imagen estática.                           |
+| `links`   | array   | Sí          | Lista de objetos `{ text, href }` de enlaces. Etiquetas habituales: `Github`, `Website` y `Play`.            |
+
+### Descripciones con viñetas
+
+Cuando `text` es un array, el primer elemento se renderiza como párrafo principal y cualquier elemento posterior que empiece con `- ` se renderiza como una lista de funcionalidades con viñetas. Usa este formato cuando un proyecto tenga varias capacidades distintas que quieras destacar.
+
+### Enlaces a demos en vivo
+
+Usa un enlace `Play` (o `Website`) para cualquier proyecto con una demo alojada, de forma que los visitantes puedan probarla sin salir de la página. Realtime Chess utiliza tanto `Github` como `Play`.
+
+## Cómo añadir una nueva entrada
+
+Abre `src/constants/projects.js` y añade un nuevo objeto al principio del array `myProjects`. Las nuevas entradas aparecen en la parte superior de la lista en la página principal.
+
+```js src/constants/projects.js
+const myProjects = [
+    {
+        title: '📅 AI Calendar Assistant',
+        text: [
+            'A calendar that reads your inbox and proactively suggests when to schedule, reschedule, or decline.',
+            '- LLM-powered intent extraction from email threads',
+            '- One-click Google Calendar writes via OAuth',
+            '- Local-first storage, no thread content ever leaves your laptop',
+        ],
+        image: 'https://res.cloudinary.com/.../preview.png',
+        isVideo: false,
+        links: [
+            { text: 'Github', href: 'https://github.com/paaatrrrick/ai-calendar' },
+        ],
+    },
+    {
+        title: '♟️ Realtime Chess',
+        text: [
+            'Multiplayer chess with no turns — both players move whenever they want, with a per-piece cooldown timer.',
+            '- Built with React and a Node WebSocket server',
+            '- Custom matchmaking + ELO',
+            '- Spectator mode with delayed board state',
+            '- Replays exportable as shareable PGN',
+            '- Daily puzzle generated from the most chaotic real match of the previous day',
+        ],
+        image: 'https://res.cloudinary.com/.../preview.png',
+        isVideo: false,
+        links: [
+            { text: 'Github', href: 'https://github.com/paaatrrrick/realtime-chess' },
+            { text: 'Play', href: 'https://realtime-chess.app' },
+        ],
+    },
+    // ...existing entries
+]
+
+export default myProjects
+```
+
+<Tip>
+Establece `isVideo: true` cuando `image` apunte a un archivo `.mov` o `.mp4` para que la tarjeta renderice un reproductor en línea en lugar de un `<img>`.
+</Tip>
+
+## Cómo redactar las descripciones de los proyectos
+
+Usa el campo `text` para comunicar qué hace el proyecto y por qué destaca.
+
+- Empieza con un resumen de una frase que nombre la mecánica o el valor principal.
+- Continúa con viñetas para funcionalidades distintivas, decisiones técnicas o logros medibles.
+- Menciona el stack solo cuando forme parte de la historia (por ejemplo, un servidor WebSocket para jugabilidad en tiempo real).
+- Mantén cada viñeta breve: una frase corta, no una oración completa.
+
+## Cuándo actualizar esta lista
+
+Añade una nueva entrada cada vez que lances un proyecto que quieras destacar. Ordena las entradas para que el proyecto más reciente o más relevante aparezca primero; los proyectos más antiguos pueden permanecer en su sitio o comentarse en el archivo fuente cuando ya no reflejen el trabajo actual.
