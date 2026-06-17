@@ -1,0 +1,94 @@
+---
+title: "Page colophon : structure et mises à jour"
+description: "Comment la page /colophon du site personnel est configurée à partir du tableau sections, ainsi qu'un journal des ajouts récents à cette route."
+---
+
+## Vue d'ensemble
+
+La page colophon est une route autonome à l'adresse `/colophon` qui décrit comment le site est construit : la pile technique, l'hébergement et quelques principes que le site s'efforce de suivre. Elle reprend le modèle des pages existantes `/now` et `/uses` : un composant unique (`src/components/Colophon.js`) avec sa propre feuille de styles (`src/components/colophon.css`) et une route enregistrée dans `src/App.js`.
+
+Cette page documente ce composant afin que les visiteurs et les personnes qui contribuent sachent ce qu'il affiche et comment le modifier.
+
+## Ce qui a changé
+
+Une nouvelle route `/colophon` a été ajoutée au site personnel. La page est rendue par `Colophon.js` et tire son contenu d'un tableau local `sections`, accompagné d'une constante `updatedAt` en haut du fichier qui pilote la ligne "Dernière mise à jour". La version initiale regroupe le contenu sous trois en-têtes :
+
+<Card title="Built with" icon="screwdriver-wrench">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="server">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="list-check">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+La page est accessible depuis la page d'accueil de la même manière que les autres pages autonomes et inclut un lien `← Back home` dans son en-tête.
+
+## Schéma des sections
+
+Chaque entrée du tableau local `sections` accepte les champs suivants :
+
+| Champ     | Type     | Obligatoire | Description                                              |
+| --------- | -------- | ----------- | -------------------------------------------------------- |
+| `heading` | string   | Oui         | Titre de la section rendu sous forme de `<h2>`.          |
+| `items`   | string[] | Oui         | Liste à puces affichée sous l'en-tête.                   |
+
+La constante `updatedAt` en haut du fichier pilote la ligne "Dernière mise à jour" de l'en-tête.
+
+## Modifier la page
+
+Ouvrez `src/components/Colophon.js` et modifiez le tableau `sections`. Ajoutez, supprimez ou réorganisez les entrées au besoin ; chaque section est rendue sous la forme d'un en-tête suivi d'un `<ul>`.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    {
+        heading: 'Principles',
+        items: [
+            'No analytics, no cookies, no tracking. Just pages.',
+            'Every page should load fast and read well on a phone.',
+            'Content lives in plain JS constants so it is easy to edit.',
+        ],
+    },
+];
+```
+
+<Tip>
+Mettez à jour la chaîne `updatedAt` chaque fois que vous modifiez le contenu de manière significative afin que la ligne "Dernière mise à jour" reste fidèle.
+</Tip>
+
+## Rédiger les entrées du colophon
+
+Gardez la page courte et concrète.
+
+- Nommez les outils et services réels plutôt que des catégories.
+- Privilégiez une phrase par élément pour que la liste se parcoure rapidement sur mobile.
+- Réservez la section `Principles` aux choix qu'un lecteur ne peut pas voir autrement (pas d'analytique, pas de suivi, budget de performance).
+
+## Quand mettre à jour cette page
+
+Mettez à jour le colophon dès que la pile sous-jacente, la configuration d'hébergement ou les principes affichés changent, par exemple lors d'un changement d'hébergeur, du remplacement de la bibliothèque de routage ou de l'ajout ou la suppression de l'analytique.

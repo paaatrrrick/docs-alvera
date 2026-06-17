@@ -1,0 +1,94 @@
+---
+title: "Página de colofón: estructura y actualizaciones"
+description: "Cómo se configura la página /colophon del sitio web personal a partir del array sections, junto con un registro de incorporaciones recientes a la ruta."
+---
+
+## Resumen
+
+La página de colofón es una ruta independiente en `/colophon` que describe cómo está construido el sitio: la pila tecnológica, el alojamiento y algunos principios que el sitio busca seguir. Replica el patrón de las páginas existentes `/now` y `/uses`: un solo componente (`src/components/Colophon.js`) con su propia hoja de estilos (`src/components/colophon.css`) y una ruta registrada en `src/App.js`.
+
+Esta página documenta ese componente para que las personas que visitan el sitio y quienes contribuyen sepan qué muestra y cómo editarlo.
+
+## Qué cambió
+
+Se añadió una nueva ruta `/colophon` al sitio web personal. La página la renderiza `Colophon.js` y obtiene su contenido de un array local `sections`, junto con una constante `updatedAt` en la parte superior del archivo que controla la línea "Última actualización". La versión inicial agrupa el contenido bajo tres encabezados:
+
+<Card title="Built with" icon="screwdriver-wrench">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="server">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="list-check">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+Se accede a la página desde la página de inicio del mismo modo que a las otras páginas independientes, e incluye un enlace `← Back home` en su encabezado.
+
+## Esquema de las secciones
+
+Cada entrada del array local `sections` admite los siguientes campos:
+
+| Campo     | Tipo     | Obligatorio | Descripción                                              |
+| --------- | -------- | ----------- | -------------------------------------------------------- |
+| `heading` | string   | Sí          | Título de la sección renderizado como un `<h2>`.         |
+| `items`   | string[] | Sí          | Lista con viñetas que se muestra debajo del encabezado.  |
+
+La constante `updatedAt` en la parte superior del archivo controla la línea "Última actualización" del encabezado.
+
+## Edición de la página
+
+Abre `src/components/Colophon.js` y edita el array `sections`. Añade, elimina o reordena entradas según sea necesario; cada sección se renderiza como un encabezado seguido de una `<ul>`.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    {
+        heading: 'Principles',
+        items: [
+            'No analytics, no cookies, no tracking. Just pages.',
+            'Every page should load fast and read well on a phone.',
+            'Content lives in plain JS constants so it is easy to edit.',
+        ],
+    },
+];
+```
+
+<Tip>
+Actualiza la cadena `updatedAt` cada vez que cambies el contenido de forma significativa para que la línea "Última actualización" siga siendo fiel.
+</Tip>
+
+## Cómo redactar las entradas del colofón
+
+Mantén la página breve y concreta.
+
+- Nombra las herramientas y los servicios concretos en lugar de categorías.
+- Usa preferiblemente una frase por elemento para que la lista se lea con rapidez en el móvil.
+- Reserva la sección `Principles` para decisiones que de otro modo no resultan visibles para quien lee el sitio (sin analítica, sin seguimiento, presupuesto de rendimiento).
+
+## Cuándo actualizar esta página
+
+Actualiza el colofón siempre que cambien la pila subyacente, la configuración de alojamiento o los principios declarados, por ejemplo, al cambiar de proveedor de alojamiento, sustituir la biblioteca de enrutamiento o añadir o eliminar la analítica.
