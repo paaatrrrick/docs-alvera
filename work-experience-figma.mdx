@@ -1,0 +1,39 @@
+---
+title: "SWE at Figma: Dev Mode and designer handoff"
+description: "Details on the Figma work experience entry, including the Dev Mode focus, timeline, and how it appears in the workExperience array."
+---
+
+## Overview
+
+A new **SWE at Figma** entry was added to the personal website's work experience timeline. The role focused on the Dev Mode surface, with work split between the code-generation panel and the designer-to-engineer handoff workflow.
+
+Use this page when you want context on the Figma entry specifically — what shipped, when the role ran, and how it slots into the `workExperience` array.
+
+## Entry summary
+
+<Card title="SWE at Figma" icon="figma">
+  Worked on the Dev Mode surface. Shipped improvements to the code-generation panel and helped tighten the handoff workflow between designers and engineers.
+
+  **Timeline:** May - August 2039. San Francisco, CA
+</Card>
+
+## What shipped
+
+- **Code-generation panel improvements.** Iterated on the panel that turns a selected frame into front-end code, focusing on the quality and ergonomics of the generated output.
+- **Designer-to-engineer handoff.** Tightened the workflow that engineers use to inspect designs, pull tokens, and translate frames into production code.
+
+## Where it lives on the home page
+
+The entry is rendered from the shared `workExperience` array on the home page. It uses the same shape as every other role — `title`, `text`, and `timeLine` — and is ordered alongside the other recent roles in the timeline.
+
+```js
+{
+    title: 'SWE at Figma',
+    text: `Worked on the Dev Mode surface. Shipped improvements to the code-generation panel and helped tighten the handoff workflow between designers and engineers.`,
+    timeLine: 'May - August 2039. San Francisco, CA',
+},
+```
+
+## Related
+
+- [Work experience section: structure and updates](/work-experience) — full list of roles and the schema for adding new entries.
