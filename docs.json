@@ -2610,6 +2610,17 @@
             ]
           },
           {
+            "tab": "Registro de cambios",
+            "groups": [
+              {
+                "group": "2026",
+                "pages": [
+                  "es/changelog/2026-06-17"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Varios",
             "groups": [
               {
@@ -5102,6 +5113,17 @@
                   "fr/api-reference/endpoint/create",
                   "fr/api-reference/endpoint/delete",
                   "fr/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Journal des modifications",
+            "groups": [
+              {
+                "group": "2026",
+                "pages": [
+                  "fr/changelog/2026-06-17"
                 ]
               }
             ]
