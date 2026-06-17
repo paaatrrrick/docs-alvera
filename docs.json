@@ -102,6 +102,17 @@
             ]
           },
           {
+            "tab": "Changelog",
+            "groups": [
+              {
+                "group": "2026",
+                "pages": [
+                  "changelog/2026-06-17"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Misc",
             "groups": [
               {
