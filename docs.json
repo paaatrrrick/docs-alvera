@@ -1,5 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
+  "$comment": "Docs config maintained by the docs team; edit navigation here.",
   "theme": "mint",
   "name": "Mint Starter Kit",
   "colors": {
