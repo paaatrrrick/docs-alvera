@@ -90,6 +90,30 @@ Notes for handler authors:
 - Pass existing counts via `comment.reactions` (an object keyed by emoji, e.g. `{ "👍": 3, "🚀": 1 }`). Missing keys are treated as zero.
 - The emoji list is fixed in the component (👍, ❤️, 🎉, 🤔, 😂, 🚀). To add or remove reactions, update the component itself rather than passing them as props.
 
+### Showing an aggregated reaction summary
+
+`ReactionSummary` is a compact, read-only display of how a comment (or any item with reactions) has been received at a glance. It shows the top three emoji by count alongside the total number of reactions.
+
+When to use it:
+
+- In comment list previews, thread headers, or anywhere you want a small summary instead of the full clickable reaction strip.
+- When you want to surface engagement without giving the reader controls to react in that context.
+
+Behavior:
+
+- Takes a single `counts` prop — the same `{ emoji: number }` shape used elsewhere (e.g. `comment.reactions`).
+- Renders the top three emoji by count, in descending order. Emoji with a count of zero are excluded.
+- Shows the total reaction count next to the emoji.
+- Renders nothing when there are no reactions, so it's safe to drop into any layout.
+
+```jsx
+import ReactionSummary from "./components/comments/ReactionSummary";
+
+<ReactionSummary counts={comment.reactions} />;
+```
+
+For example, `{ "👍": 5, "❤️": 2, "🚀": 4, "🤔": 1 }` renders as `👍 🚀 ❤️ 12`.
+
 ### Example: rendering a thread
 
 ```jsx
