@@ -53,3 +53,7 @@ Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/sett
 
 ### Resources
 - [Mintlify documentation](https://mintlify.com/docs)
+
+## Local preview
+
+Run `mint dev` from the repo root to preview the docs at http://localhost:3000.
