@@ -103,14 +103,37 @@ Use the sitemap when you want to:
 </urlset>
 ```
 
-## Pointing crawlers at the sitemap
+## Feed discovery `<link>` tags
 
-To make sure search engines find the sitemap, reference it from `robots.txt`:
+To make the feeds auto-discoverable, the site renders a set of `<link rel="alternate">` tags inside the document `<head>`. Feed readers and browser extensions look for these tags to offer one-click subscription when a visitor lands on any page.
 
-```text public/robots.txt
-# https://www.robotstxt.org/robotstxt.html
+Three feed formats are advertised:
+
+| Format    | MIME type                | URL                                  |
+| --------- | ------------------------ | ------------------------------------ |
+| RSS       | `application/rss+xml`    | `https://paaatrrrick.com/feed.xml`   |
+| Atom      | `application/atom+xml`   | `https://paaatrrrick.com/atom.xml`   |
+| JSON Feed | `application/feed+json`  | `https://paaatrrrick.com/feed.json`  |
+
+The rendered markup looks like this:
+
+```html
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://paaatrrrick.com/feed.xml" />
+<link rel="alternate" type="application/atom+xml" title="Atom" href="https://paaatrrrick.com/atom.xml" />
+<link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://paaatrrrick.com/feed.json" />
+```
+
+<Tip>
+Most modern feed readers (NetNewsWire, Reeder, Feedbin, Inoreader) accept a page URL directly and follow these `<link>` tags to find the underlying feed — visitors do not need to know the exact feed path.
+</Tip>
+
+## Robots.txt
+
+`robots.txt` is generated alongside the feeds and sitemap so the `Sitemap:` directive always points at the live host. The output allows all crawlers and advertises the sitemap location:
+
+```text https://paaatrrrick.com/robots.txt
 User-agent: *
-Disallow:
+Allow: /
 
 Sitemap: https://paaatrrrick.com/sitemap.xml
 ```
