@@ -1,0 +1,109 @@
+---
+title: "Newsletter signup"
+description: "How to subscribe to the newsletter, which lists are available, and how contributors can add or configure a new list."
+---
+
+## Overview
+
+The personal website includes a newsletter signup that lets readers subscribe to one of several email lists. The signup is composed of three pieces:
+
+- A **subscribe form** that collects an email address and shows loading, success, and error states.
+- A **list picker** that lets readers choose which list they want to join.
+- A small **`useNewsletter` hook** that posts the email and list ID to the newsletter API.
+
+The available lists are defined in a single constants module, so adding a new list does not require any UI changes.
+
+## Subscribing as a reader
+
+To subscribe:
+
+1. Pick a newsletter from the list picker (it defaults to **Weekly digest**).
+2. Enter your email address in the **Get new posts in your inbox** field.
+3. Click **Subscribe**.
+
+The form validates that the address contains an `@` before submitting. While the request is in flight the button shows **Subscribing...** and is disabled. After a successful submit you'll see a **Check your inbox to confirm!** message and the field is cleared. If the request fails you'll see **Something went wrong, try again.** and can retry without re-entering your email.
+
+## Available lists
+
+The signup currently supports three lists:
+
+| List ID    | Label                  | What you get                                                      |
+| ---------- | ---------------------- | ----------------------------------------------------------------- |
+| `weekly`   | Weekly digest          | A round-up of new posts every week.                               |
+| `releases` | New project releases   | A note whenever a new side project ships.                         |
+| `monthly`  | Monthly roundup        | A longer monthly summary covering posts, projects, and reading.   |
+
+Readers select a list from the **Choose a newsletter** dropdown; the selected list ID is sent with the subscribe request so the backend can route the address to the right audience.
+
+## Using the components
+
+The subscribe form takes an `onSubscribe` callback that receives the validated email. Pair it with `useNewsletter` to post to the API and with `ListPicker` to let the reader choose a list.
+
+```jsx Newsletter signup
+import { useState } from "react";
+import SubscribeForm from "./components/newsletter/SubscribeForm";
+import ListPicker from "./components/newsletter/ListPicker";
+import { useNewsletter } from "./components/newsletter/useNewsletter";
+
+export default function NewsletterSignup() {
+  const [list, setList] = useState("weekly");
+  const { subscribe } = useNewsletter(list);
+
+  return (
+    <>
+      <ListPicker value={list} onChange={setList} />
+      <SubscribeForm onSubscribe={subscribe} />
+    </>
+  );
+}
+```
+
+### `useNewsletter(listId)`
+
+A small hook that wraps the subscribe API call.
+
+- **`listId`** — the list ID to subscribe to. Defaults to `"weekly"`.
+- **Returns** `{ subscribe, pending }`.
+  - `subscribe(email)` — `POST`s `{ email, list: listId }` to the newsletter service and resolves with the parsed JSON response. Throws if the response is not OK so the form can surface an error state.
+  - `pending` — `true` while a request is in flight.
+
+The hook reads the API base URL from the shared newsletter constants module, so changing environments only requires updating that one value.
+
+### `SubscribeForm`
+
+Renders the email input, submit button, and status messages. It owns its own `email` and `status` state (`idle`, `invalid`, `loading`, `success`, `error`) and calls `onSubscribe(email)` once the address passes validation.
+
+### `ListPicker`
+
+Renders a `<select>` populated from the newsletter list constants. Use it as a controlled component:
+
+```jsx
+<ListPicker value={list} onChange={setList} />
+```
+
+The dropdown is labeled **Choose a newsletter** for assistive tech.
+
+## Adding or configuring a list
+
+All lists are defined in `src/constants/newsletter.js`. To add a new list, add an entry to `NEWSLETTER_LISTS` keyed by the list ID:
+
+```js src/constants/newsletter.js
+export const NEWSLETTER_API_BASE = "https://api.paaatrrrick.com/newsletter";
+
+export const NEWSLETTER_LISTS = {
+  weekly:   { id: "weekly",   label: "Weekly digest" },
+  releases: { id: "releases", label: "New project releases" },
+  monthly:  { id: "monthly",  label: "Monthly roundup" },
+  // Add new lists here:
+  // quarterly: { id: "quarterly", label: "Quarterly deep dive" },
+};
+```
+
+Each entry needs two fields:
+
+- **`id`** — the value sent to the newsletter API as `list`. Must match the list ID configured on the backend.
+- **`label`** — the human-readable name shown in the list picker dropdown.
+
+The list picker reads from `NEWSLETTER_LISTS` directly, so a new entry shows up in the UI as soon as it's added — no other component changes required. Make sure the matching list exists on the newsletter service before shipping, otherwise the subscribe request will fail and readers will see the error state.
+
+To point the signup at a different newsletter backend, update `NEWSLETTER_API_BASE` in the same file. The hook posts to `${NEWSLETTER_API_BASE}/subscribe`.
