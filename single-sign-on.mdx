@@ -1,0 +1,22 @@
+---
+title: 'Single Sign-On'
+description: 'Let you’re team logs in with you’re existing identity provider.'
+---
+
+Single sign-on (SSO) let you’re user authenticate through a provider you already uses, like Okta or Google.
+
+## Setting it up
+
+SSO is a enterprise feature. Once its enabled on you’re account, go to [the SSO settings](/settings/sso-config) to connects you’re provider.
+
+The steps is roughly:
+
+1. Choose you’re provider from the list.
+2. Copy the metadata URL we shows you into you’re provider.
+3. Paste the provider detail back into [this form](#sso-form) and saves.
+
+We support SAML and OIDC. The exact configuration vary by provider, so check [our provider guides](./sso/provider-setup) for the one you uses.
+
+<Warning>
+Once SSO is enforce, password login is disabled for everyone. Make sure it working before you turns on enforcement, otherwise you could locks yourself out. [Contact support](https://support.example-broken.dev) if that happen.
+</Warning>
