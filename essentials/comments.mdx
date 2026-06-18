@@ -1,0 +1,98 @@
+---
+title: 'Comments and reactions'
+description: 'Add emoji reactions to blog comments and posts, wire up the onReact handler, and handle optimistic updates with rollback.'
+icon: 'message-circle'
+---
+
+The `Reactions` component lets readers react to a comment or post with one of four emojis. Counts update optimistically as soon as a reader clicks, and roll back automatically if the underlying request fails.
+
+Use it anywhere you want lightweight engagement that doesn't require a full comment thread, such as under a blog post, on individual comments, or alongside any other piece of content with a stable ID.
+
+## Supported reactions
+
+The component renders a fixed set of four emoji buttons, in this order:
+
+| Emoji | Meaning           |
+| ----- | ----------------- |
+| 👍    | Thumbs up         |
+| ❤️    | Heart / love      |
+| 🎉    | Celebrate         |
+| 🤔    | Thinking          |
+
+The emoji set is intentionally small and not configurable, so the UI stays consistent across every surface that uses reactions.
+
+## Props
+
+| Prop            | Type                              | Required | Description                                                                                                                |
+| --------------- | --------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `targetId`      | `string`                          | Yes      | Stable identifier for the thing being reacted to (for example, a comment ID or post slug). Passed back to `onReact`.        |
+| `initialCounts` | `Record<string, number>`          | No       | Map of emoji to current count, used to render the initial state. Defaults to `{}`. Any emoji missing from the map renders as `0`. |
+| `onReact`       | `(targetId, emoji) => Promise`    | Yes      | Async handler invoked when a reader clicks a reaction. See the contract below.                                              |
+
+## The `onReact` handler
+
+`onReact` is where you persist the reaction. It receives the `targetId` you passed in and the emoji string the reader clicked, and it must return a promise.
+
+The handler's resolution determines what the component does with the optimistic update:
+
+- **Resolves** — the optimistic `+1` stays. No further action is needed.
+- **Rejects (throws)** — the component rolls the count back by one, clamped at `0`. Surface a toast or inline error from your handler if you want the reader to know the reaction failed.
+
+The component does not read the resolved value, so you can return whatever shape your API gives you.
+
+```js
+async function onReact(targetId, emoji) {
+  const res = await fetch(`/api/comments/${targetId}/reactions`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ emoji }),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Failed to react: ${res.status}`);
+  }
+}
+```
+
+## Optimistic updates and rollback
+
+When a reader clicks a reaction:
+
+1. The local count for that emoji is incremented immediately, so the UI feels instant.
+2. `onReact(targetId, emoji)` is awaited in the background.
+3. If the promise rejects, the count is decremented back (never below `0`).
+
+This means you do not need to refetch counts after a successful reaction — the displayed count already reflects the change. If you want server-authoritative counts (for example, to account for reactions from other readers), refresh `initialCounts` on your own cadence and re-mount the component or lift state up.
+
+## Usage
+
+```jsx
+import Reactions from "./components/comments/Reactions";
+
+export function Comment({ comment }) {
+  return (
+    <article>
+      <p>{comment.body}</p>
+      <Reactions
+        targetId={comment.id}
+        initialCounts={comment.reactions}
+        onReact={async (id, emoji) => {
+          await api.reactToComment(id, emoji);
+        }}
+      />
+    </article>
+  );
+}
+```
+
+The same component works for whole posts — pass the post's slug or ID as `targetId` and point `onReact` at your post reactions endpoint.
+
+## When to use reactions
+
+Reach for reactions when you want:
+
+- A low-friction way for readers to respond without writing a comment.
+- Per-comment sentiment signals you can sort or surface elsewhere.
+- A consistent engagement affordance on both posts and individual comments.
+
+If you need free-form responses or threaded discussion, use a full comment form instead and keep reactions as a complement.
