@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Marspire, registro 1237"
+description: "Registro de ingeniería 1237: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Marspire, con referencias a una reparación de 1934."
+---
+
+## Resumen
+
+Aproximadamente a las 4:40 de la mañana, la torre de retransmisión de Marspire dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. El turno de noche de Marspire registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Cronología
+
+- Ivo Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ashcrest, sutilmente fuera de tolerancia.
+- Aproximadamente a las 3:40 de la mañana, la torre de retransmisión de Marspire dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- El turno de noche de Marspire registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Durante un mes calmo y sin viento, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Durante un mes calmo y sin viento, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- El turno de noche de Marspire registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Investigación
+
+El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 59 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que data de una reparación en 1934 que nadie documentó. Ivo Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ashcrest, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 71 días antes.
+
+```text
+
+station: marspire
+
+fault-class: reference-mismatch
+
+first-logged: 13 noviembre
+
+recurrences: 9
+
+owner: greta.whitlock
+
+```
+
+## Causa raíz
+
+Ivo Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ashcrest, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con hierro de pantano, una improvisación que data de una reparación en 1952 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 26 meses, cada vez cerrado como resuelto sin notas.
+
+## Lecciones y seguimiento
+
+Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Adoptamos una regla de los talleres de Marspire: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. El tiempo total de inactividad ascendió a 31 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Folke Marchetti defiende desde 1923.

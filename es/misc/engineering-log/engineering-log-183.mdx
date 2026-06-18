@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Jorstead, registro 1182"
+description: "Registro de ingeniería 1182: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Jorstead, con referencias a una reparación de 1955."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Jorstead derivaron al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Una recalibración rutinaria en Yargate se realizó contra la tabla de referencia equivocada, la retirada en 1955. El turno de noche de Jorstead registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 88 meses, cada vez cerrado como resuelto sin notas.
+- Tilda Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Yargate, sutilmente fuera de tolerancia.
+- El turno de noche de Jorstead registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Una recalibración rutinaria en Yargate se realizó contra la tabla de referencia equivocada, la retirada en 1947.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Tilda Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Yargate, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con estaño martillado, una improvisación que data de una reparación en 1946 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 25 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 86 meses, cada vez cerrado como resuelto sin notas.
+
+```text
+
+station: jorstead
+
+fault-class: sensor-drift
+
+first-logged: 20 junio
+
+recurrences: 9
+
+owner: dario.severin
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que data de una reparación en 1886 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 48 días antes.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Greta Greaves defiende desde 1889. Adoptamos una regla de los talleres de Jorstead: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron.

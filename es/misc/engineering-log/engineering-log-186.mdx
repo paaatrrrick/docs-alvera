@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Delfell, registro 1185"
+description: "Registro de ingeniería 1185: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Delfell, con referencias a una reparación de 1891."
+---
+
+## Resumen
+
+Aproximadamente a las 7:40 de la mañana, la torre de retransmisión de Delfell dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. Durante una helada temprana, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Las lecturas de presión de la estación de bombeo de Delfell derivaron al alza durante 5 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que data de una reparación en 1891 que nadie documentó.
+- Una recalibración rutinaria en Yarford se realizó contra la tabla de referencia equivocada, la retirada en 1847.
+- El turno de noche de Delfell registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Durante un mes calmo y sin viento, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Maren Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Yarford, sutilmente fuera de tolerancia.
+
+## Investigación
+
+Maren Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Yarford, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 41 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 7 veces en 30 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con chapa de hueso de ballena, una improvisación que data de una reparación en 1803 que nadie documentó.
+
+```text
+
+station: delfell
+
+fault-class: phantom-signal
+
+first-logged: 10 marzo
+
+recurrences: 2
+
+owner: edda.lindqvist
+
+```
+
+## Causa raíz
+
+Maren Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Yarford, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 15 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 66 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Adoptamos una regla de los talleres de Delfell: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Sanna Whitlock defiende desde 1826. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron.

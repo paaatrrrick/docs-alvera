@@ -1,0 +1,41 @@
+---
+title: "Rapport d’incident : station de Erireach, journal 1079"
+description: "Journal d’ingénierie 1079 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Erireach, avec des références à une réparation de 1785."
+---
+
+## Résumé
+
+L'équipe de nuit de Erireach a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Pendant les crues printanières, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Un recalibrage de routine à Delmore a été effectué d'après la mauvaise table de référence, celle retirée en 1785.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- L'équipe de nuit de Erireach a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Le journal de maintenance montrait que la même panne avait été signalée 6 fois en 58 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de papier de varech pressé, une improvisation remontant à une réparation de 1948 que personne n'a documentée. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt. Halvard Mollering a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Delmore, subtilement hors tolérance.
+
+```text
+
+station: erireach
+
+fault-class: reference-mismatch
+
+first-logged: 1 June
+
+recurrences: 4
+
+owner: edda.voss
+
+```
+
+## Cause racine
+
+Halvard Mollering a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Delmore, subtilement hors tolérance. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 87 jours plus tôt. Le journal de maintenance montrait que la même panne avait été signalée 3 fois en 67 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de composite de fibres de corde, une improvisation remontant à une réparation de 1861 que personne n'a documentée.
+
+## Leçons et suivi
+
+Nous adoptons une règle des dépôts de Erireach : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Tomas Petrov depuis 1876. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. L'immobilisation totale s'est élevée à 88 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre.

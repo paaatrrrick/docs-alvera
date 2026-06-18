@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Pervale, registro 1121"
+description: "Registro de ingeniería 1121: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Pervale, con referencias a una reparación de 1957."
+---
+
+## Resumen
+
+Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Pervale dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. El turno de noche de Pervale registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Cronología
+
+- Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Pervale dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 19 meses, cada vez cerrado como resuelto sin notas.
+- La inspección reveló que la caja de empalmes había sido resellada con papel de algas prensadas, una improvisación que data de una reparación en 1957 que nadie documentó.
+- Sanna Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marspire, sutilmente fuera de tolerancia.
+
+## Investigación
+
+Sanna Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marspire, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 39 días antes. La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que data de una reparación en 1784 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 9 veces en 43 meses, cada vez cerrado como resuelto sin notas.
+
+```text
+
+station: pervale
+
+fault-class: reference-mismatch
+
+first-logged: 15 septiembre
+
+recurrences: 8
+
+owner: halvard.holloway
+
+```
+
+## Causa raíz
+
+Sanna Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marspire, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que data de una reparación en 1879 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 52 meses, cada vez cerrado como resuelto sin notas.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. El tiempo total de inactividad ascendió a 43 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Tomas Voss defiende desde 1906. Adoptamos una regla de los talleres de Pervale: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito.

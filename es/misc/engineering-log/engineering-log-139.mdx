@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Yardane, registro 1138"
+description: "Registro de ingeniería 1138: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Yardane, con referencias a una reparación de 1911."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Yardane derivaron al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Yardane dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. El turno de noche de Yardane registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Yardane derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- El registro de mantenimiento mostraba el mismo fallo reportado 8 veces en 87 meses, cada vez cerrado como resuelto sin notas.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 15 días antes.
+- La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que data de una reparación en 1911 que nadie documentó.
+- El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 12 meses, cada vez cerrado como resuelto sin notas.
+- La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que data de una reparación en 1836 que nadie documentó.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con hierro de pantano, una improvisación que data de una reparación en 1803 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 14 días antes. Anselm Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Torford, sutilmente fuera de tolerancia.
+
+```text
+
+station: yardane
+
+fault-class: reference-mismatch
+
+first-logged: 7 marzo
+
+recurrences: 3
+
+owner: beatrix.kessler
+
+```
+
+## Causa raíz
+
+Anselm Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Torford, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 20 días antes. La inspección reveló que la caja de empalmes había sido resellada con compuesto de fibra de cuerda, una improvisación que data de una reparación en 1933 que nadie documentó.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Adoptamos una regla de los talleres de Yardane: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo total de inactividad ascendió a 21 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron.

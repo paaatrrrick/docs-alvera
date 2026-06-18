@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Yarholm, registro 1095"
+description: "Registro de ingeniería 1095: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Yarholm, con referencias a una reparación de 1854."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Yarholm derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Una recalibración rutinaria en Halvik se realizó contra la tabla de referencia equivocada, la retirada en 1854. Durante un mes calmo y sin viento, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Cronología
+
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+- Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Yarholm dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 85 días antes.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 72 días antes.
+- El turno de noche de Yarholm registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Investigación
+
+El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 83 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 36 días antes. Bram Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Halvik, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que data de una reparación en 1952 que nadie documentó.
+
+```text
+
+station: yarholm
+
+fault-class: sensor-drift
+
+first-logged: 27 junio
+
+recurrences: 6
+
+owner: vesna.ashdown
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 6 veces en 76 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que data de una reparación en 1951 que nadie documentó. Bram Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Halvik, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Adoptamos una regla de los talleres de Yarholm: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Halvard Mollering defiende desde 1847. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. El tiempo total de inactividad ascendió a 50 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro.

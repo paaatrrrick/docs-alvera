@@ -1,0 +1,42 @@
+---
+title: "Rapport d’incident : station de Brenmara, journal 1160"
+description: "Journal d’ingénierie 1160 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Brenmara, avec des références à une réparation de 1893."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Brenmara ont dérivé vers le haut pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Un recalibrage de routine à Dormire a été effectué d'après la mauvaise table de référence, celle retirée en 1893.
+
+## Chronologie
+
+- Pendant des semaines de pluie battante de travers, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Annik Greaves a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Dormire, subtilement hors tolérance.
+- Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt.
+- L'équipe de nuit de Brenmara a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+Annik Greaves a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Dormire, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de étain martelé, une improvisation remontant à une réparation de 1847 que personne n'a documentée. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 41 jours plus tôt. Le journal de maintenance montrait que la même panne avait été signalée 6 fois en 52 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: brenmara
+
+fault-class: reference-mismatch
+
+first-logged: 19 November
+
+recurrences: 3
+
+owner: petra.mollering
+
+```
+
+## Cause racine
+
+Annik Greaves a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Dormire, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 83 jours plus tôt.
+
+## Leçons et suivi
+
+Nous adoptons une règle des dépôts de Brenmara : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Maren Mollering depuis 1813. L'immobilisation totale s'est élevée à 88 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal.

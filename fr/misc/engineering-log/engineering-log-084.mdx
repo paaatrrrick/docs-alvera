@@ -1,0 +1,42 @@
+---
+title: "Rapport d’incident : station de Haldane, journal 1083"
+description: "Journal d’ingénierie 1083 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Haldane, avec des références à une réparation de 1806."
+---
+
+## Résumé
+
+Vers 3 h 40 du matin, la tour relais de Haldane a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel. Les relevés de pression de la station de pompage de Haldane ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un recalibrage de routine à Morvik a été effectué d'après la mauvaise table de référence, celle retirée en 1806.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Haldane ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Otto Kessler a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Morvik, subtilement hors tolérance.
+- L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de chêne saumuré, une improvisation remontant à une réparation de 1837 que personne n'a documentée.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de chêne saumuré, une improvisation remontant à une réparation de 1927 que personne n'a documentée. Otto Kessler a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Morvik, subtilement hors tolérance. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt. Le journal de maintenance montrait que la même panne avait été signalée 5 fois en 72 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: haldane
+
+fault-class: reference-mismatch
+
+first-logged: 27 September
+
+recurrences: 5
+
+owner: cosima.greaves
+
+```
+
+## Cause racine
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 90 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de verre de rivière, une improvisation remontant à une réparation de 1796 que personne n'a documentée. Le journal de maintenance montrait que la même panne avait été signalée 8 fois en 81 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Lazlo Halloran depuis 1878. Nous adoptons une règle des dépôts de Haldane : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. L'immobilisation totale s'est élevée à 49 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre.

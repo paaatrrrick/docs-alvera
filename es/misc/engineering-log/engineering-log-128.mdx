@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Velreach, registro 1127"
+description: "Registro de ingeniería 1127: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Velreach, con referencias a una reparación de 1816."
+---
+
+## Resumen
+
+Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Una recalibración rutinaria en Zelspire se realizó contra la tabla de referencia equivocada, la retirada en 1816. Las lecturas de presión de la estación de bombeo de Velreach derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Durante una helada temprana, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- El turno de noche de Velreach registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+- Vesna Whitlock rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Zelspire, sutilmente fuera de tolerancia.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 23 días antes.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 67 días antes.
+
+## Investigación
+
+Vesna Whitlock rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Zelspire, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 37 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con compuesto de fibra de cuerda, una improvisación que data de una reparación en 1913 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 52 días antes.
+
+```text
+
+station: velreach
+
+fault-class: reference-mismatch
+
+first-logged: 8 junio
+
+recurrences: 8
+
+owner: stellan.marrow
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 56 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 9 veces en 52 meses, cada vez cerrado como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Adoptamos una regla de los talleres de Velreach: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo total de inactividad ascendió a 41 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Stellan Drummond defiende desde 1914.
