@@ -1,0 +1,220 @@
+---
+title: "Newsletter signup: embedding the subscribe form"
+description: "How the personal website's newsletter signup works end to end — the SubscribeForm component, the useNewsletter hook, and the multi-list configuration that powers it."
+---
+
+## Overview
+
+The newsletter signup lets visitors subscribe to email updates from any page on the personal website. It is built from four pieces:
+
+- **`SubscribeForm`** — a self-contained form component that handles email input, validation, and the loading, success, and error states a subscriber sees.
+- **`ListPicker`** — an optional `<select>` that lets visitors choose which list to subscribe to before submitting.
+- **`useNewsletter`** — a React hook that wraps the newsletter API client and exposes a `subscribe(email)` function plus a `pending` flag.
+- **`constants/newsletter.js`** — configuration for the API base URL and the available subscription lists (weekly digest, new project releases, and monthly roundup).
+
+Together they form a single signup flow: the form collects and validates the email, calls the `onSubscribe` handler you pass in, and the hook posts to the newsletter service with the list ID you chose.
+
+## When to use it
+
+Drop the form onto any page that should grow the mailing list — the home page footer, the bottom of a blog post, a dedicated `/subscribe` route, or a sidebar on the projects page. Pick the list ID that matches what the page is about:
+
+- `weekly` — the default. Use for general "stay in the loop" placements.
+- `releases` — use on project pages or release notes, when the visitor is signing up specifically to hear about new project launches.
+- `monthly` — a lower-frequency monthly roundup. Use as the default on pages where weekly cadence would feel like too much, such as long-form essays or reading lists.
+
+If you want the visitor to choose for themselves, render a `ListPicker` next to the form instead of hard-coding a list ID — see [Letting visitors pick a list](#letting-visitors-pick-a-list).
+
+If you need a list that does not exist yet, add it to `NEWSLETTER_LISTS` in `src/constants/newsletter.js` before wiring it up.
+
+## Quick start
+
+The minimum wiring is two lines of JSX. The hook gives you a `subscribe` function; pass it to the form as `onSubscribe`.
+
+```jsx
+import SubscribeForm from "./components/newsletter/SubscribeForm";
+import { useNewsletter } from "./components/newsletter/useNewsletter";
+
+export default function Footer() {
+  const { subscribe } = useNewsletter("weekly");
+  return <SubscribeForm onSubscribe={subscribe} />;
+}
+```
+
+That's enough to render the form, validate the email locally, post it to the newsletter service, and show a confirmation message inline.
+
+## `SubscribeForm` component
+
+`SubscribeForm` renders the email input, the submit button, and a single status hint line under the row. It manages all UI state internally so the caller only has to provide one prop.
+
+### Props
+
+| Prop          | Type                            | Required | Description                                                                                              |
+| ------------- | ------------------------------- | -------- | -------------------------------------------------------------------------------------------------------- |
+| `onSubscribe` | `(email: string) => Promise<*>` | Yes      | Called with the entered email when the form is submitted. Should resolve on success and reject on failure. |
+
+### States
+
+The form tracks a single `status` value that drives the button label and the hint message:
+
+| Status    | Trigger                                                  | UI                                                            |
+| --------- | -------------------------------------------------------- | ------------------------------------------------------------- |
+| `idle`    | Initial render and after a successful reset.             | Button reads "Subscribe", no hint shown.                      |
+| `invalid` | Submit attempted with an email that does not contain `@`. | Hint: "Enter a valid email."                                  |
+| `loading` | `onSubscribe` is in flight.                              | Button reads "Subscribing..." and is disabled.                |
+| `success` | `onSubscribe` resolved.                                  | Hint: "Check your inbox to confirm!" and the input is cleared. |
+| `error`   | `onSubscribe` rejected.                                  | Hint: "Something went wrong, try again."                      |
+
+Validation is intentionally lightweight — the form only checks that the email contains an `@` before calling `onSubscribe`. The server is the source of truth for whether an address is actually deliverable.
+
+### Customizing the handler
+
+Because `onSubscribe` is just a function, you can wrap the hook to add analytics, route to a different list per CTA, or chain a follow-up action:
+
+```jsx
+import SubscribeForm from "./components/newsletter/SubscribeForm";
+import { useNewsletter } from "./components/newsletter/useNewsletter";
+
+export default function ReleasesCTA() {
+  const { subscribe } = useNewsletter("releases");
+
+  const handleSubscribe = async (email) => {
+    const result = await subscribe(email);
+    window.analytics?.track("newsletter_subscribed", { list: "releases" });
+    return result;
+  };
+
+  return <SubscribeForm onSubscribe={handleSubscribe} />;
+}
+```
+
+If `handleSubscribe` throws, the form automatically moves to the `error` state — you do not need to catch it yourself.
+
+## `useNewsletter` hook
+
+`useNewsletter` is a thin wrapper around the newsletter API client. It hides the `fetch` call and exposes the two things callers actually need.
+
+### Signature
+
+```js
+const { subscribe, pending } = useNewsletter(listId);
+```
+
+| Argument | Type   | Default    | Description                                                          |
+| -------- | ------ | ---------- | -------------------------------------------------------------------- |
+| `listId` | string | `"weekly"` | ID of the list to subscribe to. Must match a key in `NEWSLETTER_LISTS`. |
+
+### Returns
+
+| Value       | Type                                  | Description                                                                                       |
+| ----------- | ------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `subscribe` | `(email: string) => Promise<object>`  | Posts `{ email, list }` to the newsletter service. Resolves with the parsed JSON response, or throws if the response is not `ok`. |
+| `pending`   | boolean                               | `true` while a `subscribe` call is in flight. Useful when you render your own UI around the hook. |
+
+The hook calls `POST {NEWSLETTER_API_BASE}/subscribe` with a JSON body. If the response status is not `ok`, it throws `Error("Subscribe failed")` — that is what surfaces as the `error` state in `SubscribeForm`.
+
+### Using `pending` outside the form
+
+`SubscribeForm` already disables itself while a request is in flight, so most callers can ignore `pending`. Reach for it when you are building a custom UI — for example, a banner-style CTA — and want to render your own spinner:
+
+```jsx
+const { subscribe, pending } = useNewsletter("weekly");
+
+return (
+  <button onClick={() => subscribe("you@example.com")} disabled={pending}>
+    {pending ? "Subscribing..." : "Join the list"}
+  </button>
+);
+```
+
+## Letting visitors pick a list
+
+`ListPicker` is a controlled `<select>` that renders one option per entry in `NEWSLETTER_LISTS`. Pair it with `useNewsletter` when you want the visitor — not the page — to decide which list they land on. The picker has no opinion on layout; drop it above or beside the form.
+
+### Props
+
+| Prop       | Type                       | Required | Description                                                              |
+| ---------- | -------------------------- | -------- | ------------------------------------------------------------------------ |
+| `value`    | string                     | Yes      | Currently selected list ID. Must match a key in `NEWSLETTER_LISTS`.       |
+| `onChange` | `(listId: string) => void` | Yes      | Called with the new list ID whenever the visitor picks a different option. |
+
+The labels shown in the dropdown come from each list's `label` field, so updating a label in `NEWSLETTER_LISTS` updates every picker on the site.
+
+### Example
+
+Hold the selected list ID in state, drive `useNewsletter` from it, and pass the same value to both the picker and the hook.
+
+```jsx
+import { useState } from "react";
+import ListPicker from "./components/newsletter/ListPicker";
+import SubscribeForm from "./components/newsletter/SubscribeForm";
+import { useNewsletter } from "./components/newsletter/useNewsletter";
+
+export default function NewsletterCTA() {
+  const [list, setList] = useState("weekly");
+  const { subscribe } = useNewsletter(list);
+
+  return (
+    <>
+      <ListPicker value={list} onChange={setList} />
+      <SubscribeForm onSubscribe={subscribe} />
+    </>
+  );
+}
+```
+
+<Tip>
+Skip the picker on pages with a single, obvious intent (a project page, a release post). Use it on general-purpose surfaces like the home page or a dedicated `/subscribe` route, where the visitor's preferred cadence is genuinely ambiguous.
+</Tip>
+
+## List configuration
+
+Lists and the API base URL are defined in `src/constants/newsletter.js`. Each list has an `id` (sent to the API) and a `label` (for any UI that needs a human-readable name).
+
+```js src/constants/newsletter.js
+export const NEWSLETTER_API_BASE = "https://api.paaatrrrick.com/newsletter";
+
+export const NEWSLETTER_LISTS = {
+  weekly: { id: "weekly", label: "Weekly digest" },
+  releases: { id: "releases", label: "New project releases" },
+  monthly: { id: "monthly", label: "Monthly roundup" },
+};
+```
+
+Every list defined here automatically appears as an option in `ListPicker`, so adding an entry is enough to expose it to visitors using a picker-driven CTA.
+
+### Adding a list
+
+1. Add a new key to `NEWSLETTER_LISTS` with a matching `id`. Use a short, lowercase identifier — it is sent verbatim to the API.
+2. Make sure the newsletter service knows about the same `id`; the client does not create lists on its own.
+3. Pass the new `id` to `useNewsletter` wherever you embed the form.
+
+```js
+export const NEWSLETTER_LISTS = {
+  weekly: { id: "weekly", label: "Weekly digest" },
+  releases: { id: "releases", label: "New project releases" },
+  monthly: { id: "monthly", label: "Monthly roundup" },
+  talks: { id: "talks", label: "Upcoming talks" },
+};
+```
+
+```jsx
+const { subscribe } = useNewsletter("talks");
+```
+
+### Pointing at a different environment
+
+`NEWSLETTER_API_BASE` is read at import time, so changing it updates every signup placement at once. Override it for staging or local development by editing the constant — there are no per-call overrides.
+
+## Styling
+
+`SubscribeForm` imports `subscribeForm.css`, which scopes its styles to the `.subscribe-form` wrapper. The form is capped at `420px` wide and stacks the label above an input-plus-button row. Override the look by writing more specific selectors against `.subscribe-form`, `.subscribe-row`, or `.subscribe-hint` in your page's stylesheet — there is no theming prop on the component itself.
+
+<Tip>
+Keep the form near other primary actions on the page. Placing it directly under a call-to-action heading (for example, "Get new posts in your inbox") consistently converts better than dropping it in the footer.
+</Tip>
+
+## Troubleshooting
+
+- **The form always shows "Something went wrong, try again."** — Check the network tab for the `POST /subscribe` call. The hook throws whenever the response is not `ok`, so a 4xx or 5xx from the newsletter service surfaces as the generic error. The most common cause is a list `id` that the service has not been configured for.
+- **The button stays stuck on "Subscribing..."** — `onSubscribe` never settled. Make sure any custom handler you pass returns the promise from `subscribe` (or otherwise awaits it) so the form can transition out of the `loading` state.
+- **"Enter a valid email." fires on addresses that look fine.** — The client-side check only requires an `@`. If you are seeing this on a valid-looking email, the user probably has trailing whitespace or a typo before the `@`.
