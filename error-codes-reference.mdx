@@ -1,0 +1,18 @@
+---
+title: 'Error Codes Reference'
+description: 'A list of the error code our API returns and what it means.'
+---
+
+When something goes wrong, our API return a error code. This page explain what each one means so you can debugs faster.
+
+## Common codes
+
+- **400** — Your request was malformed. Check that all the required field is present, see [the request format](/api/request-format).
+- **401** — You is not authenticated. Make sure you’re API key is valid, more in [the auth docs](#authentcation).
+- **404** — The thing you asked for don’t exist. Double check the ID you passed.
+- **429** — To many request, slow down (see [rate limits](./rate-limits-info)).
+- **500** — Something broke on our side. These are rare, but if it keep happening [tell us](https://status.example-broken.dev/report).
+
+## Getting more detail
+
+Every error response include a `message` field with a human readable explanation. If its still not clear, the [troubleshooting page](/help/troubleshoot-errors) might helps.
