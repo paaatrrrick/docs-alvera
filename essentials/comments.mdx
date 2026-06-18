@@ -4,13 +4,13 @@ description: 'Add emoji reactions to blog comments and posts, wire up the onReac
 icon: 'message-circle'
 ---
 
-The `Reactions` component lets readers react to a comment or post with one of four emojis. Counts update optimistically as soon as a reader clicks, and roll back automatically if the underlying request fails.
+The `Reactions` component lets readers react to a comment or post with one of six emojis. Counts update optimistically as soon as a reader clicks, and roll back automatically if the underlying request fails.
 
 Use it anywhere you want lightweight engagement that doesn't require a full comment thread, such as under a blog post, on individual comments, or alongside any other piece of content with a stable ID.
 
 ## Supported reactions
 
-The component renders a fixed set of four emoji buttons, in this order:
+The component renders a fixed set of six emoji buttons, in this order:
 
 | Emoji | Meaning           |
 | ----- | ----------------- |
@@ -18,8 +18,10 @@ The component renders a fixed set of four emoji buttons, in this order:
 | ❤️    | Heart / love      |
 | 🎉    | Celebrate         |
 | 🤔    | Thinking          |
+| 😂    | Laugh             |
+| 🚀    | Rocket / ship it  |
 
-The emoji set is intentionally small and not configurable, so the UI stays consistent across every surface that uses reactions.
+The emoji set is intentionally small and not configurable, so the UI stays consistent across every surface that uses reactions. Laugh and rocket were added after the initial four to give readers a couple more ways to respond without expanding into a full picker.
 
 ## Props
 
