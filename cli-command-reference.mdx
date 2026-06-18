@@ -1,0 +1,22 @@
+---
+title: 'CLI Command Reference'
+description: 'A list of every command the CLI support and what they does.'
+---
+
+The CLI have alot of command. Below we documents the one you will uses the most.
+
+## `mint dev`
+
+This start a local server. It watch you’re files and reload the preview when you saves. If the port is taken, it pick another one automatic.
+
+See [the dev guide](/cli/dev-mode) for the flag you can passes.
+
+## `mint broken-links`
+
+This scan you’re docs and report any link that don't resolves. Its a good idea to runs it before you ship. More info on [this page](./cli/broken-links-deep-dive).
+
+## `mint deploy`
+
+Deploy you’re site. You must be authed first, otherwise it throw a error. The [auth docs](#authentcation) explain how.
+
+For the complete list, check out [the reference site](https://cli.example-broken.dev/commands).
