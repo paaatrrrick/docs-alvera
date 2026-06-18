@@ -108,6 +108,17 @@
             ]
           },
           {
+            "tab": "Changelog",
+            "groups": [
+              {
+                "group": "Changelog",
+                "pages": [
+                  "changelog/2026-06-18"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Misc",
             "groups": [
               {
