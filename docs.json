@@ -74,7 +74,8 @@
                   "essentials/markdown",
                   "essentials/code",
                   "essentials/images",
-                  "essentials/reusable-snippets"
+                  "essentials/reusable-snippets",
+                  "essentials/glossary"
                 ]
               },
               {
@@ -2574,7 +2575,8 @@
                   "es/essentials/markdown",
                   "es/essentials/code",
                   "es/essentials/images",
-                  "es/essentials/reusable-snippets"
+                  "es/essentials/reusable-snippets",
+                  "es/essentials/glossary"
                 ]
               },
               {
@@ -5074,7 +5076,8 @@
                   "fr/essentials/markdown",
                   "fr/essentials/code",
                   "fr/essentials/images",
-                  "fr/essentials/reusable-snippets"
+                  "fr/essentials/reusable-snippets",
+                  "fr/essentials/glossary"
                 ]
               },
               {
