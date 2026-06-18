@@ -10,6 +10,7 @@ The personal website includes a newsletter signup that lets readers subscribe to
 - A **subscribe form** that collects an email address and shows loading, success, and error states.
 - A **list picker** that lets readers choose which list they want to join.
 - A small **`useNewsletter` hook** that posts the email and list ID to the newsletter API.
+- An optional **subscriber count badge** that shows how many people are on the selected list.
 
 The available lists are defined in a single constants module, so adding a new list does not require any UI changes.
 
@@ -43,6 +44,7 @@ The subscribe form takes an `onSubscribe` callback that receives the validated e
 import { useState } from "react";
 import SubscribeForm from "./components/newsletter/SubscribeForm";
 import ListPicker from "./components/newsletter/ListPicker";
+import SubscriberCount from "./components/newsletter/SubscriberCount";
 import { useNewsletter } from "./components/newsletter/useNewsletter";
 
 export default function NewsletterSignup() {
@@ -53,6 +55,7 @@ export default function NewsletterSignup() {
     <>
       <ListPicker value={list} onChange={setList} />
       <SubscribeForm onSubscribe={subscribe} />
+      <SubscriberCount listId={list} />
     </>
   );
 }
@@ -83,6 +86,16 @@ Renders a `<select>` populated from the newsletter list constants. Use it as a c
 
 The dropdown is labeled **Choose a newsletter** for assistive tech.
 
+### `SubscriberCount`
+
+Renders a small **Join N subscribers.** badge under the form. Pass the same list ID that's selected in the picker so the count matches what the reader is about to subscribe to.
+
+```jsx
+<SubscriberCount listId={list} />
+```
+
+It uses the `useSubscriberCount(listId)` hook, which fetches `GET ${NEWSLETTER_API_BASE}/lists/{listId}/count` once on mount and refetches whenever `listId` changes. The hook returns `null` while the request is in flight or if the backend doesn't return a numeric `count`, in which case the badge renders nothing — so it's safe to drop in even if the count endpoint isn't deployed yet.
+
 ## Adding or configuring a list
 
 All lists are defined in `src/constants/newsletter.js`. To add a new list, add an entry to `NEWSLETTER_LISTS` keyed by the list ID:
@@ -104,6 +117,6 @@ Each entry needs two fields:
 - **`id`** — the value sent to the newsletter API as `list`. Must match the list ID configured on the backend.
 - **`label`** — the human-readable name shown in the list picker dropdown.
 
-The list picker reads from `NEWSLETTER_LISTS` directly, so a new entry shows up in the UI as soon as it's added — no other component changes required. Make sure the matching list exists on the newsletter service before shipping, otherwise the subscribe request will fail and readers will see the error state.
+The list picker reads from `NEWSLETTER_LISTS` directly, so a new entry shows up in the UI as soon as it's added — no other component changes required. Make sure the matching list exists on the newsletter service before shipping, otherwise the subscribe request will fail and readers will see the error state. The subscriber count badge will also stay hidden for a new list until the backend's `lists/{id}/count` endpoint returns a numeric count.
 
 To point the signup at a different newsletter backend, update `NEWSLETTER_API_BASE` in the same file. The hook posts to `${NEWSLETTER_API_BASE}/subscribe`.
