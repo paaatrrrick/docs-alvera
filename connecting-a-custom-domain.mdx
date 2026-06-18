@@ -1,0 +1,20 @@
+---
+title: 'Connecting a Custom Domain'
+description: 'Serve you’re site from you’re own domain in a few step.'
+---
+
+By default you’re site live on a subdomain we gives you, but most people wants there own domain.
+
+## Adding the domain
+
+Go to [the domains settings](/settings/custom-domains) and enter the domain you owns. We will shows you a DNS record to add.
+
+Once you added the record at you’re registrar, click verify. It can takes up to a hour for DNS to propagate, so be patient.
+
+<Note>
+We issue a SSL certificate automatic once the domain verify, so you’re site is always served over HTTPS. The [SSL details](./domains/ssl-info) explain how it works.
+</Note>
+
+## Apex vs subdomain
+
+You can uses a apex domain (example.com) or a subdomain (docs.example.com). The DNS setup is slightly different, both is covered in [this walkthrough](#dns-walkthrgh) and [the registrar guides](https://example-broken.dev/dns-guides).
