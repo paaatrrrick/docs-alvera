@@ -5,11 +5,12 @@ description: "How the personal website's newsletter signup works end to end — 
 
 ## Overview
 
-The newsletter signup lets visitors subscribe to email updates from any page on the personal website. It is built from three pieces:
+The newsletter signup lets visitors subscribe to email updates from any page on the personal website. It is built from four pieces:
 
 - **`SubscribeForm`** — a self-contained form component that handles email input, validation, and the loading, success, and error states a subscriber sees.
+- **`ListPicker`** — an optional `<select>` that lets visitors choose which list to subscribe to before submitting.
 - **`useNewsletter`** — a React hook that wraps the newsletter API client and exposes a `subscribe(email)` function plus a `pending` flag.
-- **`constants/newsletter.js`** — configuration for the API base URL and the available subscription lists (weekly digest and new project releases).
+- **`constants/newsletter.js`** — configuration for the API base URL and the available subscription lists (weekly digest, new project releases, and monthly roundup).
 
 Together they form a single signup flow: the form collects and validates the email, calls the `onSubscribe` handler you pass in, and the hook posts to the newsletter service with the list ID you chose.
 
@@ -19,6 +20,9 @@ Drop the form onto any page that should grow the mailing list — the home page 
 
 - `weekly` — the default. Use for general "stay in the loop" placements.
 - `releases` — use on project pages or release notes, when the visitor is signing up specifically to hear about new project launches.
+- `monthly` — a lower-frequency monthly roundup. Use as the default on pages where weekly cadence would feel like too much, such as long-form essays or reading lists.
+
+If you want the visitor to choose for themselves, render a `ListPicker` next to the form instead of hard-coding a list ID — see [Letting visitors pick a list](#letting-visitors-pick-a-list).
 
 If you need a list that does not exist yet, add it to `NEWSLETTER_LISTS` in `src/constants/newsletter.js` before wiring it up.
 
@@ -122,6 +126,46 @@ return (
 );
 ```
 
+## Letting visitors pick a list
+
+`ListPicker` is a controlled `<select>` that renders one option per entry in `NEWSLETTER_LISTS`. Pair it with `useNewsletter` when you want the visitor — not the page — to decide which list they land on. The picker has no opinion on layout; drop it above or beside the form.
+
+### Props
+
+| Prop       | Type                       | Required | Description                                                              |
+| ---------- | -------------------------- | -------- | ------------------------------------------------------------------------ |
+| `value`    | string                     | Yes      | Currently selected list ID. Must match a key in `NEWSLETTER_LISTS`.       |
+| `onChange` | `(listId: string) => void` | Yes      | Called with the new list ID whenever the visitor picks a different option. |
+
+The labels shown in the dropdown come from each list's `label` field, so updating a label in `NEWSLETTER_LISTS` updates every picker on the site.
+
+### Example
+
+Hold the selected list ID in state, drive `useNewsletter` from it, and pass the same value to both the picker and the hook.
+
+```jsx
+import { useState } from "react";
+import ListPicker from "./components/newsletter/ListPicker";
+import SubscribeForm from "./components/newsletter/SubscribeForm";
+import { useNewsletter } from "./components/newsletter/useNewsletter";
+
+export default function NewsletterCTA() {
+  const [list, setList] = useState("weekly");
+  const { subscribe } = useNewsletter(list);
+
+  return (
+    <>
+      <ListPicker value={list} onChange={setList} />
+      <SubscribeForm onSubscribe={subscribe} />
+    </>
+  );
+}
+```
+
+<Tip>
+Skip the picker on pages with a single, obvious intent (a project page, a release post). Use it on general-purpose surfaces like the home page or a dedicated `/subscribe` route, where the visitor's preferred cadence is genuinely ambiguous.
+</Tip>
+
 ## List configuration
 
 Lists and the API base URL are defined in `src/constants/newsletter.js`. Each list has an `id` (sent to the API) and a `label` (for any UI that needs a human-readable name).
@@ -132,8 +176,11 @@ export const NEWSLETTER_API_BASE = "https://api.paaatrrrick.com/newsletter";
 export const NEWSLETTER_LISTS = {
   weekly: { id: "weekly", label: "Weekly digest" },
   releases: { id: "releases", label: "New project releases" },
+  monthly: { id: "monthly", label: "Monthly roundup" },
 };
 ```
+
+Every list defined here automatically appears as an option in `ListPicker`, so adding an entry is enough to expose it to visitors using a picker-driven CTA.
 
 ### Adding a list
 
@@ -145,6 +192,7 @@ export const NEWSLETTER_LISTS = {
 export const NEWSLETTER_LISTS = {
   weekly: { id: "weekly", label: "Weekly digest" },
   releases: { id: "releases", label: "New project releases" },
+  monthly: { id: "monthly", label: "Monthly roundup" },
   talks: { id: "talks", label: "Upcoming talks" },
 };
 ```
