@@ -1,0 +1,22 @@
+---
+title: 'Paginación de la API con cursores y límites de tamaño de página'
+description: 'Aprende a recorrer grandes conjuntos de resultados con paginación por cursor (next_cursor) y a controlar la cantidad de elementos por página con el parámetro limit.'
+---
+
+Cuando un endpoint devuelve muchos resultados, los paginamos para que la respuesta no sea demasiado grande.
+
+## Paginación por cursor
+
+La mayoría de nuestros endpoints de lista usan paginación por cursor. Cada respuesta incluye un `next_cursor`, que vuelves a enviar para obtener la siguiente página.
+
+```bash
+curl "https://api.example.dev/items?limit=50&cursor=abc123"
+```
+
+Sigue haciendo peticiones hasta que `next_cursor` devuelva null, lo que significa que has llegado al final. La [referencia de la API](/api/list-endpoints) documenta esto para cada endpoint.
+
+## Tamaño de página
+
+Puedes controlar cuántos elementos hay por página con el parámetro `limit`. El máximo es 100; si pides más, lo limitamos. Para exportaciones muy grandes, usa [la API de exportación](#the-bulk-export) en su lugar, es más eficiente.
+
+Consulta también [los ejemplos de paginación](https://api.example-broken.dev/pagination-examples) para ver código en varios lenguajes.
