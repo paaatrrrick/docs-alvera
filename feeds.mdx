@@ -1,0 +1,93 @@
+---
+title: "Blog feeds: RSS and sitemap"
+description: "The personal website publishes two machine-readable feeds: an RSS feed for blog subscribers and a sitemap for search engines. This page explains what each feed contains, where it's served, and how it's generated."
+---
+
+## Overview
+
+The personal website ships two discovery surfaces that let readers and search engines find your content without crawling the site by hand:
+
+- **RSS feed** at `/rss.xml` — a standards-compliant RSS 2.0 channel of blog posts that anyone can subscribe to in a feed reader.
+- **Sitemap** at `/sitemap.xml` — a `sitemaps.org`-compliant URL set covering every static page, every blog post, and every internal project link.
+
+Both are generated from the same data the site already uses to render its pages (the `articles` array and the `projects` list), so they stay in sync automatically when you add a post or project.
+
+## RSS feed
+
+### What it contains
+
+The RSS feed is an `<rss version="2.0">` document with a single `<channel>` describing the blog. The channel includes:
+
+| Element       | Value                                            |
+| ------------- | ------------------------------------------------ |
+| `title`       | `Patrick's Blog`                                 |
+| `link`        | `https://paaatrrrick.com/blog`                   |
+| `description` | `Essays on building software and side projects.` |
+
+Each blog post becomes one `<item>` with a `title`, `link`, `guid`, and `description`. The `link` and `guid` both point at `https://paaatrrrick.com/blog/<post-id>`, and the `description` is the post's `summary` field. Special characters in titles and descriptions are XML-escaped.
+
+### When to use it
+
+Use the RSS feed when you want to:
+
+- Let readers subscribe in Feedly, NetNewsWire, Inoreader, or any other feed reader.
+- Syndicate posts to aggregators (Hacker News bots, planet-style sites, IFTTT/Zapier triggers).
+- Build a "what's new" widget on another site without scraping HTML.
+
+### How it's generated
+
+The feed is produced by a `generateRssFeed(posts)` helper. It defaults to the full `articles` array but accepts an explicit list, which makes it easy to filter (for example, drafts or category-specific feeds) at build time:
+
+```js
+import { generateRssFeed } from "./feeds/rss";
+import { articles } from "./constants/articles";
+
+// Default: every published article
+const xml = generateRssFeed();
+
+// Custom: only posts tagged "engineering"
+const engineeringXml = generateRssFeed(
+  articles.filter((a) => a.tags?.includes("engineering"))
+);
+```
+
+Write the returned string to `public/rss.xml` (or emit it from your build pipeline) so it's served at the site root.
+
+## Sitemap
+
+### What it contains
+
+The sitemap is a `<urlset>` document conforming to the `http://www.sitemaps.org/schemas/sitemap/0.9` schema. It includes three groups of URLs, in this order:
+
+1. **Static pages** — `/`, `/blog`, `/timeline`, `/uses`, `/now`, `/reading-list`, and `/talks`.
+2. **Blog posts** — one `/blog/<id>` entry per article in the `articles` array.
+3. **Internal project links** — any entry in the `projects` list whose `link` starts with `/` (external `https://` project links are skipped, since they belong to other sites).
+
+Every URL is emitted as `<url><loc>https://paaatrrrick.com<path></loc></url>`.
+
+### When to use it
+
+The sitemap is primarily for search engines. Submit `https://paaatrrrick.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools so they discover new posts quickly instead of waiting to recrawl. You can also reference it from `public/robots.txt` with a `Sitemap:` directive to make it discoverable to any crawler that respects robots.
+
+### How it's generated
+
+The sitemap is produced by a `generateSitemap()` helper that reads from `articles` and `projects` directly:
+
+```js
+import { generateSitemap } from "./feeds/sitemap";
+
+const xml = generateSitemap();
+// write to public/sitemap.xml
+```
+
+Because it pulls from the same constants the site renders from, adding a new blog post or a new internal project link automatically adds it to the sitemap the next time you build.
+
+## Adding new content
+
+You don't need to touch the feed code to add to either feed:
+
+- **New blog post** — add an entry to the `articles` array with a `title`, `id`, `date`, and `summary`. It appears in both `rss.xml` and `sitemap.xml`.
+- **New internal project** — add an entry to `projects` with a `link` that starts with `/`. It appears in `sitemap.xml` only.
+- **New static page** — extend the `STATIC_PATHS` list in the sitemap module.
+
+For how blog posts and projects are configured, see [Projects section: structure and updates](/projects).
