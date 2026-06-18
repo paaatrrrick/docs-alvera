@@ -1,0 +1,84 @@
+---
+title: "Blog feeds: RSS and sitemap"
+description: "How the personal website publishes an RSS feed for readers and a sitemap for search engines, both generated from the same blog and project data."
+---
+
+## Overview
+
+The personal website ships two machine-readable XML feeds alongside the human-facing blog:
+
+- An **RSS 2.0 feed** at `/rss.xml` that lets readers subscribe to the blog in any feed reader.
+- A **sitemap** at `/sitemap.xml` that lists every static page, blog post, and internal project link for search engines to crawl.
+
+Both feeds are generated from the same source of truth as the rest of the site, so new blog articles and projects flow into them automatically — there is nothing to publish by hand.
+
+## RSS feed
+
+### What it serves
+
+The RSS feed is a standard RSS 2.0 channel titled **Patrick's Blog** and served at `https://paaatrrrick.com/rss.xml`. Each item corresponds to one blog article and includes:
+
+- `title` — the article title
+- `link` and `guid` — the canonical article URL at `/blog/{id}`
+- `description` — the article's `summary` field, XML-escaped
+
+Articles are emitted in the order they appear in the blog's `articles` list, so the newest post sits at the top of the feed as soon as it lands in the source.
+
+### When to use it
+
+Point this URL at any RSS reader (Feedly, NetNewsWire, Reeder, Inoreader, etc.) to subscribe:
+
+```text
+https://paaatrrrick.com/rss.xml
+```
+
+You can also link to it from the blog page with a standard discovery tag so browsers and readers can auto-detect it:
+
+```html
+<link rel="alternate" type="application/rss+xml" title="Patrick's Blog" href="/rss.xml" />
+```
+
+### Adding a new article
+
+The feed is built by calling `generateRssFeed(posts)` with the same `articles` array that drives the blog UI. To add a post to the feed, add it to that array — the next build will include it automatically. Make sure each article defines at least:
+
+- `id` — used to build the `/blog/{id}` URL
+- `title` — used as the item title
+- `summary` — used as the item description
+
+If `summary` is missing the item will still render, but the description will be empty in feed readers.
+
+## Sitemap
+
+### What it serves
+
+The sitemap is a standard `urlset` XML document served at `https://paaatrrrick.com/sitemap.xml`. It is produced by `generateSitemap()` and contains three groups of URLs:
+
+1. **Static pages** — the top-level routes of the site: `/`, `/blog`, `/timeline`, `/uses`, `/now`, `/reading-list`, and `/talks`.
+2. **Blog posts** — one `/blog/{id}` entry per article in the blog's `articles` list.
+3. **Internal project links** — every project link whose `href` starts with `/`, pulled from the `myProjects` array documented in [Projects section: structure and updates](/projects).
+
+External links (anything starting with `http`) are skipped so the sitemap only advertises pages that live on the personal website itself.
+
+### When to use it
+
+Submit the sitemap URL to search engines (for example, in Google Search Console or Bing Webmaster Tools) so new posts and projects are discovered quickly.
+
+### Referencing the sitemap from robots.txt
+
+Crawlers also look for a `Sitemap:` directive in `robots.txt`. Add one line at the bottom of `public/robots.txt` so any crawler that fetches `robots.txt` can find the sitemap without being told where it lives:
+
+```text public/robots.txt
+User-agent: *
+Disallow:
+
+Sitemap: https://paaatrrrick.com/sitemap.xml
+```
+
+### Adding new entries
+
+The sitemap rebuilds from live data on every generation, so you don't edit it directly:
+
+- **New blog posts** appear automatically once they are added to the `articles` array (the same change that surfaces them in the RSS feed).
+- **New project links** appear automatically when a project in `myProjects` includes a link whose `href` starts with `/`. Use a root-relative path for any case study or deep-dive that lives on the site itself.
+- **New static routes** (for example, a new `/changelog` page) need to be added to the sitemap's static path list so crawlers can find them.
