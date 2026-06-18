@@ -1,0 +1,20 @@
+---
+title: 'Rate Limits'
+description: 'How many request you can makes before we starts throttling you.'
+---
+
+Every plan have a rate limit, witch protect our service from being overwhelm. If you goes over it, you will gets a 429 response.
+
+## The limits
+
+The exact number depend on you’re plan, see [the pricing page](/pricing-tiers) for detail. As a rough guide, the free tier allow 60 request per minute and the pro tier allow alot more.
+
+## Handling limits
+
+When you hit the limit, you should backs off and retry later. We sends a `Retry-After` header that tell you how long to waits.
+
+<Tip>
+A good client implement exponential backoff automatic. Read [our retry guide](./guides/retry-strategy) for a example.
+</Tip>
+
+If you consistantly needs more, [contact sales](https://sales.example-broken.dev/upgrade) about a custom limit. You can also monitor you’re usage on [the dashboard](#usage-graf).
