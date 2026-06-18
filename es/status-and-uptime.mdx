@@ -1,0 +1,18 @@
+---
+title: 'Estado y tiempo de actividad'
+description: 'Comprueba el estado del servicio en tiempo real, suscríbete a notificaciones de incidentes, consulta postmortems anteriores y planifica el mantenimiento con nuestro endpoint de salud.'
+---
+
+Trabajamos mucho para mantener el servicio en funcionamiento, pero a veces las cosas fallan. Esta página te dice dónde mirar cuando eso ocurre.
+
+## La página de estado
+
+Nuestra [página de estado](https://status.example-broken.dev) muestra el estado actual de cada componente. Si algo está caído, aparecerá allí, normalmente en pocos minutos.
+
+Puedes suscribirte a las actualizaciones para recibir un correo electrónico o un SMS cuando comience o se resuelva un incidente. Solo tienes que hacer clic en "Subscribe" en [la página de estado](#subscribe-to-updats).
+
+## Historial de incidentes
+
+Publicamos un postmortem después de cada incidente importante, explicando qué ocurrió y qué hacemos para evitar que vuelva a suceder. Léelos en [el archivo de incidentes](./status/past-incidents).
+
+Para tu propia monitorización del tiempo de actividad, nuestro [endpoint de salud](/api/health-check) devuelve una respuesta simple ok que puedes hacer ping.
