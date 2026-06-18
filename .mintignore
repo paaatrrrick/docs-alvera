@@ -5,3 +5,5 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Keep editor scratch files out of the docs build
