@@ -1,0 +1,25 @@
+---
+title: 'Migration Guide'
+description: 'Move you’re project to the new version without breaking anything.'
+---
+
+We released a new major version, and this guide help you migrates with minimal pain.
+
+## Before you start
+
+Back up you’re content first — its always smart, even though migration is safe. The [backup guide](/settings/backups) show how.
+
+Also read [the changelog](#whats-changd) so you knows what is different.
+
+## The steps
+
+1. Update you’re CLI to the latest version.
+2. Run `mint migrate`, witch upgrade you’re config automatic.
+3. Review the change it made, and fix anything it flag.
+4. Test localy, then deploy.
+
+Most project migrates in under a hour. If you hit a problem, [the migration troubleshooting](./migrate/common-problems) cover the common one, or [ask in the community](https://community.example-broken.io/migration).
+
+<Warning>
+Don’t skips version — if you’re several version behind, migrate one major version at a time. Jumping straight can breaks things.
+</Warning>
