@@ -5,12 +5,13 @@ description: "How the personal website publishes an RSS feed for readers and a s
 
 ## Overview
 
-The personal website ships two machine-readable XML feeds alongside the human-facing blog:
+The personal website ships three machine-readable XML feeds alongside the human-facing blog:
 
 - An **RSS 2.0 feed** at `/rss.xml` that lets readers subscribe to the blog in any feed reader.
+- An **Atom feed** at `/atom.xml` for feed readers and tools that prefer Atom over RSS.
 - A **sitemap** at `/sitemap.xml` that lists every static page, blog post, and internal project link for search engines to crawl.
 
-Both feeds are generated from the same source of truth as the rest of the site, so new blog articles and projects flow into them automatically — there is nothing to publish by hand.
+All three feeds are generated from the same source of truth as the rest of the site, so new blog articles and projects flow into them automatically — there is nothing to publish by hand.
 
 ## RSS feed
 
@@ -47,6 +48,38 @@ The feed is built by calling `generateRssFeed(posts)` with the same `articles` a
 - `summary` — used as the item description
 
 If `summary` is missing the item will still render, but the description will be empty in feed readers.
+
+## Atom feed
+
+### What it serves
+
+The Atom feed is a standard Atom 1.0 document titled **Patrick's Blog** and served at `https://paaatrrrick.com/atom.xml`. It mirrors the RSS feed's contents — one `<entry>` per blog article — with these fields:
+
+- `title` — the article title
+- `link` — the canonical article URL at `/blog/{id}`
+- `id` — the same canonical URL, used as the entry's stable identifier
+- `summary` — the article's `summary` field, XML-escaped
+
+Entries are emitted in the same order as the `articles` list, so the newest post appears first.
+
+### When to use it
+
+Some readers and integrations (Mastodon's RSS-to-fediverse bridges, certain static-site aggregators, older versions of NetNewsWire) prefer or require Atom. Point them at:
+
+```text
+https://paaatrrrick.com/atom.xml
+```
+
+You can also advertise it for auto-discovery next to the RSS link:
+
+```html
+<link rel="alternate" type="application/rss+xml" title="Patrick's Blog" href="/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Patrick's Blog" href="/atom.xml" />
+```
+
+### Adding a new article
+
+The Atom feed is built by calling `generateAtomFeed(posts)` with the same `articles` array that drives the RSS feed and blog UI, so adding an article to that list publishes it to all three feeds at once. The same minimum fields apply: `id`, `title`, and `summary`.
 
 ## Sitemap
 
