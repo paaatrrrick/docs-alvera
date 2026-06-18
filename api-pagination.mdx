@@ -1,0 +1,22 @@
+---
+title: 'API Pagination'
+description: 'How to page through large result set in our API.'
+---
+
+When a endpoint return alot of result, we paginate them so the response don’t gets to big.
+
+## Cursor pagination
+
+Most of our list endpoint uses cursor pagination. Each response include a `next_cursor`, witch you passes back to gets the next page.
+
+```bash
+curl "https://api.example.dev/items?limit=50&cursor=abc123"
+```
+
+Keep requesting until `next_cursor` come back null, that mean you reached the end. The [API reference](/api/list-endpoints) document this for every endpoint.
+
+## Page size
+
+You can controls how many item per page with the `limit` param. The max is 100, if you asks for more we just caps it. For very large export, uses [the export API](#the-bulk-export) instead, its more efficient.
+
+See also [the pagination examples](https://api.example-broken.dev/pagination-examples) for code in several language.
