@@ -1,0 +1,100 @@
+---
+title: "Page colophon : structure et mises à jour"
+description: "Comment la page /colophon du site personnel est configurée à partir du tableau sections et de la constante updatedAt, et comment la maintenir à jour."
+---
+
+## Aperçu
+
+La page colophon est une route statique courte du site personnel qui documente la façon dont le site lui-même est construit. Elle se trouve à `/colophon` et explique la stack, la configuration d'hébergement et la poignée de principes que le site cherche à honorer.
+
+Utilisez-la comme le lien à partager lorsqu'on vous demande « avec quoi ce site est-il fait ? » — la page d'accueil reste centrée sur le travail et les projets, et le colophon porte le contexte technique et éditorial.
+
+## Ce que contient la page
+
+La page affiche trois sections, dans l'ordre :
+
+<Card title="Construit avec" icon="code">
+  - React, démarré avec Create React App
+  - `react-router-dom` pour le routage côté client
+  - CSS pur, une feuille de style par page — pas de framework, pas de préprocesseur
+</Card>
+
+<Card title="Hébergé sur" icon="cloud">
+  - Netlify, déployé directement depuis la branche `master` sur GitHub
+  - Un domaine personnalisé enregistré via GoDaddy
+</Card>
+
+<Card title="Principes" icon="compass">
+  - Pas d'analytique, pas de cookies, pas de tracking. Juste des pages.
+  - Chaque page doit se charger rapidement et bien se lire sur un téléphone.
+  - Le contenu vit dans de simples constantes JS pour faciliter les modifications.
+</Card>
+
+L'en-tête affiche également un horodatage « Dernière mise à jour » et un court paragraphe d'introduction, ainsi qu'un lien `← Back home` vers `/`.
+
+## Comment c'est branché
+
+La page est un composant React statique qui rend son contenu à partir de deux constantes au niveau du module — il n'y a aucun chargement de données ni rien de configurable par l'utilisateur à l'exécution.
+
+- **Route** — `App.js` enregistre `<Route exact path='/colophon' component={Colophon} />` aux côtés des autres routes de premier niveau.
+- **Composant** — `src/components/Colophon.js` exporte le composant `Colophon` comme export par défaut.
+- **Styles** — `src/components/colophon.css` contient les styles propres à la page (une feuille de style par page, conformément à la convention CSS du site).
+
+## Schéma du contenu
+
+Tout le contenu modifiable vit dans deux constantes en haut de `Colophon.js` :
+
+| Constante   | Type                                      | Description                                                               |
+| ----------- | ----------------------------------------- | ------------------------------------------------------------------------- |
+| `updatedAt` | string                                    | Date lisible affichée sous le titre de la page (par exemple, `June 2026`). |
+| `sections`  | tableau de `{ heading: string, items: string[] }` | Chaque entrée est rendue sous forme de `<h2>` suivi d'une liste à puces.   |
+
+Le `heading` de chaque section est utilisé comme `key` React et comme texte visible du `<h2>`. Chaque chaîne dans `items` est rendue comme un unique `<li>` ; il n'y a pas de prise en charge des listes imbriquées ni de mise en forme riche, donc gardez chaque élément à une phrase ou un fragment.
+
+## Mettre à jour la page
+
+Ouvrez `src/components/Colophon.js` et modifiez `updatedAt` et `sections` sur place. Mettez à jour `updatedAt` chaque fois que le contenu change pour que la ligne « Dernière mise à jour » reste honnête.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    {
+        heading: 'Hosted on',
+        items: [
+            'Netlify, deployed straight from the master branch on GitHub.',
+            'A custom domain registered through GoDaddy.',
+        ],
+    },
+    {
+        heading: 'Principles',
+        items: [
+            'No analytics, no cookies, no tracking. Just pages.',
+            'Every page should load fast and read well on a phone.',
+            'Content lives in plain JS constants so it is easy to edit.',
+        ],
+    },
+];
+```
+
+<Tip>
+Ajouter une nouvelle section est aussi simple que d'ajouter un autre objet `{ heading, items }` à `sections` — la page parcourt le tableau et rend autant de sections que nécessaire, dans l'ordre.
+</Tip>
+
+## Quand mettre à jour cette page
+
+Mettez le colophon à jour chaque fois que quelque chose de significatif change dans la façon dont le site est construit ou hébergé — par exemple :
+
+- Le remplacement d'une dépendance (un nouveau routeur, un framework CSS, un autre outil de build).
+- Le déplacement du site vers un autre hôte ou registrar.
+- L'ajout ou le retrait d'un principe que le site est censé suivre (analytique, tracking, engagements d'accessibilité).
+
+Pour de petites retouches éditoriales de formulation, modifiez simplement l'entrée `items` concernée et mettez à jour `updatedAt`.
