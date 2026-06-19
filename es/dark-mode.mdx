@@ -1,0 +1,53 @@
+---
+title: "Modo oscuro: cambiar de tema en el sitio personal"
+description: "Cómo funciona el botón de modo oscuro del sitio personal, cómo se recuerda tu elección entre visitas y cómo respeta la preferencia de tu sistema operativo."
+---
+
+## Resumen
+
+El sitio personal incluye un tema claro y uno oscuro. Un pequeño botón en la cabecera te permite cambiar entre ellos, tu elección se recuerda entre visitas y, en la primera visita, el sitio sigue la preferencia de esquema de color de tu sistema operativo.
+
+Esta página describe lo que ves como visitante y cómo se aplica el tema para que las personas que contribuyen puedan dar estilo a nuevas secciones correctamente.
+
+## Usar el botón
+
+Selecciona el botón de tema en la cabecera para cambiar de modo:
+
+- 🌙 indica que el sitio está en modo claro. Selecciónalo para pasar al modo oscuro.
+- ☀️ indica que el sitio está en modo oscuro. Selecciónalo para volver al modo claro.
+
+El botón es único, por lo que una sola selección alterna entre temas. El icono y su etiqueta accesible describen la próxima acción, no el estado actual.
+
+## Cómo se elige el tema
+
+En cada carga de página, el sitio elige un tema en este orden:
+
+1. Si ya seleccionaste un tema en este sitio, se usa esa elección.
+2. Si no, y tu sistema operativo indica preferencia por un esquema oscuro, se usa el modo oscuro.
+3. En caso contrario, se usa el modo claro.
+
+Tu última selección se guarda en el `localStorage` del navegador con la clave `theme`, de modo que persiste entre recargas y visitas futuras en el mismo navegador. Borrar los datos del sitio lo devuelve al paso 2.
+
+## Cómo ven los estilos el tema activo
+
+El tema activo se expone en el elemento raíz `<html>` mediante un atributo `data-theme` con valor `light` o `dark`. Los estilos pueden bifurcarse con un selector de atributo estándar:
+
+```css
+:root[data-theme="dark"] {
+  --background: #0b0b0f;
+  --text: #f5f5f7;
+}
+
+:root[data-theme="light"] {
+  --background: #ffffff;
+  --text: #111111;
+}
+```
+
+Cuando añadas una sección nueva al sitio, define valores claros y oscuros para cualquier color, borde o sombra que utilice, de modo que se lea bien en ambos temas.
+
+## Solución de problemas
+
+- **El sitio carga con el tema incorrecto.** Usa el botón una vez. Tu elección se recordará en la siguiente visita.
+- **El botón no tiene efecto.** Comprueba que tu navegador permita `localStorage` para este sitio y que ninguna extensión esté bloqueando cambios de atributos en el elemento `<html>`.
+- **Se ignora la preferencia del sistema.** Una vez que usas el botón, tu elección guardada tiene prioridad sobre la preferencia del sistema operativo. Borra los datos del sitio para volver a usar la preferencia del sistema.
