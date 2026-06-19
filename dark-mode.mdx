@@ -1,0 +1,53 @@
+---
+title: "Dark mode: switching themes on the personal site"
+description: "How the personal website's dark mode toggle works, how the choice is remembered between visits, and how it follows your operating system preference."
+---
+
+## Overview
+
+The personal website ships with a light and dark theme. A small toggle in the page header lets you switch between them, your choice is remembered between visits, and on a first visit the site follows your operating system's color scheme preference.
+
+This page covers what you see as a visitor and how the theme is applied so contributors can style new sections correctly.
+
+## Using the toggle
+
+Select the theme toggle in the header to switch modes:
+
+- 🌙 means the site is in light mode. Select it to switch to dark mode.
+- ☀️ means the site is in dark mode. Select it to switch to light mode.
+
+The toggle is a single button, so one select flips to the other theme. The icon and its accessible label update to describe the next action, not the current state.
+
+## How the theme is chosen
+
+On every page load the site picks a theme in this order:
+
+1. If you previously selected a theme on this site, that choice is used.
+2. Otherwise, if your operating system reports a dark color scheme preference, dark mode is used.
+3. Otherwise, light mode is used.
+
+Your most recent selection is stored in your browser's `localStorage` under the `theme` key, so it persists across reloads and future visits in the same browser. Clearing site data resets the site to step 2.
+
+## How styles see the active theme
+
+The active theme is exposed on the root `<html>` element through a `data-theme` attribute that is set to either `light` or `dark`. Styles can branch on it with a standard attribute selector:
+
+```css
+:root[data-theme="dark"] {
+  --background: #0b0b0f;
+  --text: #f5f5f7;
+}
+
+:root[data-theme="light"] {
+  --background: #ffffff;
+  --text: #111111;
+}
+```
+
+When you add a new section to the site, define both light and dark values for any color, border, or shadow it uses so the section reads well in either theme.
+
+## Troubleshooting
+
+- **The site loads in the wrong theme.** Use the toggle once. Your selection is remembered for the next visit.
+- **The toggle has no effect.** Confirm that your browser allows `localStorage` for this site and that no extension is blocking attribute changes on the `<html>` element.
+- **The system preference is ignored.** Once you have used the toggle, your stored choice takes priority over the operating system preference. Clear site data to fall back to the system preference again.

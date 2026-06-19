@@ -1,0 +1,53 @@
+---
+title: "Mode sombre : basculer les thèmes sur le site personnel"
+description: "Comment fonctionne le bouton de mode sombre du site personnel, comment votre choix est mémorisé entre les visites et comment il respecte la préférence de votre système."
+---
+
+## Aperçu
+
+Le site personnel propose un thème clair et un thème sombre. Un petit bouton dans l'en-tête vous permet de basculer entre les deux, votre choix est mémorisé entre les visites et, lors d'une première visite, le site suit la préférence de schéma de couleurs de votre système d'exploitation.
+
+Cette page décrit ce que vous voyez en tant que visiteur et comment le thème est appliqué, afin que les personnes qui contribuent puissent styliser correctement les nouvelles sections.
+
+## Utiliser le bouton
+
+Sélectionnez le bouton de thème dans l'en-tête pour changer de mode :
+
+- 🌙 signifie que le site est en mode clair. Sélectionnez-le pour passer en mode sombre.
+- ☀️ signifie que le site est en mode sombre. Sélectionnez-le pour revenir en mode clair.
+
+Le bouton est unique, donc une seule sélection bascule vers l'autre thème. L'icône et son libellé accessible décrivent la prochaine action, pas l'état actuel.
+
+## Comment le thème est choisi
+
+À chaque chargement de page, le site choisit un thème dans cet ordre :
+
+1. Si vous avez déjà sélectionné un thème sur ce site, ce choix est utilisé.
+2. Sinon, si votre système d'exploitation signale une préférence pour un schéma sombre, le mode sombre est utilisé.
+3. Sinon, le mode clair est utilisé.
+
+Votre dernière sélection est stockée dans le `localStorage` de votre navigateur sous la clé `theme`, elle persiste donc entre les rechargements et les visites futures dans le même navigateur. Effacer les données du site fait revenir à l'étape 2.
+
+## Comment les styles voient le thème actif
+
+Le thème actif est exposé sur l'élément racine `<html>` via un attribut `data-theme` qui vaut `light` ou `dark`. Les styles peuvent se ramifier avec un sélecteur d'attribut standard :
+
+```css
+:root[data-theme="dark"] {
+  --background: #0b0b0f;
+  --text: #f5f5f7;
+}
+
+:root[data-theme="light"] {
+  --background: #ffffff;
+  --text: #111111;
+}
+```
+
+Lorsque vous ajoutez une nouvelle section au site, définissez des valeurs claires et sombres pour chaque couleur, bordure ou ombre utilisée afin que la section reste lisible dans les deux thèmes.
+
+## Dépannage
+
+- **Le site se charge avec le mauvais thème.** Utilisez le bouton une fois. Votre choix sera mémorisé lors de la prochaine visite.
+- **Le bouton n'a aucun effet.** Vérifiez que votre navigateur autorise `localStorage` pour ce site et qu'aucune extension ne bloque les changements d'attributs sur l'élément `<html>`.
+- **La préférence système est ignorée.** Une fois que vous avez utilisé le bouton, votre choix enregistré est prioritaire sur la préférence du système. Effacez les données du site pour revenir à la préférence système.
