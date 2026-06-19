@@ -1,0 +1,67 @@
+---
+title: "Página de confirmación del boletín"
+description: "Cómo la página de confirmación de doble opt-in completa las suscripciones al boletín validando el token del correo de confirmación."
+---
+
+## Resumen
+
+El boletín utiliza un flujo de doble opt-in. Después de que un visitante envía el formulario de suscripción, recibe un correo con un enlace de confirmación. Al hacer clic en ese enlace, llega a la página de confirmación, que lee un `token` de la URL, llama a la API del boletín y muestra el resultado.
+
+Esta página cierra el ciclo de suscripción. Hasta que un visitante llega a ella y el token se valida, su correo no se añade a ninguna lista.
+
+## Flujo de suscripción
+
+1. El visitante introduce su correo en el formulario de suscripción de la página principal.
+2. La API guarda el correo como pendiente y envía un enlace de confirmación del tipo `https://paaatrrrick.com/newsletter/confirm?token=<token>`.
+3. El visitante hace clic en el enlace y llega a la página de confirmación.
+4. La página llama a `GET {NEWSLETTER_API_BASE}/confirm?token=<token>` y muestra uno de cuatro estados.
+
+## Estados
+
+La página de confirmación muestra un único mensaje según el resultado de la petición:
+
+| Estado       | Cuándo aparece                                                | Mensaje                                                      |
+| ------------ | ------------------------------------------------------------- | ------------------------------------------------------------ |
+| `confirming` | Estado por defecto mientras la petición está en curso.        | `Confirming your subscription...`                            |
+| `confirmed`  | La API devolvió una respuesta 2xx.                            | `You're in! You'll get the next issue.`                      |
+| `missing`    | La URL no incluía el parámetro `token`.                       | `This confirmation link is missing its token.`               |
+| `failed`     | La API devolvió una respuesta no 2xx o el fetch lanzó error.  | `We couldn't confirm that link. Try subscribing again.`      |
+
+<Tip>
+El estado `failed` cubre tanto tokens caducados como errores de red. Si los suscriptores lo reportan, pídeles que vuelvan a enviar el formulario de suscripción para obtener un enlace nuevo.
+</Tip>
+
+## Conexión de la ruta
+
+Renderiza el componente `ConfirmSubscription` en la ruta que coincide con el enlace del correo de confirmación, y pásale el token de la URL como prop.
+
+```js src/App.js
+import { useSearchParams } from "react-router-dom";
+import ConfirmSubscription from "./components/newsletter/ConfirmSubscription";
+
+function ConfirmRoute() {
+  const [params] = useSearchParams();
+  return <ConfirmSubscription token={params.get("token")} />;
+}
+
+// <Route path="/newsletter/confirm" element={<ConfirmRoute />} />
+```
+
+El componente recibe una sola prop `token`. Pasa `null` u omítelo para forzar el estado `missing`, útil para probar el caso de enlace vacío en local.
+
+## Contrato de la API
+
+El componente espera que la API del boletín exponga un endpoint de confirmación:
+
+```http
+GET {NEWSLETTER_API_BASE}/confirm?token=<token>
+```
+
+- **Respuesta 2xx** — el token es válido, el suscriptor se activa y la página muestra `confirmed`.
+- **Cualquier otra respuesta (incluidos errores de red)** — la página muestra `failed`. El cuerpo de la respuesta no se lee ni se muestra.
+
+`NEWSLETTER_API_BASE` está definido en `src/constants/newsletter.js` y se comparte con el formulario de suscripción y otros hooks del boletín.
+
+## Personalizar los textos
+
+Los cuatro mensajes están en línea en `src/components/newsletter/ConfirmSubscription.js`. Actualízalos directamente cuando quieras cambiar el tono, añadir un enlace de seguimiento o mostrar una dirección de soporte. Mantén cada mensaje en una sola frase corta para que la página siga siendo legible en móvil.
