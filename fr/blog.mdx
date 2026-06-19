@@ -1,0 +1,104 @@
+---
+title: "Temps de lecture du blog"
+description: "Comment le site personnel estime et affiche une étiquette de temps de lecture sur les billets de blog, et comment l'afficher dans vos propres composants."
+---
+
+## Vue d'ensemble
+
+Chaque billet du blog du site personnel affiche une petite étiquette « X min read » pour que les lecteurs puissent décider en un coup d'œil si un billet correspond au temps dont ils disposent. L'estimation est calculée à partir du nombre de mots du billet en utilisant une vitesse fixe de 200 mots par minute, arrondie à la minute la plus proche avec un minimum d'une minute.
+
+Deux pièces fonctionnent ensemble :
+
+- Un utilitaire `estimateReadingTime` qui transforme le texte d'un billet en un nombre de mots, une estimation en minutes et une étiquette prête à afficher.
+- Un composant `ReadingTime` qui rend l'étiquette sous forme de `<span>` en ligne, à placer à côté du titre ou de la ligne de métadonnées d'un billet.
+
+## Quand l'utiliser
+
+Ajoutez une étiquette de temps de lecture sur toute surface de contenu long où vous voulez poser le cadre dès le départ :
+
+- En-têtes de billets de blog, au-dessus ou en dessous du titre.
+- Cartes de billets dans un index ou une archive.
+- Aperçus de newsletter ou résumés de type RSS qui affichent déjà un titre et une date.
+
+Évitez-la sur les billets très courts (moins d'une minute), où l'étiquette ajoute du bruit, et sur les pages qui ne sont pas principalement textuelles, comme les galeries de projets ou les listes de liens.
+
+## Estimer le temps de lecture
+
+`estimateReadingTime` accepte n'importe quelle chaîne de contenu et renvoie le nombre de mots, l'estimation en minutes et une étiquette préformatée. Les entrées qui ne sont pas des chaînes sont converties de manière sûre, de sorte que passer `null` ou `undefined` renvoie une estimation d'une minute au lieu de lever une erreur.
+
+```js
+import { estimateReadingTime } from "./utils/readingTime";
+
+const { words, minutes, label } = estimateReadingTime(post.body);
+
+console.log(words);   // par ex. 642
+console.log(minutes); // par ex. 3
+console.log(label);   // "3 min read"
+```
+
+### Comment l'estimation est calculée
+
+| Étape             | Détail                                                                                       |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| Comptage des mots | Le texte est nettoyé et découpé sur les espaces ; les éléments vides sont filtrés.            |
+| Vitesse de lecture | 200 mots par minute fixes, valeur par défaut courante pour la prose grand public.            |
+| Arrondi           | Les minutes sont arrondies au nombre entier le plus proche avec `Math.round`.                |
+| Valeur minimale   | Le résultat est borné à au moins une minute pour que les billets courts affichent une étiquette. |
+
+Passez le corps brut du billet : le texte simple comme le Markdown fonctionnent, car les jetons de syntaxe Markdown sont comptés comme des mots et ont un effet négligeable sur l'estimation pour les billets typiques. Pour une estimation plus serrée sur des billets composés surtout de code ou d'images, retirez ces blocs avant d'appeler l'utilitaire.
+
+## Afficher l'étiquette
+
+Le composant `ReadingTime` est un fin habillage autour de l'utilitaire. Il prend le contenu du billet via la prop `content` et rend l'étiquette dans un `<span className="reading-time">`, que vous pouvez styliser au même titre que les autres métadonnées du billet.
+
+```jsx
+import ReadingTime from "./components/ReadingTime";
+
+export default function PostHeader({ post }) {
+  return (
+    <header>
+      <h1>{post.title}</h1>
+      <div className="post-meta">
+        <time dateTime={post.publishedAt}>{post.publishedDate}</time>
+        <span aria-hidden="true">·</span>
+        <ReadingTime content={post.body} />
+      </div>
+    </header>
+  );
+}
+```
+
+### Props
+
+| Prop      | Type   | Requis | Description                                                                       |
+| --------- | ------ | ------ | --------------------------------------------------------------------------------- |
+| `content` | string | Oui    | Le corps du billet à estimer. Fonctionne avec du texte simple ou du Markdown.     |
+
+### Style
+
+Ciblez `.reading-time` dans votre feuille de style pour rester cohérent avec le reste de la ligne de métadonnées. Le composant rend un élément en ligne, il se compose donc proprement avec des séparateurs, des icônes ou d'autres spans de métadonnées sans wrapper supplémentaire.
+
+```css
+.reading-time {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+```
+
+## Personnaliser l'estimation
+
+La valeur par défaut de 200 mots par minute convient à la plupart des écrits grand public. Si vos billets sont plutôt techniques ou denses, appelez directement l'utilitaire et formatez votre propre étiquette avec une vitesse plus lente :
+
+```js
+import { estimateReadingTime } from "./utils/readingTime";
+
+function technicalReadingLabel(content, wpm = 150) {
+  const { words } = estimateReadingTime(content);
+  const minutes = Math.max(1, Math.round(words / wpm));
+  return `${minutes} min read`;
+}
+```
+
+<Tip>
+Gardez une formulation cohérente sur tout le site. « X min read » est la valeur par défaut livrée ; évitez de la mélanger avec des variantes comme « X minute read » ou « Reading time: X min » sur différentes surfaces.
+</Tip>
