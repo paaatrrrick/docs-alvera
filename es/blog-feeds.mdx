@@ -1,0 +1,65 @@
+---
+title: "Feeds del blog: RSS y JSON Feed"
+description: "Cómo el blog del sitio web personal se publica como feed RSS y como JSON Feed, incluyendo las URL a las que suscribirse y los campos que expone cada elemento."
+---
+
+## Resumen
+
+El blog del sitio web personal se publica como dos feeds legibles por máquina para que las personas lectoras puedan suscribirse desde el lector que prefieran:
+
+- **RSS** en [`/feed.xml`](https://paaatrrrick.com/feed.xml): el formato XML clásico, compatible con prácticamente cualquier lector de feeds.
+- **JSON Feed** en [`/feed.json`](https://paaatrrrick.com/feed.json): una representación en [JSON Feed 1.1](https://jsonfeed.org/version/1.1) de las mismas publicaciones, pensada para lectores y herramientas que prefieren JSON.
+
+Ambos feeds se generan a partir de la misma lista de artículos, así que basta con suscribirte a uno.
+
+## Cuándo usar cada feed
+
+Elige el feed que mejor admita tu lector:
+
+- Usa **RSS** (`/feed.xml`) en lectores tradicionales como Feedly, NetNewsWire, Reeder o Inoreader.
+- Usa **JSON Feed** (`/feed.json`) si tu lector admite JSON Feed de forma nativa, o si estás creando un script, un panel o un pipeline para LLM y prefieres analizar JSON en lugar de XML.
+
+## Formato del JSON Feed
+
+`/feed.json` sigue la [especificación JSON Feed 1.1](https://jsonfeed.org/version/1.1). El documento de nivel superior describe el feed y `items` contiene una entrada por cada publicación del blog.
+
+```json
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Patrick's Blog",
+  "home_page_url": "https://paaatrrrick.com/blog",
+  "feed_url": "https://paaatrrrick.com/feed.json",
+  "items": [
+    {
+      "id": "https://paaatrrrick.com/blog/hello-world",
+      "url": "https://paaatrrrick.com/blog/hello-world",
+      "title": "Hello, world",
+      "summary": "A short note about why this blog exists."
+    }
+  ]
+}
+```
+
+Cada elemento expone los campos que más interesan a los lectores:
+
+| Campo | Descripción |
+| --- | --- |
+| `id` | URL única y estable de la publicación. Puedes usarla como clave de deduplicación. |
+| `url` | Enlace canónico a la publicación en el blog. |
+| `title` | Título de la publicación. |
+| `summary` | Descripción breve de la publicación. |
+
+## Consumir el JSON Feed
+
+Como el feed es JSON plano, cualquier cliente HTTP puede leerlo. Por ejemplo, en Node.js:
+
+```js
+const res = await fetch("https://paaatrrrick.com/feed.json");
+const feed = await res.json();
+
+for (const post of feed.items) {
+  console.log(post.title, "→", post.url);
+}
+```
+
+Apunta tu lector de feeds a `https://paaatrrrick.com/feed.json` (o a `/feed.xml` para RSS) para empezar a recibir las nuevas publicaciones automáticamente.
