@@ -1,0 +1,198 @@
+---
+title: "Blog feeds and sitemap"
+description: "Reference for the RSS feed, Atom feed, and sitemap endpoints exposed by the personal website."
+---
+
+## Overview
+
+The personal website publishes three machine-readable endpoints that let readers, feed readers, and search engines discover and follow content automatically:
+
+| Endpoint       | Path           | Format             | Purpose                                                                 |
+| -------------- | -------------- | ------------------ | ----------------------------------------------------------------------- |
+| RSS feed       | `/rss.xml`     | RSS 2.0            | Syndicates blog posts for traditional feed readers.                     |
+| Atom feed      | `/atom.xml`    | Atom 1.0           | Syndicates blog posts for readers that prefer the Atom format.          |
+| Sitemap        | `/sitemap.xml` | Sitemap protocol   | Lists every indexable page so search engines can crawl the full site.   |
+
+All three are generated from the same source-of-truth arrays (`articles`, `projects`) that drive the rendered site, so they stay in sync with the rest of the content automatically.
+
+## RSS feed
+
+**URL:** [`https://paaatrrrick.com/rss.xml`](https://paaatrrrick.com/rss.xml)
+
+A standard RSS 2.0 channel built from the `articles` array. Each post becomes an `<item>` with a title, a canonical `<link>` and `<guid>` of the form `https://paaatrrrick.com/blog/<post-id>`, and the post's `summary` as the `<description>`.
+
+Use the RSS feed when you want to:
+
+- Subscribe in a classic feed reader (Feedly, NetNewsWire, Inoreader, etc.).
+- Pipe new posts into automations like Zapier, IFTTT, or n8n.
+- Cross-post to platforms that import from RSS.
+
+### Example output
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Patrick's Blog</title>
+    <link>https://paaatrrrick.com/blog</link>
+    <description>Essays on building software and side projects.</description>
+    <item>
+      <title>Annual review 2025</title>
+      <link>https://paaatrrrick.com/blog/annual-review-2025</link>
+      <guid>https://paaatrrrick.com/blog/annual-review-2025</guid>
+      <description>What I shipped, what I learned, and what's next.</description>
+    </item>
+  </channel>
+</rss>
+```
+
+## Atom feed
+
+**URL:** [`https://paaatrrrick.com/atom.xml`](https://paaatrrrick.com/atom.xml)
+
+An Atom 1.0 feed with the same post coverage as the RSS feed. Each post becomes an `<entry>` with a `<title>`, a `<link href="...">` and `<id>` pointing at `https://paaatrrrick.com/blog/<post-id>`, and the post's `summary`.
+
+Atom is offered alongside RSS because some feed readers and aggregators prefer (or require) the Atom format. The content is identical — pick whichever your reader supports.
+
+### Example output
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Patrick's Blog</title>
+  <link href="https://paaatrrrick.com/blog" />
+  <id>https://paaatrrrick.com/blog</id>
+  <entry>
+    <title>Annual review 2025</title>
+    <link href="https://paaatrrrick.com/blog/annual-review-2025" />
+    <id>https://paaatrrrick.com/blog/annual-review-2025</id>
+    <summary>What I shipped, what I learned, and what's next.</summary>
+  </entry>
+</feed>
+```
+
+## Sitemap
+
+**URL:** [`https://paaatrrrick.com/sitemap.xml`](https://paaatrrrick.com/sitemap.xml)
+
+A Sitemap protocol XML document that lists every URL on the site that should be indexed. The sitemap is regenerated automatically and includes:
+
+- **Static pages** — `/`, `/blog`, `/timeline`, `/uses`, `/now`, `/reading-list`, and `/talks`.
+- **Blog posts** — one entry per item in the `articles` array, at `/blog/<post-id>`.
+- **Project pages** — every internal `link` from the `projects` array (entries whose `link` starts with `/`). External project links (GitHub, hosted demos on other domains) are skipped, since they belong in their own sitemaps.
+
+Use the sitemap when you want to:
+
+- Submit the site to Google Search Console, Bing Webmaster Tools, or another search engine.
+- Let crawlers discover new blog posts and project pages without relying on internal links.
+- Audit which URLs are considered canonical for indexing.
+
+### Example output
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://paaatrrrick.com/</loc></url>
+  <url><loc>https://paaatrrrick.com/blog</loc></url>
+  <url><loc>https://paaatrrrick.com/timeline</loc></url>
+  <url><loc>https://paaatrrrick.com/uses</loc></url>
+  <url><loc>https://paaatrrrick.com/now</loc></url>
+  <url><loc>https://paaatrrrick.com/reading-list</loc></url>
+  <url><loc>https://paaatrrrick.com/talks</loc></url>
+  <url><loc>https://paaatrrrick.com/blog/annual-review-2025</loc></url>
+</urlset>
+```
+
+## Per-tag RSS feeds
+
+In addition to the site-wide RSS feed, every blog tag has its own RSS 2.0 feed scoped to posts that carry that tag. The feed lives at `/blog/tag/:tag`, where `:tag` is the URL-encoded tag name.
+
+Use a per-tag feed when you want to:
+
+- Subscribe to a single topic (for example, `react` or `side-projects`) without receiving every post.
+- Syndicate a specific subject area into a topic-focused newsletter or aggregator.
+- Pipe one slice of the blog into an automation that only cares about that category.
+
+The channel title and description are scoped to the tag, and only posts whose `tags` array contains the tag appear as items.
+
+### Example
+
+The feed for the `react` tag is served at:
+
+```text
+https://paaatrrrick.com/blog/tag/react
+```
+
+And its output looks like:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Patrick's Blog — react</title>
+    <link>https://paaatrrrick.com/blog/tag/react</link>
+    <description>Posts tagged react.</description>
+    <item>
+      <title>Building Realtime Chess in React</title>
+      <link>https://paaatrrrick.com/blog/realtime-chess</link>
+      <guid>https://paaatrrrick.com/blog/realtime-chess</guid>
+      <description>How I built a no-turns multiplayer chess game with React and WebSockets.</description>
+    </item>
+  </channel>
+</rss>
+```
+
+<Tip>
+Tags with spaces or special characters are URL-encoded in the feed path. For a tag like `side projects`, subscribe to `https://paaatrrrick.com/blog/tag/side%20projects`.
+</Tip>
+
+## Feed discovery `<link>` tags
+
+To make the feeds auto-discoverable, the site renders a set of `<link rel="alternate">` tags inside the document `<head>`. Feed readers and browser extensions look for these tags to offer one-click subscription when a visitor lands on any page.
+
+Three feed formats are advertised:
+
+| Format    | MIME type                | URL                                  |
+| --------- | ------------------------ | ------------------------------------ |
+| RSS       | `application/rss+xml`    | `https://paaatrrrick.com/feed.xml`   |
+| Atom      | `application/atom+xml`   | `https://paaatrrrick.com/atom.xml`   |
+| JSON Feed | `application/feed+json`  | `https://paaatrrrick.com/feed.json`  |
+
+The rendered markup looks like this:
+
+```html
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://paaatrrrick.com/feed.xml" />
+<link rel="alternate" type="application/atom+xml" title="Atom" href="https://paaatrrrick.com/atom.xml" />
+<link rel="alternate" type="application/feed+json" title="JSON Feed" href="https://paaatrrrick.com/feed.json" />
+```
+
+<Tip>
+Most modern feed readers (NetNewsWire, Reeder, Feedbin, Inoreader) accept a page URL directly and follow these `<link>` tags to find the underlying feed — visitors do not need to know the exact feed path.
+</Tip>
+
+## Robots.txt
+
+`robots.txt` is generated alongside the feeds and sitemap so the `Sitemap:` directive always points at the live host. The output allows all crawlers and advertises the sitemap location:
+
+```text https://paaatrrrick.com/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://paaatrrrick.com/sitemap.xml
+```
+
+<Tip>
+The `Sitemap:` directive can appear anywhere in `robots.txt` and is independent of the `User-agent` blocks. Major crawlers (Google, Bing, DuckDuckGo) will pick it up automatically on their next visit.
+</Tip>
+
+You can also submit `https://paaatrrrick.com/sitemap.xml` directly in Google Search Console or Bing Webmaster Tools to trigger a re-crawl on demand.
+
+## Keeping the feeds and sitemap in sync
+
+All three endpoints read from the same arrays that drive the rendered site:
+
+- New blog posts added to `articles` automatically appear in both feeds and the sitemap.
+- New internal project routes added to `projects` automatically appear in the sitemap.
+- Static page additions need to be added to the sitemap's static path list so they are discoverable.
+
+No manual republishing step is required — the next deploy picks up the new content.
