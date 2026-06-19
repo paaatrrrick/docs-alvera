@@ -1,0 +1,104 @@
+---
+title: "Tiempo de lectura del blog"
+description: "Cómo el sitio web personal estima y muestra una etiqueta de tiempo de lectura en las entradas del blog, y cómo renderizarla en tus propios componentes."
+---
+
+## Resumen
+
+Cada entrada del blog del sitio web personal muestra una breve etiqueta "X min de lectura" para que los lectores decidan de un vistazo si una entrada encaja con el tiempo del que disponen. La estimación se calcula a partir del número de palabras de la entrada usando una velocidad fija de 200 palabras por minuto, redondeada al minuto más cercano y con un mínimo de un minuto.
+
+Dos piezas trabajan juntas:
+
+- Una utilidad `estimateReadingTime` que convierte el texto de la entrada en un número de palabras, una estimación en minutos y una etiqueta lista para renderizar.
+- Un componente `ReadingTime` que renderiza la etiqueta como un `<span>` en línea que puedes colocar junto al título o a la fila de metadatos de una entrada.
+
+## Cuándo usarlo
+
+Añade una etiqueta de tiempo de lectura en cualquier superficie de contenido largo donde quieras anticipar expectativas:
+
+- Encabezados de entradas del blog, encima o debajo del título.
+- Tarjetas de entradas en un índice o un archivo.
+- Vistas previas de boletines o resúmenes tipo RSS que ya muestran un título y una fecha.
+
+Omítela en entradas muy cortas (menos de un minuto), donde la etiqueta añade ruido, y en páginas que no son principalmente texto, como galerías de proyectos o listas de enlaces.
+
+## Estimar el tiempo de lectura
+
+`estimateReadingTime` acepta cualquier cadena con el contenido de la entrada y devuelve el número de palabras, los minutos estimados y una etiqueta preformateada. Las entradas que no son cadenas se convierten de forma segura, de modo que pasar `null` o `undefined` devuelve una estimación de un minuto en lugar de lanzar un error.
+
+```js
+import { estimateReadingTime } from "./utils/readingTime";
+
+const { words, minutes, label } = estimateReadingTime(post.body);
+
+console.log(words);   // p. ej. 642
+console.log(minutes); // p. ej. 3
+console.log(label);   // "3 min read"
+```
+
+### Cómo se calcula la estimación
+
+| Paso             | Detalle                                                                                       |
+| ---------------- | --------------------------------------------------------------------------------------------- |
+| Conteo de palabras | El texto se recorta y se divide por espacios en blanco; los elementos vacíos se descartan.   |
+| Velocidad de lectura | 200 palabras por minuto fijas, el valor predeterminado habitual para prosa generalista.    |
+| Redondeo         | Los minutos se redondean al número entero más cercano con `Math.round`.                       |
+| Valor mínimo     | El resultado se ajusta a un mínimo de un minuto para que las entradas cortas muestren etiqueta. |
+
+Pasa el cuerpo de la entrada sin procesar: tanto el texto plano como el Markdown funcionan, ya que los tokens de sintaxis Markdown se cuentan como palabras y tienen un efecto despreciable sobre la estimación en entradas típicas. Si quieres una estimación más ajustada para entradas compuestas casi por completo de código o imágenes, retira esos bloques antes de llamar a la utilidad.
+
+## Renderizar la etiqueta
+
+El componente `ReadingTime` es un envoltorio ligero alrededor de la utilidad. Recibe el contenido de la entrada por la prop `content` y renderiza la etiqueta dentro de un `<span className="reading-time">`, que puedes estilizar junto al resto de los metadatos de la entrada.
+
+```jsx
+import ReadingTime from "./components/ReadingTime";
+
+export default function PostHeader({ post }) {
+  return (
+    <header>
+      <h1>{post.title}</h1>
+      <div className="post-meta">
+        <time dateTime={post.publishedAt}>{post.publishedDate}</time>
+        <span aria-hidden="true">·</span>
+        <ReadingTime content={post.body} />
+      </div>
+    </header>
+  );
+}
+```
+
+### Props
+
+| Prop      | Tipo   | Requerido | Descripción                                                                       |
+| --------- | ------ | --------- | --------------------------------------------------------------------------------- |
+| `content` | string | Sí        | El cuerpo de la entrada del que se estima. Funciona con texto plano o Markdown.   |
+
+### Estilos
+
+Apunta a `.reading-time` en tu hoja de estilos para que combine con el resto de la fila de metadatos. El componente renderiza un elemento en línea, por lo que compone limpiamente con separadores, iconos u otros spans de metadatos sin envoltorios adicionales.
+
+```css
+.reading-time {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+```
+
+## Personalizar la estimación
+
+El valor predeterminado de 200 palabras por minuto encaja con la mayoría de la escritura para público general. Si tus entradas son más técnicas o densas, llama directamente a la utilidad y formatea tu propia etiqueta con una velocidad más lenta:
+
+```js
+import { estimateReadingTime } from "./utils/readingTime";
+
+function technicalReadingLabel(content, wpm = 150) {
+  const { words } = estimateReadingTime(content);
+  const minutes = Math.max(1, Math.round(words / wpm));
+  return `${minutes} min read`;
+}
+```
+
+<Tip>
+Mantén una redacción coherente en todo el sitio. "X min read" es el valor predeterminado enviado; evita mezclarlo con variantes como "X minute read" o "Reading time: X min" en distintas superficies.
+</Tip>

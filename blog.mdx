@@ -1,0 +1,104 @@
+---
+title: "Blog reading time"
+description: "How the personal website estimates and displays a reading-time label on blog posts, and how to render it in your own components."
+---
+
+## Overview
+
+Every blog post on the personal website shows a short "X min read" label so readers can decide at a glance whether a post fits the time they have. The estimate is computed from the post's word count using a fixed reading speed of 200 words per minute, rounded to the nearest whole minute with a floor of one minute.
+
+Two pieces work together:
+
+- An `estimateReadingTime` utility that turns post text into a word count, a minute estimate, and a ready-to-render label.
+- A `ReadingTime` component that renders the label as an inline `<span>` you can drop next to a post title or metadata row.
+
+## When to use it
+
+Add a reading-time label to any long-form surface where you want to set expectations up front:
+
+- Blog post headers, above or below the title.
+- Post cards in an index or archive list.
+- Newsletter previews or RSS-style summaries that already show a title and date.
+
+Skip it on very short posts (under a minute) where the label adds noise, and on pages that are not primarily prose, such as project galleries or link lists.
+
+## Estimating reading time
+
+`estimateReadingTime` accepts any string of post content and returns the word count, the estimated minutes, and a pre-formatted label. Non-string inputs are coerced safely, so passing `null` or `undefined` returns a one-minute estimate instead of throwing.
+
+```js
+import { estimateReadingTime } from "./utils/readingTime";
+
+const { words, minutes, label } = estimateReadingTime(post.body);
+
+console.log(words);   // e.g. 642
+console.log(minutes); // e.g. 3
+console.log(label);   // "3 min read"
+```
+
+### How the estimate is calculated
+
+| Step           | Detail                                                                                |
+| -------------- | ------------------------------------------------------------------------------------- |
+| Word count     | The input is trimmed and split on whitespace; empty tokens are filtered out.          |
+| Reading speed  | A fixed 200 words per minute, the common default for general-audience prose.          |
+| Rounding       | Minutes are rounded to the nearest whole number with `Math.round`.                    |
+| Minimum value  | The result is clamped to at least one minute so very short posts still show a label.  |
+
+Pass the raw post body — plain text or Markdown source both work, since Markdown syntax tokens are counted as words and have a negligible effect on the estimate for typical posts. If you want a tighter estimate for posts that are mostly code or images, strip those blocks before calling the utility.
+
+## Rendering the label
+
+The `ReadingTime` component is a thin wrapper around the utility. It takes the post content as a `content` prop and renders the label inside a `<span className="reading-time">`, which you can style alongside other post metadata.
+
+```jsx
+import ReadingTime from "./components/ReadingTime";
+
+export default function PostHeader({ post }) {
+  return (
+    <header>
+      <h1>{post.title}</h1>
+      <div className="post-meta">
+        <time dateTime={post.publishedAt}>{post.publishedDate}</time>
+        <span aria-hidden="true">·</span>
+        <ReadingTime content={post.body} />
+      </div>
+    </header>
+  );
+}
+```
+
+### Props
+
+| Prop      | Type   | Required | Description                                                                 |
+| --------- | ------ | -------- | --------------------------------------------------------------------------- |
+| `content` | string | Yes      | The post body to estimate from. Plain text or Markdown source both work.    |
+
+### Styling
+
+Target `.reading-time` in your stylesheet to match the rest of your metadata row. The component renders an inline element, so it composes cleanly with separators, icons, or other metadata spans without extra wrappers.
+
+```css
+.reading-time {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+```
+
+## Customizing the estimate
+
+The 200 words-per-minute default fits most general-audience writing. If your posts skew technical or dense, call the utility directly and format your own label with a slower reading speed:
+
+```js
+import { estimateReadingTime } from "./utils/readingTime";
+
+function technicalReadingLabel(content, wpm = 150) {
+  const { words } = estimateReadingTime(content);
+  const minutes = Math.max(1, Math.round(words / wpm));
+  return `${minutes} min read`;
+}
+```
+
+<Tip>
+Keep the label wording consistent across your site. "X min read" is the shipped default — avoid mixing it with variants like "X minute read" or "Reading time: X min" on different surfaces.
+</Tip>
