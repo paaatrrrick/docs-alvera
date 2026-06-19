@@ -1,0 +1,67 @@
+---
+title: "Page de confirmation de la newsletter"
+description: "Comment la page de confirmation en double opt-in finalise les inscriptions à la newsletter en validant le token du courriel de confirmation."
+---
+
+## Vue d'ensemble
+
+La newsletter utilise un flux de double opt-in. Après qu'un visiteur a envoyé le formulaire d'inscription, il reçoit un courriel avec un lien de confirmation. En cliquant sur ce lien, il arrive sur la page de confirmation, qui lit un `token` dans l'URL, appelle l'API de la newsletter et affiche le résultat.
+
+Cette page boucle l'inscription. Tant qu'un visiteur n'y arrive pas et que le token n'est pas validé, son adresse n'est ajoutée à aucune liste.
+
+## Flux d'inscription
+
+1. Le visiteur saisit son courriel dans le formulaire d'inscription de la page d'accueil.
+2. L'API enregistre l'adresse comme en attente et envoie un lien de confirmation de la forme `https://paaatrrrick.com/newsletter/confirm?token=<token>`.
+3. Le visiteur clique sur le lien et arrive sur la page de confirmation.
+4. La page appelle `GET {NEWSLETTER_API_BASE}/confirm?token=<token>` et affiche l'un des quatre états.
+
+## États
+
+La page de confirmation affiche un seul message selon le résultat de la requête :
+
+| État         | Quand il s'affiche                                            | Message                                                      |
+| ------------ | ------------------------------------------------------------- | ------------------------------------------------------------ |
+| `confirming` | État par défaut pendant que la requête est en cours.          | `Confirming your subscription...`                            |
+| `confirmed`  | L'API a renvoyé une réponse 2xx.                              | `You're in! You'll get the next issue.`                      |
+| `missing`    | L'URL ne contenait pas le paramètre `token`.                  | `This confirmation link is missing its token.`               |
+| `failed`     | L'API a renvoyé une réponse non 2xx ou le fetch a échoué.     | `We couldn't confirm that link. Try subscribing again.`      |
+
+<Tip>
+L'état `failed` couvre à la fois les tokens expirés et les erreurs réseau. Si des abonnés le signalent, demandez-leur de soumettre à nouveau le formulaire d'inscription pour obtenir un nouveau lien.
+</Tip>
+
+## Branchement de la route
+
+Affichez le composant `ConfirmSubscription` sur la route qui correspond au lien du courriel de confirmation, et passez-lui le token de l'URL en prop.
+
+```js src/App.js
+import { useSearchParams } from "react-router-dom";
+import ConfirmSubscription from "./components/newsletter/ConfirmSubscription";
+
+function ConfirmRoute() {
+  const [params] = useSearchParams();
+  return <ConfirmSubscription token={params.get("token")} />;
+}
+
+// <Route path="/newsletter/confirm" element={<ConfirmRoute />} />
+```
+
+Le composant prend une seule prop `token`. Passez `null` ou omettez-la pour forcer l'état `missing` — utile pour tester le cas du lien vide en local.
+
+## Contrat d'API
+
+Le composant attend que l'API de la newsletter expose un endpoint de confirmation :
+
+```http
+GET {NEWSLETTER_API_BASE}/confirm?token=<token>
+```
+
+- **Réponse 2xx** — le token est valide, l'abonné est activé et la page affiche `confirmed`.
+- **Toute autre réponse (y compris les erreurs réseau)** — la page affiche `failed`. Le corps de la réponse n'est ni lu ni affiché.
+
+`NEWSLETTER_API_BASE` est défini dans `src/constants/newsletter.js` et est partagé avec le formulaire d'inscription et les autres hooks de la newsletter.
+
+## Personnaliser les textes
+
+Les quatre messages sont inscrits dans `src/components/newsletter/ConfirmSubscription.js`. Modifiez-les directement quand vous voulez changer le ton, ajouter un lien de suivi ou afficher une adresse de support. Gardez chaque message en une seule phrase courte pour que la page reste lisible sur mobile.

@@ -1,0 +1,67 @@
+---
+title: "Newsletter confirmation page"
+description: "How the double opt-in confirmation page completes newsletter signups by validating the token from the confirmation email."
+---
+
+## Overview
+
+The newsletter uses a double opt-in flow. After a visitor submits the subscribe form, they receive an email with a confirmation link. Clicking that link sends them to the confirmation page, which reads a `token` from the URL, calls the newsletter API, and shows the result.
+
+This page closes the signup loop. Until a visitor lands on it and the token validates, their email is not added to any list.
+
+## Signup flow
+
+1. Visitor enters their email in the subscribe form on the home page.
+2. The API stores the email as pending and emails a confirmation link of the form `https://paaatrrrick.com/newsletter/confirm?token=<token>`.
+3. Visitor clicks the link and lands on the confirmation page.
+4. The page calls `GET {NEWSLETTER_API_BASE}/confirm?token=<token>` and renders one of four states.
+
+## States
+
+The confirmation page renders a single message based on the request outcome:
+
+| State        | When it shows                                            | Message                                              |
+| ------------ | -------------------------------------------------------- | ---------------------------------------------------- |
+| `confirming` | Default state while the request is in flight.            | `Confirming your subscription...`                    |
+| `confirmed`  | The API returned a 2xx response.                         | `You're in! You'll get the next issue.`              |
+| `missing`    | The URL had no `token` query parameter.                  | `This confirmation link is missing its token.`       |
+| `failed`     | The API returned a non-2xx response or the fetch threw.  | `We couldn't confirm that link. Try subscribing again.` |
+
+<Tip>
+The `failed` state covers both expired tokens and network errors. If subscribers report this, ask them to resubmit the subscribe form to get a fresh link.
+</Tip>
+
+## Wiring up the route
+
+Render the `ConfirmSubscription` component on the route that matches the link in the confirmation email, and pass the URL token in as a prop.
+
+```js src/App.js
+import { useSearchParams } from "react-router-dom";
+import ConfirmSubscription from "./components/newsletter/ConfirmSubscription";
+
+function ConfirmRoute() {
+  const [params] = useSearchParams();
+  return <ConfirmSubscription token={params.get("token")} />;
+}
+
+// <Route path="/newsletter/confirm" element={<ConfirmRoute />} />
+```
+
+The component takes a single `token` prop. Pass `null` or omit it to force the `missing` state — useful when testing the empty-link case locally.
+
+## API contract
+
+The component expects the newsletter API to expose a confirmation endpoint:
+
+```http
+GET {NEWSLETTER_API_BASE}/confirm?token=<token>
+```
+
+- **2xx response** — token is valid, the subscriber is activated, and the page renders `confirmed`.
+- **Any other response (including network errors)** — the page renders `failed`. The response body is not read or displayed.
+
+`NEWSLETTER_API_BASE` is defined in `src/constants/newsletter.js` and is shared with the subscribe form and other newsletter hooks.
+
+## Customizing the copy
+
+All four messages live inline in `src/components/newsletter/ConfirmSubscription.js`. Update them directly when you want to change tone, add a follow-up link, or surface a support address. Keep each message to a single short sentence so the page stays scannable on mobile.
