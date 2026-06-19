@@ -103,6 +103,49 @@ Use the sitemap when you want to:
 </urlset>
 ```
 
+## Per-tag RSS feeds
+
+In addition to the site-wide RSS feed, every blog tag has its own RSS 2.0 feed scoped to posts that carry that tag. The feed lives at `/blog/tag/:tag`, where `:tag` is the URL-encoded tag name.
+
+Use a per-tag feed when you want to:
+
+- Subscribe to a single topic (for example, `react` or `side-projects`) without receiving every post.
+- Syndicate a specific subject area into a topic-focused newsletter or aggregator.
+- Pipe one slice of the blog into an automation that only cares about that category.
+
+The channel title and description are scoped to the tag, and only posts whose `tags` array contains the tag appear as items.
+
+### Example
+
+The feed for the `react` tag is served at:
+
+```text
+https://paaatrrrick.com/blog/tag/react
+```
+
+And its output looks like:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Patrick's Blog — react</title>
+    <link>https://paaatrrrick.com/blog/tag/react</link>
+    <description>Posts tagged react.</description>
+    <item>
+      <title>Building Realtime Chess in React</title>
+      <link>https://paaatrrrick.com/blog/realtime-chess</link>
+      <guid>https://paaatrrrick.com/blog/realtime-chess</guid>
+      <description>How I built a no-turns multiplayer chess game with React and WebSockets.</description>
+    </item>
+  </channel>
+</rss>
+```
+
+<Tip>
+Tags with spaces or special characters are URL-encoded in the feed path. For a tag like `side projects`, subscribe to `https://paaatrrrick.com/blog/tag/side%20projects`.
+</Tip>
+
 ## Feed discovery `<link>` tags
 
 To make the feeds auto-discoverable, the site renders a set of `<link rel="alternate">` tags inside the document `<head>`. Feed readers and browser extensions look for these tags to offer one-click subscription when a visitor lands on any page.
