@@ -1,0 +1,104 @@
+---
+title: "Command palette: keyboard-driven navigation and actions"
+description: "Open the ⌘K command palette to jump between pages, run actions like copy-URL, and register your own commands in the personal website's command registry."
+---
+
+## Overview
+
+The command palette is a site-wide overlay that opens with `⌘K` (macOS) or `Ctrl+K` (Windows/Linux). It gives you a single keyboard-first surface for moving between pages, opening social links, and running quick actions without leaving the keyboard.
+
+Use it when you want to:
+
+- Jump to a page (Home, Blog, Timeline, Uses, Now, Reading list, Talks) without clicking through the nav.
+- Trigger an action like copying the current URL or scrolling to the top.
+- Open an external profile such as GitHub or LinkedIn.
+
+## Opening and closing the palette
+
+- Press `⌘K` or `Ctrl+K` from anywhere on the site to toggle the palette.
+- Use the arrow keys (`↑` / `↓`) to move between results.
+- Press `Enter` to run the highlighted command.
+- Press `Esc` to close the palette.
+
+Results are ranked with a fuzzy match against each command's `label` and `keywords`, so partial input like `tl` matches `Go to Timeline`.
+
+## Built-in commands
+
+Commands are grouped into four sections:
+
+| Group | Examples |
+| --- | --- |
+| Navigation | Go to Home, Blog, Timeline, Uses, Now, Reading list, Talks |
+| Blog | Subscribe via RSS |
+| Social | Open GitHub, Open LinkedIn |
+| Actions | Copy current URL (`c`), Scroll to top (`t`) |
+
+Actions with a single-key shortcut (shown on the right side of the row) can be triggered from the palette once it's open.
+
+## Registering custom commands
+
+Commands live in a single registry so you can add, remove, or reorder them in one place. Each command is an object with the following shape:
+
+| Field | Required | Description |
+| --- | --- | --- |
+| `id` | Yes | Unique string used as the React key and for analytics. |
+| `label` | Yes | Text shown in the palette row. |
+| `group` | Yes | One of `Navigation`, `Blog`, `Social`, `Actions`. |
+| `keywords` | Yes | Array of strings used by the fuzzy matcher in addition to `label`. |
+| `shortcut` | No | Single-key hint shown on the right edge of the row. |
+| `href` | One of | URL to navigate to. Use this for internal routes and external links. |
+| `run` | One of | Function (sync or async) executed when the command is selected. |
+
+Provide either `href` **or** `run`, not both.
+
+### Example: add a new command
+
+```js
+// src/constants/commands.js
+import { commands } from "./commands";
+
+export const myCommands = [
+  ...commands,
+  {
+    id: "email",
+    label: "Email me",
+    group: "Social",
+    keywords: ["email", "contact", "mail"],
+    href: "mailto:hello@example.com",
+  },
+  {
+    id: "toggle-theme",
+    label: "Toggle dark mode",
+    group: "Actions",
+    keywords: ["theme", "dark", "light"],
+    shortcut: "d",
+    run: () => document.documentElement.classList.toggle("dark"),
+  },
+];
+```
+
+### Example: mount the palette with a custom registry
+
+The `useCommandPalette` hook accepts an optional command list. Pass your extended array to override the default registry:
+
+```jsx
+import { CommandPalette, useCommandPalette } from "./commandPalette";
+import { myCommands } from "./constants/commands";
+
+export function App() {
+  const palette = useCommandPalette(myCommands);
+  return (
+    <>
+      {/* your routes */}
+      <CommandPalette {...palette} />
+    </>
+  );
+}
+```
+
+If you don't pass a list, the palette uses the default `commands` export from the registry.
+
+## Related
+
+- [Projects](/projects) — other recent additions to the personal website.
+- [Keyboard shortcuts](/keyboard-shortcuts) — shortcuts for navigating the documentation itself.
