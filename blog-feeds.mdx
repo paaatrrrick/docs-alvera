@@ -1,0 +1,65 @@
+---
+title: "Blog feeds: RSS and JSON Feed"
+description: "How the personal website's blog is published as both an RSS feed and a JSON Feed, including the URLs to subscribe to and the fields each item exposes."
+---
+
+## Overview
+
+The personal website's blog is published as two machine-readable feeds so readers can subscribe in the reader of their choice:
+
+- **RSS** at [`/feed.xml`](https://paaatrrrick.com/feed.xml) — the long-standing XML format supported by virtually every feed reader.
+- **JSON Feed** at [`/feed.json`](https://paaatrrrick.com/feed.json) — a [JSON Feed 1.1](https://jsonfeed.org/version/1.1) representation of the same posts for readers and tools that prefer JSON.
+
+Both feeds are generated from the same list of articles, so you only need to subscribe to one.
+
+## When to use each feed
+
+Use whichever feed your reader supports best:
+
+- Pick **RSS** (`/feed.xml`) for traditional readers like Feedly, NetNewsWire, Reeder, or Inoreader.
+- Pick **JSON Feed** (`/feed.json`) if your reader supports JSON Feed natively, or if you're building a script, dashboard, or LLM pipeline and would rather parse JSON than XML.
+
+## JSON Feed format
+
+`/feed.json` follows the [JSON Feed 1.1 spec](https://jsonfeed.org/version/1.1). The top-level document describes the feed, and `items` contains one entry per blog post.
+
+```json
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Patrick's Blog",
+  "home_page_url": "https://paaatrrrick.com/blog",
+  "feed_url": "https://paaatrrrick.com/feed.json",
+  "items": [
+    {
+      "id": "https://paaatrrrick.com/blog/hello-world",
+      "url": "https://paaatrrrick.com/blog/hello-world",
+      "title": "Hello, world",
+      "summary": "A short note about why this blog exists."
+    }
+  ]
+}
+```
+
+Each item exposes the fields most readers care about:
+
+| Field | Description |
+| --- | --- |
+| `id` | Stable, unique URL for the post. Safe to use as a dedupe key. |
+| `url` | Canonical link to the post on the blog. |
+| `title` | Post title. |
+| `summary` | Short description of the post. |
+
+## Consuming the JSON Feed
+
+Because the feed is plain JSON, any HTTP client can read it. For example, in Node.js:
+
+```js
+const res = await fetch("https://paaatrrrick.com/feed.json");
+const feed = await res.json();
+
+for (const post of feed.items) {
+  console.log(post.title, "→", post.url);
+}
+```
+
+Point your feed reader at `https://paaatrrrick.com/feed.json` (or `/feed.xml` for RSS) to start receiving new posts automatically.

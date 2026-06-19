@@ -1,0 +1,65 @@
+---
+title: "Flux du blog : RSS et JSON Feed"
+description: "Comment le blog du site personnel est publié à la fois sous forme de flux RSS et de JSON Feed, avec les URL auxquelles s'abonner et les champs exposés par chaque élément."
+---
+
+## Aperçu
+
+Le blog du site personnel est publié sous forme de deux flux lisibles par machine afin que les lectrices et lecteurs puissent s'abonner depuis le lecteur de leur choix :
+
+- **RSS** sur [`/feed.xml`](https://paaatrrrick.com/feed.xml) — le format XML historique, pris en charge par pratiquement tous les lecteurs de flux.
+- **JSON Feed** sur [`/feed.json`](https://paaatrrrick.com/feed.json) — une représentation au format [JSON Feed 1.1](https://jsonfeed.org/version/1.1) des mêmes articles, pour les lecteurs et outils qui préfèrent JSON.
+
+Les deux flux sont générés à partir de la même liste d'articles, il suffit donc de s'abonner à l'un d'eux.
+
+## Quand utiliser chaque flux
+
+Choisissez le flux le mieux pris en charge par votre lecteur :
+
+- Choisissez **RSS** (`/feed.xml`) pour les lecteurs traditionnels comme Feedly, NetNewsWire, Reeder ou Inoreader.
+- Choisissez **JSON Feed** (`/feed.json`) si votre lecteur prend en charge JSON Feed nativement, ou si vous construisez un script, un tableau de bord ou un pipeline LLM et préférez analyser du JSON plutôt que du XML.
+
+## Format JSON Feed
+
+`/feed.json` suit la [spécification JSON Feed 1.1](https://jsonfeed.org/version/1.1). Le document de premier niveau décrit le flux et `items` contient une entrée par article de blog.
+
+```json
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Patrick's Blog",
+  "home_page_url": "https://paaatrrrick.com/blog",
+  "feed_url": "https://paaatrrrick.com/feed.json",
+  "items": [
+    {
+      "id": "https://paaatrrrick.com/blog/hello-world",
+      "url": "https://paaatrrrick.com/blog/hello-world",
+      "title": "Hello, world",
+      "summary": "A short note about why this blog exists."
+    }
+  ]
+}
+```
+
+Chaque élément expose les champs qui intéressent le plus les lecteurs :
+
+| Champ | Description |
+| --- | --- |
+| `id` | URL unique et stable de l'article. Utilisable comme clé de déduplication. |
+| `url` | Lien canonique vers l'article sur le blog. |
+| `title` | Titre de l'article. |
+| `summary` | Description courte de l'article. |
+
+## Consommer le JSON Feed
+
+Comme le flux est du JSON simple, n'importe quel client HTTP peut le lire. Par exemple, en Node.js :
+
+```js
+const res = await fetch("https://paaatrrrick.com/feed.json");
+const feed = await res.json();
+
+for (const post of feed.items) {
+  console.log(post.title, "→", post.url);
+}
+```
+
+Pointez votre lecteur de flux vers `https://paaatrrrick.com/feed.json` (ou `/feed.xml` pour RSS) pour recevoir automatiquement les nouveaux articles.
