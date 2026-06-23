@@ -48,6 +48,7 @@ Chaque entrée du tableau `myProjects` prend en charge les champs suivants :
 | `image`   | string  | Oui         | URL publique d'une image ou vidéo d'aperçu.                                                       |
 | `isVideo` | boolean | Oui         | `true` si `image` pointe vers un fichier vidéo, `false` pour une image fixe.                       |
 | `links`   | array   | Oui         | Liste d'objets lien `{ text, href }`. Les libellés courants sont `Github`, `Website` et `Play`.    |
+| `tags`    | string[] | Non        | Liste optionnelle de tags thématiques. Les projets avec des tags apparaissent sous les pastilles correspondantes du filtre. Voir [Filtrer par tag](#filtrer-par-tag). |
 
 ### Descriptions à puces
 
@@ -102,6 +103,37 @@ export default myProjects
 
 <Tip>
 Définissez `isVideo: true` lorsque `image` pointe vers un fichier `.mov` ou `.mp4` afin que la carte affiche un lecteur intégré au lieu d'un `<img>`.
+</Tip>
+
+## Filtrer par tag
+
+Les visiteurs peuvent restreindre la liste des projets à un seul thème grâce aux pastilles de filtrage situées au-dessus de la grille. Le filtrage se fait par projet : seules les entrées qui déclarent un tableau `tags` y participent.
+
+Ajoutez un champ `tags` à une entrée pour qu'elle puisse être filtrée :
+
+```js src/constants/projects.js
+{
+    title: '♟️ Realtime Chess',
+    text: [/* ... */],
+    image: 'https://res.cloudinary.com/.../preview.png',
+    isVideo: false,
+    tags: ['React', 'WebSockets', 'Games'],
+    links: [
+        { text: 'Github', href: 'https://github.com/paaatrrrick/realtime-chess' },
+        { text: 'Play', href: 'https://realtime-chess.app' },
+    ],
+}
+```
+
+Comportement du filtre :
+
+- La rangée de pastilles commence toujours par l'option **All**, qui affiche tous les projets.
+- Une pastille est rendue par tag unique, triées par ordre alphabétique. Les tags sont sensibles à la casse : `AI` et `ai` apparaissent comme deux pastilles distinctes.
+- Sélectionner un tag n'affiche que les projets dont le tableau `tags` contient exactement cette chaîne. Les projets sans champ `tags` sont masqués lorsqu'un tag est actif.
+- Sélectionner **All** réinitialise le filtre.
+
+<Tip>
+Gardez un vocabulaire de tags restreint et réutilisez les mêmes libellés sur plusieurs entrées (par exemple `AI`, `React`, `Games`) pour que chaque pastille corresponde à plus d'un projet. Des tags uniques produisent des pastilles qui filtrent jusqu'à une seule carte.
 </Tip>
 
 ## Rédiger les descriptions de projet
