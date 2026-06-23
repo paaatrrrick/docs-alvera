@@ -1,0 +1,83 @@
+---
+title: "Post view counter"
+description: "Show a per-post view count on the personal website using the useViewCount hook and the ViewCounter component backed by the views service."
+---
+
+## Overview
+
+The post view counter shows how many times a blog post has been read. It is made up of two pieces:
+
+- `useViewCount` — a React hook that talks to the views service to record a view or read the current total for a post.
+- `ViewCounter` — a small component that renders the formatted count next to a post (for example, `1,204 views`).
+
+Use it on any page that represents a single post and has a stable `postId`.
+
+## When to use it
+
+- Add `ViewCounter` to a post layout when you want readers to see how popular a post is.
+- Call `useViewCount` directly when you need the raw number for something other than the default label — for example, sorting a list of posts by popularity, or hiding a "trending" badge until a threshold is crossed.
+
+The hook records a view by default, so only mount it once per post render. If you need to read the count without recording a view (for example, in a list view), pass `increment: false`.
+
+## ViewCounter component
+
+`ViewCounter` takes a single `postId` prop and renders a `<span>` with the formatted count. While the request is in flight, or if the views service is unreachable, the component renders nothing so it never shows a misleading zero.
+
+```jsx
+import ViewCounter from "./components/ViewCounter";
+
+export default function PostHeader({ post }) {
+  return (
+    <header>
+      <h1>{post.title}</h1>
+      <p>
+        {post.publishedAt} · <ViewCounter postId={post.slug} />
+      </p>
+    </header>
+  );
+}
+```
+
+### Props
+
+| Prop     | Type   | Required | Description                                                                              |
+| -------- | ------ | -------- | ---------------------------------------------------------------------------------------- |
+| `postId` | string | Yes      | Stable identifier for the post. The slug is a good choice — it must not change over time. |
+
+## useViewCount hook
+
+`useViewCount(postId, options)` returns the latest view count for a post, or `null` while the request is pending or if it fails.
+
+```jsx
+import { useViewCount } from "./hooks/useViewCount";
+
+function TrendingBadge({ postId }) {
+  const count = useViewCount(postId, { increment: false });
+  if (count === null || count < 1000) return null;
+  return <span className="badge">🔥 Trending</span>;
+}
+```
+
+### Parameters
+
+| Parameter           | Type    | Default | Description                                                                                  |
+| ------------------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
+| `postId`            | string  | —       | Stable identifier for the post.                                                              |
+| `options.increment` | boolean | `true`  | When `true`, sends a `POST` and records a new view. When `false`, sends a `GET` to read only. |
+
+### Return value
+
+The hook returns the current view count as a number, or `null` when the count is not yet available or the request failed. Treat `null` as "unknown" — render a fallback, skip the UI, or wait.
+
+<Tip>
+Mount `ViewCounter` (or call `useViewCount` with the default `increment: true`) exactly once per post view. Mounting it more than once on the same page double-counts the read.
+</Tip>
+
+## Views service
+
+Both the component and the hook call the views service at `https://api.paaatrrrick.com/views/:postId`:
+
+- `POST /views/:postId` — increment the counter for `postId` and return the new total as `{ "count": <number> }`.
+- `GET /views/:postId` — return the current total as `{ "count": <number> }` without incrementing.
+
+If the service responds with a non-OK status or the response cannot be parsed, the count stays `null` and the UI renders nothing. The component will not retry — refresh the page to try again.

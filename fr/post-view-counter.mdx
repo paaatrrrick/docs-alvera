@@ -1,0 +1,83 @@
+---
+title: "Compteur de vues des articles"
+description: "Afficher un nombre de vues par article sur le site personnel à l'aide du hook useViewCount et du composant ViewCounter, adossés au service de vues."
+---
+
+## Aperçu
+
+Le compteur de vues affiche combien de fois un article de blog a été lu. Il se compose de deux pièces :
+
+- `useViewCount` : un hook React qui dialogue avec le service de vues pour enregistrer une vue ou lire le total actuel d'un article.
+- `ViewCounter` : un petit composant qui affiche le nombre formaté à côté d'un article (par exemple, `1 204 vues`).
+
+Utilisez-le sur toute page qui représente un article unique et possède un `postId` stable.
+
+## Quand l'utiliser
+
+- Ajoutez `ViewCounter` à la mise en page d'un article quand vous voulez montrer aux personnes qui lisent à quel point un article est populaire.
+- Appelez `useViewCount` directement quand vous avez besoin du nombre brut pour autre chose que le libellé par défaut — par exemple, trier une liste d'articles par popularité ou masquer un badge « tendance » tant qu'un seuil n'est pas franchi.
+
+Le hook enregistre une vue par défaut, alors montez-le une seule fois par rendu d'article. Si vous avez besoin de lire le compteur sans enregistrer une vue (par exemple, dans une vue en liste), passez `increment: false`.
+
+## Composant ViewCounter
+
+`ViewCounter` prend une seule prop `postId` et affiche un `<span>` contenant le nombre formaté. Pendant que la requête est en cours, ou si le service de vues est injoignable, le composant n'affiche rien afin de ne jamais montrer un zéro trompeur.
+
+```jsx
+import ViewCounter from "./components/ViewCounter";
+
+export default function PostHeader({ post }) {
+  return (
+    <header>
+      <h1>{post.title}</h1>
+      <p>
+        {post.publishedAt} · <ViewCounter postId={post.slug} />
+      </p>
+    </header>
+  );
+}
+```
+
+### Props
+
+| Prop     | Type   | Requis | Description                                                                              |
+| -------- | ------ | ------ | ---------------------------------------------------------------------------------------- |
+| `postId` | string | Oui    | Identifiant stable de l'article. Le slug est un bon choix — il ne doit pas changer.       |
+
+## Hook useViewCount
+
+`useViewCount(postId, options)` renvoie le dernier nombre de vues pour un article, ou `null` pendant que la requête est en attente ou si elle échoue.
+
+```jsx
+import { useViewCount } from "./hooks/useViewCount";
+
+function TrendingBadge({ postId }) {
+  const count = useViewCount(postId, { increment: false });
+  if (count === null || count < 1000) return null;
+  return <span className="badge">🔥 Tendance</span>;
+}
+```
+
+### Paramètres
+
+| Paramètre           | Type    | Valeur par défaut | Description                                                                                  |
+| ------------------- | ------- | ----------------- | -------------------------------------------------------------------------------------------- |
+| `postId`            | string  | —                 | Identifiant stable de l'article.                                                             |
+| `options.increment` | boolean | `true`            | Quand vaut `true`, envoie un `POST` et enregistre une nouvelle vue. Quand vaut `false`, envoie un `GET` en lecture seule. |
+
+### Valeur de retour
+
+Le hook renvoie le nombre de vues actuel sous forme de nombre, ou `null` quand le nombre n'est pas encore disponible ou que la requête a échoué. Traitez `null` comme « inconnu » : affichez un repli, masquez l'interface ou attendez.
+
+<Tip>
+Montez `ViewCounter` (ou appelez `useViewCount` avec la valeur par défaut `increment: true`) exactement une fois par affichage d'article. Le monter plusieurs fois sur la même page comptabilise la lecture en double.
+</Tip>
+
+## Service de vues
+
+Le composant et le hook appellent tous les deux le service de vues à `https://api.paaatrrrick.com/views/:postId` :
+
+- `POST /views/:postId` : incrémente le compteur pour `postId` et renvoie le nouveau total sous la forme `{ "count": <nombre> }`.
+- `GET /views/:postId` : renvoie le total actuel sous la forme `{ "count": <nombre> }` sans l'incrémenter.
+
+Si le service répond avec un statut différent d'OK ou si la réponse ne peut pas être analysée, le compteur reste à `null` et l'interface n'affiche rien. Le composant ne réessaie pas — actualisez la page pour réessayer.
