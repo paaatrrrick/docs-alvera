@@ -88,6 +88,43 @@ Faites résoudre `postComment` avec la même forme que celle stockée par votre 
 
 Le widget est livré avec un petit fichier CSS qui ajoute une bordure supérieure au-dessus de la section, supprime les puces de la liste, sépare les commentaires par un fin séparateur et étire le textarea sur toute la largeur du conteneur avec une hauteur minimale. Surchargez ces styles en ciblant `.comments`, `.comments ul`, `.comments li` et `.comments textarea` dans votre propre feuille de styles.
 
+## Badge de nombre de commentaires
+
+Utilisez le composant `CommentCount` pour afficher le nombre total de commentaires d'un article en dehors du widget principal — par exemple, à côté du titre d'un article dans une vue liste ou sur une carte de l'index du blog.
+
+Il lit depuis la même source que le widget via le hook `useComments`, donc le compteur reste synchronisé avec les commentaires affichés par `Comments`.
+
+### Props
+
+| Prop     | Type   | Requis | Description                                                                          |
+| -------- | ------ | ------ | ------------------------------------------------------------------------------------ |
+| `postId` | string | Oui    | Identifiant de l'article dont les commentaires doivent être comptés. Transmis à `useComments`. |
+
+### Comportement
+
+- Pendant que la requête sous-jacente est en cours, le badge ne rend rien — pas de placeholder ni de skeleton.
+- Une fois la requête résolue, le badge affiche `No comments` quand la liste est vide, `1 comment` pour un seul commentaire et `N comments` sinon.
+- L'élément rendu est un `<span>` portant la classe `comment-count`, vous pouvez donc l'intégrer en ligne à côté d'un autre texte.
+
+### Utilisation
+
+```jsx
+import CommentCount from "./components/comments/CommentCount";
+
+export default function BlogPostCard({ post }) {
+  return (
+    <a href={`/blog/${post.slug}`}>
+      <h2>{post.title}</h2>
+      <CommentCount postId={post.id} />
+    </a>
+  );
+}
+```
+
+<Tip>
+Chaque `CommentCount` monte sa propre souscription à `useComments`, donc en afficher beaucoup dans une longue vue liste déclenche une requête par article. Mettez en cache ou groupez côté backend si cela devient un problème.
+</Tip>
+
 ## La suite
 
 Les réactions emoji arriveront dans une prochaine version et cohabiteront avec la liste des commentaires sur le même article.

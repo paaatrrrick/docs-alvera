@@ -88,6 +88,43 @@ Resolve `postComment` with the same shape your backend stores so the optimistic 
 
 The widget ships with a small CSS file that adds a top border above the section, removes list bullets, separates comments with a thin divider, and stretches the textarea to the container width with a minimum height. Override these styles by targeting `.comments`, `.comments ul`, `.comments li`, and `.comments textarea` in your own stylesheet.
 
+## Comment count badge
+
+Use the `CommentCount` component to show a post's comment total anywhere outside the main widget — for example, next to a post title in a list view or in a blog index card.
+
+It reads from the same source as the widget via the `useComments` hook, so the count stays in sync with the comments shown by `Comments`.
+
+### Props
+
+| Prop     | Type   | Required | Description                                                                 |
+| -------- | ------ | -------- | --------------------------------------------------------------------------- |
+| `postId` | string | Yes      | Identifier for the post whose comments should be counted. Passed to `useComments`. |
+
+### Behavior
+
+- While the underlying fetch is in flight, the badge renders nothing — there is no placeholder or skeleton.
+- Once the fetch resolves, the badge shows `No comments` when the list is empty, `1 comment` for a single comment, and `N comments` otherwise.
+- The rendered element is a `<span>` with the class `comment-count`, so you can drop it inline next to other text.
+
+### Usage
+
+```jsx
+import CommentCount from "./components/comments/CommentCount";
+
+export default function BlogPostCard({ post }) {
+  return (
+    <a href={`/blog/${post.slug}`}>
+      <h2>{post.title}</h2>
+      <CommentCount postId={post.id} />
+    </a>
+  );
+}
+```
+
+<Tip>
+Each `CommentCount` mounts its own `useComments` subscription, so rendering many of them in a long list view fires one request per post. Cache or batch on your backend if that becomes a problem.
+</Tip>
+
 ## What's next
 
 Emoji reactions ship in a follow-up release and will live alongside the comments list on the same post.

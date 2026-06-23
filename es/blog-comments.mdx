@@ -88,6 +88,43 @@ Devuelve `postComment` con la misma forma que tu backend almacena para que la en
 
 El widget incluye un pequeño archivo CSS que añade un borde superior sobre la sección, elimina las viñetas de la lista, separa los comentarios con un divisor fino y estira el textarea al ancho del contenedor con una altura mínima. Sobrescribe estos estilos apuntando a `.comments`, `.comments ul`, `.comments li` y `.comments textarea` en tu propia hoja de estilos.
 
+## Insignia con el recuento de comentarios
+
+Usa el componente `CommentCount` para mostrar el total de comentarios de una entrada fuera del widget principal — por ejemplo, junto al título de una entrada en una vista de lista o en una tarjeta del índice del blog.
+
+Lee desde la misma fuente que el widget mediante el hook `useComments`, por lo que el recuento permanece sincronizado con los comentarios mostrados por `Comments`.
+
+### Props
+
+| Prop     | Tipo   | Requerido | Descripción                                                                       |
+| -------- | ------ | --------- | --------------------------------------------------------------------------------- |
+| `postId` | string | Sí        | Identificador de la entrada cuyos comentarios deben contarse. Se pasa a `useComments`. |
+
+### Comportamiento
+
+- Mientras la petición subyacente está en curso, la insignia no renderiza nada: no hay placeholder ni skeleton.
+- Una vez que la petición se resuelve, la insignia muestra `No comments` cuando la lista está vacía, `1 comment` para un único comentario y `N comments` en los demás casos.
+- El elemento renderizado es un `<span>` con la clase `comment-count`, por lo que puedes colocarlo en línea junto a otro texto.
+
+### Uso
+
+```jsx
+import CommentCount from "./components/comments/CommentCount";
+
+export default function BlogPostCard({ post }) {
+  return (
+    <a href={`/blog/${post.slug}`}>
+      <h2>{post.title}</h2>
+      <CommentCount postId={post.id} />
+    </a>
+  );
+}
+```
+
+<Tip>
+Cada `CommentCount` monta su propia suscripción a `useComments`, por lo que renderizar muchos de ellos en una vista de lista larga lanza una petición por entrada. Si eso se convierte en un problema, añade caché o batching en tu backend.
+</Tip>
+
 ## Próximamente
 
 Las reacciones con emojis llegarán en una versión posterior y convivirán con la lista de comentarios en la misma entrada.
