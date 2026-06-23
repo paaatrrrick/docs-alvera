@@ -1,0 +1,93 @@
+---
+title: "Widget de comentarios del blog: configuración y uso"
+description: "Cómo el widget Comments carga, muestra y envía comentarios de lectores en una entrada del blog, además de los handlers que espera."
+---
+
+## Resumen
+
+El widget Comments renderiza una sección de comentarios debajo de una entrada del blog. Carga los comentarios existentes al montar la entrada, permite a los lectores enviar un nuevo comentario mediante un textarea y añade de forma optimista los nuevos comentarios a la lista una vez que se guardan.
+
+El widget es solo de presentación: no se comunica directamente con un backend. Tú le pasas los handlers `fetchComments` y `postComment`, de modo que el mismo componente puede conectarse a cualquier capa de almacenamiento (una API alojada, una función serverless, un archivo JSON estático, etc.).
+
+## Cuándo usarlo
+
+Añade el widget a cualquier entrada del blog en la que quieras que los lectores dejen respuestas cortas de texto. Encaja bien cuando quieres:
+
+- Un hilo de discusión ligero en una sola entrada.
+- Control total sobre dónde se almacenan y moderan los comentarios.
+- UI optimista, para que un comentario publicado aparezca al instante cuando el handler se resuelve.
+
+Las reacciones con emojis son una función aparte y no forman parte de este widget.
+
+## Props
+
+| Prop            | Tipo                                          | Requerido | Descripción                                                                                                |
+| --------------- | --------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------- |
+| `postId`        | string                                        | Sí        | Identificador de la entrada. Se usa como clave para obtener y publicar comentarios.                        |
+| `fetchComments` | `(postId) => Promise<Comment[]>`              | Sí        | Se llama al montar y siempre que cambia `postId`. Devuelve la lista actual de comentarios de la entrada.    |
+| `postComment`   | `(postId, body) => Promise<Comment>`          | Sí        | Se llama cuando el lector envía el formulario. Devuelve el comentario recién creado, que se añade a la lista. |
+
+### Forma del comentario
+
+Cada comentario devuelto por `fetchComments` o `postComment` debe incluir:
+
+| Campo    | Tipo   | Descripción                                       |
+| -------- | ------ | ------------------------------------------------- |
+| `id`     | string | Clave única estable usada para renderizar la lista. |
+| `author` | string | Nombre mostrado antes del cuerpo del comentario.  |
+| `body`   | string | El texto del comentario.                          |
+
+## Comportamiento
+
+- Al montar y siempre que cambia `postId`, el widget llama a `fetchComments(postId)` y reemplaza la lista visible con el resultado.
+- Una petición en curso que finaliza después de que el componente se desmonte (o después de que `postId` cambie de nuevo) se descarta: el estado solo se actualiza para la petición activa más reciente.
+- Al enviar el formulario se recorta el borrador, se llama a `postComment(postId, body)` y se añade el comentario devuelto a la lista. El textarea se vacía si la operación tiene éxito.
+- Los borradores vacíos o que solo contengan espacios se ignoran y no disparan `postComment`.
+- El encabezado muestra el recuento actual como `N comments`.
+
+## Uso
+
+Monta el widget al final del layout de tu entrada de blog y pásale tus propios handlers.
+
+```jsx
+import Comments from "./components/comments/Comments";
+
+async function fetchComments(postId) {
+  const res = await fetch(`/api/posts/${postId}/comments`);
+  return res.json();
+}
+
+async function postComment(postId, body) {
+  const res = await fetch(`/api/posts/${postId}/comments`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ body }),
+  });
+  return res.json();
+}
+
+export default function BlogPost({ post }) {
+  return (
+    <article>
+      {/* ...cuerpo de la entrada... */}
+      <Comments
+        postId={post.id}
+        fetchComments={fetchComments}
+        postComment={postComment}
+      />
+    </article>
+  );
+}
+```
+
+<Tip>
+Devuelve `postComment` con la misma forma que tu backend almacena para que la entrada optimista coincida con la siguiente respuesta de `fetchComments`. Como mínimo, incluye `id`, `author` y `body`.
+</Tip>
+
+## Estilos
+
+El widget incluye un pequeño archivo CSS que añade un borde superior sobre la sección, elimina las viñetas de la lista, separa los comentarios con un divisor fino y estira el textarea al ancho del contenedor con una altura mínima. Sobrescribe estos estilos apuntando a `.comments`, `.comments ul`, `.comments li` y `.comments textarea` en tu propia hoja de estilos.
+
+## Próximamente
+
+Las reacciones con emojis llegarán en una versión posterior y convivirán con la lista de comentarios en la misma entrada.

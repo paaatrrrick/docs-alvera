@@ -1,0 +1,93 @@
+---
+title: "Blog comments widget: setup and usage"
+description: "How the Comments widget loads, displays, and submits reader comments on a blog post, plus the handlers it expects."
+---
+
+## Overview
+
+The Comments widget renders a comments section under a blog post. It loads existing comments when the post mounts, lets readers submit a new comment through a textarea, and optimistically appends new comments to the list once they are saved.
+
+The widget is presentation-only — it does not talk to a backend directly. You pass in `fetchComments` and `postComment` handlers so the same component can be wired to any storage layer (a hosted API, a serverless function, a static JSON file, and so on).
+
+## When to use it
+
+Add the widget to any blog post where you want readers to leave short text responses. It is a good fit when you want:
+
+- A lightweight discussion thread on a single post.
+- Full control over where comments are stored and moderated.
+- Optimistic UI so a posted comment appears instantly after the handler resolves.
+
+Emoji reactions are a separate feature and are not part of this widget.
+
+## Props
+
+| Prop            | Type                                          | Required | Description                                                                                                |
+| --------------- | --------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `postId`        | string                                        | Yes      | Identifier for the post. Used as the key for fetching and posting comments.                                |
+| `fetchComments` | `(postId) => Promise<Comment[]>`              | Yes      | Called on mount and whenever `postId` changes. Resolves with the current list of comments for the post.    |
+| `postComment`   | `(postId, body) => Promise<Comment>`          | Yes      | Called when the reader submits the form. Resolves with the newly created comment, which is appended to the list. |
+
+### Comment shape
+
+Each comment returned by `fetchComments` or `postComment` should include:
+
+| Field    | Type   | Description                                |
+| -------- | ------ | ------------------------------------------ |
+| `id`     | string | Stable unique key used for list rendering. |
+| `author` | string | Display name shown before the comment body.|
+| `body`   | string | The comment text.                          |
+
+## Behavior
+
+- On mount and whenever `postId` changes, the widget calls `fetchComments(postId)` and replaces the visible list with the result.
+- An in-flight fetch that completes after the component unmounts (or after `postId` changes again) is discarded — state is only updated for the latest active request.
+- Submitting the form trims the draft, calls `postComment(postId, body)`, and appends the resolved comment to the list. The textarea is cleared on success.
+- Empty or whitespace-only drafts are ignored and do not trigger `postComment`.
+- The heading shows the current count as `N comments`.
+
+## Usage
+
+Mount the widget at the bottom of your blog post layout and pass in your own handlers.
+
+```jsx
+import Comments from "./components/comments/Comments";
+
+async function fetchComments(postId) {
+  const res = await fetch(`/api/posts/${postId}/comments`);
+  return res.json();
+}
+
+async function postComment(postId, body) {
+  const res = await fetch(`/api/posts/${postId}/comments`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ body }),
+  });
+  return res.json();
+}
+
+export default function BlogPost({ post }) {
+  return (
+    <article>
+      {/* ...post body... */}
+      <Comments
+        postId={post.id}
+        fetchComments={fetchComments}
+        postComment={postComment}
+      />
+    </article>
+  );
+}
+```
+
+<Tip>
+Resolve `postComment` with the same shape your backend stores so the optimistic entry matches the next `fetchComments` response. At minimum, include `id`, `author`, and `body`.
+</Tip>
+
+## Styling
+
+The widget ships with a small CSS file that adds a top border above the section, removes list bullets, separates comments with a thin divider, and stretches the textarea to the container width with a minimum height. Override these styles by targeting `.comments`, `.comments ul`, `.comments li`, and `.comments textarea` in your own stylesheet.
+
+## What's next
+
+Emoji reactions ship in a follow-up release and will live alongside the comments list on the same post.
