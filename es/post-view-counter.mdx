@@ -73,6 +73,33 @@ El hook devuelve el conteo de vistas actual como un número, o `null` cuando el 
 Monta `ViewCounter` (o llama a `useViewCount` con el valor por defecto `increment: true`) exactamente una vez por vista de publicación. Montarlo más de una vez en la misma página cuenta la lectura dos veces.
 </Tip>
 
+## Combinarlo con la firma de la publicación
+
+En la mayoría de las plantillas de publicación querrás mostrar el conteo de vistas junto a la fecha de publicación y al tiempo de lectura. El componente `PostMeta` agrupa los tres en una sola firma para que la cabecera de cada publicación se mantenga consistente.
+
+```jsx
+import PostMeta from "./components/PostMeta";
+
+export default function PostHeader({ post }) {
+  return (
+    <header>
+      <h1>{post.title}</h1>
+      <PostMeta post={post} />
+    </header>
+  );
+}
+```
+
+`PostMeta` lee los siguientes campos del `post` que recibe:
+
+| Campo  | Tipo     | Se usa para                                                                                  |
+| ------ | -------- | -------------------------------------------------------------------------------------------- |
+| `date` | string   | Se renderiza tal cual cuando está presente. Pásalo ya formateado (por ejemplo, `"12 may 2026"`). |
+| `body` | string[] | Se une con espacios y se pasa a `ReadingTime` para estimar cuánto se tarda en leer la publicación. |
+| `id`   | string   | Se pasa a `ViewCounter` como `postId`. Debe ser estable para que el conteo sea fiable.        |
+
+Como `PostMeta` monta `ViewCounter` internamente, no rendericés también `ViewCounter` por separado en la misma página: contaría la lectura dos veces. Usa `PostMeta` para la firma y recurre al `ViewCounter` independiente o a `useViewCount` solo en páginas que no rendericen ya una firma (por ejemplo, páginas de listado o insignias de tendencia).
+
 ## Servicio de vistas
 
 Tanto el componente como el hook llaman al servicio de vistas en `https://api.paaatrrrick.com/views/:postId`:

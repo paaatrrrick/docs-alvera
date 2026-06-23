@@ -73,6 +73,33 @@ The hook returns the current view count as a number, or `null` when the count is
 Mount `ViewCounter` (or call `useViewCount` with the default `increment: true`) exactly once per post view. Mounting it more than once on the same page double-counts the read.
 </Tip>
 
+## Combining with the byline
+
+For most post layouts you want the view count alongside the publish date and reading time. The `PostMeta` component bundles all three into a single byline so each post header stays consistent.
+
+```jsx
+import PostMeta from "./components/PostMeta";
+
+export default function PostHeader({ post }) {
+  return (
+    <header>
+      <h1>{post.title}</h1>
+      <PostMeta post={post} />
+    </header>
+  );
+}
+```
+
+`PostMeta` reads the following fields from the `post` it receives:
+
+| Field   | Type              | Used for                                                                                       |
+| ------- | ----------------- | ---------------------------------------------------------------------------------------------- |
+| `date`  | string            | Rendered as-is when present. Pass it preformatted (for example, `"May 12, 2026"`).             |
+| `body`  | string[]          | Joined with spaces and passed to `ReadingTime` to estimate how long the post takes to read.    |
+| `id`    | string            | Passed to `ViewCounter` as the `postId`. Must be stable for the view count to be accurate.     |
+
+Because `PostMeta` mounts `ViewCounter` internally, do not also render `ViewCounter` separately on the same page — that would double-count the read. Use `PostMeta` for the byline and reach for the standalone `ViewCounter` or `useViewCount` only on pages that do not already render a byline (for example, list pages or trending badges).
+
 ## Views service
 
 Both the component and the hook call the views service at `https://api.paaatrrrick.com/views/:postId`:

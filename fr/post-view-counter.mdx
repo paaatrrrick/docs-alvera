@@ -73,6 +73,33 @@ Le hook renvoie le nombre de vues actuel sous forme de nombre, ou `null` quand l
 Montez `ViewCounter` (ou appelez `useViewCount` avec la valeur par défaut `increment: true`) exactement une fois par affichage d'article. Le monter plusieurs fois sur la même page comptabilise la lecture en double.
 </Tip>
 
+## Combiner avec la signature de l'article
+
+Pour la plupart des mises en page d'article, vous voulez afficher le nombre de vues à côté de la date de publication et du temps de lecture. Le composant `PostMeta` réunit les trois dans une seule signature afin que l'en-tête de chaque article reste cohérent.
+
+```jsx
+import PostMeta from "./components/PostMeta";
+
+export default function PostHeader({ post }) {
+  return (
+    <header>
+      <h1>{post.title}</h1>
+      <PostMeta post={post} />
+    </header>
+  );
+}
+```
+
+`PostMeta` lit les champs suivants sur le `post` qu'il reçoit :
+
+| Champ  | Type     | Utilisé pour                                                                                  |
+| ------ | -------- | --------------------------------------------------------------------------------------------- |
+| `date` | string   | Affiché tel quel quand il est présent. Passez-le préformaté (par exemple, `« 12 mai 2026 »`). |
+| `body` | string[] | Joint avec des espaces et passé à `ReadingTime` pour estimer la durée de lecture.             |
+| `id`   | string   | Passé à `ViewCounter` comme `postId`. Doit être stable pour que le compteur soit fiable.       |
+
+Comme `PostMeta` monte `ViewCounter` en interne, n'affichez pas non plus `ViewCounter` séparément sur la même page — cela compterait la lecture en double. Utilisez `PostMeta` pour la signature, et ne recourez au `ViewCounter` autonome ou à `useViewCount` que sur les pages qui n'affichent pas déjà une signature (par exemple, des pages de liste ou des badges de tendance).
+
 ## Service de vues
 
 Le composant et le hook appellent tous les deux le service de vues à `https://api.paaatrrrick.com/views/:postId` :
