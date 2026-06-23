@@ -125,6 +125,64 @@ export default function BlogPostCard({ post }) {
 Each `CommentCount` mounts its own `useComments` subscription, so rendering many of them in a long list view fires one request per post. Cache or batch on your backend if that becomes a problem.
 </Tip>
 
+## Sorting comments
+
+Use the `useCommentSort` hook with the `CommentSort` control to let readers reorder the thread by newest, oldest, or top.
+
+### `useCommentSort(comments)`
+
+Wrap the list returned from `useComments` (or any handler) and render the sorted result.
+
+| Return value | Type                                    | Description                                                                 |
+| ------------ | --------------------------------------- | --------------------------------------------------------------------------- |
+| `sort`       | `"newest" \| "oldest" \| "top"`         | The currently selected sort. Defaults to `"newest"`.                        |
+| `setSort`    | `(value) => void`                       | Updates the active sort.                                                    |
+| `sorted`     | `Comment[]`                             | The input list sorted in place by the active comparator. Memoized.          |
+
+Comparators:
+
+- `newest` and `oldest` order by `comment.date` (parsed with `new Date`).
+- `top` orders by the sum of values in `comment.reactions`. Comments without a `reactions` object are treated as zero.
+
+### `CommentSort`
+
+A three-button toggle that switches between sort modes.
+
+| Prop       | Type                  | Required | Description                                                              |
+| ---------- | --------------------- | -------- | ------------------------------------------------------------------------ |
+| `value`    | `"newest" \| "oldest" \| "top"` | Yes | The active sort. The matching button gets the `is-active` class.         |
+| `onChange` | `(value) => void`     | Yes      | Called when the reader clicks a button. Wire this to `setSort`.          |
+
+### Usage
+
+```jsx
+import Comments from "./components/comments/Comments";
+import CommentSort from "./components/comments/CommentSort";
+import { useComments } from "./components/comments/useComments";
+import { useCommentSort } from "./components/comments/useCommentSort";
+
+export default function BlogPost({ post }) {
+  const { comments, addComment } = useComments(post.id);
+  const { sort, setSort, sorted } = useCommentSort(comments);
+
+  return (
+    <article>
+      {/* ...post body... */}
+      <CommentSort value={sort} onChange={setSort} />
+      <Comments
+        postId={post.id}
+        fetchComments={() => Promise.resolve(sorted)}
+        postComment={(_, body) => addComment(body)}
+      />
+    </article>
+  );
+}
+```
+
+<Tip>
+Include a `date` field on every comment so `newest` and `oldest` sort deterministically. Comments missing `date` fall back to an invalid `Date`, which leaves their relative order undefined.
+</Tip>
+
 ## What's next
 
 Emoji reactions ship in a follow-up release and will live alongside the comments list on the same post.

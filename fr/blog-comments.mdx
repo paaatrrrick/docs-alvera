@@ -125,6 +125,64 @@ export default function BlogPostCard({ post }) {
 Chaque `CommentCount` monte sa propre souscription à `useComments`, donc en afficher beaucoup dans une longue vue liste déclenche une requête par article. Mettez en cache ou groupez côté backend si cela devient un problème.
 </Tip>
 
+## Trier les commentaires
+
+Utilisez le hook `useCommentSort` avec le contrôle `CommentSort` pour permettre aux lecteurs de réordonner le fil par plus récents, plus anciens ou en tête.
+
+### `useCommentSort(comments)`
+
+Enveloppez la liste renvoyée par `useComments` (ou tout autre handler) et affichez le résultat trié.
+
+| Valeur de retour | Type                                    | Description                                                                  |
+| ---------------- | --------------------------------------- | ---------------------------------------------------------------------------- |
+| `sort`           | `"newest" \| "oldest" \| "top"`         | Le tri actuellement sélectionné. Vaut `"newest"` par défaut.                 |
+| `setSort`        | `(value) => void`                       | Met à jour le tri actif.                                                     |
+| `sorted`         | `Comment[]`                             | La liste d'entrée triée selon le comparateur actif. Mémoïsée.                |
+
+Comparateurs :
+
+- `newest` et `oldest` trient par `comment.date` (analysé via `new Date`).
+- `top` trie par la somme des valeurs de `comment.reactions`. Les commentaires sans objet `reactions` sont traités comme zéro.
+
+### `CommentSort`
+
+Un sélecteur à trois boutons qui bascule entre les modes de tri.
+
+| Prop       | Type                            | Requis | Description                                                              |
+| ---------- | ------------------------------- | ------ | ------------------------------------------------------------------------ |
+| `value`    | `"newest" \| "oldest" \| "top"` | Oui    | Le tri actif. Le bouton correspondant reçoit la classe `is-active`.      |
+| `onChange` | `(value) => void`               | Oui    | Appelé lorsque le lecteur clique sur un bouton. Branchez-le sur `setSort`. |
+
+### Utilisation
+
+```jsx
+import Comments from "./components/comments/Comments";
+import CommentSort from "./components/comments/CommentSort";
+import { useComments } from "./components/comments/useComments";
+import { useCommentSort } from "./components/comments/useCommentSort";
+
+export default function BlogPost({ post }) {
+  const { comments, addComment } = useComments(post.id);
+  const { sort, setSort, sorted } = useCommentSort(comments);
+
+  return (
+    <article>
+      {/* ...corps de l'article... */}
+      <CommentSort value={sort} onChange={setSort} />
+      <Comments
+        postId={post.id}
+        fetchComments={() => Promise.resolve(sorted)}
+        postComment={(_, body) => addComment(body)}
+      />
+    </article>
+  );
+}
+```
+
+<Tip>
+Incluez un champ `date` sur chaque commentaire pour que `newest` et `oldest` trient de manière déterministe. Les commentaires sans `date` retombent sur une `Date` invalide, ce qui laisse leur ordre relatif indéfini.
+</Tip>
+
 ## La suite
 
 Les réactions emoji arriveront dans une prochaine version et cohabiteront avec la liste des commentaires sur le même article.
