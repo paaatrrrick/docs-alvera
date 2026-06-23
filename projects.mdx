@@ -48,6 +48,7 @@ Each entry in the `myProjects` array supports the following fields:
 | `image`   | string  | Yes      | Public URL of a preview image or video.                                                           |
 | `isVideo` | boolean | Yes      | `true` if `image` points to a video file, `false` for a still image.                              |
 | `links`   | array   | Yes      | List of `{ text, href }` link objects. Common labels are `Github`, `Website`, and `Play`.         |
+| `tags`    | string[] | No      | Optional list of topic tags. Projects with tags appear under matching pills in the tag filter. See [Filtering by tag](#filtering-by-tag). |
 
 ### Bulleted descriptions
 
@@ -102,6 +103,37 @@ export default myProjects
 
 <Tip>
 Set `isVideo: true` when `image` points to a `.mov` or `.mp4` file so the card renders an inline player instead of an `<img>`.
+</Tip>
+
+## Filtering by tag
+
+Visitors can narrow the projects list to a single topic using the tag filter pills above the grid. The filter is opt-in per project: only entries that declare a `tags` array participate.
+
+Add a `tags` field to any entry to make it filterable:
+
+```js src/constants/projects.js
+{
+    title: '♟️ Realtime Chess',
+    text: [/* ... */],
+    image: 'https://res.cloudinary.com/.../preview.png',
+    isVideo: false,
+    tags: ['React', 'WebSockets', 'Games'],
+    links: [
+        { text: 'Github', href: 'https://github.com/paaatrrrick/realtime-chess' },
+        { text: 'Play', href: 'https://realtime-chess.app' },
+    ],
+}
+```
+
+How the filter behaves:
+
+- The pill row always starts with an **All** option that shows every project.
+- One pill is rendered per unique tag, sorted alphabetically. Tags are case-sensitive, so `AI` and `ai` render as separate pills.
+- Selecting a tag shows only projects whose `tags` array includes that exact string. Projects with no `tags` field are hidden while a tag is active.
+- Selecting **All** clears the filter.
+
+<Tip>
+Keep the tag vocabulary small and reuse the same labels across entries (for example, `AI`, `React`, `Games`) so each pill matches more than one project. One-off tags create pills that filter down to a single card.
 </Tip>
 
 ## Writing project descriptions

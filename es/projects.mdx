@@ -48,6 +48,7 @@ Cada entrada del array `myProjects` admite los siguientes campos:
 | `image`   | string  | Sí          | URL pública de una imagen o vídeo de vista previa.                                                           |
 | `isVideo` | boolean | Sí          | `true` si `image` apunta a un archivo de vídeo, `false` si es una imagen estática.                           |
 | `links`   | array   | Sí          | Lista de objetos `{ text, href }` de enlaces. Etiquetas habituales: `Github`, `Website` y `Play`.            |
+| `tags`    | string[] | No         | Lista opcional de etiquetas temáticas. Los proyectos con etiquetas aparecen bajo las píldoras coincidentes del filtro. Consulta [Filtrar por etiqueta](#filtrar-por-etiqueta). |
 
 ### Descripciones con viñetas
 
@@ -102,6 +103,37 @@ export default myProjects
 
 <Tip>
 Establece `isVideo: true` cuando `image` apunte a un archivo `.mov` o `.mp4` para que la tarjeta renderice un reproductor en línea en lugar de un `<img>`.
+</Tip>
+
+## Filtrar por etiqueta
+
+Las personas que visitan el sitio pueden reducir la lista de proyectos a un solo tema mediante las píldoras de filtrado por etiqueta situadas encima de la cuadrícula. El filtrado es opcional para cada proyecto: solo participan las entradas que declaran un array `tags`.
+
+Añade un campo `tags` a cualquier entrada para que sea filtrable:
+
+```js src/constants/projects.js
+{
+    title: '♟️ Realtime Chess',
+    text: [/* ... */],
+    image: 'https://res.cloudinary.com/.../preview.png',
+    isVideo: false,
+    tags: ['React', 'WebSockets', 'Games'],
+    links: [
+        { text: 'Github', href: 'https://github.com/paaatrrrick/realtime-chess' },
+        { text: 'Play', href: 'https://realtime-chess.app' },
+    ],
+}
+```
+
+Cómo se comporta el filtro:
+
+- La fila de píldoras siempre empieza por la opción **All**, que muestra todos los proyectos.
+- Se renderiza una píldora por cada etiqueta única, ordenadas alfabéticamente. Las etiquetas distinguen mayúsculas y minúsculas, por lo que `AI` y `ai` aparecen como píldoras distintas.
+- Al seleccionar una etiqueta solo se muestran los proyectos cuyo array `tags` contiene esa cadena exacta. Los proyectos sin el campo `tags` quedan ocultos mientras hay una etiqueta activa.
+- Al seleccionar **All** se borra el filtro.
+
+<Tip>
+Mantén un vocabulario reducido de etiquetas y reutiliza los mismos nombres en varias entradas (por ejemplo, `AI`, `React`, `Games`) para que cada píldora coincida con más de un proyecto. Las etiquetas usadas una sola vez generan píldoras que filtran hasta una única tarjeta.
 </Tip>
 
 ## Cómo redactar las descripciones de los proyectos
