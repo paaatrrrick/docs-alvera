@@ -1,0 +1,188 @@
+---
+title: "Widget de commentaires de blog : configuration et utilisation"
+description: "Comment le widget Comments charge, affiche et envoie les commentaires des lecteurs sur un article, ainsi que les handlers qu'il attend."
+---
+
+## Aperçu
+
+Le widget Comments affiche une section de commentaires sous un article de blog. Il charge les commentaires existants au montage de l'article, permet aux lecteurs d'en soumettre un nouveau via un textarea, et ajoute de manière optimiste les nouveaux commentaires à la liste dès qu'ils sont enregistrés.
+
+Le widget est purement présentationnel : il ne dialogue pas directement avec un backend. Vous lui passez les handlers `fetchComments` et `postComment`, ce qui permet de brancher le même composant sur n'importe quelle couche de stockage (une API hébergée, une fonction serverless, un fichier JSON statique, etc.).
+
+## Quand l'utiliser
+
+Ajoutez le widget à tout article de blog où vous souhaitez que les lecteurs laissent de courtes réponses textuelles. Il convient bien lorsque vous voulez :
+
+- Un fil de discussion léger sur un seul article.
+- Un contrôle total sur l'emplacement de stockage et la modération des commentaires.
+- Une UI optimiste, pour qu'un commentaire publié apparaisse instantanément dès que le handler résout.
+
+Les réactions emoji sont une fonctionnalité distincte et ne font pas partie de ce widget.
+
+## Props
+
+| Prop            | Type                                          | Requis | Description                                                                                                       |
+| --------------- | --------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------- |
+| `postId`        | string                                        | Oui    | Identifiant de l'article. Utilisé comme clé pour récupérer et publier des commentaires.                            |
+| `fetchComments` | `(postId) => Promise<Comment[]>`              | Oui    | Appelé au montage et chaque fois que `postId` change. Renvoie la liste actuelle des commentaires de l'article.    |
+| `postComment`   | `(postId, body) => Promise<Comment>`          | Oui    | Appelé lorsque le lecteur soumet le formulaire. Renvoie le commentaire créé, qui est ajouté à la liste.            |
+
+### Forme d'un commentaire
+
+Chaque commentaire renvoyé par `fetchComments` ou `postComment` doit inclure :
+
+| Champ    | Type   | Description                                          |
+| -------- | ------ | ---------------------------------------------------- |
+| `id`     | string | Clé unique stable utilisée pour le rendu de la liste. |
+| `author` | string | Nom affiché avant le corps du commentaire.           |
+| `body`   | string | Le texte du commentaire.                             |
+
+## Comportement
+
+- Au montage et chaque fois que `postId` change, le widget appelle `fetchComments(postId)` et remplace la liste visible par le résultat.
+- Une requête en cours qui se termine après le démontage du composant (ou après un nouveau changement de `postId`) est ignorée — l'état n'est mis à jour que pour la requête active la plus récente.
+- À la soumission du formulaire, le brouillon est trimé, `postComment(postId, body)` est appelé, et le commentaire renvoyé est ajouté à la liste. Le textarea est vidé en cas de succès.
+- Les brouillons vides ou composés uniquement d'espaces sont ignorés et ne déclenchent pas `postComment`.
+- L'en-tête affiche le nombre courant sous la forme `N comments`.
+
+## Utilisation
+
+Montez le widget en bas de la mise en page de votre article de blog et passez-lui vos propres handlers.
+
+```jsx
+import Comments from "./components/comments/Comments";
+
+async function fetchComments(postId) {
+  const res = await fetch(`/api/posts/${postId}/comments`);
+  return res.json();
+}
+
+async function postComment(postId, body) {
+  const res = await fetch(`/api/posts/${postId}/comments`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ body }),
+  });
+  return res.json();
+}
+
+export default function BlogPost({ post }) {
+  return (
+    <article>
+      {/* ...corps de l'article... */}
+      <Comments
+        postId={post.id}
+        fetchComments={fetchComments}
+        postComment={postComment}
+      />
+    </article>
+  );
+}
+```
+
+<Tip>
+Faites résoudre `postComment` avec la même forme que celle stockée par votre backend, afin que l'entrée optimiste corresponde à la prochaine réponse de `fetchComments`. Au minimum, incluez `id`, `author` et `body`.
+</Tip>
+
+## Style
+
+Le widget est livré avec un petit fichier CSS qui ajoute une bordure supérieure au-dessus de la section, supprime les puces de la liste, sépare les commentaires par un fin séparateur et étire le textarea sur toute la largeur du conteneur avec une hauteur minimale. Surchargez ces styles en ciblant `.comments`, `.comments ul`, `.comments li` et `.comments textarea` dans votre propre feuille de styles.
+
+## Badge de nombre de commentaires
+
+Utilisez le composant `CommentCount` pour afficher le nombre total de commentaires d'un article en dehors du widget principal — par exemple, à côté du titre d'un article dans une vue liste ou sur une carte de l'index du blog.
+
+Il lit depuis la même source que le widget via le hook `useComments`, donc le compteur reste synchronisé avec les commentaires affichés par `Comments`.
+
+### Props
+
+| Prop     | Type   | Requis | Description                                                                          |
+| -------- | ------ | ------ | ------------------------------------------------------------------------------------ |
+| `postId` | string | Oui    | Identifiant de l'article dont les commentaires doivent être comptés. Transmis à `useComments`. |
+
+### Comportement
+
+- Pendant que la requête sous-jacente est en cours, le badge ne rend rien — pas de placeholder ni de skeleton.
+- Une fois la requête résolue, le badge affiche `No comments` quand la liste est vide, `1 comment` pour un seul commentaire et `N comments` sinon.
+- L'élément rendu est un `<span>` portant la classe `comment-count`, vous pouvez donc l'intégrer en ligne à côté d'un autre texte.
+
+### Utilisation
+
+```jsx
+import CommentCount from "./components/comments/CommentCount";
+
+export default function BlogPostCard({ post }) {
+  return (
+    <a href={`/blog/${post.slug}`}>
+      <h2>{post.title}</h2>
+      <CommentCount postId={post.id} />
+    </a>
+  );
+}
+```
+
+<Tip>
+Chaque `CommentCount` monte sa propre souscription à `useComments`, donc en afficher beaucoup dans une longue vue liste déclenche une requête par article. Mettez en cache ou groupez côté backend si cela devient un problème.
+</Tip>
+
+## Trier les commentaires
+
+Utilisez le hook `useCommentSort` avec le contrôle `CommentSort` pour permettre aux lecteurs de réordonner le fil par plus récents, plus anciens ou en tête.
+
+### `useCommentSort(comments)`
+
+Enveloppez la liste renvoyée par `useComments` (ou tout autre handler) et affichez le résultat trié.
+
+| Valeur de retour | Type                                    | Description                                                                  |
+| ---------------- | --------------------------------------- | ---------------------------------------------------------------------------- |
+| `sort`           | `"newest" \| "oldest" \| "top"`         | Le tri actuellement sélectionné. Vaut `"newest"` par défaut.                 |
+| `setSort`        | `(value) => void`                       | Met à jour le tri actif.                                                     |
+| `sorted`         | `Comment[]`                             | La liste d'entrée triée selon le comparateur actif. Mémoïsée.                |
+
+Comparateurs :
+
+- `newest` et `oldest` trient par `comment.date` (analysé via `new Date`).
+- `top` trie par la somme des valeurs de `comment.reactions`. Les commentaires sans objet `reactions` sont traités comme zéro.
+
+### `CommentSort`
+
+Un sélecteur à trois boutons qui bascule entre les modes de tri.
+
+| Prop       | Type                            | Requis | Description                                                              |
+| ---------- | ------------------------------- | ------ | ------------------------------------------------------------------------ |
+| `value`    | `"newest" \| "oldest" \| "top"` | Oui    | Le tri actif. Le bouton correspondant reçoit la classe `is-active`.      |
+| `onChange` | `(value) => void`               | Oui    | Appelé lorsque le lecteur clique sur un bouton. Branchez-le sur `setSort`. |
+
+### Utilisation
+
+```jsx
+import Comments from "./components/comments/Comments";
+import CommentSort from "./components/comments/CommentSort";
+import { useComments } from "./components/comments/useComments";
+import { useCommentSort } from "./components/comments/useCommentSort";
+
+export default function BlogPost({ post }) {
+  const { comments, addComment } = useComments(post.id);
+  const { sort, setSort, sorted } = useCommentSort(comments);
+
+  return (
+    <article>
+      {/* ...corps de l'article... */}
+      <CommentSort value={sort} onChange={setSort} />
+      <Comments
+        postId={post.id}
+        fetchComments={() => Promise.resolve(sorted)}
+        postComment={(_, body) => addComment(body)}
+      />
+    </article>
+  );
+}
+```
+
+<Tip>
+Incluez un champ `date` sur chaque commentaire pour que `newest` et `oldest` trient de manière déterministe. Les commentaires sans `date` retombent sur une `Date` invalide, ce qui laisse leur ordre relatif indéfini.
+</Tip>
+
+## La suite
+
+Les réactions emoji arriveront dans une prochaine version et cohabiteront avec la liste des commentaires sur le même article.

@@ -1,0 +1,188 @@
+---
+title: "Blog comments widget: setup and usage"
+description: "How the Comments widget loads, displays, and submits reader comments on a blog post, plus the handlers it expects."
+---
+
+## Overview
+
+The Comments widget renders a comments section under a blog post. It loads existing comments when the post mounts, lets readers submit a new comment through a textarea, and optimistically appends new comments to the list once they are saved.
+
+The widget is presentation-only — it does not talk to a backend directly. You pass in `fetchComments` and `postComment` handlers so the same component can be wired to any storage layer (a hosted API, a serverless function, a static JSON file, and so on).
+
+## When to use it
+
+Add the widget to any blog post where you want readers to leave short text responses. It is a good fit when you want:
+
+- A lightweight discussion thread on a single post.
+- Full control over where comments are stored and moderated.
+- Optimistic UI so a posted comment appears instantly after the handler resolves.
+
+Emoji reactions are a separate feature and are not part of this widget.
+
+## Props
+
+| Prop            | Type                                          | Required | Description                                                                                                |
+| --------------- | --------------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `postId`        | string                                        | Yes      | Identifier for the post. Used as the key for fetching and posting comments.                                |
+| `fetchComments` | `(postId) => Promise<Comment[]>`              | Yes      | Called on mount and whenever `postId` changes. Resolves with the current list of comments for the post.    |
+| `postComment`   | `(postId, body) => Promise<Comment>`          | Yes      | Called when the reader submits the form. Resolves with the newly created comment, which is appended to the list. |
+
+### Comment shape
+
+Each comment returned by `fetchComments` or `postComment` should include:
+
+| Field    | Type   | Description                                |
+| -------- | ------ | ------------------------------------------ |
+| `id`     | string | Stable unique key used for list rendering. |
+| `author` | string | Display name shown before the comment body.|
+| `body`   | string | The comment text.                          |
+
+## Behavior
+
+- On mount and whenever `postId` changes, the widget calls `fetchComments(postId)` and replaces the visible list with the result.
+- An in-flight fetch that completes after the component unmounts (or after `postId` changes again) is discarded — state is only updated for the latest active request.
+- Submitting the form trims the draft, calls `postComment(postId, body)`, and appends the resolved comment to the list. The textarea is cleared on success.
+- Empty or whitespace-only drafts are ignored and do not trigger `postComment`.
+- The heading shows the current count as `N comments`.
+
+## Usage
+
+Mount the widget at the bottom of your blog post layout and pass in your own handlers.
+
+```jsx
+import Comments from "./components/comments/Comments";
+
+async function fetchComments(postId) {
+  const res = await fetch(`/api/posts/${postId}/comments`);
+  return res.json();
+}
+
+async function postComment(postId, body) {
+  const res = await fetch(`/api/posts/${postId}/comments`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ body }),
+  });
+  return res.json();
+}
+
+export default function BlogPost({ post }) {
+  return (
+    <article>
+      {/* ...post body... */}
+      <Comments
+        postId={post.id}
+        fetchComments={fetchComments}
+        postComment={postComment}
+      />
+    </article>
+  );
+}
+```
+
+<Tip>
+Resolve `postComment` with the same shape your backend stores so the optimistic entry matches the next `fetchComments` response. At minimum, include `id`, `author`, and `body`.
+</Tip>
+
+## Styling
+
+The widget ships with a small CSS file that adds a top border above the section, removes list bullets, separates comments with a thin divider, and stretches the textarea to the container width with a minimum height. Override these styles by targeting `.comments`, `.comments ul`, `.comments li`, and `.comments textarea` in your own stylesheet.
+
+## Comment count badge
+
+Use the `CommentCount` component to show a post's comment total anywhere outside the main widget — for example, next to a post title in a list view or in a blog index card.
+
+It reads from the same source as the widget via the `useComments` hook, so the count stays in sync with the comments shown by `Comments`.
+
+### Props
+
+| Prop     | Type   | Required | Description                                                                 |
+| -------- | ------ | -------- | --------------------------------------------------------------------------- |
+| `postId` | string | Yes      | Identifier for the post whose comments should be counted. Passed to `useComments`. |
+
+### Behavior
+
+- While the underlying fetch is in flight, the badge renders nothing — there is no placeholder or skeleton.
+- Once the fetch resolves, the badge shows `No comments` when the list is empty, `1 comment` for a single comment, and `N comments` otherwise.
+- The rendered element is a `<span>` with the class `comment-count`, so you can drop it inline next to other text.
+
+### Usage
+
+```jsx
+import CommentCount from "./components/comments/CommentCount";
+
+export default function BlogPostCard({ post }) {
+  return (
+    <a href={`/blog/${post.slug}`}>
+      <h2>{post.title}</h2>
+      <CommentCount postId={post.id} />
+    </a>
+  );
+}
+```
+
+<Tip>
+Each `CommentCount` mounts its own `useComments` subscription, so rendering many of them in a long list view fires one request per post. Cache or batch on your backend if that becomes a problem.
+</Tip>
+
+## Sorting comments
+
+Use the `useCommentSort` hook with the `CommentSort` control to let readers reorder the thread by newest, oldest, or top.
+
+### `useCommentSort(comments)`
+
+Wrap the list returned from `useComments` (or any handler) and render the sorted result.
+
+| Return value | Type                                    | Description                                                                 |
+| ------------ | --------------------------------------- | --------------------------------------------------------------------------- |
+| `sort`       | `"newest" \| "oldest" \| "top"`         | The currently selected sort. Defaults to `"newest"`.                        |
+| `setSort`    | `(value) => void`                       | Updates the active sort.                                                    |
+| `sorted`     | `Comment[]`                             | The input list sorted in place by the active comparator. Memoized.          |
+
+Comparators:
+
+- `newest` and `oldest` order by `comment.date` (parsed with `new Date`).
+- `top` orders by the sum of values in `comment.reactions`. Comments without a `reactions` object are treated as zero.
+
+### `CommentSort`
+
+A three-button toggle that switches between sort modes.
+
+| Prop       | Type                  | Required | Description                                                              |
+| ---------- | --------------------- | -------- | ------------------------------------------------------------------------ |
+| `value`    | `"newest" \| "oldest" \| "top"` | Yes | The active sort. The matching button gets the `is-active` class.         |
+| `onChange` | `(value) => void`     | Yes      | Called when the reader clicks a button. Wire this to `setSort`.          |
+
+### Usage
+
+```jsx
+import Comments from "./components/comments/Comments";
+import CommentSort from "./components/comments/CommentSort";
+import { useComments } from "./components/comments/useComments";
+import { useCommentSort } from "./components/comments/useCommentSort";
+
+export default function BlogPost({ post }) {
+  const { comments, addComment } = useComments(post.id);
+  const { sort, setSort, sorted } = useCommentSort(comments);
+
+  return (
+    <article>
+      {/* ...post body... */}
+      <CommentSort value={sort} onChange={setSort} />
+      <Comments
+        postId={post.id}
+        fetchComments={() => Promise.resolve(sorted)}
+        postComment={(_, body) => addComment(body)}
+      />
+    </article>
+  );
+}
+```
+
+<Tip>
+Include a `date` field on every comment so `newest` and `oldest` sort deterministically. Comments missing `date` fall back to an invalid `Date`, which leaves their relative order undefined.
+</Tip>
+
+## What's next
+
+Emoji reactions ship in a follow-up release and will live alongside the comments list on the same post.
