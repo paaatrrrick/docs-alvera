@@ -100,11 +100,44 @@ export default function PostHeader({ post }) {
 
 Because `PostMeta` mounts `ViewCounter` internally, do not also render `ViewCounter` separately on the same page — that would double-count the read. Use `PostMeta` for the byline and reach for the standalone `ViewCounter` or `useViewCount` only on pages that do not already render a byline (for example, list pages or trending badges).
 
+## Total site views
+
+`SiteViews` and `useTotalViews` show the aggregate read count across every post. Use them on the home page, footer, or "about" page when you want a single headline number rather than a per-post count.
+
+```jsx
+import SiteViews from "./components/SiteViews";
+
+export default function Footer() {
+  return (
+    <footer>
+      <SiteViews />
+    </footer>
+  );
+}
+```
+
+`SiteViews` takes no props and renders a `<p>` like `12,540 total reads across all posts.` Until the request resolves — or if it fails — the component renders nothing.
+
+For custom UI, call `useTotalViews()` directly. It returns the current total as a number, or `null` while pending or on failure.
+
+```jsx
+import { useTotalViews } from "./hooks/useTotalViews";
+
+function MilestoneBanner() {
+  const total = useTotalViews();
+  if (total === null || total < 10000) return null;
+  return <div className="banner">🎉 Over {total.toLocaleString()} reads!</div>;
+}
+```
+
+Unlike `useViewCount`, `useTotalViews` only reads — it never increments anything.
+
 ## Views service
 
-Both the component and the hook call the views service at `https://api.paaatrrrick.com/views/:postId`:
+The component and the hooks call the views service at `https://api.paaatrrrick.com/views`:
 
 - `POST /views/:postId` — increment the counter for `postId` and return the new total as `{ "count": <number> }`.
-- `GET /views/:postId` — return the current total as `{ "count": <number> }` without incrementing.
+- `GET /views/:postId` — return the current total for a single post as `{ "count": <number> }` without incrementing.
+- `GET /views/total` — return the aggregate total across every post as `{ "total": <number> }`.
 
 If the service responds with a non-OK status or the response cannot be parsed, the count stays `null` and the UI renders nothing. The component will not retry — refresh the page to try again.

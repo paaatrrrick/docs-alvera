@@ -100,11 +100,44 @@ export default function PostHeader({ post }) {
 
 Como `PostMeta` monta `ViewCounter` internamente, no rendericés también `ViewCounter` por separado en la misma página: contaría la lectura dos veces. Usa `PostMeta` para la firma y recurre al `ViewCounter` independiente o a `useViewCount` solo en páginas que no rendericen ya una firma (por ejemplo, páginas de listado o insignias de tendencia).
 
+## Total de vistas del sitio
+
+`SiteViews` y `useTotalViews` muestran el total de lecturas agregadas en todas las publicaciones. Úsalos en la página principal, el pie de página o la página "sobre mí" cuando quieras una sola cifra destacada en lugar de un conteo por publicación.
+
+```jsx
+import SiteViews from "./components/SiteViews";
+
+export default function Footer() {
+  return (
+    <footer>
+      <SiteViews />
+    </footer>
+  );
+}
+```
+
+`SiteViews` no recibe props y renderiza un `<p>` como `12.540 lecturas totales en todas las publicaciones.` Hasta que la petición se resuelve, o si falla, el componente no renderiza nada.
+
+Para una interfaz personalizada, llama a `useTotalViews()` directamente. Devuelve el total actual como un número, o `null` mientras está pendiente o si falla.
+
+```jsx
+import { useTotalViews } from "./hooks/useTotalViews";
+
+function MilestoneBanner() {
+  const total = useTotalViews();
+  if (total === null || total < 10000) return null;
+  return <div className="banner">🎉 ¡Más de {total.toLocaleString()} lecturas!</div>;
+}
+```
+
+A diferencia de `useViewCount`, `useTotalViews` solo lee: nunca incrementa nada.
+
 ## Servicio de vistas
 
-Tanto el componente como el hook llaman al servicio de vistas en `https://api.paaatrrrick.com/views/:postId`:
+El componente y los hooks llaman al servicio de vistas en `https://api.paaatrrrick.com/views`:
 
 - `POST /views/:postId`: incrementa el contador de `postId` y devuelve el nuevo total como `{ "count": <número> }`.
-- `GET /views/:postId`: devuelve el total actual como `{ "count": <número> }` sin incrementarlo.
+- `GET /views/:postId`: devuelve el total actual de una sola publicación como `{ "count": <número> }` sin incrementarlo.
+- `GET /views/total`: devuelve el total agregado de todas las publicaciones como `{ "total": <número> }`.
 
 Si el servicio responde con un estado distinto de OK o la respuesta no se puede parsear, el conteo se queda en `null` y la interfaz no renderiza nada. El componente no reintenta: recarga la página para volver a intentarlo.
