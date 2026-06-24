@@ -1,0 +1,106 @@
+---
+title: "Raccourcis clavier et palette de commandes"
+description: "Comment fonctionne l'UX au clavier du site personnel : le registre des raccourcis, la superposition d'aide avec `?` et la commande Changer de thème dans la palette ⌘K."
+---
+
+## Vue d'ensemble
+
+Le site personnel embarque une petite couche de navigation au clavier, conçue pour les visiteurs qui préfèrent ne pas utiliser la souris. Elle comporte deux parties :
+
+- Un **registre de raccourcis** ainsi qu'une superposition d'aide déclenchée par la touche `?` qui liste tous les raccourcis disponibles.
+- Une **palette de commandes** (⌘K) avec une commande **Changer de thème** intégrée.
+
+Les deux éléments partagent le même public et la même surface de code, ils sont donc documentés ensemble ici.
+
+## Raccourcis clavier
+
+Les raccourcis fonctionnent sur toutes les pages. Appuyez sur `?` à tout moment pour ouvrir la superposition d'aide et voir la liste complète. Appuyez sur `Esc` (ou cliquez en dehors du panneau) pour la fermer.
+
+| Touches  | Action                                          |
+| -------- | ----------------------------------------------- |
+| `⌘` `K`  | Ouvrir la palette de commandes                  |
+| `?`      | Afficher la superposition des raccourcis clavier |
+| `g` `h`  | Aller à l'Accueil                               |
+| `g` `b`  | Aller au Blog                                   |
+| `t`      | Remonter en haut                                |
+| `c`      | Copier l'URL actuelle                           |
+| `Esc`    | Fermer toute superposition ouverte              |
+
+### La superposition d'aide
+
+La superposition est rendue par le composant `ShortcutsHelp` et pilotée par le hook `useShortcutsHelp`. Le hook écoute la touche `?` au niveau de la fenêtre et bascule une petite modale qui liste toutes les entrées du registre `shortcuts`.
+
+L'écouteur ignore intentionnellement les frappes lorsque vous saisissez du texte dans un `<input>` ou un `<textarea>`, de sorte que la superposition n'apparaît jamais au milieu d'une recherche ou d'un formulaire.
+
+```js src/constants/shortcuts.js
+export const shortcuts = [
+  { keys: ["⌘", "K"], description: "Open the command palette" },
+  { keys: ["?"], description: "Show this keyboard shortcuts help" },
+  { keys: ["g", "h"], description: "Go to Home" },
+  { keys: ["g", "b"], description: "Go to Blog" },
+  { keys: ["t"], description: "Scroll to top" },
+  { keys: ["c"], description: "Copy current URL" },
+  { keys: ["esc"], description: "Close any open overlay" },
+];
+```
+
+### Ajouter un raccourci
+
+1. Ajoutez une entrée au tableau `shortcuts` dans `src/constants/shortcuts.js`. Le champ `keys` est un tableau de chaînes rendu sous forme de jetons `<kbd>` dans la superposition.
+2. Branchez la gestion réelle des touches là où le raccourci a sa place (un hook, une route ou un composant).
+3. Gardez la description courte : la superposition est une référence en un coup d'œil, pas un tutoriel.
+
+<Tip>
+Le tableau `keys` est rendu tel quel, utilisez donc la même casse que celle que les visiteurs taperont sur leur clavier (`g` et non `G`, `⌘` et non `Cmd`).
+</Tip>
+
+## Palette de commandes
+
+Appuyez sur `⌘` `K` (ou `Ctrl` `K` sous Windows et Linux) pour ouvrir la palette de commandes. Elle regroupe des commandes recherchables afin que les visiteurs puissent exécuter des actions sans avoir à mémoriser des raccourcis individuels.
+
+### Commande Changer de thème
+
+La palette inclut une commande **Changer de thème** enregistrée via le hook `useThemeCommand`. La commande :
+
+- Se trouve dans le groupe **Actions** à l'intérieur de la palette.
+- Est associée au raccourci `d` à l'intérieur de ⌘K, donc `⌘ K` puis `d` bascule le thème.
+- Lit le thème courant depuis `useTheme` et met à jour son propre libellé pour qu'il affiche toujours "Switch to light mode" ou "Switch to dark mode" selon le thème actif.
+- Est recherchable via les mots-clés `theme`, `dark`, `light` et `mode`.
+
+```js src/commandPalette/themeCommand.js
+import { useTheme } from "../hooks/useTheme";
+
+export function useThemeCommand() {
+  const { theme, toggleTheme } = useTheme();
+  return {
+    id: "toggle-theme",
+    label: theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+    group: "Actions",
+    keywords: ["theme", "dark", "light", "mode"],
+    shortcut: "d",
+    run: toggleTheme,
+  };
+}
+```
+
+### Ajouter une commande
+
+Chaque commande est un hook qui renvoie un objet simple avec les champs suivants :
+
+| Champ      | Type       | Requis | Description                                                                          |
+| ---------- | ---------- | ------ | ------------------------------------------------------------------------------------ |
+| `id`       | string     | Oui    | Identifiant stable utilisé comme clé React et pour l'analytique.                     |
+| `label`    | string     | Oui    | Texte affiché dans la palette. Peut changer en fonction de l'état de l'application.   |
+| `group`    | string     | Oui    | Titre de section dans la palette (par exemple, `Actions`, `Navigation`).             |
+| `keywords` | string\[]  | Non    | Termes supplémentaires que la recherche floue doit prendre en compte.                |
+| `shortcut` | string     | Non    | Touche unique liée à l'intérieur de la palette ouverte. Appuyez dessus pour exécuter la commande. |
+| `run`      | () => void | Oui    | Fonction exécutée lorsque la commande est sélectionnée.                              |
+
+Enregistrez le nouveau hook aux côtés de `useThemeCommand` pour qu'il apparaisse dans la liste de commandes de la palette.
+
+## Quand utiliser l'un ou l'autre
+
+- Utilisez un **raccourci clavier** pour les actions que les visiteurs vont effectuer fréquemment ou pour lesquelles ils veulent acquérir une mémoire musculaire (navigation, défilement, copie de l'URL).
+- Utilisez une **entrée dans la palette de commandes** pour les actions qui bénéficient de la recherche, d'un libellé qui explique l'état ou d'un regroupement avec d'autres commandes (basculer le thème, sauter à une section précise).
+
+Si une fonctionnalité mérite les deux — par exemple, une action avec un raccourci global et un libellé identifiable — enregistrez-la dans `shortcuts.js` et en tant que commande de palette pour qu'elle apparaisse dans les deux surfaces.
