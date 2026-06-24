@@ -1,0 +1,156 @@
+---
+title: "Préférences du résumé de la newsletter"
+description: "Comment les abonnés choisissent une fréquence de résumé, un fuseau horaire, prévisualisent le prochain envoi, et mettent en pause ou reprennent le résumé de la newsletter du site personnel."
+---
+
+## Aperçu
+
+Le résumé de la newsletter du site personnel permet aux abonnés de contrôler la fréquence à laquelle ils reçoivent des nouvelles du site et à quel moment. Depuis l'écran des préférences du résumé, un lecteur peut :
+
+- Choisir une fréquence de livraison : **quotidienne**, **hebdomadaire** ou **mensuelle**.
+- Voir un aperçu de la date d'arrivée du prochain résumé.
+- Définir le fuseau horaire que doit suivre la planification du résumé.
+- Mettre en pause puis reprendre la livraison sans se désabonner.
+
+Cette page s'adresse aux contributeurs et mainteneurs du site personnel (et aux lecteurs curieux du fonctionnement de cet écran). Chaque préférence est enregistrée dans le service de newsletter par adresse e-mail, afin que le même abonné conserve un comportement cohérent d'une visite à l'autre.
+
+## Choisir une fréquence
+
+Les options de fréquence sont définies de manière centralisée dans la configuration `CADENCES` et rendues par le composant `CadencePicker`. Chaque fréquence possède un id, un libellé d'affichage, une expression cron utilisée par le service de newsletter pour planifier les envois, et une courte description lisible.
+
+| Fréquence  | Libellé      | Planification                       |
+| ---------- | ------------ | ----------------------------------- |
+| `daily`    | Quotidienne  | Tous les matins à 9 h.              |
+| `weekly`   | Hebdomadaire | Le lundi matin à 9 h.               |
+| `monthly`  | Mensuelle    | Le premier du mois à 9 h.           |
+
+La fréquence par défaut est **hebdomadaire**. Si un abonné n'en a pas encore choisi une, c'est celle qu'il reçoit.
+
+`CadencePicker` rend les options sous forme de groupe radio. Il prend un `value` (l'id de la fréquence actuellement sélectionnée) et un callback `onChange` qui se déclenche avec le nouvel id lorsque l'abonné choisit une autre option.
+
+```jsx
+import CadencePicker from "./components/newsletter/CadencePicker";
+
+<CadencePicker value={cadence} onChange={save} />
+```
+
+<Tip>
+Pour ajouter ou renommer une fréquence, modifiez le tableau `CADENCES` dans la configuration des cadences. Chaque entrée nécessite un `id`, un `label`, un `cron` et une `description`. Le sélecteur, l'aperçu du prochain envoi et le service de newsletter lisent tous depuis cette source unique.
+</Tip>
+
+## Enregistrer la préférence de fréquence
+
+Le hook `useDigestPreference` gère l'état de la fréquence pour un abonné et est chargé de le persister auprès du service de newsletter.
+
+Il renvoie :
+
+- `cadence` : l'id de la fréquence actuellement sélectionnée (par défaut `DEFAULT_CADENCE`).
+- `save(nextCadence)` : met à jour l'état local immédiatement et envoie un `POST` de `{ email, cadence }` à l'endpoint `/digest` du service de newsletter.
+- `pending` : vaut `true` pendant qu'une sauvegarde est en cours, afin que l'interface puisse désactiver les entrées.
+
+```jsx
+import { useDigestPreference } from "./components/newsletter/useDigestPreference";
+import CadencePicker from "./components/newsletter/CadencePicker";
+
+function DigestSettings({ email }) {
+  const { cadence, save, pending } = useDigestPreference(email);
+
+  return (
+    <fieldset disabled={pending}>
+      <CadencePicker value={cadence} onChange={save} />
+    </fieldset>
+  );
+}
+```
+
+Le hook applique la nouvelle fréquence de manière optimiste : l'état local est mis à jour avant que la requête ne se résolve, ce qui rend le sélecteur réactif. Si la requête échoue, le hook lève une exception pour que l'appelant puisse afficher une erreur.
+
+## Aperçu de la prochaine heure d'envoi
+
+`NextSendHint` indique à l'abonné quand son prochain résumé arrivera. Il prend l'id de la fréquence sélectionnée et délègue à `nextSendLabel` de `nextSend.js`, qui calcule le prochain moment d'envoi pour cette fréquence :
+
+- **Quotidienne** : aujourd'hui à 9 h, ou demain à 9 h s'il est déjà plus de 9 h.
+- **Hebdomadaire** : lundi prochain à 9 h.
+- **Mensuelle** : le premier du mois prochain à 9 h.
+
+Le résultat est formaté selon les paramètres régionaux de l'utilisateur (jour de la semaine, mois court, jour).
+
+```jsx
+import NextSendHint from "./components/newsletter/NextSendHint";
+
+<NextSendHint cadence={cadence} />
+// → "Your next digest will arrive Monday, Jun 29."
+```
+
+Placez-le directement sous le `CadencePicker` pour que l'abonné obtienne un retour immédiat sur ce qu'implique son choix.
+
+## Fuseau horaire par abonné
+
+Par défaut, la planification du résumé fonctionne dans le fuseau horaire local de l'abonné. `useDigestTimezone` et `TimezonePicker` se chargent de choisir et de persister ce choix.
+
+`useDigestTimezone(email)` :
+
+- Détecte le fuseau horaire du navigateur via `Intl.DateTimeFormat().resolvedOptions().timeZone`, en repliant sur `UTC` si la détection échoue.
+- Renvoie `{ timezone, save, pending }`. `save(tz)` met à jour l'état local et envoie un `POST` de `{ email, timezone }` à l'endpoint `/digest/timezone` du service de newsletter.
+
+`TimezonePicker` est un mince enrobage qui rend un `<select>` de fuseaux horaires courants (Los Angeles, New York, Londres, Berlin, Tokyo, UTC). Placez-le à côté du sélecteur de fréquence :
+
+```jsx
+import TimezonePicker from "./components/newsletter/TimezonePicker";
+
+<TimezonePicker email={email} />
+```
+
+<Tip>
+Pour ajouter d'autres options, étendez la liste `COMMON_ZONES` dans `TimezonePicker.js` avec n'importe quel identifiant IANA de fuseau horaire valide (par exemple, `Australia/Sydney`).
+</Tip>
+
+## Mettre en pause et reprendre
+
+Les abonnés qui veulent une pause — sans pour autant se désabonner — peuvent mettre le résumé en pause. `useDigestPause` suit l'état de pause et le persiste ; `DigestPauseToggle` affiche le bouton.
+
+`useDigestPause(email)` renvoie :
+
+- `paused` : état booléen, par défaut `false`.
+- `setPaused(next)` : bascule l'état localement et envoie un `POST` de `{ email, paused }` à l'endpoint `/digest/pause` du service de newsletter.
+- `pending` : vaut `true` pendant que la requête est en cours.
+
+`DigestPauseToggle` affiche un seul bouton qui bascule entre **Pause digest** et **Resume digest** selon l'état actuel.
+
+```jsx
+import DigestPauseToggle from "./components/newsletter/DigestPauseToggle";
+
+<DigestPauseToggle email={email} />
+```
+
+En pause, le service de newsletter cesse d'envoyer des résumés à cette adresse mais conserve intacts l'abonnement, la fréquence et le fuseau horaire. La reprise rétablit la livraison lors de la prochaine exécution planifiée.
+
+## Tout assembler
+
+Un panneau de préférences complet compose les quatre éléments :
+
+```jsx
+import CadencePicker from "./components/newsletter/CadencePicker";
+import NextSendHint from "./components/newsletter/NextSendHint";
+import TimezonePicker from "./components/newsletter/TimezonePicker";
+import DigestPauseToggle from "./components/newsletter/DigestPauseToggle";
+import { useDigestPreference } from "./components/newsletter/useDigestPreference";
+
+export default function DigestPreferences({ email }) {
+  const { cadence, save, pending } = useDigestPreference(email);
+
+  return (
+    <section>
+      <h2>Digest preferences</h2>
+      <fieldset disabled={pending}>
+        <CadencePicker value={cadence} onChange={save} />
+      </fieldset>
+      <NextSendHint cadence={cadence} />
+      <TimezonePicker email={email} />
+      <DigestPauseToggle email={email} />
+    </section>
+  );
+}
+```
+
+Chaque préférence est persistée indépendamment, de sorte qu'un abonné peut en changer une sans perdre les autres.
