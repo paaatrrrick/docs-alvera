@@ -1,0 +1,159 @@
+---
+title: "Blog comments: reactions, sorting, and counts"
+description: "How the personal website's comments widget tracks per-post counts, sorts threads, and persists emoji reactions with optimistic updates."
+---
+
+## Overview
+
+The comments widget on the personal website lets readers leave comments on a blog post, react to existing comments with emoji, and sort the thread. It is composed of small React pieces — a list, a form, a sort control, a per-comment reactions bar — backed by two hooks (`useComments`, `useReactions`) that talk to the comments API.
+
+This page covers three pieces of that surface that landed this week:
+
+- **Reactions** — persisted emoji counts with optimistic updates (`useReactions`).
+- **Sorting** — newest / oldest / top, driven by `useCommentSort` and the `CommentSort` control.
+- **Comment count badge** — a lightweight `CommentCount` component for post lists and headers.
+
+If you are writing a new blog template, an index page, or extending the comments widget, you will likely use at least one of these.
+
+## Reactions
+
+Each comment has its own emoji reactions bar. Counts are stored server-side and keyed by a `targetId` (the comment id), so reactions survive a page reload and are shared across visitors.
+
+### When to use it
+
+Reach for `useReactions` any time you want a "+1 with a count" interaction attached to a stable id — comment reactions today, but the same hook works for reacting to a whole post or a project card.
+
+### Configuration
+
+`useReactions(targetId)` returns:
+
+| Field    | Type                                | Description                                                                                |
+| -------- | ----------------------------------- | ------------------------------------------------------------------------------------------ |
+| `counts` | `Record<string, number>`            | Current count per emoji, e.g. `{ "👍": 4, "🎉": 1 }`. Empty object until the first fetch resolves. |
+| `react`  | `(emoji: string) => Promise<any>`   | Increment the count for `emoji`. Updates local state immediately and posts to the API.     |
+
+On mount, the hook fetches `GET /reactions/:targetId` and seeds `counts` from the response. Calling `react(emoji)` does three things in order:
+
+1. **Optimistic update.** Local `counts[emoji]` is incremented immediately so the UI feels instant.
+2. **Server write.** A `POST /reactions/:targetId` request sends `{ emoji }`.
+3. **Rollback on failure.** If the server returns a non-2xx response, the local count is decremented back (floored at `0`) and the promise rejects.
+
+### Example
+
+```jsx
+import { useReactions } from "./useReactions";
+
+function ReactionsBar({ commentId }) {
+  const { counts, react } = useReactions(commentId);
+  const palette = ["👍", "🎉", "❤️", "😂"];
+
+  return (
+    <div className="reactions">
+      {palette.map((emoji) => (
+        <button key={emoji} type="button" onClick={() => react(emoji)}>
+          {emoji} {counts[emoji] || 0}
+        </button>
+      ))}
+    </div>
+  );
+}
+```
+
+A `targetId` is required. If the parent does not yet know which target to read from (for example, the comment hasn't been created), don't mount the hook — there is no "skip" prop.
+
+## Sorting
+
+The comments thread can be sorted by newest, oldest, or top (most reactions). Sorting is purely client-side: the hook holds the current sort key and returns a memoized sorted copy of the comments array.
+
+### When to use it
+
+Use `useCommentSort` whenever you render a list of comments and want users to reorder them without re-fetching. Pair it with the `CommentSort` button group for the default UI, or build your own control on top of the same `sort` / `setSort` pair.
+
+### Configuration
+
+`useCommentSort(comments)` returns:
+
+| Field     | Type                                       | Description                                                  |
+| --------- | ------------------------------------------ | ------------------------------------------------------------ |
+| `sort`    | `"newest" \| "oldest" \| "top"`            | The active sort key. Defaults to `"newest"`.                 |
+| `setSort` | `(key) => void`                            | Switches the active sort.                                    |
+| `sorted`  | `Comment[]`                                | A new array, sorted according to `sort`. Memoized on `comments` and `sort`. |
+
+The comparators are exported as `COMMENT_SORTS` if you need to sort outside React:
+
+- `newest` — descending by `comment.date`.
+- `oldest` — ascending by `comment.date`.
+- `top` — descending by the sum of all values in `comment.reactions`.
+
+For `top` to be useful, each comment object needs a `reactions` field shaped like `{ "👍": 3, "🎉": 1 }` — the same shape `useReactions` produces.
+
+The companion `CommentSort` component is a tiny three-button group:
+
+```jsx
+<CommentSort value={sort} onChange={setSort} />
+```
+
+It renders a button for each of `newest`, `oldest`, and `top` and adds an `is-active` class to the selected one.
+
+### Example
+
+```jsx
+import CommentSort from "./CommentSort";
+import { useCommentSort } from "./useCommentSort";
+import { useComments } from "./useComments";
+
+function CommentThread({ postId }) {
+  const { comments } = useComments(postId);
+  const { sort, setSort, sorted } = useCommentSort(comments);
+
+  return (
+    <>
+      <CommentSort value={sort} onChange={setSort} />
+      <ul>
+        {sorted.map((c) => (
+          <li key={c.id}>{c.body}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+```
+
+## Comment count badge
+
+`CommentCount` is a small inline element for showing "12 comments" next to a post — in a blog index, a post header, or a sidebar — without rendering the whole comments widget.
+
+### When to use it
+
+Drop `CommentCount` anywhere you want to surface engagement on a post without pulling in the full thread. It's safe to render many at once on an index page; each instance fetches its own post's comments via `useComments`.
+
+### Configuration
+
+`CommentCount` takes a single prop:
+
+| Prop     | Type     | Required | Description                                  |
+| -------- | -------- | -------- | -------------------------------------------- |
+| `postId` | `string` | Yes      | The post whose comments should be counted.   |
+
+Behavior:
+
+- While `useComments` is loading, the component renders `null` to avoid a layout flash.
+- Once comments are loaded, it renders a `<span class="comment-count">` containing either `"No comments"`, `"1 comment"`, or `"N comments"`.
+
+### Example
+
+```jsx
+import CommentCount from "./CommentCount";
+
+function PostListItem({ post }) {
+  return (
+    <article>
+      <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+      <p>{post.excerpt}</p>
+      <CommentCount postId={post.id} />
+    </article>
+  );
+}
+```
+
+Because each `CommentCount` mounts its own `useComments`, an index page with many posts will issue one request per badge. That's fine for the current scale; if a blog index ever grows large enough that this becomes a problem, swap the badge for a batched count endpoint and a shared cache.
