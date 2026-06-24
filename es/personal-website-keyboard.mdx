@@ -1,0 +1,106 @@
+---
+title: "Atajos de teclado y la paleta de comandos"
+description: "Cómo funciona la UX basada en teclado del sitio personal: el registro de atajos, la superposición de ayuda con `?` y el comando Cambiar tema en la paleta ⌘K."
+---
+
+## Resumen
+
+El sitio personal incluye una pequeña capa de navegación centrada en el teclado, pensada para visitantes que prefieren no usar el ratón. Tiene dos partes:
+
+- Un **registro de atajos** junto con una superposición de ayuda activada con la tecla `?` que lista todos los atajos disponibles.
+- Una **paleta de comandos** (⌘K) con un comando **Cambiar tema** integrado.
+
+Ambas piezas comparten la misma audiencia y la misma superficie de código, por lo que se documentan juntas aquí.
+
+## Atajos de teclado
+
+Los atajos funcionan en todas las páginas. Pulsa `?` en cualquier momento para abrir la superposición de ayuda y ver la lista completa. Pulsa `Esc` (o haz clic fuera del panel) para cerrarla.
+
+| Teclas   | Acción                                       |
+| -------- | -------------------------------------------- |
+| `⌘` `K`  | Abrir la paleta de comandos                  |
+| `?`      | Mostrar la superposición de atajos de teclado |
+| `g` `h`  | Ir a Inicio                                  |
+| `g` `b`  | Ir al Blog                                   |
+| `t`      | Desplazarse arriba                           |
+| `c`      | Copiar la URL actual                         |
+| `Esc`    | Cerrar cualquier superposición abierta       |
+
+### La superposición de ayuda
+
+La superposición se renderiza con el componente `ShortcutsHelp` y se controla con el hook `useShortcutsHelp`. El hook escucha la tecla `?` a nivel de ventana y alterna un pequeño modal que lista todas las entradas del registro `shortcuts`.
+
+El listener ignora intencionadamente las pulsaciones de tecla mientras estás escribiendo en un `<input>` o `<textarea>`, de modo que la superposición nunca aparece a mitad de una búsqueda o de un formulario.
+
+```js src/constants/shortcuts.js
+export const shortcuts = [
+  { keys: ["⌘", "K"], description: "Open the command palette" },
+  { keys: ["?"], description: "Show this keyboard shortcuts help" },
+  { keys: ["g", "h"], description: "Go to Home" },
+  { keys: ["g", "b"], description: "Go to Blog" },
+  { keys: ["t"], description: "Scroll to top" },
+  { keys: ["c"], description: "Copy current URL" },
+  { keys: ["esc"], description: "Close any open overlay" },
+];
+```
+
+### Añadir un atajo
+
+1. Añade una entrada al array `shortcuts` en `src/constants/shortcuts.js`. El campo `keys` es un array de cadenas que se renderiza como fichas `<kbd>` en la superposición.
+2. Conecta el manejo real de teclas donde corresponda el atajo (un hook, una ruta o un componente).
+3. Mantén la descripción corta: la superposición es una referencia de un vistazo, no un tutorial.
+
+<Tip>
+El array `keys` se renderiza tal cual, así que usa la misma capitalización que los visitantes pulsarán en su teclado (`g`, no `G`; `⌘`, no `Cmd`).
+</Tip>
+
+## Paleta de comandos
+
+Pulsa `⌘` `K` (o `Ctrl` `K` en Windows y Linux) para abrir la paleta de comandos. Agrupa comandos buscables para que los visitantes puedan ejecutar acciones sin recordar atajos individuales.
+
+### Comando Cambiar tema
+
+La paleta incluye un comando **Cambiar tema** registrado mediante el hook `useThemeCommand`. El comando:
+
+- Vive en el grupo **Actions** dentro de la paleta.
+- Está enlazado al atajo `d` dentro de ⌘K, así que `⌘ K` y luego `d` cambia el tema.
+- Lee el tema actual desde `useTheme` y actualiza su propia etiqueta para que siempre diga "Switch to light mode" o "Switch to dark mode" según el tema activo.
+- Es buscable mediante las palabras clave `theme`, `dark`, `light` y `mode`.
+
+```js src/commandPalette/themeCommand.js
+import { useTheme } from "../hooks/useTheme";
+
+export function useThemeCommand() {
+  const { theme, toggleTheme } = useTheme();
+  return {
+    id: "toggle-theme",
+    label: theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+    group: "Actions",
+    keywords: ["theme", "dark", "light", "mode"],
+    shortcut: "d",
+    run: toggleTheme,
+  };
+}
+```
+
+### Añadir un comando
+
+Cada comando es un hook que devuelve un objeto plano con los siguientes campos:
+
+| Campo      | Tipo       | Obligatorio | Descripción                                                                       |
+| ---------- | ---------- | ----------- | --------------------------------------------------------------------------------- |
+| `id`       | string     | Sí          | Identificador estable usado como clave de React y para analítica.                 |
+| `label`    | string     | Sí          | Texto mostrado en la paleta. Puede cambiar según el estado de la aplicación.      |
+| `group`    | string     | Sí          | Encabezado de sección dentro de la paleta (por ejemplo, `Actions`, `Navigation`). |
+| `keywords` | string\[]  | No          | Términos adicionales con los que la búsqueda difusa debe coincidir.               |
+| `shortcut` | string     | No          | Tecla única enlazada dentro de la paleta abierta. Púlsala para ejecutar el comando. |
+| `run`      | () => void | Sí          | Función ejecutada cuando se selecciona el comando.                                |
+
+Registra el nuevo hook junto a `useThemeCommand` para que aparezca en la lista de comandos de la paleta.
+
+## Cuándo usar cada uno
+
+- Usa un **atajo de teclado** para acciones que los visitantes harán repetidamente o para las que quieren memoria muscular (navegación, desplazamiento, copiar la URL).
+- Usa una **entrada en la paleta de comandos** para acciones que se benefician de la búsqueda, de una etiqueta que explique el estado o de la agrupación con otros comandos (cambiar el tema, saltar a una sección concreta).
+
+Si una función merece ambas — por ejemplo, una acción con una tecla rápida global y una etiqueta descubrible — regístrala en `shortcuts.js` y como comando de la paleta para que aparezca en las dos superficies.
