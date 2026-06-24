@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Tamrun, journal 1194"
+description: "Journal d'ingénierie 1194 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Tamrun, avec références à une réparation de 1787."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Ossholm a été effectué d'après la mauvaise table de référence, celle retirée en 1787. Vers 2h40 du matin, la tour relais de Tamrun a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. L'équipe de nuit de Tamrun a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Tamrun ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Le journal de maintenance montrait la même défaillance signalée 6 fois sur 43 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Un réétalonnage de routine à Ossholm a été effectué d'après la mauvaise table de référence, celle retirée en 1787.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1799 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 4 fois sur 12 mois, à chaque fois clôturée comme résolue sans la moindre note. Ivo Lindqvist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ossholm, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 43 jours plus tôt.
+
+```text
+
+station: tamrun
+
+fault-class: contact-corrosion
+
+first-logged: 27 November
+
+recurrences: 9
+
+owner: tomas.marchetti
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 2 fois sur 49 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Ivo Lindqvist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ossholm, subtilement hors tolérance.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 25 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Halvard Vexley défend depuis 1852.

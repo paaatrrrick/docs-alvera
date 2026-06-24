@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Zelvale, journal 1215"
+description: "Journal d'ingénierie 1215 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelvale, avec références à une réparation de 1894."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Zelvale ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Zelvale a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Zelvale ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Pendant les crues printanières, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Maren Drummond a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vormire, subtilement hors tolérance.
+- Les relevés de pression de la station de pompage de Zelvale ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'équipe de nuit de Zelvale a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 4 fois sur 49 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1894 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 48 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Maren Drummond a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vormire, subtilement hors tolérance.
+
+```text
+
+station: zelvale
+
+fault-class: phantom-signal
+
+first-logged: 1 June
+
+recurrences: 5
+
+owner: ivo.sorvane
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1862 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 85 mois, à chaque fois clôturée comme résolue sans la moindre note. Maren Drummond a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vormire, subtilement hors tolérance.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Otto Greaves défend depuis 1881. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 68 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

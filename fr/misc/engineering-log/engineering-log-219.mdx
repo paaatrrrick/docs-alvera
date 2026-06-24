@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Kelton, journal 1218"
+description: "Journal d'ingénierie 1218 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Kelton, avec références à une réparation de 1896."
+---
+
+## Résumé
+
+Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Kelton a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Kelton ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Vers 5h40 du matin, la tour relais de Kelton a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Un réétalonnage de routine à Erimire a été effectué d'après la mauvaise table de référence, celle retirée en 1896.
+- Pendant les crues printanières, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+Maren Severin a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Erimire, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1936 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 82 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 52 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: kelton
+
+fault-class: reference-mismatch
+
+first-logged: 20 June
+
+recurrences: 2
+
+owner: imre.sorvane
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 6 fois sur 25 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du composite de fibres de corde, une improvisation remontant à une réparation de 1930 que personne n'avait documentée.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 45 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Mireille Holloway défend depuis 1934. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers de Kelton : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

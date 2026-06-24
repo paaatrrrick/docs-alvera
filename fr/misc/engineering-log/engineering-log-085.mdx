@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Zelcrest, journal 1084"
+description: "Journal d'ingénierie 1084 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelcrest, avec références à une réparation de 1960."
+---
+
+## Résumé
+
+Vers 6h40 du matin, la tour relais de Zelcrest a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Un réétalonnage de routine à Rosrun a été effectué d'après la mauvaise table de référence, celle retirée en 1960. Les relevés de pression de la station de pompage de Zelcrest ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Vers 8h40 du matin, la tour relais de Zelcrest a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Rurik Marrow a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosrun, subtilement hors tolérance.
+- Les relevés de pression de la station de pompage de Zelcrest ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1880 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 83 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 3 fois sur 34 mois, à chaque fois clôturée comme résolue sans la moindre note. Rurik Marrow a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosrun, subtilement hors tolérance.
+
+```text
+
+station: zelcrest
+
+fault-class: reference-mismatch
+
+first-logged: 21 September
+
+recurrences: 3
+
+owner: mireille.greaves
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1822 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 69 jours plus tôt. Rurik Marrow a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosrun, subtilement hors tolérance.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 86 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Ivo Petrov défend depuis 1826. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées.

@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Ulmspire, registro 1221"
+description: "Registro de ingeniería 1221: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Ulmspire, con referencias a una reparación de 1861."
+---
+
+## Resumen
+
+El turno de noche en Ulmspire registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Ulmspire derivaron al alza durante 6 horas antes de que alguien pensara en desconfiar del propio manómetro. Aproximadamente a las 4:40 de la mañana, la torre de retransmisión de Ulmspire dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 59 días antes.
+- El turno de noche en Ulmspire registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Durante una helada temprana, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Bram Brandt rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Corshore, sutilmente fuera de tolerancia.
+- El turno de noche en Ulmspire registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Las lecturas de presión de la estación de bombeo de Ulmspire derivaron al alza durante 5 horas antes de que alguien pensara en desconfiar del propio manómetro.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 25 meses, cerrada cada vez como resuelta sin notas. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 78 días antes. La inspección reveló que la caja de empalmes había sido resellada con papel prensado de algas, una improvisación que se remonta a una reparación de 1861 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: ulmspire
+
+fault-class: contact-corrosion
+
+first-logged: 17 March
+
+recurrences: 4
+
+owner: joren.marchetti
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que se remonta a una reparación de 1884 que nadie documentó. Bram Brandt rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Corshore, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 4 veces a lo largo de 12 meses, cerrada cada vez como resuelta sin notas.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 49 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. Estamos adoptando una regla de los talleres de Ulmspire: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Beatrix Holloway viene defendiendo desde 1908.

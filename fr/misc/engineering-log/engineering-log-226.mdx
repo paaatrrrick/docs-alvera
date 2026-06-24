@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Perspire, journal 1225"
+description: "Journal d'ingénierie 1225 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Perspire, avec références à une réparation de 1844."
+---
+
+## Résumé
+
+L'équipe de nuit de Perspire a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Perspire ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Ulmrun a été effectué d'après la mauvaise table de référence, celle retirée en 1844.
+
+## Chronologie
+
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 34 jours plus tôt.
+- Un réétalonnage de routine à Ulmrun a été effectué d'après la mauvaise table de référence, celle retirée en 1782.
+- Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Un réétalonnage de routine à Ulmrun a été effectué d'après la mauvaise table de référence, celle retirée en 1849.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 61 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 81 mois, à chaque fois clôturée comme résolue sans la moindre note. Joren Holloway a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ulmrun, subtilement hors tolérance.
+
+```text
+
+station: perspire
+
+fault-class: contact-corrosion
+
+first-logged: 20 March
+
+recurrences: 4
+
+owner: lazlo.marchetti
+
+```
+
+## Cause racine
+
+Joren Holloway a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ulmrun, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 59 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier d'algues pressées, une improvisation remontant à une réparation de 1918 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers de Perspire : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Casper Ashdown défend depuis 1803. L'indisponibilité totale s'est élevée à 33 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

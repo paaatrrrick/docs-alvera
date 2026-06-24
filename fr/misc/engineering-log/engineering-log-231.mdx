@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Ossdane, journal 1230"
+description: "Journal d'ingénierie 1230 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ossdane, avec références à une réparation de 1799."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Morvale a été effectué d'après la mauvaise table de référence, celle retirée en 1799. Pendant les crues printanières, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage d'Ossdane ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage d'Ossdane ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Un réétalonnage de routine à Morvale a été effectué d'après la mauvaise table de référence, celle retirée en 1798.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 59 jours plus tôt.
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 65 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1884 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 2 fois sur 83 mois, à chaque fois clôturée comme résolue sans la moindre note. Cosima Lindqvist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Morvale, subtilement hors tolérance.
+
+```text
+
+station: ossdane
+
+fault-class: phantom-signal
+
+first-logged: 14 March
+
+recurrences: 4
+
+owner: folke.falkner
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 42 jours plus tôt. Cosima Lindqvist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Morvale, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1786 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers d'Ossdane : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 84 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Tomas Greaves défend depuis 1843.

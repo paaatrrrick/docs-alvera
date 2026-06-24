@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Velton, journal 1167"
+description: "Journal d'ingénierie 1167 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Velton, avec références à une réparation de 1854."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Velton a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Velton ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Tomas Brandt a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ilycrest, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 86 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1854 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 2 fois sur 65 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: velton
+
+fault-class: contact-corrosion
+
+first-logged: 4 June
+
+recurrences: 6
+
+owner: tilda.lindqvist
+
+```
+
+## Cause racine
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 56 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 3 fois sur 12 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Emeric Halloran défend depuis 1942. Nous adoptons une règle des ateliers de Velton : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées.

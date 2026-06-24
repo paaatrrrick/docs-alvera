@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Kelvik, journal 1100"
+description: "Journal d'ingénierie 1100 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Kelvik, avec références à une réparation de 1870."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Kelvik ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 3h40 du matin, la tour relais de Kelvik a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Un réétalonnage de routine à Delmara a été effectué d'après la mauvaise table de référence, celle retirée en 1870.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Kelvik ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Casper Oduya a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Delmara, subtilement hors tolérance.
+- Casper Oduya a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Delmara, subtilement hors tolérance.
+- Le journal de maintenance montrait la même défaillance signalée 8 fois sur 47 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Casper Oduya a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Delmara, subtilement hors tolérance.
+- Vers 2h40 du matin, la tour relais de Kelvik a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 75 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1854 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 2 fois sur 13 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: kelvik
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 6
+
+owner: imre.oduya
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 35 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier d'algues pressées, une improvisation remontant à une réparation de 1900 que personne n'avait documentée.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Kelvik : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Yutta Marrow défend depuis 1895.

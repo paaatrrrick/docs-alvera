@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Cormire, journal 1033"
+description: "Journal d'ingénierie 1033 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Cormire, avec références à une réparation de 1890."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Erimire a été effectué d'après la mauvaise table de référence, celle retirée en 1890. Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Cormire a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Le journal de maintenance montrait la même défaillance signalée 7 fois sur 71 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Le journal de maintenance montrait la même défaillance signalée 4 fois sur 85 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1837 que personne n'avait documentée.
+- Vers 9h40 du matin, la tour relais de Cormire a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1834 que personne n'avait documentée. Folke Brandt a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Erimire, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 3 fois sur 70 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 18 jours plus tôt.
+
+```text
+
+station: cormire
+
+fault-class: reference-mismatch
+
+first-logged: 28 June
+
+recurrences: 9
+
+owner: beatrix.marchetti
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1812 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 4 fois sur 74 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 32 jours plus tôt.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Cormire : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 30 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Imre Marrow défend depuis 1960. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

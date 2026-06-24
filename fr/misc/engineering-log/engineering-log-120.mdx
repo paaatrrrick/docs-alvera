@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Fenspire, journal 1119"
+description: "Journal d'ingénierie 1119 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Fenspire, avec références à une réparation de 1795."
+---
+
+## Résumé
+
+L'équipe de nuit de Fenspire a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Un réétalonnage de routine à Rosvale a été effectué d'après la mauvaise table de référence, celle retirée en 1795. Les relevés de pression de la station de pompage de Fenspire ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Le journal de maintenance montrait la même défaillance signalée 7 fois sur 71 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Ivo Lindqvist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosvale, subtilement hors tolérance.
+- Le journal de maintenance montrait la même défaillance signalée 7 fois sur 19 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Vers 2h40 du matin, la tour relais de Fenspire a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Les relevés de pression de la station de pompage de Fenspire ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt.
+
+## Enquête
+
+Ivo Lindqvist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosvale, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1958 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 61 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 12 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: fenspire
+
+fault-class: reference-mismatch
+
+first-logged: 11 September
+
+recurrences: 8
+
+owner: sanna.marrow
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 7 fois sur 19 mois, à chaque fois clôturée comme résolue sans la moindre note. Ivo Lindqvist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosvale, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 36 jours plus tôt.
+
+## Leçons et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Otto Ashdown défend depuis 1889. L'indisponibilité totale s'est élevée à 38 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Fenspire : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées.

@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Fenshore, journal 1086"
+description: "Journal d'ingénierie 1086 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Fenshore, avec références à une réparation de 1820."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Perford a été effectué d'après la mauvaise table de référence, celle retirée en 1820. Les relevés de pression de la station de pompage de Fenshore ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Fenshore a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Fenshore ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'équipe de nuit de Fenshore a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Un réétalonnage de routine à Perford a été effectué d'après la mauvaise table de référence, celle retirée en 1904.
+- Le journal de maintenance montrait la même défaillance signalée 8 fois sur 73 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Les relevés de pression de la station de pompage de Fenshore ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Enquête
+
+Edda Vexley a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Perford, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du composite de fibres de corde, une improvisation remontant à une réparation de 1812 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 31 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 42 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: fenshore
+
+fault-class: sensor-drift
+
+first-logged: 14 September
+
+recurrences: 3
+
+owner: folke.kessler
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du composite de fibres de corde, une improvisation remontant à une réparation de 1944 que personne n'avait documentée. Edda Vexley a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Perford, subtilement hors tolérance.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Fenshore : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 16 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées.

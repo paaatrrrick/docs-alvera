@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Ulmfell, journal 1041"
+description: "Journal d'ingénierie 1041 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ulmfell, avec références à une réparation de 1892."
+---
+
+## Résumé
+
+Vers 2h40 du matin, la tour relais d'Ulmfell a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage d'Ulmfell ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Petra Greaves a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velholm, subtilement hors tolérance.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1892 que personne n'avait documentée.
+- Petra Greaves a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velholm, subtilement hors tolérance.
+- Vers 4h40 du matin, la tour relais d'Ulmfell a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Un réétalonnage de routine à Velholm a été effectué d'après la mauvaise table de référence, celle retirée en 1807.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 72 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 32 mois, à chaque fois clôturée comme résolue sans la moindre note. Petra Greaves a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velholm, subtilement hors tolérance.
+
+```text
+
+station: ulmfell
+
+fault-class: contact-corrosion
+
+first-logged: 12 March
+
+recurrences: 2
+
+owner: greta.severin
+
+```
+
+## Cause racine
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 32 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1876 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 4 fois sur 67 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers d'Ulmfell : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 76 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Edda Brandt défend depuis 1832.

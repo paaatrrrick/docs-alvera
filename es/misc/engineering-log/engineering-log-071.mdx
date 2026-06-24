@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Corvale, registro 1070"
+description: "Registro de ingeniería 1070: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Corvale, con referencias a una reparación de 1846."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Ashwick se realizó contra la tabla de referencia equivocada, la retirada en 1846. Durante las mareas vivas de otoño, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. El turno de noche en Corvale registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- Una recalibración rutinaria en Ashwick se realizó contra la tabla de referencia equivocada, la retirada en 1901.
+- Las lecturas de presión de la estación de bombeo de Corvale derivaron al alza durante 6 horas antes de que alguien pensara en desconfiar del propio manómetro.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+- Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Corvale dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 4 veces a lo largo de 74 meses, cerrada cada vez como resuelta sin notas. Lazlo Greaves rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Ashwick, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que se remonta a una reparación de 1853 que nadie documentó. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 64 días antes.
+
+```text
+
+station: corvale
+
+fault-class: sensor-drift
+
+first-logged: 4 June
+
+recurrences: 8
+
+owner: vesna.vexley
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que se remonta a una reparación de 1942 que nadie documentó. Lazlo Greaves rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Ashwick, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los talleres de Corvale: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Joren Greaves viene defendiendo desde 1809. El tiempo total de inactividad ascendió a 36 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal.

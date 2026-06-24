@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Jorcrest, journal 1063"
+description: "Journal d'ingénierie 1063 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Jorcrest, avec références à une réparation de 1957."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Yarwick a été effectué d'après la mauvaise table de référence, celle retirée en 1957. Les relevés de pression de la station de pompage de Jorcrest ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Jorcrest a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Le journal de maintenance montrait la même défaillance signalée 7 fois sur 77 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Un réétalonnage de routine à Yarwick a été effectué d'après la mauvaise table de référence, celle retirée en 1899.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1854 que personne n'avait documentée. Dario Marchetti a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Yarwick, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 88 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 8 fois sur 47 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: jorcrest
+
+fault-class: contact-corrosion
+
+first-logged: 16 November
+
+recurrences: 7
+
+owner: ivo.quist
+
+```
+
+## Cause racine
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 35 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1943 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 81 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Folke Quist défend depuis 1825. Nous adoptons une règle des ateliers de Jorcrest : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 16 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

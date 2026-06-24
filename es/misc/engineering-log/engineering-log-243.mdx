@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Vorton, registro 1242"
+description: "Registro de ingeniería 1242: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Vorton, con referencias a una reparación de 1959."
+---
+
+## Resumen
+
+Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Las lecturas de presión de la estación de bombeo de Vorton derivaron al alza durante 7 horas antes de que alguien pensara en desconfiar del propio manómetro. Una recalibración rutinaria en Zelford se realizó contra la tabla de referencia equivocada, la retirada en 1959.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Vorton derivaron al alza durante 2 horas antes de que alguien pensara en desconfiar del propio manómetro.
+- El turno de noche en Vorton registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que se remonta a una reparación de 1935 que nadie documentó.
+- Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Investigación
+
+Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 55 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 28 meses, cerrada cada vez como resuelta sin notas. Petra Petrov rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Zelford, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que se remonta a una reparación de 1805 que nadie documentó.
+
+```text
+
+station: vorton
+
+fault-class: contact-corrosion
+
+first-logged: 11 March
+
+recurrences: 3
+
+owner: joren.oduya
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con vidrio de río, una improvisación que se remonta a una reparación de 1934 que nadie documentó. Petra Petrov rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Zelford, sutilmente fuera de tolerancia. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 30 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 12 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. Estamos adoptando una regla de los talleres de Vorton: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Rurik Vexley viene defendiendo desde 1889.

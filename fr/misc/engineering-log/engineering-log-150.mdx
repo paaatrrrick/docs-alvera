@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Wrenmara, journal 1149"
+description: "Journal d'ingénierie 1149 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenmara, avec références à une réparation de 1937."
+---
+
+## Résumé
+
+Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Vers 6h40 du matin, la tour relais de Wrenmara a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Un réétalonnage de routine à Velmire a été effectué d'après la mauvaise table de référence, celle retirée en 1937.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- L'équipe de nuit de Wrenmara a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Vers 4h40 du matin, la tour relais de Wrenmara a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Vers 6h40 du matin, la tour relais de Wrenmara a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Un réétalonnage de routine à Velmire a été effectué d'après la mauvaise table de référence, celle retirée en 1902.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1955 que personne n'avait documentée. Imre Sorvane a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velmire, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 2 fois sur 84 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 45 jours plus tôt.
+
+```text
+
+station: wrenmara
+
+fault-class: phantom-signal
+
+first-logged: 28 September
+
+recurrences: 4
+
+owner: liesl.oduya
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1796 que personne n'avait documentée. Imre Sorvane a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velmire, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 69 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Folke Voss défend depuis 1963. Nous adoptons une règle des ateliers de Wrenmara : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.
