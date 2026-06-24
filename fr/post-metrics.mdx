@@ -1,0 +1,141 @@
+---
+title: "Métriques d'article : vues, temps de lecture et ligne meta"
+description: "Comment le site personnel suit les vues par article, agrège le total des lectures à l'échelle du site et affiche la signature d'article qui combine date, temps de lecture estimé et nombre de vues."
+---
+
+## Vue d'ensemble
+
+Chaque article du blog du site personnel affiche une petite ligne meta sous son titre avec la date de publication, un temps de lecture estimé et un compteur de vues en direct. Un compteur de lectures distinct, à l'échelle du site, agrège les vues de tous les articles.
+
+Cette page couvre les trois briques de base derrière cette surface :
+
+- `useViewCount` et `<ViewCounter />` — suivi et affichage des vues par article
+- `useTotalViews` et `<SiteViews />` — total des lectures à l'échelle du site
+- `<PostMeta />` — la signature combinée qui relie date, temps de lecture et vues
+
+Les trois s'adressent au même service de vues à `https://api.paaatrrrick.com/views`.
+
+## Compteur de vues par article
+
+### `useViewCount(postId, options)`
+
+`useViewCount` est un hook React qui récupère le nombre de vues d'un article et, par défaut, l'incrémente comme effet de bord de l'appel.
+
+| Argument             | Type      | Obligatoire | Description                                                                                                                |
+| -------------------- | --------- | ----------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `postId`             | `string`  | Oui         | Identifiant stable de l'article. Utilisé comme segment de chemin sur le service de vues.                                   |
+| `options.increment`  | `boolean` | Non         | `true` par défaut. Lorsqu'il vaut `true`, le hook envoie un `POST` pour enregistrer une nouvelle vue. Sinon, il envoie un `GET`. |
+
+Le hook renvoie le compteur actuel sous forme de nombre, ou `null` pendant que la requête est en cours ou si elle échoue. Rendez votre interface conditionnellement sur `null` pour la masquer tant que la valeur n'est pas connue.
+
+```js
+// POST https://api.paaatrrrick.com/views/<postId>  → enregistre + renvoie { count }
+const count = useViewCount(postId);
+
+// GET https://api.paaatrrrick.com/views/<postId>   → renvoie { count } sans incrémenter
+const count = useViewCount(postId, { increment: false });
+```
+
+Utilisez `increment: false` partout où vous souhaitez afficher un compteur sans qu'il soit comptabilisé comme une lecture — par exemple, dans une liste d'articles sur la page d'accueil ou dans des aperçus d'administration. Utilisez la valeur par défaut `increment: true` sur la page de détail de l'article lui-même.
+
+### `<ViewCounter postId={...} />`
+
+`<ViewCounter />` est le composant d'affichage léger construit au-dessus de `useViewCount`. Il rend un `<span class="view-counter">` avec le compteur formaté via `toLocaleString()` (de sorte que `12345` devient `12,345`) suivi du mot `views`. Tant que le compteur vaut `null`, il ne rend rien, ce qui évite que la ligne meta n'affiche brièvement un zéro.
+
+```jsx
+import ViewCounter from "./components/ViewCounter";
+
+<ViewCounter postId="2026-06-post-metrics" />
+// → <span class="view-counter">12,345 views</span>
+```
+
+`<ViewCounter />` incrémente toujours, car il utilise la valeur par défaut du hook. Si vous avez besoin d'un affichage non incrémentant, appelez directement `useViewCount(postId, { increment: false })`.
+
+## Lectures totales à l'échelle du site
+
+### `useTotalViews()`
+
+`useTotalViews` est l'équivalent agrégé de `useViewCount`. Il appelle `GET https://api.paaatrrrick.com/views/total` une seule fois au montage et renvoie le total des lectures de tous les articles.
+
+Le hook ne prend aucun argument. Il renvoie un nombre, ou `null` pendant le chargement ou si la requête échoue.
+
+```js
+const total = useTotalViews();
+```
+
+Le endpoint est en lecture seule — appeler le hook n'incrémente jamais aucun compteur.
+
+### `<SiteViews />`
+
+`<SiteViews />` encapsule `useTotalViews` et rend une seule ligne localisée :
+
+```jsx
+import SiteViews from "./components/SiteViews";
+
+<SiteViews />
+// → <p class="site-views">42,318 total reads across all posts.</p>
+```
+
+Comme `<ViewCounter />`, il renvoie `null` jusqu'à ce que le compteur soit résolu, afin que la mise en page autour ne sursaute jamais. Placez-le dans l'index du blog, le pied de page ou une page "à propos de ce site".
+
+## La ligne meta de l'article
+
+### `<PostMeta post={...} />`
+
+`<PostMeta />` est la signature affichée sous le titre de chaque article. Elle compose les trois signaux que les lecteurs veulent voir avant de s'engager dans la lecture :
+
+1. La date de publication (`post.date`)
+2. Le temps de lecture estimé, calculé par `<ReadingTime />` à partir du corps de l'article
+3. Le compteur de vues en direct fourni par `<ViewCounter />`
+
+```jsx
+import PostMeta from "./components/PostMeta";
+
+<PostMeta post={post} />
+```
+
+#### Forme attendue de `post`
+
+| Champ      | Type       | Obligatoire | Utilisé par         | Description                                                                                  |
+| ---------- | ---------- | ----------- | ------------------- | -------------------------------------------------------------------------------------------- |
+| `post.id`  | `string`   | Oui         | `<ViewCounter />`   | Identifiant stable de l'article transmis au service de vues.                                 |
+| `post.date`| `string`   | Non         | ligne meta          | Rendu tel quel. Omettez-le pour masquer le segment de date.                                  |
+| `post.body`| `string[]` | Non         | `<ReadingTime />`   | Tableau de paragraphes. Joints avec des espaces et utilisés pour estimer le temps de lecture. |
+
+Si `post.date` est manquant, le segment de date est ignoré. Si `post.body` est manquant, on retombe sur une chaîne vide, que `<ReadingTime />` gère sans problème.
+
+#### Balisage rendu et styles
+
+Le composant rend une ligne flex avec des séparateurs `·` entre les segments :
+
+```html
+<div class="post-meta">
+  <span class="post-meta-date">Jun 23, 2026</span>
+  <span class="reading-time">4 min read</span>
+  <span class="view-counter">12,345 views</span>
+</div>
+```
+
+Les styles `.post-meta` définissent un espacement de 12px, une petite taille de police de `13px` et `opacity: 0.7` afin que la signature reste secondaire par rapport au titre de l'article. Un pseudo-élément `::before` sur chaque segment après le premier injecte le séparateur `·`, de sorte que les segments apparaissent ou disparaissent proprement lorsque des champs comme `date` ou le compteur de vues sont indisponibles.
+
+<Tip>
+Comme chaque segment peut être nul indépendamment — `<ViewCounter />` ne rend rien pendant le chargement, `<ReadingTime />` renvoie une chaîne vide pour les corps vides et le span de date n'est rendu que si `post.date` est défini — `<PostMeta />` se dégrade gracieusement sur les brouillons, les aperçus et les échecs hors ligne.
+</Tip>
+
+## Quand utiliser chaque pièce
+
+- Utilisez `<PostMeta />` sur chaque page de détail d'article. C'est la signature par défaut.
+- Utilisez `<ViewCounter />` (ou `useViewCount`) de façon autonome lorsque vous voulez un compteur de vues en dehors de la signature — par exemple, à côté d'un article dans une liste "populaires cette semaine". Passez `{ increment: false }` dans les contextes de listes afin que parcourir l'index ne gonfle pas les compteurs.
+- Utilisez `<SiteViews />` (ou `useTotalViews`) comme signal rapide du trafic global du blog. Bons emplacements : l'en-tête de l'index du blog, la page d'accueil ou une page "à propos".
+
+## Contrat du service de vues
+
+Les trois composants partagent un seul backend :
+
+| Endpoint                                | Méthode | Réponse               | Objectif                                              |
+| --------------------------------------- | ------- | --------------------- | ----------------------------------------------------- |
+| `/views/<postId>`                       | `POST`  | `{ "count": number }` | Enregistrer une nouvelle vue et renvoyer le total.    |
+| `/views/<postId>`                       | `GET`   | `{ "count": number }` | Lire le compteur actuel sans écrire.                  |
+| `/views/total`                          | `GET`   | `{ "total": number }` | Lire l'agrégat sur tous les articles.                 |
+
+Toute réponse non 2xx est traitée comme une valeur manquante : les hooks se résolvent à `null` et le composant correspondant ne rend rien. Cela garde l'interface silencieuse pendant les pannes au lieu d'afficher un `0` cassé.
