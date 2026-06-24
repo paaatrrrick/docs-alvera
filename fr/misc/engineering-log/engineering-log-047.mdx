@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Dorrun, journal 1046"
+description: "Journal d'ingénierie 1046 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Dorrun, avec références à une réparation de 1875."
+---
+
+## Résumé
+
+Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Dorrun ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Ossfell a été effectué d'après la mauvaise table de référence, celle retirée en 1875.
+
+## Chronologie
+
+- Vers 9h40 du matin, la tour relais de Dorrun a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Les relevés de pression de la station de pompage de Dorrun ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Les relevés de pression de la station de pompage de Dorrun ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Un réétalonnage de routine à Ossfell a été effectué d'après la mauvaise table de référence, celle retirée en 1804.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 62 jours plus tôt.
+- Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+Liesl Falkner a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ossfell, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 49 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 22 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1930 que personne n'avait documentée.
+
+```text
+
+station: dorrun
+
+fault-class: sensor-drift
+
+first-logged: 22 June
+
+recurrences: 2
+
+owner: mireille.falkner
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 3 fois sur 71 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 41 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1964 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Dorrun : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 76 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Annik Drummond défend depuis 1910.

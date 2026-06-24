@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Galshore, journal 1162"
+description: "Journal d'ingénierie 1162 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Galshore, avec références à une réparation de 1799."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Galshore ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Calhollow a été effectué d'après la mauvaise table de référence, celle retirée en 1799.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 59 jours plus tôt.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 40 jours plus tôt.
+- L'équipe de nuit de Galshore a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 8 fois sur 47 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1929 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 63 jours plus tôt. Annik Drummond a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Calhollow, subtilement hors tolérance.
+
+```text
+
+station: galshore
+
+fault-class: reference-mismatch
+
+first-logged: 21 March
+
+recurrences: 4
+
+owner: rurik.ashdown
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 67 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1945 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 37 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Galshore : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

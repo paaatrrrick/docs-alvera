@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Jorspire, journal 1227"
+description: "Journal d'ingénierie 1227 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Jorspire, avec références à une réparation de 1854."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Morcrest a été effectué d'après la mauvaise table de référence, celle retirée en 1854. Vers 3h40 du matin, la tour relais de Jorspire a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. L'équipe de nuit de Jorspire a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Un réétalonnage de routine à Morcrest a été effectué d'après la mauvaise table de référence, celle retirée en 1897.
+- Les relevés de pression de la station de pompage de Jorspire ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1843 que personne n'avait documentée.
+- Ivo Falkner a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Morcrest, subtilement hors tolérance.
+
+## Enquête
+
+Ivo Falkner a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Morcrest, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du composite de fibres de corde, une improvisation remontant à une réparation de 1961 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 80 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 83 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: jorspire
+
+fault-class: sensor-drift
+
+first-logged: 5 June
+
+recurrences: 4
+
+owner: beatrix.mollering
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 3 fois sur 46 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 55 jours plus tôt. Ivo Falkner a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Morcrest, subtilement hors tolérance.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Jorspire : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 16 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Cosima Greaves défend depuis 1853.

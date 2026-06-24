@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Zelgate, journal 1148"
+description: "Journal d'ingénierie 1148 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelgate, avec références à une réparation de 1918."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Velholm a été effectué d'après la mauvaise table de référence, celle retirée en 1918. L'équipe de nuit de Zelgate a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Zelgate ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Zelgate ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1844 que personne n'avait documentée.
+- Beatrix Whitlock a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velholm, subtilement hors tolérance.
+- L'équipe de nuit de Zelgate a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 8 fois sur 46 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Beatrix Whitlock a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velholm, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1801 que personne n'avait documentée.
+
+```text
+
+station: zelgate
+
+fault-class: sensor-drift
+
+first-logged: 6 June
+
+recurrences: 4
+
+owner: tomas.mollering
+
+```
+
+## Cause racine
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 24 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 55 mois, à chaque fois clôturée comme résolue sans la moindre note. Beatrix Whitlock a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velholm, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier d'algues pressées, une improvisation remontant à une réparation de 1959 que personne n'avait documentée.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 48 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Bram Voss défend depuis 1854. Nous adoptons une règle des ateliers de Zelgate : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

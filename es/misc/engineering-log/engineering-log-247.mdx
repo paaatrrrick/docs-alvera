@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Selcrest, registro 1246"
+description: "Registro de ingeniería 1246: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Selcrest, con referencias a una reparación de 1931."
+---
+
+## Resumen
+
+Aproximadamente a las 4:40 de la mañana, la torre de retransmisión de Selcrest dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Una recalibración rutinaria en Velmara se realizó contra la tabla de referencia equivocada, la retirada en 1931.
+
+## Cronología
+
+- Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 14 días antes.
+- Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Selcrest dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- El turno de noche en Selcrest registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- El turno de noche en Selcrest registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- El turno de noche en Selcrest registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Investigación
+
+Mireille Sorvane rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Velmara, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 61 meses, cerrada cada vez como resuelta sin notas. La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que se remonta a una reparación de 1855 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 23 días antes.
+
+```text
+
+station: selcrest
+
+fault-class: phantom-signal
+
+first-logged: 20 September
+
+recurrences: 2
+
+owner: emeric.marchetti
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Mireille Sorvane rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Velmara, sutilmente fuera de tolerancia. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 89 días antes.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Folke Halloran viene defendiendo desde 1880. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. El tiempo total de inactividad ascendió a 84 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro.

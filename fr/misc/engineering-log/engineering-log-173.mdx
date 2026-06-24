@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Halvale, journal 1172"
+description: "Journal d'ingénierie 1172 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Halvale, avec références à une réparation de 1785."
+---
+
+## Résumé
+
+Vers 7h40 du matin, la tour relais d'Halvale a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Un réétalonnage de routine à Roscrest a été effectué d'après la mauvaise table de référence, celle retirée en 1785. Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Un réétalonnage de routine à Roscrest a été effectué d'après la mauvaise table de référence, celle retirée en 1878.
+- Le journal de maintenance montrait la même défaillance signalée 4 fois sur 42 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- L'équipe de nuit d'Halvale a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Joren Whitlock a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Roscrest, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 56 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 38 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1806 que personne n'avait documentée.
+
+```text
+
+station: halvale
+
+fault-class: contact-corrosion
+
+first-logged: 13 June
+
+recurrences: 5
+
+owner: annik.quist
+
+```
+
+## Cause racine
+
+Joren Whitlock a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Roscrest, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1871 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 12 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 69 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers d'Halvale : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

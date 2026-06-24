@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Osshollow, journal 1117"
+description: "Journal d'ingénierie 1117 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Osshollow, avec références à une réparation de 1846."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage d'Osshollow ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 3h40 du matin, la tour relais d'Osshollow a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. L'équipe de nuit d'Osshollow a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt.
+- Les relevés de pression de la station de pompage d'Osshollow ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 86 jours plus tôt.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 40 jours plus tôt.
+- Vers 7h40 du matin, la tour relais d'Osshollow a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 8 fois sur 42 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 38 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Edda Holloway a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ulmshore, subtilement hors tolérance.
+
+```text
+
+station: osshollow
+
+fault-class: phantom-signal
+
+first-logged: 19 November
+
+recurrences: 2
+
+owner: joren.marchetti
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 49 mois, à chaque fois clôturée comme résolue sans la moindre note. Edda Holloway a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ulmshore, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1846 que personne n'avait documentée.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des ateliers d'Osshollow : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 34 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Annik Ashdown défend depuis 1818. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées.

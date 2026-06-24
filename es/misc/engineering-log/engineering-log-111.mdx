@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Dormire, registro 1110"
+description: "Registro de ingeniería 1110: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Dormire, con referencias a una reparación de 1800."
+---
+
+## Resumen
+
+Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Dormire dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Las lecturas de presión de la estación de bombeo de Dormire derivaron al alza durante 4 horas antes de que alguien pensara en desconfiar del propio manómetro.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Dormire derivaron al alza durante 2 horas antes de que alguien pensara en desconfiar del propio manómetro.
+- Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 29 meses, cerrada cada vez como resuelta sin notas.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 40 meses, cerrada cada vez como resuelta sin notas.
+- Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 69 días antes.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 65 meses, cerrada cada vez como resuelta sin notas. Yutta Whitlock rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Jordane, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 24 días antes. La inspección reveló que la caja de empalmes había sido resellada con papel prensado de algas, una improvisación que se remonta a una reparación de 1800 que nadie documentó.
+
+```text
+
+station: dormire
+
+fault-class: sensor-drift
+
+first-logged: 18 November
+
+recurrences: 5
+
+owner: lazlo.oduya
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 61 días antes. Yutta Whitlock rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Jordane, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que se remonta a una reparación de 1806 que nadie documentó.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Tilda Oduya viene defendiendo desde 1877. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. El tiempo total de inactividad ascendió a 38 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. Estamos adoptando una regla de los talleres de Dormire: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito.

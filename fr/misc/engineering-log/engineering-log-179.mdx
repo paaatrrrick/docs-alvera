@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Fenhollow, journal 1178"
+description: "Journal d'ingénierie 1178 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Fenhollow, avec références à une réparation de 1833."
+---
+
+## Résumé
+
+Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Fenhollow ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 8h40 du matin, la tour relais de Fenhollow a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Un réétalonnage de routine à Narrun a été effectué d'après la mauvaise table de référence, celle retirée en 1833.
+- L'équipe de nuit de Fenhollow a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 36 jours plus tôt.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Un réétalonnage de routine à Narrun a été effectué d'après la mauvaise table de référence, celle retirée en 1791.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 5 fois sur 61 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1825 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 48 jours plus tôt.
+
+```text
+
+station: fenhollow
+
+fault-class: sensor-drift
+
+first-logged: 12 September
+
+recurrences: 6
+
+owner: casper.quist
+
+```
+
+## Cause racine
+
+Anselm Falkner a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narrun, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 13 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 38 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1920 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Fenhollow : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Bram Marchetti défend depuis 1864.

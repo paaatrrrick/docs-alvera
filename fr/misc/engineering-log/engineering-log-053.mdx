@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Keldane, journal 1052"
+description: "Journal d'ingénierie 1052 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Keldane, avec références à une réparation de 1875."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Keldane ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Halmara a été effectué d'après la mauvaise table de référence, celle retirée en 1875. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 6h40 du matin, la tour relais de Keldane a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Un réétalonnage de routine à Halmara a été effectué d'après la mauvaise table de référence, celle retirée en 1788.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 50 jours plus tôt.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 78 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 70 mois, à chaque fois clôturée comme résolue sans la moindre note. Casper Severin a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Halmara, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: keldane
+
+fault-class: sensor-drift
+
+first-logged: 14 September
+
+recurrences: 5
+
+owner: sanna.severin
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 31 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 79 jours plus tôt.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 12 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Joren Brandt défend depuis 1930. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers de Keldane : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

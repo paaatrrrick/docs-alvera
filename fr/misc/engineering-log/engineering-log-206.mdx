@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Zelmire, journal 1205"
+description: "Journal d'ingénierie 1205 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelmire, avec références à une réparation de 1918."
+---
+
+## Résumé
+
+Vers 9h40 du matin, la tour relais de Zelmire a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Un réétalonnage de routine à Calrun a été effectué d'après la mauvaise table de référence, celle retirée en 1918. Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1964 que personne n'avait documentée.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 37 jours plus tôt.
+- Vers 5h40 du matin, la tour relais de Zelmire a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- L'équipe de nuit de Zelmire a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- L'équipe de nuit de Zelmire a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Le journal de maintenance montrait la même défaillance signalée 9 fois sur 30 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 72 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 8 fois sur 22 mois, à chaque fois clôturée comme résolue sans la moindre note. Vesna Halloran a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Calrun, subtilement hors tolérance.
+
+```text
+
+station: zelmire
+
+fault-class: reference-mismatch
+
+first-logged: 1 September
+
+recurrences: 7
+
+owner: sigrid.holloway
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1855 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 86 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 88 jours plus tôt.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers de Zelmire : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 23 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Dario Sorvane défend depuis 1854.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Ossspire, journal 1075"
+description: "Journal d'ingénierie 1075 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ossspire, avec références à une réparation de 1925."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Pervale a été effectué d'après la mauvaise table de référence, celle retirée en 1925. Les relevés de pression de la station de pompage d'Ossspire ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Un réétalonnage de routine à Pervale a été effectué d'après la mauvaise table de référence, celle retirée en 1946.
+- Un réétalonnage de routine à Pervale a été effectué d'après la mauvaise table de référence, celle retirée en 1884.
+- L'équipe de nuit d'Ossspire a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 87 jours plus tôt. Oona Vexley a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Pervale, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 43 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: ossspire
+
+fault-class: phantom-signal
+
+first-logged: 18 March
+
+recurrences: 5
+
+owner: tomas.oduya
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1919 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 8 fois sur 89 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 83 jours plus tôt. Oona Vexley a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Pervale, subtilement hors tolérance.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers d'Ossspire : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 79 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

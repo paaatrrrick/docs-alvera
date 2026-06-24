@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Lorfell, registro 1226"
+description: "Registro de ingeniería 1226: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Lorfell, con referencias a una reparación de 1836."
+---
+
+## Resumen
+
+Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Lorfell dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. El turno de noche en Lorfell registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- Una recalibración rutinaria en Brencrest se realizó contra la tabla de referencia equivocada, la retirada en 1836.
+- Cosima Kessler rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Brencrest, sutilmente fuera de tolerancia.
+- Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 77 días antes.
+- El turno de noche en Lorfell registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Aproximadamente a las 4:40 de la mañana, la torre de retransmisión de Lorfell dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que se remonta a una reparación de 1836 que nadie documentó. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 24 días antes. Cosima Kessler rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Brencrest, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 23 meses, cerrada cada vez como resuelta sin notas.
+
+```text
+
+station: lorfell
+
+fault-class: contact-corrosion
+
+first-logged: 24 March
+
+recurrences: 8
+
+owner: emeric.ashdown
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 4 veces a lo largo de 65 meses, cerrada cada vez como resuelta sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Cosima Kessler rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Brencrest, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Cosima Falkner viene defendiendo desde 1781. El tiempo total de inactividad ascendió a 49 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. Estamos adoptando una regla de los talleres de Lorfell: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito.

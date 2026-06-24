@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Velton, registro 1167"
+description: "Registro de ingeniería 1167: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Velton, con referencias a una reparación de 1854."
+---
+
+## Resumen
+
+Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. El turno de noche en Velton registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Velton derivaron al alza durante 8 horas antes de que alguien pensara en desconfiar del propio manómetro.
+
+## Cronología
+
+- Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+- Durante las mareas vivas de otoño, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+
+## Investigación
+
+Tomas Brandt rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Ilycrest, sutilmente fuera de tolerancia. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 86 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que se remonta a una reparación de 1854 que nadie documentó. El registro de mantenimiento mostraba que la misma avería se había reportado 2 veces a lo largo de 65 meses, cerrada cada vez como resuelta sin notas.
+
+```text
+
+station: velton
+
+fault-class: contact-corrosion
+
+first-logged: 4 June
+
+recurrences: 6
+
+owner: tilda.lindqvist
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 56 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 12 meses, cerrada cada vez como resuelta sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Emeric Halloran viene defendiendo desde 1942. Estamos adoptando una regla de los talleres de Velton: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas.

@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Halstead, registro 1061"
+description: "Registro de ingeniería 1061: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Halstead, con referencias a una reparación de 1836."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Galford se realizó contra la tabla de referencia equivocada, la retirada en 1836. Las lecturas de presión de la estación de bombeo de Halstead derivaron al alza durante 3 horas antes de que alguien pensara en desconfiar del propio manómetro. Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Halstead dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Durante las crecidas primaverales, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 88 días antes.
+- Aproximadamente a las 7:40 de la mañana, la torre de retransmisión de Halstead dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que se remonta a una reparación de 1797 que nadie documentó. Edda Ashdown rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Galford, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 17 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 7 veces a lo largo de 55 meses, cerrada cada vez como resuelta sin notas.
+
+```text
+
+station: halstead
+
+fault-class: phantom-signal
+
+first-logged: 7 September
+
+recurrences: 2
+
+owner: mireille.oduya
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que se remonta a una reparación de 1882 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 47 meses, cerrada cada vez como resuelta sin notas.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 84 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Halvard Severin viene defendiendo desde 1837. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. Estamos adoptando una regla de los talleres de Halstead: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito.
