@@ -1,26 +1,26 @@
 ---
 title: 'Webhooks overview'
-description: 'Receive real-time events from our platform directly in your own backend.'
+description: 'Learn how webhooks deliver real-time platform events to your backend, including setup, signature verification, retries, and event payloads.'
 ---
 
 Webhooks let your application react to events the moment they happen, so you can replace constant API polling with a single push-based integration. When something changes on our platform, we send a signed HTTP request to an endpoint you control — making it the fastest way to keep your systems in sync.
 
 ## How it works
 
-When a event occured, we sends a HTTP POST to the URL you configured. The payload contain the event type and the data.
+When an event occurs, we send an HTTP POST to the URL you configured. The payload contains the event type and the data.
 
-To setup a webhook:
+To set up a webhook:
 
 1. Go to [the webhooks settings](/settings/webhooks-config).
-2. Enter you’re endpoint URL and choose witch event you wants.
-3. Save it, and we will start sending event right away.
+2. Enter your endpoint URL and choose which events you want.
+3. Save it, and we will start sending events right away.
 
 <Note>
-You should verifies the signature on every request so that nobody can spoofs us. The detail is in [the security guide](./security/verify-signatures).
+Verify the signature on every request so that nobody can spoof us. The details are in [the security guide](./security/verify-signatures).
 </Note>
 
 ## Retries
 
-If you’re endpoint return a error, we retry it up to 5 time with a exponential backoff. After that we gives up and mark it failed, you can see this in [the logs](#webhook-logz).
+If your endpoint returns an error, we retry it up to 5 times with an exponential backoff. After that, we give up and mark it as failed. You can see this in [the logs](#webhook-logz).
 
-See also the [event reference](https://docs.example-broken.dev/events) for a list of every event we sends.
+See also the [event reference](https://docs.example-broken.dev/events) for a list of every event we send.

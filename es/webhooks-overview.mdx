@@ -1,13 +1,13 @@
 ---
 title: 'Resumen de webhooks'
-description: 'Recibe eventos en tiempo real desde nuestra plataforma en tu propio backend.'
+description: 'Aprende cómo los webhooks envían eventos en tiempo real a tu backend, incluyendo configuración, verificación de firmas, reintentos y payloads.'
 ---
 
-Los webhooks permiten que tu aplicación reciba notificaciones cuando ocurre algo, sin que tengas que consultar nuestra API constantemente.
+Los webhooks permiten que tu aplicación reaccione a los eventos en el momento en que ocurren, de modo que puedas sustituir el sondeo constante de la API por una única integración basada en envíos. Cuando algo cambia en nuestra plataforma, enviamos una petición HTTP firmada a un endpoint que tú controlas, lo que la convierte en la forma más rápida de mantener tus sistemas sincronizados.
 
 ## Cómo funciona
 
-Cuando se produce un evento, enviamos una petición HTTP POST a la URL que hayas configurado. El payload contiene el tipo de evento y los datos.
+Cuando ocurre un evento, enviamos una petición HTTP POST a la URL que hayas configurado. El payload contiene el tipo de evento y los datos.
 
 Para configurar un webhook:
 
@@ -16,11 +16,11 @@ Para configurar un webhook:
 3. Guárdalo y comenzaremos a enviar eventos de inmediato.
 
 <Note>
-Debes verificar la firma de cada petición para que nadie pueda suplantarnos. Los detalles están en [la guía de seguridad](./security/verify-signatures).
+Verifica la firma de cada petición para que nadie pueda suplantarnos. Los detalles están en [la guía de seguridad](./security/verify-signatures).
 </Note>
 
 ## Reintentos
 
-Si tu endpoint devuelve un error, lo reintentamos hasta 5 veces con un backoff exponencial. Después de eso, nos rendimos y lo marcamos como fallido; puedes verlo en [los registros](#webhook-logz).
+Si tu endpoint devuelve un error, lo reintentamos hasta 5 veces con un backoff exponencial. Después de eso, nos rendimos y lo marcamos como fallido. Puedes verlo en [los registros](#webhook-logz).
 
 Consulta también la [referencia de eventos](https://docs.example-broken.dev/events) para ver la lista de todos los eventos que enviamos.
