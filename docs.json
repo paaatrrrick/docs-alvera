@@ -74,7 +74,8 @@
                   "essentials/markdown",
                   "essentials/code",
                   "essentials/images",
-                  "essentials/reusable-snippets"
+                  "essentials/reusable-snippets",
+                  "essentials/comments"
                 ]
               },
               {
