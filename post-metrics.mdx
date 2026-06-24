@@ -1,0 +1,141 @@
+---
+title: "Post metrics: views, reading time, and meta line"
+description: "How the personal website tracks per-post views, aggregates total reads across the site, and renders the post byline that combines date, estimated reading time, and view count."
+---
+
+## Overview
+
+Every blog post on the personal website shows a small meta line under its title with the publish date, an estimated reading time, and a live view count. A separate site-wide reads counter aggregates views across every post.
+
+This page covers the three building blocks behind that surface:
+
+- `useViewCount` and `<ViewCounter />` — per-post view tracking and display
+- `useTotalViews` and `<SiteViews />` — site-wide total reads
+- `<PostMeta />` — the combined byline that ties date, reading time, and views together
+
+All three talk to the same views service at `https://api.paaatrrrick.com/views`.
+
+## Per-post view counter
+
+### `useViewCount(postId, options)`
+
+`useViewCount` is a React hook that fetches the view count for a single post and, by default, increments it as a side effect of the call.
+
+| Argument             | Type      | Required | Description                                                                                                |
+| -------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `postId`             | `string`  | Yes      | Stable identifier for the post. Used as the path segment on the views service.                             |
+| `options.increment`  | `boolean` | No       | Defaults to `true`. When `true`, the hook issues a `POST` to record a new view. When `false`, issues `GET`. |
+
+The hook returns the current count as a number, or `null` while the request is in flight or if the request fails. Render against `null` to skip the UI until the value is known.
+
+```js
+// POST https://api.paaatrrrick.com/views/<postId>  → records + returns { count }
+const count = useViewCount(postId);
+
+// GET https://api.paaatrrrick.com/views/<postId>   → returns { count } without incrementing
+const count = useViewCount(postId, { increment: false });
+```
+
+Use `increment: false` anywhere you want to show a count without it counting as a read — for example, in a list of posts on the home page or in admin previews. Use the default `increment: true` on the post detail page itself.
+
+### `<ViewCounter postId={...} />`
+
+`<ViewCounter />` is the thin display component on top of `useViewCount`. It renders a `<span class="view-counter">` with the count formatted via `toLocaleString()` (so `12345` becomes `12,345`) followed by the word `views`. While the count is `null` it renders nothing, which keeps the meta line from flashing a zero.
+
+```jsx
+import ViewCounter from "./components/ViewCounter";
+
+<ViewCounter postId="2026-06-post-metrics" />
+// → <span class="view-counter">12,345 views</span>
+```
+
+`<ViewCounter />` always increments, because it uses the hook's default. If you need a non-incrementing display, call `useViewCount(postId, { increment: false })` directly instead.
+
+## Site-wide total reads
+
+### `useTotalViews()`
+
+`useTotalViews` is the aggregate counterpart to `useViewCount`. It calls `GET https://api.paaatrrrick.com/views/total` once on mount and returns the total reads across every post.
+
+The hook takes no arguments. It returns a number, or `null` while loading or if the request fails.
+
+```js
+const total = useTotalViews();
+```
+
+The endpoint is read-only — calling the hook never increments any counter.
+
+### `<SiteViews />`
+
+`<SiteViews />` wraps `useTotalViews` and renders a single localized line:
+
+```jsx
+import SiteViews from "./components/SiteViews";
+
+<SiteViews />
+// → <p class="site-views">42,318 total reads across all posts.</p>
+```
+
+Like `<ViewCounter />`, it returns `null` until the count resolves, so the surrounding layout never jumps. Drop it into the blog index, footer, or an "about this site" page.
+
+## The post meta line
+
+### `<PostMeta post={...} />`
+
+`<PostMeta />` is the byline rendered under every post title. It composes the three signals readers want before they commit to reading:
+
+1. The publish date (`post.date`)
+2. Estimated reading time, computed by `<ReadingTime />` from the post body
+3. The live view count from `<ViewCounter />`
+
+```jsx
+import PostMeta from "./components/PostMeta";
+
+<PostMeta post={post} />
+```
+
+#### Expected `post` shape
+
+| Field      | Type       | Required | Used by             | Description                                                                       |
+| ---------- | ---------- | -------- | ------------------- | --------------------------------------------------------------------------------- |
+| `post.id`  | `string`   | Yes      | `<ViewCounter />`   | Stable post identifier passed to the views service.                               |
+| `post.date`| `string`   | No       | meta line           | Rendered verbatim. Omit to hide the date segment.                                 |
+| `post.body`| `string[]` | No       | `<ReadingTime />`   | Array of paragraph strings. Joined with spaces and used to estimate reading time. |
+
+If `post.date` is missing the date segment is skipped. If `post.body` is missing it falls back to an empty string, which `<ReadingTime />` handles gracefully.
+
+#### Rendered markup and styling
+
+The component renders a flex row with `·` separators between segments:
+
+```html
+<div class="post-meta">
+  <span class="post-meta-date">Jun 23, 2026</span>
+  <span class="reading-time">4 min read</span>
+  <span class="view-counter">12,345 views</span>
+</div>
+```
+
+The `.post-meta` styles set a 12px gap, a small `13px` font size, and `opacity: 0.7` so the byline stays secondary to the post title. A `::before` pseudo-element on every segment after the first injects the `·` separator, so segments drop in or out cleanly when fields like `date` or the view count are unavailable.
+
+<Tip>
+Because each segment is independently nullable — `<ViewCounter />` renders nothing while loading, `<ReadingTime />` returns an empty string for empty bodies, and the date span only renders when `post.date` is set — `<PostMeta />` degrades gracefully on drafts, previews, and offline failures.
+</Tip>
+
+## When to use each piece
+
+- Use `<PostMeta />` on every post detail page. It is the default byline.
+- Use `<ViewCounter />` (or `useViewCount`) standalone when you want a view count outside the byline — for example, next to a post in a "popular this week" list. Pass `{ increment: false }` in list contexts so browsing the index does not inflate counts.
+- Use `<SiteViews />` (or `useTotalViews`) for an at-a-glance signal of overall blog traffic. Good fits include the blog index header, the home page, or an "about" page.
+
+## Views service contract
+
+All three components share one backend:
+
+| Endpoint                                | Method | Response             | Purpose                                |
+| --------------------------------------- | ------ | -------------------- | -------------------------------------- |
+| `/views/<postId>`                       | `POST` | `{ "count": number }` | Record a new view and return the total.|
+| `/views/<postId>`                       | `GET`  | `{ "count": number }` | Read the current count without writing.|
+| `/views/total`                          | `GET`  | `{ "total": number }` | Read the aggregate across all posts.   |
+
+Any non-2xx response is treated as a missing value: the hooks resolve to `null` and the corresponding component renders nothing. That keeps the UI quiet during outages instead of showing a broken `0`.
