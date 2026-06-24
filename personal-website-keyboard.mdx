@@ -1,0 +1,106 @@
+---
+title: "Keyboard shortcuts and the command palette"
+description: "How the personal website's keyboard-driven UX works: the shortcuts registry, the `?` help overlay, and the Toggle theme command in the ⌘K palette."
+---
+
+## Overview
+
+The personal website ships with a small, keyboard-first navigation layer aimed at visitors who prefer not to reach for the mouse. It has two pieces:
+
+- A **shortcuts registry** plus a `?`-key help overlay that lists every available shortcut.
+- A **command palette** (⌘K) with a built-in **Toggle theme** command.
+
+Both pieces share the same audience and the same code surface, so they are documented together here.
+
+## Keyboard shortcuts
+
+Shortcuts work on every page. Press `?` at any time to open the help overlay and see the full list. Press `Esc` (or click outside the panel) to close it.
+
+| Keys     | Action                              |
+| -------- | ----------------------------------- |
+| `⌘` `K`  | Open the command palette            |
+| `?`      | Show the keyboard shortcuts overlay |
+| `g` `h`  | Go to Home                          |
+| `g` `b`  | Go to Blog                          |
+| `t`      | Scroll to top                       |
+| `c`      | Copy the current URL                |
+| `Esc`    | Close any open overlay              |
+
+### The help overlay
+
+The overlay is rendered by the `ShortcutsHelp` component and driven by the `useShortcutsHelp` hook. The hook listens for `?` at the window level and toggles a small modal that lists every entry in the `shortcuts` registry.
+
+The listener intentionally ignores keypresses while you are typing in an `<input>` or `<textarea>`, so the overlay never pops up mid-search or mid-form.
+
+```js src/constants/shortcuts.js
+export const shortcuts = [
+  { keys: ["⌘", "K"], description: "Open the command palette" },
+  { keys: ["?"], description: "Show this keyboard shortcuts help" },
+  { keys: ["g", "h"], description: "Go to Home" },
+  { keys: ["g", "b"], description: "Go to Blog" },
+  { keys: ["t"], description: "Scroll to top" },
+  { keys: ["c"], description: "Copy current URL" },
+  { keys: ["esc"], description: "Close any open overlay" },
+];
+```
+
+### Adding a shortcut
+
+1. Add an entry to the `shortcuts` array in `src/constants/shortcuts.js`. The `keys` field is an array of strings rendered as `<kbd>` chips in the overlay.
+2. Wire up the actual key handling wherever the shortcut belongs (a hook, a route, or a component).
+3. Keep the description short — the overlay is a one-glance reference, not a tutorial.
+
+<Tip>
+The `keys` array is rendered as-is, so use the same casing visitors will press on their keyboard (`g` not `G`, `⌘` not `Cmd`).
+</Tip>
+
+## Command palette
+
+Press `⌘` `K` (or `Ctrl` `K` on Windows and Linux) to open the command palette. It groups searchable commands so visitors can run actions without remembering individual shortcuts.
+
+### Toggle theme command
+
+The palette includes a **Toggle theme** command registered through the `useThemeCommand` hook. The command:
+
+- Lives in the **Actions** group inside the palette.
+- Is bound to the `d` shortcut inside ⌘K, so `⌘ K` then `d` flips the theme.
+- Reads the current theme from `useTheme` and updates its own label so it always reads "Switch to light mode" or "Switch to dark mode" depending on the active theme.
+- Is searchable by the keywords `theme`, `dark`, `light`, and `mode`.
+
+```js src/commandPalette/themeCommand.js
+import { useTheme } from "../hooks/useTheme";
+
+export function useThemeCommand() {
+  const { theme, toggleTheme } = useTheme();
+  return {
+    id: "toggle-theme",
+    label: theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+    group: "Actions",
+    keywords: ["theme", "dark", "light", "mode"],
+    shortcut: "d",
+    run: toggleTheme,
+  };
+}
+```
+
+### Adding a command
+
+Each command is a hook that returns a plain object with the following fields:
+
+| Field      | Type       | Required | Description                                                                  |
+| ---------- | ---------- | -------- | ---------------------------------------------------------------------------- |
+| `id`       | string     | Yes      | Stable identifier used as a React key and for analytics.                     |
+| `label`    | string     | Yes      | The text shown in the palette. May change based on app state.                |
+| `group`    | string     | Yes      | Section heading inside the palette (for example, `Actions`, `Navigation`).   |
+| `keywords` | string\[]  | No       | Extra terms the fuzzy search should match against.                           |
+| `shortcut` | string     | No       | Single key bound inside the open palette. Press it to run the command.       |
+| `run`      | () => void | Yes      | Function executed when the command is selected.                              |
+
+Register the new hook alongside `useThemeCommand` so it shows up in the palette's command list.
+
+## When to use which
+
+- Use a **keyboard shortcut** for actions visitors will reach for repeatedly or want muscle memory for (navigation, scrolling, copying the URL).
+- Use a **command palette entry** for actions that benefit from search, a label that explains state, or grouping with other commands (toggling theme, jumping to a specific section).
+
+If a feature deserves both — for example, an action with a global hotkey and a discoverable label — register it in `shortcuts.js` and as a palette command so it appears in both surfaces.
