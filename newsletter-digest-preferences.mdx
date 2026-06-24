@@ -1,0 +1,156 @@
+---
+title: "Newsletter digest preferences"
+description: "How subscribers choose a digest cadence, time zone, preview the next send, and pause or resume the personal site's newsletter digest."
+---
+
+## Overview
+
+The personal website's newsletter digest lets subscribers control how often they hear from the site and when. From the digest preferences surface, a reader can:
+
+- Pick a delivery cadence — **daily**, **weekly**, or **monthly**.
+- See a preview of when the next digest will land.
+- Set the time zone the digest schedule should follow.
+- Pause and later resume delivery without unsubscribing.
+
+This page is aimed at contributors and maintainers of the personal site (and readers curious about how the surface works). Every preference is saved to the newsletter service per email address, so the same subscriber sees consistent behavior across visits.
+
+## Choosing a cadence
+
+Cadence options are defined centrally in the `CADENCES` config and rendered by the `CadencePicker` component. Each cadence has an id, a display label, a cron expression that the newsletter service uses to schedule sends, and a short human description.
+
+| Cadence   | Label   | Schedule                  |
+| --------- | ------- | ------------------------- |
+| `daily`   | Daily   | Every morning at 9am.     |
+| `weekly`  | Weekly  | Monday mornings at 9am.   |
+| `monthly` | Monthly | First of the month at 9am.|
+
+The default cadence is **weekly**. If a subscriber hasn't picked one yet, that's what they get.
+
+`CadencePicker` renders the options as a radio group. It takes a `value` (the currently selected cadence id) and an `onChange` callback that fires with the new id when the subscriber picks a different option.
+
+```jsx
+import CadencePicker from "./components/newsletter/CadencePicker";
+
+<CadencePicker value={cadence} onChange={save} />
+```
+
+<Tip>
+To add or rename a cadence, edit the `CADENCES` array in the cadences config. Each entry needs an `id`, `label`, `cron`, and `description`. The picker, the next-send preview, and the newsletter service all read from this single source.
+</Tip>
+
+## Saving the cadence preference
+
+The `useDigestPreference` hook owns the cadence state for a subscriber and is responsible for persisting it to the newsletter service.
+
+It returns:
+
+- `cadence` — the currently selected cadence id (defaults to `DEFAULT_CADENCE`).
+- `save(nextCadence)` — updates local state immediately and `POST`s `{ email, cadence }` to the newsletter service's `/digest` endpoint.
+- `pending` — `true` while a save is in flight, so the UI can disable inputs.
+
+```jsx
+import { useDigestPreference } from "./components/newsletter/useDigestPreference";
+import CadencePicker from "./components/newsletter/CadencePicker";
+
+function DigestSettings({ email }) {
+  const { cadence, save, pending } = useDigestPreference(email);
+
+  return (
+    <fieldset disabled={pending}>
+      <CadencePicker value={cadence} onChange={save} />
+    </fieldset>
+  );
+}
+```
+
+The hook applies the new cadence optimistically — local state updates before the request resolves so the picker feels responsive. If the request fails, the hook throws so the caller can surface an error.
+
+## Previewing the next send time
+
+`NextSendHint` shows the subscriber when their next digest will arrive. It takes the selected cadence id and delegates to `nextSendLabel` from `nextSend.js`, which computes the next send moment for that cadence:
+
+- **Daily** — 9am today, or 9am tomorrow if it's already past 9am.
+- **Weekly** — 9am next Monday.
+- **Monthly** — 9am on the first of next month.
+
+The result is formatted with the user's locale (weekday, short month, day).
+
+```jsx
+import NextSendHint from "./components/newsletter/NextSendHint";
+
+<NextSendHint cadence={cadence} />
+// → "Your next digest will arrive Monday, Jun 29."
+```
+
+Use it directly under the `CadencePicker` so the subscriber gets immediate feedback on what their choice means.
+
+## Per-subscriber time zone
+
+By default the digest schedule runs in the subscriber's local time zone. `useDigestTimezone` and `TimezonePicker` handle picking and persisting that choice.
+
+`useDigestTimezone(email)`:
+
+- Detects the browser's time zone via `Intl.DateTimeFormat().resolvedOptions().timeZone`, falling back to `UTC` if detection fails.
+- Returns `{ timezone, save, pending }`. `save(tz)` updates local state and `POST`s `{ email, timezone }` to the newsletter service's `/digest/timezone` endpoint.
+
+`TimezonePicker` is a thin wrapper that renders a `<select>` of common zones (Los Angeles, New York, London, Berlin, Tokyo, UTC). Drop it next to the cadence picker:
+
+```jsx
+import TimezonePicker from "./components/newsletter/TimezonePicker";
+
+<TimezonePicker email={email} />
+```
+
+<Tip>
+To add more options, extend the `COMMON_ZONES` list in `TimezonePicker.js` with any valid IANA time zone identifier (for example, `Australia/Sydney`).
+</Tip>
+
+## Pausing and resuming
+
+Subscribers who want a break — but don't want to unsubscribe — can pause the digest. `useDigestPause` tracks paused state and persists it; `DigestPauseToggle` renders the button.
+
+`useDigestPause(email)` returns:
+
+- `paused` — boolean state, defaults to `false`.
+- `setPaused(next)` — flips state locally and `POST`s `{ email, paused }` to the newsletter service's `/digest/pause` endpoint.
+- `pending` — `true` while the request is in flight.
+
+`DigestPauseToggle` renders a single button that flips between **Pause digest** and **Resume digest** based on the current state.
+
+```jsx
+import DigestPauseToggle from "./components/newsletter/DigestPauseToggle";
+
+<DigestPauseToggle email={email} />
+```
+
+While paused, the newsletter service stops sending digests to that email but keeps the subscription, cadence, and time zone intact. Resuming restores delivery on the next scheduled run.
+
+## Putting it together
+
+A complete preferences panel composes the four pieces:
+
+```jsx
+import CadencePicker from "./components/newsletter/CadencePicker";
+import NextSendHint from "./components/newsletter/NextSendHint";
+import TimezonePicker from "./components/newsletter/TimezonePicker";
+import DigestPauseToggle from "./components/newsletter/DigestPauseToggle";
+import { useDigestPreference } from "./components/newsletter/useDigestPreference";
+
+export default function DigestPreferences({ email }) {
+  const { cadence, save, pending } = useDigestPreference(email);
+
+  return (
+    <section>
+      <h2>Digest preferences</h2>
+      <fieldset disabled={pending}>
+        <CadencePicker value={cadence} onChange={save} />
+      </fieldset>
+      <NextSendHint cadence={cadence} />
+      <TimezonePicker email={email} />
+      <DigestPauseToggle email={email} />
+    </section>
+  );
+}
+```
+
+Each preference is persisted independently, so a subscriber can change one without losing the others.
