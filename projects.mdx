@@ -23,6 +23,7 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `tagline`     | string   | One-line summary shown directly under the name.                                              |
 | `description` | string   | Longer paragraph that explains what the project does and who it's for.                       |
 | `tech`        | string[] | Stack tags rendered as a horizontal list (for example, `['React', 'Rust', 'SQLite']`).       |
+| `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
 
 ## Adding a project
@@ -35,6 +36,7 @@ const projects = [
         name: 'Inkwell',
         tagline: 'A markdown-first note-taking app',
         description: 'A local-first notes app with bidirectional links, a command palette, and end-to-end encrypted sync.',
+        status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
         link: 'https://github.com/example/inkwell',
     },
@@ -53,6 +55,7 @@ Keep `tagline` short enough to fit on one line on mobile — aim for under 60 ch
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
 - **Description:** One or two sentences. Mention what it does and the audience or use case.
 - **Tech tags:** List the load-bearing pieces of the stack, not every dependency. Three to five tags reads best.
+- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen — the badge turns gray instead of green.
 - **Link:** Prefer the repository URL for open-source work, or the live site for hosted projects.
 
 ## Navigation

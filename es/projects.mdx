@@ -23,6 +23,7 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 | `tagline`     | string   | Resumen de una línea que aparece justo debajo del nombre.                                         |
 | `description` | string   | Párrafo más largo que explica qué hace el proyecto y a quién va dirigido.                         |
 | `tech`        | string[] | Etiquetas del stack renderizadas como una lista horizontal (por ejemplo, `['React', 'Rust']`).    |
+| `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
 | `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
 
 ## Añadir un proyecto
@@ -35,6 +36,7 @@ const projects = [
         name: 'Inkwell',
         tagline: 'A markdown-first note-taking app',
         description: 'A local-first notes app with bidirectional links, a command palette, and end-to-end encrypted sync.',
+        status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
         link: 'https://github.com/example/inkwell',
     },
@@ -53,6 +55,7 @@ Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — 
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
 - **Descripción:** Una o dos oraciones. Indica qué hace y a quién va dirigido.
 - **Etiquetas de tecnología:** Enumera las piezas principales del stack, no todas las dependencias. De tres a cinco etiquetas se lee mejor.
+- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
 - **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
 
 ## Navegación

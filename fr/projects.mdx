@@ -23,6 +23,7 @@ Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs 
 | `tagline`     | string   | Résumé d'une ligne affiché directement sous le nom.                                               |
 | `description` | string   | Paragraphe plus long qui explique ce que fait le projet et à qui il s'adresse.                    |
 | `tech`        | string[] | Tags de stack rendus en liste horizontale (par exemple, `['React', 'Rust', 'SQLite']`).           |
+| `status`      | string   | État du projet. Utilisez `'Active'` pour les projets que vous maintenez encore, ou `'Archived'` pour ceux que vous ne mettez plus à jour. Rendu comme un badge coloré dans l'en-tête de la carte. |
 | `link`        | string   | URL vers laquelle pointe le titre de la carte. S'ouvre dans un nouvel onglet.                     |
 
 ## Ajouter un projet
@@ -35,6 +36,7 @@ const projects = [
         name: 'Inkwell',
         tagline: 'A markdown-first note-taking app',
         description: 'A local-first notes app with bidirectional links, a command palette, and end-to-end encrypted sync.',
+        status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
         link: 'https://github.com/example/inkwell',
     },
@@ -53,6 +55,7 @@ Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins 
 - **Accroche :** commencez par la catégorie ou la mécanique principale (« Gestionnaire de favoris auto-hébergé », pas « Un projet que j'ai fait »).
 - **Description :** une ou deux phrases. Indiquez ce que fait le projet et le public visé.
 - **Tags techniques :** listez les éléments structurants de la stack, pas chaque dépendance. Trois à cinq tags se lisent le mieux.
+- **Statut :** utilisez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous arrêtez de publier des mises à jour pour que les visiteurs sachent que le projet est figé — le badge devient gris au lieu de vert.
 - **Lien :** préférez l'URL du dépôt pour les projets open source, ou le site en ligne pour les projets hébergés.
 
 ## Navigation
