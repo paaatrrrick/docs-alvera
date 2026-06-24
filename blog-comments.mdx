@@ -1,0 +1,133 @@
+---
+title: "Blog comments and reactions"
+description: "How to post comments on blog posts, react with emoji, and—for contributors—how the comment form and reactions components are wired up."
+---
+
+## Overview
+
+Blog posts on the personal website support two forms of engagement:
+
+- **Comments** — Readers leave a short message that appears alongside the post.
+- **Reactions** — Readers add an emoji reaction to any comment. Counts update instantly.
+
+This page covers both behaviors from a reader's perspective and includes a short note for contributors wiring up the components.
+
+## For readers
+
+### Posting a comment
+
+The comment form sits below each post.
+
+1. Type your message in the **Add a comment…** text area.
+2. Select **Post comment**.
+3. While the comment is being submitted, the button changes to **Posting…** and is disabled to prevent duplicate submissions.
+4. On success, the form clears and your comment appears in the list.
+5. If something goes wrong, you'll see the message **Could not post your comment.** below the form. Try again.
+
+Empty or whitespace-only comments are ignored — the form only submits when there's real content.
+
+### Reacting with emoji
+
+Every comment has a row of reaction buttons. The supported reactions are:
+
+| Emoji | Meaning           |
+| ----- | ----------------- |
+| 👍    | Thumbs up         |
+| ❤️    | Love              |
+| 🎉    | Celebrate         |
+| 🤔    | Thinking          |
+| 😂    | Laugh             |
+| 🚀    | Rocket / shipping |
+
+Select any emoji to add a reaction. The count next to that emoji increments immediately — you don't need to wait for the server to respond.
+
+<Note>
+  Reactions use an **optimistic update**: the count bumps up the moment you click, and rolls back automatically if the request fails. In practice this means reactions feel instant, and a transient network error simply restores the previous count without any error dialog.
+</Note>
+
+## For contributors
+
+The blog comments UI is composed of three components:
+
+- `CommentForm` — text area plus submit button for posting a new comment.
+- `Comment` — renders a single comment's author, date, body, and its row of reactions.
+- `Reactions` — the emoji button strip with optimistic increments.
+
+### Wiring `onSubmit`
+
+`CommentForm` takes a single `onSubmit` prop: an async function that receives the trimmed comment body.
+
+```jsx
+<CommentForm
+  onSubmit={async (body) => {
+    await api.postComment({ postId, body });
+  }}
+/>
+```
+
+Notes for handler authors:
+
+- The form already trims whitespace and short-circuits empty submissions, so you don't need to revalidate for emptiness.
+- Throw (or reject) from `onSubmit` to signal failure. The form catches the error, surfaces the inline error message, and leaves the typed text in the textarea so the reader can retry.
+- On success, the form clears its own state — your handler does not need to reset it.
+
+### Wiring `onReact`
+
+`Comment` forwards `onReact` straight through to `Reactions`. Provide an async function that receives the target comment ID and the selected emoji.
+
+```jsx
+<Comment
+  comment={comment}
+  onReact={async (commentId, emoji) => {
+    await api.addReaction({ commentId, emoji });
+  }}
+/>
+```
+
+Notes for handler authors:
+
+- `Reactions` increments its local count **before** awaiting `onReact`. If your handler throws, it decrements the same emoji's count back down (never below zero).
+- Pass existing counts via `comment.reactions` (an object keyed by emoji, e.g. `{ "👍": 3, "🚀": 1 }`). Missing keys are treated as zero.
+- The emoji list is fixed in the component (👍, ❤️, 🎉, 🤔, 😂, 🚀). To add or remove reactions, update the component itself rather than passing them as props.
+
+### Showing an aggregated reaction summary
+
+`ReactionSummary` is a compact, read-only display of how a comment (or any item with reactions) has been received at a glance. It shows the top three emoji by count alongside the total number of reactions.
+
+When to use it:
+
+- In comment list previews, thread headers, or anywhere you want a small summary instead of the full clickable reaction strip.
+- When you want to surface engagement without giving the reader controls to react in that context.
+
+Behavior:
+
+- Takes a single `counts` prop — the same `{ emoji: number }` shape used elsewhere (e.g. `comment.reactions`).
+- Renders the top three emoji by count, in descending order. Emoji with a count of zero are excluded.
+- Shows the total reaction count next to the emoji.
+- Renders nothing when there are no reactions, so it's safe to drop into any layout.
+
+```jsx
+import ReactionSummary from "./components/comments/ReactionSummary";
+
+<ReactionSummary counts={comment.reactions} />;
+```
+
+For example, `{ "👍": 5, "❤️": 2, "🚀": 4, "🤔": 1 }` renders as `👍 🚀 ❤️ 12`.
+
+### Example: rendering a thread
+
+```jsx
+import Comment from "./components/comments/Comment";
+import CommentForm from "./components/comments/CommentForm";
+
+export default function CommentThread({ post, comments, onSubmit, onReact }) {
+  return (
+    <section>
+      {comments.map((comment) => (
+        <Comment key={comment.id} comment={comment} onReact={onReact} />
+      ))}
+      <CommentForm onSubmit={onSubmit} />
+    </section>
+  );
+}
+```
