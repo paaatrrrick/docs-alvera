@@ -108,6 +108,17 @@
             ]
           },
           {
+            "tab": "Changelog",
+            "groups": [
+              {
+                "group": "Changelog",
+                "pages": [
+                  "changelog/2026-06-18"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Misc",
             "groups": [
               {
@@ -2608,6 +2619,17 @@
             ]
           },
           {
+            "tab": "Registro de cambios",
+            "groups": [
+              {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog/2026-06-18"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Varios",
             "groups": [
               {
@@ -5103,6 +5125,17 @@
                   "fr/api-reference/endpoint/create",
                   "fr/api-reference/endpoint/delete",
                   "fr/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Journal des modifications",
+            "groups": [
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog/2026-06-18"
                 ]
               }
             ]
