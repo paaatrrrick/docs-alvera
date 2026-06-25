@@ -1,0 +1,143 @@
+---
+title: "Formulario de suscripción al boletín"
+description: "Cómo está montada la superficie de suscripción al boletín del sitio personal: desde el helper de la API de suscripción, pasando por el hook useNewsletter, hasta el componente del formulario Newsletter."
+---
+
+## Resumen
+
+El sitio personal incluye una superficie de suscripción al boletín que permite a los visitantes introducir una dirección de correo y suscribirse para recibir actualizaciones ocasionales. Es una pila pequeña y autocontenida formada por tres piezas que se apoyan una en otra:
+
+- Un **helper de suscripción** que valida el correo y lo envía mediante POST a la API del boletín.
+- Un **hook `useNewsletter`** que envuelve al helper y expone el ciclo de vida de la petición como estado de React.
+- Un **componente de formulario `Newsletter`** que renderiza el input, el botón y la interfaz de éxito o error.
+
+Los contribuidores que quieran añadir el formulario de suscripción a una nueva página, personalizar su apariencia o llamar al endpoint de suscripción desde otra parte del sitio pueden usar esta página como referencia.
+
+<Note>
+  Esta página documenta únicamente la superficie de **suscripción inicial**. Gestionar una suscripción existente —elegir una cadencia, escoger una zona horaria o pausar el resumen— se cubre por separado en la documentación de preferencias del resumen.
+</Note>
+
+## Cuándo usarlo
+
+Recurre a esta pila cuando quieras:
+
+- Añadir un formulario de suscripción a una nueva sección del sitio (por ejemplo, al final de una entrada del blog o en una ruta `/subscribe` dedicada).
+- Disparar una suscripción desde una interfaz personalizada (un modal, una acción de la paleta de comandos, un banner) sin renderizar el formulario predeterminado.
+- Validar una dirección de correo con la misma regla que usa el formulario antes de pasarla a otra API.
+
+## Arquitectura
+
+Las tres piezas están organizadas en capas para que cada una mantenga una única responsabilidad:
+
+| Capa     | Módulo                         | Responsabilidad                                                                     |
+| -------- | ------------------------------ | ----------------------------------------------------------------------------------- |
+| API      | `subscribeToNewsletter(email)` | Validar el correo y enviarlo por POST a `/api/newsletter/subscribe`.                |
+| Estado   | `useNewsletter()`              | Rastrear `idle` / `loading` / `success` / `error` y exponer el mensaje más reciente. |
+| UI       | `<Newsletter />`               | Renderizar el input de correo, el botón de envío y las vistas de éxito y error.     |
+
+Puedes usar cualquier capa por su cuenta. El formulario usa el hook, y el hook usa el helper, pero una UI personalizada puede llamar al hook directamente, y un consumidor que no use React puede importar el helper directamente.
+
+## El helper de suscripción
+
+`subscribeToNewsletter(email)` es el punto de entrada de más bajo nivel. Realiza la validación del lado del cliente, hace la petición de red y devuelve la respuesta JSON ya parseada.
+
+```js
+import { subscribeToNewsletter, isValidEmail } from './utils/newsletter';
+
+if (isValidEmail(input)) {
+    const result = await subscribeToNewsletter(input);
+    console.log(result);
+}
+```
+
+**Comportamiento**
+
+- Elimina los espacios en blanco del correo antes de validarlo y enviarlo.
+- Valida contra una expresión regular sencilla del tipo `local@domain.tld` mediante `isValidEmail`. Los correos no válidos lanzan `Error('Please enter a valid email address.')` antes de cualquier llamada de red.
+- Envía `POST /api/newsletter/subscribe` con un cuerpo JSON de `{ "email": "<trimmed>" }` y `Content-Type: application/json`.
+- Lanza `Error('Subscription failed. Please try again later.')` ante cualquier respuesta que no sea 2xx.
+- Devuelve el cuerpo JSON parseado en caso de éxito.
+
+`isValidEmail(email)` se exporta por separado para que puedas reutilizar la misma regla de validación en otros formularios (por ejemplo, para activar o desactivar un botón de envío mientras el usuario escribe).
+
+## El hook `useNewsletter`
+
+`useNewsletter()` envuelve al helper para los componentes de React. Se encarga del ciclo de vida de la petición para que el componente que lo llama solo tenga que renderizar en función de `status`.
+
+```jsx
+import { useState } from 'react';
+import { useNewsletter } from './hooks/useNewsletter';
+
+function CustomSignup() {
+    const [email, setEmail] = useState('');
+    const { status, error, subscribe, reset } = useNewsletter();
+
+    return (
+        <form onSubmit={(e) => { e.preventDefault(); subscribe(email); }}>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} />
+            <button disabled={status === 'loading'}>Subscribe</button>
+            {status === 'error' && <p>{error}</p>}
+            {status === 'success' && <button type="button" onClick={reset}>Subscribe another</button>}
+        </form>
+    );
+}
+```
+
+**Valor devuelto**
+
+| Campo       | Tipo                                            | Descripción                                                                              |
+| ----------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `status`    | `'idle' \| 'loading' \| 'success' \| 'error'`   | El estado actual de la petición de suscripción. Empieza en `'idle'`.                     |
+| `error`     | `string`                                        | El último mensaje de error. Cadena vacía cuando `status` no es `'error'`.                |
+| `subscribe` | `(email: string) => Promise<void>`              | Inicia una suscripción. Pone `status` en `'loading'` y luego en `'success'` o `'error'`. |
+| `reset`     | `() => void`                                    | Devuelve el hook a `'idle'` y limpia `error`. Útil tras un éxito.                        |
+
+El hook captura los errores lanzados por `subscribeToNewsletter` y guarda su mensaje en `error`, así que no necesitas un `try`/`catch` en el componente.
+
+## El componente `Newsletter`
+
+`<Newsletter />` es la interfaz predeterminada construida sobre el hook. Renderiza un encabezado, un texto breve, el input de correo y un botón de envío. Cambia a un mensaje de éxito con un botón "Subscribe another email" cuando la petición se completa correctamente, y muestra el mensaje de error en línea cuando falla.
+
+```jsx
+import Newsletter from './components/Newsletter';
+
+function HomePage() {
+    return (
+        <main>
+            {/* ...otras secciones... */}
+            <Newsletter />
+        </main>
+    );
+}
+```
+
+El componente no tiene props: gestiona su propio estado del input de correo y usa `useNewsletter` internamente. Colócalo donde tenga sentido ofrecer una suscripción.
+
+### Estados que renderiza el componente
+
+- **Inactivo / escribiendo** — El formulario es interactivo. El botón de envío muestra `Subscribe`.
+- **Cargando** — El botón de envío está deshabilitado y muestra `Subscribing…`.
+- **Error** — El formulario permanece visible y el mensaje de error se renderiza debajo en rojo.
+- **Éxito** — El formulario se sustituye por `Thanks for subscribing! Check your inbox to confirm.` y un botón `Subscribe another email` que llama a `reset` y limpia el input.
+
+### Estilos
+
+El componente importa `newsletter.css`, que define:
+
+| Clase                  | Propósito                                                         |
+| ---------------------- | ----------------------------------------------------------------- |
+| `.newsletter`          | `<section>` externa. Centrada y limitada a `32rem` de ancho.      |
+| `.newsletterForm`      | Fila flexible que contiene el input de correo y el botón.         |
+| `.newsletterForm input`| Input de correo. Se estira para ocupar el espacio disponible.     |
+| `.newsletterError`     | Mensaje de error en línea. Renderizado en rojo (`#c0392b`).       |
+| `.newsletterSuccess`   | Mensaje de éxito. Renderizado en verde (`#1e8e3e`).               |
+
+Para cambiar los estilos del formulario, sobrescribe estas clases en una hoja de estilos posterior en lugar de editar `newsletter.css` directamente: así el componente sigue siendo portable entre páginas que puedan tener su propia tematización.
+
+## Elegir la capa adecuada
+
+| Si quieres...                                                                  | Usa                                       |
+| ------------------------------------------------------------------------------ | ----------------------------------------- |
+| Colocar una sección de suscripción lista para usar en una página.              | `<Newsletter />`                          |
+| Construir una UI de suscripción personalizada (modal, banner, paleta de comandos). | `useNewsletter()`                     |
+| Disparar una suscripción desde código que no sea React, o solo validar un correo. | `subscribeToNewsletter` / `isValidEmail` |
