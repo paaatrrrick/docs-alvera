@@ -1,0 +1,95 @@
+---
+title: "Advisory page: structure and updates"
+description: "How the personal website's /advisory route lists startups and teams Patrick advises, plus how the Technical Advisor role ties back into the work experience timeline."
+---
+
+## Overview
+
+The advisory page lives at `/advisory` on the personal website and lists the startups and teams Patrick currently advises. It renders a short header and a list of advisory roles, each showing the company, time period, focus area, and a one-paragraph summary of the engagement.
+
+Use this page when you want a dedicated, link-friendly URL for advisory work — separate from the chronological roles surfaced on the home page work-experience timeline.
+
+## What changed
+
+A new `/advisory` route was added to the site:
+
+- A new `Advisory` component renders the page from the `advisoryRoles` constant.
+- Two initial entries were seeded: **Vercel** (developer experience for framework docs, 2030 – Present) and **Neon** (database onboarding docs, 2029 – 2030).
+- A matching **Technical Advisor at Vercel** entry was added to the top of the `workExperience` array so the home page timeline reflects the active advisory engagement alongside other roles.
+
+<Card title="Vercel — Developer experience for framework docs" icon="triangle">
+  Advising on documentation architecture and the authoring workflow for framework teams shipping on the platform.
+
+  **Timeline:** 2030 – Present
+</Card>
+
+<Card title="Neon — Database onboarding docs" icon="database">
+  Helped restructure the getting-started path and the serverless Postgres reference into task-oriented guides.
+
+  **Timeline:** 2029 – 2030
+</Card>
+
+## Entry schema
+
+Each entry in the `advisoryRoles` array supports the following fields:
+
+| Field     | Type   | Required | Description                                                                |
+| --------- | ------ | -------- | -------------------------------------------------------------------------- |
+| `company` | string | Yes      | Company or team being advised. Used as the entry key on the page.          |
+| `period`  | string | Yes      | Human-readable time range, for example `2030 - Present` or `2029 - 2030`. |
+| `focus`   | string | Yes      | Short headline describing the area of advisory focus.                      |
+| `summary` | string | Yes      | One- or two-sentence description of the engagement and what you shipped.   |
+
+## Adding or updating an entry
+
+Open `src/constants/advisory.js` and add a new object to the `advisoryRoles` array. Newer engagements go at the top so the most recent advisory work appears first.
+
+```js src/constants/advisory.js
+const advisoryRoles = [
+    {
+        company: 'Vercel',
+        period: '2030 - Present',
+        focus: 'Developer experience for framework docs',
+        summary: 'Advising on documentation architecture and the authoring workflow for framework teams shipping on the platform.',
+    },
+    {
+        company: 'Neon',
+        period: '2029 - 2030',
+        focus: 'Database onboarding docs',
+        summary: 'Helped restructure the getting-started path and the serverless Postgres reference into task-oriented guides.',
+    },
+    // ...new entries here
+];
+
+export default advisoryRoles;
+```
+
+<Tip>
+Keep `summary` to one or two sentences. The advisory list is meant to scan quickly — link out to a longer write-up if a single engagement needs more context.
+</Tip>
+
+## How it ties into the work experience timeline
+
+Active advisory work should be reflected in two places:
+
+1. An entry in `advisoryRoles` (renders on `/advisory`).
+2. A matching `Technical Advisor at {Company}` entry at the top of `workExperience` in `src/constants/work.js` (renders on the home page timeline).
+
+This keeps the home page chronologically accurate while letting `/advisory` act as a focused index of who you currently advise.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'Technical Advisor at Vercel',
+        text: `Advising the developer experience team on documentation architecture and authoring workflows for framework partners.`,
+        timeLine: '2030 - Present. Remote',
+    },
+    // ...existing entries
+];
+```
+
+When an advisory engagement ends, update the `period` in `advisoryRoles` to a closed range (for example, `2029 - 2030`) and update the matching `workExperience` entry's `timeLine` to match.
+
+## When to update this page
+
+Add an entry whenever you start advising a new team you want listed publicly. Update an entry when the focus shifts materially or when an engagement wraps. Remove entries only when the relationship is no longer something you want surfaced on the site.
