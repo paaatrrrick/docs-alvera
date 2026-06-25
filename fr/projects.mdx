@@ -1,118 +1,90 @@
 ---
-title: "Section projets : structure et mises à jour"
-description: "Comment la liste des projets du site personnel est configurée à partir du tableau myProjects, ainsi qu'un journal des projets récemment ajoutés."
+title: "Page vitrine des projets"
+description: "Comment la page /projects affiche les projets personnels à partir du tableau projects, avec les badges de statut, les filtres par technologie et la recherche."
 ---
 
-## Aperçu
+## Vue d'ensemble
 
-La section projets affiche une liste de projets personnels sur la page d'accueil du site personnel. Chaque entrée est générée à partir du tableau `myProjects` et affiche un titre, une courte description (un paragraphe ou une liste à puces), un aperçu sous forme d'image ou de vidéo, et un ou plusieurs liens sortants tels que GitHub, un site en ligne ou une fiche d'extension Chrome.
+La page vitrine des projets se trouve à l'adresse `/projects` et affiche une grille adaptative de projets personnels. Chaque carte montre le nom du projet (lié à son dépôt), un badge de statut Active ou Archived, une courte accroche, une description plus longue et une liste d'étiquettes de technologies. Les visiteurs peuvent restreindre la liste avec un champ de recherche en texte libre et une rangée de boutons de filtre par technologie.
 
-Cette page documente les ajouts récents à cette liste afin que les visiteurs et les contributeurs sachent ce qui a changé et comment de nouvelles entrées sont configurées.
+La page est pilotée par les données : chaque carte est rendue à partir d'une entrée du tableau `projects` exporté par `src/constants/projects.js`. Pour ajouter, supprimer ou mettre à jour un projet, modifiez ce tableau — aucune modification de composant n'est nécessaire.
 
-## Ce qui a changé
+## Quand utiliser cette page
 
-Deux nouveaux projets ont été ajoutés en haut du tableau `myProjects` :
+- **Ajouter un nouveau projet personnel** que vous souhaitez mettre en avant auprès des visiteurs.
+- **Marquer un projet comme archivé** lorsque vous cessez de le maintenir mais souhaitez qu'il reste consultable.
+- **Mettre à jour les étiquettes de technologies** pour qu'un projet apparaisse sous le bon bouton de filtre.
 
-<Card title="📅 AI Calendar Assistant" icon="calendar">
-  Un calendrier qui lit votre boîte de réception et suggère de manière proactive quand planifier, replanifier ou refuser un rendez-vous.
+Si vous souhaitez seulement ajuster l'apparence des cartes, modifiez plutôt `src/components/Projects.js` et `src/components/projects.css`.
 
-  - Extraction d'intention à partir des fils d'e-mails propulsée par un LLM
-  - Écriture en un clic dans Google Calendar via OAuth
-  - Stockage local-first, aucun contenu de fil ne quitte jamais votre ordinateur portable
+## Schéma d'une entrée
 
-  **Liens :** GitHub
-</Card>
+Chaque entrée du tableau `projects` prend en charge les champs suivants. Tous les champs sont obligatoires.
 
-<Card title="♟️ Realtime Chess" icon="chess-knight">
-  Échecs multijoueurs sans tours — les deux joueurs peuvent jouer quand ils le souhaitent, avec un temps de recharge par pièce.
+| Champ         | Type       | Description                                                                                       |
+| ------------- | ---------- | ------------------------------------------------------------------------------------------------- |
+| `name`        | string     | Nom du projet, rendu comme en-tête lié de la carte.                                               |
+| `tagline`     | string     | Résumé d'une ligne affiché directement sous le nom.                                               |
+| `description` | string     | Une ou deux phrases de détail. Pris en compte par la recherche.                                   |
+| `status`      | string     | Soit `'Active'`, soit `'Archived'`. Détermine la couleur du badge.                                |
+| `tech`        | string[]   | Étiquettes de technologies affichées sur la carte et agrégées dans la barre de filtres.           |
+| `link`        | string     | URL vers laquelle pointe l'en-tête de la carte. S'ouvre dans un nouvel onglet.                    |
 
-  - Construit avec React et un serveur WebSocket Node
-  - Matchmaking personnalisé et ELO
-  - Mode spectateur avec état du plateau différé
-  - Replays exportables sous forme de PGN partageables
-  - Énigme quotidienne générée à partir de la partie réelle la plus chaotique de la veille
+### Badges de statut
 
-  **Liens :** GitHub, Play
-</Card>
+Le champ `status` affiche une pastille colorée à côté du nom du projet :
 
-Realtime Chess a d'abord été ajouté avec la boucle de jeu sans tours, le matchmaking, l'ELO et le mode spectateur. Il a ensuite été enrichi avec l'export de replays PGN, une énigme quotidienne générée à partir de la partie la plus chaotique de la veille, et un lien `Play` vers le site en ligne.
+- `'Active'` : projets que vous publiez ou maintenez encore.
+- `'Archived'` : projets en lecture seule ou qui ne sont plus maintenus.
 
-## Schéma d'entrée
+La classe du badge est dérivée de `status.toLowerCase()`, la valeur doit donc correspondre exactement à l'une de ces deux chaînes pour que le style s'applique.
 
-Chaque entrée du tableau `myProjects` prend en charge les champs suivants :
+### Étiquettes de technologies et barre de filtres
 
-| Champ     | Type    | Obligatoire | Description                                                                                       |
-| --------- | ------- | ----------- | ------------------------------------------------------------------------------------------------- |
-| `title`   | string  | Oui         | Nom du projet affiché comme en-tête de l'entrée. Les préfixes emoji sont courants.                |
-| `text`    | string \| string[] | Oui | Un paragraphe, ou un tableau dont le premier élément est un résumé et les suivants sont affichés sous forme de puces. |
-| `image`   | string  | Oui         | URL publique d'une image ou vidéo d'aperçu.                                                       |
-| `isVideo` | boolean | Oui         | `true` si `image` pointe vers un fichier vidéo, `false` pour une image fixe.                       |
-| `links`   | array   | Oui         | Liste d'objets lien `{ text, href }`. Les libellés courants sont `Github`, `Website` et `Play`.    |
+Chaque chaîne unique présente dans le tableau `tech` d'un projet devient un bouton dans la barre de filtres, trié par ordre alphabétique. Un bouton `All` (la valeur par défaut) affiche tous les projets. Sélectionner un filtre de technologie masque toute carte dont le tableau `tech` ne contient pas cette étiquette.
 
-### Descriptions à puces
+Conservez une orthographe cohérente des étiquettes entre les entrées : `Node` et `Node.js` produisent deux boutons de filtre distincts.
 
-Lorsque `text` est un tableau, le premier élément est affiché comme paragraphe d'introduction et tout élément suivant commençant par `- ` est rendu sous forme de liste à puces de fonctionnalités. Utilisez cette forme lorsqu'un projet présente plusieurs capacités distinctes à mettre en avant.
+## Ajouter un nouveau projet
 
-### Liens de démo en ligne
-
-Utilisez un lien `Play` (ou `Website`) pour tout projet disposant d'une démo hébergée afin que les visiteurs puissent l'essayer sans quitter la page. Realtime Chess utilise à la fois `Github` et `Play`.
-
-## Ajouter une nouvelle entrée
-
-Ouvrez `src/constants/projects.js` et ajoutez un nouvel objet au début du tableau `myProjects`. Les nouvelles entrées apparaissent en haut de la liste sur la page d'accueil.
+Ouvrez `src/constants/projects.js` et ajoutez un objet au tableau `projects`. Les nouvelles entrées apparaissent dans l'ordre où elles sont déclarées.
 
 ```js src/constants/projects.js
-const myProjects = [
+const projects = [
     {
-        title: '📅 AI Calendar Assistant',
-        text: [
-            'A calendar that reads your inbox and proactively suggests when to schedule, reschedule, or decline.',
-            '- LLM-powered intent extraction from email threads',
-            '- One-click Google Calendar writes via OAuth',
-            '- Local-first storage, no thread content ever leaves your laptop',
-        ],
-        image: 'https://res.cloudinary.com/.../preview.png',
-        isVideo: false,
-        links: [
-            { text: 'Github', href: 'https://github.com/paaatrrrick/ai-calendar' },
-        ],
+        name: 'Inkwell',
+        tagline: 'A markdown-first note-taking app',
+        description: 'A local-first notes app with bidirectional links, a command palette, and end-to-end encrypted sync.',
+        status: 'Active',
+        tech: ['React', 'Rust', 'SQLite'],
+        link: 'https://github.com/example/inkwell',
     },
-    {
-        title: '♟️ Realtime Chess',
-        text: [
-            'Multiplayer chess with no turns — both players move whenever they want, with a per-piece cooldown timer.',
-            '- Built with React and a Node WebSocket server',
-            '- Custom matchmaking + ELO',
-            '- Spectator mode with delayed board state',
-            '- Replays exportable as shareable PGN',
-            '- Daily puzzle generated from the most chaotic real match of the previous day',
-        ],
-        image: 'https://res.cloudinary.com/.../preview.png',
-        isVideo: false,
-        links: [
-            { text: 'Github', href: 'https://github.com/paaatrrrick/realtime-chess' },
-            { text: 'Play', href: 'https://realtime-chess.app' },
-        ],
-    },
-    // ...existing entries
-]
+    // ...more projects
+];
 
-export default myProjects
+export default projects;
 ```
 
 <Tip>
-Définissez `isVideo: true` lorsque `image` pointe vers un fichier `.mov` ou `.mp4` afin que la carte affiche un lecteur intégré au lieu d'un `<img>`.
+Lorsque vous archivez un projet, changez `status` de `'Active'` à `'Archived'` plutôt que de supprimer l'entrée — la carte reste accessible via la recherche et les filtres de technologies.
 </Tip>
 
-## Rédiger les descriptions de projet
+## Comment la recherche et les filtres se combinent
 
-Utilisez le champ `text` pour communiquer ce que fait le projet et ce qui le distingue.
+La page propose deux contrôles indépendants qui se croisent :
 
-- Commencez par un résumé d'une phrase qui nomme la mécanique centrale ou la valeur ajoutée.
-- Poursuivez avec des puces pour les fonctionnalités distinctes, les choix techniques ou les résultats mesurables.
-- Ne mentionnez la stack que lorsqu'elle fait partie de l'histoire (par exemple, un serveur WebSocket pour le jeu en temps réel).
-- Gardez chaque puce courte — une phrase brève, pas une phrase complète.
+1. **Champ de recherche** : compare la requête, rognée et mise en minuscules, aux champs `name`, `tagline` et `description` de chaque projet. Un projet est conservé si l'un des trois contient la requête sous forme de sous-chaîne.
+2. **Filtre par technologie** : ne conserve que les projets dont le tableau `tech` contient l'étiquette active. `All` désactive ce filtre.
 
-## Quand mettre à jour cette liste
+Un projet doit passer **les deux** filtres pour être affiché. Si le résultat combiné est vide, la grille affiche un état vide indiquant "No projects match your search."
 
-Ajoutez une nouvelle entrée chaque fois que vous livrez un projet que vous souhaitez mettre en avant. Classez les entrées de sorte que le projet le plus récent ou le plus pertinent apparaisse en premier ; les anciens projets peuvent rester en place ou être mis en commentaire dans le fichier source lorsqu'ils ne reflètent plus le travail actuel.
+### Rédiger des textes adaptés à la recherche
+
+Comme la recherche ne porte que sur `name`, `tagline` et `description`, assurez-vous que ces champs contiennent les mots qu'un visiteur est susceptible de saisir. Par exemple, si un projet est votre "suivi d'habitudes", incluez le mot `habit` dans l'accroche ou la description même si c'est évident d'après le nom.
+
+## Rédiger de bonnes entrées
+
+- **`tagline`** : une phrase courte. Commencez par la catégorie ("Self-hosted bookmark manager") plutôt que par un langage marketing.
+- **`description`** : une ou deux phrases. Mentionnez la mécanique principale et les capacités notables (une API, des importateurs, du chiffrement).
+- **`tech`** : énumérez les technologies qui intéressent le lecteur, pas toutes les dépendances. Trois à cinq étiquettes par projet constituent un bon objectif.
+- **`link`** : pointez vers l'emplacement canonique du projet. Un dépôt GitHub convient ; un site hébergé est préférable s'il en existe un.
