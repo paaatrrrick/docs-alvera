@@ -1,0 +1,95 @@
+---
+title: "Page de conseil : structure et mises à jour"
+description: "Comment la route /advisory du site web personnel liste les startups et équipes que Patrick conseille, et comment le rôle de Conseiller technique se relie à la chronologie d'expérience professionnelle."
+---
+
+## Aperçu
+
+La page de conseil se trouve à l'adresse `/advisory` sur le site web personnel et liste les startups et équipes que Patrick conseille actuellement. Elle affiche un court en-tête et une liste de rôles de conseil, chacun indiquant l'entreprise, la période, le domaine d'intervention et un résumé d'un paragraphe sur la mission.
+
+Utilisez cette page lorsque vous souhaitez une URL dédiée et facile à partager pour le travail de conseil, distincte des rôles chronologiques affichés dans la chronologie d'expérience professionnelle de la page d'accueil.
+
+## Ce qui a changé
+
+Une nouvelle route `/advisory` a été ajoutée au site :
+
+- Un nouveau composant `Advisory` affiche la page à partir de la constante `advisoryRoles`.
+- Deux entrées initiales ont été ajoutées : **Vercel** (expérience développeur pour la documentation des frameworks, 2030 – Présent) et **Neon** (documentation d'onboarding pour bases de données, 2029 – 2030).
+- Une entrée correspondante **Conseiller technique chez Vercel** a été ajoutée en haut du tableau `workExperience` pour que la chronologie de la page d'accueil reflète la mission de conseil active aux côtés des autres rôles.
+
+<Card title="Vercel — Expérience développeur pour la documentation des frameworks" icon="triangle">
+  Conseil sur l'architecture de la documentation et le flux de rédaction pour les équipes de frameworks qui publient sur la plateforme.
+
+  **Chronologie :** 2030 – Présent
+</Card>
+
+<Card title="Neon — Documentation d'onboarding pour bases de données" icon="database">
+  A aidé à restructurer le parcours de démarrage rapide et la référence Postgres serverless en guides orientés tâches.
+
+  **Chronologie :** 2029 – 2030
+</Card>
+
+## Schéma d'entrée
+
+Chaque entrée du tableau `advisoryRoles` prend en charge les champs suivants :
+
+| Champ     | Type   | Requis | Description                                                                       |
+| --------- | ------ | ------ | --------------------------------------------------------------------------------- |
+| `company` | string | Oui    | Entreprise ou équipe conseillée. Utilisée comme clé d'entrée sur la page.         |
+| `period`  | string | Oui    | Plage temporelle lisible, par exemple `2030 - Present` ou `2029 - 2030`.          |
+| `focus`   | string | Oui    | Court intitulé décrivant le domaine d'intervention du conseil.                    |
+| `summary` | string | Oui    | Description d'une ou deux phrases de la mission et de ce que vous avez livré.     |
+
+## Ajouter ou mettre à jour une entrée
+
+Ouvrez `src/constants/advisory.js` et ajoutez un nouvel objet au tableau `advisoryRoles`. Les missions les plus récentes vont en haut afin que le travail de conseil le plus récent apparaisse en premier.
+
+```js src/constants/advisory.js
+const advisoryRoles = [
+    {
+        company: 'Vercel',
+        period: '2030 - Present',
+        focus: 'Developer experience for framework docs',
+        summary: 'Advising on documentation architecture and the authoring workflow for framework teams shipping on the platform.',
+    },
+    {
+        company: 'Neon',
+        period: '2029 - 2030',
+        focus: 'Database onboarding docs',
+        summary: 'Helped restructure the getting-started path and the serverless Postgres reference into task-oriented guides.',
+    },
+    // ...new entries here
+];
+
+export default advisoryRoles;
+```
+
+<Tip>
+Gardez `summary` à une ou deux phrases. La liste de conseil est conçue pour être parcourue rapidement : créez un lien vers un article plus long si une mission a besoin de plus de contexte.
+</Tip>
+
+## Comment cela se relie à la chronologie d'expérience professionnelle
+
+Le travail de conseil actif doit être reflété à deux endroits :
+
+1. Une entrée dans `advisoryRoles` (rendue sur `/advisory`).
+2. Une entrée correspondante `Technical Advisor at {Company}` en haut de `workExperience` dans `src/constants/work.js` (rendue dans la chronologie de la page d'accueil).
+
+Cela conserve l'exactitude chronologique de la page d'accueil tout en laissant `/advisory` faire office d'index ciblé des personnes que vous conseillez actuellement.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'Technical Advisor at Vercel',
+        text: `Advising the developer experience team on documentation architecture and authoring workflows for framework partners.`,
+        timeLine: '2030 - Present. Remote',
+    },
+    // ...existing entries
+];
+```
+
+Lorsqu'une mission de conseil se termine, mettez à jour le `period` dans `advisoryRoles` avec une plage fermée (par exemple, `2029 - 2030`) et mettez à jour le `timeLine` de l'entrée correspondante dans `workExperience` pour qu'elle corresponde.
+
+## Quand mettre à jour cette page
+
+Ajoutez une entrée chaque fois que vous commencez à conseiller une nouvelle équipe que vous souhaitez lister publiquement. Mettez à jour une entrée lorsque l'orientation change de façon significative ou lorsqu'une mission se termine. Ne supprimez les entrées que lorsque la relation n'est plus quelque chose que vous souhaitez afficher sur le site.

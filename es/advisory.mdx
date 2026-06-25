@@ -1,0 +1,95 @@
+---
+title: "Página de asesoría: estructura y actualizaciones"
+description: "Cómo la ruta /advisory del sitio web personal lista las startups y equipos a los que Patrick asesora, además de cómo el rol de Asesor técnico se conecta con la línea de tiempo de experiencia laboral."
+---
+
+## Resumen
+
+La página de asesoría vive en `/advisory` en el sitio web personal y lista las startups y equipos a los que Patrick asesora actualmente. Renderiza un encabezado breve y una lista de roles de asesoría, cada uno mostrando la empresa, el período de tiempo, el área de enfoque y un resumen de un párrafo del compromiso.
+
+Usa esta página cuando quieras una URL dedicada y fácil de enlazar para el trabajo de asesoría, separada de los roles cronológicos que aparecen en la línea de tiempo de experiencia laboral de la página principal.
+
+## Qué cambió
+
+Se añadió una nueva ruta `/advisory` al sitio:
+
+- Un nuevo componente `Advisory` renderiza la página a partir de la constante `advisoryRoles`.
+- Se incluyeron dos entradas iniciales: **Vercel** (experiencia de desarrollador para documentación de frameworks, 2030 – Presente) y **Neon** (documentación de onboarding de bases de datos, 2029 – 2030).
+- Se añadió una entrada correspondiente de **Asesor técnico en Vercel** al inicio del array `workExperience` para que la línea de tiempo de la página principal refleje el compromiso de asesoría activo junto con otros roles.
+
+<Card title="Vercel — Experiencia de desarrollador para documentación de frameworks" icon="triangle">
+  Asesorando sobre arquitectura de documentación y el flujo de trabajo de autoría para equipos de frameworks que publican en la plataforma.
+
+  **Línea de tiempo:** 2030 – Presente
+</Card>
+
+<Card title="Neon — Documentación de onboarding de bases de datos" icon="database">
+  Ayudé a reestructurar el camino de inicio rápido y la referencia de Postgres serverless en guías orientadas a tareas.
+
+  **Línea de tiempo:** 2029 – 2030
+</Card>
+
+## Esquema de entrada
+
+Cada entrada en el array `advisoryRoles` admite los siguientes campos:
+
+| Campo     | Tipo   | Requerido | Descripción                                                                       |
+| --------- | ------ | --------- | --------------------------------------------------------------------------------- |
+| `company` | string | Sí        | Empresa o equipo asesorado. Se usa como clave de la entrada en la página.         |
+| `period`  | string | Sí        | Rango temporal legible, por ejemplo `2030 - Present` o `2029 - 2030`.             |
+| `focus`   | string | Sí        | Titular breve que describe el área de enfoque de la asesoría.                     |
+| `summary` | string | Sí        | Descripción de una o dos oraciones del compromiso y de lo que entregaste.         |
+
+## Añadir o actualizar una entrada
+
+Abre `src/constants/advisory.js` y añade un nuevo objeto al array `advisoryRoles`. Los compromisos más recientes van arriba para que el trabajo de asesoría más reciente aparezca primero.
+
+```js src/constants/advisory.js
+const advisoryRoles = [
+    {
+        company: 'Vercel',
+        period: '2030 - Present',
+        focus: 'Developer experience for framework docs',
+        summary: 'Advising on documentation architecture and the authoring workflow for framework teams shipping on the platform.',
+    },
+    {
+        company: 'Neon',
+        period: '2029 - 2030',
+        focus: 'Database onboarding docs',
+        summary: 'Helped restructure the getting-started path and the serverless Postgres reference into task-oriented guides.',
+    },
+    // ...new entries here
+];
+
+export default advisoryRoles;
+```
+
+<Tip>
+Mantén `summary` en una o dos oraciones. La lista de asesoría está pensada para escanearse rápidamente: enlaza a un artículo más largo si un compromiso individual necesita más contexto.
+</Tip>
+
+## Cómo se conecta con la línea de tiempo de experiencia laboral
+
+El trabajo de asesoría activo debe reflejarse en dos lugares:
+
+1. Una entrada en `advisoryRoles` (se renderiza en `/advisory`).
+2. Una entrada correspondiente `Technical Advisor at {Company}` al inicio de `workExperience` en `src/constants/work.js` (se renderiza en la línea de tiempo de la página principal).
+
+Esto mantiene la página principal cronológicamente precisa mientras `/advisory` actúa como un índice enfocado de a quién asesoras actualmente.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'Technical Advisor at Vercel',
+        text: `Advising the developer experience team on documentation architecture and authoring workflows for framework partners.`,
+        timeLine: '2030 - Present. Remote',
+    },
+    // ...existing entries
+];
+```
+
+Cuando un compromiso de asesoría termine, actualiza el `period` en `advisoryRoles` a un rango cerrado (por ejemplo, `2029 - 2030`) y actualiza el `timeLine` de la entrada correspondiente en `workExperience` para que coincida.
+
+## Cuándo actualizar esta página
+
+Añade una entrada cada vez que empieces a asesorar a un nuevo equipo que quieras listar públicamente. Actualiza una entrada cuando el enfoque cambie de forma significativa o cuando un compromiso concluya. Elimina entradas solo cuando la relación ya no sea algo que quieras mostrar en el sitio.
