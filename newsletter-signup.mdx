@@ -1,0 +1,143 @@
+---
+title: "Newsletter signup form"
+description: "How the personal website's newsletter signup surface is wired up — from the subscribe API helper, through the useNewsletter hook, to the Newsletter form component."
+---
+
+## Overview
+
+The personal website includes a newsletter signup surface that lets visitors enter an email address and subscribe to occasional updates. It's a small, self-contained stack made up of three pieces that build on each other:
+
+- A **subscribe helper** that validates the email and POSTs it to the newsletter API.
+- A **`useNewsletter` hook** that wraps the helper and exposes the request lifecycle as React state.
+- A **`Newsletter` form component** that renders the input, button, and success/error UI.
+
+Contributors who want to drop the signup form into a new page, customize how it looks, or call the subscribe endpoint from somewhere else on the site can use this page as a reference.
+
+<Note>
+  This page documents the **initial subscribe** surface only. Managing an existing subscription — picking a cadence, choosing a timezone, or pausing the digest — is covered separately in the digest preferences documentation.
+</Note>
+
+## When to use it
+
+Reach for this stack when you want to:
+
+- Add a signup form to a new section of the site (for example, the bottom of a blog post or a dedicated `/subscribe` route).
+- Trigger a subscribe from a custom UI (a modal, a command palette action, a banner) without rendering the default form.
+- Validate an email address with the same rule the form uses before passing it to another API.
+
+## Architecture
+
+The three pieces are layered so each one stays single-purpose:
+
+| Layer    | Module                         | Responsibility                                                                 |
+| -------- | ------------------------------ | ------------------------------------------------------------------------------ |
+| API      | `subscribeToNewsletter(email)` | Validate the email and POST it to `/api/newsletter/subscribe`.                 |
+| State    | `useNewsletter()`              | Track `idle` / `loading` / `success` / `error` and surface the latest message. |
+| UI       | `<Newsletter />`               | Render the email input, submit button, and success/error views.                |
+
+You can use any layer on its own. The form uses the hook, and the hook uses the helper — but a custom UI can call the hook directly, and a non-React caller can import the helper directly.
+
+## The subscribe helper
+
+`subscribeToNewsletter(email)` is the lowest-level entry point. It performs client-side validation, makes the network request, and returns the parsed JSON response.
+
+```js
+import { subscribeToNewsletter, isValidEmail } from './utils/newsletter';
+
+if (isValidEmail(input)) {
+    const result = await subscribeToNewsletter(input);
+    console.log(result);
+}
+```
+
+**Behavior**
+
+- Trims whitespace from the email before validating and sending.
+- Validates against a simple `local@domain.tld` regex via `isValidEmail`. Invalid emails throw `Error('Please enter a valid email address.')` before any network call.
+- Sends `POST /api/newsletter/subscribe` with a JSON body of `{ "email": "<trimmed>" }` and `Content-Type: application/json`.
+- Throws `Error('Subscription failed. Please try again later.')` on any non-2xx response.
+- Returns the parsed JSON body on success.
+
+`isValidEmail(email)` is exported separately so you can reuse the same validation rule in other forms (for example, to enable or disable a submit button as the user types).
+
+## The `useNewsletter` hook
+
+`useNewsletter()` wraps the helper for React components. It owns the request lifecycle so the calling component only has to render based on `status`.
+
+```jsx
+import { useState } from 'react';
+import { useNewsletter } from './hooks/useNewsletter';
+
+function CustomSignup() {
+    const [email, setEmail] = useState('');
+    const { status, error, subscribe, reset } = useNewsletter();
+
+    return (
+        <form onSubmit={(e) => { e.preventDefault(); subscribe(email); }}>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} />
+            <button disabled={status === 'loading'}>Subscribe</button>
+            {status === 'error' && <p>{error}</p>}
+            {status === 'success' && <button type="button" onClick={reset}>Subscribe another</button>}
+        </form>
+    );
+}
+```
+
+**Return value**
+
+| Field       | Type                                            | Description                                                                   |
+| ----------- | ----------------------------------------------- | ----------------------------------------------------------------------------- |
+| `status`    | `'idle' \| 'loading' \| 'success' \| 'error'`   | The current state of the subscribe request. Starts at `'idle'`.               |
+| `error`     | `string`                                        | The most recent error message. Empty string when `status` is not `'error'`.   |
+| `subscribe` | `(email: string) => Promise<void>`              | Kicks off a subscribe. Sets `status` to `'loading'`, then `'success'` or `'error'`. |
+| `reset`     | `() => void`                                    | Returns the hook to `'idle'` and clears `error`. Useful after a success.      |
+
+The hook catches errors thrown by `subscribeToNewsletter` and stores their message on `error`, so you don't need a `try`/`catch` in the component.
+
+## The `Newsletter` component
+
+`<Newsletter />` is the default UI built on top of the hook. It renders a heading, a short blurb, the email input, and a submit button. It swaps to a success message with a "Subscribe another email" button when the request succeeds, and shows the error message inline when it fails.
+
+```jsx
+import Newsletter from './components/Newsletter';
+
+function HomePage() {
+    return (
+        <main>
+            {/* ...other sections... */}
+            <Newsletter />
+        </main>
+    );
+}
+```
+
+The component has no props — it owns its own email input state and uses `useNewsletter` internally. Drop it wherever a signup makes sense.
+
+### States rendered by the component
+
+- **Idle / typing** — The form is interactive. The submit button reads `Subscribe`.
+- **Loading** — The submit button is disabled and reads `Subscribing…`.
+- **Error** — The form stays visible and the error message renders below it in red.
+- **Success** — The form is replaced by `Thanks for subscribing! Check your inbox to confirm.` and a `Subscribe another email` button that calls `reset` and clears the input.
+
+### Styling
+
+The component imports `newsletter.css`, which defines:
+
+| Class                  | Purpose                                                       |
+| ---------------------- | ------------------------------------------------------------- |
+| `.newsletter`          | Outer `<section>`. Centered, capped at `32rem` wide.          |
+| `.newsletterForm`      | Flex row containing the email input and submit button.        |
+| `.newsletterForm input`| Email input. Stretches to fill the available space.           |
+| `.newsletterError`     | Inline error message. Rendered in red (`#c0392b`).            |
+| `.newsletterSuccess`   | Success message. Rendered in green (`#1e8e3e`).               |
+
+To restyle the form, override these classes in a later stylesheet rather than editing `newsletter.css` directly — that keeps the component portable across pages that may have their own theming.
+
+## Picking the right layer
+
+| You want to...                                                       | Use                          |
+| -------------------------------------------------------------------- | ---------------------------- |
+| Drop a ready-made signup section on a page.                          | `<Newsletter />`             |
+| Build a custom signup UI (modal, banner, command palette action).    | `useNewsletter()`            |
+| Trigger a subscribe from non-React code, or just validate an email.  | `subscribeToNewsletter` / `isValidEmail` |
