@@ -1,118 +1,90 @@
 ---
-title: "Projects section: structure and updates"
-description: "How the personal website's projects list is configured from the myProjects array, plus a changelog of recently added projects."
+title: "Projects showcase page"
+description: "How the /projects page renders side projects from the projects array, including status badges, tech filters, and search."
 ---
 
 ## Overview
 
-The projects section displays a list of side projects on the personal website's home page. Each entry is rendered from the `myProjects` array and shows a title, a short description (one paragraph or a bulleted list), an image or video preview, and one or more outbound links such as GitHub, a live website, or a Chrome extension listing.
+The projects showcase page lives at `/projects` and renders a responsive grid of side projects. Each card shows the project's name (linked to its repo), an Active or Archived status badge, a short tagline, a longer description, and a list of tech tags. Visitors can narrow the list with a free-text search box and a row of tech filter buttons.
 
-This page documents recent additions to that list so visitors and contributors know what changed and how new entries are configured.
+The page is data-driven: every card is rendered from an entry in the `projects` array exported by `src/constants/projects.js`. To add, remove, or update a project, edit that array — no component changes required.
 
-## What changed
+## When to use this page
 
-Two new projects were added to the top of the `myProjects` array:
+- **Adding a new side project** you want to highlight to visitors.
+- **Marking a project as archived** when you stop maintaining it but want to leave it discoverable.
+- **Updating tech tags** so a project shows up under the right filter button.
 
-<Card title="📅 AI Calendar Assistant" icon="calendar">
-  A calendar that reads your inbox and proactively suggests when to schedule, reschedule, or decline.
-
-  - LLM-powered intent extraction from email threads
-  - One-click Google Calendar writes via OAuth
-  - Local-first storage, no thread content ever leaves your laptop
-
-  **Links:** GitHub
-</Card>
-
-<Card title="♟️ Realtime Chess" icon="chess-knight">
-  Multiplayer chess with no turns — both players move whenever they want, with a per-piece cooldown timer.
-
-  - Built with React and a Node WebSocket server
-  - Custom matchmaking and ELO
-  - Spectator mode with delayed board state
-  - Replays exportable as shareable PGN
-  - Daily puzzle generated from the most chaotic real match of the previous day
-
-  **Links:** GitHub, Play
-</Card>
-
-Realtime Chess was initially added with the no-turns gameplay loop, matchmaking, ELO, and spectator mode. It was later expanded with PGN replay export, a daily puzzle generated from the previous day's most chaotic match, and a `Play` link to the live site.
+If you only want to tweak how cards look, edit `src/components/Projects.js` and `src/components/projects.css` instead.
 
 ## Entry schema
 
-Each entry in the `myProjects` array supports the following fields:
+Each entry in the `projects` array supports the following fields. All fields are required.
 
-| Field     | Type    | Required | Description                                                                                       |
-| --------- | ------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `title`   | string  | Yes      | Project name shown as the entry header. Emoji prefixes are common.                                |
-| `text`    | string \| string[] | Yes | One paragraph, or an array where the first item is a summary and the rest render as bullet points. |
-| `image`   | string  | Yes      | Public URL of a preview image or video.                                                           |
-| `isVideo` | boolean | Yes      | `true` if `image` points to a video file, `false` for a still image.                              |
-| `links`   | array   | Yes      | List of `{ text, href }` link objects. Common labels are `Github`, `Website`, and `Play`.         |
+| Field         | Type       | Description                                                                                       |
+| ------------- | ---------- | ------------------------------------------------------------------------------------------------- |
+| `name`        | string     | Project name, rendered as a linked card heading.                                                  |
+| `tagline`     | string     | One-line summary shown directly under the name.                                                   |
+| `description` | string     | A sentence or two of detail. Searchable.                                                          |
+| `status`      | string     | Either `'Active'` or `'Archived'`. Drives the badge color.                                        |
+| `tech`        | string[]   | Tech tags shown on the card and aggregated into the filter bar.                                   |
+| `link`        | string     | URL the card heading links to. Opens in a new tab.                                                |
 
-### Bulleted descriptions
+### Status badges
 
-When `text` is an array, the first item is rendered as a lead paragraph and any subsequent items beginning with `- ` render as a bulleted feature list. Use this shape when a project has multiple distinct capabilities to highlight.
+The `status` field renders a colored pill next to the project name:
 
-### Live demo links
+- `'Active'` — projects you're still shipping or maintaining.
+- `'Archived'` — projects that are read-only or no longer maintained.
 
-Use a `Play` link (or `Website`) for any project with a hosted demo so visitors can try it without leaving the page. Realtime Chess uses both `Github` and `Play`.
+The badge class is derived from `status.toLowerCase()`, so the value must match one of those two strings exactly for the styling to apply.
 
-## Adding a new entry
+### Tech tags and the filter bar
 
-Open `src/constants/projects.js` and prepend a new object to the `myProjects` array. New entries appear at the top of the list on the home page.
+Every unique string in any project's `tech` array becomes a button in the filter bar, sorted alphabetically. An `All` button (the default) shows every project. Selecting a tech filter hides any card whose `tech` array does not include that tag.
+
+Keep tag spelling consistent across entries — `Node` and `Node.js` produce two separate filter buttons.
+
+## Adding a new project
+
+Open `src/constants/projects.js` and add an object to the `projects` array. New entries appear in the order they are declared.
 
 ```js src/constants/projects.js
-const myProjects = [
+const projects = [
     {
-        title: '📅 AI Calendar Assistant',
-        text: [
-            'A calendar that reads your inbox and proactively suggests when to schedule, reschedule, or decline.',
-            '- LLM-powered intent extraction from email threads',
-            '- One-click Google Calendar writes via OAuth',
-            '- Local-first storage, no thread content ever leaves your laptop',
-        ],
-        image: 'https://res.cloudinary.com/.../preview.png',
-        isVideo: false,
-        links: [
-            { text: 'Github', href: 'https://github.com/paaatrrrick/ai-calendar' },
-        ],
+        name: 'Inkwell',
+        tagline: 'A markdown-first note-taking app',
+        description: 'A local-first notes app with bidirectional links, a command palette, and end-to-end encrypted sync.',
+        status: 'Active',
+        tech: ['React', 'Rust', 'SQLite'],
+        link: 'https://github.com/example/inkwell',
     },
-    {
-        title: '♟️ Realtime Chess',
-        text: [
-            'Multiplayer chess with no turns — both players move whenever they want, with a per-piece cooldown timer.',
-            '- Built with React and a Node WebSocket server',
-            '- Custom matchmaking + ELO',
-            '- Spectator mode with delayed board state',
-            '- Replays exportable as shareable PGN',
-            '- Daily puzzle generated from the most chaotic real match of the previous day',
-        ],
-        image: 'https://res.cloudinary.com/.../preview.png',
-        isVideo: false,
-        links: [
-            { text: 'Github', href: 'https://github.com/paaatrrrick/realtime-chess' },
-            { text: 'Play', href: 'https://realtime-chess.app' },
-        ],
-    },
-    // ...existing entries
-]
+    // ...more projects
+];
 
-export default myProjects
+export default projects;
 ```
 
 <Tip>
-Set `isVideo: true` when `image` points to a `.mov` or `.mp4` file so the card renders an inline player instead of an `<img>`.
+When you archive a project, change `status` from `'Active'` to `'Archived'` rather than deleting the entry — the card stays discoverable through search and tech filters.
 </Tip>
 
-## Writing project descriptions
+## How search and filters combine
 
-Use the `text` field to communicate what the project does and why it stands out.
+The page has two independent controls that intersect:
 
-- Lead with a one-sentence summary that names the core mechanic or value.
-- Follow with bullets for distinct features, technical choices, or measurable wins.
-- Mention the stack only when it is part of the story (for example, a WebSocket server for realtime gameplay).
-- Keep each bullet short — one phrase, not a sentence.
+1. **Search box** — matches the trimmed, lower-cased query against each project's `name`, `tagline`, and `description`. A project is kept if any of the three contains the query as a substring.
+2. **Tech filter** — keeps only projects whose `tech` array includes the active tag. `All` disables this filter.
 
-## When to update this list
+A project must pass **both** filters to be shown. If the combined result is empty, the grid renders an empty state that reads "No projects match your search."
 
-Add a new entry whenever you ship a project you want to highlight. Order entries so the most recent or most relevant project appears first; older projects can stay in place or be commented out in the source file when they no longer reflect current work.
+### Writing search-friendly copy
+
+Because search only looks at `name`, `tagline`, and `description`, make sure those fields contain the words a visitor is likely to type. For example, if a project is your "habit tracker," include the word `habit` in the tagline or description even if it's obvious from the name.
+
+## Writing good entries
+
+- **`tagline`** — one short phrase. Lead with the category ("Self-hosted bookmark manager") rather than marketing language.
+- **`description`** — one or two sentences. Mention the core mechanic and any notable capabilities (an API, importers, encryption).
+- **`tech`** — list the technologies a reader would care about, not every dependency. Three to five tags per project is a good target.
+- **`link`** — point at the canonical home for the project. A GitHub repo is fine; a hosted site is better if one exists.
