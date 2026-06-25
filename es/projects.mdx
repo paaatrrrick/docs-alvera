@@ -1,118 +1,71 @@
 ---
-title: "Sección de proyectos: estructura y actualizaciones"
-description: "Cómo se configura la lista de proyectos del sitio web personal a partir del array myProjects, junto con un registro de los proyectos añadidos recientemente."
+title: "Página de proyectos: estructura y actualizaciones"
+description: "Cómo se configura la página dedicada /projects a partir del array projects, incluyendo el esquema de entrada y un ejemplo de código."
 ---
 
 ## Resumen
 
-La sección de proyectos muestra una lista de proyectos personales en la página principal del sitio web personal. Cada entrada se renderiza a partir del array `myProjects` y muestra un título, una descripción breve (un párrafo o una lista con viñetas), una vista previa en imagen o vídeo, y uno o varios enlaces externos como GitHub, un sitio web en vivo o una ficha de extensión de Chrome.
+El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo.
 
-Esta página documenta las incorporaciones recientes a esa lista para que visitantes y colaboradores sepan qué ha cambiado y cómo se configuran las nuevas entradas.
+Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
 
-## Qué ha cambiado
+## Cuándo usar esta página
 
-Se han añadido dos nuevos proyectos al principio del array `myProjects`:
+Añade una entrada a `/projects` cuando quieras destacar un proyecto personal con su propia tarjeta, un eslogan y etiquetas de tecnología. Usa la lista de la página de inicio para los proyectos que quieras mostrar al frente; usa `/projects` para el catálogo completo.
 
-<Card title="📅 Asistente de Calendario con IA" icon="calendar">
-  Un calendario que lee tu bandeja de entrada y sugiere proactivamente cuándo agendar, reprogramar o rechazar reuniones.
+## Esquema de entrada
 
-  - Extracción de intención mediante LLM a partir de hilos de correo
-  - Escrituras en Google Calendar con un solo clic mediante OAuth
-  - Almacenamiento local-first; el contenido de los hilos nunca sale de tu portátil
+Cada objeto del array `projects` admite los siguientes campos. Todos son obligatorios.
 
-  **Enlaces:** GitHub
-</Card>
+| Campo         | Tipo     | Descripción                                                                                       |
+| ------------- | -------- | ------------------------------------------------------------------------------------------------- |
+| `name`        | string   | Nombre del proyecto que se renderiza como encabezado y enlace de la tarjeta.                      |
+| `tagline`     | string   | Resumen de una línea que aparece justo debajo del nombre.                                         |
+| `description` | string   | Párrafo más largo que explica qué hace el proyecto y a quién va dirigido.                         |
+| `tech`        | string[] | Etiquetas del stack renderizadas como una lista horizontal (por ejemplo, `['React', 'Rust']`).    |
+| `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
+| `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
 
-<Card title="♟️ Realtime Chess" icon="chess-knight">
-  Ajedrez multijugador sin turnos: ambos jugadores mueven cuando quieran, con un temporizador de enfriamiento por pieza.
+## Añadir un proyecto
 
-  - Construido con React y un servidor WebSocket en Node
-  - Matchmaking personalizado y ELO
-  - Modo espectador con estado del tablero retardado
-  - Repeticiones exportables como PGN compartibles
-  - Puzzle diario generado a partir de la partida real más caótica del día anterior
-
-  **Enlaces:** GitHub, Play
-</Card>
-
-Realtime Chess se añadió inicialmente con el bucle de juego sin turnos, matchmaking, ELO y modo espectador. Más adelante se amplió con exportación de repeticiones en PGN, un puzzle diario generado a partir de la partida más caótica del día anterior y un enlace `Play` al sitio en vivo.
-
-## Esquema de cada entrada
-
-Cada entrada del array `myProjects` admite los siguientes campos:
-
-| Campo     | Tipo    | Obligatorio | Descripción                                                                                                  |
-| --------- | ------- | ----------- | ------------------------------------------------------------------------------------------------------------ |
-| `title`   | string  | Sí          | Nombre del proyecto que se muestra como cabecera de la entrada. Es habitual añadir un emoji como prefijo.    |
-| `text`    | string \| string[] | Sí | Un párrafo, o un array en el que el primer elemento es un resumen y los demás se renderizan como viñetas.    |
-| `image`   | string  | Sí          | URL pública de una imagen o vídeo de vista previa.                                                           |
-| `isVideo` | boolean | Sí          | `true` si `image` apunta a un archivo de vídeo, `false` si es una imagen estática.                           |
-| `links`   | array   | Sí          | Lista de objetos `{ text, href }` de enlaces. Etiquetas habituales: `Github`, `Website` y `Play`.            |
-
-### Descripciones con viñetas
-
-Cuando `text` es un array, el primer elemento se renderiza como párrafo principal y cualquier elemento posterior que empiece con `- ` se renderiza como una lista de funcionalidades con viñetas. Usa este formato cuando un proyecto tenga varias capacidades distintas que quieras destacar.
-
-### Enlaces a demos en vivo
-
-Usa un enlace `Play` (o `Website`) para cualquier proyecto con una demo alojada, de forma que los visitantes puedan probarla sin salir de la página. Realtime Chess utiliza tanto `Github` como `Play`.
-
-## Cómo añadir una nueva entrada
-
-Abre `src/constants/projects.js` y añade un nuevo objeto al principio del array `myProjects`. Las nuevas entradas aparecen en la parte superior de la lista en la página principal.
+Abre `src/constants/projects.js` y añade un nuevo objeto al array `projects`. Las entradas se renderizan en el orden del array, así que coloca primero el proyecto más reciente o más relevante.
 
 ```js src/constants/projects.js
-const myProjects = [
+const projects = [
     {
-        title: '📅 AI Calendar Assistant',
-        text: [
-            'A calendar that reads your inbox and proactively suggests when to schedule, reschedule, or decline.',
-            '- LLM-powered intent extraction from email threads',
-            '- One-click Google Calendar writes via OAuth',
-            '- Local-first storage, no thread content ever leaves your laptop',
-        ],
-        image: 'https://res.cloudinary.com/.../preview.png',
-        isVideo: false,
-        links: [
-            { text: 'Github', href: 'https://github.com/paaatrrrick/ai-calendar' },
-        ],
+        name: 'Inkwell',
+        tagline: 'A markdown-first note-taking app',
+        description: 'A local-first notes app with bidirectional links, a command palette, and end-to-end encrypted sync.',
+        status: 'Active',
+        tech: ['React', 'Rust', 'SQLite'],
+        link: 'https://github.com/example/inkwell',
     },
-    {
-        title: '♟️ Realtime Chess',
-        text: [
-            'Multiplayer chess with no turns — both players move whenever they want, with a per-piece cooldown timer.',
-            '- Built with React and a Node WebSocket server',
-            '- Custom matchmaking + ELO',
-            '- Spectator mode with delayed board state',
-            '- Replays exportable as shareable PGN',
-            '- Daily puzzle generated from the most chaotic real match of the previous day',
-        ],
-        image: 'https://res.cloudinary.com/.../preview.png',
-        isVideo: false,
-        links: [
-            { text: 'Github', href: 'https://github.com/paaatrrrick/realtime-chess' },
-            { text: 'Play', href: 'https://realtime-chess.app' },
-        ],
-    },
-    // ...existing entries
-]
+];
 
-export default myProjects
+export default projects;
 ```
 
 <Tip>
-Establece `isVideo: true` cuando `image` apunte a un archivo `.mov` o `.mp4` para que la tarjeta renderice un reproductor en línea en lugar de un `<img>`.
+Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
-## Cómo redactar las descripciones de los proyectos
+## Guía de redacción
 
-Usa el campo `text` para comunicar qué hace el proyecto y por qué destaca.
+La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
 
-- Empieza con un resumen de una frase que nombre la mecánica o el valor principal.
-- Continúa con viñetas para funcionalidades distintivas, decisiones técnicas o logros medibles.
-- Menciona el stack solo cuando forme parte de la historia (por ejemplo, un servidor WebSocket para jugabilidad en tiempo real).
-- Mantén cada viñeta breve: una frase corta, no una oración completa.
+- **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
+- **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
+- **Descripción:** Una o dos oraciones. Indica qué hace y a quién va dirigido.
+- **Etiquetas de tecnología:** Enumera las piezas principales del stack, no todas las dependencias. De tres a cinco etiquetas se lee mejor.
+- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
+- **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
 
-## Cuándo actualizar esta lista
+## Navegación
 
-Añade una nueva entrada cada vez que lances un proyecto que quieras destacar. Ordena las entradas para que el proyecto más reciente o más relevante aparezca primero; los proyectos más antiguos pueden permanecer en su sitio o comentarse en el archivo fuente cuando ya no reflejen el trabajo actual.
+La página se registra en `src/App.js` como:
+
+```js src/App.js
+<Route exact path='/projects' component={Projects} />
+```
+
+Enlaza a la página desde cualquier parte del sitio con `/projects`. La página incluye un enlace "← Back home" en su encabezado para quienes lleguen directamente a la ruta.
