@@ -1,5 +1,5 @@
 ---
-title: "Post view counter and post meta"
+title: "Post view counter, total site views, and post meta byline"
 description: "How the personal website tracks per-post views, total site reads, and renders the date, reading time, and view count byline on each post."
 ---
 
@@ -23,7 +23,7 @@ All three talk to a shared views service at `https://api.paaatrrrick.com/views`.
 
 ## Adding the byline to a post template
 
-`PostMeta` is the recommended way to surface view counts on a post — it bundles the date, the reading time, and the view counter into a single line so individual templates don't have to wire each piece up themselves.
+`PostMeta` is the recommended way to surface view counts on a post. It bundles the date, the reading time, and the view counter into a single line, so individual templates don't need to wire each piece up themselves.
 
 ```jsx
 import PostMeta from "../components/PostMeta";
