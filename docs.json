@@ -111,6 +111,12 @@
             "tab": "Misc",
             "groups": [
               {
+                "group": "Changelog",
+                "pages": [
+                  "changelog/2026-06-29"
+                ]
+              },
+              {
                 "group": "Atlas 1-25",
                 "pages": [
                   "misc/atlas/atlas-001",
