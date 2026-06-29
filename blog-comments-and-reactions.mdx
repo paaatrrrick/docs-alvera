@@ -1,11 +1,11 @@
 ---
 title: "Blog comments and reactions"
-description: "How the personal website's blog post engagement features fit together: the comments widget, server-backed reactions, sortable comment lists, and the comment count badge."
+description: "Wire up the personal website's blog engagement features: the comments widget, server-backed reactions, sortable comment lists, and the count badge."
 ---
 
 ## Overview
 
-Each blog post on the personal website can be extended with an engagement section that lets readers leave comments and react with emoji. The pieces are split into small components and hooks so a post page can opt into just the parts it needs:
+You can extend each blog post on the personal website with an engagement section that lets readers leave comments and react with emoji. The pieces are split into small components and hooks so a post page can opt into just the parts it needs:
 
 - **`Comments`** — the lightweight comments widget that loads existing comments and lets readers post a new one.
 - **`useComments`** — a hook that fetches and persists comments for a post.
@@ -112,7 +112,7 @@ Each comment can show a row of emoji reactions. There are two ways to render the
 
 ### Server-backed reactions with `useReactions`
 
-`useReactions` loads counts for a target from the reactions API on mount and exposes a `react(emoji)` callback that increments the count optimistically, POSTs to the server, and rolls back if the request fails. Use this when you want reaction counts to be shared across readers rather than per-session.
+`useReactions` loads counts for a target from the reactions API on mount. It also exposes a `react(emoji)` callback that increments the count optimistically, POSTs to the server, and rolls back if the request fails. Use this when you want reaction counts to be shared across readers rather than per-session.
 
 ```jsx
 import { useReactions } from "./components/comments/useReactions";
@@ -220,4 +220,4 @@ function PostEngagement({ postId }) {
 }
 ```
 
-Per-comment reaction buttons can be added by rendering `Reactions` (or a small wrapper around `useReactions`) inside the `Comment` component.
+To add per-comment reaction buttons, render `Reactions` (or a small wrapper around `useReactions`) inside the `Comment` component.
