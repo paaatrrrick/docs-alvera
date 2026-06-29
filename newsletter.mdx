@@ -1,6 +1,6 @@
 ---
 title: "Newsletter signup and digest preferences"
-description: "How to embed the newsletter signup form, the API helper and hook that power it, and the subscriber-facing controls for digest cadence, time zone, and pause/resume."
+description: "Embed the newsletter signup form, use the API helper and hook that power it, and configure subscriber controls for digest cadence, time zone, and pause."
 ---
 
 ## Overview
@@ -65,7 +65,7 @@ export function FooterSignup() {
 
 ### Call the API helper
 
-For non-React surfaces (a script, a test, a different framework), call `subscribeToNewsletter` directly. It throws a `Error` with a user-friendly message when the email is malformed or the request fails, so you can surface `err.message` to the user.
+For non-React surfaces (a script, a test, a different framework), call `subscribeToNewsletter` directly. It throws an `Error` with a user-friendly message when the email is malformed or the request fails, so you can surface `err.message` to the user.
 
 ```js
 import { subscribeToNewsletter } from "./utils/newsletter";
