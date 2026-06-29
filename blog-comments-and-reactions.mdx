@@ -1,0 +1,223 @@
+---
+title: "Blog comments and reactions"
+description: "How the personal website's blog post engagement features fit together: the comments widget, server-backed reactions, sortable comment lists, and the comment count badge."
+---
+
+## Overview
+
+Each blog post on the personal website can be extended with an engagement section that lets readers leave comments and react with emoji. The pieces are split into small components and hooks so a post page can opt into just the parts it needs:
+
+- **`Comments`** — the lightweight comments widget that loads existing comments and lets readers post a new one.
+- **`useComments`** — a hook that fetches and persists comments for a post.
+- **`useReactions`** — a hook that loads and persists reaction counts for a comment (or any target ID) on the server.
+- **`Reactions`** / **`ReactionSummary`** — emoji reaction buttons and a compact summary view.
+- **`CommentSort`** / **`useCommentSort`** — a sort control that orders comments by newest, oldest, or top.
+- **`CommentCount`** — a small badge that shows how many comments a post has.
+
+Use this page when you want to add engagement to a blog post, or when you need to know what props and handlers each component expects.
+
+## Comments widget
+
+`Comments` renders a comment list plus an inline form. It is intentionally unopinionated about transport — you pass in a `fetchComments` function (called on mount) and a `postComment` function (called on submit). The widget loads existing comments, then optimistically appends each newly posted comment to the list so the UI updates without a refetch.
+
+### Props
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `postId` | `string` | Identifier for the post. Passed through to your handlers. |
+| `fetchComments` | `(postId) => Promise<Comment[]>` | Returns the existing comments for the post. Called when the widget mounts and whenever `postId` changes. |
+| `postComment` | `(postId, body) => Promise<Comment>` | Persists a new comment and returns the saved record. The returned object is appended to the list. |
+
+A `Comment` looks like:
+
+```js
+{
+  id: "c_123",
+  author: "Ada",
+  body: "Great post.",
+  date: "2026-06-20T18:00:00Z",
+  reactions: { "👍": 3, "❤️": 1 }
+}
+```
+
+### Wiring it into a post
+
+```jsx
+import Comments from "./components/comments/Comments";
+
+function PostPage({ post }) {
+  return (
+    <article>
+      {/* …post body… */}
+      <Comments
+        postId={post.slug}
+        fetchComments={fetchCommentsFromApi}
+        postComment={postCommentToApi}
+      />
+    </article>
+  );
+}
+```
+
+If you want the default server-backed behavior, use the `useComments` hook below instead of passing your own handlers.
+
+## `useComments` hook
+
+`useComments` is the default data layer used by the engagement features. It fetches comments for a post from the comments API and exposes an `addComment` callback that POSTs a new comment and appends the result to local state.
+
+```jsx
+import { useComments } from "./components/comments/useComments";
+
+function PostComments({ postId }) {
+  const { comments, loading, addComment } = useComments(postId);
+
+  if (loading) return <p>Loading comments…</p>;
+
+  return (
+    <>
+      <CommentList comments={comments} />
+      <CommentForm onSubmit={(body) => addComment(body)} />
+    </>
+  );
+}
+```
+
+Returned values:
+
+- `comments` — current list of comments for the post.
+- `loading` — `true` while the initial fetch is in flight.
+- `addComment(body)` — posts a new comment and appends it to `comments`. Rejects if the request fails so the caller can show an error.
+
+## Reactions
+
+Each comment can show a row of emoji reactions. There are two ways to render them depending on whether you want counts to persist across visitors.
+
+### Local reactions
+
+`Reactions` is the simplest control. It tracks counts in component state and calls an `onReact(targetId, emoji)` handler when a button is pressed. The UI updates optimistically and rolls back if the handler rejects.
+
+```jsx
+<Reactions
+  targetId={comment.id}
+  initialCounts={comment.reactions}
+  onReact={(id, emoji) => sendReaction(id, emoji)}
+/>
+```
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `targetId` | `string` | Identifier for what's being reacted to (usually a comment ID). |
+| `initialCounts` | `Record<string, number>` | Starting counts, keyed by emoji. Defaults to `{}`. |
+| `onReact` | `(targetId, emoji) => Promise<void>` | Called when a reaction is added. Reject to roll back the optimistic increment. |
+
+### Server-backed reactions with `useReactions`
+
+`useReactions` loads counts for a target from the reactions API on mount and exposes a `react(emoji)` callback that increments the count optimistically, POSTs to the server, and rolls back if the request fails. Use this when you want reaction counts to be shared across readers rather than per-session.
+
+```jsx
+import { useReactions } from "./components/comments/useReactions";
+
+function CommentReactions({ commentId }) {
+  const { counts, react } = useReactions(commentId);
+
+  return (
+    <div className="reactions">
+      {Object.entries(counts).map(([emoji, count]) => (
+        <button key={emoji} type="button" onClick={() => react(emoji)}>
+          {emoji} {count}
+        </button>
+      ))}
+    </div>
+  );
+}
+```
+
+Returned values:
+
+- `counts` — `Record<emoji, number>` of persisted counts for the target.
+- `react(emoji)` — increments the count locally and persists it on the server. Rolls back and throws if the request fails.
+
+### Compact summary
+
+For places where you want to show that a comment has reactions without rendering the full button row (for example, in a collapsed list), `ReactionSummary` renders up to the three most-used emoji plus a total count. Pass it the same `counts` object. It renders nothing when the total is zero.
+
+```jsx
+<ReactionSummary counts={comment.reactions} />
+```
+
+## Sorting comments
+
+Long threads are easier to scan when readers can reorder them. `useCommentSort` takes the current comments array and returns a sorted copy plus a setter for the active sort.
+
+Sort options:
+
+- **`newest`** — most recent first (default).
+- **`oldest`** — oldest first.
+- **`top`** — comments with the most total reactions first.
+
+```jsx
+import { useCommentSort } from "./components/comments/useCommentSort";
+import CommentSort from "./components/comments/CommentSort";
+
+function SortedComments({ comments }) {
+  const { sort, setSort, sorted } = useCommentSort(comments);
+
+  return (
+    <>
+      <CommentSort value={sort} onChange={setSort} />
+      <CommentList comments={sorted} />
+    </>
+  );
+}
+```
+
+`CommentSort` is a small button group that takes a `value` (the active sort key) and an `onChange` handler. The active button gets an `is-active` class so it can be styled.
+
+The "top" comparator sums each comment's `reactions` map, so it works with both local reactions and counts loaded via `useReactions`.
+
+## Comment count badge
+
+`CommentCount` is a tiny inline badge for places like a post card or list, where you want to surface how many comments a post has without rendering the full widget. It uses `useComments` internally, so it makes the same fetch you'd otherwise make when the reader opens the post.
+
+```jsx
+import CommentCount from "./components/comments/CommentCount";
+
+<Card title={post.title}>
+  <p>{post.excerpt}</p>
+  <CommentCount postId={post.slug} />
+</Card>
+```
+
+The badge renders nothing while loading, then shows either `"No comments"` or `"N comment(s)"`. If you render `CommentCount` on the same page as the full `Comments` widget, expect both to call the comments API — keep one or the other if you want to avoid the extra request.
+
+## Putting it all together
+
+A typical post page wires the pieces together like this:
+
+```jsx
+import { useComments } from "./components/comments/useComments";
+import { useCommentSort } from "./components/comments/useCommentSort";
+import CommentSort from "./components/comments/CommentSort";
+import CommentList from "./components/comments/CommentList";
+import CommentForm from "./components/comments/CommentForm";
+
+function PostEngagement({ postId }) {
+  const { comments, loading, addComment } = useComments(postId);
+  const { sort, setSort, sorted } = useCommentSort(comments);
+
+  if (loading) return null;
+
+  return (
+    <section>
+      <header>
+        <h3>{comments.length} comments</h3>
+        <CommentSort value={sort} onChange={setSort} />
+      </header>
+      <CommentList comments={sorted} />
+      <CommentForm onSubmit={addComment} />
+    </section>
+  );
+}
+```
+
+Per-comment reaction buttons can be added by rendering `Reactions` (or a small wrapper around `useReactions`) inside the `Comment` component.
