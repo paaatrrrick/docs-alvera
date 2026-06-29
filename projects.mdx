@@ -49,9 +49,38 @@ export default projects;
 Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
+## Discovery UI
+
+The `/projects` page ships with three discovery controls that work together. A card has to satisfy every active control to render, so a tech filter and a search query combine with AND, not OR.
+
+### Tech stack filter
+
+Above the grid, the page renders one button per unique value found across every entry's `tech` array, plus a leading **All** button. The list is derived at render time and sorted alphabetically, so adding a new tag to a project automatically adds a new filter button — there is no separate registry to update.
+
+Clicking a tag shows only projects whose `tech` array contains that exact string. Clicking **All** clears the filter. Matching is case-sensitive, so keep tag casing consistent across entries (`'Node'` and `'node'` would render as two separate buttons).
+
+### Status badges
+
+Every card renders a colored badge in its header based on the entry's `status` field:
+
+- `'Active'` — green badge, signals you still ship updates.
+- `'Archived'` — gray badge, signals the project is frozen.
+
+`status` is required on every entry. If you omit it, the card will throw when it tries to render the badge class name.
+
+### Search box
+
+A search input sits between the page header and the filter row. It matches the trimmed, lowercased query as a substring against three fields on each entry:
+
+- `name`
+- `tagline`
+- `description`
+
+`tech` is **not** searched — use the filter buttons for stack lookups. When the search box is empty, only the tech filter applies. When both are set, a card has to match the active tech tag and contain the query in at least one of the three text fields. If nothing matches, the grid is replaced with a "No projects match your search." message.
+
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+Write `name`, `tagline`, and `description` with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
