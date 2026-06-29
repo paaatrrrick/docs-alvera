@@ -1,0 +1,190 @@
+---
+title: "Newsletter signup and digest preferences"
+description: "How to embed the newsletter signup form, the API helper and hook that power it, and the subscriber-facing controls for digest cadence, time zone, and pause/resume."
+---
+
+## Overview
+
+The personal website ships a complete newsletter flow: a drop-in signup form, a small API helper that posts to the subscribe endpoint, a React hook that tracks request state, and a set of subscriber preference controls for the digest cadence, time zone, and pause/resume.
+
+Use this page when you want to add the form to a new section of the site, change the available cadence options, or update what subscribers can self-serve from a preferences screen.
+
+## Signup flow
+
+The signup is split into three layers so you can swap any one of them without rewriting the others.
+
+| Layer       | Export                                       | Responsibility                                                            |
+| ----------- | -------------------------------------------- | ------------------------------------------------------------------------- |
+| API helper  | `subscribeToNewsletter(email)`               | Validates the email and `POST`s `{ email }` to `/api/newsletter/subscribe`. |
+| Hook        | `useNewsletter()`                            | Tracks `status` (`idle` / `loading` / `success` / `error`) and `error`.   |
+| Component   | `Newsletter`                                 | Renders the form, success message, and reset button.                      |
+
+### Embed the form
+
+The `Newsletter` component is self-contained: it owns its own email state, calls the hook, and renders the success and error UI. Drop it into any page where you want a signup section.
+
+```jsx
+import Newsletter from "./components/Newsletter";
+
+export default function HomePage() {
+  return (
+    <>
+      {/* ...other sections... */}
+      <Newsletter />
+    </>
+  );
+}
+```
+
+The form renders an email input and a submit button. While the request is in flight the button shows `Subscribing…` and is disabled. On success the form is replaced with a thank-you message and a **Subscribe another email** button that resets the hook back to `idle`. On failure, the error message returned by the helper is shown below the form.
+
+### Use the hook directly
+
+If you need a custom layout — for example, a single-line footer signup — call the hook directly and render your own markup.
+
+```jsx
+import { useState } from "react";
+import { useNewsletter } from "./hooks/useNewsletter";
+
+export function FooterSignup() {
+  const [email, setEmail] = useState("");
+  const { status, error, subscribe } = useNewsletter();
+
+  return (
+    <form onSubmit={(e) => { e.preventDefault(); subscribe(email); }}>
+      <input value={email} onChange={(e) => setEmail(e.target.value)} />
+      <button disabled={status === "loading"}>Join</button>
+      {status === "error" && <span>{error}</span>}
+      {status === "success" && <span>Thanks!</span>}
+    </form>
+  );
+}
+```
+
+`useNewsletter` returns `{ status, error, subscribe, reset }`. Call `reset()` to clear the status and error back to `idle` after showing a success message.
+
+### Call the API helper
+
+For non-React surfaces (a script, a test, a different framework), call `subscribeToNewsletter` directly. It throws a `Error` with a user-friendly message when the email is malformed or the request fails, so you can surface `err.message` to the user.
+
+```js
+import { subscribeToNewsletter } from "./utils/newsletter";
+
+try {
+  await subscribeToNewsletter("reader@example.com");
+} catch (err) {
+  console.error(err.message);
+}
+```
+
+The helper validates the address with a simple regex before sending, so you don't need to validate in the caller.
+
+## Digest preferences
+
+Once a reader has subscribed, they can tune how the digest is delivered. Each preference is backed by its own hook and its own endpoint under `/api/newsletter/digest`, so you can render only the controls you need.
+
+### Cadence picker
+
+Subscribers choose how often the digest arrives. The available options are defined in a single constant so the picker, the next-send preview, and the server stay in sync.
+
+| ID        | Label   | Cron          | Description              |
+| --------- | ------- | ------------- | ------------------------ |
+| `daily`   | Daily   | `0 9 * * *`   | Every morning at 9am.    |
+| `weekly`  | Weekly  | `0 9 * * 1`   | Monday mornings.         |
+| `monthly` | Monthly | `0 9 1 * *`   | First of the month.      |
+
+`weekly` is the default cadence for new subscribers.
+
+To add a cadence, append a new entry to the `CADENCES` array with a unique `id`, a human-readable `label`, the `cron` expression the scheduler should use, and a short `description` that the picker renders under the label.
+
+```js
+// New cadences must include all four fields.
+export const CADENCES = [
+  { id: "daily",   label: "Daily",   cron: "0 9 * * *",   description: "Every morning at 9am." },
+  { id: "weekly",  label: "Weekly",  cron: "0 9 * * 1",   description: "Monday mornings." },
+  { id: "monthly", label: "Monthly", cron: "0 9 1 * *",   description: "First of the month." },
+];
+```
+
+Render the picker with the subscriber's current value and an `onChange` handler. The picker is an accessible radio group, so screen readers announce the selected cadence.
+
+```jsx
+import CadencePicker from "./components/newsletter/CadencePicker";
+import { useDigestPreference } from "./components/newsletter/useDigestPreference";
+
+function Preferences({ email }) {
+  const { cadence, save, pending } = useDigestPreference(email);
+  return (
+    <CadencePicker
+      value={cadence}
+      onChange={(next) => !pending && save(next)}
+    />
+  );
+}
+```
+
+`useDigestPreference(email)` updates local state immediately on change and `POST`s `{ email, cadence }` to `/api/newsletter/digest`. The `pending` flag lets you disable the picker while the save is in flight.
+
+### Next-send preview
+
+Pair the picker with the `NextSendHint` component to show subscribers when their next digest will arrive. The hint reads the current cadence and prints a friendly date like *"Your next digest will arrive Monday, Jul 6."*
+
+```jsx
+import NextSendHint from "./components/newsletter/NextSendHint";
+
+<NextSendHint cadence={cadence} />
+```
+
+Behind the scenes the helper assumes a 9am send window and rolls forward from "now" to the next matching slot for the chosen cadence. The date is formatted with the visitor's locale.
+
+### Time zone selection
+
+The `TimezonePicker` lets subscribers pick the time zone the digest should be sent in. When the picker first mounts, the hook detects the visitor's zone via `Intl.DateTimeFormat().resolvedOptions().timeZone` and uses that as the default, falling back to `UTC` if detection fails.
+
+```jsx
+import TimezonePicker from "./components/newsletter/TimezonePicker";
+
+<TimezonePicker email={email} />
+```
+
+The picker exposes a curated list of common zones (`America/Los_Angeles`, `America/New_York`, `Europe/London`, `Europe/Berlin`, `Asia/Tokyo`, and `UTC`). Selecting a zone calls the `useDigestTimezone` hook, which `POST`s `{ email, timezone }` to `/api/newsletter/digest/timezone` and disables the select while the save is in flight.
+
+### Pause and resume
+
+Subscribers who want a break can pause the digest without unsubscribing. Pausing keeps their address, cadence, and time zone on file so they can resume later with one click.
+
+```jsx
+import DigestPauseToggle from "./components/newsletter/DigestPauseToggle";
+
+<DigestPauseToggle email={email} />
+```
+
+The toggle flips between **Pause digest** and **Resume digest**. Under the hood the `useDigestPause` hook tracks the paused state and `POST`s `{ email, paused }` to `/api/newsletter/digest/pause`. The button is disabled while the request is pending so a subscriber can't double-toggle.
+
+## Building a preferences page
+
+Compose the controls together to give subscribers a single screen for managing their digest.
+
+```jsx
+import CadencePicker from "./components/newsletter/CadencePicker";
+import NextSendHint from "./components/newsletter/NextSendHint";
+import TimezonePicker from "./components/newsletter/TimezonePicker";
+import DigestPauseToggle from "./components/newsletter/DigestPauseToggle";
+import { useDigestPreference } from "./components/newsletter/useDigestPreference";
+
+export function DigestPreferences({ email }) {
+  const { cadence, save, pending } = useDigestPreference(email);
+
+  return (
+    <section>
+      <h2>Digest preferences</h2>
+      <CadencePicker value={cadence} onChange={(next) => !pending && save(next)} />
+      <NextSendHint cadence={cadence} />
+      <TimezonePicker email={email} />
+      <DigestPauseToggle email={email} />
+    </section>
+  );
+}
+```
+
+Each control owns its own request lifecycle, so a slow time-zone save won't block the cadence picker, and pausing the digest leaves the cadence and time-zone preferences intact for when the subscriber resumes.
