@@ -49,9 +49,13 @@ export default projects;
 Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
+## Search and filtering
+
+The `/projects` page includes a search box above the grid. It filters the visible cards by matching the trimmed, lowercased query against each project's `name`, `tagline`, and `description`, and combines with the tech filter (both must pass). When no projects match the current search and filter, the grid is replaced by a `No projects match your search.` empty state.
+
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+Write `name`, `tagline`, and `description` with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
