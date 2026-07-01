@@ -1,0 +1,99 @@
+---
+title: "Keyboard shortcuts help overlay"
+description: "How the personal website's shortcuts help dialog works, what the default bindings do, and how to add new entries so they appear automatically."
+---
+
+## Overview
+
+The personal website ships a site-wide keyboard shortcuts help overlay so visitors can discover every keybinding without leaving the page. Pressing `?` anywhere on the site toggles a dialog that lists each shortcut with a short description.
+
+The overlay is built from three small pieces:
+
+- **`ShortcutsHelp`** — the dialog component. Renders nothing until it's opened, then paints a modal listing every registered shortcut.
+- **`useShortcutsHelp`** — the hook that owns the open/closed state and wires up the global `keydown` listener.
+- **`shortcuts`** — a plain array in `src/constants/shortcuts.js`. Anything added here shows up in the overlay on the next render.
+
+## When to use it
+
+Mount `ShortcutsHelp` once at the top of the app (for example, alongside the layout root) so it's available on every page. You don't render it per-route — the component handles its own visibility.
+
+```jsx
+import ShortcutsHelp from "./components/ShortcutsHelp";
+
+export default function App() {
+  return (
+    <>
+      {/* …routes and layout… */}
+      <ShortcutsHelp />
+    </>
+  );
+}
+```
+
+Once mounted:
+
+- Press `?` to toggle the dialog open or closed.
+- Press `Esc` or click the backdrop to close it.
+
+## Default bindings
+
+The overlay ships with these entries out of the box:
+
+| Keys       | Description                          |
+| ---------- | ------------------------------------ |
+| `⌘` `K`    | Open the command palette             |
+| `?`        | Show this keyboard shortcuts help    |
+| `g` `h`    | Go to Home                           |
+| `g` `b`    | Go to Blog                           |
+| `t`        | Scroll to top                        |
+| `c`        | Copy current URL                     |
+| `Esc`      | Close any open overlay               |
+
+The overlay itself only owns the `?` and `Esc` bindings — the rest are documented here so visitors know what's available, but the behavior for each key is wired up elsewhere in the app.
+
+## How the hook handles typing
+
+`useShortcutsHelp` attaches a single `keydown` listener to `window`. To avoid hijacking `?` while someone is filling out a form or writing in a text area, the hook inspects `event.target` before reacting:
+
+- If the target's tag name is `INPUT` or `TEXTAREA`, the `?` press is ignored.
+- The `Escape` key always closes the overlay, even from inside an input, so users can bail out of a typo mid-form.
+
+That means you don't need to add `stopPropagation` calls in your own inputs — the overlay stays out of the way as long as focus is on a form field.
+
+## Adding a new shortcut to the overlay
+
+Any entry you push into `shortcuts` shows up in the dialog automatically — there's no separate registration step and no need to touch the component.
+
+1. Open `src/constants/shortcuts.js`.
+2. Add an object with a `keys` array and a `description` string.
+3. Wire up the actual behavior wherever it belongs (a route-level `keydown` handler, a global listener, etc.).
+
+```js
+// src/constants/shortcuts.js
+export const shortcuts = [
+  { keys: ["⌘", "K"], description: "Open the command palette" },
+  { keys: ["?"], description: "Show this keyboard shortcuts help" },
+  { keys: ["g", "h"], description: "Go to Home" },
+  { keys: ["g", "b"], description: "Go to Blog" },
+  { keys: ["t"], description: "Scroll to top" },
+  { keys: ["c"], description: "Copy current URL" },
+  { keys: ["esc"], description: "Close any open overlay" },
+  // New entry — appears in the overlay on the next render.
+  { keys: ["/"], description: "Focus the search bar" },
+];
+```
+
+Guidelines for new entries:
+
+- Put each key press in its own array element (`["g", "h"]`, not `["g h"]`) — the overlay renders one `<kbd>` per element.
+- Use the same casing you want visitors to see. Symbol keys (`⌘`, `?`, `/`) render as-is.
+- Keep the description short and start with a verb — it lines up next to a keys column, so short reads best.
+- `description` doubles as the React list key, so make sure each row has a unique description.
+
+## Styling
+
+`ShortcutsHelp` imports `shortcutsHelp.css`, which draws a full-viewport backdrop and centers the dialog panel. The classes you can target from your own stylesheet are:
+
+- `.shortcuts-overlay` — the full-screen backdrop. Click here to dismiss.
+- `.shortcuts-panel` — the centered dialog. Marked with `role="dialog"` and `aria-label="Keyboard shortcuts"` for screen readers.
+- `.shortcuts-keys` — the row of `<kbd>` elements for a single shortcut.
