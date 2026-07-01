@@ -1,0 +1,118 @@
+---
+title: "Post view counter, total site views, and post meta byline"
+description: "How the personal website tracks per-post views, total site reads, and renders the date, reading time, and view count byline on each post."
+---
+
+## Overview
+
+The personal website ships a small suite of components and hooks for tracking and displaying how many times posts have been read:
+
+- **`ViewCounter`** — renders the read count for a single post, backed by the `useViewCount` hook.
+- **`SiteViews`** — renders the aggregate read count across every post, backed by the `useTotalViews` hook.
+- **`PostMeta`** — the combined byline shown under a post title (date, estimated reading time, view count).
+
+All three talk to a shared views service at `https://api.paaatrrrick.com/views`. The service returns `null`-safe data, so each component renders nothing while the network call is in flight or if the request fails.
+
+## When to use each piece
+
+| Component / hook         | Use when…                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------- |
+| `ViewCounter` / `useViewCount` | You want a single post's read count, and you want the visit to be recorded.    |
+| `SiteViews` / `useTotalViews`  | You want the total-reads number across the whole site (e.g. footer, about page). |
+| `PostMeta`               | You're rendering a post template and want the standard date · reading time · views byline. |
+
+## Adding the byline to a post template
+
+`PostMeta` is the recommended way to surface view counts on a post. It bundles the date, the reading time, and the view counter into a single line, so individual templates don't need to wire each piece up themselves.
+
+```jsx
+import PostMeta from "../components/PostMeta";
+
+export default function PostTemplate({ post }) {
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <PostMeta post={post} />
+      {/* …post body… */}
+    </article>
+  );
+}
+```
+
+`PostMeta` expects the post object to provide:
+
+| Field   | Type              | Notes                                                                 |
+| ------- | ----------------- | --------------------------------------------------------------------- |
+| `id`    | string            | Used as the view-counter key. Required for view tracking.             |
+| `date`  | string (optional) | Rendered as-is when present. Omit to hide the date segment.           |
+| `body`  | string[] (optional) | Joined together and passed to the reading-time estimator.            |
+
+Each segment hides itself if its data is missing or the network call hasn't resolved yet, so the byline degrades gracefully on posts without a date or before the view count loads.
+
+## Showing just the view count
+
+If you only need the count (for example, on a post listing card), use `ViewCounter` directly:
+
+```jsx
+import ViewCounter from "../components/ViewCounter";
+
+<ViewCounter postId={post.id} />
+```
+
+It renders a `<span class="view-counter">` with the count formatted via `toLocaleString()` (so `1234` displays as `1,234 views`). While the request is pending, it returns `null` and renders nothing.
+
+### Reading without recording a view
+
+By default, mounting `ViewCounter` records a view. If you want to read the count without incrementing it — for example, on an admin dashboard or a listing page — call `useViewCount` directly with `increment: false`:
+
+```jsx
+import { useViewCount } from "../hooks/useViewCount";
+
+function PostCard({ post }) {
+  const count = useViewCount(post.id, { increment: false });
+  return <li>{post.title} — {count?.toLocaleString() ?? "—"} views</li>;
+}
+```
+
+## Showing total site views
+
+`SiteViews` renders a one-line summary of the total reads across every post. Drop it anywhere you want the aggregate number — a footer, an about page, a home-page stat strip:
+
+```jsx
+import SiteViews from "../components/SiteViews";
+
+<SiteViews />
+```
+
+It renders a `<p class="site-views">` with text like `12,480 total reads across all posts.`, or nothing while the request is in flight.
+
+## API endpoints the hooks expect
+
+The hooks call a shared views service. If you swap the backend, it needs to expose the same shape on the same paths.
+
+| Method | Endpoint                  | Used by         | Behavior                                                                                   |
+| ------ | ------------------------- | --------------- | ------------------------------------------------------------------------------------------ |
+| `POST` | `/views/:postId`          | `useViewCount` (default) | Records a view for `postId` and returns the new count.                              |
+| `GET`  | `/views/:postId`          | `useViewCount` with `{ increment: false }` | Returns the current count for `postId` without incrementing.        |
+| `GET`  | `/views/total`            | `useTotalViews` | Returns the aggregate read count across every post.                                        |
+
+Response bodies use these shapes:
+
+```json
+// /views/:postId
+{ "count": 1234 }
+
+// /views/total
+{ "total": 12480 }
+```
+
+Both hooks treat non-`200` responses and non-numeric payloads as missing data — they keep state at `null` so the components render nothing rather than show a broken number. The base URL is configured in the hooks as `https://api.paaatrrrick.com/views`.
+
+## Styling
+
+`PostMeta` ships with `postMeta.css`, which lays the segments out as a flex row with thin dot separators between them. The individual classes you can target are:
+
+- `.post-meta` — the wrapping row.
+- `.post-meta-date` — the date segment.
+- `.view-counter` — the view-count span (also rendered by `ViewCounter` on its own).
+- `.site-views` — the total-views paragraph rendered by `SiteViews`.
