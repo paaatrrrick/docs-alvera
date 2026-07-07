@@ -1,6 +1,6 @@
 ---
 title: "Projects page: structure and updates"
-description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema and a code example."
+description: "How the /projects showcase page is configured from the projects array, covering the entry schema, search and tech filter, and writing tips."
 ---
 
 ## Overview
@@ -56,7 +56,7 @@ The `/projects` page has two controls that stack on top of the grid:
 - **Search box:** Case-insensitive substring match against `name`, `tagline`, and `description`. Leading and trailing whitespace is trimmed. `tech` tags are not matched by the search box — use the filter for those.
 - **Tech filter:** A row of buttons, one per unique value found across every project's `tech` array plus an `All` option. The set is sorted alphabetically and computed from `projects`, so adding a new stack tag automatically adds a new filter button.
 
-The two controls are combined with AND: a project must both pass the active tech filter and match the search query to appear. When nothing matches, the grid is replaced with the message "No projects match your search."
+The two controls combine with AND: a project must both pass the active tech filter and match the search query to appear. When nothing matches, the page shows the message "No projects match your search." in place of the grid.
 
 ## Writing guidance
 
