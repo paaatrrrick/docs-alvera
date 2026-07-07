@@ -5,13 +5,13 @@ description: "How the personal website tracks per-post views, total site reads, 
 
 ## Overview
 
-The personal website counts how often each post is read and surfaces that number in two places: next to a post's byline and as a running total across the whole site. Three building blocks handle this:
+The personal website counts how often readers open each post and surfaces that number in two places: next to a post's byline and as a running total across the whole site. Three building blocks handle this:
 
 - **`ViewCounter`** (powered by `useViewCount`) — the per-post read count.
 - **`SiteViews`** (powered by `useTotalViews`) — the aggregate read count across every post.
 - **`PostMeta`** — the byline under a post title, combining the publish date, estimated reading time, and view count.
 
-Each component fetches from a shared views service at `https://api.paaatrrrick.com/views` and renders nothing while the request is in flight or if it fails, so a slow or unavailable API never blocks the page.
+Each component fetches from a shared views service at `https://api.paaatrrrick.com/views`. While the request is in flight or if it fails, the component renders nothing, so a slow or unavailable API never blocks the page.
 
 ## When to use each piece
 
