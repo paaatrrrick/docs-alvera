@@ -60,6 +60,15 @@ La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline
 - **Statut :** utilisez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous arrêtez de publier des mises à jour pour que les visiteurs sachent que le projet est figé — le badge devient gris au lieu de vert.
 - **Lien :** préférez l'URL du dépôt pour les projets open source, ou le site en ligne pour les projets hébergés.
 
+## Filtrage et recherche
+
+La page `/projects` propose deux contrôles qui fonctionnent ensemble :
+
+- **Barre de recherche :** Un champ de texte placé au-dessus de la rangée de filtres qui compare la requête aux champs `name`, `tagline` et `description` de chaque projet (correspondance de sous-chaîne insensible à la casse). Laissez-la vide pour afficher tous les projets.
+- **Filtre technique :** Des boutons générés à partir de l'union du tableau `tech` de chaque entrée, plus un bouton **All**. En sélectionnant une étiquette, la grille se limite aux projets dont le `tech` inclut cette étiquette.
+
+Les deux contrôles se combinent — par exemple, filtrer par `Rust` et taper `notes` n'affiche que les projets Rust dont le nom, le slogan ou la description mentionne "notes". Lorsqu'aucun projet ne correspond, la grille est remplacée par l'état vide `No projects match your search.`.
+
 ## Navigation
 
 La page est branchée dans `src/App.js` ainsi :
