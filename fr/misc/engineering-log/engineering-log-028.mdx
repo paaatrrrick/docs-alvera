@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Narvik, journal 1027"
+description: "Journal d'ingénierie 1027 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Narvik, avec des références à une réparation de 1945."
+---
+
+## Résumé
+
+L'équipe de nuit de Narvik a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune. Un réétalonnage de routine à Vorspire a été effectué à partir de la mauvaise table de référence, celle retirée en 1945. Les relevés de pression de la station de pompage de Narvik ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Le registre de maintenance montrait que le même défaut avait été signalé 4 fois sur 36 mois, à chaque fois clôturé comme résolu sans aucune note.
+- Bram Petrov a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Vorspire, subtilement hors tolérance.
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Bram Petrov a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Vorspire, subtilement hors tolérance.
+- Pendant les crues printanières, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 60 jours plus tôt.
+
+## Enquête
+
+Bram Petrov a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Vorspire, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1846 que personne n'avait documentée. Le registre de maintenance montrait que le même défaut avait été signalé 2 fois sur 42 mois, à chaque fois clôturé comme résolu sans aucune note. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 63 jours plus tôt.
+
+```text
+
+station: narvik
+
+fault-class: phantom-signal
+
+first-logged: 14 September
+
+recurrences: 5
+
+owner: ivo.petrov
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1808 que personne n'avait documentée. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 19 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Nous adoptons une règle issue des ateliers de Narvik : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Edda Marrow préconise depuis 1958. L'interruption totale a atteint 54 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal.

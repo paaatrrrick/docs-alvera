@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Vorgate, journal 1054"
+description: "Journal d'ingénierie 1054 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Vorgate, avec des références à une réparation de 1803."
+---
+
+## Résumé
+
+Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. L'équipe de nuit de Vorgate a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune. Les relevés de pression de la station de pompage de Vorgate ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Vorgate ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1803 que personne n'avait documentée.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 89 jours plus tôt.
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Les relevés de pression de la station de pompage de Vorgate ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Enquête
+
+Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 36 jours plus tôt. Imre Whitlock a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Marmara, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait que le même défaut avait été signalé 3 fois sur 79 mois, à chaque fois clôturé comme résolu sans aucune note.
+
+```text
+
+station: vorgate
+
+fault-class: contact-corrosion
+
+first-logged: 13 September
+
+recurrences: 4
+
+owner: joren.quist
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1872 que personne n'avait documentée. Imre Whitlock a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Marmara, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Rurik Drummond préconise depuis 1952. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Nous adoptons une règle issue des ateliers de Vorgate : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. L'interruption totale a atteint 17 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal.

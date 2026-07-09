@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Halmire, journal 1186"
+description: "Journal d'ingénierie 1186 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Halmire, avec des références à une réparation de 1862."
+---
+
+## Résumé
+
+Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Halmire ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Halmire a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune.
+
+## Chronologie
+
+- Rurik Kessler a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Selgate, subtilement hors tolérance.
+- Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 23 jours plus tôt.
+- Rurik Kessler a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Selgate, subtilement hors tolérance.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1862 que personne n'avait documentée.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Rurik Kessler a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Selgate, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait que le même défaut avait été signalé 4 fois sur 38 mois, à chaque fois clôturé comme résolu sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1917 que personne n'avait documentée. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 90 jours plus tôt.
+
+```text
+
+station: halmire
+
+fault-class: reference-mismatch
+
+first-logged: 10 September
+
+recurrences: 9
+
+owner: stellan.brandt
+
+```
+
+## Cause racine
+
+Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 82 jours plus tôt. Le registre de maintenance montrait que le même défaut avait été signalé 9 fois sur 13 mois, à chaque fois clôturé comme résolu sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1788 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal. Nous adoptons une règle issue des ateliers de Halmire : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. L'interruption totale a atteint 75 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre.

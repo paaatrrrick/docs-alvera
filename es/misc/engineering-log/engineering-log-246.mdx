@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Morshore, registro 1245"
+description: "Registro de ingeniería 1245: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relé de Morshore, con referencias a una reparación de 1797."
+---
+
+## Resumen
+
+Alrededor de las 7:40 de la mañana, la torre de relé de Morshore dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído. Las lecturas de presión de la estación de bombeo de Morshore se desviaron hacia arriba durante 6 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El turno de noche en Morshore registró 6 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- La inspección reveló que la caja de conexiones había sido resellada con roble curado en sal, una improvisación que se remontaba a una reparación de 1797 que nadie había documentado.
+- La inspección reveló que la caja de conexiones había sido resellada con hierro de pantano, una improvisación que se remontaba a una reparación de 1958 que nadie había documentado.
+- El turno de noche en Morshore registró 7 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Se realizó una recalibración rutinaria en Erihollow usando la tabla de referencia equivocada, la que fue retirada en 1864.
+- La inspección reveló que la caja de conexiones había sido resellada con caña trenzada, una improvisación que se remontaba a una reparación de 1840 que nadie había documentado.
+
+## Investigación
+
+El registro de mantenimiento mostraba que el mismo fallo se había reportado 8 veces a lo largo de 18 meses, cerrado cada vez como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 49 días antes. La inspección reveló que la caja de conexiones había sido resellada con roble curado en sal, una improvisación que se remontaba a una reparación de 1902 que nadie había documentado.
+
+```text
+
+station: morshore
+
+fault-class: reference-mismatch
+
+first-logged: 3 June
+
+recurrences: 4
+
+owner: halvard.petrov
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de conexiones había sido resellada con vidrio de río, una improvisación que se remontaba a una reparación de 1896 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 39 días antes. El registro de mantenimiento mostraba que el mismo fallo se había reportado 2 veces a lo largo de 43 meses, cerrado cada vez como resuelto sin notas.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas con su origen y tolerancia, una práctica que Casper Petrov ha defendido desde 1814. El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como si fueran el clima, no como una señal. Las tablas de referencia se han consolidado; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los patios de Morshore: cualquier fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo de inactividad total ascendió a 90 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro.

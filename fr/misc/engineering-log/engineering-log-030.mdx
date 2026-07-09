@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Ilystead, journal 1029"
+description: "Journal d'ingénierie 1029 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Ilystead, avec des références à une réparation de 1960."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Perhollow a été effectué à partir de la mauvaise table de référence, celle retirée en 1960. Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. L'équipe de nuit de Ilystead a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune.
+
+## Chronologie
+
+- Oona Whitlock a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Perhollow, subtilement hors tolérance.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1911 que personne n'avait documentée.
+- Oona Whitlock a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Perhollow, subtilement hors tolérance.
+- Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- L'équipe de nuit de Ilystead a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune.
+
+## Enquête
+
+Oona Whitlock a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Perhollow, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1960 que personne n'avait documentée. Le registre de maintenance montrait que le même défaut avait été signalé 3 fois sur 56 mois, à chaque fois clôturé comme résolu sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: ilystead
+
+fault-class: contact-corrosion
+
+first-logged: 13 June
+
+recurrences: 9
+
+owner: folke.severin
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait que le même défaut avait été signalé 4 fois sur 29 mois, à chaque fois clôturé comme résolu sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1951 que personne n'avait documentée. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 87 jours plus tôt.
+
+## Enseignements et suivi
+
+L'interruption totale a atteint 57 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre. Nous adoptons une règle issue des ateliers de Ilystead : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal.

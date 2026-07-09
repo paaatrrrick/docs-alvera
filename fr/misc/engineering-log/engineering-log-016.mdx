@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Dorhollow, journal 1015"
+description: "Journal d'ingénierie 1015 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Dorhollow, avec des références à une réparation de 1963."
+---
+
+## Résumé
+
+L'équipe de nuit de Dorhollow a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune. Vers 5 h 40 du matin, la tour de relais de Dorhollow a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de la corrosion de contact habituelle. Les relevés de pression de la station de pompage de Dorhollow ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Dorhollow ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Vers 5 h 40 du matin, la tour de relais de Dorhollow a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de la corrosion de contact habituelle.
+- L'équipe de nuit de Dorhollow a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune.
+- Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Pendant une gelée précoce, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Les relevés de pression de la station de pompage de Dorhollow ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Enquête
+
+Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 33 jours plus tôt. Le registre de maintenance montrait que le même défaut avait été signalé 9 fois sur 73 mois, à chaque fois clôturé comme résolu sans aucune note. Emeric Holloway a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Galfell, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1963 que personne n'avait documentée.
+
+```text
+
+station: dorhollow
+
+fault-class: sensor-drift
+
+first-logged: 19 June
+
+recurrences: 3
+
+owner: vesna.falkner
+
+```
+
+## Cause racine
+
+Emeric Holloway a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Galfell, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1804 que personne n'avait documentée. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 33 jours plus tôt.
+
+## Enseignements et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal. L'interruption totale a atteint 24 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Lazlo Petrov préconise depuis 1804. Nous adoptons une règle issue des ateliers de Dorhollow : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées.

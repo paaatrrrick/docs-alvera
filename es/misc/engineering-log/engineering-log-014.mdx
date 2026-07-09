@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Zelwick, registro 1013"
+description: "Registro de ingeniería 1013: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relé de Zelwick, con referencias a una reparación de 1886."
+---
+
+## Resumen
+
+Se realizó una recalibración rutinaria en Halstead usando la tabla de referencia equivocada, la que fue retirada en 1886. Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. El turno de noche en Zelwick registró 8 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 65 días antes.
+- Durante los secos vientos del este, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Yutta Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Halstead dada de baja, sutilmente fuera de tolerancia.
+- El turno de noche en Zelwick registró 3 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Investigación
+
+Yutta Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Halstead dada de baja, sutilmente fuera de tolerancia. La inspección reveló que la caja de conexiones había sido resellada con vidrio de río, una improvisación que se remontaba a una reparación de 1869 que nadie había documentado. El registro de mantenimiento mostraba que el mismo fallo se había reportado 4 veces a lo largo de 69 meses, cerrado cada vez como resuelto sin notas. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 18 días antes.
+
+```text
+
+station: zelwick
+
+fault-class: phantom-signal
+
+first-logged: 7 November
+
+recurrences: 6
+
+owner: mireille.mollering
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 52 días antes. La inspección reveló que la caja de conexiones había sido resellada con vidrio de río, una improvisación que se remontaba a una reparación de 1935 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas con su origen y tolerancia, una práctica que Sanna Drummond ha defendido desde 1800. Estamos adoptando una regla de los patios de Zelwick: cualquier fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo de inactividad total ascendió a 16 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. Las tablas de referencia se han consolidado; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.
