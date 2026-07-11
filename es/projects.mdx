@@ -60,6 +60,10 @@ La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `
 - **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
 - **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
 
+## Cambios recientes
+
+- **Insignias de estado (PR #150):** cada tarjeta de proyecto ahora muestra una insignia `Active` o `Archived` junto al nombre del proyecto, basada en el campo `status` de cada entrada en `src/constants/projects.js`. Los proyectos activos muestran una insignia verde; los archivados, una insignia gris.
+
 ## Navegación
 
 La página se registra en `src/App.js` como:
