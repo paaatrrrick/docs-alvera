@@ -18,3 +18,58 @@ Don’t embed heavy widget on every page if you don’t needs to. Each embed add
 Uses [the performance panel](#performance-panl) to sees what is slow. It show you’re load time over time so you can catch a regression early.
 
 For the full methodology, read [our performance playbook](https://example-broken.dev/perf-playbook).
+
+## What is our page size?
+
+The following notes are imported from an internal research doc to give context on typical documentation page sizes across a large sample of sites.
+
+If a customer asks us "What is our page size?", we don't always have a good answer. Furthermore, we can't improve what we don't measure. This section sets out to answer that question.
+
+### Why measuring page size is tricky
+
+- Customers have incredibly different page sizes.
+- Local, staging, prod, and incognito prod will all give different sizes.
+- The tool you use to measure page size will give different results.
+- Which metric you use to define page size matters.
+
+### Experiment
+
+Since the most common way to measure page size is by looking at the browser Network tab, we assume that's how most customers interpret their page size — so that's what we measured (specifically the transferred amount).
+
+We took 170 different customer URLs (31 Enterprise and 139 Pro plan) and used a third-party page-size measurement tool to measure their size.
+
+### Results
+
+|                  | All   | Pro   | Enterprise |
+| ---------------- | ----- | ----- | ---------- |
+| Count            | 170   | 139   | 31         |
+| Mean (MB)        | 2.21  | 2.15  | 2.52       |
+| 10th percentile  | 1.34  | 1.33  | 1.38       |
+| 25th percentile  | 1.38  | 1.37  | 1.53       |
+| 50th percentile  | 1.56  | 1.52  | 1.68       |
+| 75th percentile  | 2.26  | 2.16  | 2.78       |
+| 90th percentile  | 3.69  | 3.61  | 3.67       |
+| 97th percentile  | 8.79  | 8.56  | 7.43       |
+
+Notes on methodology:
+
+- The measurement tool was chosen because its numbers were nearly identical to what you'd find in an incognito Network tab. Local headless browsers underreported page size.
+- Pages were randomly sampled and filtered to exclude preview subdomains and unused pages.
+- Hobby plans were excluded because of the high density of pages that aren't really being used.
+
+### Takeaways
+
+Most customers have a page size just below 2 MB, but it varies a lot. About 70% of pages are under 2 MB — after that, page size climbs quickly.
+
+When cutting page size, target two things:
+
+- Getting the typical ~2 MB page smaller.
+- Shrinking the largest 30% of pages, where the biggest wins live.
+
+A lot of the largest pages belong to some of the most popular customers, so improvements here directly affect flagship sites.
+
+### Next steps
+
+- Investigate how to cut down both typical and top-15% page sizes.
+- Define clear goals for these numbers.
+- Consider a routinely-run job that measures every page each week.
