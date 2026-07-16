@@ -1,0 +1,65 @@
+---
+title: "Measuring page size"
+description: "Notes on how we measure documentation page size, imported from a Notion research doc."
+---
+
+<Note>
+  This page mirrors internal research notes from Notion. It's included here to test the Notion integration.
+</Note>
+
+## Why measuring page size is tricky
+
+If a customer asks "what is our page size?", we don't have a good answer. We can't improve what we don't measure. This doc sets out to answer that question.
+
+- Customers have wildly different page sizes.
+- Local, staging, prod, and incognito prod all give different sizes.
+- The tool you use to measure page size changes the result.
+- The metric you use to define page size matters.
+
+## Experiment
+
+The most common way to measure page size is by looking at the Network tab, so that's what most customers will interpret their page size as. We should measure that (specifically the transferred amount).
+
+170 different customer URLs (31 Enterprise and 139 Pro plan) were measured using [experte.com](https://www.experte.com/).
+
+### Results
+
+| Metric          | All    | Pro    | Enterprise |
+| --------------- | ------ | ------ | ---------- |
+| Count           | 170.00 | 139.00 | 31.00      |
+| Mean (MB)       | 2.21   | 2.15   | 2.52       |
+| 10th percentile | 1.34   | 1.33   | 1.38       |
+| 25th percentile | 1.38   | 1.37   | 1.53       |
+| 50th percentile | 1.56   | 1.52   | 1.68       |
+| 75th percentile | 2.26   | 2.16   | 2.78       |
+| 90th percentile | 3.69   | 3.61   | 3.67       |
+| 97th percentile | 8.79   | 8.56   | 7.43       |
+
+**Misc details:**
+
+- experte was used because the numbers were nearly identical to an incognito Network tab. Other tools (e.g. local headless browsers) underreported page size.
+- Pages were randomly pulled from Mongo, then their URLs found. Preview subdomains and similar were filtered out.
+- Hobby plans were excluded because of the high density of unused pages.
+
+## Takeaways
+
+**Most customers have a page size just below 2 MB.** But it varies a lot.
+
+About 70% of pages are under 2 MB — not horrific, but not great. After that, page size skyrockets.
+
+When it comes to dropping page size, we should target two things:
+
+- **A:** Getting the 2 MB baseline down.
+- **B:** Shrinking the largest 30% of pages.
+
+We've done a lot of A (removing shiki, crypto-js), but need more of B.
+
+## Popular customers have large page sizes
+
+A lot of the pages over 2.5 MB belong to our most popular customers — Anthropic, Lovable, Auth0, Coinbase, Pinecone, and even Mintlify. When pages get that large, higher churn would not be surprising.
+
+## Next steps
+
+- How do we cut down most pages' size and the top 15%?
+- Define clear goals for these numbers.
+- Consider a scheduled job that measures every page weekly.
