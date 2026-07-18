@@ -23,7 +23,7 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `tagline`     | string   | One-line summary shown directly under the name.                                              |
 | `description` | string   | Longer paragraph that explains what the project does and who it's for.                       |
 | `tech`        | string[] | Stack tags rendered as a horizontal list (for example, `['React', 'Rust', 'SQLite']`).       |
-| `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
+| `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header — green for active, gray for archived. The badge label is uppercased by the card's CSS, so write the field value in title case. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
 
 ## Adding a project
