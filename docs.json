@@ -85,6 +85,13 @@
                   "ai-tools/claude-code",
                   "ai-tools/windsurf"
                 ]
+              },
+              {
+                "group": "Summaries",
+                "pages": [
+                  "summaries/assistant-widget-summary",
+                  "summaries/game-of-thrones-summary"
+                ]
               }
             ]
           },

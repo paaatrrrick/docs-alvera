@@ -1,0 +1,36 @@
+---
+title: Assistant Widget project summary
+description: "A summary of recent Linear issues in the Assistant Widget project, covering embeddable initialization, host branding, theming, and framework-neutral loading."
+---
+
+## Overview
+
+The [Assistant Widget](https://linear.app/mintlify/project/9223b5f7-6f1e-4e4e-a009-26c1c3a8fd5d) project tracks work on Mintlify's embeddable docs assistant. Recent issues focus on making the widget easier to drop into any host site by removing hard-coded branding, decoupling initialization from global settings, and making theming and script loading framework-agnostic.
+
+## Recent issues
+
+### Initialization and script loading
+
+- **[ENG-10291](https://linear.app/mintlify/issue/ENG-10291/allow-explicit-assistant-widget-initialization-without-global-settings) — Allow explicit Assistant Widget initialization without global settings** (Done). Lets hosts initialize the widget without relying on Mintlify's global settings object.
+- **[ENG-10294](https://linear.app/mintlify/issue/ENG-10294/make-assistant-widget-script-loading-framework-neutral) — Make Assistant Widget script loading framework-neutral** (In Review). Removes framework-specific assumptions from the loader so the widget can be embedded from any stack.
+
+### Host-configurable branding and content
+
+- **[ENG-10306](https://linear.app/mintlify/issue/ENG-10306/support-code-configured-assistant-widget-branding-and-labels) — Support code-configured Assistant Widget branding and labels** (Todo). Replaces hard-coded Mintlify presentation copy and assets in the floating trigger, panel header, composer, empty state, response announcements, and accessible names so hosts can supply their own branding.
+- **[ENG-10307](https://linear.app/mintlify/issue/ENG-10307/add-a-code-configured-support-email-below-the-assistant-widget) — Add a code-configured support email below the Assistant Widget composer** (Todo). Adds a "Contact support" mailto link below the composer, driven by `assistantConfig.deflection.email`.
+- **[ENG-10296](https://linear.app/mintlify/issue/ENG-10296/polish-assistant-widget-content-container) — Polish Assistant Widget Content + Container** (Todo). Visual polish for the widget's content and container surfaces.
+
+### Theming
+
+- **[ENG-10293](https://linear.app/mintlify/issue/ENG-10293/make-the-assistant-widget-initial-theme-configurable-without-host-sync) — Make the Assistant Widget initial theme configurable without host sync code** (In Review). Removes the need for hosts to write theme-sync code by letting them set the initial theme through configuration.
+
+### Prompt and guidance
+
+- **[ENG-10295](https://linear.app/mintlify/issue/ENG-10295/tune-mintlifys-default-assistant-widget-prompt-with-regression) — Tune Mintlify's default Assistant Widget prompt with regression evaluation** (Canceled).
+- **[ENG-10292](https://linear.app/mintlify/issue/ENG-10292/verify-customer-custom-guidance-in-assistant-widget-requests) — Verify customer custom guidance in Assistant Widget requests** (Canceled).
+
+## Themes
+
+Taken together, the in-flight work moves the Assistant Widget from a Mintlify-branded, globally-configured drop-in toward a **fully embeddable, host-configurable component**: explicit initialization, framework-neutral loading, configurable branding and labels, host-set initial theme, and a first-class support-email escape hatch.
+
+For the full list, see the [Assistant Widget project in Linear](https://linear.app/mintlify/project/9223b5f7-6f1e-4e4e-a009-26c1c3a8fd5d).
