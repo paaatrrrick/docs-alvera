@@ -1,6 +1,6 @@
 ---
 title: "Page projets : structure et mises à jour"
-description: "Comment la page dédiée /projects est configurée à partir du tableau projects, avec le schéma d'entrée et un exemple de code."
+description: "Comment la page /projects est configurée depuis le tableau projects : schéma d'entrée, filtres de recherche et de techno, et un exemple."
 ---
 
 ## Vue d'ensemble
@@ -8,6 +8,15 @@ description: "Comment la page dédiée /projects est configurée à partir du ta
 Le site personnel dispose désormais d'une page dédiée `/projects` qui présente les projets personnels dans une grille responsive. Chaque carte affiche le nom du projet, une accroche d'une ligne, une description plus longue, la stack technique sous forme de tags et un lien vers le dépôt ou le site en ligne.
 
 Les entrées proviennent du tableau `projects` dans `src/constants/projects.js` et sont rendues par le composant `Projects` à la route `/projects`. La page coexiste avec la page d'accueil pour que les visiteurs puissent parcourir le catalogue complet de projets sans faire défiler la landing page.
+
+## Trouver des projets
+
+La page fournit deux contrôles que les visiteurs peuvent combiner :
+
+- **Champ de recherche :** un champ texte au-dessus de la grille filtre les cartes visibles en comparant la requête (insensible à la casse) au `name`, au `tagline` et à la `description` de chaque projet.
+- **Filtre par technologie :** la rangée de boutons sous le champ de recherche restreint la grille à un seul tag technique. Le bouton `All` (par défaut) affiche tous les projets.
+
+Les deux contrôles s'appliquent ensemble — par exemple, taper `notes` avec le tag `Rust` sélectionné n'affiche que les projets Rust dont le nom, l'accroche ou la description mentionne « notes ». Lorsqu'aucun projet ne correspond, la grille est remplacée par un état vide qui affiche `No projects match your search.`
 
 ## Quand utiliser cette page
 
@@ -51,7 +60,7 @@ Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins 
 
 ## Conseils de rédaction
 
-La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
+Comme le champ de recherche filtre sur `name`, `tagline` et `description` (voir [Trouver des projets](#trouver-des-projets)), rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
 
 - **Nom :** utilisez le nom canonique du projet. Évitez les préfixes emoji ; le design de la carte repose sur une hiérarchie typographique nette.
 - **Accroche :** commencez par la catégorie ou la mécanique principale (« Gestionnaire de favoris auto-hébergé », pas « Un projet que j'ai fait »).
