@@ -2546,6 +2546,12 @@
                 ]
               },
               {
+                "group": "Changelog",
+                "pages": [
+                  "es/changelog/2026-07-20"
+                ]
+              },
+              {
                 "group": "Diversi\u00f3n",
                 "pages": [
                   "es/star-wars",
@@ -5043,6 +5049,12 @@
                   "fr/projects",
                   "fr/game-of-thrones",
                   "fr/latest-email"
+                ]
+              },
+              {
+                "group": "Changelog",
+                "pages": [
+                  "fr/changelog/2026-07-20"
                 ]
               },
               {
