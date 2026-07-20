@@ -2592,6 +2592,13 @@
                   "es/ai-tools/claude-code",
                   "es/ai-tools/windsurf"
                 ]
+              },
+              {
+                "group": "Resúmenes",
+                "pages": [
+                  "es/summaries/assistant-widget-summary",
+                  "es/summaries/game-of-thrones-summary"
+                ]
               }
             ]
           },
@@ -5091,6 +5098,13 @@
                   "fr/ai-tools/cursor",
                   "fr/ai-tools/claude-code",
                   "fr/ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Résumés",
+                "pages": [
+                  "fr/summaries/assistant-widget-summary",
+                  "fr/summaries/game-of-thrones-summary"
                 ]
               }
             ]

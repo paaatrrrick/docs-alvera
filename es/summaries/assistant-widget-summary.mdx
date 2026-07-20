@@ -1,0 +1,36 @@
+---
+title: Resumen del proyecto Assistant Widget
+description: "Incidencias recientes de Linear en el proyecto Assistant Widget, sobre inicialización embebida, marca del host, temas y carga de scripts neutral."
+---
+
+## Descripción general
+
+El proyecto [Assistant Widget](https://linear.app/mintlify/project/9223b5f7-6f1e-4e4e-a009-26c1c3a8fd5d) hace seguimiento del trabajo sobre el asistente de documentación embebible de Mintlify. Las incidencias recientes se centran en facilitar la integración del widget en cualquier sitio host. Los temas clave incluyen eliminar la marca codificada, desacoplar la inicialización de la configuración global y hacer que la temática y la carga de scripts sean agnósticas al framework.
+
+## Incidencias recientes
+
+### Inicialización y carga de scripts
+
+- **[ENG-10291](https://linear.app/mintlify/issue/ENG-10291/allow-explicit-assistant-widget-initialization-without-global-settings) — Permitir la inicialización explícita del Assistant Widget sin configuración global** (Done). Permite a los hosts inicializar el widget sin depender del objeto de configuración global de Mintlify.
+- **[ENG-10294](https://linear.app/mintlify/issue/ENG-10294/make-assistant-widget-script-loading-framework-neutral) — Hacer que la carga de scripts del Assistant Widget sea neutral respecto al framework** (In Review). Elimina las suposiciones específicas del framework del cargador para que el widget pueda embeberse desde cualquier stack.
+
+### Marca y contenido configurables por el host
+
+- **[ENG-10306](https://linear.app/mintlify/issue/ENG-10306/support-code-configured-assistant-widget-branding-and-labels) — Admitir la marca y las etiquetas del Assistant Widget configurables por código** (Todo). Sustituye el texto y los recursos de presentación de Mintlify codificados en el disparador flotante, la cabecera del panel, el compositor, el estado vacío, los anuncios de respuesta y los nombres accesibles, para que los hosts puedan aportar su propia marca.
+- **[ENG-10307](https://linear.app/mintlify/issue/ENG-10307/add-a-code-configured-support-email-below-the-assistant-widget) — Añadir un correo de soporte configurable por código bajo el compositor del Assistant Widget** (Todo). Añade un enlace mailto de "Contactar con soporte" bajo el compositor, controlado por `assistantConfig.deflection.email`.
+- **[ENG-10296](https://linear.app/mintlify/issue/ENG-10296/polish-assistant-widget-content-container) — Pulir el contenido y el contenedor del Assistant Widget** (Todo). Ajustes visuales para el contenido y las superficies del contenedor del widget.
+
+### Temas
+
+- **[ENG-10293](https://linear.app/mintlify/issue/ENG-10293/make-the-assistant-widget-initial-theme-configurable-without-host-sync) — Hacer que el tema inicial del Assistant Widget sea configurable sin código de sincronización del host** (In Review). Elimina la necesidad de que los hosts escriban código de sincronización de temas al permitir que definan el tema inicial mediante configuración.
+
+### Prompt y guía
+
+- **[ENG-10295](https://linear.app/mintlify/issue/ENG-10295/tune-mintlifys-default-assistant-widget-prompt-with-regression) — Ajustar el prompt predeterminado del Assistant Widget de Mintlify con evaluación de regresión** (Canceled).
+- **[ENG-10292](https://linear.app/mintlify/issue/ENG-10292/verify-customer-custom-guidance-in-assistant-widget-requests) — Verificar la guía personalizada del cliente en las solicitudes del Assistant Widget** (Canceled).
+
+## Ejes
+
+En conjunto, el trabajo en curso lleva al Assistant Widget desde un componente con marca Mintlify y configuración global hacia un **componente totalmente embebible y configurable por el host**: inicialización explícita, carga neutral respecto al framework, marca y etiquetas configurables, tema inicial definido por el host y una vía de escape de correo de soporte de primer nivel.
+
+Para la lista completa, consulta el [proyecto Assistant Widget en Linear](https://linear.app/mintlify/project/9223b5f7-6f1e-4e4e-a009-26c1c3a8fd5d).
