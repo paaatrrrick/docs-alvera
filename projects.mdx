@@ -9,6 +9,15 @@ The personal website now has a dedicated `/projects` page that showcases side pr
 
 Entries are sourced from the `projects` array in `src/constants/projects.js` and rendered by the `Projects` component at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
 
+## Finding projects
+
+The page ships with two controls that visitors can combine:
+
+- **Search box:** A text input above the grid filters the visible cards by matching the query (case-insensitive) against each project's `name`, `tagline`, and `description`.
+- **Tech filter:** The row of buttons under the search box narrows the grid to a single tech tag. The `All` button (the default) shows every project.
+
+Both controls apply together — for example, typing `notes` with the `Rust` tag selected shows only Rust projects whose name, tagline, or description mentions "notes". When no project matches, the grid is replaced with an empty state that reads `No projects match your search.`
+
 ## When to use this page
 
 Add an entry to `/projects` when you want to surface a side project on its own card with a tagline and tech tags. Use the home page list for projects you want featured front-and-center; use `/projects` for the complete catalog.
@@ -51,7 +60,7 @@ Keep `tagline` short enough to fit on one line on mobile — aim for under 60 ch
 
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+Because the search box matches against `name`, `tagline`, and `description` (see [Finding projects](#finding-projects)), write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
