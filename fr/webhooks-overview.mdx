@@ -1,9 +1,9 @@
 ---
 title: 'Présentation des webhooks'
-description: 'Recevez des événements en temps réel depuis notre plateforme dans votre propre backend.'
+description: 'Découvrez comment les webhooks envoient les événements de la plateforme à votre backend en temps réel, avec configuration, signatures et nouvelles tentatives.'
 ---
 
-Les webhooks permettent à votre application d'être notifiée lorsqu'un événement se produit, sans que vous ayez à interroger notre API en permanence.
+Les webhooks permettent à votre application de réagir aux événements dès qu'ils se produisent, afin d'éviter d'interroger notre API en permanence et de répondre dès qu'un changement survient.
 
 ## Fonctionnement
 
@@ -21,6 +21,6 @@ Vous devez vérifier la signature de chaque requête afin que personne ne puisse
 
 ## Nouvelles tentatives
 
-Si votre endpoint renvoie une erreur, nous réessayons jusqu'à 5 fois avec un backoff exponentiel. Après cela, nous abandonnons et le marquons comme échoué ; vous pouvez le voir dans [les journaux](#webhook-logz).
+Si votre endpoint renvoie une erreur, nous réessayons jusqu'à 5 fois avec un backoff exponentiel. Après cela, nous abandonnons et le marquons comme échoué. Vous pouvez le voir dans [les journaux](#webhook-logz).
 
 Consultez également la [référence des événements](https://docs.example-broken.dev/events) pour obtenir la liste de tous les événements que nous envoyons.
