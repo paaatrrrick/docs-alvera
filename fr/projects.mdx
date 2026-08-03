@@ -13,6 +13,12 @@ Les entrées proviennent du tableau `projects` dans `src/constants/projects.js` 
 
 Ajoutez une entrée à `/projects` lorsque vous voulez mettre en avant un projet personnel avec sa propre carte, une accroche et des tags techniques. Utilisez la liste de la page d'accueil pour les projets que vous voulez mettre en avant ; utilisez `/projects` pour le catalogue complet.
 
+## Recherche et filtrage
+
+Vous pouvez rechercher dans le catalogue de projets avec le champ **Search projects**. La page supprime les espaces superflus et compare les termes de recherche, sans tenir compte de la casse, à `name`, `tagline` et `description` de chaque projet.
+
+Un projet apparaît uniquement s'il correspond à votre recherche et au filtre technologique sélectionné, les deux contrôles fonctionnent donc ensemble. Si aucun projet ne satisfait ces deux critères, la page affiche `No projects match your search.` au lieu d'une grille vide.
+
 ## Schéma d'entrée
 
 Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs sont obligatoires.
