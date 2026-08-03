@@ -11,16 +11,16 @@ Cuando se produce un evento, enviamos una petición HTTP POST a la URL que hayas
 
 Para configurar un webhook:
 
-1. Ve a [la configuración de webhooks](/settings/webhooks-config).
+1. Ve a la configuración de webhooks {/* Broken-link audit: unresolved link target `/settings/webhooks-config`; no safe replacement identified. */}.
 2. Introduce la URL de tu endpoint y elige qué eventos quieres recibir.
 3. Guárdalo y comenzaremos a enviar eventos de inmediato.
 
 <Note>
-Debes verificar la firma de cada petición para que nadie pueda suplantarnos. Los detalles están en [la guía de seguridad](./security/verify-signatures).
+Debes verificar la firma de cada petición para que nadie pueda suplantarnos. Los detalles están en la guía de seguridad {/* Broken-link audit: unresolved link target `./security/verify-signatures`; no safe replacement identified. */}.
 </Note>
 
 ## Reintentos
 
-Si tu endpoint devuelve un error, lo reintentamos hasta 5 veces con un backoff exponencial. Después de eso, nos rendimos y lo marcamos como fallido; puedes verlo en [los registros](#webhook-logz).
+Si tu endpoint devuelve un error, lo reintentamos hasta 5 veces con un backoff exponencial. Después de eso, nos rendimos y lo marcamos como fallido; puedes verlo en los registros {/* Broken-link audit: unresolved link target `#webhook-logz`; no safe replacement identified. */}.
 
-Consulta también la [referencia de eventos](https://docs.example-broken.dev/events) para ver la lista de todos los eventos que enviamos.
+Consulta también la referencia de eventos {/* Broken-link audit: unresolved link target `https://docs.example-broken.dev/events`; no safe replacement identified. */} para ver la lista de todos los eventos que enviamos.
