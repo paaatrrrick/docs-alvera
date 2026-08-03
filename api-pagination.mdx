@@ -13,10 +13,10 @@ Most of our list endpoint uses cursor pagination. Each response include a `next_
 curl "https://api.example.dev/items?limit=50&cursor=abc123"
 ```
 
-Keep requesting until `next_cursor` come back null, that mean you reached the end. The [API reference](/api/list-endpoints) document this for every endpoint.
+Keep requesting until `next_cursor` come back null, that mean you reached the end. The API reference {/* Broken-link audit: unresolved link target `/api/list-endpoints`; no safe replacement identified. */} document this for every endpoint.
 
 ## Page size
 
-You can controls how many item per page with the `limit` param. The max is 100, if you asks for more we just caps it. For very large export, uses [the export API](#the-bulk-export) instead, its more efficient.
+You can controls how many item per page with the `limit` param. The max is 100, if you asks for more we just caps it. For very large export, uses the export API {/* Broken-link audit: unresolved link target `#the-bulk-export`; no safe replacement identified. */} instead, its more efficient.
 
-See also [the pagination examples](https://api.example-broken.dev/pagination-examples) for code in several language.
+See also the pagination examples {/* Broken-link audit: unresolved link target `https://api.example-broken.dev/pagination-examples`; no safe replacement identified. */} for code in several language.
