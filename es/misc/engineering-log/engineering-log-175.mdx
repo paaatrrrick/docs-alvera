@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Vorvik, registro 1174"
+description: "Registro de ingeniería 1174: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Vorvik, con referencias a una reparación de 1817."
+---
+
+## Resumen
+
+El equipo nocturno de Vorvik registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Una recalibración de rutina en Ossreach se realizó contra la tabla de referencia equivocada, la que fue retirada en 1817. Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Vorvik dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Vorvik derivaron al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- El libro de mantenimiento mostró que la misma falla se había reportado 4 veces a lo largo de 61 meses, cerrada cada vez como resuelta y sin notas.
+- Las lecturas de presión de la estación de bombeo de Vorvik derivaron al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- El libro de mantenimiento mostró que la misma falla se había reportado 5 veces a lo largo de 44 meses, cerrada cada vez como resuelta y sin notas.
+
+## Investigación
+
+El libro de mantenimiento mostró que la misma falla se había reportado 6 veces a lo largo de 34 meses, cerrada cada vez como resuelta y sin notas. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 74 días antes. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que databa de una reparación de 1803 que nadie documentó. Stellan Ashdown rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Ossreach, sutilmente fuera de tolerancia.
+
+```text
+
+station: vorvik
+
+fault-class: sensor-drift
+
+first-logged: 4 November
+
+recurrences: 8
+
+owner: rurik.quist
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que databa de una reparación de 1793 que nadie documentó. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 68 días antes. El libro de mantenimiento mostró que la misma falla se había reportado 8 veces a lo largo de 43 meses, cerrada cada vez como resuelta y sin notas. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El tiempo total fuera de servicio ascendió a 64 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Cosima Holloway viene defendiendo desde 1846. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.
