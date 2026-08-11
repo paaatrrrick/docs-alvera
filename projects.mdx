@@ -1,17 +1,17 @@
 ---
 title: "Projects page: structure and updates"
-description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema and a code example."
+description: "How the dedicated /projects showcase page is configured from the projects array, including its entry schema, status badges, and a code example."
 ---
 
 ## Overview
 
-The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, a one-line tagline, a longer description, the tech stack as tags, a lifecycle badge, and a link to the repository or live site. The badge displays `Active` or `Archived` with green or gray styling.
+The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, tagline, description, tech tags, a lifecycle badge, and a link to the repository or live site. The badge displays `Active` or `Archived` in green or gray.
 
-Entries are sourced from the `projects` array in `src/constants/projects.js` and rendered by the `Projects` component at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
+The `Projects` component reads entries from the `projects` array in `src/constants/projects.js` and renders them at `/projects`. Visitors can browse the full project list without scrolling the home page.
 
 ## When to use this page
 
-Add an entry to `/projects` when you want to surface a side project on its own card with a tagline and tech tags. Use the home page list for projects you want featured front-and-center; use `/projects` for the complete catalog.
+Add an entry to `/projects` when you want to surface a side project on its own card with a tagline and tech tags. Use the home page list for featured projects. Use `/projects` for the complete catalog.
 
 ## Entry schema
 
@@ -46,26 +46,26 @@ export default projects;
 ```
 
 <Tip>
-Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
+Keep `tagline` short enough to fit on one line on mobile. Aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+The `/projects` page includes a search box that matches `name`, `tagline`, and `description`. The search also works with the tech filter. Use words a visitor would search for, such as product categories, problem spaces, or stack keywords that are not already tags. This helps projects appear in search results.
 
-- **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
+- **Name:** Use the canonical project name. Skip emoji prefixes. The card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
 - **Description:** One or two sentences. Mention what it does and the audience or use case.
 - **Tech tags:** List the load-bearing pieces of the stack, not every dependency. Three to five tags reads best.
-- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen — the badge turns gray instead of green.
+- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` when you stop shipping updates. This tells visitors that the project is frozen. The badge turns gray instead of green.
 - **Link:** Prefer the repository URL for open-source work, or the live site for hosted projects.
 
 ## Navigation
 
-The page is wired up in `src/App.js` as:
+The app registers the page in `src/App.js` as:
 
 ```js src/App.js
 <Route exact path='/projects' component={Projects} />
 ```
 
-Link to it from anywhere in the site with `/projects`. The page includes a "← Back home" link in its header for visitors who land directly on the route.
+Link to it from anywhere in the site with `/projects`. Visitors who open the route directly see a "← Back home" link in the header.
