@@ -2560,7 +2560,9 @@
                   "es/star-wars-jedi-order",
                   "es/star-wars-sith-order",
                   "es/star-wars-sith",
-                  "es/star-wars-timeline"
+                  "es/star-wars-timeline",
+                  "es/pokemon",
+                  "es/pokemon-legendaries"
                 ]
               },
               {
@@ -5060,7 +5062,9 @@
                   "fr/star-wars-jedi-order",
                   "fr/star-wars-sith-order",
                   "fr/star-wars-sith",
-                  "fr/star-wars-timeline"
+                  "fr/star-wars-timeline",
+                  "fr/pokemon",
+                  "fr/pokemon-legendaries"
                 ]
               },
               {
