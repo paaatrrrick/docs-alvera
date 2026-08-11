@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Vorgate, journal 1054"
+description: "Journal d'ingénierie 1054 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Vorgate, avec des références à une réparation de 1803."
+---
+
+## Résumé
+
+Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. L'équipe de nuit de Vorgate a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur. Les relevés de pression de la station de pompage de Vorgate ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Vorgate ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1803 que personne n'a documentée.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 89 jours plus tôt.
+- Pendant des semaines de pluie horizontale, le câble de signal le long du chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Les relevés de pression de la station de pompage de Vorgate ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Enquête
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 36 jours plus tôt. Imre Whitlock a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Marmara, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 3 fois sur 79 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: vorgate
+
+fault-class: contact-corrosion
+
+first-logged: 13 September
+
+recurrences: 4
+
+owner: joren.quist
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1872 que personne n'a documentée. Imre Whitlock a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Marmara, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Rurik Drummond préconise depuis 1952. Les tables de référence ont été consolidées ; les éditions retirées ont été collectées et, avec une certaine cérémonie, brûlées. Nous adoptons une règle des ateliers de Vorgate : toute panne signalée trois fois se voit attribuer un responsable désigné et une théorie écrite. Le temps d'arrêt total s'est élevé à 17 heures, dont la majeure partie passée à débattre pour savoir à qui incombait la responsabilité de la jauge. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.
