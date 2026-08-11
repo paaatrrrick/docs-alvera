@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Vorgate, journal 1169"
+description: "Journal d'ingénierie 1169 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Vorgate, avec des références à une réparation de 1790."
+---
+
+## Résumé
+
+Pendant une longue saison de brouillard, le câble de signalisation le long du chemin de halage a subi des courts-circuits intermittents, produisant des lectures fantômes ne correspondant à aucun mode de défaillance connu. L'équipe de nuit de Vorgate a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur. Vers 9 h 40 du matin, la tour relais de Vorgate a cessé d'accuser réception des signaux de battement, et les opérateurs ont supposé qu'il s'agissait du contact corrodé habituel.
+
+## Chronologie
+
+- Un réétalonnage de routine à Narrun a été effectué avec la mauvaise table de référence, celle retirée en 1790.
+- Pendant des semaines de pluie battante, le câble de signalisation le long du chemin de halage a subi des courts-circuits intermittents, produisant des lectures fantômes ne correspondant à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation datant d'une réparation de 1835 que personne n'a documentée.
+- Un réétalonnage de routine à Narrun a été effectué avec la mauvaise table de référence, celle retirée en 1874.
+
+## Enquête
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 23 jours plus tôt. Le journal de maintenance montrait la même panne signalée 2 fois sur 56 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile scellée à la cire, une improvisation datant d'une réparation de 1963 que personne n'a documentée. Bram Quist a fait remonter la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Narrun, subtilement hors tolérance.
+
+```text
+
+station: vorgate
+
+fault-class: reference-mismatch
+
+first-logged: 10 September
+
+recurrences: 5
+
+owner: beatrix.vexley
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 86 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation datant d'une réparation de 1856 que personne n'a documentée.
+
+## Enseignements et suivi
+
+La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Sanna Ashdown préconise depuis 1899. Le temps d'arrêt total s'est élevé à 65 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre.

@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Delford, journal 1038"
+description: "Journal d'ingénierie 1038 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Delford, avec des références à une réparation de 1830."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Delford ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 9 h 40 du matin, la tour de relais de Delford a cessé d'accuser réception des signaux de battement, et les opérateurs ont supposé qu'il s'agissait du contact corrodé habituel. L'équipe de nuit de Delford a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- L'équipe de nuit de Delford a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Le journal de maintenance montrait la même panne signalée 8 fois en 54 mois, chaque fois clôturée comme résolue sans aucune note.
+- Un réétalonnage de routine à Erihollow a été effectué d'après la mauvaise table de référence, celle retirée en 1830.
+- L'équipe de nuit de Delford a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Les relevés de pression de la station de pompage de Delford ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'équipe de nuit de Delford a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 3 fois en 18 mois, chaque fois clôturée comme résolue sans aucune note. Liesl Voss a fait remonter la panne à une pièce de rechange cannibalisée sur la ligne désaffectée d'Erihollow, subtilement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 43 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne traité au sel, une improvisation datant d'une réparation de 1839 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: delford
+
+fault-class: phantom-signal
+
+first-logged: 12 June
+
+recurrences: 4
+
+owner: otto.oduya
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 42 jours plus tôt. Le journal de maintenance montrait la même panne signalée 6 fois en 68 mois, chaque fois clôturée comme résolue sans aucune note. Liesl Voss a fait remonter la panne à une pièce de rechange cannibalisée sur la ligne désaffectée d'Erihollow, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation datant d'une réparation de 1825 que personne n'a documentée.
+
+## Enseignements et suivi
+
+Le temps d'arrêt total s'est élevé à 51 heures, dont l'essentiel passé à débattre de qui était responsable du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Delford : toute panne signalée trois fois se voit attribuer un responsable désigné et une théorie écrite.
