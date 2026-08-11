@@ -9,6 +9,14 @@ The personal website now has a dedicated `/projects` page that showcases side pr
 
 Entries are sourced from the `projects` array in `src/constants/projects.js` and rendered by the `Projects` component at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
 
+## Search and filtering
+
+Use the search box to filter projects as you type. The search ignores leading and trailing whitespace, compares text without regard to case, and matches partial text in `name`, `tagline`, or `description`. It does not search the `tech` tags.
+
+Select a technology button to filter by that tag. The `All` button clears the technology filter. When you use both controls, a project appears only when it matches the search and includes the selected technology.
+
+When no projects match, the grid displays `No projects match your search.`. Clear the search or select `All` to broaden the results.
+
 ## When to use this page
 
 Add an entry to `/projects` when you want to surface a side project on its own card with a tagline and tech tags. Use the home page list for projects you want featured front-and-center; use `/projects` for the complete catalog.
