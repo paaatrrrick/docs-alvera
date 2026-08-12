@@ -2519,7 +2519,7 @@
         "language": "es",
         "tabs": [
           {
-            "tab": "Gu\u00edas",
+            "tab": "Guías",
             "groups": [
               {
                 "group": "Empezar",
@@ -2535,12 +2535,13 @@
                 "pages": [
                   "es/work-experience",
                   "es/projects",
+                  "es/post-view-counter",
                   "es/game-of-thrones",
                   "es/latest-email"
                 ]
               },
               {
-                "group": "Diversi\u00f3n",
+                "group": "Diversión",
                 "pages": [
                   "es/star-wars",
                   "es/star-wars-characters",
@@ -2558,12 +2559,14 @@
                   "es/star-wars-bounty-hunters",
                   "es/star-wars-jedi-order",
                   "es/star-wars-sith-order",
+                  "es/star-wars-timeline",
+                  "es/pokemon",
                   "es/star-wars-sith",
                   "es/star-wars-timeline"
                 ]
               },
               {
-                "group": "Personalizaci\u00f3n",
+                "group": "Personalización",
                 "pages": [
                   "es/essentials/settings",
                   "es/essentials/navigation"
@@ -2592,7 +2595,7 @@
             "tab": "Referencia de API",
             "groups": [
               {
-                "group": "Documentaci\u00f3n de API",
+                "group": "Documentación de API",
                 "pages": [
                   "es/api-reference/introduction"
                 ]
@@ -2912,7 +2915,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 1-25",
+                "group": "Guía de campo 1-25",
                 "pages": [
                   "es/misc/field-guide/field-guide-001",
                   "es/misc/field-guide/field-guide-002",
@@ -2942,7 +2945,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 26-50",
+                "group": "Guía de campo 26-50",
                 "pages": [
                   "es/misc/field-guide/field-guide-026",
                   "es/misc/field-guide/field-guide-027",
@@ -2972,7 +2975,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 51-75",
+                "group": "Guía de campo 51-75",
                 "pages": [
                   "es/misc/field-guide/field-guide-051",
                   "es/misc/field-guide/field-guide-052",
@@ -3002,7 +3005,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 76-100",
+                "group": "Guía de campo 76-100",
                 "pages": [
                   "es/misc/field-guide/field-guide-076",
                   "es/misc/field-guide/field-guide-077",
@@ -3032,7 +3035,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 101-125",
+                "group": "Guía de campo 101-125",
                 "pages": [
                   "es/misc/field-guide/field-guide-101",
                   "es/misc/field-guide/field-guide-102",
@@ -3062,7 +3065,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 126-150",
+                "group": "Guía de campo 126-150",
                 "pages": [
                   "es/misc/field-guide/field-guide-126",
                   "es/misc/field-guide/field-guide-127",
@@ -3092,7 +3095,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 151-175",
+                "group": "Guía de campo 151-175",
                 "pages": [
                   "es/misc/field-guide/field-guide-151",
                   "es/misc/field-guide/field-guide-152",
@@ -3122,7 +3125,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 176-200",
+                "group": "Guía de campo 176-200",
                 "pages": [
                   "es/misc/field-guide/field-guide-176",
                   "es/misc/field-guide/field-guide-177",
@@ -3152,7 +3155,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 201-225",
+                "group": "Guía de campo 201-225",
                 "pages": [
                   "es/misc/field-guide/field-guide-201",
                   "es/misc/field-guide/field-guide-202",
@@ -3182,7 +3185,7 @@
                 ]
               },
               {
-                "group": "Gu\u00eda de campo 226-250",
+                "group": "Guía de campo 226-250",
                 "pages": [
                   "es/misc/field-guide/field-guide-226",
                   "es/misc/field-guide/field-guide-227",
@@ -3212,7 +3215,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 1-25",
+                "group": "Crónicas 1-25",
                 "pages": [
                   "es/misc/chronicles/chronicles-001",
                   "es/misc/chronicles/chronicles-002",
@@ -3242,7 +3245,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 26-50",
+                "group": "Crónicas 26-50",
                 "pages": [
                   "es/misc/chronicles/chronicles-026",
                   "es/misc/chronicles/chronicles-027",
@@ -3272,7 +3275,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 51-75",
+                "group": "Crónicas 51-75",
                 "pages": [
                   "es/misc/chronicles/chronicles-051",
                   "es/misc/chronicles/chronicles-052",
@@ -3302,7 +3305,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 76-100",
+                "group": "Crónicas 76-100",
                 "pages": [
                   "es/misc/chronicles/chronicles-076",
                   "es/misc/chronicles/chronicles-077",
@@ -3332,7 +3335,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 101-125",
+                "group": "Crónicas 101-125",
                 "pages": [
                   "es/misc/chronicles/chronicles-101",
                   "es/misc/chronicles/chronicles-102",
@@ -3362,7 +3365,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 126-150",
+                "group": "Crónicas 126-150",
                 "pages": [
                   "es/misc/chronicles/chronicles-126",
                   "es/misc/chronicles/chronicles-127",
@@ -3392,7 +3395,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 151-175",
+                "group": "Crónicas 151-175",
                 "pages": [
                   "es/misc/chronicles/chronicles-151",
                   "es/misc/chronicles/chronicles-152",
@@ -3422,7 +3425,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 176-200",
+                "group": "Crónicas 176-200",
                 "pages": [
                   "es/misc/chronicles/chronicles-176",
                   "es/misc/chronicles/chronicles-177",
@@ -3452,7 +3455,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 201-225",
+                "group": "Crónicas 201-225",
                 "pages": [
                   "es/misc/chronicles/chronicles-201",
                   "es/misc/chronicles/chronicles-202",
@@ -3482,7 +3485,7 @@
                 ]
               },
               {
-                "group": "Cr\u00f3nicas 226-250",
+                "group": "Crónicas 226-250",
                 "pages": [
                   "es/misc/chronicles/chronicles-226",
                   "es/misc/chronicles/chronicles-227",
@@ -3812,7 +3815,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 1-25",
+                "group": "Registros de ingeniería 1-25",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-001",
                   "es/misc/engineering-log/engineering-log-002",
@@ -3842,7 +3845,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 26-50",
+                "group": "Registros de ingeniería 26-50",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-026",
                   "es/misc/engineering-log/engineering-log-027",
@@ -3872,7 +3875,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 51-75",
+                "group": "Registros de ingeniería 51-75",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-051",
                   "es/misc/engineering-log/engineering-log-052",
@@ -3902,7 +3905,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 76-100",
+                "group": "Registros de ingeniería 76-100",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-076",
                   "es/misc/engineering-log/engineering-log-077",
@@ -3932,7 +3935,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 101-125",
+                "group": "Registros de ingeniería 101-125",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-101",
                   "es/misc/engineering-log/engineering-log-102",
@@ -3962,7 +3965,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 126-150",
+                "group": "Registros de ingeniería 126-150",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-126",
                   "es/misc/engineering-log/engineering-log-127",
@@ -3992,7 +3995,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 151-175",
+                "group": "Registros de ingeniería 151-175",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-151",
                   "es/misc/engineering-log/engineering-log-152",
@@ -4022,7 +4025,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 176-200",
+                "group": "Registros de ingeniería 176-200",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-176",
                   "es/misc/engineering-log/engineering-log-177",
@@ -4052,7 +4055,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 201-225",
+                "group": "Registros de ingeniería 201-225",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-201",
                   "es/misc/engineering-log/engineering-log-202",
@@ -4082,7 +4085,7 @@
                 ]
               },
               {
-                "group": "Registros de ingenier\u00eda 226-250",
+                "group": "Registros de ingeniería 226-250",
                 "pages": [
                   "es/misc/engineering-log/engineering-log-226",
                   "es/misc/engineering-log/engineering-log-227",
@@ -5022,7 +5025,7 @@
             "tab": "Guides",
             "groups": [
               {
-                "group": "D\u00e9marrage",
+                "group": "Démarrage",
                 "pages": [
                   "fr/index",
                   "fr/quickstart",
@@ -5035,6 +5038,7 @@
                 "pages": [
                   "fr/work-experience",
                   "fr/projects",
+                  "fr/post-view-counter",
                   "fr/game-of-thrones",
                   "fr/latest-email"
                 ]
@@ -5058,6 +5062,8 @@
                   "fr/star-wars-bounty-hunters",
                   "fr/star-wars-jedi-order",
                   "fr/star-wars-sith-order",
+                  "fr/star-wars-timeline",
+                  "fr/pokemon",
                   "fr/star-wars-sith",
                   "fr/star-wars-timeline"
                 ]
@@ -5070,7 +5076,7 @@
                 ]
               },
               {
-                "group": "R\u00e9diger du contenu",
+                "group": "Rédiger du contenu",
                 "pages": [
                   "fr/essentials/markdown",
                   "fr/essentials/code",
@@ -5089,7 +5095,7 @@
             ]
           },
           {
-            "tab": "R\u00e9f\u00e9rence d'API",
+            "tab": "Référence d'API",
             "groups": [
               {
                 "group": "Documentation d'API",
@@ -6312,7 +6318,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 1-25",
+                "group": "Journaux d'ingénierie 1-25",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-001",
                   "fr/misc/engineering-log/engineering-log-002",
@@ -6342,7 +6348,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 26-50",
+                "group": "Journaux d'ingénierie 26-50",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-026",
                   "fr/misc/engineering-log/engineering-log-027",
@@ -6372,7 +6378,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 51-75",
+                "group": "Journaux d'ingénierie 51-75",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-051",
                   "fr/misc/engineering-log/engineering-log-052",
@@ -6402,7 +6408,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 76-100",
+                "group": "Journaux d'ingénierie 76-100",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-076",
                   "fr/misc/engineering-log/engineering-log-077",
@@ -6432,7 +6438,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 101-125",
+                "group": "Journaux d'ingénierie 101-125",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-101",
                   "fr/misc/engineering-log/engineering-log-102",
@@ -6462,7 +6468,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 126-150",
+                "group": "Journaux d'ingénierie 126-150",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-126",
                   "fr/misc/engineering-log/engineering-log-127",
@@ -6492,7 +6498,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 151-175",
+                "group": "Journaux d'ingénierie 151-175",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-151",
                   "fr/misc/engineering-log/engineering-log-152",
@@ -6522,7 +6528,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 176-200",
+                "group": "Journaux d'ingénierie 176-200",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-176",
                   "fr/misc/engineering-log/engineering-log-177",
@@ -6552,7 +6558,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 201-225",
+                "group": "Journaux d'ingénierie 201-225",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-201",
                   "fr/misc/engineering-log/engineering-log-202",
@@ -6582,7 +6588,7 @@
                 ]
               },
               {
-                "group": "Journaux d'ing\u00e9nierie 226-250",
+                "group": "Journaux d'ingénierie 226-250",
                 "pages": [
                   "fr/misc/engineering-log/engineering-log-226",
                   "fr/misc/engineering-log/engineering-log-227",
@@ -6612,7 +6618,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 1-25",
+                "group": "Encyclopédie 1-25",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-001",
                   "fr/misc/encyclopedia/encyclopedia-002",
@@ -6642,7 +6648,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 26-50",
+                "group": "Encyclopédie 26-50",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-026",
                   "fr/misc/encyclopedia/encyclopedia-027",
@@ -6672,7 +6678,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 51-75",
+                "group": "Encyclopédie 51-75",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-051",
                   "fr/misc/encyclopedia/encyclopedia-052",
@@ -6702,7 +6708,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 76-100",
+                "group": "Encyclopédie 76-100",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-076",
                   "fr/misc/encyclopedia/encyclopedia-077",
@@ -6732,7 +6738,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 101-125",
+                "group": "Encyclopédie 101-125",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-101",
                   "fr/misc/encyclopedia/encyclopedia-102",
@@ -6762,7 +6768,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 126-150",
+                "group": "Encyclopédie 126-150",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-126",
                   "fr/misc/encyclopedia/encyclopedia-127",
@@ -6792,7 +6798,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 151-175",
+                "group": "Encyclopédie 151-175",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-151",
                   "fr/misc/encyclopedia/encyclopedia-152",
@@ -6822,7 +6828,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 176-200",
+                "group": "Encyclopédie 176-200",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-176",
                   "fr/misc/encyclopedia/encyclopedia-177",
@@ -6852,7 +6858,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 201-225",
+                "group": "Encyclopédie 201-225",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-201",
                   "fr/misc/encyclopedia/encyclopedia-202",
@@ -6882,7 +6888,7 @@
                 ]
               },
               {
-                "group": "Encyclop\u00e9die 226-250",
+                "group": "Encyclopédie 226-250",
                 "pages": [
                   "fr/misc/encyclopedia/encyclopedia-226",
                   "fr/misc/encyclopedia/encyclopedia-227",
