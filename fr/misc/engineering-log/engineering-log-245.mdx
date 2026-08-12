@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Wrencrest, journal 1244"
+description: "Journal d'ingénierie 1244 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrencrest, avec des références à une réparation de 1884."
+---
+
+## Résumé
+
+L'équipe de nuit de Wrencrest a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur. Pendant un mois calme et sans vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Un réétalonnage de routine à Dordane a été effectué à partir de la mauvaise table de référence, celle retirée en 1884.
+
+## Chronologie
+
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 30 jours plus tôt.
+- Le journal de maintenance montrait la même panne signalée 6 fois sur 84 mois, chaque fois clôturée comme résolue sans aucune note.
+- Vers 5 h 40 du matin, la tour relais de Wrencrest a cessé d'accuser réception des signaux de battement, et les opérateurs ont supposé l'habituel contact corrodé.
+- Pendant une gelée précoce, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage d'os de baleine, une improvisation remontant à une réparation de 1822 que personne n'a documentée. Bram Lindqvist a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Dordane, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 4 fois sur 88 mois, chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 36 jours plus tôt.
+
+```text
+
+station: wrencrest
+
+fault-class: contact-corrosion
+
+first-logged: 16 March
+
+recurrences: 5
+
+owner: liesl.halloran
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1860 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 49 jours plus tôt. Bram Lindqvist a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Dordane, subtilement hors tolérance.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Casper Drummond préconise depuis 1804. Le temps d'arrêt total s'est élevé à 52 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.
