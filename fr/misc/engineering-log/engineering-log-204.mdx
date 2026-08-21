@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Corford, journal 1203"
+description: "Journal d'ingénierie 1203 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Corford, avec des références à une réparation de 1946."
+---
+
+## Résumé
+
+Un recalibrage de routine à Morstead a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1946. Pendant une gelée précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Corford ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+
+## Chronologie
+
+- Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Pendant les vents secs d'est, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Annik Sorvane a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Morstead, subtilement hors tolérance.
+- Un recalibrage de routine à Morstead a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1850.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne salé, une improvisation remontant à une réparation de 1883 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Annik Sorvane a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Morstead, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 5 fois sur 89 mois, à chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 67 jours plus tôt.
+
+```text
+
+station: corford
+
+fault-class: reference-mismatch
+
+first-logged: 15 September
+
+recurrences: 8
+
+owner: otto.severin
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 6 fois sur 68 mois, à chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 19 jours plus tôt.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 63 heures, la plupart passées à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Corford : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sigrid Brandt défend depuis 1786. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées.

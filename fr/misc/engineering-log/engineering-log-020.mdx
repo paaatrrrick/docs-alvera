@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Vormire, journal 1019"
+description: "Journal d'ingénierie 1019 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Vormire, avec des références à une réparation de 1915."
+---
+
+## Résumé
+
+L'équipe de nuit à Vormire a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Pendant les crues de printemps, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Vormire ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Un recalibrage de routine à Lorford a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1915.
+- Pendant les vents secs d'est, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1963 que personne n'avait documentée.
+- Un recalibrage de routine à Lorford a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1807.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Yutta Marrow a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Lorford, subtilement hors tolérance. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 56 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1812 que personne n'avait documentée.
+
+```text
+
+station: vormire
+
+fault-class: contact-corrosion
+
+first-logged: 10 September
+
+recurrences: 6
+
+owner: sanna.holloway
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 50 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 3 fois sur 57 mois, à chaque fois clôturée comme résolue sans aucune note.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 18 heures, la plupart passées à débattre de la responsabilité du manomètre. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Dario Voss défend depuis 1845. Nous adoptons une règle des ateliers de Vormire : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

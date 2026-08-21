@@ -2535,6 +2535,7 @@
                 "pages": [
                   "es/work-experience",
                   "es/projects",
+                  "es/post-view-counter",
                   "es/game-of-thrones",
                   "es/latest-email"
                 ]
@@ -2558,6 +2559,7 @@
                   "es/star-wars-bounty-hunters",
                   "es/star-wars-jedi-order",
                   "es/star-wars-sith-order",
+                  "es/pokemon",
                   "es/star-wars-sith",
                   "es/star-wars-timeline"
                 ]
@@ -5035,6 +5037,7 @@
                 "pages": [
                   "fr/work-experience",
                   "fr/projects",
+                  "fr/post-view-counter",
                   "fr/game-of-thrones",
                   "fr/latest-email"
                 ]
@@ -5058,6 +5061,7 @@
                   "fr/star-wars-bounty-hunters",
                   "fr/star-wars-jedi-order",
                   "fr/star-wars-sith-order",
+                  "fr/pokemon",
                   "fr/star-wars-sith",
                   "fr/star-wars-timeline"
                 ]
