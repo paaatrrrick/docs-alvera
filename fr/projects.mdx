@@ -49,9 +49,17 @@ export default projects;
 Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins de 60 caractères. Réservez l'argumentaire plus long pour `description`.
 </Tip>
 
+## Recherche et filtrage
+
+La page `/projects` inclut un champ de recherche au-dessus du filtre par technologie. La saisie d'une requête filtre la grille sur les projets dont le `name`, la `tagline` ou la `description` contient la requête. La correspondance ignore la casse ainsi que les espaces en début et fin de saisie.
+
+La recherche se combine au filtre par technologie : un projet n'apparaît que s'il correspond à la requête et inclut le tag de technologie sélectionné. Sélectionner `All` dans le filtre supprime la contrainte de technologie.
+
+Si aucun projet ne correspond, la grille affiche un état vide avec le texte « No projects match your search. »
+
 ## Conseils de rédaction
 
-La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
+Rédigez `name`, `tagline` et `description` avec les mots qu'un visiteur taperait réellement dans la recherche : catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags. La recherche ne porte que sur ces trois champs, donc les projets remontent grâce aux termes que vous y mettez.
 
 - **Nom :** utilisez le nom canonique du projet. Évitez les préfixes emoji ; le design de la carte repose sur une hiérarchie typographique nette.
 - **Accroche :** commencez par la catégorie ou la mécanique principale (« Gestionnaire de favoris auto-hébergé », pas « Un projet que j'ai fait »).
