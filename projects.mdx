@@ -1,7 +1,11 @@
 ---
 title: "Projects page: structure and updates"
-description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema and a code example."
+description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema, status badges, and a code example."
 ---
+
+<Update label="2026-06-24">
+  Each project card now renders an **Active** or **Archived** status badge in the card header, driven by a new required `status` field on entries in `src/constants/projects.js`. `Active` renders green; `Archived` renders gray.
+</Update>
 
 ## Overview
 
