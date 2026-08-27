@@ -49,6 +49,12 @@ export default projects;
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
+## Búsqueda y filtrado
+
+La página `/projects` muestra un cuadro de búsqueda encima del filtro por tecnología. Al escribir una consulta, la cuadrícula se reduce a los proyectos cuyo `name`, `tagline` o `description` contiene la consulta. La coincidencia no distingue mayúsculas de minúsculas e ignora los espacios al inicio y al final.
+
+La búsqueda se combina con el filtro por tecnología. Un proyecto solo permanece visible si coincide con la etiqueta de tecnología activa y con la consulta. Cuando nada coincide, la cuadrícula muestra el estado vacío "No projects match your search." Borra el cuadro de búsqueda o vuelve al filtro **All** para restaurar la lista completa.
+
 ## Guía de redacción
 
 La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
