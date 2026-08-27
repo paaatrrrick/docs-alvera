@@ -1,6 +1,6 @@
 ---
 title: "Página de proyectos: estructura y actualizaciones"
-description: "Cómo se configura la página dedicada /projects a partir del array projects, incluyendo el esquema de entrada y un ejemplo de código."
+description: "Cómo se construye la página /projects a partir del array projects: esquema de entrada, búsqueda y filtrado por tecnología, y un ejemplo de código."
 ---
 
 ## Resumen
@@ -48,6 +48,12 @@ export default projects;
 <Tip>
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
+
+## Búsqueda y filtrado
+
+La página `/projects` muestra un cuadro de búsqueda encima del filtro por tecnología. Al escribir una consulta, la cuadrícula se reduce a los proyectos cuyo `name`, `tagline` o `description` contiene la consulta. La coincidencia no distingue mayúsculas de minúsculas e ignora los espacios al inicio y al final.
+
+La búsqueda se combina con el filtro por tecnología. Un proyecto solo permanece visible si coincide con la etiqueta de tecnología activa y con la consulta. Cuando nada coincide, la cuadrícula muestra el estado vacío "No projects match your search." Borra el cuadro de búsqueda o vuelve al filtro **All** para restaurar la lista completa.
 
 ## Guía de redacción
 
