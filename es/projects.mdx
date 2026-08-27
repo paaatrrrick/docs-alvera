@@ -7,7 +7,7 @@ description: "Aprende a buscar y filtrar proyectos, mantener sus metadatos y con
 
 El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga y el stack tecnológico como etiquetas. También muestra una insignia de estado `Active` o `Archived` y un enlace al repositorio o sitio en vivo.
 
-Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
+El array `projects` de `src/constants/projects.js` proporciona las entradas. El componente `Projects` las renderiza en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
 
 ## Cuándo usar esta página
 
@@ -21,7 +21,7 @@ Selecciona un botón de tecnología para filtrar por stack. La búsqueda y el fi
 
 Si ningún proyecto coincide con la búsqueda y el filtro actuales, la página muestra `No projects match your search.`
 
-No necesitas configuración adicional para activar la búsqueda. Para cambiar el contenido que se puede buscar y las opciones de filtrado, los mantenedores deben actualizar los valores `name`, `tagline`, `description` o `tech` en el array `projects`.
+No necesitas configuración adicional para activar la búsqueda. Para cambiar el contenido que se puede buscar y las opciones de filtrado, actualiza los valores `name`, `tagline`, `description` o `tech` en el array `projects`.
 
 ## Esquema de entrada
 
@@ -29,16 +29,16 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 
 | Campo         | Tipo     | Descripción                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `name`        | string   | Nombre del proyecto que se renderiza como encabezado y enlace de la tarjeta.                      |
+| `name`        | string   | Nombre del proyecto que aparece como encabezado y enlace de la tarjeta.                         |
 | `tagline`     | string   | Resumen de una línea que aparece justo debajo del nombre.                                         |
 | `description` | string   | Párrafo más largo que explica qué hace el proyecto y a quién va dirigido.                         |
-| `tech`        | string[] | Etiquetas del stack renderizadas como una lista horizontal (por ejemplo, `['React', 'Rust']`).    |
-| `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
-| `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
+| `tech`        | string[] | Etiquetas del stack que aparecen en una lista horizontal (por ejemplo, `['React', 'Rust']`).     |
+| `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. La tarjeta muestra este estado como una insignia de color en la cabecera. |
+| `link`        | string   | URL que el encabezado de la tarjeta abre en una pestaña nueva. Usa el repositorio o el sitio en vivo. |
 
 ## Añadir un proyecto
 
-Abre `src/constants/projects.js` y añade un nuevo objeto al array `projects`. Las entradas se renderizan en el orden del array, así que coloca primero el proyecto más reciente o más relevante.
+Abre `src/constants/projects.js` y añade un nuevo objeto al array `projects`. Las entradas aparecen en el orden del array, así que coloca primero el proyecto más reciente o más relevante.
 
 ```js src/constants/projects.js
 const projects = [
@@ -56,23 +56,23 @@ export default projects;
 ```
 
 <Tip>
-Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
+Mantén `tagline` lo bastante corto para caber en una sola línea en móvil. Apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con palabras que una persona buscaría realmente, como la categoría de producto, el espacio del problema o palabras clave del stack que no estén ya en las etiquetas. Así, los proyectos aparecerán en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
 - **Descripción:** Una o dos oraciones. Indica qué hace y a quién va dirigido.
 - **Etiquetas de tecnología:** Enumera las piezas principales del stack, no todas las dependencias. De tres a cinco etiquetas se lee mejor.
-- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
+- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado. La insignia pasa de verde a gris.
 - **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
 
 ## Navegación
 
-La página se registra en `src/App.js` como:
+Registra la página en `src/App.js` así:
 
 ```js src/App.js
 <Route exact path='/projects' component={Projects} />
