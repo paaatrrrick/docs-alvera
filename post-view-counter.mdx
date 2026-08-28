@@ -5,7 +5,7 @@ description: "How the personal website tracks per-post views, total site reads, 
 
 ## Overview
 
-The personal website ships a small suite of components and hooks for tracking and displaying how many times posts have been read:
+The personal website ships a small suite of components and hooks that track and display how many times readers view each post:
 
 - **`ViewCounter`** — renders the read count for a single post, backed by the `useViewCount` hook.
 - **`SiteViews`** — renders the aggregate read count across every post, backed by the `useTotalViews` hook.
@@ -47,7 +47,7 @@ export default function PostTemplate({ post }) {
 | `date`  | string (optional) | Rendered as-is when present. Omit to hide the date segment.           |
 | `body`  | string[] (optional) | Joined together and passed to the reading-time estimator.            |
 
-Each segment hides itself if its data is missing or the network call hasn't resolved yet, so the byline degrades gracefully on posts without a date or before the view count loads.
+Each segment hides itself if its data is missing or the network call hasn't resolved yet. The byline degrades gracefully on posts without a date, or before the view count loads.
 
 ## Showing just the view count
 
@@ -63,7 +63,7 @@ It renders a `<span class="view-counter">` with the count formatted via `toLocal
 
 ### Reading without recording a view
 
-By default, mounting `ViewCounter` records a view. If you want to read the count without incrementing it — for example, on an admin dashboard or a listing page — call `useViewCount` directly with `increment: false`:
+By default, mounting `ViewCounter` records a view. To read the count without incrementing it — for example, on an admin dashboard or a listing page — call `useViewCount` directly with `increment: false`:
 
 ```jsx
 import { useViewCount } from "../hooks/useViewCount";
