@@ -49,9 +49,26 @@ export default projects;
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
+## Búsqueda y filtrado
+
+La página `/projects` incluye un cuadro de búsqueda encima del filtro por tecnología. A medida que la persona escribe, la cuadrícula se reduce a los proyectos cuyo `name`, `tagline` o `description` contiene la consulta. La coincidencia no distingue mayúsculas de minúsculas e ignora los espacios al inicio y al final. Los campos `tech` y `status` no se incluyen en la búsqueda.
+
+La búsqueda se combina con el filtro por tecnología: un proyecto solo aparece si coincide con la etiqueta seleccionada *y* con la consulta. Al vaciar el cuadro de búsqueda se restaura la lista completa para la etiqueta activa. Cuando ningún proyecto coincide, la cuadrícula muestra el estado vacío \"No projects match your search.\" en lugar de tarjetas.
+
+Por ejemplo, con la etiqueta `React` seleccionada y la consulta `notes`, solo se renderizan los proyectos React cuyo nombre, eslogan o descripción contiene \"notes\":
+
+```js src/constants/projects.js
+{
+    name: 'Inkwell',
+    tagline: 'A markdown-first note-taking app',
+    description: 'A local-first notes app with bidirectional links...', // contiene "notes"
+    tech: ['React', 'Rust', 'SQLite'], // incluye la etiqueta React seleccionada
+}
+```
+
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+Como la búsqueda coincide con `name`, `tagline` y `description`, esos tres campos determinan la descubribilidad. Redáctalos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").

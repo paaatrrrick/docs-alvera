@@ -49,9 +49,26 @@ export default projects;
 Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
+## Search and filtering
+
+The `/projects` page includes a search box above the tech filter. As a visitor types, the grid narrows to projects whose `name`, `tagline`, or `description` contains the query. Matching is case-insensitive and ignores leading and trailing whitespace. The `tech` and `status` fields are not searched.
+
+Search combines with the tech filter: a project appears only if it matches the selected tech tag *and* the search query. Clearing the search box restores the full list for the active tag. When no project matches, the grid shows a "No projects match your search." empty state instead of cards.
+
+For example, with the `React` tag selected and the query `notes`, only React projects whose name, tagline, or description contains "notes" render:
+
+```js src/constants/projects.js
+{
+    name: 'Inkwell',
+    tagline: 'A markdown-first note-taking app',
+    description: 'A local-first notes app with bidirectional links...', // contains "notes"
+    tech: ['React', 'Rust', 'SQLite'], // includes the selected React tag
+}
+```
+
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+Because search matches against `name`, `tagline`, and `description`, those three fields drive discoverability. Write them with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
