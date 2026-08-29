@@ -1,26 +1,24 @@
 ---
-title: '🪝 Webhooks Overview'
-description: 'Recieve real-time event from our platform into you’re own backend.'
+title: '🪝 Receive real-time events with webhooks and retries'
+description: 'Set up webhooks to get real-time HTTP POST notifications when events occur. Covers endpoint configuration, signature verification, and retries.'
 ---
 
-Webhooks lets you’re application to gets notified when something happen, without you having to polling our API constantly.
+Webhooks let your application get notified when something happens, without having to poll our API constantly.
 
 ## How it works
 
-When a event occured, we sends a HTTP POST to the URL you configured. The payload contain the event type and the data.
+When an event occurs, we send an HTTP POST request to the URL you configured. The payload contains the event type and the data.
 
-To setup a webhook:
+To set up a webhook:
 
-1. Go to [the webhooks settings](/settings/webhooks-config).
-2. Enter you’re endpoint URL and choose witch event you wants.
-3. Save it, and we will start sending event right away.
+1. Go to the webhooks settings.
+2. Enter your endpoint URL and choose which events you want.
+3. Save it, and we start sending events right away.
 
 <Note>
-You should verifies the signature on every request so that nobody can spoofs us. The detail is in [the security guide](./security/verify-signatures).
+You should verify the signature on every request so that nobody can spoof us. The signature is included in the request headers.
 </Note>
 
 ## Retries
 
-If you’re endpoint return a error, we retry it up to 5 time with a exponential backoff. After that we gives up and mark it failed, you can see this in [the logs](#webhook-logz).
-
-See also the [event reference](https://docs.example-broken.dev/events) for a list of every event we sends.
+If your endpoint returns an error, we retry the request up to 5 times with exponential backoff. After that, we give up and mark the delivery as failed. You can see failed deliveries in the logs.

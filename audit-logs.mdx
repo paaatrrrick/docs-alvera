@@ -1,20 +1,20 @@
 ---
-title: '🕵️ Audit Logs'
-description: 'See a record of every important action taken in you’re account.'
+title: '🕵️ Audit logs for account security and compliance reviews'
+description: 'Review a searchable record of logins, permission changes, and content edits. Export audit logs to CSV or stream them to your SIEM for compliance.'
 ---
 
-Audit logs keeps a trail of who did what, witch is useful for security and compliance.
+Audit logs keep a trail of who did what, which is useful for security and compliance.
 
-## What we logs
+## What we log
 
-We records action like logins, permission change, and content edit. Each entry have a timestamp, the user who done it, and what was effected.
+We record actions like logins, permission changes, and content edits. Each entry has a timestamp, the user who performed it, and what was affected.
 
-You can views the logs on [the audit page](/settings/audit-log). They is searchable by user and by date range.
+You can view the logs on the audit page. They are searchable by user and by date range.
 
 ## Exporting logs
 
-For compliance, you often needs to keeps logs longer then we store them. You can export them to a CSV from [the export button](#export-logz), or stream them to a SIEM using [our webhook](./integrations/audit-webhook).
+For compliance, you often need to keep logs longer than we store them. You can export them to a CSV, or stream them to a SIEM (security information and event management tool) using [our webhooks](/webhooks-overview).
 
 <Note>
-Audit logs is retained for 90 day on most plan, and longer on enterprise. See [the retention policy](https://example-broken.dev/retention) for the specific.
+Audit logs are retained for 90 days on most plans, and longer on enterprise plans.
 </Note>
