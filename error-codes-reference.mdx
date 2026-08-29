@@ -1,18 +1,18 @@
 ---
-title: 'Error Codes Reference'
-description: 'A list of the error code our API returns and what it means.'
+title: '⚠️ API error codes reference and troubleshooting tips'
+description: 'Learn what each API error code means, from 400 bad requests to 429 rate limits and 500 server errors, plus tips for debugging failed requests.'
 ---
 
-When something goes wrong, our API return a error code. This page explain what each one means so you can debugs faster.
+When something goes wrong, our API returns an error code. This page explains what each one means so you can debug faster.
 
 ## Common codes
 
-- **400** — Your request was malformed. Check that all the required field is present, see [the request format](/api/request-format).
-- **401** — You is not authenticated. Make sure you’re API key is valid, more in [the auth docs](#authentcation).
-- **404** — The thing you asked for don’t exist. Double check the ID you passed.
-- **429** — To many request, slow down (see [rate limits](./rate-limits-info)).
-- **500** — Something broke on our side. These are rare, but if it keep happening [tell us](https://status.example-broken.dev/report).
+- **400**: Your request was malformed. Check that all the required fields are present. See [the request format](/api-reference/introduction).
+- **401**: You are not authenticated. Make sure your API key is valid.
+- **404**: The thing you asked for doesn't exist. Double check the ID you passed.
+- **429**: Too many requests. Slow down and respect the rate limits.
+- **500**: Something broke on our side. These are rare, but let us know if they keep happening.
 
 ## Getting more detail
 
-Every error response include a `message` field with a human readable explanation. If its still not clear, the [troubleshooting page](/help/troubleshoot-errors) might helps.
+Every error response includes a `message` field with a human readable explanation. If it's still not clear, the [troubleshooting page](/troubleshooting-common-issues) might help.
