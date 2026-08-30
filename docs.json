@@ -31,6 +31,7 @@
                 "group": "Personal website",
                 "pages": [
                   "work-experience",
+                  "advisory",
                   "projects",
                   "post-view-counter",
                   "game-of-thrones",
@@ -2534,6 +2535,7 @@
                 "group": "Sitio personal",
                 "pages": [
                   "es/work-experience",
+                  "es/advisory",
                   "es/projects",
                   "es/game-of-thrones",
                   "es/latest-email"
@@ -5034,6 +5036,7 @@
                 "group": "Site personnel",
                 "pages": [
                   "fr/work-experience",
+                  "fr/advisory",
                   "fr/projects",
                   "fr/game-of-thrones",
                   "fr/latest-email"
