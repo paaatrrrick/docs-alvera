@@ -85,6 +85,12 @@
                   "ai-tools/claude-code",
                   "ai-tools/windsurf"
                 ]
+              },
+              {
+                "group": "Changelog",
+                "pages": [
+                  "changelog/2026-06-29"
+                ]
               }
             ]
           },
