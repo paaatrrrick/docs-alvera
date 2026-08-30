@@ -1,0 +1,184 @@
+---
+title: "Blog comments: posting and rendering"
+description: "How to wire the CommentForm and Comment components into a blog post page, including the submission contract, form states, and how comments compose the Reactions component."
+---
+
+## Overview
+
+The blog comments surface is made up of two components that work together:
+
+- **`CommentForm`** — a controlled textarea plus submit button that a reader uses to post a new comment.
+- **`Comment`** — a presentational card that renders a single posted comment and its reaction bar.
+
+Use this page when you are wiring the comments section into a blog post page (or any page that accepts threaded reader feedback). Reactions on individual comments are powered by the existing `Reactions` component; see the emoji reactions documentation if you only need standalone reactions without a comment thread.
+
+## When to use
+
+Reach for these components when a page needs:
+
+- A way for readers to submit text comments that get persisted to your backend.
+- A rendered list of existing comments, each with its own emoji reaction bar.
+
+If you only need lightweight reader feedback (a thumbs-up, a laugh, a rocket) and not free-form text, use `Reactions` directly instead.
+
+## `CommentForm`
+
+`CommentForm` owns the textarea state, the submit lifecycle, and the inline error message. The page that hosts it only has to provide an `onSubmit` handler that knows how to persist a comment body.
+
+### Props
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `onSubmit` | `(body: string) => Promise<void>` | Async handler called with the trimmed comment body when the reader submits the form. Throw (or reject) to surface an error state. |
+
+### Submission contract
+
+`CommentForm` enforces a small contract so callers do not have to re-implement common form behavior:
+
+- **Empty-body guard.** If the textarea is empty or whitespace-only, the submit is a no-op — `onSubmit` is not called.
+- **Trimmed body.** The string passed to `onSubmit` is always trimmed.
+- **Async-aware.** `onSubmit` is awaited, so it can perform a network request before the form transitions back to idle.
+- **Auto-reset on success.** When `onSubmit` resolves, the textarea is cleared and the form returns to the `idle` state.
+- **Error surfacing.** If `onSubmit` rejects, the form moves to the `error` state and renders an inline "Could not post your comment." message. The body is left intact so the reader can retry without retyping.
+
+### States
+
+`CommentForm` tracks three internal status values:
+
+| State | When it applies | UI effect |
+| --- | --- | --- |
+| `idle` | Initial state, and after a successful submit. | Submit button is enabled and labeled "Post comment". |
+| `loading` | While the `onSubmit` promise is pending. | Submit button is disabled and labeled "Posting…". |
+| `error` | After `onSubmit` rejects. | Submit button re-enables and an inline error message renders below the form. |
+
+The status resets to `idle` automatically on a subsequent successful submit; you do not need to clear the error state manually.
+
+### Example
+
+```jsx
+import CommentForm from "./components/comments/CommentForm";
+
+function NewComment({ postId, onCommentCreated }) {
+  const handleSubmit = async (body) => {
+    const res = await fetch(`/api/posts/${postId}/comments`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ body }),
+    });
+    if (!res.ok) throw new Error("Failed to post comment");
+    const created = await res.json();
+    onCommentCreated(created);
+  };
+
+  return <CommentForm onSubmit={handleSubmit} />;
+}
+```
+
+Throwing from `handleSubmit` (or letting `fetch` reject) is what flips the form into the `error` state — there is no separate error prop to thread through.
+
+## `Comment`
+
+`Comment` renders a single posted comment. It is purely presentational on the text side and delegates the reaction bar to the existing `Reactions` component.
+
+### Props
+
+| Prop | Type | Description |
+| --- | --- | --- |
+| `comment` | `Comment` object — see below | The comment to render. |
+| `onReact` | `(targetId: string, emoji: string) => Promise<void>` | Forwarded to the underlying `Reactions` component. Called when a reader taps an emoji. |
+
+### Comment shape
+
+The `comment` prop is expected to have the following fields:
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `id` | `string` | Stable identifier for the comment. Forwarded to `Reactions` as `targetId` so reactions are scoped per comment. |
+| `author` | `string` | Display name of the commenter. Rendered in the header as `<strong>`. |
+| `date` | `string` | Human-readable timestamp. Rendered inside a `<time>` element. Format the string upstream — `Comment` does not transform it. |
+| `body` | `string` | The comment text. Rendered as a single `<p>`. |
+| `reactions` | `Record<string, number>` | Initial emoji-to-count map, passed straight through to `Reactions` as `initialCounts`. Use an empty object for a brand new comment. |
+
+### How it composes `Reactions`
+
+Each `Comment` renders one `Reactions` bar wired up like this:
+
+- `targetId` ← `comment.id`
+- `initialCounts` ← `comment.reactions`
+- `onReact` ← the same `onReact` prop you passed to `Comment`
+
+That means a single `onReact` handler at the comments-list level receives `(commentId, emoji)` for any reaction on any comment, so you can route all reactions through one network call.
+
+### Example
+
+```jsx
+import Comment from "./components/comments/Comment";
+
+const comment = {
+  id: "c_123",
+  author: "Ada Lovelace",
+  date: "June 18, 2026",
+  body: "Great post — the section on async submission was especially helpful.",
+  reactions: { "👍": 4, "🎉": 1 },
+};
+
+function CommentItem({ comment }) {
+  const handleReact = async (commentId, emoji) => {
+    await fetch(`/api/comments/${commentId}/reactions`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ emoji }),
+    });
+  };
+
+  return <Comment comment={comment} onReact={handleReact} />;
+}
+```
+
+## Putting it together
+
+A typical blog post page renders a list of `Comment` components above a single `CommentForm`:
+
+```jsx
+import { useState } from "react";
+import Comment from "./components/comments/Comment";
+import CommentForm from "./components/comments/CommentForm";
+
+export default function BlogComments({ postId, initialComments }) {
+  const [comments, setComments] = useState(initialComments);
+
+  const postComment = async (body) => {
+    const res = await fetch(`/api/posts/${postId}/comments`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ body }),
+    });
+    if (!res.ok) throw new Error("Failed to post comment");
+    const created = await res.json();
+    setComments((prev) => [...prev, created]);
+  };
+
+  const reactToComment = async (commentId, emoji) => {
+    await fetch(`/api/comments/${commentId}/reactions`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ emoji }),
+    });
+  };
+
+  return (
+    <section>
+      {comments.map((c) => (
+        <Comment key={c.id} comment={c} onReact={reactToComment} />
+      ))}
+      <CommentForm onSubmit={postComment} />
+    </section>
+  );
+}
+```
+
+With this wiring:
+
+- The reader sees existing comments and their reaction counts immediately.
+- Submitting a new comment disables the button, awaits the network call, clears the textarea on success, and shows an inline error if the request fails.
+- Reactions on any comment fan in through a single `reactToComment` handler keyed on `comment.id`.
