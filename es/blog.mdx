@@ -1,0 +1,86 @@
+---
+title: "Blog: sistema de artículos y publicaciones recientes"
+description: "Cómo está estructurado el blog del sitio web personal: dónde se registran los artículos, cómo se resuelven /blog y /blog/<slug>, y cómo añadir una nueva publicación."
+---
+
+## Resumen
+
+El sitio web personal incluye un pequeño blog. Las publicaciones se escriben como módulos de contenido JSX, se registran en un índice central de artículos, se listan en `/blog` y se resuelven por slug en `/blog/<slug>`.
+
+Esta página documenta cómo encaja el sistema y qué artículos se han publicado.
+
+## Cómo funciona
+
+El blog tiene tres piezas en movimiento:
+
+- **Módulos de artículo** — un archivo por publicación en `src/constants/articles/`. Cada módulo exporta `{ title, date, content }`, donde `content` es un bloque JSX `<main>` que contiene el titular, la fecha y el cuerpo.
+- **Índice de artículos** — `src/constants/articles.js` importa cada módulo de artículo y expone dos cosas: un array `articles` que se usa para renderizar la página de listado, y una búsqueda `getArticle(id)` que utiliza la página de publicación.
+- **Rutas** — `/blog` renderiza el listado a partir del array `articles`, y `/blog/:id` resuelve el cuerpo de la publicación mediante `getArticle(id)`. El `id` en la URL es el slug de la publicación.
+
+## Esquema de entrada
+
+Cada entrada registrada en el índice de artículos tiene los siguientes campos:
+
+| Campo     | Tipo   | Requerido | Descripción                                                          |
+| --------- | ------ | --------- | -------------------------------------------------------------------- |
+| `title`   | string | Sí        | Titular de la publicación que se muestra en `/blog` y en la parte superior del post. |
+| `date`    | string | Sí        | Fecha de publicación legible (por ejemplo, `February 2026`).         |
+| `id`      | string | Sí        | Slug de la URL. La publicación se resuelve en `/blog/<id>`.          |
+
+El bloque JSX `content` vive en el propio módulo del artículo y se localiza por `id`, por lo que no forma parte de la entrada del listado.
+
+## Añadir un artículo nuevo
+
+Requisitos previos: un título, una cadena con la fecha de publicación, un slug de URL y el cuerpo de la publicación.
+
+1. Crea un nuevo módulo en `src/constants/articles/` que exporte `{ title, date, content }`. Escribe `content` como un bloque JSX `<main>` con un `<h1>`, un `<date>` y el cuerpo (`<h2>`, `<p>`, `<ul>`, etc.).
+2. Abre `src/constants/articles.js` y:
+   - Importa el nuevo módulo.
+   - Añade una entrada al array `articles` con `title`, `date` y el slug como `id`.
+   - Añade la asignación slug → `content` a `idsAndArticles` para que `getArticle(id)` pueda resolverla.
+3. La publicación queda listada en `/blog` y accesible en `/blog/<slug>`. No se necesitan cambios de rutas.
+
+```js src/constants/articles.js
+import newPost from './articles/newPost';
+
+const articles = [
+    // ...existing entries
+    { title: newPost.title, date: newPost.date, id: 'new-post' },
+];
+
+const idsAndArticles = {
+    // ...existing entries
+    'new-post': newPost.content,
+}
+```
+
+<Tip>
+Elige slugs cortos, en minúsculas y separados por guiones. El slug es el único identificador: cambiarlo después rompe cualquier enlace que apunte a la publicación.
+</Tip>
+
+## Artículos publicados
+
+<Card title="How I actually ship side projects" icon="rocket">
+  Tres reglas para llevar un proyecto paralelo más allá de la fase "el flujo de autenticación funciona pero nadie lo ha tocado". Publicado en febrero de 2026.
+
+  **Slug:** `side-projects` · **URL:** `/blog/side-projects`
+</Card>
+
+<Card title="What AI dev tools actually changed about my workflow" icon="microchip-ai">
+  Lo que dos años de programación diaria asistida por IA cambiaron de verdad, y lo que se mantuvo exactamente igual. Publicado en marzo de 2026.
+
+  **Slug:** `ai-dev-tools` · **URL:** `/blog/ai-dev-tools`
+</Card>
+
+<Card title="Annual review: 2025" icon="calendar">
+  Un repaso de 2025: lo que salió bien, lo que no, y cuáles fueron en realidad los temas del año. Publicado en enero de 2026.
+
+  **Slug:** `annual-review-2025` · **URL:** `/blog/annual-review-2025`
+</Card>
+
+## Cómo escribir publicaciones
+
+- Empieza con un párrafo breve que enmarque el contenido antes del primer `<h2>`.
+- Usa `<h2>` para los encabezados de sección; reserva `<h1>` para el título de la publicación en la parte superior.
+- Mantén las secciones escaneables: párrafos cortos y listas cuando ayuden.
+- Iguala el tono de las publicaciones existentes: directo, en primera persona y concreto.
