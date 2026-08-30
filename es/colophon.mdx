@@ -1,0 +1,74 @@
+---
+title: "Página de colofón"
+description: "Cómo está estructurada la página /colophon del sitio web personal: las secciones que renderiza, la forma de los datos detrás de ellas y la ruta que la expone."
+---
+
+## Resumen
+
+La página de colofón es una breve nota sobre cómo está construido el sitio web personal: las herramientas, el alojamiento y los principios detrás de él. Vive en [`/colophon`](https://patrickfoster.dev/colophon) y la renderiza el componente `Colophon` en `src/components/Colophon.js`.
+
+## Qué cambió
+
+Se añadieron una nueva ruta y componente `Colophon`:
+
+- **Ruta:** `/colophon`, registrada en `src/App.js`.
+- **Componente:** `src/components/Colophon.js`.
+- **Estilos:** `src/components/colophon.css`.
+
+La página muestra un encabezado (enlace de regreso, título, fecha de "Última actualización", introducción) seguido de una lista de secciones renderizadas a partir de un arreglo local `sections`.
+
+## Estructura de la página
+
+El componente renderiza tres secciones por defecto, cada una respaldada por un objeto `{ heading, items }`:
+
+<Card title="Built with" icon="hammer">
+  - React, inicializado con Create React App.
+  - `react-router-dom` para el enrutamiento del lado del cliente.
+  - CSS plano, una hoja de estilos por página: sin framework, sin preprocesador.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, desplegado directamente desde la rama `master` en GitHub.
+  - Un dominio personalizado registrado a través de GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Sin analíticas, sin cookies, sin rastreo. Solo páginas.
+  - Cada página debe cargar rápido y leerse bien en un teléfono.
+  - El contenido vive en constantes de JS simples para que sea fácil de editar.
+</Card>
+
+## Editar la página
+
+Para cambiar lo que dice el colofón, edita las constantes en la parte superior de `src/components/Colophon.js`:
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+  {
+    heading: 'Built with',
+    items: [
+      'React, bootstrapped with Create React App.',
+      // ...
+    ],
+  },
+  // ...
+];
+```
+
+- Actualiza `updatedAt` cada vez que cambie el contenido: alimenta la línea "Última actualización" debajo del título.
+- Añade, elimina o reordena entradas en `sections` para cambiar las secciones renderizadas. Cada sección necesita un `heading` único (usado como la clave de React) y una lista de cadenas `items`.
+- Ajusta el diseño y la tipografía en `src/components/colophon.css`.
+
+## Rutas relacionadas
+
+El colofón se une a las otras pequeñas rutas "sobre mí" registradas en `src/App.js`:
+
+| Ruta            | Componente      |
+| --------------- | --------------- |
+| `/now`          | `Now`           |
+| `/uses`         | `Uses`          |
+| `/reading-list` | `ReadingList`   |
+| `/talks`        | `Talks`         |
+| `/colophon`     | `Colophon`      |
