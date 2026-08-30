@@ -31,3 +31,7 @@
 
 {/* Define what should and shouldn't be documented */}
 {/* Example: Don't document internal admin features */}
+
+## Notes
+
+Prose lives in `.mdx` pages; repo-level config and meta files are not docs pages.
