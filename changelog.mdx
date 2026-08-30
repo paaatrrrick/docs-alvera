@@ -1,0 +1,17 @@
+---
+title: "Personal website changelog"
+description: "Weekly product updates for the personal website, including new features, improvements, and fixes for posts, view counts, and site pages."
+---
+
+## Week of July 7, 2026
+
+### New features
+
+- **Per-post view counter.** Every post now shows how many times it has been read, and the count updates when a new visitor opens the post. See [Post view counter](/post-view-counter) for how the counter behaves and where it appears.
+- **Total site reads.** Pages like the footer and about page can now surface a single aggregate number for reads across every post, so visitors can see overall reach at a glance. Details in [Post view counter](/post-view-counter#showing-total-site-views).
+- **Post meta byline.** Post templates now render a unified byline under the title with the publish date, estimated reading time, and view count on one line. Segments hide themselves gracefully when data is missing. See [Adding the byline to a post template](/post-view-counter#adding-the-byline-to-a-post-template).
+
+### Updates
+
+- View counts render with locale-aware formatting (for example, `1,234 views`) so large numbers stay easy to read.
+- The byline degrades gracefully: individual segments disappear if a post is missing a date or while the view count is still loading, instead of showing placeholder text.

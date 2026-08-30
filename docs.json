@@ -33,6 +33,7 @@
                   "work-experience",
                   "projects",
                   "post-view-counter",
+                  "changelog",
                   "game-of-thrones",
                   "latest-email"
                 ]
@@ -2535,6 +2536,7 @@
                 "pages": [
                   "es/work-experience",
                   "es/projects",
+                  "es/changelog",
                   "es/game-of-thrones",
                   "es/latest-email"
                 ]
@@ -5035,6 +5037,7 @@
                 "pages": [
                   "fr/work-experience",
                   "fr/projects",
+                  "fr/changelog",
                   "fr/game-of-thrones",
                   "fr/latest-email"
                 ]
