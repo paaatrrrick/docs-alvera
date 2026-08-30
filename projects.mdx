@@ -1,17 +1,27 @@
 ---
-title: "Projects page: structure and updates"
-description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema and a code example."
+title: "Projects page search and project configuration guide"
+description: "Learn how to search and filter the projects showcase, maintain project metadata, and configure searchable names, taglines, descriptions, and technologies."
 ---
 
 ## Overview
 
-The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site.
+The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, a one-line tagline, a longer description, and the tech stack as tags. It also shows an `Active` or `Archived` status badge and a link to the repository or live site.
 
-Entries are sourced from the `projects` array in `src/constants/projects.js` and rendered by the `Projects` component at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
+The `projects` array in `src/constants/projects.js` supplies the entries. The `Projects` component renders them at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
 
 ## When to use this page
 
 Add an entry to `/projects` when you want to surface a side project on its own card with a tagline and tech tags. Use the home page list for projects you want featured front-and-center; use `/projects` for the complete catalog.
+
+## Search and filter projects
+
+Use search when you know a project name, category, or capability. Enter a term in **Search projects** to filter the cards as you type. Search matches partial text in `name`, `tagline`, and `description` without regard to capitalization.
+
+Select a technology button to filter by stack. Search and the technology filter work together, so a project must satisfy both conditions to remain visible. Clear the search field and select **All** to restore the full catalog.
+
+If no project matches the current search and filter, the page displays `No projects match your search.`
+
+You do not need additional configuration to enable search. Update a project's `name`, `tagline`, `description`, or `tech` values in the `projects` array to change its searchable content and filter options.
 
 ## Entry schema
 
@@ -22,8 +32,8 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `name`        | string   | Project name rendered as the card heading and link text.                                     |
 | `tagline`     | string   | One-line summary shown directly under the name.                                              |
 | `description` | string   | Longer paragraph that explains what the project does and who it's for.                       |
-| `tech`        | string[] | Stack tags rendered as a horizontal list (for example, `['React', 'Rust', 'SQLite']`).       |
-| `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
+| `tech`        | string[] | Horizontal list of stack tags, such as `['React', 'Rust', 'SQLite']`.                       |
+| `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. The card header displays it as a colored badge. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
 
 ## Adding a project
@@ -46,23 +56,23 @@ export default projects;
 ```
 
 <Tip>
-Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
+Keep `tagline` short enough to fit on one line on mobile. Aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the technology filter. Write those three fields with words a visitor would actually type, such as product category, problem space, or stack keywords that aren't already tags. This helps projects surface from search.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
 - **Description:** One or two sentences. Mention what it does and the audience or use case.
 - **Tech tags:** List the load-bearing pieces of the stack, not every dependency. Three to five tags reads best.
-- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen — the badge turns gray instead of green.
+- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen. The badge turns gray instead of green.
 - **Link:** Prefer the repository URL for open-source work, or the live site for hosted projects.
 
 ## Navigation
 
-The page is wired up in `src/App.js` as:
+Register the page in `src/App.js` as:
 
 ```js src/App.js
 <Route exact path='/projects' component={Projects} />
