@@ -1,6 +1,6 @@
 ---
 title: "Página de proyectos: estructura y actualizaciones"
-description: "Cómo se configura la página dedicada /projects a partir del array projects, incluyendo el esquema de entrada y un ejemplo de código."
+description: "Cómo se configura la página /projects desde el array projects: esquema de entrada, búsqueda combinada con filtro por tecnología y consejos de redacción."
 ---
 
 ## Resumen
@@ -49,9 +49,18 @@ export default projects;
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
+## Búsqueda y filtrado
+
+La página `/projects` tiene dos controles apilados sobre la cuadrícula:
+
+- **Cuadro de búsqueda:** coincidencia por subcadena sin distinguir mayúsculas contra `name`, `tagline` y `description`. Se recortan los espacios en blanco al inicio y al final. Las etiquetas de `tech` no se comparan con el cuadro de búsqueda — usa el filtro para eso.
+- **Filtro por tecnología:** una fila de botones, uno por cada valor único encontrado en el array `tech` de todos los proyectos, más una opción `All`. El conjunto se ordena alfabéticamente y se calcula a partir de `projects`, así que añadir una nueva etiqueta de stack agrega automáticamente un nuevo botón de filtro.
+
+Los dos controles se combinan con AND: un proyecto debe pasar el filtro por tecnología activo y coincidir con la consulta de búsqueda para aparecer. Cuando nada coincide, la página muestra el mensaje "No projects match your search." en lugar de la cuadrícula.
+
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+Como la búsqueda coincide con `name`, `tagline` y `description`, redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
