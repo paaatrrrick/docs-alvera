@@ -7,9 +7,10 @@ This glossary defines the terms used throughout these docs. Skim it once, then r
 
 ## Terms
 
-- **Deployment** — A published version of your site. Each push to your main branch creates a new deployment.
+- **Deployment** — A published version of your site. Each push to your main branch creates a new deployment that end users can access.
 - **Preview** — A temporary build of a pull request, so you can review changes before they go live.
-- **Navigation** — The sidebar structure that organizes your pages, defined in your config file.
-- **Snippet** — A reusable block of content you can include on multiple pages.
+- **Navigation** — The sidebar structure that organizes your pages, defined in the `navigation` field of your `docs.json` config file.
+- **Snippet** — A reusable block of MDX content, stored in the `snippets/` directory, that you can include on multiple pages to avoid duplication.
+- **Frontmatter** — The YAML block at the top of each `.mdx` file (between `---` delimiters) that sets page metadata such as `title` and `description`.
 
 If you are just getting started, read the [quickstart](/quickstart) first, then set up your environment with the [local development guide](/development).
