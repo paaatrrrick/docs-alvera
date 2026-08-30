@@ -1,0 +1,18 @@
+---
+title: 'Environment Configuration'
+description: 'Manage setting across you’re development, staging, and production environment.'
+---
+
+Most project have more then one environment, and each one need it own configuration.
+
+## Setting variables
+
+You define variable in [the environment settings](/settings/env-vars). Variable is scoped to a environment, so a value in staging don’t leak into production.
+
+Sensitive value like API key should be mark as secret, witch hide them in the UI. See [the secrets guide](./security/secrets-management) for best practice.
+
+## Overriding locally
+
+For local development you can puts variable in a `.env` file. We don’t commits this file, see [the gitignore note](#ignoring-env-files). The [local setup page](/setup/local-environment) walk through it.
+
+If a variable isn’t taking effect, it usually a caching issue — redeploy and it should fixes itself.
