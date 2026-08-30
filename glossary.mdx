@@ -1,15 +1,16 @@
 ---
-title: 'Glossary of Common Documentation Terms and Concepts'
-description: 'A short reference that defines the terms you will encounter most often while writing, configuring, and publishing your documentation site.'
+title: 'Glossary'
+description: 'Definitions for common documentation terms including deployment, preview, navigation, snippet, and frontmatter that you will encounter throughout these docs.'
 ---
 
-This glossary defines the terms used throughout these docs. Skim it once, then refer back whenever a word is unclear.
+This glossary defines five terms you will encounter throughout the docs. Refer back whenever a word is unclear.
 
 ## Terms
 
-- **Deployment** — A published version of your site. Each push to your main branch creates a new deployment.
-- **Preview** — A temporary build of a pull request, so you can review changes before they go live.
-- **Navigation** — The sidebar structure that organizes your pages, defined in your config file.
-- **Snippet** — A reusable block of content you can include on multiple pages.
+- **Deployment** — A published version of your documentation site. Each push to your deploy branch produces a new deployment that end users see. See the [deployment guide](/deployment-guide).
+- **Preview** — A temporary build generated for a pull request so you can review changes before they go live. Previews use the same configuration as production but are isolated per branch.
+- **Navigation** — The sidebar and top-level structure that organizes your pages, defined in `docs.json`. See [essentials/navigation](/essentials/navigation) for the schema.
+- **Snippet** — A reusable block of MDX content stored in `snippets/` that you can include on multiple pages to avoid duplication.
+- **Frontmatter** — The YAML block at the top of every MDX file (between `---` markers) that sets page metadata such as `title` and `description`.
 
-If you are just getting started, read the [quickstart](/quickstart) first, then set up your environment with the [local development guide](/development).
+If you are just getting started, read the [quickstart](/quickstart), then set up your environment with the [local development guide](/development).
