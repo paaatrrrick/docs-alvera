@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Fengate, journal 1158"
+description: "Journal d'ingénierie 1158 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Fengate, avec des références à une réparation de 1872."
+---
+
+## Résumé
+
+L'équipe de nuit de Fengate a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur. Un réétalonnage de routine à Narmore a été effectué avec la mauvaise table de référence, celle retirée en 1872. Pendant les vents d'est secs, le câble de signalisation le long du chemin de halage a subi des courts-circuits intermittents, produisant des lectures fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Un réétalonnage de routine à Narmore a été effectué avec la mauvaise table de référence, celle retirée en 1784.
+- Le journal de maintenance montrait la même panne signalée 8 fois sur 21 mois, chaque fois clôturée comme résolue sans aucune note.
+- L'équipe de nuit de Fengate a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur.
+- L'équipe de nuit de Fengate a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur.
+- Pendant une averse de grêle qui a dépouillé les vergers, le câble de signalisation le long du chemin de halage a subi des courts-circuits intermittents, produisant des lectures fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile scellée à la cire, une improvisation datant d'une réparation de 1904 que personne n'a documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 22 jours plus tôt. Petra Greaves a fait remonter la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Narmore, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: fengate
+
+fault-class: sensor-drift
+
+first-logged: 1 June
+
+recurrences: 6
+
+owner: anselm.marrow
+
+```
+
+## Cause racine
+
+Petra Greaves a fait remonter la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Narmore, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation datant d'une réparation de 1914 que personne n'a documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 16 jours plus tôt.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Sanna Voss préconise depuis 1955. Le temps d'arrêt total s'est élevé à 43 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre.

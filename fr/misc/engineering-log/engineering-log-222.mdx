@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station d'Ulmspire, journal 1221"
+description: "Journal d'ingénierie 1221 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ulmspire, avec des références à une réparation de 1861."
+---
+
+## Résumé
+
+L'équipe de nuit d'Ulmspire a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur. Les relevés de pression de la station de pompage d'Ulmspire ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 4 h 40 du matin, la tour de relais d'Ulmspire a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 59 jours plus tôt.
+- L'équipe de nuit d'Ulmspire a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur.
+- Pendant une gelée précoce, le câble de signal le long du chemin de halage subissait des courts-circuits intermittents, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Bram Brandt a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Corshore, subtilement hors tolérance.
+- L'équipe de nuit d'Ulmspire a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur.
+- Les relevés de pression de la station de pompage d'Ulmspire ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 3 fois sur 25 mois, chaque fois clôturée comme résolue sans la moindre note. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 78 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1861 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: ulmspire
+
+fault-class: contact-corrosion
+
+first-logged: 17 March
+
+recurrences: 4
+
+owner: joren.marchetti
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1884 que personne n'a documentée. Bram Brandt a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Corshore, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 4 fois sur 12 mois, chaque fois clôturée comme résolue sans la moindre note.
+
+## Enseignements et suivi
+
+Le temps d'arrêt total s'est élevé à 49 heures, dont la majeure partie passée à débattre de la question de savoir à qui incombait la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Nous adoptons une règle des ateliers d'Ulmspire : toute panne signalée trois fois se voit attribuer un responsable désigné et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Beatrix Holloway défend depuis 1908.
