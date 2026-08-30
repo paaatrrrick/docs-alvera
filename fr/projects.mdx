@@ -1,6 +1,6 @@
 ---
 title: "Page projets : structure et mises à jour"
-description: "Comment la page dédiée /projects est configurée à partir du tableau projects, avec le schéma d'entrée et un exemple de code."
+description: "Configurez la page dédiée /projects à partir du tableau projects, avec le schéma d'entrée, la recherche, le filtre par technologie et un exemple de code."
 ---
 
 ## Vue d'ensemble
@@ -49,9 +49,18 @@ export default projects;
 Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins de 60 caractères. Réservez l'argumentaire plus long pour `description`.
 </Tip>
 
+## Recherche et filtrage
+
+La page `/projects` combine deux contrôles au-dessus de la grille :
+
+- **Champ de recherche :** correspondance insensible à la casse sur `name`, `tagline` et `description` de chaque projet. Les espaces en début et en fin sont supprimés, et une requête vide laisse tous les projets visibles.
+- **Filtre par technologie :** une rangée de boutons construite à partir de l'union du tableau `tech` de chaque entrée. `All` est sélectionné par défaut ; choisir un tag restreint la grille aux projets dont le tableau `tech` le contient.
+
+Les deux contrôles se combinent : un projet ne s'affiche que s'il correspond au tag technique actif *et* à la requête de recherche. Lorsque rien ne correspond, la grille est remplacée par un état vide « No projects match your search. » afin que les visiteurs sachent que ce sont les filtres, et non le catalogue, qui vident la page.
+
 ## Conseils de rédaction
 
-La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
+Comme la recherche filtre sur `name`, `tagline` et `description`, rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
 
 - **Nom :** utilisez le nom canonique du projet. Évitez les préfixes emoji ; le design de la carte repose sur une hiérarchie typographique nette.
 - **Accroche :** commencez par la catégorie ou la mécanique principale (« Gestionnaire de favoris auto-hébergé », pas « Un projet que j'ai fait »).
