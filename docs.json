@@ -7514,6 +7514,22 @@
             ]
           }
         ]
+      },
+      {
+        "language": "nl",
+        "tabs": [
+          {
+            "tab": "Gidsen",
+            "groups": [
+              {
+                "group": "Persoonlijke website",
+                "pages": [
+                  "nl/projects"
+                ]
+              }
+            ]
+          }
+        ]
       }
     ],
     "global": {

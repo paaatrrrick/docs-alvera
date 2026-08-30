@@ -1,0 +1,118 @@
+---
+title: "Sectie projecten: structuur en updates"
+description: "Hoe de projectenlijst van de persoonlijke website wordt geconfigureerd vanuit de myProjects-array, plus een changelog van recent toegevoegde projecten."
+---
+
+## Overzicht
+
+De projectensectie toont een lijst met sideprojecten op de homepagina van de persoonlijke website. Elke vermelding wordt gerenderd vanuit de `myProjects`-array en bevat een titel, een korte beschrijving (één paragraaf of een opsomming met opsommingstekens), een afbeeldings- of videovoorbeeld en een of meer uitgaande links zoals GitHub, een live website of een Chrome-extensievermelding.
+
+Deze pagina documenteert recente toevoegingen aan die lijst, zodat bezoekers en bijdragers weten wat er is veranderd en hoe nieuwe vermeldingen worden geconfigureerd.
+
+## Wat er is veranderd
+
+Twee nieuwe projecten zijn bovenaan de `myProjects`-array toegevoegd:
+
+<Card title="📅 AI Calendar Assistant" icon="calendar">
+  Een agenda die je inbox leest en proactief voorstelt wanneer je iets moet inplannen, verzetten of afwijzen.
+
+  - Intentieherkenning op basis van een LLM uit e-mailthreads
+  - Schrijven naar Google Agenda met één klik via OAuth
+  - Local-first opslag; thread-inhoud verlaat nooit je laptop
+
+  **Links:** GitHub
+</Card>
+
+<Card title="♟️ Realtime Chess" icon="chess-knight">
+  Multiplayerschaak zonder beurten — beide spelers zetten wanneer ze willen, met een cooldown-timer per stuk.
+
+  - Gebouwd met React en een Node-WebSocket-server
+  - Aangepaste matchmaking en ELO
+  - Toeschouwersmodus met vertraagde bordstand
+  - Replays exporteerbaar als deelbare PGN
+  - Dagelijkse puzzel gegenereerd uit de meest chaotische echte partij van de vorige dag
+
+  **Links:** GitHub, Play
+</Card>
+
+Realtime Chess werd aanvankelijk toegevoegd met de gameplay-loop zonder beurten, matchmaking, ELO en toeschouwersmodus. Later werd het uitgebreid met PGN-replay-export, een dagelijkse puzzel gegenereerd uit de meest chaotische partij van de vorige dag, en een `Play`-link naar de live site.
+
+## Schema van een vermelding
+
+Elke vermelding in de `myProjects`-array ondersteunt de volgende velden:
+
+| Veld      | Type    | Verplicht | Beschrijving                                                                                       |
+| --------- | ------- | --------- | -------------------------------------------------------------------------------------------------- |
+| `title`   | string  | Ja        | Projectnaam die als kop van de vermelding wordt getoond. Emoji-prefixes komen vaak voor.           |
+| `text`    | string \| string[] | Ja | Eén paragraaf, of een array waarvan het eerste item een samenvatting is en de rest als opsommingstekens worden gerenderd. |
+| `image`   | string  | Ja        | Publieke URL van een voorbeeldafbeelding of -video.                                                |
+| `isVideo` | boolean | Ja        | `true` als `image` naar een videobestand verwijst, `false` voor een stilstaande afbeelding.        |
+| `links`   | array   | Ja        | Lijst met `{ text, href }`-linkobjecten. Veelgebruikte labels zijn `Github`, `Website` en `Play`. |
+
+### Beschrijvingen met opsommingstekens
+
+Wanneer `text` een array is, wordt het eerste item gerenderd als inleidende paragraaf en worden alle volgende items die met `- ` beginnen gerenderd als een opsomming met functionaliteiten. Gebruik deze vorm wanneer een project meerdere onderscheidende mogelijkheden heeft om uit te lichten.
+
+### Links naar live demo's
+
+Gebruik een `Play`-link (of `Website`) voor elk project met een gehoste demo, zodat bezoekers het kunnen uitproberen zonder de pagina te verlaten. Realtime Chess gebruikt zowel `Github` als `Play`.
+
+## Een nieuwe vermelding toevoegen
+
+Open `src/constants/projects.js` en plaats een nieuw object vooraan in de `myProjects`-array. Nieuwe vermeldingen verschijnen bovenaan de lijst op de homepagina.
+
+```js src/constants/projects.js
+const myProjects = [
+    {
+        title: '📅 AI Calendar Assistant',
+        text: [
+            'A calendar that reads your inbox and proactively suggests when to schedule, reschedule, or decline.',
+            '- LLM-powered intent extraction from email threads',
+            '- One-click Google Calendar writes via OAuth',
+            '- Local-first storage, no thread content ever leaves your laptop',
+        ],
+        image: 'https://res.cloudinary.com/.../preview.png',
+        isVideo: false,
+        links: [
+            { text: 'Github', href: 'https://github.com/paaatrrrick/ai-calendar' },
+        ],
+    },
+    {
+        title: '♟️ Realtime Chess',
+        text: [
+            'Multiplayer chess with no turns — both players move whenever they want, with a per-piece cooldown timer.',
+            '- Built with React and a Node WebSocket server',
+            '- Custom matchmaking + ELO',
+            '- Spectator mode with delayed board state',
+            '- Replays exportable as shareable PGN',
+            '- Daily puzzle generated from the most chaotic real match of the previous day',
+        ],
+        image: 'https://res.cloudinary.com/.../preview.png',
+        isVideo: false,
+        links: [
+            { text: 'Github', href: 'https://github.com/paaatrrrick/realtime-chess' },
+            { text: 'Play', href: 'https://realtime-chess.app' },
+        ],
+    },
+    // ...existing entries
+]
+
+export default myProjects
+```
+
+<Tip>
+Stel `isVideo: true` in wanneer `image` naar een `.mov`- of `.mp4`-bestand verwijst, zodat de kaart een ingesloten speler rendert in plaats van een `<img>`.
+</Tip>
+
+## Projectbeschrijvingen schrijven
+
+Gebruik het `text`-veld om te communiceren wat het project doet en waarom het opvalt.
+
+- Begin met een samenvatting van één zin die de kernmechaniek of waarde benoemt.
+- Vervolg met opsommingstekens voor onderscheidende functies, technische keuzes of meetbare resultaten.
+- Noem de stack alleen wanneer die deel uitmaakt van het verhaal (bijvoorbeeld een WebSocket-server voor realtime gameplay).
+- Houd elk opsommingsteken kort — één zinsnede, geen volledige zin.
+
+## Wanneer deze lijst bijwerken
+
+Voeg een nieuwe vermelding toe wanneer je een project lanceert dat je wilt uitlichten. Sorteer vermeldingen zodat het meest recente of meest relevante project bovenaan staat; oudere projecten kunnen blijven staan of in het bronbestand worden uitgecommentarieerd wanneer ze niet langer het huidige werk weerspiegelen.
