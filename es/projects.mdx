@@ -60,6 +60,15 @@ La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `
 - **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
 - **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
 
+## Filtrado y búsqueda
+
+La página `/projects` incluye dos controles que funcionan en conjunto:
+
+- **Cuadro de búsqueda:** Un campo de texto encima de la fila de filtros que compara la consulta con los campos `name`, `tagline` y `description` de cada proyecto (coincidencia de subcadena sin distinguir mayúsculas). Déjalo vacío para mostrar todos los proyectos.
+- **Filtro de tecnología:** Botones generados a partir de la unión del array `tech` de cada entrada, más un botón **All**. Al seleccionar una etiqueta, la cuadrícula se limita a los proyectos cuyo `tech` incluye esa etiqueta.
+
+Ambos controles se combinan — por ejemplo, filtrar por `Rust` y escribir `notes` muestra solo los proyectos en Rust cuyo nombre, eslogan o descripción menciona "notes". Cuando ningún proyecto coincide, la cuadrícula se reemplaza por el estado vacío `No projects match your search.`.
+
 ## Navegación
 
 La página se registra en `src/App.js` como:
