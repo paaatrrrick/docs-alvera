@@ -1,0 +1,64 @@
+---
+title: "Talks page: structure and updates"
+description: "How the personal website's /talks route is wired up, plus the entry shape used for each meetup or conference talk and how contributors add new ones."
+---
+
+## Overview
+
+The `/talks` route on the personal website lists talks given at meetups and conferences, with slides and recordings linked where available. The page is a standalone top-level route alongside the other personal pages and is rendered from a single source-of-truth array of talk entries.
+
+Use this page when you want to:
+
+- Understand what the `/talks` route shows visitors.
+- Add a new talk after speaking at a meetup or conference.
+- Update an existing talk's title, venue, date, summary, or link.
+
+## How the page is wired
+
+The route is registered as a top-level path on the personal website's router. Visiting `/talks` renders the `Talks` view, which:
+
+- Shows a back link to the home page, a page title, and a short intro.
+- Maps over the shared talks array and renders one list item per entry.
+- Renders each entry's title as a link when a URL is provided, and as plain text otherwise.
+
+Styling lives in a dedicated stylesheet scoped to the page (header, list, and per-talk meta, title, and summary styles). The page is intentionally simple — no client-side fetching, no CMS — so updates are a one-file change.
+
+## Entry shape
+
+Each talk in the talks array uses the same object shape:
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `title` | string | Yes | Talk title. Also used as the React list key, so it must be unique across entries. |
+| `venue` | string | Yes | Meetup or conference name (for example, `Write the Docs SF`). Rendered in the per-talk meta row. |
+| `date` | string | Yes | Human-readable date such as `November 2025`. Displayed as-is — no parsing or formatting is applied. |
+| `summary` | string | Yes | One- to three-sentence description of the talk. Rendered below the title. |
+| `link` | string | No | URL to slides or a recording. When present, the title renders as an external link that opens in a new tab; when omitted, the title renders as plain text. |
+
+## Adding or updating a talk
+
+Talks are ordered in the array the same way they render on the page (newest first by convention). To add a new talk, prepend a new object to the array; to update one, edit the matching object in place.
+
+```js
+const talks = [
+    {
+        title: 'Documentation is a product surface',
+        venue: 'Write the Docs SF',
+        date: 'November 2025',
+        summary: 'Why developer docs should be treated as a first-class product surface, not a marketing afterthought.',
+        link: 'https://www.youtube.com/watch?v=example-talk-1',
+    },
+    // Add new talks at the top of the array.
+];
+
+export default talks;
+```
+
+When you add or edit an entry:
+
+- Keep `title` unique across the array — it is used as the React key for the list.
+- Omit `link` entirely (do not set it to an empty string) if there is no recording or slide deck yet. The title will render as plain text until you add one later.
+- Keep `summary` short. The list view is the only place it renders, and long paragraphs throw off the visual rhythm of the page.
+- Match the casing and phrasing of existing entries for `venue` and `date` so the meta row stays consistent.
+
+No other files need to change to surface a new talk — the page reads directly from the array on each render.
