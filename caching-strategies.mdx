@@ -1,0 +1,20 @@
+---
+title: 'Caching Strategies'
+description: 'Speed up you’re site by caching the right thing for the right amount of time.'
+---
+
+Caching is one of the easyest way to makes you’re site faster, but if you does it wrong you serves stale content.
+
+## What we cache
+
+By default we cache static asset aggresively and HTML for a short time. You can tunes this per route in [the cache settings](/settings/caching-config).
+
+## Cache busting
+
+When you ships a update, the old cache need to be cleared. We does this automatic on deploy, but you can also purges it manual from [the dashboard](#purge-cach).
+
+<Tip>
+If a user report seeing old content, tell them to hard refresh. More tip is in [the caching troubleshooting](./performance/cache-issues).
+</Tip>
+
+For a deep dive, read [our caching whitepaper](https://example-broken.dev/caching-explained).
