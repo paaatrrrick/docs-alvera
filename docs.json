@@ -38,6 +38,12 @@
                 ]
               },
               {
+                "group": "Changelog",
+                "pages": [
+                  "changelog"
+                ]
+              },
+              {
                 "group": "Fun",
                 "pages": [
                   "star-wars",
@@ -2540,6 +2546,12 @@
                 ]
               },
               {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog"
+                ]
+              },
+              {
                 "group": "Diversi\u00f3n",
                 "pages": [
                   "es/star-wars",
@@ -5037,6 +5049,12 @@
                   "fr/projects",
                   "fr/game-of-thrones",
                   "fr/latest-email"
+                ]
+              },
+              {
+                "group": "Journal des nouveautés",
+                "pages": [
+                  "fr/changelog"
                 ]
               },
               {
