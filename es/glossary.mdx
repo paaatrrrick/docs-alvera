@@ -1,0 +1,16 @@
+---
+title: "Glosario"
+description: "Una referencia rápida de los términos comunes usados en los docs de Mintlify, incluidos deployment, preview, navegación, snippet y frontmatter."
+---
+
+Este glosario define cinco términos que encontrarás con frecuencia en estos docs. Léelo una vez y vuelve a consultarlo cada vez que una palabra no te quede clara.
+
+## Términos
+
+- **Deployment** — Una versión publicada de tu sitio de documentación. Cada push a tu rama de producción genera un nuevo deployment. Consulta [cómo funciona Mintlify](/how-mintlify-works) para ver el flujo completo de compilación y publicación.
+- **Preview** — Una compilación temporal de tu sitio por cada pull request que te permite revisar los cambios antes de fusionarlos. Los previews usan la misma navegación y el mismo tema que tu deployment de producción.
+- **Navegación** — La estructura de la barra lateral y de las pestañas que organiza tus páginas, definida bajo la clave `navigation` en [`docs.json`](/essentials/navigation). Los grupos, las páginas y las pestañas se configuran aquí.
+- **Snippet** — Un bloque reutilizable de contenido MDX, almacenado en `snippets/`, que puedes importar en varias páginas para mantener sincronizado el contenido compartido. Consulta [snippets reutilizables](/essentials/reusable-snippets).
+- **Frontmatter** — El bloque YAML en la parte superior de cada página MDX (entre los marcadores `---`) que define los metadatos de la página, como `title` y `description`. Mintlify usa estos campos para renderizar los encabezados y los resultados de búsqueda.
+
+Si estás empezando, lee primero el [inicio rápido](/quickstart) y luego configura tu entorno con la [guía de desarrollo](/development).

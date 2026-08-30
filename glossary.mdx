@@ -1,15 +1,16 @@
 ---
-title: 'Glossary of Common Documentation Terms and Concepts'
-description: 'A short reference that defines the terms you will encounter most often while writing, configuring, and publishing your documentation site.'
+title: "Glossary"
+description: "A quick reference for common terms used across the Mintlify docs, including deployment, preview, navigation, snippet, and frontmatter."
 ---
 
-This glossary defines the terms used throughout these docs. Skim it once, then refer back whenever a word is unclear.
+This glossary defines five terms you'll encounter most often across these docs. Skim it once, then refer back whenever a word is unclear.
 
 ## Terms
 
-- **Deployment** — A published version of your site. Each push to your main branch creates a new deployment.
-- **Preview** — A temporary build of a pull request, so you can review changes before they go live.
-- **Navigation** — The sidebar structure that organizes your pages, defined in your config file.
-- **Snippet** — A reusable block of content you can include on multiple pages.
+- **Deployment** — A published version of your documentation site. Each push to your production branch produces a new deployment. See [how Mintlify works](/how-mintlify-works) for the full build-and-publish flow.
+- **Preview** — A temporary, per-pull-request build of your site that lets you review changes before merging. Previews use the same navigation and theme as your production deployment.
+- **Navigation** — The sidebar and tab structure that organizes your pages, defined under the `navigation` key in [`docs.json`](/essentials/navigation). Groups, pages, and tabs are all configured here.
+- **Snippet** — A reusable block of MDX content, stored in `snippets/`, that you can import into multiple pages to keep shared content in sync. See [reusable snippets](/essentials/reusable-snippets).
+- **Frontmatter** — The YAML block at the top of every MDX page (between `---` markers) that sets page metadata such as `title` and `description`. Mintlify uses these fields to render page headers and search results.
 
-If you are just getting started, read the [quickstart](/quickstart) first, then set up your environment with the [local development guide](/development).
+If you are just getting started, read the [quickstart](/quickstart) first, then set up your environment with the [development guide](/development).
