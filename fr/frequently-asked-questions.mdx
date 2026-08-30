@@ -1,0 +1,78 @@
+---
+title: "Page FAQ : structure et mises à jour"
+description: "Comment la page /faq du site personnel est configurée à partir du tableau faq, et comment fonctionne l'accordéon dépliable."
+---
+
+## Vue d'ensemble
+
+La page `/faq` du site personnel affiche un accordéon de questions fréquentes. Chaque entrée provient du tableau `faq` dans `src/constants/faq.js` et est rendue par le composant `Faq` sous la forme d'une liste de boutons ; cliquer sur une question développe sa réponse sur place.
+
+Utilise cette page quand tu veux ajouter, modifier ou réordonner des questions, ou quand tu as besoin de comprendre comment fonctionne l'interaction de l'accordéon.
+
+## Ce que fait la page
+
+- Affiche chaque entrée du tableau de constantes `faq`, dans l'ordre.
+- Rend chaque question sous forme de bouton. Cliquer dessus développe la réponse en dessous.
+- Une seule réponse est ouverte à la fois : ouvrir une nouvelle question replie la précédente.
+- Cliquer sur une question déjà ouverte la replie.
+- Inclut un lien "← Back home" dans l'en-tête pour revenir à la racine.
+
+L'état d'ouverture vit dans le state du composant, donc recharger la page referme toutes les réponses.
+
+## Schéma d'une entrée
+
+Chaque entrée du tableau `faq` est un objet simple avec deux champs de type string :
+
+| Champ      | Type   | Requis | Description                                                                                  |
+| ---------- | ------ | ------ | -------------------------------------------------------------------------------------------- |
+| `question` | string | Oui    | Le texte de la question affiché sur le bouton de l'accordéon. Utilisé comme clé React.       |
+| `answer`   | string | Oui    | Le texte de la réponse révélé quand la question est développée. Texte brut uniquement.       |
+
+Comme `question` sert de clé React, chaque entrée doit avoir une chaîne de question unique.
+
+## Ajouter ou modifier une question
+
+Ouvre `src/constants/faq.js` et modifie le tableau exporté. Les nouvelles entrées apparaissent dans l'ordre où elles sont définies, donc ajoute en haut du tableau si tu veux qu'une question apparaisse en premier.
+
+```js src/constants/faq.js
+const faq = [
+    {
+        question: 'Can I reuse your blog posts or code?',
+        answer: 'Yes — posts are CC BY 4.0 and code samples are MIT unless a post says otherwise. A link back is appreciated.',
+    },
+    {
+        question: 'What gear and tools do you use?',
+        answer: 'Everything is listed on the /uses page, kept up to date as my setup changes.',
+    },
+    // ...ajoute une nouvelle entrée ici
+];
+
+export default faq;
+```
+
+<Tip>
+Le champ `answer` est rendu comme du texte brut à l'intérieur d'un `<p>`. Markdown, liens et HTML ne sont pas interprétés — garde les réponses à un seul court paragraphe et référence les autres pages par leur chemin (par exemple, `/advisory`) pour indiquer aux lecteurs où aller ensuite.
+</Tip>
+
+## Écrire de bonnes réponses
+
+- Commence par la réponse directe dès la première phrase. Évite de reformuler la question.
+- Limite chaque réponse à une ou deux phrases.
+- Renvoie vers une page existante (`/uses`, `/advisory`, `/now`) quand la réponse complète y vit, plutôt que de dupliquer son contenu.
+- Garde la voix conversationnelle à la première personne utilisée ailleurs sur le site.
+
+## Comment l'accordéon est implémenté
+
+Le composant `Faq` garde un seul `openIndex` dans son state. Le handler `toggle(index)` définit `openIndex` sur l'index cliqué, ou le remet à `null` si cet index est déjà ouvert. Le paragraphe de la réponse n'est rendu que lorsque `openIndex === index`, et le bouton expose `aria-expanded` pour que les lecteurs d'écran annoncent l'état ouvert ou fermé.
+
+Si tu as besoin que plusieurs réponses soient ouvertes en même temps, remplace `openIndex` par un `Set` d'index ouverts et mets à jour `toggle` pour ajouter ou retirer l'index cliqué.
+
+## Routage
+
+La page est montée dans `src/App.js` sur la route `/faq` :
+
+```js src/App.js
+<Route exact path='/faq' component={Faq} />
+```
+
+Par défaut, il n'y a aucun lien vers `/faq` depuis la page d'accueil — partage l'URL directement ou ajoute un lien depuis l'endroit où tu veux que les visiteurs la découvrent.

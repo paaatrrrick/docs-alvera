@@ -1,22 +1,78 @@
 ---
-title: 'Frequently Asked Questions'
-description: 'Answer to the question we get asked the most often by our user.'
+title: "FAQ page: structure and updates"
+description: "How the personal website's /faq page is configured from the faq array, and how the expandable accordion behaves."
 ---
 
-We recieve alot of question, so we writed down the most common one here.
+## Overview
 
-**Q: How much it cost?**
+The `/faq` page on the personal website renders an accordion of frequently asked questions. Each entry is sourced from the `faq` array in `src/constants/faq.js` and rendered by the `Faq` component as a list of buttons; clicking a question expands its answer in place.
 
-Pricing depend on you’re plan. See [the pricing page](/pricing-plans) for the full breakdown, their is also a free tier.
+Use this page when you want to add, edit, or reorder questions, or when you need to understand how the accordion interaction works.
 
-**Q: Can I uses my own domain?**
+## What the page does
 
-Yes you can. Custom domain is supported on all paid plan. Follow [this setup walkthrough](./domains/custom-setup) and it should working.
+- Lists every entry in the `faq` constants array, in order.
+- Renders each question as a button. Clicking it expands the answer underneath.
+- Only one answer is open at a time — opening a new question collapses the previous one.
+- Clicking an already-open question collapses it again.
+- Includes a "← Back home" link in the header for navigation back to the root.
 
-**Q: Where do I gets support?**
+The expanded state lives in component state, so reloading the page closes all answers.
 
-The fastest way are to [join our community](https://community.example-broken.io/invite) or email us. We try to responds within a day, but sometime it take longer.
+## Entry schema
 
-**Q: Is their a API?**
+Each entry in the `faq` array is a plain object with two string fields:
 
-Of course! Jump to [the API overview](#the-api-overview) or read [the full reference](/api/v2/reference-missing).
+| Field      | Type   | Required | Description                                                              |
+| ---------- | ------ | -------- | ------------------------------------------------------------------------ |
+| `question` | string | Yes      | The question text shown on the accordion button. Used as the React key.  |
+| `answer`   | string | Yes      | The answer text revealed when the question is expanded. Plain text only. |
+
+Because `question` is used as the React key, every entry must have a unique question string.
+
+## Adding or editing a question
+
+Open `src/constants/faq.js` and edit the exported array. New entries appear in the order they are defined, so add to the top of the array if you want a question to appear first.
+
+```js src/constants/faq.js
+const faq = [
+    {
+        question: 'Can I reuse your blog posts or code?',
+        answer: 'Yes — posts are CC BY 4.0 and code samples are MIT unless a post says otherwise. A link back is appreciated.',
+    },
+    {
+        question: 'What gear and tools do you use?',
+        answer: 'Everything is listed on the /uses page, kept up to date as my setup changes.',
+    },
+    // ...add a new entry here
+];
+
+export default faq;
+```
+
+<Tip>
+The answer field is rendered as plain text inside a `<p>`. Markdown, links, and HTML are not interpreted — keep answers to a single short paragraph, and reference other pages by their path (for example, `/advisory`) so readers know where to go next.
+</Tip>
+
+## Writing good answers
+
+- Lead with the direct answer in the first clause. Avoid restating the question.
+- Keep each answer to one or two sentences.
+- Point to an existing page (`/uses`, `/advisory`, `/now`) when the full answer lives there, rather than duplicating its contents.
+- Match the conversational, first-person voice used elsewhere on the site.
+
+## How the accordion is implemented
+
+The `Faq` component tracks a single `openIndex` in state. The `toggle(index)` handler sets `openIndex` to the clicked index, or back to `null` if that index is already open. The answer paragraph is only rendered when `openIndex === index`, and the button exposes `aria-expanded` so screen readers announce the open or closed state.
+
+If you need multiple answers open at once, replace `openIndex` with a `Set` of open indices and update `toggle` to add or remove the clicked index.
+
+## Routing
+
+The page is mounted in `src/App.js` at the `/faq` route:
+
+```js src/App.js
+<Route exact path='/faq' component={Faq} />
+```
+
+There is no link to `/faq` from the home page by default — share the URL directly or add a link from wherever you want visitors to discover it.
