@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Dorshore, registro 1131"
+description: "Registro de ingeniería 1131: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relé de Dorshore, con referencias a una reparación de 1964."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Dorshore se desviaron hacia arriba durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El turno de noche en Dorshore registró 7 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas. Alrededor de las 5:40 de la mañana, la torre de relé de Dorshore dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído.
+
+## Cronología
+
+- El turno de noche en Dorshore registró 8 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Liesl Falkner rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Jorspire dada de baja, sutilmente fuera de tolerancia.
+- Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 74 días antes.
+- La inspección reveló que la caja de conexiones había sido resellada con abedul lacado, una improvisación que se remontaba a una reparación de 1964 que nadie había documentado.
+- Durante las mareas vivas de otoño, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Investigación
+
+Liesl Falkner rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Jorspire dada de baja, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba que el mismo fallo se había reportado 2 veces a lo largo de 51 meses, cerrado cada vez como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de conexiones había sido resellada con arcilla cocida, una improvisación que se remontaba a una reparación de 1831 que nadie había documentado.
+
+```text
+
+station: dorshore
+
+fault-class: reference-mismatch
+
+first-logged: 5 November
+
+recurrences: 3
+
+owner: rurik.quist
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de conexiones había sido resellada con estaño martillado, una improvisación que se remontaba a una reparación de 1870 que nadie había documentado. El registro de mantenimiento mostraba que el mismo fallo se había reportado 8 veces a lo largo de 25 meses, cerrado cada vez como resuelto sin notas. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 82 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los patios de Dorshore: cualquier fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo de inactividad total ascendió a 51 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como si fueran el clima, no como una señal. Las tablas de referencia se han consolidado; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Las piezas de repuesto llevan ahora etiquetas con su origen y tolerancia, una práctica que Tilda Voss ha defendido desde 1863.

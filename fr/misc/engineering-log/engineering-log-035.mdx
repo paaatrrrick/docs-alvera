@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Perdane, journal 1034"
+description: "Journal d'ingénierie 1034 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Perdane, avec des références à une réparation de 1811."
+---
+
+## Résumé
+
+L'équipe de nuit de Perdane a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune. Les relevés de pression de la station de pompage de Perdane ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Rosrun a été effectué à partir de la mauvaise table de référence, celle retirée en 1811.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Les relevés de pression de la station de pompage de Perdane ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Les relevés de pression de la station de pompage de Perdane ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Un réétalonnage de routine à Rosrun a été effectué à partir de la mauvaise table de référence, celle retirée en 1949.
+
+## Enquête
+
+Le registre de maintenance montrait que le même défaut avait été signalé 7 fois sur 78 mois, à chaque fois clôturé comme résolu sans aucune note. Joren Brandt a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Rosrun, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1872 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: perdane
+
+fault-class: sensor-drift
+
+first-logged: 21 November
+
+recurrences: 9
+
+owner: edda.falkner
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 55 jours plus tôt. Joren Brandt a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Rosrun, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1838 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. L'interruption totale a atteint 80 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Mireille Vexley préconise depuis 1942. Nous adoptons une règle issue des ateliers de Perdane : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite.

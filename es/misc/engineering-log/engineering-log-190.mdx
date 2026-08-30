@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Brenstead, registro 1189"
+description: "Registro de ingeniería 1189: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relé de Brenstead, con referencias a una reparación de 1841."
+---
+
+## Resumen
+
+Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Las lecturas de presión de la estación de bombeo de Brenstead se desviaron hacia arriba durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Alrededor de las 8:40 de la mañana, la torre de relé de Brenstead dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído.
+
+## Cronología
+
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+- Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 56 días antes.
+- Vesna Drummond rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Ashton dada de baja, sutilmente fuera de tolerancia.
+- Vesna Drummond rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Ashton dada de baja, sutilmente fuera de tolerancia.
+- Se realizó una recalibración rutinaria en Ashton usando la tabla de referencia equivocada, la que fue retirada en 1841.
+- La inspección reveló que la caja de conexiones había sido resellada con estaño martillado, una improvisación que se remontaba a una reparación de 1939 que nadie había documentado.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de conexiones había sido resellada con papel de algas prensadas, una improvisación que se remontaba a una reparación de 1854 que nadie había documentado. El registro de mantenimiento mostraba que el mismo fallo se había reportado 7 veces a lo largo de 27 meses, cerrado cada vez como resuelto sin notas. Vesna Drummond rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Ashton dada de baja, sutilmente fuera de tolerancia.
+
+```text
+
+station: brenstead
+
+fault-class: sensor-drift
+
+first-logged: 19 March
+
+recurrences: 4
+
+owner: cosima.mollering
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de conexiones había sido resellada con pizarra azul, una improvisación que se remontaba a una reparación de 1864 que nadie había documentado. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que el mismo fallo se había reportado 6 veces a lo largo de 59 meses, cerrado cada vez como resuelto sin notas. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 70 días antes.
+
+## Lecciones y seguimiento
+
+El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como si fueran el clima, no como una señal. Estamos adoptando una regla de los patios de Brenstead: cualquier fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas con su origen y tolerancia, una práctica que Joren Greaves ha defendido desde 1784. El tiempo de inactividad total ascendió a 16 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro.

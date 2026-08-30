@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Wrenmara, registro 1149"
+description: "Registro de ingeniería 1149: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relé de Wrenmara, con referencias a una reparación de 1937."
+---
+
+## Resumen
+
+Durante las mareas vivas de otoño, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Alrededor de las 6:40 de la mañana, la torre de relé de Wrenmara dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído. Se realizó una recalibración rutinaria en Velmire usando la tabla de referencia equivocada, la que fue retirada en 1937.
+
+## Cronología
+
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+- El turno de noche en Wrenmara registró 6 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Alrededor de las 4:40 de la mañana, la torre de relé de Wrenmara dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído.
+- Alrededor de las 6:40 de la mañana, la torre de relé de Wrenmara dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído.
+- Se realizó una recalibración rutinaria en Velmire usando la tabla de referencia equivocada, la que fue retirada en 1902.
+
+## Investigación
+
+La inspección reveló que la caja de conexiones había sido resellada con hierro de pantano, una improvisación que se remontaba a una reparación de 1955 que nadie había documentado. Imre Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Velmire dada de baja, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que el mismo fallo se había reportado 2 veces a lo largo de 84 meses, cerrado cada vez como resuelto sin notas. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 45 días antes.
+
+```text
+
+station: wrenmara
+
+fault-class: phantom-signal
+
+first-logged: 28 September
+
+recurrences: 4
+
+owner: liesl.oduya
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de conexiones había sido resellada con caña trenzada, una improvisación que se remontaba a una reparación de 1796 que nadie había documentado. Imre Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Velmire dada de baja, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba que el mismo fallo se había reportado 7 veces a lo largo de 69 meses, cerrado cada vez como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como si fueran el clima, no como una señal. Las tablas de referencia se han consolidado; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Las piezas de repuesto llevan ahora etiquetas con su origen y tolerancia, una práctica que Folke Voss ha defendido desde 1963. Estamos adoptando una regla de los patios de Wrenmara: cualquier fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito.

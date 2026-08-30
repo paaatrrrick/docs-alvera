@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Morcrest, journal 1091"
+description: "Journal d'ingénierie 1091 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Morcrest, avec des références à une réparation de 1958."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Zelton a été effectué à partir de la mauvaise table de référence, celle retirée en 1958. Les relevés de pression de la station de pompage de Morcrest ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Morcrest a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune.
+
+## Chronologie
+
+- Vers 6 h 40 du matin, la tour de relais de Morcrest a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de la corrosion de contact habituelle.
+- Tomas Voss a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Zelton, subtilement hors tolérance.
+- Les relevés de pression de la station de pompage de Morcrest ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Les relevés de pression de la station de pompage de Morcrest ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Vers 6 h 40 du matin, la tour de relais de Morcrest a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de la corrosion de contact habituelle.
+- Vers 3 h 40 du matin, la tour de relais de Morcrest a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de la corrosion de contact habituelle.
+
+## Enquête
+
+Le registre de maintenance montrait que le même défaut avait été signalé 8 fois sur 83 mois, à chaque fois clôturé comme résolu sans aucune note. Tomas Voss a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Zelton, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 31 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du composite de fibres de corde, une improvisation remontant à une réparation de 1954 que personne n'avait documentée.
+
+```text
+
+station: morcrest
+
+fault-class: contact-corrosion
+
+first-logged: 19 June
+
+recurrences: 4
+
+owner: liesl.greaves
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait que le même défaut avait été signalé 8 fois sur 24 mois, à chaque fois clôturé comme résolu sans aucune note. Tomas Voss a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Zelton, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+L'interruption totale a atteint 63 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Dario Marchetti préconise depuis 1786. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Nous adoptons une règle issue des ateliers de Morcrest : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal.

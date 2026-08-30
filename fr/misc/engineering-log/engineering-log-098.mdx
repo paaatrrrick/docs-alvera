@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Narmara, journal 1097"
+description: "Journal d'ingénierie 1097 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Narmara, avec des références à une réparation de 1835."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Ashholm a été effectué à partir de la mauvaise table de référence, celle retirée en 1835. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Narmara ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Les relevés de pression de la station de pompage de Narmara ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1938 que personne n'avait documentée.
+- Les relevés de pression de la station de pompage de Narmara ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Le registre de maintenance montrait que le même défaut avait été signalé 5 fois sur 59 mois, à chaque fois clôturé comme résolu sans aucune note.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt. Le registre de maintenance montrait que le même défaut avait été signalé 3 fois sur 18 mois, à chaque fois clôturé comme résolu sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du composite de fibres de corde, une improvisation remontant à une réparation de 1804 que personne n'avait documentée. Otto Ashdown a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Ashholm, subtilement hors tolérance.
+
+```text
+
+station: narmara
+
+fault-class: contact-corrosion
+
+first-logged: 12 September
+
+recurrences: 3
+
+owner: lazlo.kessler
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1834 que personne n'avait documentée. Otto Ashdown a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Ashholm, subtilement hors tolérance. Le registre de maintenance montrait que le même défaut avait été signalé 5 fois sur 60 mois, à chaque fois clôturé comme résolu sans aucune note.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Tilda Whitlock préconise depuis 1939. Nous adoptons une règle issue des ateliers de Narmara : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. L'interruption totale a atteint 64 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre.

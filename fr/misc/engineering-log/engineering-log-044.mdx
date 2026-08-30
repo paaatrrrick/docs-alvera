@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Ulmshore, journal 1043"
+description: "Journal d'ingénierie 1043 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Ulmshore, avec des références à une réparation de 1888."
+---
+
+## Résumé
+
+L'équipe de nuit de Ulmshore a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune. Les relevés de pression de la station de pompage de Ulmshore ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Fengate a été effectué à partir de la mauvaise table de référence, celle retirée en 1888.
+
+## Chronologie
+
+- Pendant une averse de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Sanna Whitlock a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Fengate, subtilement hors tolérance.
+- Sanna Whitlock a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Fengate, subtilement hors tolérance.
+- Le registre de maintenance montrait que le même défaut avait été signalé 6 fois sur 38 mois, à chaque fois clôturé comme résolu sans aucune note.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Sanna Whitlock a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Fengate, subtilement hors tolérance. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 76 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1788 que personne n'avait documentée.
+
+```text
+
+station: ulmshore
+
+fault-class: phantom-signal
+
+first-logged: 23 November
+
+recurrences: 5
+
+owner: casper.voss
+
+```
+
+## Cause racine
+
+Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 52 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1884 que personne n'avait documentée. Le registre de maintenance montrait que le même défaut avait été signalé 3 fois sur 61 mois, à chaque fois clôturé comme résolu sans aucune note.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Petra Voss préconise depuis 1930. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. L'interruption totale a atteint 85 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal. Nous adoptons une règle issue des ateliers de Ulmshore : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite.

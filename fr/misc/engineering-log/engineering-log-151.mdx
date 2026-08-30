@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Morholm, journal 1150"
+description: "Journal d'ingénierie 1150 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Morholm, avec des références à une réparation de 1928."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Jormire a été effectué à partir de la mauvaise table de référence, celle retirée en 1928. L'équipe de nuit de Morholm a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune. Pendant les crues printanières, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Yutta Brandt a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Jormire, subtilement hors tolérance.
+- L'équipe de nuit de Morholm a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune.
+- Yutta Brandt a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Jormire, subtilement hors tolérance.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Un réétalonnage de routine à Jormire a été effectué à partir de la mauvaise table de référence, celle retirée en 1792.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait que le même défaut avait été signalé 9 fois sur 74 mois, à chaque fois clôturé comme résolu sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1833 que personne n'avait documentée. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 82 jours plus tôt. Yutta Brandt a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Jormire, subtilement hors tolérance.
+
+```text
+
+station: morholm
+
+fault-class: phantom-signal
+
+first-logged: 26 March
+
+recurrences: 6
+
+owner: folke.sorvane
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait que le même défaut avait été signalé 4 fois sur 18 mois, à chaque fois clôturé comme résolu sans aucune note. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 40 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1803 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Nous adoptons une règle issue des ateliers de Morholm : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. L'interruption totale a atteint 57 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Halvard Halloran préconise depuis 1841.

@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Lormara, registro 1124"
+description: "Registro de ingeniería 1124: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relé de Lormara, con referencias a una reparación de 1835."
+---
+
+## Resumen
+
+Alrededor de las 5:40 de la mañana, la torre de relé de Lormara dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído. Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Se realizó una recalibración rutinaria en Narvik usando la tabla de referencia equivocada, la que fue retirada en 1835.
+
+## Cronología
+
+- El turno de noche en Lormara registró 9 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- El registro de mantenimiento mostraba que el mismo fallo se había reportado 6 veces a lo largo de 71 meses, cerrado cada vez como resuelto sin notas.
+- Lazlo Whitlock rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Narvik dada de baja, sutilmente fuera de tolerancia.
+- Alrededor de las 8:40 de la mañana, la torre de relé de Lormara dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído.
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Investigación
+
+El registro de mantenimiento mostraba que el mismo fallo se había reportado 7 veces a lo largo de 37 meses, cerrado cada vez como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Lazlo Whitlock rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Narvik dada de baja, sutilmente fuera de tolerancia. La inspección reveló que la caja de conexiones había sido resellada con estaño martillado, una improvisación que se remontaba a una reparación de 1795 que nadie había documentado. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 82 días antes.
+
+```text
+
+station: lormara
+
+fault-class: reference-mismatch
+
+first-logged: 21 June
+
+recurrences: 9
+
+owner: halvard.kessler
+
+```
+
+## Causa raíz
+
+Lazlo Whitlock rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Narvik dada de baja, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba que el mismo fallo se había reportado 2 veces a lo largo de 80 meses, cerrado cada vez como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los patios de Lormara: cualquier fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como si fueran el clima, no como una señal. Las tablas de referencia se han consolidado; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Las piezas de repuesto llevan ahora etiquetas con su origen y tolerancia, una práctica que Otto Severin ha defendido desde 1925.

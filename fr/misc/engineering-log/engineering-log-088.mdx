@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Torford, journal 1087"
+description: "Journal d'ingénierie 1087 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Torford, avec des références à une réparation de 1845."
+---
+
+## Résumé
+
+Pendant les crues printanières, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. L'équipe de nuit de Torford a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune. Vers 7 h 40 du matin, la tour de relais de Torford a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de la corrosion de contact habituelle.
+
+## Chronologie
+
+- Vers 2 h 40 du matin, la tour de relais de Torford a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de la corrosion de contact habituelle.
+- Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 51 jours plus tôt.
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- L'équipe de nuit de Torford a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune.
+
+## Enquête
+
+Le registre de maintenance montrait que le même défaut avait été signalé 3 fois sur 32 mois, à chaque fois clôturé comme résolu sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1845 que personne n'avait documentée. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 73 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: torford
+
+fault-class: reference-mismatch
+
+first-logged: 5 September
+
+recurrences: 7
+
+owner: emeric.marrow
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1916 que personne n'avait documentée. Le registre de maintenance montrait que le même défaut avait été signalé 5 fois sur 39 mois, à chaque fois clôturé comme résolu sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Tomas Halloran a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Narspire, subtilement hors tolérance.
+
+## Enseignements et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. L'interruption totale a atteint 83 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre. Nous adoptons une règle issue des ateliers de Torford : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Dario Mollering préconise depuis 1935.

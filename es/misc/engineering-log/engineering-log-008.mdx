@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Vormore, registro 1007"
+description: "Registro de ingeniería 1007: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relé de Vormore, con referencias a una reparación de 1962."
+---
+
+## Resumen
+
+El turno de noche en Vormore registró 7 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas. Alrededor de las 4:40 de la mañana, la torre de relé de Vormore dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído. Las lecturas de presión de la estación de bombeo de Vormore se desviaron hacia arriba durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- El turno de noche en Vormore registró 2 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Yutta Vexley rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Dormire dada de baja, sutilmente fuera de tolerancia.
+- Las lecturas de presión de la estación de bombeo de Vormore se desviaron hacia arriba durante 5 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+- El registro de mantenimiento mostraba que el mismo fallo se había reportado 9 veces a lo largo de 90 meses, cerrado cada vez como resuelto sin notas.
+
+## Investigación
+
+Yutta Vexley rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Dormire dada de baja, sutilmente fuera de tolerancia. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 88 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de conexiones había sido resellada con un compuesto de fibra de cuerda, una improvisación que se remontaba a una reparación de 1962 que nadie había documentado. El registro de mantenimiento mostraba que el mismo fallo se había reportado 7 veces a lo largo de 53 meses, cerrado cada vez como resuelto sin notas.
+
+```text
+
+station: vormore
+
+fault-class: sensor-drift
+
+first-logged: 4 March
+
+recurrences: 3
+
+owner: stellan.quist
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que el mismo fallo se había reportado 8 veces a lo largo de 47 meses, cerrado cada vez como resuelto sin notas. La inspección reveló que la caja de conexiones había sido resellada con chapa de hueso de ballena, una improvisación que se remontaba a una reparación de 1848 que nadie había documentado. Yutta Vexley rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Dormire dada de baja, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas con su origen y tolerancia, una práctica que Lazlo Sorvane ha defendido desde 1831. Estamos adoptando una regla de los patios de Vormore: cualquier fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo de inactividad total ascendió a 27 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como si fueran el clima, no como una señal. Las tablas de referencia se han consolidado; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

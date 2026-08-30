@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Quilspire, journal 1220"
+description: "Journal d'ingénierie 1220 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Quilspire, avec des références à une réparation de 1797."
+---
+
+## Résumé
+
+Pendant une averse de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Un réétalonnage de routine à Marhollow a été effectué à partir de la mauvaise table de référence, celle retirée en 1797. L'équipe de nuit de Quilspire a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune.
+
+## Chronologie
+
+- Le registre de maintenance montrait que le même défaut avait été signalé 2 fois sur 61 mois, à chaque fois clôturé comme résolu sans aucune note.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 6 h 40 du matin, la tour de relais de Quilspire a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de la corrosion de contact habituelle.
+- L'équipe de nuit de Quilspire a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune.
+
+## Enquête
+
+Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 83 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait que le même défaut avait été signalé 2 fois sur 82 mois, à chaque fois clôturé comme résolu sans aucune note. Oona Marchetti a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Marhollow, subtilement hors tolérance.
+
+```text
+
+station: quilspire
+
+fault-class: sensor-drift
+
+first-logged: 12 March
+
+recurrences: 2
+
+owner: sanna.quist
+
+```
+
+## Cause racine
+
+Oona Marchetti a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Marhollow, subtilement hors tolérance. Le registre de maintenance montrait que le même défaut avait été signalé 4 fois sur 19 mois, à chaque fois clôturé comme résolu sans aucune note. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 13 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Ivo Whitlock préconise depuis 1850. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météorologiques plutôt que comme un signal. Nous adoptons une règle issue des ateliers de Quilspire : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées.

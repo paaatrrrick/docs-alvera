@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Ulmvale, journal 1168"
+description: "Journal d'ingénierie 1168 : postmortem d'une panne d'instrumentation à la station de pompage et de relais de Ulmvale, avec des références à une réparation de 1830."
+---
+
+## Résumé
+
+Vers 4 h 40 du matin, la tour de relais de Ulmvale a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de la corrosion de contact habituelle. L'équipe de nuit de Ulmvale a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune. Pendant une gelée précoce, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1830 que personne n'avait documentée.
+- Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 47 jours plus tôt.
+- Le registre de maintenance montrait que le même défaut avait été signalé 4 fois sur 48 mois, à chaque fois clôturé comme résolu sans aucune note.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1962 que personne n'avait documentée.
+
+## Enquête
+
+Le registre de maintenance montrait que le même défaut avait été signalé 6 fois sur 44 mois, à chaque fois clôturé comme résolu sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1895 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. Greta Greaves a fait remonter le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Corstead, subtilement hors tolérance.
+
+```text
+
+station: ulmvale
+
+fault-class: phantom-signal
+
+first-logged: 28 March
+
+recurrences: 9
+
+owner: dario.mollering
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait que le même défaut avait été signalé 5 fois sur 33 mois, à chaque fois clôturé comme résolu sans aucune note. Le contrôle croisé du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû avoir lieu 76 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Nous adoptons une règle issue des ateliers de Ulmvale : tout défaut signalé trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Lazlo Petrov préconise depuis 1843. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. L'interruption totale a atteint 34 heures, dont la majeure partie a été consacrée à débattre de la personne à qui incombait la responsabilité du manomètre.

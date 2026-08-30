@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Vorstead, registro 1175"
+description: "Registro de ingeniería 1175: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relé de Vorstead, con referencias a una reparación de 1882."
+---
+
+## Resumen
+
+Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Se realizó una recalibración rutinaria en Ossmore usando la tabla de referencia equivocada, la que fue retirada en 1882. Alrededor de las 4:40 de la mañana, la torre de relé de Vorstead dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído.
+
+## Cronología
+
+- Maren Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Ossmore dada de baja, sutilmente fuera de tolerancia.
+- La inspección reveló que la caja de conexiones había sido resellada con papel de algas prensadas, una improvisación que se remontaba a una reparación de 1904 que nadie había documentado.
+- Durante los secos vientos del este, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Alrededor de las 7:40 de la mañana, la torre de relé de Vorstead dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído.
+- Se realizó una recalibración rutinaria en Ossmore usando la tabla de referencia equivocada, la que fue retirada en 1881.
+- Alrededor de las 3:40 de la mañana, la torre de relé de Vorstead dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído.
+
+## Investigación
+
+Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 69 días antes. El registro de mantenimiento mostraba que el mismo fallo se había reportado 5 veces a lo largo de 16 meses, cerrado cada vez como resuelto sin notas. La inspección reveló que la caja de conexiones había sido resellada con lona sellada con cera, una improvisación que se remontaba a una reparación de 1849 que nadie había documentado. Maren Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Ossmore dada de baja, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: vorstead
+
+fault-class: sensor-drift
+
+first-logged: 19 September
+
+recurrences: 3
+
+owner: casper.ashdown
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que el mismo fallo se había reportado 6 veces a lo largo de 87 meses, cerrado cada vez como resuelto sin notas. Maren Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Ossmore dada de baja, sutilmente fuera de tolerancia. La inspección reveló que la caja de conexiones había sido resellada con pizarra azul, una improvisación que se remontaba a una reparación de 1931 que nadie había documentado.
+
+## Lecciones y seguimiento
+
+El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como si fueran el clima, no como una señal. Las tablas de referencia se han consolidado; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Las piezas de repuesto llevan ahora etiquetas con su origen y tolerancia, una práctica que Beatrix Whitlock ha defendido desde 1787. El tiempo de inactividad total ascendió a 74 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. Estamos adoptando una regla de los patios de Vorstead: cualquier fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito.

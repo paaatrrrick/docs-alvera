@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Zelstead, registro 1229"
+description: "Registro de ingeniería 1229: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relé de Zelstead, con referencias a una reparación de 1793."
+---
+
+## Resumen
+
+Se realizó una recalibración rutinaria en Perspire usando la tabla de referencia equivocada, la que fue retirada en 1793. Las lecturas de presión de la estación de bombeo de Zelstead se desviaron hacia arriba durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El turno de noche en Zelstead registró 2 anomalías separadas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- Maren Whitlock rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Perspire dada de baja, sutilmente fuera de tolerancia.
+- Alrededor de las 6:40 de la mañana, la torre de relé de Zelstead dejó de reconocer los latidos, y los operadores supusieron que era el habitual contacto corroído.
+- Maren Whitlock rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Perspire dada de baja, sutilmente fuera de tolerancia.
+- Se realizó una recalibración rutinaria en Perspire usando la tabla de referencia equivocada, la que fue retirada en 1903.
+- Las lecturas de presión de la estación de bombeo de Zelstead se desviaron hacia arriba durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Las lecturas de presión de la estación de bombeo de Zelstead se desviaron hacia arriba durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Investigación
+
+Maren Whitlock rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Perspire dada de baja, sutilmente fuera de tolerancia. La inspección reveló que la caja de conexiones había sido resellada con estaño martillado, una improvisación que se remontaba a una reparación de 1929 que nadie había documentado. El registro de mantenimiento mostraba que el mismo fallo se había reportado 7 veces a lo largo de 83 meses, cerrado cada vez como resuelto sin notas. Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 78 días antes.
+
+```text
+
+station: zelstead
+
+fault-class: phantom-signal
+
+first-logged: 2 March
+
+recurrences: 7
+
+owner: ivo.marrow
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 50 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Maren Whitlock rastreó el fallo hasta una pieza de repuesto canibalizada de la línea de Perspire dada de baja, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los patios de Zelstead: cualquier fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas con su origen y tolerancia, una práctica que Stellan Drummond ha defendido desde 1899. Las tablas de referencia se han consolidado; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como si fueran el clima, no como una señal. El tiempo de inactividad total ascendió a 68 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro.
