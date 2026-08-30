@@ -1,0 +1,72 @@
+---
+title: 'Comment Reactions'
+description: 'Let readers respond to comments and posts with emoji reactions.'
+---
+
+The `Reactions` component renders a row of emoji reaction buttons next to a comment or post. Readers click an emoji to add their reaction, and the count next to that emoji updates immediately.
+
+Use it anywhere you want lightweight engagement without a full reply — comment threads, blog post footers, or changelog entries.
+
+## Supported emoji
+
+The component renders a fixed set of reactions, in this order:
+
+- 👍
+- ❤️
+- 🎉
+- 🤔
+
+## Props
+
+| Prop            | Type                              | Required | Description                                                                                                                                  |
+| --------------- | --------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `targetId`      | `string`                          | Yes      | The ID of the comment or post the reaction applies to. Passed back to `onReact` so your handler knows which target to update.                 |
+| `initialCounts` | `object`                          | No       | Map of emoji to current count, used to seed the UI on mount. Defaults to `{}`. Any emoji not in the map renders with a count of `0`.         |
+| `onReact`       | `(targetId, emoji) => Promise`    | Yes      | Async callback invoked when a reader clicks a reaction. Should persist the reaction in your backend and resolve once it is committed.        |
+
+## Optimistic updates
+
+Clicks update the displayed count immediately, before `onReact` resolves. This keeps the UI responsive even on slow connections.
+
+If `onReact` throws or rejects, the component rolls the count back to its previous value. Counts can't go below `0`. This means your handler only needs to throw on failure — you don't have to manually revert state in the caller.
+
+## Example
+
+```jsx
+import Reactions from "./components/comments/Reactions";
+
+function Comment({ comment }) {
+  const handleReact = async (targetId, emoji) => {
+    const res = await fetch(`/api/comments/${targetId}/reactions`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ emoji }),
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed to save reaction");
+    }
+  };
+
+  return (
+    <article>
+      <p>{comment.body}</p>
+      <Reactions
+        targetId={comment.id}
+        initialCounts={comment.reactionCounts}
+        onReact={handleReact}
+      />
+    </article>
+  );
+}
+```
+
+## Wiring up the backend
+
+Your `onReact` handler is responsible for:
+
+1. Recording the reaction against `targetId` in your data store.
+2. Throwing or rejecting if the write fails so the optimistic update is rolled back.
+3. Returning the updated counts from subsequent reads so `initialCounts` reflects the latest state on the next render.
+
+The component doesn't deduplicate reactions per reader — enforce "one reaction per user per emoji" in your backend if you want that behavior.
