@@ -1,0 +1,71 @@
+---
+title: "Colophon page"
+description: "How the personal website's /colophon page documents the site's tools, hosting, and principles."
+---
+
+## Overview
+
+The personal website now has a `/colophon` route — a short note on how the site is put together. It covers the tools used to build it, where it's hosted, and the small set of principles that keep it honest.
+
+The page is rendered from `src/components/Colophon.js` and styled with `src/components/colophon.css`.
+
+## What it covers
+
+The colophon is organized into three sections, each driven by a simple list.
+
+<Card title="Built with" icon="hammer">
+  - React, bootstrapped with Create React App.
+  - `react-router-dom` for client-side routing.
+  - Plain CSS, one stylesheet per page — no framework, no preprocessor.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, deployed straight from the `master` branch on GitHub.
+  - A custom domain registered through GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - No analytics, no cookies, no tracking. Just pages.
+  - Every page should load fast and read well on a phone.
+  - Content lives in plain JS constants so it is easy to edit.
+</Card>
+
+## Route
+
+The page is wired up in `src/App.js` as a top-level route:
+
+```js src/App.js
+<Route exact path='/colophon' component={Colophon} />
+```
+
+A "← Back home" link at the top of the page returns to `/`.
+
+## Updating the content
+
+The sections are defined as a `sections` array at the top of `src/components/Colophon.js`. Edit the array in place to add, remove, or reword items.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    // ...other sections
+];
+```
+
+When you change anything material, bump the `updatedAt` string so the "Last updated" line on the page stays accurate.
+
+<Tip>
+Keep each bullet to a single sentence. The colophon is meant to be skimmed, not read.
+</Tip>
+
+## When to update
+
+Update the colophon whenever the site's stack, hosting, or guiding principles change — for example, switching hosts, adopting a CSS framework, or adding (or explicitly refusing) analytics.

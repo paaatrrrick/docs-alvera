@@ -1,0 +1,71 @@
+---
+title: "Página de colofón"
+description: "Cómo la página /colophon del sitio web personal documenta las herramientas, el alojamiento y los principios del sitio."
+---
+
+## Resumen
+
+El sitio web personal ahora tiene una ruta `/colophon`: una breve nota sobre cómo está construido el sitio. Cubre las herramientas utilizadas para crearlo, dónde está alojado y el pequeño conjunto de principios que lo mantienen honesto.
+
+La página se renderiza desde `src/components/Colophon.js` y se aplica el estilo con `src/components/colophon.css`.
+
+## Qué cubre
+
+El colofón se organiza en tres secciones, cada una basada en una lista simple.
+
+<Card title="Built with" icon="hammer">
+  - React, inicializado con Create React App.
+  - `react-router-dom` para el enrutamiento del lado del cliente.
+  - CSS plano, una hoja de estilos por página: sin framework, sin preprocesador.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, desplegado directamente desde la rama `master` en GitHub.
+  - Un dominio personalizado registrado a través de GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Sin analíticas, sin cookies, sin seguimiento. Solo páginas.
+  - Cada página debe cargar rápido y leerse bien en un teléfono.
+  - El contenido vive en constantes JS planas para que sea fácil de editar.
+</Card>
+
+## Ruta
+
+La página está conectada en `src/App.js` como una ruta de nivel superior:
+
+```js src/App.js
+<Route exact path='/colophon' component={Colophon} />
+```
+
+Un enlace "← Back home" en la parte superior de la página regresa a `/`.
+
+## Actualización del contenido
+
+Las secciones se definen como un array `sections` en la parte superior de `src/components/Colophon.js`. Edita el array directamente para añadir, eliminar o reformular elementos.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    // ...other sections
+];
+```
+
+Cuando cambies algo significativo, actualiza la cadena `updatedAt` para que la línea "Last updated" de la página se mantenga precisa.
+
+<Tip>
+Mantén cada viñeta en una sola frase. El colofón está pensado para ojearse, no para leerse.
+</Tip>
+
+## Cuándo actualizar
+
+Actualiza el colofón siempre que cambien el stack, el alojamiento o los principios rectores del sitio: por ejemplo, al cambiar de proveedor de hosting, adoptar un framework de CSS o añadir (o rechazar explícitamente) analíticas.

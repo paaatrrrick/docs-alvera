@@ -1,0 +1,71 @@
+---
+title: "Page de colophon"
+description: "Comment la page /colophon du site personnel documente les outils, l'hébergement et les principes du site."
+---
+
+## Aperçu
+
+Le site web personnel dispose désormais d'une route `/colophon` : une courte note sur la façon dont le site est assemblé. Elle couvre les outils utilisés pour le construire, son hébergement et le petit ensemble de principes qui le maintiennent honnête.
+
+La page est rendue depuis `src/components/Colophon.js` et stylisée avec `src/components/colophon.css`.
+
+## Ce qu'elle couvre
+
+Le colophon est organisé en trois sections, chacune alimentée par une simple liste.
+
+<Card title="Built with" icon="hammer">
+  - React, initialisé avec Create React App.
+  - `react-router-dom` pour le routage côté client.
+  - CSS simple, une feuille de style par page — pas de framework, pas de préprocesseur.
+</Card>
+
+<Card title="Hosted on" icon="cloud">
+  - Netlify, déployé directement depuis la branche `master` sur GitHub.
+  - Un nom de domaine personnalisé enregistré via GoDaddy.
+</Card>
+
+<Card title="Principles" icon="compass">
+  - Pas d'analyses, pas de cookies, pas de suivi. Juste des pages.
+  - Chaque page doit se charger rapidement et bien se lire sur un téléphone.
+  - Le contenu vit dans des constantes JS simples afin qu'il soit facile à modifier.
+</Card>
+
+## Route
+
+La page est branchée dans `src/App.js` en tant que route de premier niveau :
+
+```js src/App.js
+<Route exact path='/colophon' component={Colophon} />
+```
+
+Un lien « ← Back home » en haut de la page renvoie vers `/`.
+
+## Mettre à jour le contenu
+
+Les sections sont définies comme un tableau `sections` en haut de `src/components/Colophon.js`. Modifiez le tableau directement pour ajouter, supprimer ou reformuler des éléments.
+
+```js src/components/Colophon.js
+const updatedAt = 'June 2026';
+
+const sections = [
+    {
+        heading: 'Built with',
+        items: [
+            'React, bootstrapped with Create React App.',
+            'react-router-dom for client-side routing.',
+            'Plain CSS, one stylesheet per page — no framework, no preprocessor.',
+        ],
+    },
+    // ...other sections
+];
+```
+
+Lorsque vous modifiez quelque chose d'important, mettez à jour la chaîne `updatedAt` pour que la ligne « Last updated » de la page reste exacte.
+
+<Tip>
+Gardez chaque puce à une seule phrase. Le colophon est fait pour être parcouru, pas lu.
+</Tip>
+
+## Quand mettre à jour
+
+Mettez à jour le colophon chaque fois que la pile technique, l'hébergement ou les principes directeurs du site changent — par exemple, en changeant d'hébergeur, en adoptant un framework CSS ou en ajoutant (ou en refusant explicitement) des analyses.
