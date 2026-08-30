@@ -85,6 +85,12 @@
                   "ai-tools/claude-code",
                   "ai-tools/windsurf"
                 ]
+              },
+              {
+                "group": "Changelog",
+                "pages": [
+                  "changelog/2026-07-09"
+                ]
               }
             ]
           },
@@ -2585,6 +2591,12 @@
                   "es/ai-tools/claude-code",
                   "es/ai-tools/windsurf"
                 ]
+              },
+              {
+                "group": "Novedades",
+                "pages": [
+                  "es/changelog/2026-07-09"
+                ]
               }
             ]
           },
@@ -5084,6 +5096,12 @@
                   "fr/ai-tools/cursor",
                   "fr/ai-tools/claude-code",
                   "fr/ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog/2026-07-09"
                 ]
               }
             ]
