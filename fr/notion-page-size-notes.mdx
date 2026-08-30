@@ -1,0 +1,65 @@
+---
+title: "Mesurer la taille des pages de documentation"
+description: "Comment nous mesurons la taille des pages de documentation selon les plans clients, à quoi ressemblent les tailles typiques et où concentrer les efforts de réduction."
+---
+
+<Note>
+  Cette page reprend des notes de recherche internes issues de Notion. Elle est incluse ici pour tester l'intégration Notion.
+</Note>
+
+## Pourquoi mesurer la taille des pages est délicat
+
+Quand un client demande "quelle est la taille de nos pages ?", nous n'avons pas de bonne réponse, et nous ne pouvons pas améliorer ce que nous ne mesurons pas. Ce document vise à répondre à cette question.
+
+- Les clients ont des tailles de page très différentes.
+- Local, staging, production et production en navigation privée donnent des tailles différentes.
+- L'outil que vous utilisez pour mesurer la taille change le résultat.
+- La métrique que vous utilisez pour définir la taille compte.
+
+## Expérience
+
+La plupart des clients interprètent la taille de la page en regardant l'onglet Network, c'est donc ce que nous devrions mesurer, en particulier la quantité transférée.
+
+Nous avons mesuré 170 URLs de clients (31 Enterprise et 139 Pro) via [experte.com](https://www.experte.com/).
+
+### Résultats
+
+| Métrique        | Tous   | Pro    | Enterprise |
+| --------------- | ------ | ------ | ---------- |
+| Nombre          | 170,00 | 139,00 | 31,00      |
+| Moyenne (Mo)    | 2,21   | 2,15   | 2,52       |
+| 10e percentile  | 1,34   | 1,33   | 1,38       |
+| 25e percentile  | 1,38   | 1,37   | 1,53       |
+| 50e percentile  | 1,56   | 1,52   | 1,68       |
+| 75e percentile  | 2,26   | 2,16   | 2,78       |
+| 90e percentile  | 3,69   | 3,61   | 3,67       |
+| 97e percentile  | 8,79   | 8,56   | 7,43       |
+
+**Détails divers :**
+
+- Nous avons choisi experte parce que ses chiffres étaient presque identiques à ceux d'un onglet Network en navigation privée. D'autres outils, comme les navigateurs headless locaux, sous-estimaient la taille des pages.
+- Nous avons tiré des pages au hasard depuis Mongo, puis retrouvé leurs URLs. Nous avons filtré les sous-domaines de prévisualisation et cas similaires.
+- Nous avons exclu les plans Hobby en raison de la forte densité de pages inutilisées.
+
+## Points clés
+
+**La plupart des clients ont une taille de page juste en dessous de 2 Mo.** Cela varie beaucoup.
+
+Environ 70 % des pages sont sous les 2 Mo — pas catastrophique, mais pas terrible. Au-delà, la taille explose.
+
+Pour réduire la taille des pages, nous devrions cibler deux choses :
+
+- **A :** Faire baisser la base des 2 Mo.
+- **B :** Réduire les 30 % de pages les plus lourdes.
+
+Nous avons beaucoup travaillé sur A (suppression de shiki, crypto-js), mais il faut faire plus de B.
+
+## Les clients populaires ont des pages volumineuses
+
+Beaucoup des pages de plus de 2,5 Mo appartiennent à nos clients les plus populaires — Anthropic, Lovable, Auth0, Coinbase, Pinecone et même Mintlify. Quand les pages atteignent cette taille, une hausse du churn ne serait pas surprenante.
+
+## Prochaines étapes
+
+- Réduire la taille de la plupart des pages et des 15 % les plus lourdes.
+- Définir des objectifs clairs pour ces chiffres.
+- Envisager un job planifié qui mesure chaque page chaque semaine.
