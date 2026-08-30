@@ -3,7 +3,7 @@ title: 'API pagination with cursors and page size limits'
 description: 'Page through large API result sets using cursor pagination, the next_cursor field, and the limit query parameter to control items per page.'
 ---
 
-When a endpoint return alot of result, we paginate them so the response don’t gets to big.
+When an endpoint returns a large result set, the API paginates it so responses stay small, fast, and predictable. Use cursor pagination to walk through results page by page, and use the `limit` parameter to control how many items each page contains.
 
 ## Cursor pagination
 
@@ -13,7 +13,7 @@ Most of our list endpoint uses cursor pagination. Each response include a `next_
 curl "https://api.example.dev/items?limit=50&cursor=abc123"
 ```
 
-Keep requesting until `next_cursor` come back null, that mean you reached the end. The [API reference](/api/list-endpoints) document this for every endpoint.
+Keep requesting until `next_cursor` come back null, that mean you reached the end. The [API reference](/api-reference/introduction) document this for every endpoint.
 
 ## Page size
 
