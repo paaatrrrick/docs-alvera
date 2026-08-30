@@ -1,6 +1,6 @@
 ---
 title: "Projects page: structure and updates"
-description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema and a code example."
+description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema, search, filters, and a code example."
 ---
 
 ## Overview
@@ -49,9 +49,13 @@ export default projects;
 Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
+## Search and filtering
+
+The `/projects` page renders a search box above the tech filter. The search matches `name`, `tagline`, and `description` case-insensitively. It also combines with the active tech filter, so only projects that satisfy **both** the query and the selected tech remain visible. When nothing matches, the grid shows a `No projects match your search.` empty state instead of an empty area.
+
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+Because search matches `name`, `tagline`, and `description`, write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
