@@ -32,3 +32,7 @@ For more details on local development, see our [development guide](development.m
 - **Lead with the goal**: Start instructions with what the user wants to accomplish
 - **Use consistent terminology**: Don't alternate between synonyms for the same concept
 - **Include examples**: Show, don't just tell
+
+## Before opening a PR
+
+Run `mint broken-links` locally and make sure the preview builds.
