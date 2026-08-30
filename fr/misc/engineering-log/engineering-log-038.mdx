@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Delcrest, journal 1037"
+description: "Journal d'ingénierie 1037 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Delcrest, avec des références à une réparation de 1801."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Vormara a été effectué avec la mauvaise table de référence, celle retirée en 1801. L'équipe de nuit de Delcrest a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune. Les relevés de pression de la station de pompage de Delcrest ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Delcrest ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Le journal de maintenance montrait la même panne signalée 6 fois sur 47 mois, chaque fois clôturée comme résolue sans aucune note.
+- Le journal de maintenance montrait la même panne signalée 6 fois sur 63 mois, chaque fois clôturée comme résolue sans aucune note.
+- Le journal de maintenance montrait la même panne signalée 3 fois sur 82 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+L'inspection a révélé que le boîtier de jonction avait été rescellé avec du verre de rivière, une improvisation remontant à une réparation de 1786 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 54 jours plus tôt. Greta Ashdown a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Vormara, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 3 fois sur 41 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: delcrest
+
+fault-class: contact-corrosion
+
+first-logged: 11 November
+
+recurrences: 7
+
+owner: vesna.lindqvist
+
+```
+
+## Cause racine
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 53 jours plus tôt. Greta Ashdown a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Vormara, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 9 fois sur 48 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que le boîtier de jonction avait été rescellé avec de l'ardoise bleue, une improvisation remontant à une réparation de 1898 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Delcrest : toute panne signalée trois fois se voit attribuer un responsable désigné et une théorie écrite. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été collectées et, avec une certaine cérémonie, brûlées. Le temps d'arrêt total s'est élevé à 68 heures, dont la majeure partie passée à débattre de la responsabilité de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Cosima Brandt préconise depuis 1810.

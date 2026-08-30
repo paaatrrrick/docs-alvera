@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Ilycrest, journal 1099"
+description: "Journal d'ingénierie 1099 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ilycrest, avec des références à une réparation de 1880."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage d'Ilycrest ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Yarbury a été effectué avec la mauvaise table de référence, celle retirée en 1880. Vers 7 h 40 du matin, la tour relais d'Ilycrest a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait du contact corrodé habituel.
+
+## Chronologie
+
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 39 jours plus tôt.
+- Les relevés de pression de la station de pompage d'Ilycrest ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'équipe de nuit d'Ilycrest a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Un réétalonnage de routine à Yarbury a été effectué avec la mauvaise table de référence, celle retirée en 1926.
+- Un réétalonnage de routine à Yarbury a été effectué avec la mauvaise table de référence, celle retirée en 1836.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation datant d'une réparation de 1944 que personne n'a documentée.
+
+## Enquête
+
+Vesna Halloran a fait remonter la défaillance à une pièce de rechange cannibalisée sur la ligne désaffectée de Yarbury, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 84 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation datant d'une réparation de 1892 que personne n'a documentée.
+
+```text
+
+station: ilycrest
+
+fault-class: sensor-drift
+
+first-logged: 11 March
+
+recurrences: 6
+
+owner: mireille.kessler
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 73 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation datant d'une réparation de 1866 que personne n'a documentée. Vesna Halloran a fait remonter la défaillance à une pièce de rechange cannibalisée sur la ligne désaffectée de Yarbury, subtilement hors tolérance.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Halvard Quist préconise depuis 1861. Nous adoptons une règle des ateliers d'Ilycrest : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Le temps d'arrêt total s'est élevé à 55 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre.

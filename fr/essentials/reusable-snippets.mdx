@@ -1,6 +1,6 @@
 ---
-title: "Créer des extraits de contenu réutilisables"
-description: "Définissez des extraits MDX réutilisables, importez-les dans plusieurs pages et transmettez des props ou des variables pour garder le contenu de la documentation synchronisé sans duplication."
+title: "Créer des snippets de contenu réutilisables"
+description: "Définissez des snippets MDX réutilisables, importez-les dans plusieurs pages et transmettez des props ou des variables pour garder le contenu de la documentation synchronisé sans duplication."
 icon: "recycle"
 ---
 
@@ -8,22 +8,22 @@ import SnippetIntro from '/snippets/snippet-intro.mdx';
 
 <SnippetIntro />
 
-## Créer un extrait personnalisé
+## Créer un snippet personnalisé
 
-**Prérequis** : vous devez créer votre fichier d'extrait dans le répertoire `snippets`.
+**Prérequis** : créez votre fichier de snippet dans le répertoire `snippets`.
 
 <Note>
-  Toute page située dans le répertoire `snippets` sera traitée comme un extrait et ne
-  sera pas rendue sous forme de page autonome. Si vous souhaitez créer une page autonome
-  à partir de l'extrait, importez-le dans un autre fichier et appelez-le comme un
-  composant.
+  Toute page du répertoire `snippets` sera traitée comme un snippet et ne sera
+  pas rendue comme une page autonome. Si vous souhaitez créer une page autonome
+  à partir du snippet, importez le snippet dans un autre fichier et appelez-le
+  comme un composant.
 </Note>
 
 ### Export par défaut
 
-1. Ajoutez à votre fichier d'extrait le contenu que vous souhaitez réutiliser à plusieurs
-   endroits. Vous pouvez éventuellement ajouter des variables qui seront remplies via des props
-   lorsque vous importerez l'extrait.
+1. Ajoutez à votre fichier de snippet le contenu que vous souhaitez réutiliser à
+   plusieurs endroits. Vous pouvez éventuellement ajouter des variables qui
+   pourront être renseignées via des props lorsque vous importez le snippet.
 
 ```mdx snippets/my-snippet.mdx
 Hello world! This is my content I want to reuse across pages. My keyword of the
@@ -31,11 +31,11 @@ day is {word}.
 ```
 
 <Warning>
-  Le contenu que vous souhaitez réutiliser doit se trouver dans le répertoire `snippets` pour
-  que l'import fonctionne.
+  Le contenu que vous souhaitez réutiliser doit se trouver dans le répertoire
+  `snippets` pour que l'import fonctionne.
 </Warning>
 
-2. Importez l'extrait dans votre fichier de destination.
+2. Importez le snippet dans votre fichier de destination.
 
 ```mdx destination-file.mdx
 ---
@@ -54,7 +54,7 @@ Lorem ipsum dolor sit amet.
 
 ### Variables réutilisables
 
-1. Exportez une variable depuis votre fichier d'extrait :
+1. Exportez une variable depuis votre fichier de snippet :
 
 ```mdx snippets/path/to/custom-variables.mdx
 export const myName = 'my name';
@@ -62,7 +62,7 @@ export const myName = 'my name';
 export const myObject = { fruit: 'strawberries' };
 ```
 
-2. Importez l'extrait depuis votre fichier de destination et utilisez la variable :
+2. Importez le snippet depuis votre fichier de destination et utilisez la variable :
 
 ```mdx destination-file.mdx
 ---
@@ -77,8 +77,8 @@ Hello, my name is {myName} and I like {myObject.fruit}.
 
 ### Composants réutilisables
 
-1. Dans votre fichier d'extrait, créez un composant qui accepte des props en exportant
-   votre composant sous la forme d'une fonction fléchée.
+1. Dans votre fichier de snippet, créez un composant qui accepte des props en
+   exportant votre composant sous la forme d'une fonction fléchée.
 
 ```mdx snippets/custom-component.mdx
 export const MyComponent = ({ title }) => (
@@ -90,11 +90,12 @@ export const MyComponent = ({ title }) => (
 ```
 
 <Warning>
-  MDX ne se compile pas à l'intérieur du corps d'une fonction fléchée. Tenez-vous-en à la
-  syntaxe HTML lorsque vous le pouvez, ou utilisez un export par défaut si vous avez besoin d'utiliser MDX.
+  MDX ne compile pas à l'intérieur du corps d'une fonction fléchée. Privilégiez
+  la syntaxe HTML lorsque c'est possible, ou utilisez un export par défaut si
+  vous devez utiliser du MDX.
 </Warning>
 
-2. Importez l'extrait dans votre fichier de destination et passez-lui les props.
+2. Importez le snippet dans votre fichier de destination et transmettez les props
 
 ```mdx destination-file.mdx
 ---

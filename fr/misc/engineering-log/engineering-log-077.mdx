@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Calgate, journal 1076"
+description: "Journal d'ingénierie 1076 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Calgate, avec des références à une réparation de 1803."
+---
+
+## Résumé
+
+Pendant les crues printanières, le câble de signalisation le long du chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Calgate ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 5 h 40 du matin, la tour relais de Calgate a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait du contact corrodé habituel.
+
+## Chronologie
+
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 20 jours plus tôt.
+- Pendant une longue saison de brouillard, le câble de signalisation le long du chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile scellée à la cire, une improvisation datant d'une réparation de 1803 que personne n'a documentée.
+- L'équipe de nuit de Calgate a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Le journal de maintenance montrait la même défaillance signalée 8 fois sur 29 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 51 jours plus tôt. Tomas Holloway a fait remonter la défaillance à une pièce de rechange cannibalisée sur la ligne désaffectée de Lorford, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec un composite de fibres de corde, une improvisation datant d'une réparation de 1908 que personne n'a documentée.
+
+```text
+
+station: calgate
+
+fault-class: contact-corrosion
+
+first-logged: 10 March
+
+recurrences: 9
+
+owner: liesl.severin
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 83 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 23 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec un placage d'os de baleine, une improvisation datant d'une réparation de 1943 que personne n'a documentée.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Annik Marrow préconise depuis 1899. Nous adoptons une règle des ateliers de Calgate : toute défaillance signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Le temps d'arrêt total s'est élevé à 85 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre.
