@@ -5,7 +5,9 @@ description: "How the personal website tracks per-post views, total site reads, 
 
 ## Overview
 
-The personal website ships a small suite of components and hooks for tracking and displaying how many times posts have been read:
+The personal website tracks how many times each post has been read. It surfaces that count in two places: the byline beneath a post title, and an aggregate total across the whole site. This page covers the three components that power that experience, the hooks behind them, and the shared views service they call.
+
+You'll work with:
 
 - **`ViewCounter`** — renders the read count for a single post, backed by the `useViewCount` hook.
 - **`SiteViews`** — renders the aggregate read count across every post, backed by the `useTotalViews` hook.
