@@ -1,0 +1,159 @@
+---
+title: "Commentaires du blog : réactions, tri et comptage"
+description: "Comment le widget de commentaires du site personnel suit le nombre de commentaires par article, trie les fils de discussion et persiste les réactions emoji avec mises à jour optimistes."
+---
+
+## Vue d'ensemble
+
+Le widget de commentaires du site personnel permet aux lecteurs de laisser des commentaires sur un article de blog, de réagir aux commentaires existants avec des emoji et de trier le fil. Il est composé de petites briques React — une liste, un formulaire, un contrôle de tri, une barre de réactions par commentaire — soutenues par deux hooks (`useComments`, `useReactions`) qui dialoguent avec l'API de commentaires.
+
+Cette page couvre trois éléments de cette surface qui ont été ajoutés cette semaine :
+
+- **Réactions** — décomptes d'emoji persistés avec mises à jour optimistes (`useReactions`).
+- **Tri** — plus récents / plus anciens / meilleurs, piloté par `useCommentSort` et le contrôle `CommentSort`.
+- **Badge de comptage des commentaires** — un composant léger `CommentCount` pour les listes d'articles et les en-têtes.
+
+Si vous écrivez un nouveau modèle de blog, une page d'index ou une extension du widget de commentaires, vous utiliserez probablement au moins un de ces éléments.
+
+## Réactions
+
+Chaque commentaire dispose de sa propre barre de réactions emoji. Les décomptes sont stockés côté serveur et indexés par un `targetId` (l'identifiant du commentaire), de sorte que les réactions survivent à un rechargement de page et sont partagées entre les visiteurs.
+
+### Quand l'utiliser
+
+Utilisez `useReactions` chaque fois que vous voulez une interaction du type « +1 avec compteur » associée à un identifiant stable — les réactions aux commentaires aujourd'hui, mais le même hook fonctionne pour réagir à un article entier ou à une carte de projet.
+
+### Configuration
+
+`useReactions(targetId)` renvoie :
+
+| Champ    | Type                                | Description                                                                                |
+| -------- | ----------------------------------- | ------------------------------------------------------------------------------------------ |
+| `counts` | `Record<string, number>`            | Décompte actuel par emoji, p. ex. `{ "👍": 4, "🎉": 1 }`. Objet vide jusqu'à la première réponse. |
+| `react`  | `(emoji: string) => Promise<any>`   | Incrémente le décompte pour `emoji`. Met à jour l'état local immédiatement et envoie la requête à l'API. |
+
+Au montage, le hook effectue `GET /reactions/:targetId` et initialise `counts` à partir de la réponse. Appeler `react(emoji)` réalise trois actions dans l'ordre :
+
+1. **Mise à jour optimiste.** Le `counts[emoji]` local est incrémenté immédiatement pour que l'interface paraisse instantanée.
+2. **Écriture côté serveur.** Une requête `POST /reactions/:targetId` envoie `{ emoji }`.
+3. **Restauration en cas d'échec.** Si le serveur renvoie une réponse non 2xx, le décompte local est décrémenté à nouveau (avec un plancher à `0`) et la promesse est rejetée.
+
+### Exemple
+
+```jsx
+import { useReactions } from "./useReactions";
+
+function ReactionsBar({ commentId }) {
+  const { counts, react } = useReactions(commentId);
+  const palette = ["👍", "🎉", "❤️", "😂"];
+
+  return (
+    <div className="reactions">
+      {palette.map((emoji) => (
+        <button key={emoji} type="button" onClick={() => react(emoji)}>
+          {emoji} {counts[emoji] || 0}
+        </button>
+      ))}
+    </div>
+  );
+}
+```
+
+Un `targetId` est obligatoire. Si le parent ne sait pas encore quelle cible lire (par exemple, le commentaire n'a pas encore été créé), ne montez pas le hook — il n'existe pas de prop pour « ignorer ».
+
+## Tri
+
+Le fil de commentaires peut être trié par plus récents, plus anciens ou meilleurs (le plus de réactions). Le tri est purement côté client : le hook conserve la clé de tri actuelle et renvoie une copie triée et mémoïsée du tableau de commentaires.
+
+### Quand l'utiliser
+
+Utilisez `useCommentSort` chaque fois que vous affichez une liste de commentaires et que vous voulez que les utilisateurs la réordonnent sans nouveau fetch. Associez-le au groupe de boutons `CommentSort` pour l'interface par défaut, ou construisez votre propre contrôle au-dessus du même couple `sort` / `setSort`.
+
+### Configuration
+
+`useCommentSort(comments)` renvoie :
+
+| Champ     | Type                                       | Description                                                  |
+| --------- | ------------------------------------------ | ------------------------------------------------------------ |
+| `sort`    | `"newest" \| "oldest" \| "top"`            | La clé de tri active. Valeur par défaut : `"newest"`.        |
+| `setSort` | `(key) => void`                            | Change le tri actif.                                         |
+| `sorted`  | `Comment[]`                                | Un nouveau tableau, trié selon `sort`. Mémoïsé sur `comments` et `sort`. |
+
+Les comparateurs sont exportés sous `COMMENT_SORTS` si vous devez trier en dehors de React :
+
+- `newest` — décroissant par `comment.date`.
+- `oldest` — croissant par `comment.date`.
+- `top` — décroissant par la somme de toutes les valeurs de `comment.reactions`.
+
+Pour que `top` soit utile, chaque objet commentaire doit comporter un champ `reactions` de la forme `{ "👍": 3, "🎉": 1 }` — la même forme que celle produite par `useReactions`.
+
+Le composant compagnon `CommentSort` est un petit groupe de trois boutons :
+
+```jsx
+<CommentSort value={sort} onChange={setSort} />
+```
+
+Il affiche un bouton pour chacun de `newest`, `oldest` et `top` et ajoute la classe `is-active` à celui qui est sélectionné.
+
+### Exemple
+
+```jsx
+import CommentSort from "./CommentSort";
+import { useCommentSort } from "./useCommentSort";
+import { useComments } from "./useComments";
+
+function CommentThread({ postId }) {
+  const { comments } = useComments(postId);
+  const { sort, setSort, sorted } = useCommentSort(comments);
+
+  return (
+    <>
+      <CommentSort value={sort} onChange={setSort} />
+      <ul>
+        {sorted.map((c) => (
+          <li key={c.id}>{c.body}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+```
+
+## Badge de comptage des commentaires
+
+`CommentCount` est un petit élément en ligne qui permet d'afficher « 12 commentaires » à côté d'un article — dans un index de blog, un en-tête d'article ou une barre latérale — sans afficher l'intégralité du widget de commentaires.
+
+### Quand l'utiliser
+
+Insérez `CommentCount` partout où vous voulez mettre en avant l'engagement sur un article sans charger tout le fil. Il est sûr d'en afficher plusieurs à la fois sur une page d'index ; chaque instance récupère ses propres commentaires via `useComments`.
+
+### Configuration
+
+`CommentCount` accepte une seule prop :
+
+| Prop     | Type     | Requis | Description                                  |
+| -------- | -------- | ------ | -------------------------------------------- |
+| `postId` | `string` | Oui    | L'article dont les commentaires sont comptés. |
+
+Comportement :
+
+- Tant que `useComments` est en cours de chargement, le composant rend `null` pour éviter un saut de mise en page.
+- Une fois les commentaires chargés, il rend un `<span class="comment-count">` contenant `"No comments"`, `"1 comment"` ou `"N comments"`.
+
+### Exemple
+
+```jsx
+import CommentCount from "./CommentCount";
+
+function PostListItem({ post }) {
+  return (
+    <article>
+      <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+      <p>{post.excerpt}</p>
+      <CommentCount postId={post.id} />
+    </article>
+  );
+}
+```
+
+Comme chaque `CommentCount` monte son propre `useComments`, une page d'index avec beaucoup d'articles émettra une requête par badge. C'est acceptable à l'échelle actuelle ; si un index de blog grandit au point que cela devienne un problème, remplacez le badge par un endpoint de comptage par lots et un cache partagé.

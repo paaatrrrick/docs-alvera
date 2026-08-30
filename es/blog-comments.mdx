@@ -1,0 +1,159 @@
+---
+title: "Comentarios del blog: reacciones, ordenación y conteo"
+description: "Cómo el widget de comentarios del sitio personal registra el número de comentarios por publicación, ordena los hilos y persiste las reacciones con emoji mediante actualizaciones optimistas."
+---
+
+## Resumen
+
+El widget de comentarios del sitio personal permite a los lectores dejar comentarios en una entrada del blog, reaccionar a los comentarios existentes con emoji y ordenar el hilo. Está compuesto por pequeñas piezas de React — una lista, un formulario, un control de ordenación, una barra de reacciones por comentario — respaldadas por dos hooks (`useComments`, `useReactions`) que se comunican con la API de comentarios.
+
+Esta página cubre tres piezas de esa superficie que se incorporaron esta semana:
+
+- **Reacciones** — conteos de emoji persistidos con actualizaciones optimistas (`useReactions`).
+- **Ordenación** — más recientes / más antiguos / mejores, gestionado por `useCommentSort` y el control `CommentSort`.
+- **Insignia de conteo de comentarios** — un componente ligero `CommentCount` para listas de publicaciones y encabezados.
+
+Si vas a escribir una nueva plantilla de blog, una página de índice o ampliar el widget de comentarios, probablemente uses al menos uno de estos.
+
+## Reacciones
+
+Cada comentario tiene su propia barra de reacciones con emoji. Los conteos se almacenan en el servidor y están indexados por un `targetId` (el id del comentario), de modo que las reacciones sobreviven a una recarga de la página y se comparten entre los visitantes.
+
+### Cuándo usarlo
+
+Recurre a `useReactions` siempre que quieras una interacción del tipo "+1 con conteo" asociada a un id estable: reacciones a comentarios hoy, pero el mismo hook funciona para reaccionar a una publicación completa o a una tarjeta de proyecto.
+
+### Configuración
+
+`useReactions(targetId)` devuelve:
+
+| Campo    | Tipo                                | Descripción                                                                                |
+| -------- | ----------------------------------- | ------------------------------------------------------------------------------------------ |
+| `counts` | `Record<string, number>`            | Conteo actual por emoji, p. ej. `{ "👍": 4, "🎉": 1 }`. Objeto vacío hasta que se resuelve la primera petición. |
+| `react`  | `(emoji: string) => Promise<any>`   | Incrementa el conteo de `emoji`. Actualiza el estado local de inmediato y envía la petición a la API. |
+
+En el montaje, el hook hace `GET /reactions/:targetId` y rellena `counts` con la respuesta. Llamar a `react(emoji)` realiza tres pasos en orden:
+
+1. **Actualización optimista.** El `counts[emoji]` local se incrementa de inmediato para que la interfaz se sienta instantánea.
+2. **Escritura en el servidor.** Una petición `POST /reactions/:targetId` envía `{ emoji }`.
+3. **Reversión en caso de fallo.** Si el servidor devuelve una respuesta distinta de 2xx, el conteo local se decrementa de nuevo (con un mínimo de `0`) y la promesa se rechaza.
+
+### Ejemplo
+
+```jsx
+import { useReactions } from "./useReactions";
+
+function ReactionsBar({ commentId }) {
+  const { counts, react } = useReactions(commentId);
+  const palette = ["👍", "🎉", "❤️", "😂"];
+
+  return (
+    <div className="reactions">
+      {palette.map((emoji) => (
+        <button key={emoji} type="button" onClick={() => react(emoji)}>
+          {emoji} {counts[emoji] || 0}
+        </button>
+      ))}
+    </div>
+  );
+}
+```
+
+Se requiere un `targetId`. Si el componente padre aún no sabe qué destino leer (por ejemplo, el comentario aún no se ha creado), no montes el hook — no hay una prop para "omitir".
+
+## Ordenación
+
+El hilo de comentarios se puede ordenar por más recientes, más antiguos o mejores (más reacciones). La ordenación es puramente del lado del cliente: el hook guarda la clave de ordenación actual y devuelve una copia ordenada y memoizada del array de comentarios.
+
+### Cuándo usarlo
+
+Usa `useCommentSort` siempre que renderices una lista de comentarios y quieras que los usuarios la reordenen sin volver a hacer fetch. Combínalo con el grupo de botones `CommentSort` para la interfaz por defecto, o crea tu propio control sobre el mismo par `sort` / `setSort`.
+
+### Configuración
+
+`useCommentSort(comments)` devuelve:
+
+| Campo     | Tipo                                       | Descripción                                                  |
+| --------- | ------------------------------------------ | ------------------------------------------------------------ |
+| `sort`    | `"newest" \| "oldest" \| "top"`            | La clave de ordenación activa. El valor por defecto es `"newest"`. |
+| `setSort` | `(key) => void`                            | Cambia la ordenación activa.                                 |
+| `sorted`  | `Comment[]`                                | Un nuevo array, ordenado según `sort`. Memoizado en `comments` y `sort`. |
+
+Los comparadores se exportan como `COMMENT_SORTS` por si necesitas ordenar fuera de React:
+
+- `newest` — descendente por `comment.date`.
+- `oldest` — ascendente por `comment.date`.
+- `top` — descendente por la suma de todos los valores en `comment.reactions`.
+
+Para que `top` resulte útil, cada objeto de comentario necesita un campo `reactions` con la forma `{ "👍": 3, "🎉": 1 }` — la misma forma que produce `useReactions`.
+
+El componente complementario `CommentSort` es un pequeño grupo de tres botones:
+
+```jsx
+<CommentSort value={sort} onChange={setSort} />
+```
+
+Renderiza un botón para cada uno de `newest`, `oldest` y `top` y añade la clase `is-active` al seleccionado.
+
+### Ejemplo
+
+```jsx
+import CommentSort from "./CommentSort";
+import { useCommentSort } from "./useCommentSort";
+import { useComments } from "./useComments";
+
+function CommentThread({ postId }) {
+  const { comments } = useComments(postId);
+  const { sort, setSort, sorted } = useCommentSort(comments);
+
+  return (
+    <>
+      <CommentSort value={sort} onChange={setSort} />
+      <ul>
+        {sorted.map((c) => (
+          <li key={c.id}>{c.body}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+```
+
+## Insignia de conteo de comentarios
+
+`CommentCount` es un pequeño elemento en línea para mostrar "12 comentarios" junto a una publicación — en un índice del blog, en el encabezado de una entrada o en una barra lateral — sin renderizar todo el widget de comentarios.
+
+### Cuándo usarlo
+
+Usa `CommentCount` siempre que quieras mostrar la interacción en una publicación sin cargar el hilo completo. Es seguro renderizar varios a la vez en una página de índice; cada instancia hace su propio fetch de los comentarios de su publicación mediante `useComments`.
+
+### Configuración
+
+`CommentCount` recibe una sola prop:
+
+| Prop     | Tipo     | Requerido | Descripción                                  |
+| -------- | -------- | --------- | -------------------------------------------- |
+| `postId` | `string` | Sí        | La publicación cuyos comentarios se cuentan. |
+
+Comportamiento:
+
+- Mientras `useComments` está cargando, el componente renderiza `null` para evitar un salto de diseño.
+- Una vez cargados los comentarios, renderiza un `<span class="comment-count">` que contiene `"No comments"`, `"1 comment"` o `"N comments"`.
+
+### Ejemplo
+
+```jsx
+import CommentCount from "./CommentCount";
+
+function PostListItem({ post }) {
+  return (
+    <article>
+      <h2><a href={`/blog/${post.slug}`}>{post.title}</a></h2>
+      <p>{post.excerpt}</p>
+      <CommentCount postId={post.id} />
+    </article>
+  );
+}
+```
+
+Como cada `CommentCount` monta su propio `useComments`, una página de índice con muchas publicaciones emitirá una petición por insignia. Esto está bien para la escala actual; si un índice de blog llega a crecer lo suficiente como para que esto sea un problema, sustituye la insignia por un endpoint de conteo en lote y una caché compartida.
