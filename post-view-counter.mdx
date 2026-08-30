@@ -5,7 +5,7 @@ description: "How the personal website tracks per-post views, total site reads, 
 
 ## Overview
 
-The personal website ships a small suite of components and hooks for tracking and displaying how many times posts have been read:
+The personal website tracks how many times each post has been read and surfaces those numbers directly in the UI, both per-post and site-wide. A small set of React components and hooks handle the recording, fetching, and rendering. That way, post templates can drop in a byline or a stat block without wiring up the underlying views service:
 
 - **`ViewCounter`** — renders the read count for a single post, backed by the `useViewCount` hook.
 - **`SiteViews`** — renders the aggregate read count across every post, backed by the `useTotalViews` hook.
