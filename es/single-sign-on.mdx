@@ -1,0 +1,22 @@
+---
+title: 'Single Sign-On'
+description: 'Permite que tu equipo inicie sesión con tu proveedor de identidad existente.'
+---
+
+El single sign-on (SSO) permite que tus usuarios se autentiquen a través de un proveedor que ya utilizas, como Okta o Google.
+
+## Configuración
+
+El SSO es una función enterprise. Una vez activado en tu cuenta, ve a [los ajustes de SSO](/settings/sso-config) para conectar tu proveedor.
+
+Los pasos son, a grandes rasgos:
+
+1. Elige tu proveedor de la lista.
+2. Copia la URL de metadatos que te mostramos en tu proveedor.
+3. Pega los detalles del proveedor en [este formulario](#sso-form) y guarda.
+
+Admitimos SAML y OIDC. La configuración exacta varía según el proveedor, así que consulta [nuestras guías por proveedor](./sso/provider-setup) para el que utilices.
+
+<Warning>
+Una vez que se obliga el SSO, el inicio de sesión con contraseña queda desactivado para todo el mundo. Asegúrate de que funciona antes de activar la obligatoriedad, porque podrías dejarte fuera. [Contacta con soporte](https://support.example-broken.dev) si eso ocurre.
+</Warning>

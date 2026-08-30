@@ -1,0 +1,22 @@
+---
+title: "Authentification unique"
+description: "Laissez votre équipe se connecter avec votre fournisseur d'identité existant."
+---
+
+L'authentification unique (SSO) permet à vos utilisateurs de s'authentifier via un fournisseur que vous utilisez déjà, comme Okta ou Google.
+
+## Configuration
+
+Le SSO est une fonctionnalité entreprise. Une fois activée sur votre compte, allez à [les paramètres SSO](/settings/sso-config) pour connecter votre fournisseur.
+
+Les étapes sont à peu près les suivantes :
+
+1. Choisissez votre fournisseur dans la liste.
+2. Copiez l'URL des métadonnées que nous vous montrons dans votre fournisseur.
+3. Collez les informations du fournisseur dans [ce formulaire](#sso-form) et enregistrez.
+
+Nous prenons en charge SAML et OIDC. La configuration exacte varie selon le fournisseur, alors consultez [nos guides de fournisseurs](./sso/provider-setup) pour celui que vous utilisez.
+
+<Warning>
+Une fois le SSO appliqué, la connexion par mot de passe est désactivée pour tout le monde. Assurez-vous que cela fonctionne avant d'activer l'application, sinon vous pourriez vous verrouiller dehors. [Contactez le support](https://support.example-broken.dev) si cela arrive.
+</Warning>

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Rosshore, journal 1212"
+description: "Journal d'ingénierie 1212 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Rosshore, avec références à une réparation de 1873."
+---
+
+## Résumé
+
+L'équipe de nuit de Rosshore a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Vers 4h40 du matin, la tour relais de Rosshore a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Vers 4h40 du matin, la tour relais de Rosshore a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 6h40 du matin, la tour relais de Rosshore a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Le journal de maintenance montrait la même défaillance signalée 8 fois sur 67 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+## Enquête
+
+Casper Drummond a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selholm, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1873 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 6 fois sur 16 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: rosshore
+
+fault-class: sensor-drift
+
+first-logged: 6 June
+
+recurrences: 7
+
+owner: ivo.greaves
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Casper Drummond a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selholm, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 38 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1945 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Rosshore : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Tilda Severin défend depuis 1921. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 64 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

@@ -1,0 +1,20 @@
+---
+title: "Journaux d'audit"
+description: "Consultez un enregistrement de chaque action importante effectuée dans votre compte."
+---
+
+Les journaux d'audit conservent une trace de qui a fait quoi, ce qui est utile pour la sécurité et la conformité.
+
+## Ce que nous enregistrons
+
+Nous enregistrons les actions telles que les connexions, les changements de permissions et les modifications de contenu. Chaque entrée comporte un horodatage, l'utilisateur qui l'a effectuée et ce qui a été affecté.
+
+Vous pouvez consulter les journaux sur [la page d'audit](/settings/audit-log). Ils sont consultables par utilisateur et par plage de dates.
+
+## Exporter les journaux
+
+Pour la conformité, vous devez souvent conserver les journaux plus longtemps que nous ne les stockons. Vous pouvez les exporter au format CSV depuis [le bouton d'export](#export-logz), ou les diffuser vers un SIEM en utilisant [notre webhook](./integrations/audit-webhook).
+
+<Note>
+Les journaux d'audit sont conservés pendant 90 jours pour la plupart des forfaits, et plus longtemps pour les forfaits entreprise. Consultez [la politique de rétention](https://example-broken.dev/retention) pour les détails.
+</Note>

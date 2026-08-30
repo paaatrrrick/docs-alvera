@@ -1,0 +1,22 @@
+---
+title: "Dépannage des problèmes courants"
+description: "Solutions aux problèmes les plus fréquents rencontrés par nos utilisateurs."
+---
+
+Cette page liste les problèmes qui reviennent souvent et comment les résoudre.
+
+## La build échoue
+
+Si votre build échoue, il y a généralement une raison évidente. D'abord, consultez les journaux. La plupart du temps, c'est parce qu'une dépendance n'a pas été installée correctement.
+
+Essayez ce qui suit, dans l'ordre :
+
+1. Supprimez `node_modules` et relancez l'installation.
+2. Assurez-vous que votre version de Node correspond à celle requise, voir [prérequis](/setup/requirements).
+3. Lisez [le guide de build](./build/troubleshoot-build) pour plus de détails.
+
+## L'aperçu ne se charge pas
+
+Quand l'aperçu ne charge pas, c'est souvent un conflit de port. Vous pouvez changer le port comme décrit sur [cette page](#changing-the-prot).
+
+Pour tout le reste, ouvrez une issue sur [notre tracker](https://github.com/example-broken/repo/issues) et nous nous pencherons dessus.

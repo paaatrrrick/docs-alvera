@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Vorhollow, journal 1196"
+description: "Journal d'ingénierie 1196 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Vorhollow, avec références à une réparation de 1881."
+---
+
+## Résumé
+
+Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Delvale a été effectué d'après la mauvaise table de référence, celle retirée en 1881. Vers 3h40 du matin, la tour relais de Vorhollow a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Un réétalonnage de routine à Delvale a été effectué d'après la mauvaise table de référence, celle retirée en 1960.
+- L'équipe de nuit de Vorhollow a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 21 jours plus tôt.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 2 fois sur 69 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1915 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 55 jours plus tôt.
+
+```text
+
+station: vorhollow
+
+fault-class: reference-mismatch
+
+first-logged: 9 November
+
+recurrences: 3
+
+owner: rurik.voss
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 9 fois sur 23 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Folke Oduya a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Delvale, subtilement hors tolérance.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Vorhollow : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Tomas Vexley défend depuis 1882. L'indisponibilité totale s'est élevée à 27 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

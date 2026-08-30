@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Selcrest, journal 1246"
+description: "Journal d'ingénierie 1246 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Selcrest, avec références à une réparation de 1931."
+---
+
+## Résumé
+
+Vers 4h40 du matin, la tour relais de Selcrest a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Velmara a été effectué d'après la mauvaise table de référence, celle retirée en 1931.
+
+## Chronologie
+
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 14 jours plus tôt.
+- Vers 2h40 du matin, la tour relais de Selcrest a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- L'équipe de nuit de Selcrest a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- L'équipe de nuit de Selcrest a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- L'équipe de nuit de Selcrest a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Mireille Sorvane a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velmara, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 61 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1855 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 23 jours plus tôt.
+
+```text
+
+station: selcrest
+
+fault-class: phantom-signal
+
+first-logged: 20 September
+
+recurrences: 2
+
+owner: emeric.marchetti
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Mireille Sorvane a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velmara, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 89 jours plus tôt.
+
+## Leçons et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Folke Halloran défend depuis 1880. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 84 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

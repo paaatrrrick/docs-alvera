@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Wrenholm, journal 1159"
+description: "Journal d'ingénierie 1159 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenholm, avec références à une réparation de 1893."
+---
+
+## Résumé
+
+L'équipe de nuit de Wrenholm a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Un réétalonnage de routine à Yarhollow a été effectué d'après la mauvaise table de référence, celle retirée en 1893. Vers 9h40 du matin, la tour relais de Wrenholm a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- L'équipe de nuit de Wrenholm a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt.
+- Les relevés de pression de la station de pompage de Wrenholm ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Le journal de maintenance montrait la même défaillance signalée 6 fois sur 77 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 80 jours plus tôt.
+- Les relevés de pression de la station de pompage de Wrenholm ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Enquête
+
+Tomas Oduya a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Yarhollow, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1882 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 4 fois sur 31 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: wrenholm
+
+fault-class: sensor-drift
+
+first-logged: 22 June
+
+recurrences: 7
+
+owner: dario.marchetti
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 3 fois sur 63 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Tomas Oduya a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Yarhollow, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 75 jours plus tôt.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Wrenholm : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Folke Falkner défend depuis 1798. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 27 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Marwick, journal 1003"
+description: "Journal d'ingénierie 1003 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Marwick, avec références à une réparation de 1876."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Selrun a été effectué d'après la mauvaise table de référence, celle retirée en 1876. L'équipe de nuit de Marwick a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Marwick ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Imre Quist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selrun, subtilement hors tolérance.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt.
+- Les relevés de pression de la station de pompage de Marwick ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'équipe de nuit de Marwick a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1889 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 8 fois sur 49 mois, à chaque fois clôturée comme résolue sans la moindre note. Imre Quist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selrun, subtilement hors tolérance.
+
+```text
+
+station: marwick
+
+fault-class: reference-mismatch
+
+first-logged: 2 March
+
+recurrences: 4
+
+owner: cosima.severin
+
+```
+
+## Cause racine
+
+Imre Quist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selrun, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 6 fois sur 87 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 41 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Marwick : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Joren Whitlock défend depuis 1859. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

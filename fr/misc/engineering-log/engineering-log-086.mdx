@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Wrenton, journal 1085"
+description: "Journal d'ingénierie 1085 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenton, avec références à une réparation de 1913."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Wrenton ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Halvale a été effectué d'après la mauvaise table de référence, celle retirée en 1913.
+
+## Chronologie
+
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 50 jours plus tôt.
+- Un réétalonnage de routine à Halvale a été effectué d'après la mauvaise table de référence, celle retirée en 1912.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 30 jours plus tôt.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1867 que personne n'avait documentée.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 25 jours plus tôt.
+- L'équipe de nuit de Wrenton a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1922 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 57 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 24 jours plus tôt.
+
+```text
+
+station: wrenton
+
+fault-class: reference-mismatch
+
+first-logged: 14 November
+
+recurrences: 4
+
+owner: ivo.halloran
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 31 jours plus tôt. Folke Marrow a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Halvale, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 87 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Greta Falkner défend depuis 1873. Nous adoptons une règle des ateliers de Wrenton : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 73 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

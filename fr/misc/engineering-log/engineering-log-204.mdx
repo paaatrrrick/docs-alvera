@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Corford, journal 1203"
+description: "Journal d'ingénierie 1203 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Corford, avec références à une réparation de 1946."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Morstead a été effectué d'après la mauvaise table de référence, celle retirée en 1946. Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Corford ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Annik Sorvane a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Morstead, subtilement hors tolérance.
+- Un réétalonnage de routine à Morstead a été effectué d'après la mauvaise table de référence, celle retirée en 1850.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1883 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Annik Sorvane a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Morstead, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 89 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 67 jours plus tôt.
+
+```text
+
+station: corford
+
+fault-class: reference-mismatch
+
+first-logged: 15 September
+
+recurrences: 8
+
+owner: otto.severin
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 6 fois sur 68 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 19 jours plus tôt.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 63 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Corford : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sigrid Brandt défend depuis 1786. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées.

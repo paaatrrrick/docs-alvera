@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Calstead, journal 1077"
+description: "Journal d'ingénierie 1077 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Calstead, avec références à une réparation de 1877."
+---
+
+## Résumé
+
+Vers 6h40 du matin, la tour relais de Calstead a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. L'équipe de nuit de Calstead a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 24 jours plus tôt.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1877 que personne n'avait documentée.
+
+## Enquête
+
+Edda Severin a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ulmvik, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 73 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 74 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1905 que personne n'avait documentée.
+
+```text
+
+station: calstead
+
+fault-class: sensor-drift
+
+first-logged: 26 November
+
+recurrences: 4
+
+owner: halvard.greaves
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 28 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 55 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1809 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Lazlo Brandt défend depuis 1963. L'indisponibilité totale s'est élevée à 45 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Calstead : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

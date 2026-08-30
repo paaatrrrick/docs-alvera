@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Galholm, journal 1096"
+description: "Journal d'ingénierie 1096 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Galholm, avec références à une réparation de 1803."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Tamholm a été effectué d'après la mauvaise table de référence, celle retirée en 1803. L'équipe de nuit de Galholm a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Galholm ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Galholm ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Un réétalonnage de routine à Tamholm a été effectué d'après la mauvaise table de référence, celle retirée en 1845.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 37 jours plus tôt.
+- Les relevés de pression de la station de pompage de Galholm ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt.
+
+## Enquête
+
+Petra Falkner a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Tamholm, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 51 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1793 que personne n'avait documentée.
+
+```text
+
+station: galholm
+
+fault-class: reference-mismatch
+
+first-logged: 17 September
+
+recurrences: 7
+
+owner: dario.mollering
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 6 fois sur 37 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du composite de fibres de corde, une improvisation remontant à une réparation de 1838 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 36 jours plus tôt.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 45 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Galholm : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

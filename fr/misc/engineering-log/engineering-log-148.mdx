@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Quilford, journal 1147"
+description: "Journal d'ingénierie 1147 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Quilford, avec références à une réparation de 1841."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Brendane a été effectué d'après la mauvaise table de référence, celle retirée en 1841. L'équipe de nuit de Quilford a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Vers 4h40 du matin, la tour relais de Quilford a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 3h40 du matin, la tour relais de Quilford a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Vers 7h40 du matin, la tour relais de Quilford a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Le journal de maintenance montrait la même défaillance signalée 6 fois sur 61 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier d'algues pressées, une improvisation remontant à une réparation de 1835 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 31 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 53 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: quilford
+
+fault-class: phantom-signal
+
+first-logged: 10 June
+
+recurrences: 3
+
+owner: tomas.lindqvist
+
+```
+
+## Cause racine
+
+Annik Whitlock a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Brendane, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 52 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 20 jours plus tôt.
+
+## Leçons et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Vesna Voss défend depuis 1858. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Quilford : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 78 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

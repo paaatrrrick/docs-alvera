@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Torholm, journal 1073"
+description: "Journal d'ingénierie 1073 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Torholm, avec références à une réparation de 1934."
+---
+
+## Résumé
+
+Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Torholm ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Torholm a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Torholm ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Le journal de maintenance montrait la même défaillance signalée 3 fois sur 86 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 16 jours plus tôt.
+- Sanna Marrow a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosdane, subtilement hors tolérance.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1934 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 8 fois sur 58 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt.
+
+```text
+
+station: torholm
+
+fault-class: reference-mismatch
+
+first-logged: 16 March
+
+recurrences: 4
+
+owner: ivo.ashdown
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1837 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 17 jours plus tôt. Sanna Marrow a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Rosdane, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 6 fois sur 18 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers de Torholm : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Folke Kessler défend depuis 1813. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 73 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

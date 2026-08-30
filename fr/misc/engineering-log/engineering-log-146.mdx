@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station Ossmore, journal 1145"
+description: "Journal d'ingénierie 1145 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ossmore, avec références à une réparation de 1921."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Halmore a été effectué d'après la mauvaise table de référence, celle retirée en 1921. Vers 5h40 du matin, la tour relais d'Ossmore a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Un réétalonnage de routine à Halmore a été effectué d'après la mauvaise table de référence, celle retirée en 1909.
+- Un réétalonnage de routine à Halmore a été effectué d'après la mauvaise table de référence, celle retirée en 1931.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 36 jours plus tôt.
+- Un réétalonnage de routine à Halmore a été effectué d'après la mauvaise table de référence, celle retirée en 1799.
+- Vers 5h40 du matin, la tour relais d'Ossmore a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 8 fois sur 83 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1797 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 65 jours plus tôt. Joren Voss a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Halmore, subtilement hors tolérance.
+
+```text
+
+station: ossmore
+
+fault-class: contact-corrosion
+
+first-logged: 12 September
+
+recurrences: 2
+
+owner: vesna.halloran
+
+```
+
+## Cause racine
+
+Joren Voss a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Halmore, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 67 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1893 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Tilda Halloran défend depuis 1806. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers d'Ossmore : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 23 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

@@ -1,0 +1,22 @@
+---
+title: 'Resolución de problemas habituales'
+description: 'Soluciones a los problemas más frecuentes con los que se topan nuestros usuarios.'
+---
+
+Esta página enumera los problemas que aparecen a menudo y cómo resolverlos.
+
+## La compilación falla
+
+Si tu compilación está fallando, suele haber un motivo evidente. Primero, comprueba los registros. La mayoría de las veces es porque una dependencia no se instaló correctamente.
+
+Prueba lo siguiente, en este orden:
+
+1. Borra `node_modules` y ejecuta la instalación de nuevo.
+2. Asegúrate de que tu versión de Node coincide con la requerida; consulta los [requisitos](/setup/requirements).
+3. Lee [la guía de compilación](./build/troubleshoot-build) para más detalles.
+
+## La previsualización no carga
+
+Cuando la previsualización no carga, suele ser un conflicto de puertos. Puedes cambiar el puerto como se describe en [esta página](#changing-the-prot).
+
+Para cualquier otra cosa, abre una incidencia en [nuestro tracker](https://github.com/example-broken/repo/issues) y lo revisaremos.

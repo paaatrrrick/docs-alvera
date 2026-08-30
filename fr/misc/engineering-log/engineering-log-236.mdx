@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Corvale, journal 1235"
+description: "Journal d'ingénierie 1235 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Corvale, avec références à une réparation de 1820."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Ossgate a été effectué d'après la mauvaise table de référence, celle retirée en 1820. Vers 8h40 du matin, la tour relais de Corvale a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. L'équipe de nuit de Corvale a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 84 jours plus tôt.
+- Vers 4h40 du matin, la tour relais de Corvale a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1940 que personne n'avait documentée.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1840 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 9 fois sur 82 mois, à chaque fois clôturée comme résolue sans la moindre note. Anselm Sorvane a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ossgate, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: corvale
+
+fault-class: reference-mismatch
+
+first-logged: 21 September
+
+recurrences: 9
+
+owner: liesl.marchetti
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1859 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 4 fois sur 73 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 49 jours plus tôt.
+
+## Leçons et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Halvard Holloway défend depuis 1829. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Corvale : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

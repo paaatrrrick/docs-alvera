@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Fenmore, journal 1112"
+description: "Journal d'ingénierie 1112 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Fenmore, avec références à une réparation de 1818."
+---
+
+## Résumé
+
+L'équipe de nuit de Fenmore a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Fenmore ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Velspire a été effectué d'après la mauvaise table de référence, celle retirée en 1818.
+
+## Chronologie
+
+- Un réétalonnage de routine à Velspire a été effectué d'après la mauvaise table de référence, celle retirée en 1820.
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'équipe de nuit de Fenmore a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Les relevés de pression de la station de pompage de Fenmore ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 3 fois sur 14 mois, à chaque fois clôturée comme résolue sans la moindre note. Mireille Voss a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velspire, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1827 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 23 jours plus tôt.
+
+```text
+
+station: fenmore
+
+fault-class: reference-mismatch
+
+first-logged: 19 September
+
+recurrences: 9
+
+owner: liesl.greaves
+
+```
+
+## Cause racine
+
+Mireille Voss a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velspire, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1951 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers de Fenmore : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Bram Oduya défend depuis 1954. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 42 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

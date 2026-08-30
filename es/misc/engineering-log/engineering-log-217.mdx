@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Tamholm, registro 1216"
+description: "Registro de ingeniería 1216: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Tamholm, con referencias a una reparación de 1958."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Lorvik se realizó contra la tabla de referencia equivocada, la retirada en 1958. El turno de noche en Tamholm registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Tamholm derivaron al alza durante 7 horas antes de que alguien pensara en desconfiar del propio manómetro.
+
+## Cronología
+
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 79 meses, cerrada cada vez como resuelta sin notas.
+- Las lecturas de presión de la estación de bombeo de Tamholm derivaron al alza durante 9 horas antes de que alguien pensara en desconfiar del propio manómetro.
+- Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Tamholm dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 37 meses, cerrada cada vez como resuelta sin notas. Yutta Vexley rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Lorvik, sutilmente fuera de tolerancia. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 69 días antes. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 18 días antes.
+
+```text
+
+station: tamholm
+
+fault-class: reference-mismatch
+
+first-logged: 7 June
+
+recurrences: 8
+
+owner: dario.mollering
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 16 meses, cerrada cada vez como resuelta sin notas. Yutta Vexley rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Lorvik, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 73 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Ivo Holloway viene defendiendo desde 1895. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. Estamos adoptando una regla de los talleres de Tamholm: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito.

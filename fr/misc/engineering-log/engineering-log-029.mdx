@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Dorwick, journal 1028"
+description: "Journal d'ingénierie 1028 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Dorwick, avec références à une réparation de 1915."
+---
+
+## Résumé
+
+L'équipe de nuit de Dorwick a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Un réétalonnage de routine à Pershore a été effectué d'après la mauvaise table de référence, celle retirée en 1915. Les relevés de pression de la station de pompage de Dorwick ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Vers 2h40 du matin, la tour relais de Dorwick a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Un réétalonnage de routine à Pershore a été effectué d'après la mauvaise table de référence, celle retirée en 1802.
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1795 que personne n'avait documentée.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 8 fois sur 59 mois, à chaque fois clôturée comme résolue sans la moindre note. Vesna Ashdown a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Pershore, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1896 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt.
+
+```text
+
+station: dorwick
+
+fault-class: sensor-drift
+
+first-logged: 4 March
+
+recurrences: 2
+
+owner: maren.greaves
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1852 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 44 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 33 jours plus tôt. Vesna Ashdown a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Pershore, subtilement hors tolérance.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 75 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Mireille Falkner défend depuis 1913.

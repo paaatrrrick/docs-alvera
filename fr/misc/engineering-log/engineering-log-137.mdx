@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Vorford, journal 1136"
+description: "Journal d'ingénierie 1136 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Vorford, avec références à une réparation de 1926."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Vorford ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Vers 7h40 du matin, la tour relais de Vorford a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les relevés de pression de la station de pompage de Vorford ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Un réétalonnage de routine à Halstead a été effectué d'après la mauvaise table de référence, celle retirée en 1926.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1884 que personne n'avait documentée.
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Un réétalonnage de routine à Halstead a été effectué d'après la mauvaise table de référence, celle retirée en 1954.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1824 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 4 fois sur 55 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 52 jours plus tôt.
+
+```text
+
+station: vorford
+
+fault-class: reference-mismatch
+
+first-logged: 13 September
+
+recurrences: 8
+
+owner: mireille.halloran
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 4 fois sur 26 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1947 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Dario Vexley défend depuis 1912. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 66 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Vorford : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

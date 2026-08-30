@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Galholm, registro 1069"
+description: "Registro de ingeniería 1069: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Galholm, con referencias a una reparación de 1833."
+---
+
+## Resumen
+
+El turno de noche en Galholm registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Una recalibración rutinaria en Wrenreach se realizó contra la tabla de referencia equivocada, la retirada en 1833.
+
+## Cronología
+
+- Una recalibración rutinaria en Wrenreach se realizó contra la tabla de referencia equivocada, la retirada en 1929.
+- Las lecturas de presión de la estación de bombeo de Galholm derivaron al alza durante 4 horas antes de que alguien pensara en desconfiar del propio manómetro.
+- El turno de noche en Galholm registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 6 veces a lo largo de 82 meses, cerrada cada vez como resuelta sin notas.
+- La inspección reveló que la caja de empalmes había sido resellada con chapa de hueso de ballena, una improvisación que se remonta a una reparación de 1828 que nadie documentó.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que se remonta a una reparación de 1835 que nadie documentó. El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 53 meses, cerrada cada vez como resuelta sin notas. Folke Ashdown rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Wrenreach, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 16 días antes.
+
+```text
+
+station: galholm
+
+fault-class: phantom-signal
+
+first-logged: 22 November
+
+recurrences: 9
+
+owner: casper.vexley
+
+```
+
+## Causa raíz
+
+Folke Ashdown rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Wrenreach, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 18 meses, cerrada cada vez como resuelta sin notas. La inspección reveló que la caja de empalmes había sido resellada con estaño martillado, una improvisación que se remonta a una reparación de 1807 que nadie documentó.
+
+## Lecciones y seguimiento
+
+El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. El tiempo total de inactividad ascendió a 33 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Tomas Brandt viene defendiendo desde 1862. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. Estamos adoptando una regla de los talleres de Galholm: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito.

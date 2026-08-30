@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Wrenstead, journal 1197"
+description: "Journal d'ingénierie 1197 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenstead, avec références à une réparation de 1833."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Wrenstead ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Erigate a été effectué d'après la mauvaise table de référence, celle retirée en 1833. L'équipe de nuit de Wrenstead a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Vers 6h40 du matin, la tour relais de Wrenstead a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Pendant les crues printanières, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 8h40 du matin, la tour relais de Wrenstead a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Le journal de maintenance montrait la même défaillance signalée 8 fois sur 57 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 39 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Maren Mollering a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Erigate, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 37 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: wrenstead
+
+fault-class: phantom-signal
+
+first-logged: 24 March
+
+recurrences: 3
+
+owner: yutta.lindqvist
+
+```
+
+## Cause racine
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 58 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 3 fois sur 34 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1785 que personne n'avait documentée. Maren Mollering a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Erigate, subtilement hors tolérance.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sigrid Sorvane défend depuis 1835. Nous adoptons une règle des ateliers de Wrenstead : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 87 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

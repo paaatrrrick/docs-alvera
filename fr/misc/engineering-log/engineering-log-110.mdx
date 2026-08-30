@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Dorhollow, journal 1109"
+description: "Journal d'ingénierie 1109 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Dorhollow, avec références à une réparation de 1813."
+---
+
+## Résumé
+
+Vers 8h40 du matin, la tour relais de Dorhollow a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Un réétalonnage de routine à Galdane a été effectué d'après la mauvaise table de référence, celle retirée en 1813. Les relevés de pression de la station de pompage de Dorhollow ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1832 que personne n'avait documentée.
+- Un réétalonnage de routine à Galdane a été effectué d'après la mauvaise table de référence, celle retirée en 1932.
+- Vers 8h40 du matin, la tour relais de Dorhollow a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Vers 3h40 du matin, la tour relais de Dorhollow a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 24 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 8 fois sur 34 mois, à chaque fois clôturée comme résolue sans la moindre note. Tomas Quist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Galdane, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1818 que personne n'avait documentée.
+
+```text
+
+station: dorhollow
+
+fault-class: sensor-drift
+
+first-logged: 7 June
+
+recurrences: 7
+
+owner: annik.vexley
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 2 fois sur 12 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier d'algues pressées, une improvisation remontant à une réparation de 1854 que personne n'avait documentée. Tomas Quist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Galdane, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 51 jours plus tôt.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 20 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Dorhollow : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Tilda Kessler défend depuis 1871.

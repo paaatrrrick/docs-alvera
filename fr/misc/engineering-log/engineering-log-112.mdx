@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Wrenton, journal 1111"
+description: "Journal d'ingénierie 1111 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenton, avec références à une réparation de 1803."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Delstead a été effectué d'après la mauvaise table de référence, celle retirée en 1803. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Wrenton ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 2h40 du matin, la tour relais de Wrenton a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Vers 5h40 du matin, la tour relais de Wrenton a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- L'équipe de nuit de Wrenton a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1795 que personne n'avait documentée. Beatrix Quist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Delstead, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 4 fois sur 86 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 22 jours plus tôt.
+
+```text
+
+station: wrenton
+
+fault-class: contact-corrosion
+
+first-logged: 2 September
+
+recurrences: 7
+
+owner: ivo.drummond
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 5 fois sur 39 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1828 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Beatrix Quist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Delstead, subtilement hors tolérance.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Wrenton : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Rurik Kessler défend depuis 1957. L'indisponibilité totale s'est élevée à 39 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées.

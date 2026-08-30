@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Ossdane, journal 1191"
+description: "Journal d'ingénierie 1191 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ossdane, avec références à une réparation de 1838."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage d'Ossdane ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 3h40 du matin, la tour relais d'Ossdane a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Un réétalonnage de routine à Calmara a été effectué d'après la mauvaise table de référence, celle retirée en 1838.
+
+## Chronologie
+
+- Le journal de maintenance montrait la même défaillance signalée 3 fois sur 71 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 66 jours plus tôt.
+- Vers 9h40 du matin, la tour relais d'Ossdane a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Mireille Marchetti a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Calmara, subtilement hors tolérance.
+- Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 6h40 du matin, la tour relais d'Ossdane a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+Mireille Marchetti a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Calmara, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 84 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1920 que personne n'avait documentée. Le journal de maintenance montrait la même défaillance signalée 8 fois sur 28 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: ossdane
+
+fault-class: reference-mismatch
+
+first-logged: 15 November
+
+recurrences: 6
+
+owner: bram.ashdown
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 4 fois sur 31 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 46 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1917 que personne n'avait documentée.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Maren Whitlock défend depuis 1837. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers d'Ossdane : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

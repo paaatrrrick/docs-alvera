@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Velmara, registro 1018"
+description: "Registro de ingeniería 1018: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Velmara, con referencias a una reparación de 1819."
+---
+
+## Resumen
+
+Aproximadamente a las 7:40 de la mañana, la torre de retransmisión de Velmara dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. Una recalibración rutinaria en Jorrun se realizó contra la tabla de referencia equivocada, la retirada en 1819. El turno de noche en Velmara registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- Una recalibración rutinaria en Jorrun se realizó contra la tabla de referencia equivocada, la retirada en 1822.
+- El turno de noche en Velmara registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- La inspección reveló que la caja de empalmes había sido resellada con hierro de turbera, una improvisación que se remonta a una reparación de 1839 que nadie documentó.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+- El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 38 meses, cerrada cada vez como resuelta sin notas.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 3 veces a lo largo de 90 meses, cerrada cada vez como resuelta sin notas. La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que se remonta a una reparación de 1887 que nadie documentó. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 39 días antes. Otto Marrow rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Jorrun, sutilmente fuera de tolerancia.
+
+```text
+
+station: velmara
+
+fault-class: contact-corrosion
+
+first-logged: 19 November
+
+recurrences: 2
+
+owner: stellan.petrov
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que se remonta a una reparación de 1814 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 41 días antes.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. Estamos adoptando una regla de los talleres de Velmara: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo total de inactividad ascendió a 55 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal.

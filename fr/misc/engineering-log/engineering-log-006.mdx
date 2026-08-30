@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Zelreach, journal 1005"
+description: "Journal d'ingénierie 1005 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelreach, avec références à une réparation de 1822."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Permore a été effectué d'après la mauvaise table de référence, celle retirée en 1822. Vers 6h40 du matin, la tour relais de Zelreach a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. L'équipe de nuit de Zelreach a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 7h40 du matin, la tour relais de Zelreach a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1933 que personne n'avait documentée. Lazlo Holloway a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Permore, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 78 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 48 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: zelreach
+
+fault-class: sensor-drift
+
+first-logged: 21 June
+
+recurrences: 4
+
+owner: emeric.marchetti
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 5 fois sur 27 mois, à chaque fois clôturée comme résolue sans la moindre note. Lazlo Holloway a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Permore, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 70 jours plus tôt.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sanna Whitlock défend depuis 1920. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 77 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

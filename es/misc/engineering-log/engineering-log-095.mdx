@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Rosvik, registro 1094"
+description: "Registro de ingeniería 1094: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Rosvik, con referencias a una reparación de 1785."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Brenvik se realizó contra la tabla de referencia equivocada, la retirada en 1785. Durante las crecidas primaverales, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. El turno de noche en Rosvik registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Cronología
+
+- Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Rosvik dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Aproximadamente a las 7:40 de la mañana, la torre de retransmisión de Rosvik dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- El turno de noche en Rosvik registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Aproximadamente a las 7:40 de la mañana, la torre de retransmisión de Rosvik dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Durante una helada temprana, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que se remonta a una reparación de 1867 que nadie documentó.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que se remonta a una reparación de 1855 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 87 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 6 veces a lo largo de 61 meses, cerrada cada vez como resuelta sin notas. Maren Falkner rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Brenvik, sutilmente fuera de tolerancia.
+
+```text
+
+station: rosvik
+
+fault-class: contact-corrosion
+
+first-logged: 13 March
+
+recurrences: 3
+
+owner: anselm.severin
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 40 meses, cerrada cada vez como resuelta sin notas. Maren Falkner rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Brenvik, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que se remonta a una reparación de 1804 que nadie documentó.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los talleres de Rosvik: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Lazlo Brandt viene defendiendo desde 1846. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal.

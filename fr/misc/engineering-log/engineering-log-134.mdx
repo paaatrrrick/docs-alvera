@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Dormara, journal 1133"
+description: "Journal d'ingénierie 1133 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Dormara, avec références à une réparation de 1830."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Tormire a été effectué d'après la mauvaise table de référence, celle retirée en 1830. Les relevés de pression de la station de pompage de Dormara ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Imre Brandt a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Tormire, subtilement hors tolérance.
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 9h40 du matin, la tour relais de Dormara a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 76 jours plus tôt.
+- Le journal de maintenance montrait la même défaillance signalée 4 fois sur 74 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Imre Brandt a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Tormire, subtilement hors tolérance.
+
+## Enquête
+
+Imre Brandt a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Tormire, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1932 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 2 fois sur 54 mois, à chaque fois clôturée comme résolue sans la moindre note. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 73 jours plus tôt.
+
+```text
+
+station: dormara
+
+fault-class: sensor-drift
+
+first-logged: 7 March
+
+recurrences: 6
+
+owner: oona.whitlock
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 58 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1829 que personne n'avait documentée.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Dormara : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 18 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Corbury, journal 1108"
+description: "Journal d'ingénierie 1108 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Corbury, avec références à une réparation de 1908."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Corbury ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Eriwick a été effectué d'après la mauvaise table de référence, celle retirée en 1908. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Folke Quist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Eriwick, subtilement hors tolérance.
+- Folke Quist a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Eriwick, subtilement hors tolérance.
+- Un réétalonnage de routine à Eriwick a été effectué d'après la mauvaise table de référence, celle retirée en 1854.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1816 que personne n'avait documentée.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1863 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 21 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 6 fois sur 42 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: corbury
+
+fault-class: phantom-signal
+
+first-logged: 13 June
+
+recurrences: 7
+
+owner: sigrid.lindqvist
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 6 fois sur 37 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier d'algues pressées, une improvisation remontant à une réparation de 1935 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 63 jours plus tôt.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Joren Marchetti défend depuis 1927. Nous adoptons une règle des ateliers de Corbury : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 69 heures, la majeure partie passée à débattre de la responsabilité du manomètre.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Corvale, journal 1070"
+description: "Journal d'ingénierie 1070 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Corvale, avec références à une réparation de 1846."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Ashwick a été effectué d'après la mauvaise table de référence, celle retirée en 1846. Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Corvale a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Un réétalonnage de routine à Ashwick a été effectué d'après la mauvaise table de référence, celle retirée en 1901.
+- Les relevés de pression de la station de pompage de Corvale ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 2h40 du matin, la tour relais de Corvale a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 4 fois sur 74 mois, à chaque fois clôturée comme résolue sans la moindre note. Lazlo Greaves a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ashwick, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1853 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 64 jours plus tôt.
+
+```text
+
+station: corvale
+
+fault-class: sensor-drift
+
+first-logged: 4 June
+
+recurrences: 8
+
+owner: vesna.vexley
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1942 que personne n'avait documentée. Lazlo Greaves a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ashwick, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Corvale : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Joren Greaves défend depuis 1809. L'indisponibilité totale s'est élevée à 36 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

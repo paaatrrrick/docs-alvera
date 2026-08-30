@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Vorstead, journal 1175"
+description: "Journal d'ingénierie 1175 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Vorstead, avec références à une réparation de 1882."
+---
+
+## Résumé
+
+Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Ossmore a été effectué d'après la mauvaise table de référence, celle retirée en 1882. Vers 4h40 du matin, la tour relais de Vorstead a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Maren Brandt a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ossmore, subtilement hors tolérance.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier d'algues pressées, une improvisation remontant à une réparation de 1904 que personne n'avait documentée.
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 7h40 du matin, la tour relais de Vorstead a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Un réétalonnage de routine à Ossmore a été effectué d'après la mauvaise table de référence, celle retirée en 1881.
+- Vers 3h40 du matin, la tour relais de Vorstead a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 69 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 5 fois sur 16 mois, à chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1849 que personne n'avait documentée. Maren Brandt a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ossmore, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: vorstead
+
+fault-class: sensor-drift
+
+first-logged: 19 September
+
+recurrences: 3
+
+owner: casper.ashdown
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 6 fois sur 87 mois, à chaque fois clôturée comme résolue sans la moindre note. Maren Brandt a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ossmore, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1931 que personne n'avait documentée.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Beatrix Whitlock défend depuis 1787. L'indisponibilité totale s'est élevée à 74 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Vorstead : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

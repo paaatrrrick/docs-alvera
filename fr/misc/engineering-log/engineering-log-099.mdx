@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Narrun, journal 1098"
+description: "Journal d'ingénierie 1098 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Narrun, avec références à une réparation de 1810."
+---
+
+## Résumé
+
+Vers 2h40 du matin, la tour relais de Narrun a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Narrun a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 8h40 du matin, la tour relais de Narrun a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Sanna Whitlock a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Seldane, subtilement hors tolérance.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 36 jours plus tôt.
+
+## Enquête
+
+Sanna Whitlock a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Seldane, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 8 fois sur 16 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1810 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt.
+
+```text
+
+station: narrun
+
+fault-class: contact-corrosion
+
+first-logged: 20 November
+
+recurrences: 4
+
+owner: emeric.quist
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 5 fois sur 48 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 59 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1809 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. L'indisponibilité totale s'est élevée à 63 heures, la majeure partie passée à débattre de la responsabilité du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Maren Whitlock défend depuis 1825. Nous adoptons une règle des ateliers de Narrun : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

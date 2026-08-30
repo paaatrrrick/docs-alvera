@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Rosvik, journal 1094"
+description: "Journal d'ingénierie 1094 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Rosvik, avec références à une réparation de 1785."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Brenvik a été effectué d'après la mauvaise table de référence, celle retirée en 1785. Pendant les crues printanières, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Rosvik a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Vers 2h40 du matin, la tour relais de Rosvik a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Vers 7h40 du matin, la tour relais de Rosvik a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- L'équipe de nuit de Rosvik a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Vers 7h40 du matin, la tour relais de Rosvik a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Pendant un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1867 que personne n'avait documentée.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1855 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 87 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 6 fois sur 61 mois, à chaque fois clôturée comme résolue sans la moindre note. Maren Falkner a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Brenvik, subtilement hors tolérance.
+
+```text
+
+station: rosvik
+
+fault-class: contact-corrosion
+
+first-logged: 13 March
+
+recurrences: 3
+
+owner: anselm.severin
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 9 fois sur 40 mois, à chaque fois clôturée comme résolue sans la moindre note. Maren Falkner a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Brenvik, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1804 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Rosvik : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Lazlo Brandt défend depuis 1846. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

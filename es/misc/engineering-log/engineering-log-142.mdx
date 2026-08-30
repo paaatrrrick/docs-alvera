@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Ashfell, registro 1141"
+description: "Registro de ingeniería 1141: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Ashfell, con referencias a una reparación de 1960."
+---
+
+## Resumen
+
+Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Una recalibración rutinaria en Narbury se realizó contra la tabla de referencia equivocada, la retirada en 1960. Las lecturas de presión de la estación de bombeo de Ashfell derivaron al alza durante 6 horas antes de que alguien pensara en desconfiar del propio manómetro.
+
+## Cronología
+
+- Una recalibración rutinaria en Narbury se realizó contra la tabla de referencia equivocada, la retirada en 1884.
+- Las lecturas de presión de la estación de bombeo de Ashfell derivaron al alza durante 6 horas antes de que alguien pensara en desconfiar del propio manómetro.
+- Las lecturas de presión de la estación de bombeo de Ashfell derivaron al alza durante 9 horas antes de que alguien pensara en desconfiar del propio manómetro.
+- Una recalibración rutinaria en Narbury se realizó contra la tabla de referencia equivocada, la retirada en 1928.
+
+## Investigación
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 5 veces a lo largo de 79 meses, cerrada cada vez como resuelta sin notas. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 72 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Lazlo Ashdown rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Narbury, sutilmente fuera de tolerancia.
+
+```text
+
+station: ashfell
+
+fault-class: phantom-signal
+
+first-logged: 22 November
+
+recurrences: 5
+
+owner: rurik.marchetti
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con estaño martillado, una improvisación que se remonta a una reparación de 1781 que nadie documentó. Lazlo Ashdown rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Narbury, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Mireille Drummond viene defendiendo desde 1796. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. Estamos adoptando una regla de los talleres de Ashfell: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo total de inactividad ascendió a 38 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro.

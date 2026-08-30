@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Seldane, journal 1123"
+description: "Journal d'ingénierie 1123 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Seldane, avec références à une réparation de 1825."
+---
+
+## Résumé
+
+Vers 9h40 du matin, la tour relais de Seldane a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Les relevés de pression de la station de pompage de Seldane ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Seldane a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1825 que personne n'avait documentée.
+- Le journal de maintenance montrait la même défaillance signalée 4 fois sur 64 mois, à chaque fois clôturée comme résolue sans la moindre note.
+- Vers 4h40 du matin, la tour relais de Seldane a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- L'équipe de nuit de Seldane a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Un réétalonnage de routine à Vorwick a été effectué d'après la mauvaise table de référence, celle retirée en 1897.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 30 jours plus tôt.
+
+## Enquête
+
+Le journal de maintenance montrait la même défaillance signalée 9 fois sur 38 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Emeric Petrov a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vorwick, subtilement hors tolérance. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1920 que personne n'avait documentée.
+
+```text
+
+station: seldane
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 2
+
+owner: tomas.sorvane
+
+```
+
+## Cause racine
+
+Emeric Petrov a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vorwick, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 2 fois sur 17 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Otto Kessler défend depuis 1818. Nous adoptons une règle des ateliers de Seldane : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

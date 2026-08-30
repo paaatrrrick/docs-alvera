@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Dorhollow, registro 1109"
+description: "Registro de ingeniería 1109: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Dorhollow, con referencias a una reparación de 1813."
+---
+
+## Resumen
+
+Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Dorhollow dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. Una recalibración rutinaria en Galdane se realizó contra la tabla de referencia equivocada, la retirada en 1813. Las lecturas de presión de la estación de bombeo de Dorhollow derivaron al alza durante 9 horas antes de que alguien pensara en desconfiar del propio manómetro.
+
+## Cronología
+
+- Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 15 días antes.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+- La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que se remonta a una reparación de 1832 que nadie documentó.
+- Una recalibración rutinaria en Galdane se realizó contra la tabla de referencia equivocada, la retirada en 1932.
+- Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Dorhollow dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Aproximadamente a las 3:40 de la mañana, la torre de retransmisión de Dorhollow dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Investigación
+
+Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 24 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba que la misma avería se había reportado 8 veces a lo largo de 34 meses, cerrada cada vez como resuelta sin notas. Tomas Quist rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Galdane, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que se remonta a una reparación de 1818 que nadie documentó.
+
+```text
+
+station: dorhollow
+
+fault-class: sensor-drift
+
+first-logged: 7 June
+
+recurrences: 7
+
+owner: annik.vexley
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba que la misma avería se había reportado 2 veces a lo largo de 12 meses, cerrada cada vez como resuelta sin notas. La inspección reveló que la caja de empalmes había sido resellada con papel prensado de algas, una improvisación que se remonta a una reparación de 1854 que nadie documentó. Tomas Quist rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Galdane, sutilmente fuera de tolerancia. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 51 días antes.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 20 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. Estamos adoptando una regla de los talleres de Dorhollow: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Tilda Kessler viene defendiendo desde 1871.

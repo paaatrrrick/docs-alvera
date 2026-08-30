@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station Lorfell, journal 1226"
+description: "Journal d'ingénierie 1226 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Lorfell, avec références à une réparation de 1836."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Vers 2h40 du matin, la tour relais de Lorfell a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. L'équipe de nuit de Lorfell a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Un réétalonnage de routine à Brencrest a été effectué d'après la mauvaise table de référence, celle retirée en 1836.
+- Cosima Kessler a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Brencrest, subtilement hors tolérance.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 77 jours plus tôt.
+- L'équipe de nuit de Lorfell a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Vers 4h40 du matin, la tour relais de Lorfell a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1836 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 24 jours plus tôt. Cosima Kessler a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Brencrest, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 23 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: lorfell
+
+fault-class: contact-corrosion
+
+first-logged: 24 March
+
+recurrences: 8
+
+owner: emeric.ashdown
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 4 fois sur 65 mois, à chaque fois clôturée comme résolue sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Cosima Kessler a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Brencrest, subtilement hors tolérance.
+
+## Leçons et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Cosima Falkner défend depuis 1781. L'indisponibilité totale s'est élevée à 49 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. Nous adoptons une règle des ateliers de Lorfell : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.

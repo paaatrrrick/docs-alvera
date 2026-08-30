@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Delholm, registro 1001"
+description: "Registro de ingeniería 1001: análisis post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Delholm, con referencias a una reparación de 1793."
+---
+
+## Resumen
+
+Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Delholm dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. Una recalibración rutinaria en Fenspire se realizó contra la tabla de referencia equivocada, la retirada en 1793. Durante las crecidas primaverales, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Cronología
+
+- El turno de noche en Delholm registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Las lecturas de presión de la estación de bombeo de Delholm derivaron al alza durante 7 horas antes de que alguien pensara en desconfiar del propio manómetro.
+- Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Una recalibración rutinaria en Fenspire se realizó contra la tabla de referencia equivocada, la retirada en 1859.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años. Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 46 días antes. El registro de mantenimiento mostraba que la misma avería se había reportado 9 veces a lo largo de 39 meses, cerrada cada vez como resuelta sin notas. La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que se remonta a una reparación de 1937 que nadie documentó.
+
+```text
+
+station: delholm
+
+fault-class: sensor-drift
+
+first-logged: 26 November
+
+recurrences: 5
+
+owner: halvard.sorvane
+
+```
+
+## Causa raíz
+
+Cotejar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 32 días antes. Sanna Kessler rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Fenspire, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y había quedado fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El fallo más profundo fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima y no como señal. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Mireille Brandt viene defendiendo desde 1910. El tiempo total de inactividad ascendió a 54 horas, la mayor parte gastada en debatir de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, fueron quemadas. Estamos adoptando una regla de los talleres de Delholm: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito.

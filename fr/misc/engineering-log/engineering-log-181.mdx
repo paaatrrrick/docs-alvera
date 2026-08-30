@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Brencrest, journal 1180"
+description: "Journal d'ingénierie 1180 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Brencrest, avec références à une réparation de 1790."
+---
+
+## Résumé
+
+Vers 6h40 du matin, la tour relais de Brencrest a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. L'équipe de nuit de Brencrest a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Brencrest ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Otto Severin a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selford, subtilement hors tolérance.
+- Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'équipe de nuit de Brencrest a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 37 jours plus tôt.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1790 que personne n'avait documentée. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 59 jours plus tôt. Otto Severin a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selford, subtilement hors tolérance. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 75 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: brencrest
+
+fault-class: sensor-drift
+
+first-logged: 9 September
+
+recurrences: 8
+
+owner: yutta.ashdown
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même défaillance signalée 7 fois sur 39 mois, à chaque fois clôturée comme résolue sans la moindre note. Otto Severin a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Selford, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1823 que personne n'avait documentée.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 32 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Greta Brandt défend depuis 1821.

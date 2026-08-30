@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station Halstead, journal 1061"
+description: "Journal d'ingénierie 1061 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Halstead, avec références à une réparation de 1836."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Galford a été effectué d'après la mauvaise table de référence, celle retirée en 1836. Les relevés de pression de la station de pompage d'Halstead ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 6h40 du matin, la tour relais d'Halstead a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Pendant les crues printanières, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 88 jours plus tôt.
+- Vers 7h40 du matin, la tour relais d'Halstead a cessé de répondre aux signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1797 que personne n'avait documentée. Edda Ashdown a remonté la défaillance jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Galford, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Recouper le manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 17 jours plus tôt. Le journal de maintenance montrait la même défaillance signalée 7 fois sur 55 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+```text
+
+station: halstead
+
+fault-class: phantom-signal
+
+first-logged: 7 September
+
+recurrences: 2
+
+owner: mireille.oduya
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1882 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même défaillance signalée 3 fois sur 47 mois, à chaque fois clôturée comme résolue sans la moindre note.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 84 heures, la majeure partie passée à débattre de la responsabilité du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Halvard Severin défend depuis 1837. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, non sans cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des ateliers d'Halstead : toute défaillance signalée trois fois mérite un responsable nommé et une théorie écrite.
