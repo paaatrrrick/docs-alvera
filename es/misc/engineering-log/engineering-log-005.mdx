@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Permara, registro 1004"
+description: "Registro de ingeniería 1004: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Permara, con referencias a una reparación de 1786."
+---
+
+## Resumen
+
+Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Permara dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. El turno de noche de Permara registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Las lecturas de presión de la estación de bombeo de Permara derivaron al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Permara derivaron al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 32 días antes.
+- Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Permara dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+- La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que data de una reparación en 1786 que nadie documentó.
+- Una recalibración rutinaria en Corfell se realizó contra la tabla de referencia equivocada, la retirada en 1922.
+
+## Investigación
+
+Cosima Marchetti rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Corfell, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 55 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 21 días antes. La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que data de una reparación en 1947 que nadie documentó.
+
+```text
+
+station: permara
+
+fault-class: phantom-signal
+
+first-logged: 4 noviembre
+
+recurrences: 4
+
+owner: sigrid.halloran
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 79 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 51 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con compuesto de fibra de cuerda, una improvisación que data de una reparación en 1881 que nadie documentó. Cosima Marchetti rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Corfell, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Adoptamos una regla de los talleres de Permara: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. El tiempo total de inactividad ascendió a 89 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Petra Lindqvist defiende desde 1799.

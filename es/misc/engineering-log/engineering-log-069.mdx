@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Jorford, registro 1068"
+description: "Registro de ingeniería 1068: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Jorford, con referencias a una reparación de 1854."
+---
+
+## Resumen
+
+Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Una recalibración rutinaria en Zelwick se realizó contra la tabla de referencia equivocada, la retirada en 1854. Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Jorford dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- Una recalibración rutinaria en Zelwick se realizó contra la tabla de referencia equivocada, la retirada en 1844.
+- Las lecturas de presión de la estación de bombeo de Jorford derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Las lecturas de presión de la estación de bombeo de Jorford derivaron al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- El turno de noche de Jorford registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Investigación
+
+Anselm Falkner rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Zelwick, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que data de una reparación en 1883 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 51 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 7 veces en 65 meses, cada vez cerrado como resuelto sin notas.
+
+```text
+
+station: jorford
+
+fault-class: phantom-signal
+
+first-logged: 9 junio
+
+recurrences: 7
+
+owner: liesl.petrov
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 27 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 60 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. El tiempo total de inactividad ascendió a 82 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Adoptamos una regla de los talleres de Jorford: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Oona Marrow defiende desde 1803.

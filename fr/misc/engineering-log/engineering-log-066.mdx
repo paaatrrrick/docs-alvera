@@ -1,0 +1,42 @@
+---
+title: "Rapport d’incident : station de Jorvale, journal 1065"
+description: "Journal d’ingénierie 1065 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Jorvale, avec des références à une réparation de 1870."
+---
+
+## Résumé
+
+Vers 4 h 40 du matin, la tour relais de Jorvale a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel. L'équipe de nuit de Jorvale a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Les relevés de pression de la station de pompage de Jorvale ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Un recalibrage de routine à Permara a été effectué d'après la mauvaise table de référence, celle retirée en 1870.
+- Le journal de maintenance montrait que la même panne avait été signalée 3 fois en 56 mois, chaque fois clôturée comme résolue sans aucune note.
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Maren Holloway a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Permara, subtilement hors tolérance. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 28 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de étain martelé, une improvisation remontant à une réparation de 1784 que personne n'a documentée.
+
+```text
+
+station: jorvale
+
+fault-class: contact-corrosion
+
+first-logged: 25 September
+
+recurrences: 4
+
+owner: emeric.marrow
+
+```
+
+## Cause racine
+
+Maren Holloway a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Permara, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de placage en os de baleine, une improvisation remontant à une réparation de 1932 que personne n'a documentée.
+
+## Leçons et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. L'immobilisation totale s'est élevée à 40 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. Nous adoptons une règle des dépôts de Jorvale : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal.

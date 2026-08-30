@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Zelvale, registro 1215"
+description: "Registro de ingeniería 1215: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Zelvale, con referencias a una reparación de 1894."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Zelvale derivaron al alza durante 6 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Durante una helada temprana, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. El turno de noche de Zelvale registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Zelvale derivaron al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Maren Drummond rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vormire, sutilmente fuera de tolerancia.
+- Las lecturas de presión de la estación de bombeo de Zelvale derivaron al alza durante 5 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- El turno de noche de Zelvale registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Investigación
+
+El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 49 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con vidrio de río, una improvisación que data de una reparación en 1894 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 48 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Maren Drummond rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vormire, sutilmente fuera de tolerancia.
+
+```text
+
+station: zelvale
+
+fault-class: phantom-signal
+
+first-logged: 1 junio
+
+recurrences: 5
+
+owner: ivo.sorvane
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que data de una reparación en 1862 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 85 meses, cada vez cerrado como resuelto sin notas. Maren Drummond rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vormire, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Otto Greaves defiende desde 1881. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El tiempo total de inactividad ascendió a 68 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro.

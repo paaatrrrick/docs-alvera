@@ -1,0 +1,41 @@
+---
+title: "Rapport d’incident : station de Narton, journal 1026"
+description: "Journal d’ingénierie 1026 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Narton, avec des références à une réparation de 1860."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Narton ont dérivé vers le haut pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Narton a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Vers 9 h 40 du matin, la tour relais de Narton a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Narton ont dérivé vers le haut pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Un recalibrage de routine à Mormire a été effectué d'après la mauvaise table de référence, celle retirée en 1860.
+- L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de étain martelé, une improvisation remontant à une réparation de 1817 que personne n'a documentée.
+- Casper Brandt a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Mormire, subtilement hors tolérance.
+
+## Enquête
+
+Le journal de maintenance montrait que la même panne avait été signalée 4 fois en 32 mois, chaque fois clôturée comme résolue sans aucune note. Casper Brandt a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Mormire, subtilement hors tolérance. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 63 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de argile cuite, une improvisation remontant à une réparation de 1809 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: narton
+
+fault-class: phantom-signal
+
+first-logged: 27 June
+
+recurrences: 4
+
+owner: liesl.kessler
+
+```
+
+## Cause racine
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 24 jours plus tôt. Casper Brandt a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Mormire, subtilement hors tolérance. Le journal de maintenance montrait que la même panne avait été signalée 3 fois en 41 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Leçons et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Stellan Sorvane depuis 1910. Nous adoptons une règle des dépôts de Narton : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal.

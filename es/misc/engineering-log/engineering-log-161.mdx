@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Brenmara, registro 1160"
+description: "Registro de ingeniería 1160: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Brenmara, con referencias a una reparación de 1893."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Brenmara derivaron al alza durante 6 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Una recalibración rutinaria en Dormire se realizó contra la tabla de referencia equivocada, la retirada en 1893.
+
+## Cronología
+
+- Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Annik Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Dormire, sutilmente fuera de tolerancia.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 27 días antes.
+- El turno de noche de Brenmara registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Investigación
+
+Annik Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Dormire, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con estaño martillado, una improvisación que data de una reparación en 1847 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 41 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 6 veces en 52 meses, cada vez cerrado como resuelto sin notas.
+
+```text
+
+station: brenmara
+
+fault-class: reference-mismatch
+
+first-logged: 19 noviembre
+
+recurrences: 3
+
+owner: petra.mollering
+
+```
+
+## Causa raíz
+
+Annik Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Dormire, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 83 días antes.
+
+## Lecciones y seguimiento
+
+Adoptamos una regla de los talleres de Brenmara: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Maren Mollering defiende desde 1813. El tiempo total de inactividad ascendió a 88 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal.

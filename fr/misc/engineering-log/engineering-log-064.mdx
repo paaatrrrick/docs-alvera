@@ -1,0 +1,41 @@
+---
+title: "Rapport d’incident : station de Jorcrest, journal 1063"
+description: "Journal d’ingénierie 1063 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Jorcrest, avec des références à une réparation de 1957."
+---
+
+## Résumé
+
+Un recalibrage de routine à Yarwick a été effectué d'après la mauvaise table de référence, celle retirée en 1957. Les relevés de pression de la station de pompage de Jorcrest ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Jorcrest a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Le journal de maintenance montrait que la même panne avait été signalée 7 fois en 77 mois, chaque fois clôturée comme résolue sans aucune note.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Un recalibrage de routine à Yarwick a été effectué d'après la mauvaise table de référence, celle retirée en 1899.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de argile cuite, une improvisation remontant à une réparation de 1854 que personne n'a documentée. Dario Marchetti a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Yarwick, subtilement hors tolérance. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 88 jours plus tôt. Le journal de maintenance montrait que la même panne avait été signalée 8 fois en 47 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: jorcrest
+
+fault-class: contact-corrosion
+
+first-logged: 16 November
+
+recurrences: 7
+
+owner: ivo.quist
+
+```
+
+## Cause racine
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 35 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de toile cirée scellée, une improvisation remontant à une réparation de 1943 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même panne avait été signalée 9 fois en 81 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Leçons et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Folke Quist depuis 1825. Nous adoptons une règle des dépôts de Jorcrest : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'immobilisation totale s'est élevée à 16 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre.

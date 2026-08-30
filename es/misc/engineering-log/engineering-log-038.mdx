@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Delcrest, registro 1037"
+description: "Registro de ingeniería 1037: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Delcrest, con referencias a una reparación de 1801."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Vormara se realizó contra la tabla de referencia equivocada, la retirada en 1801. El turno de noche de Delcrest registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Las lecturas de presión de la estación de bombeo de Delcrest derivaron al alza durante 5 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Delcrest derivaron al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- El registro de mantenimiento mostraba el mismo fallo reportado 6 veces en 47 meses, cada vez cerrado como resuelto sin notas.
+- El registro de mantenimiento mostraba el mismo fallo reportado 6 veces en 63 meses, cada vez cerrado como resuelto sin notas.
+- El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 82 meses, cada vez cerrado como resuelto sin notas.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con vidrio de río, una improvisación que data de una reparación en 1786 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 54 días antes. Greta Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vormara, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 41 meses, cada vez cerrado como resuelto sin notas.
+
+```text
+
+station: delcrest
+
+fault-class: contact-corrosion
+
+first-logged: 11 noviembre
+
+recurrences: 7
+
+owner: vesna.lindqvist
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 53 días antes. Greta Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vormara, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 9 veces en 48 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que data de una reparación en 1898 que nadie documentó.
+
+## Lecciones y seguimiento
+
+Adoptamos una regla de los talleres de Delcrest: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El tiempo total de inactividad ascendió a 68 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Cosima Brandt defiende desde 1810.

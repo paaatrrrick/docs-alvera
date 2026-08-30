@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Vorford, registro 1136"
+description: "Registro de ingeniería 1136: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Vorford, con referencias a una reparación de 1926."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Vorford derivaron al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Aproximadamente a las 7:40 de la mañana, la torre de retransmisión de Vorford dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Las lecturas de presión de la estación de bombeo de Vorford derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Una recalibración rutinaria en Halstead se realizó contra la tabla de referencia equivocada, la retirada en 1926.
+- La inspección reveló que la caja de empalmes había sido resellada con vidrio de río, una improvisación que data de una reparación en 1884 que nadie documentó.
+- Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Una recalibración rutinaria en Halstead se realizó contra la tabla de referencia equivocada, la retirada en 1954.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con vidrio de río, una improvisación que data de una reparación en 1824 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 55 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 52 días antes.
+
+```text
+
+station: vorford
+
+fault-class: reference-mismatch
+
+first-logged: 13 septiembre
+
+recurrences: 8
+
+owner: mireille.halloran
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 26 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que data de una reparación en 1947 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Dario Vexley defiende desde 1912. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El tiempo total de inactividad ascendió a 66 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Adoptamos una regla de los talleres de Vorford: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito.

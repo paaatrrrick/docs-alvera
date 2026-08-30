@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Corford, registro 1203"
+description: "Registro de ingeniería 1203: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Corford, con referencias a una reparación de 1946."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Morstead se realizó contra la tabla de referencia equivocada, la retirada en 1946. Durante una helada temprana, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Las lecturas de presión de la estación de bombeo de Corford derivaron al alza durante 8 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Durante las mareas vivas de otoño, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Annik Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Morstead, sutilmente fuera de tolerancia.
+- Una recalibración rutinaria en Morstead se realizó contra la tabla de referencia equivocada, la retirada en 1850.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que data de una reparación en 1883 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Annik Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Morstead, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 89 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 67 días antes.
+
+```text
+
+station: corford
+
+fault-class: reference-mismatch
+
+first-logged: 15 septiembre
+
+recurrences: 8
+
+owner: otto.severin
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 6 veces en 68 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 19 días antes.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 63 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Adoptamos una regla de los talleres de Corford: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Sigrid Brandt defiende desde 1786. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron.

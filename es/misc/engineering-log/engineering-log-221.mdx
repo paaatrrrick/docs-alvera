@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Quilspire, registro 1220"
+description: "Registro de ingeniería 1220: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Quilspire, con referencias a una reparación de 1797."
+---
+
+## Resumen
+
+Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Una recalibración rutinaria en Marhollow se realizó contra la tabla de referencia equivocada, la retirada en 1797. El turno de noche de Quilspire registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 61 meses, cada vez cerrado como resuelto sin notas.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+- Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Quilspire dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- El turno de noche de Quilspire registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 83 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 82 meses, cada vez cerrado como resuelto sin notas. Oona Marchetti rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marhollow, sutilmente fuera de tolerancia.
+
+```text
+
+station: quilspire
+
+fault-class: sensor-drift
+
+first-logged: 12 marzo
+
+recurrences: 2
+
+owner: sanna.quist
+
+```
+
+## Causa raíz
+
+Oona Marchetti rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marhollow, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 19 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 13 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Ivo Whitlock defiende desde 1850. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Adoptamos una regla de los talleres de Quilspire: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron.

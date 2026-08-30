@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Wrenholm, registro 1159"
+description: "Registro de ingeniería 1159: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Wrenholm, con referencias a una reparación de 1893."
+---
+
+## Resumen
+
+El turno de noche de Wrenholm registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Una recalibración rutinaria en Yarhollow se realizó contra la tabla de referencia equivocada, la retirada en 1893. Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Wrenholm dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- El turno de noche de Wrenholm registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 85 días antes.
+- Las lecturas de presión de la estación de bombeo de Wrenholm derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- El registro de mantenimiento mostraba el mismo fallo reportado 6 veces en 77 meses, cada vez cerrado como resuelto sin notas.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 80 días antes.
+- Las lecturas de presión de la estación de bombeo de Wrenholm derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Investigación
+
+Tomas Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Yarhollow, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que data de una reparación en 1882 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 31 meses, cada vez cerrado como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: wrenholm
+
+fault-class: sensor-drift
+
+first-logged: 22 junio
+
+recurrences: 7
+
+owner: dario.marchetti
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 63 meses, cada vez cerrado como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Tomas Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Yarhollow, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 75 días antes.
+
+## Lecciones y seguimiento
+
+Adoptamos una regla de los talleres de Wrenholm: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Folke Falkner defiende desde 1798. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. El tiempo total de inactividad ascendió a 27 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro.

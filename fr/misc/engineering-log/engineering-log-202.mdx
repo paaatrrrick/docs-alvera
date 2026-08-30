@@ -1,0 +1,43 @@
+---
+title: "Rapport d’incident : station de Vorrun, journal 1201"
+description: "Journal d’ingénierie 1201 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Vorrun, avec des références à une réparation de 1899."
+---
+
+## Résumé
+
+Un recalibrage de routine à Brenbury a été effectué d'après la mauvaise table de référence, celle retirée en 1899. Vers 8 h 40 du matin, la tour relais de Vorrun a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel. Les relevés de pression de la station de pompage de Vorrun ont dérivé vers le haut pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Vers 5 h 40 du matin, la tour relais de Vorrun a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+- L'équipe de nuit de Vorrun a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Le journal de maintenance montrait que la même panne avait été signalée 9 fois en 37 mois, chaque fois clôturée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage de Vorrun ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Les relevés de pression de la station de pompage de Vorrun ont dérivé vers le haut pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Vers 6 h 40 du matin, la tour relais de Vorrun a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+
+## Enquête
+
+Le journal de maintenance montrait que la même panne avait été signalée 5 fois en 72 mois, chaque fois clôturée comme résolue sans aucune note. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 33 jours plus tôt. Emeric Voss a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Brenbury, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de ardoise bleue, une improvisation remontant à une réparation de 1806 que personne n'a documentée.
+
+```text
+
+station: vorrun
+
+fault-class: contact-corrosion
+
+first-logged: 8 November
+
+recurrences: 9
+
+owner: emeric.greaves
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même panne avait été signalée 5 fois en 87 mois, chaque fois clôturée comme résolue sans aucune note. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 22 jours plus tôt.
+
+## Leçons et suivi
+
+L'immobilisation totale s'est élevée à 76 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Rurik Marrow depuis 1882. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Nous adoptons une règle des dépôts de Vorrun : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

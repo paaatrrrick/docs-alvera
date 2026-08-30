@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Keldane, registro 1052"
+description: "Registro de ingeniería 1052: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Keldane, con referencias a una reparación de 1875."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Keldane derivaron al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Una recalibración rutinaria en Halmara se realizó contra la tabla de referencia equivocada, la retirada en 1875. Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Cronología
+
+- Durante semanas de lluvia oblicua, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Keldane dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Una recalibración rutinaria en Halmara se realizó contra la tabla de referencia equivocada, la retirada en 1788.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 50 días antes.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 78 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 9 veces en 70 meses, cada vez cerrado como resuelto sin notas. Casper Severin rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Halmara, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: keldane
+
+fault-class: sensor-drift
+
+first-logged: 14 septiembre
+
+recurrences: 5
+
+owner: sanna.severin
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 7 veces en 31 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 79 días antes.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. El tiempo total de inactividad ascendió a 12 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Joren Brandt defiende desde 1930. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Adoptamos una regla de los talleres de Keldane: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito.

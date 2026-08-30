@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Narton, registro 1026"
+description: "Registro de ingeniería 1026: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Narton, con referencias a una reparación de 1860."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Narton derivaron al alza durante 6 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El turno de noche de Narton registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Narton dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Narton derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Una recalibración rutinaria en Mormire se realizó contra la tabla de referencia equivocada, la retirada en 1860.
+- La inspección reveló que la caja de empalmes había sido resellada con estaño martillado, una improvisación que data de una reparación en 1817 que nadie documentó.
+- Casper Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Mormire, sutilmente fuera de tolerancia.
+
+## Investigación
+
+El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 32 meses, cada vez cerrado como resuelto sin notas. Casper Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Mormire, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 63 días antes. La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que data de una reparación en 1809 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: narton
+
+fault-class: phantom-signal
+
+first-logged: 27 junio
+
+recurrences: 4
+
+owner: liesl.kessler
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 24 días antes. Casper Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Mormire, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 41 meses, cada vez cerrado como resuelto sin notas.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Stellan Sorvane defiende desde 1910. Adoptamos una regla de los talleres de Narton: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal.

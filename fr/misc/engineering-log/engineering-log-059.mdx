@@ -1,0 +1,41 @@
+---
+title: "Rapport d’incident : station de Torford, journal 1058"
+description: "Journal d’ingénierie 1058 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Torford, avec des références à une réparation de 1962."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. L'équipe de nuit de Torford a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Vers 6 h 40 du matin, la tour relais de Torford a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+
+## Chronologie
+
+- Pendant un gel précoce, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de bouleau laqué, une improvisation remontant à une réparation de 1962 que personne n'a documentée.
+- L'équipe de nuit de Torford a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Enquête
+
+Rurik Petrov a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Narmire, subtilement hors tolérance. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 49 jours plus tôt. Le journal de maintenance montrait que la même panne avait été signalée 2 fois en 61 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de papier de varech pressé, une improvisation remontant à une réparation de 1902 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: torford
+
+fault-class: phantom-signal
+
+first-logged: 21 September
+
+recurrences: 2
+
+owner: anselm.lindqvist
+
+```
+
+## Cause racine
+
+Rurik Petrov a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Narmire, subtilement hors tolérance. Le journal de maintenance montrait que la même panne avait été signalée 7 fois en 87 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Folke Brandt depuis 1908. L'immobilisation totale s'est élevée à 23 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. Nous adoptons une règle des dépôts de Torford : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées.

@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Quilshore, registro 1211"
+description: "Registro de ingeniería 1211: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Quilshore, con referencias a una reparación de 1964."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Ilyvik se realizó contra la tabla de referencia equivocada, la retirada en 1964. Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Las lecturas de presión de la estación de bombeo de Quilshore derivaron al alza durante 8 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Quilshore dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Sanna Mollering rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilyvik, sutilmente fuera de tolerancia.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 35 días antes.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con hierro de pantano, una improvisación que data de una reparación en 1947 que nadie documentó. Sanna Mollering rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilyvik, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 29 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 46 meses, cada vez cerrado como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: quilshore
+
+fault-class: phantom-signal
+
+first-logged: 6 noviembre
+
+recurrences: 9
+
+owner: tomas.petrov
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Sanna Mollering rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Ilyvik, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que data de una reparación en 1866 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 40 meses, cada vez cerrado como resuelto sin notas.
+
+## Lecciones y seguimiento
+
+Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El tiempo total de inactividad ascendió a 87 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Imre Quist defiende desde 1922.

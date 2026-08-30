@@ -1,0 +1,41 @@
+---
+title: "Rapport d’incident : station de Vorvik, journal 1174"
+description: "Journal d’ingénierie 1174 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Vorvik, avec des références à une réparation de 1817."
+---
+
+## Résumé
+
+L'équipe de nuit de Vorvik a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Un recalibrage de routine à Ossreach a été effectué d'après la mauvaise table de référence, celle retirée en 1817. Vers 6 h 40 du matin, la tour relais de Vorvik a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Vorvik ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Le journal de maintenance montrait que la même panne avait été signalée 4 fois en 61 mois, chaque fois clôturée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage de Vorvik ont dérivé vers le haut pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Le journal de maintenance montrait que la même panne avait été signalée 5 fois en 44 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+Le journal de maintenance montrait que la même panne avait été signalée 6 fois en 34 mois, chaque fois clôturée comme résolue sans aucune note. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de roseau tressé, une improvisation remontant à une réparation de 1803 que personne n'a documentée. Stellan Ashdown a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Ossreach, subtilement hors tolérance.
+
+```text
+
+station: vorvik
+
+fault-class: sensor-drift
+
+first-logged: 4 November
+
+recurrences: 8
+
+owner: rurik.quist
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de roseau tressé, une improvisation remontant à une réparation de 1793 que personne n'a documentée. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt. Le journal de maintenance montrait que la même panne avait été signalée 8 fois en 43 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+L'immobilisation totale s'est élevée à 64 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Cosima Holloway depuis 1846. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées.

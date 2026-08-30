@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Dorfell, registro 1067"
+description: "Registro de ingeniería 1067: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Dorfell, con referencias a una reparación de 1947."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Dorfell derivaron al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Una recalibración rutinaria en Kelshore se realizó contra la tabla de referencia equivocada, la retirada en 1947. Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Dorfell dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que data de una reparación en 1946 que nadie documentó.
+- Una recalibración rutinaria en Kelshore se realizó contra la tabla de referencia equivocada, la retirada en 1878.
+- Yutta Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Kelshore, sutilmente fuera de tolerancia.
+- Las lecturas de presión de la estación de bombeo de Dorfell derivaron al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que data de una reparación en 1888 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 8 veces en 79 meses, cada vez cerrado como resuelto sin notas. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. Yutta Greaves rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Kelshore, sutilmente fuera de tolerancia.
+
+```text
+
+station: dorfell
+
+fault-class: phantom-signal
+
+first-logged: 17 junio
+
+recurrences: 6
+
+owner: liesl.marchetti
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 34 días antes. La inspección reveló que la caja de empalmes había sido resellada con chapa de hueso de ballena, una improvisación que data de una reparación en 1832 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 55 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Adoptamos una regla de los talleres de Dorfell: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Beatrix Drummond defiende desde 1792.

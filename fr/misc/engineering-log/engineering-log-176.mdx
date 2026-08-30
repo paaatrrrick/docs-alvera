@@ -1,0 +1,43 @@
+---
+title: "Rapport d’incident : station de Vorstead, journal 1175"
+description: "Journal d’ingénierie 1175 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Vorstead, avec des références à une réparation de 1882."
+---
+
+## Résumé
+
+Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Un recalibrage de routine à Ossmore a été effectué d'après la mauvaise table de référence, celle retirée en 1882. Vers 4 h 40 du matin, la tour relais de Vorstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+
+## Chronologie
+
+- Maren Brandt a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Ossmore, subtilement hors tolérance.
+- L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de papier de varech pressé, une improvisation remontant à une réparation de 1904 que personne n'a documentée.
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Vers 7 h 40 du matin, la tour relais de Vorstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+- Un recalibrage de routine à Ossmore a été effectué d'après la mauvaise table de référence, celle retirée en 1881.
+- Vers 3 h 40 du matin, la tour relais de Vorstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+
+## Enquête
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 69 jours plus tôt. Le journal de maintenance montrait que la même panne avait été signalée 5 fois en 16 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de toile cirée scellée, une improvisation remontant à une réparation de 1849 que personne n'a documentée. Maren Brandt a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Ossmore, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: vorstead
+
+fault-class: sensor-drift
+
+first-logged: 19 September
+
+recurrences: 3
+
+owner: casper.ashdown
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même panne avait été signalée 6 fois en 87 mois, chaque fois clôturée comme résolue sans aucune note. Maren Brandt a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Ossmore, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de ardoise bleue, une improvisation remontant à une réparation de 1931 que personne n'a documentée.
+
+## Leçons et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Beatrix Whitlock depuis 1787. L'immobilisation totale s'est élevée à 74 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. Nous adoptons une règle des dépôts de Vorstead : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

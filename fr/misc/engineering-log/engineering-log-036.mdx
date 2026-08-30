@@ -1,0 +1,42 @@
+---
+title: "Rapport d’incident : station de Corwick, journal 1035"
+description: "Journal d’ingénierie 1035 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Corwick, avec des références à une réparation de 1810."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Vers 4 h 40 du matin, la tour relais de Corwick a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel. L'équipe de nuit de Corwick a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+
+## Chronologie
+
+- Tomas Voss a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Correach, subtilement hors tolérance.
+- L'équipe de nuit de Corwick a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 9 h 40 du matin, la tour relais de Corwick a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+- Tomas Voss a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Correach, subtilement hors tolérance.
+
+## Enquête
+
+Le journal de maintenance montrait que la même panne avait été signalée 3 fois en 50 mois, chaque fois clôturée comme résolue sans aucune note. Tomas Voss a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Correach, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 57 jours plus tôt.
+
+```text
+
+station: corwick
+
+fault-class: sensor-drift
+
+first-logged: 7 November
+
+recurrences: 7
+
+owner: imre.falkner
+
+```
+
+## Cause racine
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 87 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même panne avait été signalée 5 fois en 57 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de bouleau laqué, une improvisation remontant à une réparation de 1810 que personne n'a documentée.
+
+## Leçons et suivi
+
+L'immobilisation totale s'est élevée à 86 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Halvard Oduya depuis 1832. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Nous adoptons une règle des dépôts de Corwick : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

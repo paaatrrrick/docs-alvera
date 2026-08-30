@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Marshore, registro 1217"
+description: "Registro de ingeniería 1217: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Marshore, con referencias a una reparación de 1908."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Kelwick se realizó contra la tabla de referencia equivocada, la retirada en 1908. Durante un mes calmo y sin viento, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Marshore dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- El registro de mantenimiento mostraba el mismo fallo reportado 7 veces en 25 meses, cada vez cerrado como resuelto sin notas.
+- El turno de noche de Marshore registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+- Las lecturas de presión de la estación de bombeo de Marshore derivaron al alza durante 6 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que data de una reparación en 1917 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 81 meses, cada vez cerrado como resuelto sin notas. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 83 días antes. Cosima Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Kelwick, sutilmente fuera de tolerancia.
+
+```text
+
+station: marshore
+
+fault-class: contact-corrosion
+
+first-logged: 28 junio
+
+recurrences: 3
+
+owner: oona.ashdown
+
+```
+
+## Causa raíz
+
+Cosima Ashdown rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Kelwick, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 76 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 67 meses, cada vez cerrado como resuelto sin notas.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 44 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Casper Lindqvist defiende desde 1897. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Adoptamos una regla de los talleres de Marshore: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito.

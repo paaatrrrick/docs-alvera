@@ -1,0 +1,43 @@
+---
+title: "Rapport d’incident : station de Morhollow, journal 1088"
+description: "Journal d’ingénierie 1088 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Morhollow, avec des références à une réparation de 1907."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Morhollow ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un recalibrage de routine à Ilyfell a été effectué d'après la mauvaise table de référence, celle retirée en 1907. Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 6 h 40 du matin, la tour relais de Morhollow a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+- Vers 9 h 40 du matin, la tour relais de Morhollow a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+Le journal de maintenance montrait que la même panne avait été signalée 4 fois en 81 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de argile cuite, une improvisation remontant à une réparation de 1911 que personne n'a documentée. Imre Quist a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Ilyfell, subtilement hors tolérance.
+
+```text
+
+station: morhollow
+
+fault-class: sensor-drift
+
+first-logged: 7 September
+
+recurrences: 8
+
+owner: sanna.halloran
+
+```
+
+## Cause racine
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 89 jours plus tôt. Le journal de maintenance montrait que la même panne avait été signalée 3 fois en 42 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Nous adoptons une règle des dépôts de Morhollow : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. L'immobilisation totale s'est élevée à 78 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Bram Marchetti depuis 1791.

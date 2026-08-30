@@ -1,0 +1,43 @@
+---
+title: "Rapport d’incident : station de Ulmvale, journal 1236"
+description: "Journal d’ingénierie 1236 : analyse post-mortem d’une défaillance d’instrumentation à la station de pompage et de relais de Ulmvale, avec des références à une réparation de 1897."
+---
+
+## Résumé
+
+L'équipe de nuit de Ulmvale a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a remonté aucune. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Ulmvale ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 88 jours plus tôt.
+- L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de toile cirée scellée, une improvisation remontant à une réparation de 1897 que personne n'a documentée.
+- Un recalibrage de routine à Calton a été effectué d'après la mauvaise table de référence, celle retirée en 1939.
+- Vers 7 h 40 du matin, la tour relais de Ulmvale a cessé d'accuser réception des signaux de vie, et les opérateurs ont présumé le contact corrodé habituel.
+- Lazlo Vexley a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Calton, subtilement hors tolérance.
+- L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de ardoise bleue, une improvisation remontant à une réparation de 1872 que personne n'a documentée.
+
+## Enquête
+
+Le contrôle croisé du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 82 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de composite de fibres de corde, une improvisation remontant à une réparation de 1847 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait que la même panne avait été signalée 2 fois en 75 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: ulmvale
+
+fault-class: phantom-signal
+
+first-logged: 3 March
+
+recurrences: 4
+
+owner: maren.greaves
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Lazlo Vexley a remonté la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Calton, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée à l'aide de composite de fibres de corde, une improvisation remontant à une réparation de 1809 que personne n'a documentée.
+
+## Leçons et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été collectées et, avec un certain cérémonial, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme des aléas météo plutôt que comme un signal. Nous adoptons une règle des dépôts de Ulmvale : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'immobilisation totale s'est élevée à 90 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique préconisée par Rurik Petrov depuis 1952.

@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Narhollow, registro 1202"
+description: "Registro de ingeniería 1202: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Narhollow, con referencias a una reparación de 1909."
+---
+
+## Resumen
+
+Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Narhollow dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos. Las lecturas de presión de la estación de bombeo de Narhollow derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El turno de noche de Narhollow registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que data de una reparación en 1909 que nadie documentó.
+- Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Narhollow dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Una recalibración rutinaria en Vorrun se realizó contra la tabla de referencia equivocada, la retirada en 1929.
+- La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que data de una reparación en 1848 que nadie documentó.
+- El registro de mantenimiento mostraba el mismo fallo reportado 9 veces en 26 meses, cada vez cerrado como resuelto sin notas.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 9 veces en 46 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que data de una reparación en 1825 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 54 días antes. Dario Brandt rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Vorrun, sutilmente fuera de tolerancia.
+
+```text
+
+station: narhollow
+
+fault-class: reference-mismatch
+
+first-logged: 14 noviembre
+
+recurrences: 3
+
+owner: oona.mollering
+
+```
+
+## Causa raíz
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 28 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con hierro de pantano, una improvisación que data de una reparación en 1913 que nadie documentó.
+
+## Lecciones y seguimiento
+
+Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Adoptamos una regla de los talleres de Narhollow: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Yutta Voss defiende desde 1879. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal.

@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Velstead, registro 1114"
+description: "Registro de ingeniería 1114: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Velstead, con referencias a una reparación de 1797."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Fenrun se realizó contra la tabla de referencia equivocada, la retirada en 1797. El turno de noche de Velstead registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Las lecturas de presión de la estación de bombeo de Velstead derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- El turno de noche de Velstead registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- El turno de noche de Velstead registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 15 días antes.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 23 días antes.
+- El turno de noche de Velstead registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Investigación
+
+El registro de mantenimiento mostraba el mismo fallo reportado 4 veces en 75 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con chapa de hueso de ballena, una improvisación que data de una reparación en 1880 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 50 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: velstead
+
+fault-class: sensor-drift
+
+first-logged: 27 junio
+
+recurrences: 8
+
+owner: petra.whitlock
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 76 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 12 meses, cada vez cerrado como resuelto sin notas. Halvard Oduya rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Fenrun, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 86 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Yutta Mollering defiende desde 1866. Adoptamos una regla de los talleres de Velstead: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron.

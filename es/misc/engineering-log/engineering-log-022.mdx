@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Ulmspire, registro 1021"
+description: "Registro de ingeniería 1021: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Ulmspire, con referencias a una reparación de 1911."
+---
+
+## Resumen
+
+El turno de noche de Ulmspire registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Una recalibración rutinaria en Corton se realizó contra la tabla de referencia equivocada, la retirada en 1911. Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Ulmspire dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+- Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Ulmspire dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- El registro de mantenimiento mostraba el mismo fallo reportado 5 veces en 58 meses, cada vez cerrado como resuelto sin notas.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 66 días antes.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 70 días antes. El registro de mantenimiento mostraba el mismo fallo reportado 8 veces en 53 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con papel de algas prensadas, una improvisación que data de una reparación en 1858 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: ulmspire
+
+fault-class: reference-mismatch
+
+first-logged: 12 noviembre
+
+recurrences: 3
+
+owner: otto.kessler
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba el mismo fallo reportado 3 veces en 90 meses, cada vez cerrado como resuelto sin notas. La inspección reveló que la caja de empalmes había sido resellada con hierro de pantano, una improvisación que data de una reparación en 1947 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 75 días antes. Petra Mollering rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Corton, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+El tiempo total de inactividad ascendió a 26 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. Adoptamos una regla de los talleres de Ulmspire: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Otto Voss defiende desde 1934. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron.

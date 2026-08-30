@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Zelgate, registro 1181"
+description: "Registro de ingeniería 1181: post mortem de un fallo de instrumentación en la estación de bombeo y retransmisión de Zelgate, con referencias a una reparación de 1847."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Marvale se realizó contra la tabla de referencia equivocada, la retirada en 1847. El turno de noche de Zelgate registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Zelgate dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+
+## Cronología
+
+- Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Zelgate dejó de confirmar los latidos, y los operadores supusieron la habitual corrosión de contactos.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 53 días antes.
+- La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que data de una reparación en 1794 que nadie documentó.
+- Durante las mareas vivas de otoño, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Una recalibración rutinaria en Marvale se realizó contra la tabla de referencia equivocada, la retirada en 1803.
+
+## Investigación
+
+Halvard Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marvale, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba prendido detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con hierro de pantano, una improvisación que data de una reparación en 1835 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo reportado 7 veces en 21 meses, cada vez cerrado como resuelto sin notas.
+
+```text
+
+station: zelgate
+
+fault-class: reference-mismatch
+
+first-logged: 17 junio
+
+recurrences: 8
+
+owner: rurik.severin
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con vidrio de río, una improvisación que data de una reparación en 1852 que nadie documentó. Halvard Sorvane rastreó el fallo hasta una pieza de repuesto canibalizada de la línea desmantelada de Marvale, sutilmente fuera de tolerancia. El registro de mantenimiento mostraba el mismo fallo reportado 2 veces en 50 meses, cada vez cerrado como resuelto sin notas.
+
+## Lecciones y seguimiento
+
+Adoptamos una regla de los talleres de Zelgate: todo fallo reportado tres veces se gana un responsable con nombre y una teoría por escrito. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Joren Oduya defiende desde 1946. El tiempo total de inactividad ascendió a 22 horas, la mayor parte de ellas dedicadas a debatir de quién era la responsabilidad del manómetro. El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como meteorología y no como señal.
