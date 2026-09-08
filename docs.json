@@ -2534,6 +2534,7 @@
               {
                 "group": "Sitio personal",
                 "pages": [
+                  "es/changelog",
                   "es/work-experience",
                   "es/projects",
                   "es/game-of-thrones",
@@ -5034,6 +5035,7 @@
               {
                 "group": "Site personnel",
                 "pages": [
+                  "fr/changelog",
                   "fr/work-experience",
                   "fr/projects",
                   "fr/game-of-thrones",
