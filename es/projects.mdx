@@ -13,6 +13,12 @@ Las entradas provienen del array `projects` en `src/constants/projects.js` y se 
 
 Añade una entrada a `/projects` cuando quieras destacar un proyecto personal con su propia tarjeta, un eslogan y etiquetas de tecnología. Usa la lista de la página de inicio para los proyectos que quieras mostrar al frente; usa `/projects` para el catálogo completo.
 
+## Búsqueda y filtrado
+
+La página muestra un cuadro de búsqueda encima del filtro por tecnología. Al escribir en el cuadro, la cuadrícula se filtra en tiempo real. La coincidencia no distingue mayúsculas de minúsculas y revisa el `name`, el `tagline` y la `description` de cada proyecto.
+
+La búsqueda se combina con el filtro por tecnología. Un proyecto solo permanece visible cuando coincide con el texto de búsqueda e incluye la etiqueta de tecnología seleccionada. Cuando ningún proyecto coincide, la cuadrícula muestra el mensaje \"No projects match your search.\" en lugar de tarjetas.
+
 ## Esquema de entrada
 
 Cada objeto del array `projects` admite los siguientes campos. Todos son obligatorios.
