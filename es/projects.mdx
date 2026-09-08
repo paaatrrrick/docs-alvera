@@ -29,8 +29,8 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 
 | Campo         | Tipo     | Descripción                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `name`        | string   | Nombre del proyecto que aparece como encabezado y enlace de la tarjeta.                         |
-| `tagline`     | string   | Resumen de una línea que aparece justo debajo del nombre.                                         |
+| `name`        | string   | Nombre del proyecto. La tarjeta lo usa como encabezado y texto del enlace.                    |
+| `tagline`     | string   | Resumen de una línea. La tarjeta lo muestra justo debajo del nombre.                           |
 | `description` | string   | Párrafo más largo que explica qué hace el proyecto y a quién va dirigido.                         |
 | `tech`        | string[] | Etiquetas del stack que aparecen en una lista horizontal (por ejemplo, `['React', 'Rust']`).     |
 | `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. La tarjeta muestra este estado como una insignia de color en la cabecera. |
@@ -61,7 +61,7 @@ Mantén `tagline` lo bastante corto para caber en una sola línea en móvil. Apu
 
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con palabras que una persona buscaría realmente, como la categoría de producto, el espacio del problema o palabras clave del stack que no estén ya en las etiquetas. Así, los proyectos aparecerán en los resultados.
+La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con palabras que una persona buscaría realmente. Incluye la categoría de producto, el espacio del problema o palabras clave del stack que no estén ya en las etiquetas. Así, los proyectos aparecerán en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").

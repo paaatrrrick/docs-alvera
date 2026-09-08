@@ -29,8 +29,8 @@ Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs 
 
 | Champ         | Type     | Description                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `name`        | string   | Nom du projet affiché comme titre et lien de la carte.                                            |
-| `tagline`     | string   | Résumé d'une ligne affiché directement sous le nom.                                               |
+| `name`        | string   | Nom du projet. La carte l'utilise comme titre et lien.                                             |
+| `tagline`     | string   | Résumé d'une ligne. La carte l'affiche directement sous le nom.                                    |
 | `description` | string   | Paragraphe plus long qui explique ce que fait le projet et à qui il s'adresse.                    |
 | `tech`        | string[] | Tags de stack qui apparaissent dans une liste horizontale (par exemple, `['React', 'Rust', 'SQLite']`). |
 | `status`      | string   | État du projet. Utilisez `'Active'` pour les projets que vous maintenez encore, ou `'Archived'` pour ceux que vous ne mettez plus à jour. La carte affiche cet état comme un badge coloré dans l'en-tête. |
@@ -61,7 +61,7 @@ Gardez `tagline` assez court pour tenir sur une ligne en mobile. Visez moins de 
 
 ## Conseils de rédaction
 
-La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec des mots qu'un visiteur taperait réellement, comme la catégorie de produit, l'espace du problème ou les mots-clés de stack qui ne sont pas déjà dans les tags. Ainsi, les projets remonteront dans les résultats.
+La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec des mots qu'un visiteur taperait réellement. Incluez la catégorie de produit, l'espace du problème ou les mots-clés de stack qui ne sont pas déjà dans les tags. Ainsi, les projets remonteront dans les résultats.
 
 - **Nom :** utilisez le nom canonique du projet. Évitez les préfixes emoji ; le design de la carte repose sur une hiérarchie typographique nette.
 - **Accroche :** commencez par la catégorie ou la mécanique principale (« Gestionnaire de favoris auto-hébergé », pas « Un projet que j'ai fait »).
