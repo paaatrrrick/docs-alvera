@@ -38,6 +38,12 @@
                 ]
               },
               {
+                "group": "Changelog",
+                "pages": [
+                  "changelog"
+                ]
+              },
+              {
                 "group": "Fun",
                 "pages": [
                   "star-wars",
