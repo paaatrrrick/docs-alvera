@@ -13,6 +13,12 @@ Entries are sourced from the `projects` array in `src/constants/projects.js` and
 
 Add an entry to `/projects` when you want to surface a side project on its own card with a tagline and tech tags. Use the home page list for projects you want featured front-and-center; use `/projects` for the complete catalog.
 
+## Search and filtering
+
+The page renders a search box above the tech filter. Typing in the box filters the grid as you type. The match is case-insensitive and checks each project's `name`, `tagline`, and `description`.
+
+Search combines with the tech filter. A project stays visible only when it matches the search text and includes the selected tech tag. When no projects match, the grid shows a "No projects match your search." message instead of cards.
+
 ## Entry schema
 
 Each object in the `projects` array supports the following fields. All fields are required.
