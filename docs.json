@@ -2537,6 +2537,12 @@
                 ]
               },
               {
+                "group": "Actualizaciones",
+                "pages": [
+                  "es/changelog"
+                ]
+              },
+              {
                 "group": "Sitio personal",
                 "pages": [
                   "es/work-experience",
@@ -5034,6 +5040,12 @@
                   "fr/quickstart",
                   "fr/development",
                   "fr/how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Mises à jour",
+                "pages": [
+                  "fr/changelog"
                 ]
               },
               {
