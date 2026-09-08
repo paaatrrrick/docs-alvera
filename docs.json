@@ -30,6 +30,7 @@
               {
                 "group": "Personal website",
                 "pages": [
+                  "changelog",
                   "work-experience",
                   "projects",
                   "post-view-counter",
