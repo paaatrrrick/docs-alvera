@@ -11,7 +11,7 @@ The personal website tracks how many times each post has been read and exposes t
 - **`SiteViews`**: renders the aggregate read count across every post, backed by the `useTotalViews` hook.
 - **`PostMeta`**: the combined byline shown under a post title (date, estimated reading time, view count).
 
-All three call a shared views service at `https://api.paaatrrrick.com/views`. Each component keeps its state at `null` while the request is in flight or if it fails, and renders nothing in that state so a slow or broken backend never shows a half-loaded number.
+All three call a shared views service at `https://api.paaatrrrick.com/views`. Each component keeps its state at `null` while the request is in flight or if it fails. In that state, the component renders nothing, so a slow or broken backend never shows a half-loaded number.
 
 ## When to use each piece
 
