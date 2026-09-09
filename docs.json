@@ -28,6 +28,12 @@
                 ]
               },
               {
+                "group": "Changelog",
+                "pages": [
+                  "changelog"
+                ]
+              },
+              {
                 "group": "Personal website",
                 "pages": [
                   "work-experience",
@@ -5028,6 +5034,12 @@
                   "fr/quickstart",
                   "fr/development",
                   "fr/how-mintlify-works"
+                ]
+              },
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog"
                 ]
               },
               {
