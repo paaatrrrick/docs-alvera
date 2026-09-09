@@ -28,6 +28,12 @@
                 ]
               },
               {
+                "group": "Changelog",
+                "pages": [
+                  "changelog"
+                ]
+              },
+              {
                 "group": "Personal website",
                 "pages": [
                   "work-experience",
