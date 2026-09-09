@@ -24,7 +24,8 @@
                   "index",
                   "quickstart",
                   "development",
-                  "how-mintlify-works"
+                  "how-mintlify-works",
+                  "glossary"
                 ]
               },
               {
@@ -5027,7 +5028,8 @@
                   "fr/index",
                   "fr/quickstart",
                   "fr/development",
-                  "fr/how-mintlify-works"
+                  "fr/how-mintlify-works",
+                  "fr/glossary"
                 ]
               },
               {
