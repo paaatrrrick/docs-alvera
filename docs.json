@@ -5037,6 +5037,12 @@
                 ]
               },
               {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog"
+                ]
+              },
+              {
                 "group": "Site personnel",
                 "pages": [
                   "fr/work-experience",
