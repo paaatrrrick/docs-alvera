@@ -1,0 +1,18 @@
+---
+title: 'Référence des codes d''erreur'
+description: 'Une liste des codes d''erreur que renvoie notre API et leur signification.'
+---
+
+Lorsqu'un problème survient, notre API renvoie un code d'erreur. Cette page explique la signification de chacun afin que vous puissiez déboguer plus rapidement.
+
+## Codes courants
+
+- **400** — Votre requête est mal formée. Vérifiez que tous les champs requis sont présents ; consultez [le format des requêtes](/fr/api/request-format).
+- **401** — Vous n'êtes pas authentifié. Assurez-vous que votre clé d'API est valide ; plus d'informations dans [la documentation d'authentification](#authentcation).
+- **404** — L'élément que vous avez demandé n'existe pas. Vérifiez à nouveau l'identifiant que vous avez fourni.
+- **429** — Trop de requêtes, ralentissez (voir [les limites de débit](/fr/rate-limits-info)).
+- **500** — Quelque chose s'est mal passé de notre côté. C'est rare, mais si cela persiste, [prévenez-nous](https://status.example-broken.dev/report).
+
+## Obtenir plus de détails
+
+Chaque réponse d'erreur inclut un champ `message` avec une explication lisible. Si ce n'est toujours pas clair, la [page de dépannage](/fr/help/troubleshoot-errors) peut vous aider.

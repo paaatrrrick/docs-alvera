@@ -1,0 +1,118 @@
+---
+title: "Contador de visitas por post, visitas totales del sitio y firma de metadatos del post"
+description: "Cómo el sitio web personal contabiliza las visitas por post, las lecturas totales del sitio y muestra la fecha, el tiempo de lectura y el contador de visitas en la firma de cada post."
+---
+
+## Resumen
+
+El sitio web personal incluye un pequeño conjunto de componentes y hooks para contabilizar y mostrar cuántas veces se han leído los posts:
+
+- **`ViewCounter`**: muestra el número de lecturas de un único post, respaldado por el hook `useViewCount`.
+- **`SiteViews`**: muestra el número agregado de lecturas de todos los posts, respaldado por el hook `useTotalViews`.
+- **`PostMeta`**: la firma combinada que se muestra debajo del título de un post (fecha, tiempo de lectura estimado y número de visitas).
+
+Los tres se comunican con un servicio de visitas compartido en `https://api.paaatrrrick.com/views`. El servicio devuelve datos seguros frente a `null`, por lo que cada componente no renderiza nada mientras la llamada de red está en curso o si la solicitud falla.
+
+## Cuándo usar cada pieza
+
+| Componente / hook         | Úsalo cuando…                                                                       |
+| ------------------------ | ------------------------------------------------------------------------------- |
+| `ViewCounter` / `useViewCount` | Quieras el número de lecturas de un único post y quieras que la visita quede registrada. |
+| `SiteViews` / `useTotalViews`  | Quieras el número total de lecturas en todo el sitio (por ejemplo, pie de página, página "acerca de"). |
+| `PostMeta`               | Estés renderizando una plantilla de post y quieras la firma estándar de fecha · tiempo de lectura · visitas. |
+
+## Añadir la firma a una plantilla de post
+
+`PostMeta` es la forma recomendada de mostrar los contadores de visitas en un post. Agrupa la fecha, el tiempo de lectura y el contador de visitas en una única línea, por lo que las plantillas individuales no necesitan conectar cada pieza por sí solas.
+
+```jsx
+import PostMeta from "../components/PostMeta";
+
+export default function PostTemplate({ post }) {
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <PostMeta post={post} />
+      {/* …post body… */}
+    </article>
+  );
+}
+```
+
+`PostMeta` espera que el objeto post proporcione:
+
+| Campo   | Tipo              | Notas                                                                 |
+| ------- | ----------------- | --------------------------------------------------------------------- |
+| `id`    | string            | Se usa como clave del contador de visitas. Obligatorio para el seguimiento. |
+| `date`  | string (opcional) | Se muestra tal cual cuando está presente. Omítelo para ocultar el segmento de fecha. |
+| `body`  | string[] (opcional) | Se unen y se pasan al estimador del tiempo de lectura.               |
+
+Cada segmento se oculta si sus datos faltan o si la llamada de red aún no ha resuelto, así que la firma se degrada con elegancia en los posts sin fecha o antes de que se cargue el contador de visitas.
+
+## Mostrar solo el contador de visitas
+
+Si solo necesitas el contador (por ejemplo, en una tarjeta de listado de posts), usa `ViewCounter` directamente:
+
+```jsx
+import ViewCounter from "../components/ViewCounter";
+
+<ViewCounter postId={post.id} />
+```
+
+Renderiza un `<span class="view-counter">` con el número formateado mediante `toLocaleString()` (para que `1234` se muestre como `1,234 views`). Mientras la solicitud está pendiente, devuelve `null` y no renderiza nada.
+
+### Leer sin registrar una visita
+
+De forma predeterminada, montar `ViewCounter` registra una visita. Si quieres leer el contador sin incrementarlo (por ejemplo, en un panel de administración o en una página de listado), llama a `useViewCount` directamente con `increment: false`:
+
+```jsx
+import { useViewCount } from "../hooks/useViewCount";
+
+function PostCard({ post }) {
+  const count = useViewCount(post.id, { increment: false });
+  return <li>{post.title} — {count?.toLocaleString() ?? "—"} views</li>;
+}
+```
+
+## Mostrar el total de visitas del sitio
+
+`SiteViews` renderiza un resumen de una línea con el total de lecturas de todos los posts. Colócalo donde quieras el número agregado: un pie de página, una página "acerca de", una franja de estadísticas en la portada:
+
+```jsx
+import SiteViews from "../components/SiteViews";
+
+<SiteViews />
+```
+
+Renderiza un `<p class="site-views">` con un texto como `12,480 total reads across all posts.`, o nada mientras la solicitud está en curso.
+
+## Endpoints de la API que esperan los hooks
+
+Los hooks llaman a un servicio de visitas compartido. Si cambias el backend, debe exponer la misma forma en las mismas rutas.
+
+| Método | Endpoint                  | Utilizado por         | Comportamiento                                                                                   |
+| ------ | ------------------------- | --------------- | ------------------------------------------------------------------------------------------ |
+| `POST` | `/views/:postId`          | `useViewCount` (predeterminado) | Registra una visita para `postId` y devuelve el nuevo contador.                     |
+| `GET`  | `/views/:postId`          | `useViewCount` con `{ increment: false }` | Devuelve el contador actual de `postId` sin incrementarlo.        |
+| `GET`  | `/views/total`            | `useTotalViews` | Devuelve el número agregado de lecturas de todos los posts.                                |
+
+Los cuerpos de respuesta usan estas formas:
+
+```json
+// /views/:postId
+{ "count": 1234 }
+
+// /views/total
+{ "total": 12480 }
+```
+
+Ambos hooks tratan las respuestas que no sean `200` y las cargas útiles no numéricas como datos ausentes. Mantienen el estado en `null` para que los componentes no rendericen nada en lugar de mostrar un número roto. La URL base está configurada en los hooks como `https://api.paaatrrrick.com/views`.
+
+## Estilos
+
+`PostMeta` viene con `postMeta.css`, que dispone los segmentos como una fila flex con separadores finos en forma de punto entre ellos. Las clases individuales que puedes usar son:
+
+- `.post-meta`: la fila envolvente.
+- `.post-meta-date`: el segmento de la fecha.
+- `.view-counter`: el span del contador de visitas (también renderizado por `ViewCounter` por sí mismo).
+- `.site-views`: el párrafo de visitas totales renderizado por `SiteViews`.
