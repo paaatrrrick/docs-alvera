@@ -60,6 +60,15 @@ La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `
 - **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
 - **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
 
+## Filtrado y búsqueda
+
+La página `/projects` combina dos controles sobre la cuadrícula:
+
+- **Cuadro de búsqueda:** un campo de texto que compara la consulta con `name`, `tagline` y `description` de cada proyecto. La coincidencia no distingue mayúsculas de minúsculas y usa coincidencia por subcadena tras recortar los espacios en blanco.
+- **Filtro por tecnología:** botones para cada valor único de los arrays `tech`, más un botón `All`. La lista se genera a partir del array `projects` actual y se ordena alfabéticamente, por lo que las nuevas etiquetas aparecen automáticamente la próxima vez que añadas un proyecto.
+
+Los dos controles se aplican en conjunto: un proyecto debe pasar el filtro de tecnología activo y coincidir con la consulta de búsqueda para renderizarse. Cuando ningún proyecto coincide, la cuadrícula se sustituye por el mensaje `No projects match your search.`
+
 ## Navegación
 
 La página se registra en `src/App.js` como:

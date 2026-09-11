@@ -60,6 +60,15 @@ La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline
 - **Statut :** utilisez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous arrêtez de publier des mises à jour pour que les visiteurs sachent que le projet est figé — le badge devient gris au lieu de vert.
 - **Lien :** préférez l'URL du dépôt pour les projets open source, ou le site en ligne pour les projets hébergés.
 
+## Filtrage et recherche
+
+La page `/projects` combine deux contrôles au-dessus de la grille :
+
+- **Champ de recherche :** un champ texte qui compare la requête aux `name`, `tagline` et `description` de chaque projet. La correspondance est insensible à la casse et utilise une correspondance par sous-chaîne après suppression des espaces.
+- **Filtre par technologie :** des boutons pour chaque valeur unique des tableaux `tech`, plus un bouton `All`. La liste est construite à partir du tableau `projects` courant et triée par ordre alphabétique, si bien que les nouveaux tags apparaissent automatiquement dès que vous ajoutez un projet.
+
+Les deux contrôles s'appliquent ensemble : un projet doit passer le filtre technologique actif et correspondre à la requête de recherche pour s'afficher. Lorsqu'aucun projet ne correspond, la grille est remplacée par le message `No projects match your search.`
+
 ## Navigation
 
 La page est branchée dans `src/App.js` ainsi :
