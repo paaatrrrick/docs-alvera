@@ -32,7 +32,7 @@ Above the grid, `/projects` renders a search input and a row of tech filter butt
 
 - **Search:** The `Search projects…` input matches the trimmed, lowercased query against each project's `name`, `tagline`, and `description`. Matching is a substring check, so partial words work.
 - **Tech filter:** The filter row is built from the union of every entry's `tech` array, sorted alphabetically, with an `All` button prepended. Selecting a tag restricts the grid to projects whose `tech` array includes it.
-- **Combined:** Search and filter apply together. A project is shown only when it satisfies the active tech filter and matches the search query.
+- **Combined:** Search and filter apply together. The grid shows a project only when it satisfies the active tech filter and matches the search query.
 - **Empty state:** When no project matches, the grid renders `No projects match your search.` in place of cards.
 
 To make a project easier to find, include the words a visitor is likely to type in `name`, `tagline`, or `description`, and list load-bearing stack items in `tech` so they appear as filter buttons.

@@ -32,7 +32,7 @@ Encima de la cuadrícula, `/projects` renderiza un campo de búsqueda y una fila
 
 - **Búsqueda:** el campo `Search projects…` compara la consulta recortada y en minúsculas con `name`, `tagline` y `description` de cada proyecto. La coincidencia es por subcadena, así que las palabras parciales funcionan.
 - **Filtro por tecnología:** la fila de filtros se construye con la unión del array `tech` de cada entrada, ordenada alfabéticamente, con un botón `All` al principio. Al seleccionar una etiqueta se limita la cuadrícula a los proyectos cuyo array `tech` la incluya.
-- **Combinados:** la búsqueda y el filtro se aplican a la vez. Un proyecto solo se muestra cuando cumple con el filtro de tecnología activo y coincide con la consulta de búsqueda.
+- **Combinados:** la búsqueda y el filtro se aplican a la vez. La cuadrícula muestra un proyecto solo cuando cumple con el filtro de tecnología activo y coincide con la consulta de búsqueda.
 - **Estado vacío:** cuando ningún proyecto coincide, la cuadrícula muestra `No projects match your search.` en lugar de tarjetas.
 
 Para que un proyecto sea más fácil de encontrar, incluye en `name`, `tagline` o `description` las palabras que una persona probablemente busque, y enumera las piezas principales del stack en `tech` para que aparezcan como botones de filtro.
