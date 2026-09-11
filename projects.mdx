@@ -60,6 +60,15 @@ The `/projects` page includes a search box that matches against `name`, `tagline
 - **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen — the badge turns gray instead of green.
 - **Link:** Prefer the repository URL for open-source work, or the live site for hosted projects.
 
+## Filtering and search
+
+The `/projects` page combines two controls above the grid:
+
+- **Search box:** A text input that matches the query against each project's `name`, `tagline`, and `description`. Matching is case-insensitive and uses substring matching after trimming whitespace.
+- **Tech filter:** Buttons for every unique value in the `tech` arrays, plus an `All` button. The list is built from the current `projects` array and sorted alphabetically, so new tags appear automatically the next time you add a project.
+
+The two controls apply together: a project must pass the active tech filter and match the search query to render. When no projects match, the grid is replaced with the message `No projects match your search.`
+
 ## Navigation
 
 The page is wired up in `src/App.js` as:
