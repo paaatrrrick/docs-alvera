@@ -26,6 +26,16 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
 
+## Filtering and search
+
+The `/projects` page renders three controls above the grid:
+
+- **Search box.** A text input with the placeholder `Search projects…` that matches the trimmed, lowercased query against each project's `name`, `tagline`, and `description`. A project is included when any of the three contains the query as a substring.
+- **Tech filter.** A row of buttons built from the union of every `tech` value across `projects`, sorted alphabetically, with an `All` button pinned to the front. Selecting a tag limits the grid to projects whose `tech` array includes that tag.
+- **Combined behavior.** The two controls are ANDed. A project is shown only when it passes the active tech filter and matches the search query.
+
+When no project matches, the grid is replaced with the message `No projects match your search.`
+
 ## Adding a project
 
 Open `src/constants/projects.js` and add a new object to the `projects` array. Entries render in array order, so put the most recent or most relevant project first.
