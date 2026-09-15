@@ -26,6 +26,15 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 | `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
 | `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
 
+## Filtrado y búsqueda
+
+La página `/projects` incluye dos controles encima de la cuadrícula:
+
+- **Cuadro de búsqueda:** coincidencia de subcadena que no distingue mayúsculas contra el `name`, `tagline` y `description` de cada proyecto. Los espacios se recortan y una consulta vacía coincide con todo.
+- **Filtro por tecnología:** botones generados a partir de la unión del array `tech` de cada proyecto, más un botón `All`. El botón activo se destaca con un borde oscuro y peso en negrita.
+
+Los dos controles se combinan con AND. Un proyecto solo aparece cuando coincide con la tecnología activa (o cuando `All` está seleccionado) y coincide con la consulta de búsqueda (o cuando la consulta está vacía). Cuando nada coincide, la cuadrícula muestra `No projects match your search.` en lugar de las tarjetas.
+
 ## Añadir un proyecto
 
 Abre `src/constants/projects.js` y añade un nuevo objeto al array `projects`. Las entradas se renderizan en el orden del array, así que coloca primero el proyecto más reciente o más relevante.
@@ -51,7 +60,7 @@ Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — 
 
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+Como la [búsqueda](#filtrado-y-búsqueda) coincide con `name`, `tagline` y `description`, redacta esos tres campos con las palabras que una persona buscaría realmente. Incluye la categoría de producto, el espacio del problema o palabras clave del stack que no estén ya en las etiquetas para que los proyectos aparezcan en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").

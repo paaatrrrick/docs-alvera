@@ -26,6 +26,15 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
 
+## Filtering and search
+
+The `/projects` page includes two controls above the grid:
+
+- **Search box:** Case-insensitive substring match against each project's `name`, `tagline`, and `description`. Whitespace is trimmed and an empty query matches everything.
+- **Tech filter:** Buttons generated from the union of every project's `tech` array, plus an `All` button. The active button is styled with a dark border and bold weight.
+
+The two controls combine with AND. A project appears only when it matches the active tech (or `All` is selected) and matches the search query (or the query is empty). When nothing matches, the grid shows `No projects match your search.` in place of cards.
+
 ## Adding a project
 
 Open `src/constants/projects.js` and add a new object to the `projects` array. Entries render in array order, so put the most recent or most relevant project first.
@@ -51,7 +60,7 @@ Keep `tagline` short enough to fit on one line on mobile — aim for under 60 ch
 
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+Because [search](#filtering-and-search) matches against `name`, `tagline`, and `description`, write those three fields with the words a visitor would actually type. Include the product category, the problem space, or stack keywords that aren't already tags so projects surface from search.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
