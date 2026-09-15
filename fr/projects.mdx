@@ -26,6 +26,16 @@ Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs 
 | `status`      | string   | État du projet. Utilisez `'Active'` pour les projets que vous maintenez encore, ou `'Archived'` pour ceux que vous ne mettez plus à jour. Rendu comme un badge coloré dans l'en-tête de la carte. |
 | `link`        | string   | URL vers laquelle pointe le titre de la carte. S'ouvre dans un nouvel onglet.                     |
 
+## Filtres et recherche
+
+La page `/projects` affiche trois contrôles au-dessus de la grille :
+
+- **Champ de recherche.** Un champ texte avec le placeholder `Search projects…` qui compare la requête (rognée et en minuscules) au `name`, `tagline` et `description` de chaque projet. Un projet est inclus dès que l'un des trois contient la requête en tant que sous-chaîne.
+- **Filtre par technologie.** Une rangée de boutons construite à partir de l'union de toutes les valeurs `tech` du tableau `projects`, triées par ordre alphabétique, avec un bouton `All` épinglé au début. Sélectionner un tag limite la grille aux projets dont le tableau `tech` contient ce tag.
+- **Comportement combiné.** Les deux contrôles sont appliqués conjointement (ET logique). Un projet n'apparaît que s'il passe le filtre technologique actif et correspond à la requête de recherche.
+
+Lorsqu'aucun projet ne correspond, la grille est remplacée par le message `No projects match your search.`
+
 ## Ajouter un projet
 
 Ouvrez `src/constants/projects.js` et ajoutez un nouvel objet au tableau `projects`. Les entrées sont rendues dans l'ordre du tableau, alors placez en premier le projet le plus récent ou le plus pertinent.
