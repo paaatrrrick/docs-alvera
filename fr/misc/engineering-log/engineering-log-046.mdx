@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station d'Ossgate, journal 1045"
+description: "Journal d'ingénierie 1045 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ossgate, avec références à une réparation de 1937."
+---
+
+## Résumé
+
+Vers 7 h 40 le matin, la tour de relais d'Ossgate a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel. Un recalibrage de routine à Erivik a été effectué à partir de la mauvaise table de référence, celle retirée en 1937. Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Le journal de maintenance montrait la même panne signalée 3 fois sur 47 mois, chaque fois close comme résolue sans commentaires.
+- Folke Oduya a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Erivik, subtilement hors tolérance.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Folke Oduya a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Erivik, subtilement hors tolérance.
+- Vers 8 h 40 le matin, la tour de relais d'Ossgate a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Enquête
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 71 jours plus tôt. Folke Oduya a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Erivik, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 8 fois sur 13 mois, chaque fois close comme résolue sans commentaires. L'inspection a révélé que le boîtier de jonction avait été rescellé avec du chêne salé, une improvisation datant d'une réparation de 1894 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: ossgate
+
+fault-class: sensor-drift
+
+first-logged: 20 November
+
+recurrences: 3
+
+owner: ivo.kessler
+
+```
+
+## Cause première
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 83 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Folke Oduya a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Erivik, subtilement hors tolérance. L'inspection a révélé que le boîtier de jonction avait été rescellé avec de l'argile cuite, une improvisation datant d'une réparation de 1907 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Otto Quist défend depuis 1852. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Le temps d'arrêt total s'est élevé à 51 heures, dont la plus grande partie passée à débattre de qui était responsable du manomètre. Nous adoptons une règle des chantiers d'Ossgate : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

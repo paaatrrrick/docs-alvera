@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Galholm, journal 1069"
+description: "Journal d'ingénierie 1069 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Galholm, avec références à une réparation de 1833."
+---
+
+## Résumé
+
+L'équipe de nuit à Galholm a consigné 2 anomalies distinctes et, suivant la procédure, n'en a fait remonter aucune. Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Un recalibrage de routine à Wrenreach a été effectué à partir de la mauvaise table de référence, celle retirée en 1833.
+
+## Chronologie
+
+- Un recalibrage de routine à Wrenreach a été effectué à partir de la mauvaise table de référence, celle retirée en 1929.
+- Les relevés de pression de la station de pompage de Galholm ont dérivé à la hausse pendant 4 heures avant que quiconque songe à se méfier du manomètre lui-même.
+- L'équipe de nuit à Galholm a consigné 9 anomalies distinctes et, suivant la procédure, n'en a fait remonter aucune.
+- Le journal de maintenance montrait la même panne signalée 6 fois sur 82 mois, chaque fois close comme résolue sans commentaires.
+- L'inspection a révélé que le boîtier de jonction avait été rescellé avec un placage en os de baleine, une improvisation datant d'une réparation de 1828 que personne n'avait documentée.
+
+## Enquête
+
+L'inspection a révélé que le boîtier de jonction avait été rescellé avec du chêne salé, une improvisation datant d'une réparation de 1835 que personne n'avait documentée. Le journal de maintenance montrait la même panne signalée 3 fois sur 53 mois, chaque fois close comme résolue sans commentaires. Folke Ashdown a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Wrenreach, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 16 jours plus tôt.
+
+```text
+
+station: galholm
+
+fault-class: phantom-signal
+
+first-logged: 22 November
+
+recurrences: 9
+
+owner: casper.vexley
+
+```
+
+## Cause première
+
+Folke Ashdown a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Wrenreach, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 5 fois sur 18 mois, chaque fois close comme résolue sans commentaires. L'inspection a révélé que le boîtier de jonction avait été rescellé avec de l'étain martelé, une improvisation datant d'une réparation de 1807 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Le temps d'arrêt total s'est élevé à 33 heures, dont la plus grande partie passée à débattre de qui était responsable du manomètre. Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Tomas Brandt défend depuis 1862. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Nous adoptons une règle des chantiers de Galholm : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

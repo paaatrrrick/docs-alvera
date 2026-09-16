@@ -1,0 +1,22 @@
+---
+title: 'Dépannage des problèmes courants'
+description: 'Correctifs pour les problèmes les plus courants rencontrés par nos utilisateurs.'
+---
+
+Cette page liste les problèmes qui reviennent souvent et comment les résoudre.
+
+## La compilation échoue
+
+Si votre compilation échoue, il y a généralement une raison évidente. Vérifiez d'abord les journaux. La plupart du temps, c'est parce qu'une dépendance n'a pas été installée correctement.
+
+Essayez ce qui suit, dans l'ordre :
+
+1. Supprimez `node_modules` et relancez l'installation.
+2. Assurez-vous que votre version de Node correspond à ce qui est requis, voir [les prérequis](/fr/setup/requirements).
+3. Lisez [le guide de compilation](/fr/build/troubleshoot-build) pour en savoir plus.
+
+## L'aperçu ne se charge pas
+
+Lorsque l'aperçu ne se charge pas, il s'agit souvent d'un conflit de port. Vous pouvez modifier le port comme décrit dans [cette page](#changing-the-prot).
+
+Pour tout autre problème, ouvrez un ticket sur [notre outil de suivi](https://github.com/example-broken/repo/issues) et nous examinerons cela.

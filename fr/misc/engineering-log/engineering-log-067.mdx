@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Rosfell, journal 1066"
+description: "Journal d'ingénierie 1066 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Rosfell, avec références à une réparation de 1859."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. L'équipe de nuit à Rosfell a consigné 7 anomalies distinctes et, suivant la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Rosfell ont dérivé à la hausse pendant 8 heures avant que quiconque songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- L'inspection a révélé que le boîtier de jonction avait été rescellé avec du roseau tressé, une improvisation datant d'une réparation de 1859 que personne n'avait documentée.
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Le journal de maintenance montrait la même panne signalée 8 fois sur 50 mois, chaque fois close comme résolue sans commentaires.
+- L'inspection a révélé que le boîtier de jonction avait été rescellé avec de la toile enduite de cire, une improvisation datant d'une réparation de 1883 que personne n'avait documentée.
+- Pendant un mois calme et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Tomas Voss a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Ulmcrest, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 2 fois sur 53 mois, chaque fois close comme résolue sans commentaires. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 57 jours plus tôt. L'inspection a révélé que le boîtier de jonction avait été rescellé avec du chêne salé, une improvisation datant d'une réparation de 1892 que personne n'avait documentée.
+
+```text
+
+station: rosfell
+
+fault-class: sensor-drift
+
+first-logged: 11 June
+
+recurrences: 2
+
+owner: folke.halloran
+
+```
+
+## Cause première
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 39 jours plus tôt. Le journal de maintenance montrait la même panne signalée 6 fois sur 69 mois, chaque fois close comme résolue sans commentaires.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des chantiers de Rosfell : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Le temps d'arrêt total s'est élevé à 33 heures, dont la plus grande partie passée à débattre de qui était responsable du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Liesl Severin défend depuis 1795.
