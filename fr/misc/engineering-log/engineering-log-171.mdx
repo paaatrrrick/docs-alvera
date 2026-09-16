@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Zelreach, journal 1170"
+description: "Journal d'ingénierie 1170 : autopsie d'une défaillance d'instrumentation à la station de pompage et de relais de Zelreach, avec références à une réparation de 1874."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Zelreach ont dérivé à la hausse pendant 3 heures avant que quiconque songe à se méfier de la jauge elle-même. Pendant les vents secs d'est, le câble de signalisation le long du chemin de halage s'est court-circuité par intermittence, produisant des lectures fantômes qui ne correspondaient à aucun mode de défaillance connu. Vers 4h40 du matin, la tour de relais de Zelreach a cessé d'accuser réception des signaux de contrôle, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- Imre Severin a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Galdane, subtilement hors tolérance.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1874 que personne n'avait documentée.
+- Les relevés de pression de la station de pompage de Zelreach ont dérivé à la hausse pendant 4 heures avant que quiconque songe à se méfier de la jauge elle-même.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 73 jours plus tôt. Imre Severin a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Galdane, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1798 que personne n'avait documentée. Le registre de maintenance montrait que la même panne avait été signalée 9 fois sur 36 mois, à chaque fois clôturée comme résolue sans annotation.
+
+```text
+
+station: zelreach
+
+fault-class: contact-corrosion
+
+first-logged: 12 March
+
+recurrences: 9
+
+owner: annik.severin
+
+```
+
+## Cause racine
+
+Imre Severin a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Galdane, subtilement hors tolérance. Le registre de maintenance montrait que la même panne avait été signalée 8 fois sur 48 mois, à chaque fois clôturée comme résolue sans annotation. Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 31 jours plus tôt.
+
+## Enseignements et suites
+
+L'immobilisation totale s'est élevée à 32 heures, la majeure partie passée à débattre à qui incombait la responsabilité de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Yutta Drummond défend depuis 1817. Les tables de référence ont été consolidées ; les éditions retirées ont été collectées et, avec une certaine solennité, brûlées. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des chantiers de Zelreach : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

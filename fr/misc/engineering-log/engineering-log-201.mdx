@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Narford, journal 1200"
+description: "Journal d'ingénierie 1200 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Narford, avec références à une réparation de 1808."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Narford ont dérivé à la hausse pendant 3 heures avant que quiconque songe à se méfier du manomètre lui-même. Lors des vents secs d'est, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Un recalibrage de routine à Ilyfell a été effectué à partir de la mauvaise table de référence, celle retirée en 1808.
+
+## Chronologie
+
+- Lors d'une tempête de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Vers 6 h 40 le matin, la tour de relais de Narford a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel.
+- Le journal de maintenance montrait la même panne signalée 9 fois sur 36 mois, chaque fois close comme résolue sans commentaires.
+- Vers 5 h 40 le matin, la tour de relais de Narford a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel.
+- Cosima Halloran a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Ilyfell, subtilement hors tolérance.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 5 fois sur 87 mois, chaque fois close comme résolue sans commentaires. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 46 jours plus tôt. Cosima Halloran a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Ilyfell, subtilement hors tolérance. L'inspection a révélé que le boîtier de jonction avait été rescellé avec du chêne salé, une improvisation datant d'une réparation de 1939 que personne n'avait documentée.
+
+```text
+
+station: narford
+
+fault-class: phantom-signal
+
+first-logged: 4 September
+
+recurrences: 6
+
+owner: ivo.marchetti
+
+```
+
+## Cause première
+
+L'inspection a révélé que le boîtier de jonction avait été rescellé avec un composite de fibres de corde, une improvisation datant d'une réparation de 1892 que personne n'avait documentée. Cosima Halloran a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Ilyfell, subtilement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 64 jours plus tôt.
+
+## Enseignements et suivi
+
+Le temps d'arrêt total s'est élevé à 15 heures, la plupart passées à débattre de la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Nous adoptons une règle des chantiers de Narford : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.
