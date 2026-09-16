@@ -51,7 +51,7 @@ Keep `tagline` short enough to fit on one line on mobile — aim for under 60 ch
 
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter (see [Filtering and search](#filtering-and-search)). Write those three fields with the words a visitor would actually type. Include the product category, problem space, or stack keywords that aren't already tags so projects surface from search.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
@@ -59,6 +59,17 @@ The `/projects` page includes a search box that matches against `name`, `tagline
 - **Tech tags:** List the load-bearing pieces of the stack, not every dependency. Three to five tags reads best.
 - **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen — the badge turns gray instead of green.
 - **Link:** Prefer the repository URL for open-source work, or the live site for hosted projects.
+
+## Filtering and search
+
+The page renders two controls above the grid:
+
+- A **search box** (`projectsSearch`) that filters projects by matching the trimmed, lowercased query against `name`, `tagline`, and `description`.
+- A **tech filter** (`projectsFilter`) with one button per unique value found across every project's `tech` array, plus an `All` button that clears the filter.
+
+The two controls combine with AND: a project is shown only when it matches the active tech (or `All` is selected) and the search query is empty or matches at least one of `name`, `tagline`, or `description`. Matching is a case-insensitive substring check, so partial words work.
+
+When no project matches, the grid is replaced with the message `No projects match your search.` (`projectsEmpty`).
 
 ## Navigation
 
