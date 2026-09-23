@@ -1,15 +1,16 @@
 ---
-title: 'Glossary of Common Documentation Terms and Concepts'
-description: 'A short reference that defines the terms you will encounter most often while writing, configuring, and publishing your documentation site.'
+title: "Glossary"
+description: "Definitions of five common terms you will encounter while writing, configuring, and publishing your documentation site with Mintlify."
 ---
 
-This glossary defines the terms used throughout these docs. Skim it once, then refer back whenever a word is unclear.
+This glossary defines terms used throughout these docs. Refer back to it whenever a word is unclear.
 
 ## Terms
 
-- **Deployment** — A published version of your site. Each push to your main branch creates a new deployment.
-- **Preview** — A temporary build of a pull request, so you can review changes before they go live.
-- **Navigation** — The sidebar structure that organizes your pages, defined in your config file.
-- **Snippet** — A reusable block of content you can include on multiple pages.
+- **Deployment**: A published version of your site. Mintlify creates a new deployment each time you merge to your deploy branch. See [How Mintlify works](/how-mintlify-works).
+- **MDX**: The file format for every page. MDX is Markdown plus React components like `<Card>`, `<Tabs>`, and `<Accordion>`. Each MDX file starts with YAML frontmatter such as `title` and `description`. See [Markdown syntax](/essentials/markdown).
+- **Navigation**: The sidebar structure that organizes your pages into tabs and groups. You define it in the `navigation` field of `docs.json`. See [Navigation](/essentials/navigation).
+- **Preview**: A temporary build of a pull request. Use it to review changes before they go live. To preview locally, run `mint dev`.
+- **Snippet**: A reusable block of content stored in the `snippets/` directory. You can import a snippet into any page. See [Reusable snippets](/essentials/reusable-snippets).
 
-If you are just getting started, read the [quickstart](/quickstart) first, then set up your environment with the [local development guide](/development).
+If you are just getting started, read the [quickstart](/quickstart) first. Then set up your environment with the [local development guide](/development).
