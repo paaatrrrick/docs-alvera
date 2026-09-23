@@ -13,7 +13,7 @@ Entries are sourced from the `projects` array in `src/constants/projects.js` and
 
 The top of the `/projects` page has a search box and a row of tech filter buttons. Visitors can combine both to narrow the grid.
 
-- **Search box:** Filters projects whose `name`, `tagline`, or `description` contains the typed text. Matching is case-insensitive and ignores leading and trailing whitespace. Tech tags aren't searched.
+- **Search box:** Filters projects whose `name`, `tagline`, or `description` contains the typed text. Matching is case-insensitive and ignores leading and trailing whitespace. The search box doesn't match tech tags.
 - **Tech filter:** Shows one button per unique value across every project's `tech` array, sorted alphabetically, plus an **All** button. Selecting a tech shows only projects that list it.
 - **Combined behavior:** A project appears only if it matches both the active tech filter and the search text.
 - **Empty state:** If no project matches, the grid shows "No projects match your search."
