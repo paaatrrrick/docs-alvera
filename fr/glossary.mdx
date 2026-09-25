@@ -1,0 +1,26 @@
+---
+title: 'Glossaire'
+description: 'Définitions des termes que vous rencontrez le plus souvent lorsque vous rédigez, configurez et publiez votre site de documentation Mintlify.'
+---
+
+Ce glossaire définit cinq termes utilisés dans toute cette documentation. Consultez-le chaque fois qu'un mot n'est pas clair.
+
+## Branche de déploiement
+
+La branche Git à partir de laquelle Mintlify publie votre site. Lorsque vous poussez vers votre branche de déploiement, l'application GitHub de Mintlify détecte la modification et déploie votre site. Consultez [Comment fonctionne Mintlify](/fr/how-mintlify-works).
+
+## `docs.json`
+
+Le fichier de configuration à la racine de votre dépôt. Il définit la navigation, le thème, les couleurs, le logo et les éléments globaux de votre site, comme la barre de navigation et le pied de page. Consultez [Paramètres globaux](/fr/essentials/settings).
+
+## MDX
+
+Le format de fichier de chaque page de votre documentation. MDX correspond à du Markdown enrichi de composants React tels que `<Card>`, `<Tabs>` et `<Accordion>`. Chaque page MDX commence par un frontmatter YAML qui définit son `title` et sa `description`. Consultez [Syntaxe Markdown](/fr/essentials/markdown).
+
+## Navigation
+
+La structure d'onglets, de groupes et de pages qui apparaît dans la barre latérale de votre site. Vous définissez la navigation dans le champ `navigation` de `docs.json`. Consultez [Navigation](/fr/essentials/navigation).
+
+## Extrait
+
+Un bloc de contenu réutilisable stocké dans le répertoire `snippets/`. Vous importez un extrait dans n'importe quelle page pour garder le contenu répété synchronisé. Mintlify n'affiche pas les fichiers de `snippets/` comme des pages autonomes. Consultez [Extraits réutilisables](/fr/essentials/reusable-snippets).
