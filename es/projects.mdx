@@ -49,9 +49,18 @@ export default projects;
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
+## Búsqueda y filtrado
+
+La página `/projects` muestra dos controles sobre la cuadrícula:
+
+- Un campo de búsqueda que filtra las tarjetas comparando la consulta con `name`, `tagline` y `description` de cada proyecto (coincidencia de subcadena sin distinguir mayúsculas).
+- Una fila de botones de tecnología generada a partir de cada valor único de `tech` en el array de proyectos, más un botón **All** que limpia el filtro por tecnología.
+
+Los dos controles se combinan con AND. Una tarjeta es visible cuando coincide con la consulta de búsqueda y con el filtro por tecnología activo. Cuando ninguna tarjeta coincide, la cuadrícula se reemplaza por el mensaje "No projects match your search."
+
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+Redacta `name`, `tagline` y `description` con las palabras que una persona buscaría realmente. Incluye la categoría del producto, el espacio del problema o palabras clave del stack que no estén ya en las etiquetas de tecnología para que los proyectos aparezcan en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
