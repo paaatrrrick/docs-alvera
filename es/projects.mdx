@@ -5,9 +5,17 @@ description: "Cómo se configura la página dedicada /projects a partir del arra
 
 ## Resumen
 
-El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo.
+El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, una insignia de estado Active o Archived, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo.
 
 Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
+
+## Insignias de estado
+
+La cabecera de cada tarjeta muestra una insignia de estado junto al nombre del proyecto, controlada por el campo `status`. El componente `Projects` convierte el valor a minúsculas y lo aplica como clase CSS (`projectStatus active` o `projectStatus archived`). `'Active'` se renderiza como una insignia verde. `'Archived'` se renderiza como una insignia gris.
+
+<Note>
+`status` es obligatorio. El componente llama a `project.status.toLowerCase()`, así que una entrada sin `status` rompe el renderizado de la página.
+</Note>
 
 ## Cuándo usar esta página
 
@@ -46,18 +54,18 @@ export default projects;
 ```
 
 <Tip>
-Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
+Mantén `tagline` lo bastante corto para caber en una sola línea en móvil. Apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente para que los proyectos aparezcan en los resultados. Incluye la categoría de producto, el espacio del problema o palabras clave del stack que no estén ya en las etiquetas.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
 - **Descripción:** Una o dos oraciones. Indica qué hace y a quién va dirigido.
 - **Etiquetas de tecnología:** Enumera las piezas principales del stack, no todas las dependencias. De tres a cinco etiquetas se lee mejor.
-- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
+- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado. La insignia pasa de verde a gris.
 - **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
 
 ## Navegación
