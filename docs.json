@@ -34,7 +34,8 @@
                   "projects",
                   "post-view-counter",
                   "game-of-thrones",
-                  "latest-email"
+                  "latest-email",
+                  "changelog"
                 ]
               },
               {
@@ -2538,7 +2539,8 @@
                   "es/work-experience",
                   "es/projects",
                   "es/game-of-thrones",
-                  "es/latest-email"
+                  "es/latest-email",
+                  "es/changelog"
                 ]
               },
               {
@@ -5038,7 +5040,8 @@
                   "fr/work-experience",
                   "fr/projects",
                   "fr/game-of-thrones",
-                  "fr/latest-email"
+                  "fr/latest-email",
+                  "fr/changelog"
                 ]
               },
               {
