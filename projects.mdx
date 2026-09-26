@@ -1,13 +1,13 @@
 ---
 title: "Projects page: structure and updates"
-description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema and a code example."
+description: "How the /projects showcase page is built from the projects array: the entry schema, adding projects, and how search and tech filtering behave."
 ---
 
 ## Overview
 
 The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site.
 
-Entries are sourced from the `projects` array in `src/constants/projects.js` and rendered by the `Projects` component at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
+The `Projects` component renders entries from the `projects` array in `src/constants/projects.js` at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
 
 ## When to use this page
 
@@ -49,9 +49,17 @@ export default projects;
 Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
+## Search and filtering
+
+The `/projects` page includes a search box above the tech filter. Typing a query filters the grid to projects whose `name`, `tagline`, or `description` contains the query. Matching is case-insensitive and ignores leading and trailing whitespace.
+
+Search combines with the tech filter: a project appears only if it matches the query and includes the selected tech tag. Selecting `All` in the filter removes the tech constraint.
+
+If no projects match, the grid shows an empty state that reads "No projects match your search."
+
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+Write `name`, `tagline`, and `description` with the words a visitor would actually type into search: product category, problem space, or stack keywords that aren't already tags. Search only matches those three fields, so projects surface from the terms you put there.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
