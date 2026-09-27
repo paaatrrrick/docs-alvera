@@ -26,6 +26,12 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 | `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
 | `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
 
+## Búsqueda y filtrado
+
+La página muestra un cuadro de búsqueda encima de los botones de filtro por tecnología. Al escribir una consulta, la cuadrícula se filtra a los proyectos cuyo `name`, `tagline` o `description` contiene la consulta. La coincidencia no distingue mayúsculas de minúsculas e ignora los espacios al inicio y al final.
+
+El cuadro de búsqueda y el filtro por tecnología se combinan. Un proyecto solo aparece cuando coincide con la etiqueta de tecnología activa y con la consulta de búsqueda. Cuando no hay coincidencias, la cuadrícula muestra el mensaje "No projects match your search." en lugar de un área vacía.
+
 ## Añadir un proyecto
 
 Abre `src/constants/projects.js` y añade un nuevo objeto al array `projects`. Las entradas se renderizan en el orden del array, así que coloca primero el proyecto más reciente o más relevante.
