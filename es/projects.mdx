@@ -9,6 +9,8 @@ El sitio web personal ahora cuenta con una página dedicada `/projects` que mues
 
 Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
 
+Los visitantes pueden acotar la cuadrícula con un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, y combinarlo con el filtro por etiqueta de tecnología. Cuando ningún proyecto coincide con la búsqueda y el filtro actuales, la cuadrícula muestra "No projects match your search." en lugar de tarjetas.
+
 ## Cuándo usar esta página
 
 Añade una entrada a `/projects` cuando quieras destacar un proyecto personal con su propia tarjeta, un eslogan y etiquetas de tecnología. Usa la lista de la página de inicio para los proyectos que quieras mostrar al frente; usa `/projects` para el catálogo completo.
@@ -49,9 +51,19 @@ export default projects;
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
+## Búsqueda y filtrado
+
+La página muestra tres controles sobre la cuadrícula:
+
+- **Cuadro de búsqueda.** Coincidencia de subcadena sin distinción de mayúsculas frente a `name`, `tagline` y `description`. Se recortan los espacios iniciales y finales. Una consulta vacía coincide con todos los proyectos.
+- **Botones de filtro por tecnología.** Un botón por cada valor único del array `tech` de todos los proyectos, más un botón `All` que borra el filtro. El botón activo aparece resaltado.
+- **Estado vacío.** Cuando la combinación de búsqueda y filtro no deja coincidencias, la cuadrícula muestra "No projects match your search." Borra el cuadro de búsqueda o pulsa `All` para restaurar la lista completa.
+
+La búsqueda y el filtro se combinan con AND: un proyecto debe incluir la tecnología seleccionada (a menos que `All` esté activo) y coincidir con la consulta de búsqueda.
+
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+Redacta `name`, `tagline` y `description` con las palabras que una persona buscaría realmente. Usa la categoría de producto, el espacio del problema o palabras clave del stack que no estén ya en las etiquetas, para que los proyectos aparezcan en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
