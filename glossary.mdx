@@ -1,15 +1,26 @@
 ---
-title: 'Glossary of Common Documentation Terms and Concepts'
-description: 'A short reference that defines the terms you will encounter most often while writing, configuring, and publishing your documentation site.'
+title: 'Glossary'
+description: 'Definitions of the terms you encounter most often while writing, configuring, and publishing your Mintlify documentation site.'
 ---
 
-This glossary defines the terms used throughout these docs. Skim it once, then refer back whenever a word is unclear.
+This glossary defines five terms used throughout these docs. Refer back to it whenever a word is unclear.
 
-## Terms
+## Deploy branch
 
-- **Deployment** — A published version of your site. Each push to your main branch creates a new deployment.
-- **Preview** — A temporary build of a pull request, so you can review changes before they go live.
-- **Navigation** — The sidebar structure that organizes your pages, defined in your config file.
-- **Snippet** — A reusable block of content you can include on multiple pages.
+The Git branch that Mintlify publishes from. When you push to your deploy branch, the Mintlify GitHub app detects the change and deploys your site. See [How Mintlify works](/how-mintlify-works).
 
-If you are just getting started, read the [quickstart](/quickstart) first, then set up your environment with the [local development guide](/development).
+## `docs.json`
+
+The configuration file at the root of your repository. It defines your site's navigation, theme, colors, logo, and global elements such as the navbar and footer. See [Global settings](/essentials/settings).
+
+## MDX
+
+The file format for every page in your docs. MDX is Markdown plus React components such as `<Card>`, `<Tabs>`, and `<Accordion>`. Each MDX page starts with YAML frontmatter that sets its `title` and `description`. See [Markdown syntax](/essentials/markdown).
+
+## Navigation
+
+The structure of tabs, groups, and pages that appears in your site's sidebar. You define navigation in the `navigation` field of `docs.json`. See [Navigation](/essentials/navigation).
+
+## Snippet
+
+A reusable block of content stored in the `snippets/` directory. You import a snippet into any page to keep repeated content in sync. Mintlify does not render files in `snippets/` as standalone pages. See [Reusable snippets](/essentials/reusable-snippets).

@@ -1,0 +1,26 @@
+---
+title: 'Glosario'
+description: 'Definiciones de los términos que encuentras con más frecuencia al escribir, configurar y publicar tu sitio de documentación de Mintlify.'
+---
+
+Este glosario define cinco términos que se usan en toda esta documentación. Consúltalo siempre que una palabra no te resulte clara.
+
+## Rama de despliegue
+
+La rama de Git desde la que Mintlify publica tu sitio. Cuando haces push a tu rama de despliegue, la aplicación de GitHub de Mintlify detecta el cambio y despliega tu sitio. Consulta [Cómo funciona Mintlify](/es/how-mintlify-works).
+
+## `docs.json`
+
+El archivo de configuración en la raíz de tu repositorio. Define la navegación, el tema, los colores, el logotipo y los elementos globales de tu sitio, como la barra de navegación y el pie de página. Consulta [Configuración global](/es/essentials/settings).
+
+## MDX
+
+El formato de archivo de cada página de tu documentación. MDX es Markdown más componentes de React como `<Card>`, `<Tabs>` y `<Accordion>`. Cada página MDX comienza con un frontmatter YAML que establece su `title` y su `description`. Consulta [Sintaxis Markdown](/es/essentials/markdown).
+
+## Navegación
+
+La estructura de pestañas, grupos y páginas que aparece en la barra lateral de tu sitio. Defines la navegación en el campo `navigation` de `docs.json`. Consulta [Navegación](/es/essentials/navigation).
+
+## Snippet
+
+Un bloque de contenido reutilizable almacenado en el directorio `snippets/`. Importas un snippet en cualquier página para mantener sincronizado el contenido repetido. Mintlify no renderiza los archivos de `snippets/` como páginas independientes. Consulta [Snippets reutilizables](/es/essentials/reusable-snippets).
