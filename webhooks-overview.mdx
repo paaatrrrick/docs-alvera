@@ -1,26 +1,26 @@
 ---
 title: 'Webhooks Overview'
-description: 'Recieve real-time event from our platform into you’re own backend.'
+description: 'Receive real-time events from our platform in your own backend.'
 ---
 
-Webhooks lets you’re application to gets notified when something happen, without you having to polling our API constantly.
+Webhooks notify your application when an event happens on our platform. Instead of polling our API for changes, you register an endpoint URL and we send events to it as they occur.
 
 ## How it works
 
-When a event occured, we sends a HTTP POST to the URL you configured. The payload contain the event type and the data.
+When an event occurs, we send an HTTP POST request to the URL you configured. The payload contains the event type and the data.
 
-To setup a webhook:
+To set up a webhook:
 
 1. Go to [the webhooks settings](/settings/webhooks-config).
-2. Enter you’re endpoint URL and choose witch event you wants.
-3. Save it, and we will start sending event right away.
+2. Enter your endpoint URL and choose which events you want.
+3. Save it, and we start sending events right away.
 
 <Note>
-You should verifies the signature on every request so that nobody can spoofs us. The detail is in [the security guide](./security/verify-signatures).
+Verify the signature on every request so that nobody can spoof events. The details are in [the security guide](./security/verify-signatures).
 </Note>
 
 ## Retries
 
-If you’re endpoint return a error, we retry it up to 5 time with a exponential backoff. After that we gives up and mark it failed, you can see this in [the logs](#webhook-logz).
+If your endpoint returns an error, we retry the delivery up to 5 times with exponential backoff. After that, we mark the delivery as failed. You can see this in [the logs](#webhook-logz).
 
-See also the [event reference](https://docs.example-broken.dev/events) for a list of every event we sends.
+See also the [event reference](https://docs.example-broken.dev/events) for a list of every event we send.
