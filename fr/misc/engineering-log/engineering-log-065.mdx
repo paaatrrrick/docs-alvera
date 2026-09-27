@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Galfell, journal 1064"
+description: "Journal d'ingénierie 1064 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Galfell, avec des références à une réparation de 1794."
+---
+
+## Résumé
+
+Vers 2h40 du matin, la tour relais de Galfell a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé. L'équipe de nuit à Galfell a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Un recalibrage de routine à Calstead a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1794.
+
+## Chronologie
+
+- Un recalibrage de routine à Calstead a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1851.
+- Le journal de maintenance montrait la même panne signalée 5 fois sur 65 mois, à chaque fois clôturée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage de Galfell ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+- Le journal de maintenance montrait la même panne signalée 6 fois sur 58 mois, à chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 38 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1801 que personne n'avait documentée. Ivo Voss a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Calstead, subtilement hors tolérance.
+
+```text
+
+station: galfell
+
+fault-class: phantom-signal
+
+first-logged: 25 September
+
+recurrences: 4
+
+owner: petra.voss
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 60 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1964 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. L'indisponibilité totale s'est élevée à 76 heures, la plupart passées à débattre de la responsabilité du manomètre. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Liesl Ashdown défend depuis 1930. Nous adoptons une règle des ateliers de Galfell : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.

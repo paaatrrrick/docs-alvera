@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Caldane, journal 1116"
+description: "Journal d'ingénierie 1116 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Caldane, avec des références à une réparation de 1898."
+---
+
+## Résumé
+
+L'équipe de nuit à Caldane a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Pendant les crues de printemps, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Caldane ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+
+## Chronologie
+
+- Vers 8h40 du matin, la tour relais de Caldane a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé.
+- L'équipe de nuit à Caldane a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Le journal de maintenance montrait la même panne signalée 8 fois sur 30 mois, à chaque fois clôturée comme résolue sans aucune note.
+- Le journal de maintenance montrait la même panne signalée 8 fois sur 66 mois, à chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 88 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage d'os de baleine, une improvisation remontant à une réparation de 1898 que personne n'avait documentée. Stellan Kessler a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Pervik, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: caldane
+
+fault-class: reference-mismatch
+
+first-logged: 7 September
+
+recurrences: 3
+
+owner: ivo.oduya
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage d'os de baleine, une improvisation remontant à une réparation de 1801 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 46 jours plus tôt.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 53 heures, la plupart passées à débattre de la responsabilité du manomètre. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Caldane : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées.

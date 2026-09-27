@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Wrenstead, journal 1197"
+description: "Journal d'ingénierie 1197 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenstead, avec des références à une réparation de 1833."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Wrenstead ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même. Un recalibrage de routine à Erigate a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1833. L'équipe de nuit à Wrenstead a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Vers 6h40 du matin, la tour relais de Wrenstead a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé.
+- Pendant les crues de printemps, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Vers 8h40 du matin, la tour relais de Wrenstead a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé.
+- Le journal de maintenance montrait la même panne signalée 8 fois sur 57 mois, à chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 39 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Maren Mollering a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée d'Erigate, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 7 fois sur 37 mois, à chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: wrenstead
+
+fault-class: phantom-signal
+
+first-logged: 24 March
+
+recurrences: 3
+
+owner: yutta.lindqvist
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 58 jours plus tôt. Le journal de maintenance montrait la même panne signalée 3 fois sur 34 mois, à chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1785 que personne n'avait documentée. Maren Mollering a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée d'Erigate, subtilement hors tolérance.
+
+## Leçons et suivi
+
+L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sigrid Sorvane défend depuis 1835. Nous adoptons une règle des ateliers de Wrenstead : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 87 heures, la plupart passées à débattre de la responsabilité du manomètre.

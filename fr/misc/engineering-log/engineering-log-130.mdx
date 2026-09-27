@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station d'Ilydane, journal 1129"
+description: "Journal d'ingénierie 1129 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais d'Ilydane, avec des références à une réparation de 1860."
+---
+
+## Résumé
+
+Vers 6h40 du matin, la tour relais d'Ilydane a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé. Un recalibrage de routine à Ossvik a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1860. L'équipe de nuit à Ilydane a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage d'Ilydane ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+- Pendant un orage de grêle qui a dénudé les vergers, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Le journal de maintenance montrait la même panne signalée 9 fois sur 85 mois, à chaque fois clôturée comme résolue sans aucune note.
+- La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 53 jours plus tôt.
+- Imre Quist a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée d'Ossvik, subtilement hors tolérance.
+- Les relevés de pression de la station de pompage d'Ilydane ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 4 fois sur 36 mois, à chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 18 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1783 que personne n'avait documentée. Imre Quist a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée d'Ossvik, subtilement hors tolérance.
+
+```text
+
+station: ilydane
+
+fault-class: phantom-signal
+
+first-logged: 15 March
+
+recurrences: 3
+
+owner: imre.voss
+
+```
+
+## Cause racine
+
+Imre Quist a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée d'Ossvik, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1951 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Rurik Greaves défend depuis 1851. L'indisponibilité totale s'est élevée à 35 heures, la plupart passées à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers d'Ilydane : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées.

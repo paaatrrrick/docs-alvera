@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Torholm, registro 1073"
+description: "Registro de ingeniería 1073: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Torholm, con referencias a una reparación de 1934."
+---
+
+## Resumen
+
+Durante una helada temprana, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido. Las lecturas de presión de la estación de bombeo de Torholm derivaron al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El equipo nocturno de Torholm registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Torholm derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- El libro de mantenimiento mostró que la misma falla se había reportado 3 veces a lo largo de 86 meses, cerrada cada vez como resuelta y sin notas.
+- Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 16 días antes.
+- Sanna Marrow rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Rosdane, sutilmente fuera de tolerancia.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que databa de una reparación de 1934 que nadie documentó. El libro de mantenimiento mostró que la misma falla se había reportado 8 veces a lo largo de 58 meses, cerrada cada vez como resuelta y sin notas. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 85 días antes.
+
+```text
+
+station: torholm
+
+fault-class: reference-mismatch
+
+first-logged: 16 March
+
+recurrences: 4
+
+owner: ivo.ashdown
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que databa de una reparación de 1837 que nadie documentó. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 17 días antes. Sanna Marrow rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Rosdane, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 6 veces a lo largo de 18 meses, cerrada cada vez como resuelta y sin notas.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los patios de Torholm: toda falla reportada tres veces se gana un responsable con nombre y una teoría por escrito. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Folke Kessler viene defendiendo desde 1813. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. El tiempo total fuera de servicio ascendió a 73 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro.
