@@ -49,9 +49,20 @@ export default projects;
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
+## Búsqueda y filtro
+
+La página `/projects` tiene dos controles que las personas pueden combinar:
+
+- Un cuadro de búsqueda encima del filtro por tecnología. Al escribir, se comparan `name`, `tagline` y `description` (coincidencia por subcadena, sin distinguir mayúsculas y con espacios recortados).
+- Los botones de filtro por tecnología debajo. Al seleccionar una etiqueta, la cuadrícula muestra solo los proyectos cuyo array `tech` incluye esa etiqueta. `All` limpia el filtro por tecnología.
+
+Ambos controles se aplican a la vez. Seleccionar `Rust` y escribir `notes` muestra solo los proyectos de Rust cuyo nombre, eslogan o descripción contenga `notes`.
+
+Cuando ningún proyecto coincide con la búsqueda y el filtro por tecnología actuales, la cuadrícula muestra el estado vacío `No projects match your search.` en lugar de las tarjetas.
+
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+Redacta `name`, `tagline` y `description` con las palabras que una persona escribiría realmente en el cuadro de búsqueda. Incluye la categoría del producto, el espacio del problema o las palabras clave del stack que no estén ya en las etiquetas para que los proyectos aparezcan en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
