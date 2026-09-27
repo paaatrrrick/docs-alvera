@@ -92,6 +92,17 @@
             ]
           },
           {
+            "tab": "Changelog",
+            "groups": [
+              {
+                "group": "Changelog",
+                "pages": [
+                  "changelog/2026-09-10"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "API reference",
             "groups": [
               {
@@ -2592,6 +2603,17 @@
             ]
           },
           {
+            "tab": "Registro de cambios",
+            "groups": [
+              {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog/2026-09-10"
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Referencia de API",
             "groups": [
               {
@@ -5087,6 +5109,17 @@
                   "fr/ai-tools/cursor",
                   "fr/ai-tools/claude-code",
                   "fr/ai-tools/windsurf"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Journal des modifications",
+            "groups": [
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog/2026-09-10"
                 ]
               }
             ]
