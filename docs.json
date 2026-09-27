@@ -88,6 +88,12 @@
                   "ai-tools/claude-code",
                   "ai-tools/windsurf"
                 ]
+              },
+              {
+                "group": "Reference",
+                "pages": [
+                  "glossary"
+                ]
               }
             ]
           },
@@ -2588,6 +2594,12 @@
                   "es/ai-tools/claude-code",
                   "es/ai-tools/windsurf"
                 ]
+              },
+              {
+                "group": "Referencia",
+                "pages": [
+                  "es/glossary"
+                ]
               }
             ]
           },
@@ -5087,6 +5099,12 @@
                   "fr/ai-tools/cursor",
                   "fr/ai-tools/claude-code",
                   "fr/ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Référence",
+                "pages": [
+                  "fr/glossary"
                 ]
               }
             ]
