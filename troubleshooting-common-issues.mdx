@@ -1,22 +1,24 @@
 ---
-title: 'Troubleshooting Common Issues'
-description: 'Fixs for the most common problem our user run into.'
+title: 'Troubleshooting common issues'
+description: 'Fixes for the most common issues you might hit, including failed builds, missing dependencies, Node version mismatches, and preview port conflicts.'
 ---
 
-This page list the issue that comes up alot and how to resolves them.
+This page covers the most common issues you might run into and the steps to resolve each one. Work through the fixes in order before opening a support request.
 
 ## Build fails
 
-If you’re build is failing, their is usually a obvious reason. First, checks the logs. Most of the time it because a dependency was not installed correct.
+If your build is failing, there is usually an obvious reason. First, check the logs. Most of the time, the cause is a dependency that was not installed correctly.
 
 Try the following, in order:
 
-1. Delete `node_modules` and ran install again.
-2. Make sure you’re Node version match what is required, see [requirements](/setup/requirements).
-3. Read [the build guide](./build/troubleshoot-build) for more.
+1. Delete `node_modules` and run the install again.
+2. Make sure your Node version matches what is required. See the [prerequisites](/setup-guide#prerequisites).
+3. Read the build guide for more details.
+
+{/* TODO: Step 3 previously linked to ./build/troubleshoot-build, which does not exist in this repo. Restore the link when a build troubleshooting guide is available. */}
 
 ## Preview not loading
 
-When the preview don't load, it often a port conflict. You can changes the port like described in [this page](#changing-the-prot).
+When the preview doesn't load, it is often a port conflict. You can change the port as described in [Custom ports](/development#custom-ports).
 
-For anything else, open a issue on [our tracker](https://github.com/example-broken/repo/issues) and we will looks into it.
+For anything else, open an issue on [our tracker](https://github.com/example-broken/repo/issues) and we will look into it.
