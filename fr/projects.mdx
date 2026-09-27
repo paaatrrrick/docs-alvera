@@ -49,6 +49,14 @@ export default projects;
 Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins de 60 caractères. Réservez l'argumentaire plus long pour `description`.
 </Tip>
 
+## Recherche et filtrage
+
+La page affiche un champ de recherche au-dessus des boutons de filtre par technologie. La grille se filtre au fur et à mesure de la saisie. La requête est comparée sans tenir compte de la casse au `name`, au `tagline` et à la `description` de chaque projet.
+
+La recherche se combine au filtre par technologie : un projet n'apparaît que s'il correspond à la requête et inclut le tag de technologie sélectionné. Sélectionner **All** supprime la contrainte de technologie.
+
+Quand aucun projet ne correspond, la grille affiche l'état vide « No projects match your search. » Videz le champ de recherche ou remettez le filtre sur **All** pour restaurer la liste complète.
+
 ## Conseils de rédaction
 
 La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.

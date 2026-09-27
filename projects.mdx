@@ -49,6 +49,14 @@ export default projects;
 Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
+## Search and filtering
+
+The page renders a search box above the tech filter buttons. Typing in the box filters the grid as you type. The query is matched case-insensitively against each project's `name`, `tagline`, and `description`.
+
+Search combines with the tech filter: a project appears only when it matches the query and includes the selected tech tag. Selecting **All** removes the tech constraint.
+
+When no project matches, the grid shows the empty state "No projects match your search." Clear the search box or switch the tech filter back to **All** to restore the full list.
+
 ## Writing guidance
 
 The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
