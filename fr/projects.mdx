@@ -9,6 +9,15 @@ Le site personnel dispose désormais d'une page dédiée `/projects` qui présen
 
 Les entrées proviennent du tableau `projects` dans `src/constants/projects.js` et sont rendues par le composant `Projects` à la route `/projects`. La page coexiste avec la page d'accueil pour que les visiteurs puissent parcourir le catalogue complet de projets sans faire défiler la landing page.
 
+## Filtrage et recherche
+
+Les visiteurs peuvent affiner la grille de deux manières, et les deux s'appliquent en même temps :
+
+- **Champ de recherche :** un champ `Search projects…` placé au-dessus de la rangée de filtres effectue une correspondance de sous-chaîne, insensible à la casse, sur `name`, `tagline` et `description` de chaque projet.
+- **Filtre par technologie :** la rangée de boutons (générée automatiquement à partir de chaque valeur `tech` du tableau, plus `All`) limite la grille aux projets dont le `tech` inclut le tag sélectionné.
+
+Lorsque la combinaison de filtres ne donne aucun résultat, la grille est remplacée par l'état vide `No projects match your search.` au lieu de ne rien afficher.
+
 ## Quand utiliser cette page
 
 Ajoutez une entrée à `/projects` lorsque vous voulez mettre en avant un projet personnel avec sa propre carte, une accroche et des tags techniques. Utilisez la liste de la page d'accueil pour les projets que vous voulez mettre en avant ; utilisez `/projects` pour le catalogue complet.
