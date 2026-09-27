@@ -1,17 +1,17 @@
 ---
 title: "Page projets : structure et mises à jour"
-description: "Comment la page dédiée /projects est configurée à partir du tableau projects, avec le schéma d'entrée et un exemple de code."
+description: "Configuration de la page dédiée /projects à partir du tableau projects, avec le schéma des entrées, les badges de statut et un exemple de code."
 ---
 
 ## Vue d'ensemble
 
-Le site personnel dispose désormais d'une page dédiée `/projects` qui présente les projets personnels dans une grille responsive. Chaque carte affiche le nom du projet, une accroche d'une ligne, une description plus longue, la stack technique sous forme de tags et un lien vers le dépôt ou le site en ligne.
+Le site personnel dispose désormais d'une page dédiée `/projects`. Elle présente les projets personnels dans une grille responsive. Chaque carte affiche le nom du projet, une accroche, une description, les tags techniques et un lien vers le dépôt ou le site en ligne. Chaque carte affiche aussi un badge de cycle de vie `Active` ou `Archived`, en vert ou en gris.
 
-Les entrées proviennent du tableau `projects` dans `src/constants/projects.js` et sont rendues par le composant `Projects` à la route `/projects`. La page coexiste avec la page d'accueil pour que les visiteurs puissent parcourir le catalogue complet de projets sans faire défiler la landing page.
+Le composant `Projects` lit les entrées du tableau `projects` dans `src/constants/projects.js` et les affiche à `/projects`. Les visiteurs peuvent parcourir la liste complète des projets sans faire défiler la page d'accueil.
 
 ## Quand utiliser cette page
 
-Ajoutez une entrée à `/projects` lorsque vous voulez mettre en avant un projet personnel avec sa propre carte, une accroche et des tags techniques. Utilisez la liste de la page d'accueil pour les projets que vous voulez mettre en avant ; utilisez `/projects` pour le catalogue complet.
+Ajoutez une entrée à `/projects` lorsque vous voulez mettre en avant un projet personnel sur sa propre carte, avec une accroche et des tags techniques. Utilisez la liste de la page d'accueil pour les projets mis en avant. Utilisez `/projects` pour le catalogue complet.
 
 ## Schéma d'entrée
 
@@ -46,26 +46,26 @@ export default projects;
 ```
 
 <Tip>
-Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins de 60 caractères. Réservez l'argumentaire plus long pour `description`.
+Gardez `tagline` assez court pour tenir sur une ligne sur mobile. Visez moins de 60 caractères. Réservez l'argumentaire plus long pour `description`.
 </Tip>
 
 ## Conseils de rédaction
 
-La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
+La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`. La recherche fonctionne aussi avec le filtre par technologie. Utilisez des mots qu'un visiteur rechercherait, comme des catégories de produits, des domaines de problèmes ou des mots-clés de stack absents des tags. Ces mots aident les projets à apparaître dans les résultats.
 
-- **Nom :** utilisez le nom canonique du projet. Évitez les préfixes emoji ; le design de la carte repose sur une hiérarchie typographique nette.
+- **Nom :** utilisez le nom canonique du projet. Évitez les préfixes emoji. Le design de la carte repose sur une hiérarchie typographique nette.
 - **Accroche :** commencez par la catégorie ou la mécanique principale (« Gestionnaire de favoris auto-hébergé », pas « Un projet que j'ai fait »).
 - **Description :** une ou deux phrases. Indiquez ce que fait le projet et le public visé.
 - **Tags techniques :** listez les éléments structurants de la stack, pas chaque dépendance. Trois à cinq tags se lisent le mieux.
-- **Statut :** utilisez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous arrêtez de publier des mises à jour pour que les visiteurs sachent que le projet est figé — le badge devient gris au lieu de vert.
+- **Statut :** utilisez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous arrêtez de publier des mises à jour. Les visiteurs comprennent ainsi que le projet est figé. Le badge devient gris au lieu de vert.
 - **Lien :** préférez l'URL du dépôt pour les projets open source, ou le site en ligne pour les projets hébergés.
 
 ## Navigation
 
-La page est branchée dans `src/App.js` ainsi :
+L'application enregistre la page dans `src/App.js` ainsi :
 
 ```js src/App.js
 <Route exact path='/projects' component={Projects} />
 ```
 
-Faites un lien vers cette page depuis n'importe où sur le site avec `/projects`. La page inclut un lien « ← Back home » dans son en-tête pour les visiteurs qui arrivent directement sur la route.
+Faites un lien vers cette page depuis n'importe où sur le site avec `/projects`. Les visiteurs qui ouvrent directement la route voient un lien « ← Back home » dans l'en-tête.
