@@ -49,6 +49,15 @@ export default projects;
 Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins de 60 caractères. Réservez l'argumentaire plus long pour `description`.
 </Tip>
 
+## Recherche et filtrage
+
+Les visiteurs peuvent affiner la grille de `/projects` de deux façons. Les deux contrôles se combinent : un projet doit correspondre aux deux pour s'afficher.
+
+- **Champ de recherche :** le champ "Search projects…" filtre les cartes par `name`, `tagline` ou `description`. La correspondance ne tient pas compte de la casse et ignore les espaces en début et en fin de saisie. La recherche ne porte pas sur `tech` ni sur `status`.
+- **Filtre par technologie :** une rangée de boutons liste tous les tags présents dans les tableaux `tech`, triés par ordre alphabétique, après un bouton `All`. Sélectionner un tag n'affiche que les projets qui l'incluent. Sélectionnez `All` pour retirer le filtre.
+
+Lorsqu'aucun projet ne correspond à la recherche et au filtre par technologie actuels, la page affiche le message "No projects match your search." à la place de la grille.
+
 ## Conseils de rédaction
 
 La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.

@@ -49,6 +49,15 @@ export default projects;
 Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
+## Search and filtering
+
+Visitors can narrow the `/projects` grid in two ways. The two controls combine, so a project must match both to appear.
+
+- **Search box:** The "Search projects…" input filters cards by `name`, `tagline`, or `description`. Matching is case-insensitive and ignores leading and trailing whitespace. The search doesn't match against `tech` or `status`.
+- **Tech filter:** A row of buttons lists every tag found across all `tech` arrays, sorted alphabetically, after an `All` button. Selecting a tag shows only projects that include it. Select `All` to clear the filter.
+
+When no projects match the current search and tech filter, the page shows the message "No projects match your search." in place of the grid.
+
 ## Writing guidance
 
 The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
