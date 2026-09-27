@@ -23,7 +23,7 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 | `tagline`     | string   | Resumen de una línea que aparece justo debajo del nombre.                                         |
 | `description` | string   | Párrafo más largo que explica qué hace el proyecto y a quién va dirigido.                         |
 | `tech`        | string[] | Etiquetas del stack renderizadas como una lista horizontal (por ejemplo, `['React', 'Rust']`).    |
-| `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
+| `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta: verde para activos, gris para archivados. El CSS de la tarjeta convierte la etiqueta a mayúsculas, así que escribe el valor del campo en formato título. |
 | `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
 
 ## Añadir un proyecto
