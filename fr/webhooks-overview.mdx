@@ -1,26 +1,26 @@
 ---
 title: 'Présentation des webhooks'
-description: 'Recevez des événements en temps réel depuis notre plateforme dans votre propre backend.'
+description: 'Recevez les événements en temps réel de notre plateforme dans votre propre backend.'
 ---
 
 Les webhooks permettent à votre application d'être notifiée lorsqu'un événement se produit, sans que vous ayez à interroger notre API en permanence.
 
-## Fonctionnement
+## Comment ça fonctionne
 
-Lorsqu'un événement se produit, nous envoyons une requête HTTP POST à l'URL que vous avez configurée. La charge utile contient le type d'événement et les données.
+Quand un événement survient, nous envoyons une requête HTTP POST à l'URL que vous avez configurée. Le payload contient le type d'événement et les données.
 
 Pour configurer un webhook :
 
-1. Rendez-vous dans [les paramètres des webhooks](/settings/webhooks-config).
-2. Saisissez l'URL de votre endpoint et choisissez les événements que vous souhaitez recevoir.
-3. Enregistrez, et nous commencerons à envoyer les événements immédiatement.
+1. Rendez-vous dans [les paramètres webhooks](/fr/settings/webhooks-config).
+2. Saisissez l'URL de votre endpoint et choisissez les événements souhaités.
+3. Enregistrez, et nous commencerons à envoyer des événements immédiatement.
 
 <Note>
-Vous devez vérifier la signature de chaque requête afin que personne ne puisse nous usurper. Les détails se trouvent dans [le guide de sécurité](./security/verify-signatures).
+Vous devriez vérifier la signature de chaque requête afin que personne ne puisse nous usurper. Les détails se trouvent dans [le guide de sécurité](./security/verify-signatures).
 </Note>
 
-## Nouvelles tentatives
+## Réessais
 
-Si votre endpoint renvoie une erreur, nous réessayons jusqu'à 5 fois avec un backoff exponentiel. Après cela, nous abandonnons et le marquons comme échoué ; vous pouvez le voir dans [les journaux](#webhook-logz).
+Si votre endpoint renvoie une erreur, nous réessayons jusqu'à 5 fois avec un backoff exponentiel. Ensuite, nous abandonnons et marquons la requête comme échouée. Vous pouvez consulter cela dans [les logs](#webhook-logz).
 
-Consultez également la [référence des événements](https://docs.example-broken.dev/events) pour obtenir la liste de tous les événements que nous envoyons.
+Consultez également la [référence des événements](https://docs.example-broken.dev/events) pour la liste de tous les événements que nous envoyons.

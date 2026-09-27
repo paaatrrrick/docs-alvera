@@ -11,19 +11,19 @@ icon: 'image'
 
 ## Imagen
 
-### Usando Markdown
+### Con Markdown
 
-La [sintaxis Markdown](https://www.markdownguide.org/basic-syntax/#images) te permite añadir imágenes con el siguiente código
+Usa la [sintaxis de Markdown](https://www.markdownguide.org/basic-syntax/#images) para añadir imágenes:
 
 ```md
 ![title](/path/image.jpg)
 ```
 
-Ten en cuenta que el tamaño del archivo de imagen debe ser inferior a 5 MB. De lo contrario, recomendamos alojarlas en un servicio como [Cloudinary](https://cloudinary.com/) o [S3](https://aws.amazon.com/s3/). Después, podrás usar esa URL e incrustarla.
+Los archivos de imagen deben ser menores de 5 MB. Para imágenes más grandes, alójalas en un servicio como [Cloudinary](https://cloudinary.com/) o [S3](https://aws.amazon.com/s3/) e incrusta la URL.
 
-### Usando incrustaciones
+### Con incrustaciones
 
-Para obtener más opciones de personalización con las imágenes, también puedes usar [incrustaciones](https://mintlify.com/docs/image-embeds) para añadir imágenes
+Para mayor control sobre las imágenes, usa [incrustaciones](https://mintlify.com/docs/image-embeds):
 
 ```html
 <img height="200" src="/path/image.jpg" />
@@ -46,13 +46,13 @@ Para obtener más opciones de personalización con las imágenes, también puede
 
 <Tip>
 
-Mintlify admite [etiquetas HTML en Markdown](https://www.markdownguide.org/basic-syntax/#html). Esto es útil si prefieres las etiquetas HTML a la sintaxis Markdown, y te permite crear documentación con una flexibilidad infinita.
+Mintlify admite [etiquetas HTML en Markdown](https://www.markdownguide.org/basic-syntax/#html). Esto es útil si prefieres las etiquetas HTML a la sintaxis de Markdown, y te permite crear documentación con flexibilidad infinita.
 
 </Tip>
 
 ### iFrames
 
-Carga otra página HTML dentro del documento. Se usa más comúnmente para incrustar vídeos.
+Usa un iframe para cargar otra página HTML dentro del documento. Esto se usa habitualmente para incrustar vídeos.
 
 ```html
 <iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>
