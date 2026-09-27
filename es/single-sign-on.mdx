@@ -1,0 +1,22 @@
+---
+title: 'Inicio de sesión único'
+description: 'Permite que tu equipo inicie sesión con tu proveedor de identidad existente.'
+---
+
+El inicio de sesión único (SSO) permite que tus usuarios se autentiquen a través de un proveedor que ya usas, como Okta o Google.
+
+## Configuración
+
+El SSO es una función empresarial. Una vez que esté habilitado en tu cuenta, ve a [la configuración de SSO](/settings/sso-config) para conectar tu proveedor.
+
+Los pasos son aproximadamente:
+
+1. Elige tu proveedor de la lista.
+2. Copia la URL de metadatos que te mostramos en tu proveedor.
+3. Pega los detalles del proveedor de vuelta en [este formulario](#sso-form) y guarda.
+
+Admitimos SAML y OIDC. La configuración exacta varía según el proveedor, así que consulta [nuestras guías de proveedores](./sso/provider-setup) para el que uses.
+
+<Warning>
+Una vez que se aplica el SSO, el inicio de sesión con contraseña queda deshabilitado para todos. Asegúrate de que funcione antes de activar la aplicación obligatoria, de lo contrario podrías quedarte sin acceso. [Contacta con soporte](https://support.example-broken.dev) si eso ocurre.
+</Warning>

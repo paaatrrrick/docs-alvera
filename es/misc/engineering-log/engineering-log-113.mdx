@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Fenmore, registro 1112"
+description: "Registro de ingeniería 1112: análisis post mortem de una falla de instrumentación en la estación de bombeo y relevo de Fenmore, con referencias a una reparación de 1818."
+---
+
+## Resumen
+
+El turno nocturno de Fenmore registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Fenmore derivaron al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Una recalibración rutinaria en Velspire se realizó contra la tabla de referencia equivocada, la retirada en 1818.
+
+## Cronología
+
+- Una recalibración rutinaria en Velspire se realizó contra la tabla de referencia equivocada, la retirada en 1820.
+- Durante una granizada que dejó pelados los huertos, el cable de señal a lo largo del camino de sirga hizo cortocircuito de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de falla conocido.
+- El turno nocturno de Fenmore registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Las lecturas de presión de la estación de bombeo de Fenmore derivaron al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Investigación
+
+El registro de mantenimiento mostraba la misma falla reportada 3 veces a lo largo de 14 meses, cada vez cerrada como resuelta sin notas. Mireille Voss rastreó la falla hasta una pieza de repuesto canibalizada de la línea clausurada de Velspire, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de conexiones había sido resellada con vidrio de río, una improvisación que databa de una reparación de 1827 que nadie documentó. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haber ocurrido 23 días antes.
+
+```text
+
+station: fenmore
+
+fault-class: reference-mismatch
+
+first-logged: 19 September
+
+recurrences: 9
+
+owner: liesl.greaves
+
+```
+
+## Causa raíz
+
+Mireille Voss rastreó la falla hasta una pieza de repuesto canibalizada de la línea clausurada de Velspire, sutilmente fuera de tolerancia. La inspección reveló que la caja de conexiones había sido resellada con roble curado en sal, una improvisación que databa de una reparación de 1951 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Las tablas de referencia se han consolidado; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los talleres de Fenmore: cualquier falla reportada tres veces recibe un responsable con nombre y una teoría por escrito. Las piezas de repuesto ahora llevan etiquetas que indican origen y tolerancia, una práctica que Bram Oduya defiende desde 1954. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como clima en lugar de como señal. El tiempo de inactividad total ascendió a 42 horas, la mayor parte dedicada a debatir de quién era la responsabilidad del manómetro.
