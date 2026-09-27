@@ -5,9 +5,17 @@ description: "How the dedicated /projects showcase page is configured from the p
 
 ## Overview
 
-The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site.
+The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, an Active or Archived status badge, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site.
 
 Entries are sourced from the `projects` array in `src/constants/projects.js` and rendered by the `Projects` component at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
+
+## Status badges
+
+Each card header shows a status badge next to the project name, driven by the `status` field. The `Projects` component lowercases the value and applies it as a CSS class (`projectStatus active` or `projectStatus archived`). `'Active'` renders as a green badge. `'Archived'` renders as a gray badge.
+
+<Note>
+`status` is required. The component calls `project.status.toLowerCase()`, so an entry without `status` breaks the page render.
+</Note>
 
 ## When to use this page
 
@@ -46,18 +54,18 @@ export default projects;
 ```
 
 <Tip>
-Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
+Keep `tagline` short enough to fit on one line on mobile. Aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
 
 ## Writing guidance
 
-The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type — product category, problem space, or stack keywords that aren't already tags — so projects surface from search.
+The `/projects` page includes a search box that matches against `name`, `tagline`, and `description`, combined with the tech filter. Write those three fields with the words a visitor would actually type so projects surface from search. Include the product category, problem space, or stack keywords that aren't already tags.
 
 - **Name:** Use the canonical project name. Skip emoji prefixes; the card design relies on a clean type hierarchy.
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
 - **Description:** One or two sentences. Mention what it does and the audience or use case.
 - **Tech tags:** List the load-bearing pieces of the stack, not every dependency. Three to five tags reads best.
-- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen — the badge turns gray instead of green.
+- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen. The badge turns gray instead of green.
 - **Link:** Prefer the repository URL for open-source work, or the live site for hosted projects.
 
 ## Navigation
