@@ -1,0 +1,54 @@
+---
+title: "Release process"
+description: "How documentation changes move from a branch to production."
+---
+
+Every documentation change ships through a pull request against the `main` branch. Merging to `main` triggers a production deploy.
+
+## Prerequisites
+
+- Write access to the documentation repository
+- The Mintlify CLI installed locally. See the [development guide](/development).
+
+## 1. Create a branch
+
+Start every change from an up-to-date `main` branch.
+
+```bash
+git checkout main
+git pull
+git checkout -b docs/your-change
+```
+
+## 2. Make and preview your changes
+
+Edit the MDX files and update `docs.json` if you add, move, or remove a page. Preview the site locally.
+
+```bash
+mint dev
+```
+
+## 3. Validate before you push
+
+Run the validation and link checks from the repository root. Fix any errors your change introduces.
+
+```bash
+mint validate
+mint broken-links
+```
+
+## 4. Open a pull request
+
+Push your branch and open a pull request against `main`. Include a short summary of what changed and why.
+
+## 5. Get a review
+
+At least one other team member reviews every pull request before it merges. Reviewers check accuracy, style, and navigation changes.
+
+<Warning>
+Don't bypass branch protection or merge your own pull request without review. Branch protection on `main` keeps unreviewed changes out of production.
+</Warning>
+
+## 6. Merge and deploy
+
+After approval, merge the pull request. Mintlify deploys the updated `main` branch to production automatically. To roll back a change, revert the merge commit in a new pull request.
