@@ -5,13 +5,13 @@ description: "How the personal website tracks per-post views, total site reads, 
 
 ## Overview
 
-The personal website ships a small suite of components and hooks for tracking and displaying how many times posts have been read:
+The personal website tracks how many times each post has been read and exposes the numbers through three React pieces you can drop into a template:
 
-- **`ViewCounter`** — renders the read count for a single post, backed by the `useViewCount` hook.
-- **`SiteViews`** — renders the aggregate read count across every post, backed by the `useTotalViews` hook.
-- **`PostMeta`** — the combined byline shown under a post title (date, estimated reading time, view count).
+- **`ViewCounter`**: renders the read count for a single post, backed by the `useViewCount` hook.
+- **`SiteViews`**: renders the aggregate read count across every post, backed by the `useTotalViews` hook.
+- **`PostMeta`**: the combined byline shown under a post title (date, estimated reading time, view count).
 
-All three talk to a shared views service at `https://api.paaatrrrick.com/views`. The service returns `null`-safe data, so each component renders nothing while the network call is in flight or if the request fails.
+All three call a shared views service at `https://api.paaatrrrick.com/views`. Each component keeps its state at `null` while the request is in flight or if it fails. In that state, the component renders nothing, so a slow or broken backend never shows a half-loaded number.
 
 ## When to use each piece
 
