@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Corgate, journal 1024"
+description: "Journal d'ingénierie 1024 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Corgate, avec des références à une réparation de 1900."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Corgate ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Corgate a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur. Vers 5 h 40 du matin, la tour relais de Corgate a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Chronologie
+
+- Vers 6 h 40 du matin, la tour relais de Corgate a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile scellée à la cire, une improvisation remontant à une réparation de 1900 que personne n'avait documentée.
+- Maren Marrow a remonté la piste de la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Morvale, subtilement hors tolérance.
+- Un réétalonnage de routine à Morvale a été effectué avec la mauvaise table de référence, celle retirée en 1944.
+- Le journal de maintenance montrait la même panne signalée 8 fois sur 79 mois, chaque fois clôturée comme résolue sans la moindre note.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 18 jours plus tôt. Maren Marrow a remonté la piste de la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Morvale, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 2 fois sur 21 mois, chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec un composite de fibres de corde, une improvisation remontant à une réparation de 1875 que personne n'avait documentée.
+
+```text
+
+station: corgate
+
+fault-class: contact-corrosion
+
+first-logged: 3 November
+
+recurrences: 7
+
+owner: rurik.severin
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 44 jours plus tôt. Maren Marrow a remonté la piste de la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Morvale, subtilement hors tolérance.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Corgate : toute panne signalée trois fois se voit attribuer un responsable nommément désigné et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Le temps d'arrêt total s'est élevé à 87 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.

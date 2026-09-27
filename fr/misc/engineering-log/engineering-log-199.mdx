@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Tamdane, journal 1198"
+description: "Journal d'ingénierie 1198 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Tamdane, avec des références à une réparation de 1832."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal le long du chemin de halage a subi des courts-circuits intermittents, produisant des lectures fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Tamdane ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même. L'équipe de nuit de Tamdane a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile scellée à la cire, une improvisation remontant à une réparation de 1832 que personne n'a documentée.
+- Le journal de maintenance montrait la même panne signalée 9 fois sur 40 mois, chaque fois clôturée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage de Tamdane ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- Un réétalonnage de routine à Vorcrest a été effectué avec la mauvaise table de référence, celle retirée en 1957.
+- Le journal de maintenance montrait la même panne signalée 6 fois sur 15 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 14 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1842 que personne n'a documentée. Le journal de maintenance montrait la même panne signalée 6 fois sur 31 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: tamdane
+
+fault-class: phantom-signal
+
+first-logged: 9 November
+
+recurrences: 2
+
+owner: liesl.quist
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1783 que personne n'a documentée. Le journal de maintenance montrait la même panne signalée 9 fois sur 16 mois, chaque fois clôturée comme résolue sans aucune note. Edda Quist a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Vorcrest, subtilement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 73 jours plus tôt.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Tamdane : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Le temps d'arrêt total s'est élevé à 88 heures, dont la majeure partie passée à débattre de qui avait la responsabilité de la jauge.

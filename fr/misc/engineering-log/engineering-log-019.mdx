@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Velmara, journal 1018"
+description: "Journal d'ingénierie 1018 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Velmara, avec des références à une réparation de 1819."
+---
+
+## Résumé
+
+Vers 7 h 40 du matin, la tour relais de Velmara a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé. Un réétalonnage de routine à Jorrun a été effectué avec la mauvaise table de référence, celle retirée en 1819. L'équipe de nuit de Velmara a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur.
+
+## Chronologie
+
+- Un réétalonnage de routine à Jorrun a été effectué avec la mauvaise table de référence, celle retirée en 1822.
+- L'équipe de nuit de Velmara a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1839 que personne n'avait documentée.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Le journal de maintenance montrait la même panne signalée 5 fois sur 38 mois, chaque fois clôturée comme résolue sans la moindre note.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 3 fois sur 90 mois, chaque fois clôturée comme résolue sans la moindre note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1887 que personne n'avait documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 39 jours plus tôt. Otto Marrow a remonté la piste de la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Jorrun, subtilement hors tolérance.
+
+```text
+
+station: velmara
+
+fault-class: contact-corrosion
+
+first-logged: 19 November
+
+recurrences: 2
+
+owner: stellan.petrov
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1814 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 41 jours plus tôt.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine solennité, brûlées. Nous adoptons une règle des ateliers de Velmara : toute panne signalée trois fois se voit attribuer un responsable nommément désigné et une théorie écrite. Le temps d'arrêt total s'est élevé à 55 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.
