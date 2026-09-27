@@ -49,9 +49,18 @@ export default projects;
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
+## Filtros y búsqueda
+
+La página `/projects` ofrece dos formas de acotar la cuadrícula, que se combinan con semántica AND:
+
+- **Cuadro de búsqueda.** Coincidencia de subcadena sin distinguir mayúsculas contra `name`, `tagline` y `description` de cada proyecto. Se recortan los espacios iniciales y finales; una consulta vacía coincide con todos los proyectos.
+- **Filtro por tecnología.** Una fila de botones derivada de la unión del array `tech` de cada proyecto, ordenada alfabéticamente y precedida por un botón **All**. Al hacer clic en una etiqueta se restringe la cuadrícula a los proyectos cuyo `tech` incluye esa etiqueta.
+
+Cuando ningún proyecto coincide con la búsqueda y el filtro activos, la cuadrícula se reemplaza por un estado vacío: `No projects match your search.` Vacía el cuadro de búsqueda o haz clic en **All** para recuperar la lista completa.
+
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+Como el cuadro de búsqueda coincide con `name`, `tagline` y `description`, redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
