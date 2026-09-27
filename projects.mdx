@@ -1,6 +1,6 @@
 ---
 title: "Projects page: structure and updates"
-description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema and a code example."
+description: "How the /projects showcase page is built from the projects array, covering the entry schema, search and tech filtering, and a code example."
 ---
 
 ## Overview
@@ -48,6 +48,12 @@ export default projects;
 <Tip>
 Keep `tagline` short enough to fit on one line on mobile — aim for under 60 characters. Save the longer pitch for `description`.
 </Tip>
+
+## Search and filtering
+
+The `/projects` page renders a search box above the tech filter. Typing a query narrows the grid to projects whose `name`, `tagline`, or `description` contains the query. Matching is case-insensitive and ignores leading and trailing whitespace.
+
+Search combines with the tech filter. A project stays visible only if it matches the active tech tag and the query. When nothing matches, the grid shows the empty state "No projects match your search." Clear the search box or switch the filter back to **All** to restore the full list.
 
 ## Writing guidance
 
