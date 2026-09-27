@@ -1,15 +1,30 @@
 ---
-title: 'Glossary of Common Documentation Terms and Concepts'
-description: 'A short reference that defines the terms you will encounter most often while writing, configuring, and publishing your documentation site.'
+title: 'Glossary'
+description: 'Definitions of five terms used throughout these docs: deployment, preview, navigation, snippet, and frontmatter, with links to setup guides.'
 ---
 
 This glossary defines the terms used throughout these docs. Skim it once, then refer back whenever a word is unclear.
 
-## Terms
+## Deployment
 
-- **Deployment** — A published version of your site. Each push to your main branch creates a new deployment.
-- **Preview** — A temporary build of a pull request, so you can review changes before they go live.
-- **Navigation** — The sidebar structure that organizes your pages, defined in your config file.
-- **Snippet** — A reusable block of content you can include on multiple pages.
+A published version of your site. Each push to your main branch creates a new deployment.
 
-If you are just getting started, read the [quickstart](/quickstart) first, then set up your environment with the [local development guide](/development).
+## Preview
+
+A temporary build of a pull request. Use it to review changes before they go live.
+
+## Navigation
+
+The sidebar structure that organizes your pages. You define it in the `navigation` property of `docs.json`.
+
+## Snippet
+
+A reusable block of content stored in the `snippets/` directory. You can include a snippet on multiple pages to avoid duplicating content.
+
+## Frontmatter
+
+The YAML block at the top of each MDX page, delimited by `---`. It sets page metadata such as `title` and `description`.
+
+## Next steps
+
+If you are just getting started, read the [quickstart](/quickstart) first. Then set up your environment with the [local development guide](/development).
