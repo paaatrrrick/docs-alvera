@@ -57,7 +57,7 @@ The `/projects` page includes a search box that matches against `name`, `tagline
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
 - **Description:** One or two sentences. Mention what it does and the audience or use case.
 - **Tech tags:** List the load-bearing pieces of the stack, not every dependency. Three to five tags reads best.
-- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen — the badge turns gray instead of green.
+- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen. The badge turns gray for `'Archived'` and green for `'Active'`.
 - **Link:** Prefer the repository URL for open-source work, or the live site for hosted projects.
 
 ## Navigation
@@ -69,3 +69,8 @@ The page is wired up in `src/App.js` as:
 ```
 
 Link to it from anywhere in the site with `/projects`. The page includes a "← Back home" link in its header for visitors who land directly on the route.
+
+## Recent changes
+
+- **2026-09-15:** Each project card now renders an `Active` or `Archived` status badge in the card header, sourced from the required `status` field on every entry in `src/constants/projects.js`.
+

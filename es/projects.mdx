@@ -57,7 +57,7 @@ La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
 - **Descripción:** Una o dos oraciones. Indica qué hace y a quién va dirigido.
 - **Etiquetas de tecnología:** Enumera las piezas principales del stack, no todas las dependencias. De tres a cinco etiquetas se lee mejor.
-- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
+- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado. La insignia se muestra en gris para `'Archived'` y en verde para `'Active'`.
 - **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
 
 ## Navegación
@@ -69,3 +69,8 @@ La página se registra en `src/App.js` como:
 ```
 
 Enlaza a la página desde cualquier parte del sitio con `/projects`. La página incluye un enlace "← Back home" en su encabezado para quienes lleguen directamente a la ruta.
+
+## Cambios recientes
+
+- **2026-09-15:** Cada tarjeta de proyecto ahora muestra una insignia de estado `Active` o `Archived` en el encabezado de la tarjeta, tomada del campo `status` obligatorio en cada entrada de `src/constants/projects.js`.
+
