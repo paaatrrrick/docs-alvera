@@ -49,9 +49,18 @@ export default projects;
 Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins de 60 caractères. Réservez l'argumentaire plus long pour `description`.
 </Tip>
 
+## Filtrage et recherche
+
+Les visiteurs peuvent restreindre la grille de deux façons, et les deux s'appliquent simultanément :
+
+- **Champ de recherche :** un champ de texte au-dessus du filtre par technologie filtre sur `name`, `tagline` et `description` de chaque projet. La correspondance est insensible à la casse et cherche des sous-chaînes, donc `"note"` correspond à « Notes app » dans une accroche.
+- **Filtre par technologie :** les boutons sous le champ de recherche listent chaque valeur unique du tableau `tech` de chaque projet, plus un bouton `All`. Sélectionner une technologie restreint la grille aux projets dont le tableau `tech` contient ce tag.
+
+Lorsque les deux sont actifs, les projets doivent satisfaire le filtre par technologie **et** correspondre à la recherche pour apparaître. Si rien ne correspond, la grille affiche l'état vide `No projects match your search.` au lieu d'une zone vide.
+
 ## Conseils de rédaction
 
-La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
+Comme le champ de recherche filtre sur `name`, `tagline` et `description`, rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
 
 - **Nom :** utilisez le nom canonique du projet. Évitez les préfixes emoji ; le design de la carte repose sur une hiérarchie typographique nette.
 - **Accroche :** commencez par la catégorie ou la mécanique principale (« Gestionnaire de favoris auto-hébergé », pas « Un projet que j'ai fait »).

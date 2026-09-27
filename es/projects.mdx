@@ -49,9 +49,18 @@ export default projects;
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
+## Filtrado y búsqueda
+
+Las personas visitantes pueden acotar la cuadrícula de dos maneras, y ambas se aplican a la vez:
+
+- **Cuadro de búsqueda:** un campo de texto sobre el filtro por tecnología coincide con `name`, `tagline` y `description` de cada proyecto. La coincidencia no distingue mayúsculas ni minúsculas y busca subcadenas, por lo que `"note"` coincide con «Notes app» en un eslogan.
+- **Filtro por tecnología:** los botones debajo del cuadro de búsqueda listan cada valor único del array `tech` de cada proyecto, más un botón `All`. Al seleccionar una tecnología, la cuadrícula se restringe a los proyectos cuyo array `tech` contenga esa etiqueta.
+
+Cuando ambos están activos, los proyectos deben cumplir el filtro por tecnología **y** coincidir con la búsqueda para aparecer. Si nada coincide, la cuadrícula muestra el estado vacío `No projects match your search.` en lugar de un área vacía.
+
 ## Guía de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+Como el cuadro de búsqueda coincide con `name`, `tagline` y `description`, redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
 
 - **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
