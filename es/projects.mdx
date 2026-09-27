@@ -5,13 +5,26 @@ description: "Cómo se configura la página dedicada /projects a partir del arra
 
 ## Resumen
 
-El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo.
+El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo. Un cuadro de búsqueda y un filtro por tecnología encima de la cuadrícula permiten acotar la lista.
 
 Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
 
 ## Cuándo usar esta página
 
 Añade una entrada a `/projects` cuando quieras destacar un proyecto personal con su propia tarjeta, un eslogan y etiquetas de tecnología. Usa la lista de la página de inicio para los proyectos que quieras mostrar al frente; usa `/projects` para el catálogo completo.
+
+## Búsqueda y filtrado
+
+Entre el encabezado de la página y la cuadrícula hay dos controles: un cuadro de búsqueda y una fila de botones de filtro por tecnología.
+
+- **Cuadro de búsqueda:** Filtra las tarjetas mientras la persona escribe. Una tarjeta permanece visible cuando la consulta aparece en su `name`, `tagline` o `description`. La coincidencia no distingue mayúsculas de minúsculas e ignora los espacios al inicio y al final. Al vaciar el cuadro se restauran todas las tarjetas permitidas por el filtro de tecnología.
+- **Filtro por tecnología:** Un botón por cada etiqueta única de todos los arrays `tech`, ordenados alfabéticamente, más un botón `All` que quita el filtro. Al hacer clic en una etiqueta solo se muestran los proyectos cuyo array `tech` la incluye.
+
+Ambos controles se combinan. Una tarjeta se renderiza solo cuando incluye la etiqueta de tecnología activa y coincide con la consulta de búsqueda. Por ejemplo, al seleccionar `React` y escribir `notes` solo se muestran los proyectos de React cuyo texto menciona notes.
+
+Cuando ningún proyecto pasa ambos filtros, la cuadrícula muestra el mensaje de estado vacío "No projects match your search." Para volver a ver las tarjetas, vacía el cuadro de búsqueda o cambia el filtro de nuevo a `All`.
+
+Ninguno de los dos controles necesita configuración. La búsqueda y el filtro leen los mismos campos definidos en el esquema de entrada siguiente, así que las nuevas entradas se pueden buscar en cuanto se añaden.
 
 ## Esquema de entrada
 

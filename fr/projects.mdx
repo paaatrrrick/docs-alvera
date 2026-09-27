@@ -5,13 +5,26 @@ description: "Comment la page dédiée /projects est configurée à partir du ta
 
 ## Vue d'ensemble
 
-Le site personnel dispose désormais d'une page dédiée `/projects` qui présente les projets personnels dans une grille responsive. Chaque carte affiche le nom du projet, une accroche d'une ligne, une description plus longue, la stack technique sous forme de tags et un lien vers le dépôt ou le site en ligne.
+Le site personnel dispose désormais d'une page dédiée `/projects` qui présente les projets personnels dans une grille responsive. Chaque carte affiche le nom du projet, une accroche d'une ligne, une description plus longue, la stack technique sous forme de tags et un lien vers le dépôt ou le site en ligne. Un champ de recherche et un filtre par technologie au-dessus de la grille permettent d'affiner la liste.
 
 Les entrées proviennent du tableau `projects` dans `src/constants/projects.js` et sont rendues par le composant `Projects` à la route `/projects`. La page coexiste avec la page d'accueil pour que les visiteurs puissent parcourir le catalogue complet de projets sans faire défiler la landing page.
 
 ## Quand utiliser cette page
 
 Ajoutez une entrée à `/projects` lorsque vous voulez mettre en avant un projet personnel avec sa propre carte, une accroche et des tags techniques. Utilisez la liste de la page d'accueil pour les projets que vous voulez mettre en avant ; utilisez `/projects` pour le catalogue complet.
+
+## Recherche et filtrage
+
+Deux contrôles se trouvent entre l'en-tête de la page et la grille : un champ de recherche et une rangée de boutons de filtre par technologie.
+
+- **Champ de recherche :** filtre les cartes à mesure que le visiteur tape. Une carte reste visible lorsque la requête apparaît dans son `name`, sa `tagline` ou sa `description`. La correspondance ignore la casse ainsi que les espaces en début et fin de saisie. Vider le champ restaure toutes les cartes autorisées par le filtre de technologie.
+- **Filtre par technologie :** un bouton par tag unique parmi tous les tableaux `tech`, triés par ordre alphabétique, plus un bouton `All` qui retire le filtre. Cliquer sur un tag n'affiche que les projets dont le tableau `tech` le contient.
+
+Les deux contrôles se combinent. Une carte ne s'affiche que si elle contient le tag de technologie actif et correspond à la requête de recherche. Par exemple, sélectionner `React` et taper `notes` n'affiche que les projets React dont le texte mentionne notes.
+
+Lorsqu'aucun projet ne passe les deux filtres, la grille affiche le message d'état vide « No projects match your search. » Les visiteurs peuvent vider le champ de recherche ou remettre le filtre sur `All` pour revoir les cartes.
+
+Aucun des deux contrôles ne nécessite de configuration. La recherche et le filtre lisent les mêmes champs définis dans le schéma d'entrée ci-dessous, donc les nouvelles entrées sont cherchables dès leur ajout.
 
 ## Schéma d'entrée
 
