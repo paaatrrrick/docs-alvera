@@ -5,7 +5,7 @@ description: "Cómo se configura la página dedicada /projects a partir del arra
 
 ## Resumen
 
-El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo.
+El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo. Un cuadro de búsqueda y un filtro por tecnología sobre la cuadrícula permiten acotar la lista.
 
 Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
 
@@ -48,6 +48,14 @@ export default projects;
 <Tip>
 Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
+
+## Búsqueda y filtrado
+
+La página muestra un cuadro de búsqueda encima de los botones del filtro por tecnología. Al escribir en el cuadro, la cuadrícula se filtra en tiempo real. Un proyecto permanece visible cuando la consulta aparece en su `name`, `tagline` o `description`. La coincidencia no distingue mayúsculas de minúsculas y se ignoran los espacios al inicio o al final de la consulta.
+
+El cuadro de búsqueda y el filtro por tecnología se combinan. Cuando hay una etiqueta seleccionada, un proyecto debe coincidir con la etiqueta y con la consulta para aparecer.
+
+Cuando ningún proyecto coincide, la cuadrícula muestra el estado vacío "No projects match your search." Borrar el cuadro de búsqueda o volver a seleccionar **All** en el filtro restaura la lista completa.
 
 ## Guía de redacción
 
