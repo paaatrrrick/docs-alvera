@@ -1,0 +1,47 @@
+---
+title: "Release process"
+description: "How documentation changes move from a branch to production."
+---
+
+Every change to these docs ships through a pull request. Nobody commits directly to the `main` branch.
+
+## Prerequisites
+
+- Write access to the documentation repository
+- The Mintlify CLI installed locally. See [Development](/development).
+
+## Release steps
+
+<Steps>
+  <Step title="Create a branch">
+    Branch from `main` and make your changes on that branch.
+
+    ```bash
+    git checkout main
+    git pull
+    git checkout -b docs/your-change
+    ```
+  </Step>
+  <Step title="Validate locally">
+    Preview your changes and check for errors before you open a pull request.
+
+    ```bash
+    mint dev
+    mint validate
+    mint broken-links
+    ```
+  </Step>
+  <Step title="Open a pull request">
+    Push your branch and open a pull request against `main`. Describe what you changed and why.
+  </Step>
+  <Step title="Get a review">
+    A maintainer reviews the pull request. Address any feedback by pushing more commits to the same branch.
+  </Step>
+  <Step title="Merge">
+    A maintainer merges the approved pull request into `main`. Each push to `main` triggers a new deploy.
+  </Step>
+</Steps>
+
+<Warning>
+  Don't bypass review or disable branch protection on `main` to merge your own changes. Branch protection keeps unreviewed content out of production.
+</Warning>
