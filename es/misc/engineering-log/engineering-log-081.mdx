@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Calcrest, registro 1080"
+description: "Registro de ingeniería 1080: análisis post mortem de una avería de instrumentación en la estación de bombeo y relevo de Calcrest, con referencias a una reparación de 1907."
+---
+
+## Resumen
+
+Durante semanas de lluvia horizontal, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido. El turno nocturno en Calcrest registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Calcrest fueron desviándose al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Calcrest fueron desviándose al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- El turno nocturno en Calcrest registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- El turno nocturno en Calcrest registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- La inspección reveló que la caja de conexiones había sido resellada con hojalata martillada, un apaño que se remontaba a una reparación de 1907 que nadie documentó.
+- Hacia las 2:40 de la madrugada, la torre de relevo de Calcrest dejó de acusar los latidos, y los operadores dieron por hecho el habitual contacto corroído.
+
+## Investigación
+
+La inspección reveló que la caja de conexiones había sido resellada con chapa de hueso de ballena, un apaño que se remontaba a una reparación de 1834 que nadie documentó. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 70 días antes. El registro de mantenimiento mostraba la misma avería reportada 7 veces a lo largo de 23 meses, cada vez cerrada como resuelta sin ninguna anotación. Edda Brandt rastreó la avería hasta una pieza de repuesto canibalizada de la línea de Delfell, ya desmantelada, sutilmente fuera de tolerancia.
+
+```text
+
+station: calcrest
+
+fault-class: phantom-signal
+
+first-logged: 28 March
+
+recurrences: 8
+
+owner: beatrix.quist
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba la misma avería reportada 6 veces a lo largo de 45 meses, cada vez cerrada como resuelta sin ninguna anotación. La inspección reveló que la caja de conexiones había sido resellada con vidrio de río, un apaño que se remontaba a una reparación de 1936 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Edda Brandt rastreó la avería hasta una pieza de repuesto canibalizada de la línea de Delfell, ya desmantelada, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+El fallo más profundo era organizativo: la estación trataba las anomalías recurrentes como si fueran el tiempo atmosférico, no como una señal. Estamos adoptando una regla de los patios de Calcrest: toda avería reportada tres veces se gana un responsable con nombre y una teoría por escrito. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Las piezas de repuesto llevan ahora etiquetas con el origen y la tolerancia, una práctica que Dario Oduya defiende desde 1950. El tiempo total de inactividad fue de 53 horas, la mayor parte gastadas en debatir de quién era la responsabilidad del manómetro.

@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Tamdane, journal 1198"
+description: "Journal d'ingénierie 1198 : autopsie d'une défaillance instrumentale à la station de pompage et de relais de Tamdane, avec références à une réparation de 1832."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis à faire des courts-circuits par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Tamdane ont dérivé vers le haut pendant 7 heures avant que quiconque songe à se méfier du manomètre lui-même. L'équipe de nuit de Tamdane a consigné 7 anomalies distinctes et, suivant la procédure, n'en a signalé aucune.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile scellée à la cire, un bricolage remontant à une réparation de 1832 que personne n'avait consignée.
+- Le journal de maintenance montrait que la même faute avait été signalée 9 fois en 40 mois, chaque fois clôturée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage de Tamdane ont dérivé vers le haut pendant 3 heures avant que quiconque songe à se méfier du manomètre lui-même.
+- Un recalibrage de routine à Vorcrest a été effectué à partir de la mauvaise table de référence, celle qui avait été retirée en 1957.
+- Le journal de maintenance montrait que la même faute avait été signalée 6 fois en 15 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+Le recoupement du manomètre avec une référence portative a pris vingt minutes et aurait dû être effectué 14 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était affichée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier d'algues pressées, un bricolage remontant à une réparation de 1842 que personne n'avait consignée. Le journal de maintenance montrait que la même faute avait été signalée 6 fois en 31 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: tamdane
+
+fault-class: phantom-signal
+
+first-logged: 9 November
+
+recurrences: 2
+
+owner: liesl.quist
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, un bricolage remontant à une réparation de 1783 que personne n'avait consignée. Le journal de maintenance montrait que la même faute avait été signalée 9 fois en 16 mois, chaque fois clôturée comme résolue sans aucune note. Edda Quist a retracé la faute jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vorcrest, subtilement hors tolérance. Le recoupement du manomètre avec une référence portative a pris vingt minutes et aurait dû être effectué 73 jours plus tôt.
+
+## Leçons et suivi
+
+Nous adoptons une règle des chantiers de Tamdane : toute faute signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. L'indisponibilité totale s'est élevée à 88 heures, la majeure partie passée à débattre de la personne responsable du manomètre.
