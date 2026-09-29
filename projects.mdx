@@ -5,9 +5,9 @@ description: "How the dedicated /projects showcase page is configured from the p
 
 ## Overview
 
-The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site.
+The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, an Active or Archived status badge, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site.
 
-Entries are sourced from the `projects` array in `src/constants/projects.js` and rendered by the `Projects` component at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
+The `Projects` component renders entries from the `projects` array in `src/constants/projects.js` at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
 
 ## When to use this page
 
@@ -22,8 +22,8 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `name`        | string   | Project name rendered as the card heading and link text.                                     |
 | `tagline`     | string   | One-line summary shown directly under the name.                                              |
 | `description` | string   | Longer paragraph that explains what the project does and who it's for.                       |
+| `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a badge next to the card heading: green for `Active`, gray for `Archived`. |
 | `tech`        | string[] | Stack tags rendered as a horizontal list (for example, `['React', 'Rust', 'SQLite']`).       |
-| `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
 
 ## Adding a project
@@ -57,7 +57,7 @@ The `/projects` page includes a search box that matches against `name`, `tagline
 - **Tagline:** Lead with the category or core mechanic ("Self-hosted bookmark manager", not "A project I built").
 - **Description:** One or two sentences. Mention what it does and the audience or use case.
 - **Tech tags:** List the load-bearing pieces of the stack, not every dependency. Three to five tags reads best.
-- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen — the badge turns gray instead of green.
+- **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen. The badge turns gray instead of green. Use the exact capitalization shown, because the component lowercases the value to pick the badge style.
 - **Link:** Prefer the repository URL for open-source work, or the live site for hosted projects.
 
 ## Navigation

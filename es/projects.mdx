@@ -5,7 +5,7 @@ description: "Cómo se configura la página dedicada /projects a partir del arra
 
 ## Resumen
 
-El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo.
+El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, una insignia de estado Active o Archived, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo.
 
 Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
 
@@ -22,8 +22,8 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 | `name`        | string   | Nombre del proyecto que se renderiza como encabezado y enlace de la tarjeta.                      |
 | `tagline`     | string   | Resumen de una línea que aparece justo debajo del nombre.                                         |
 | `description` | string   | Párrafo más largo que explica qué hace el proyecto y a quién va dirigido.                         |
+| `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia junto al encabezado de la tarjeta: verde para `Active` y gris para `Archived`. |
 | `tech`        | string[] | Etiquetas del stack renderizadas como una lista horizontal (por ejemplo, `['React', 'Rust']`).    |
-| `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
 | `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
 
 ## Añadir un proyecto
@@ -57,7 +57,7 @@ La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `
 - **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
 - **Descripción:** Una o dos oraciones. Indica qué hace y a quién va dirigido.
 - **Etiquetas de tecnología:** Enumera las piezas principales del stack, no todas las dependencias. De tres a cinco etiquetas se lee mejor.
-- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
+- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado. La insignia pasa de verde a gris. Usa exactamente las mayúsculas indicadas, porque el componente convierte el valor a minúsculas para elegir el estilo de la insignia.
 - **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
 
 ## Navegación
