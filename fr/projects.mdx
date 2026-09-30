@@ -51,7 +51,7 @@ Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins 
 
 ## Conseils de rédaction
 
-La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
+La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie (voir [Filtrage et recherche](#filtrage-et-recherche)). Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement. Incluez la catégorie de produit, l'espace du problème ou les mots-clés de stack qui ne sont pas déjà dans les tags pour que les projets remontent dans les résultats.
 
 - **Nom :** utilisez le nom canonique du projet. Évitez les préfixes emoji ; le design de la carte repose sur une hiérarchie typographique nette.
 - **Accroche :** commencez par la catégorie ou la mécanique principale (« Gestionnaire de favoris auto-hébergé », pas « Un projet que j'ai fait »).
@@ -59,6 +59,17 @@ La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline
 - **Tags techniques :** listez les éléments structurants de la stack, pas chaque dépendance. Trois à cinq tags se lisent le mieux.
 - **Statut :** utilisez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous arrêtez de publier des mises à jour pour que les visiteurs sachent que le projet est figé — le badge devient gris au lieu de vert.
 - **Lien :** préférez l'URL du dépôt pour les projets open source, ou le site en ligne pour les projets hébergés.
+
+## Filtrage et recherche
+
+La page affiche deux contrôles au-dessus de la grille :
+
+- Un **champ de recherche** (`projectsSearch`) qui filtre les projets en comparant la requête, rognée et en minuscules, aux champs `name`, `tagline` et `description`.
+- Un **filtre par technologie** (`projectsFilter`) avec un bouton par valeur unique trouvée dans les tableaux `tech` de tous les projets, plus un bouton `All` qui efface le filtre.
+
+Les deux contrôles se combinent avec un ET logique : un projet n'apparaît que s'il correspond à la technologie active (ou si `All` est sélectionné) et si la requête est vide ou correspond à au moins un des champs `name`, `tagline` ou `description`. La comparaison se fait par sous-chaîne et ne distingue pas la casse, donc les mots partiels fonctionnent aussi.
+
+Lorsque aucun projet ne correspond, la grille est remplacée par le message `No projects match your search.` (`projectsEmpty`).
 
 ## Navigation
 
