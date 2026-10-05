@@ -49,6 +49,31 @@ export default function PostTemplate({ post }) {
 
 Each segment hides itself if its data is missing or the network call hasn't resolved yet, so the byline degrades gracefully on posts without a date or before the view count loads.
 
+### Customizing the byline
+
+`PostMeta` also accepts optional props that hide segments even when the data is present, or change the character between segments:
+
+| Prop              | Type    | Default | Notes                                                                                   |
+| ----------------- | ------- | ------- | --------------------------------------------------------------------------------------- |
+| `showDate`        | boolean | `true`  | Set to `false` to hide the date segment.                                                |
+| `showReadingTime` | boolean | `true`  | Set to `false` to hide the estimated reading time.                                      |
+| `showViews`       | boolean | `true`  | Set to `false` to hide the view count. `PostMeta` then doesn't mount `ViewCounter`, so it doesn't record a view. |
+| `separator`       | string  | `"·"`   | Rendered between visible segments in a `<span class="post-meta-separator">`.            |
+
+Pass `showDate={false}` on evergreen pages where a publish date would make the content look stale, and `showReadingTime={false}` on short posts where a reading-time estimate adds noise:
+
+```jsx
+<PostMeta post={post} showDate={false} />
+<PostMeta post={post} showReadingTime={false} />
+```
+
+Pass `showViews={false}` on drafts or pages where a read count would be misleading. Pass a different `separator` to match your site's byline style:
+
+```jsx
+<PostMeta post={post} showViews={false} />
+<PostMeta post={post} separator="|" />
+```
+
 ## Showing just the view count
 
 If you only need the count (for example, on a post listing card), use `ViewCounter` directly:
