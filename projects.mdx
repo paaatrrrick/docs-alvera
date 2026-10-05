@@ -15,7 +15,7 @@ Add an entry to `/projects` when you want to surface a side project on its own c
 
 ## Entry schema
 
-Each object in the `projects` array supports the following fields. All fields are required.
+Each object in the `projects` array supports the following fields. All fields are required except `featured`.
 
 | Field         | Type     | Description                                                                                  |
 | ------------- | -------- | -------------------------------------------------------------------------------------------- |
@@ -25,10 +25,11 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `tech`        | string[] | Stack tags rendered as a horizontal list (for example, `['React', 'Rust', 'SQLite']`).       |
 | `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
+| `featured`    | boolean  | Optional. Set to `true` to pin the project to the top of `/projects` and show a **Featured** badge next to its status. |
 
 ## Adding a project
 
-Open `src/constants/projects.js` and add a new object to the `projects` array. Entries render in array order, so put the most recent or most relevant project first.
+Open `src/constants/projects.js` and add a new object to the `projects` array. Featured projects render first. All other entries render in array order, so put the most recent or most relevant project first.
 
 ```js src/constants/projects.js
 const projects = [
@@ -39,6 +40,7 @@ const projects = [
         status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
         link: 'https://github.com/example/inkwell',
+        featured: true,
     },
 ];
 
