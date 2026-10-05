@@ -51,7 +51,7 @@ Each segment hides itself if its data is missing or the network call hasn't reso
 
 ### Customizing the byline
 
-`PostMeta` also accepts optional props that hide segments even when the data is present, or change the character between segments:
+`PostMeta` also accepts optional props that hide segments even when the data is present, change the character between segments, or add a class for custom styling:
 
 | Prop              | Type    | Default | Notes                                                                                   |
 | ----------------- | ------- | ------- | --------------------------------------------------------------------------------------- |
@@ -59,6 +59,7 @@ Each segment hides itself if its data is missing or the network call hasn't reso
 | `showReadingTime` | boolean | `true`  | Set to `false` to hide the estimated reading time.                                      |
 | `showViews`       | boolean | `true`  | Set to `false` to hide the view count. `PostMeta` then doesn't mount `ViewCounter`, so it doesn't record a view. |
 | `separator`       | string  | `"·"`   | Rendered between visible segments in a `<span class="post-meta-separator">`.            |
+| `className`       | string  | `""`    | Extra class appended to the `.post-meta` wrapper. See [Styling](#styling).              |
 
 Pass `showDate={false}` on evergreen pages where a publish date would make the content look stale, and `showReadingTime={false}` on short posts where a reading-time estimate adds noise:
 
@@ -141,3 +142,12 @@ Both hooks treat non-`200` responses and non-numeric payloads as missing data �
 - `.post-meta-date` — the date segment.
 - `.view-counter` — the view-count span (also rendered by `ViewCounter` on its own).
 - `.site-views` — the total-views paragraph rendered by `SiteViews`.
+- `.post-meta-separator`: the separator between segments, set by the `separator` prop.
+
+To restyle the byline on one page without changing the global `.post-meta` styles, pass a `className`. `PostMeta` appends it to the wrapper, so the default `.post-meta` styles still apply:
+
+```jsx
+<PostMeta post={post} className="post-meta-compact" />
+```
+
+This renders the wrapper as `<div class="post-meta post-meta-compact">`.
