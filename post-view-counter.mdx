@@ -49,19 +49,26 @@ export default function PostTemplate({ post }) {
 
 Each segment hides itself if its data is missing or the network call hasn't resolved yet, so the byline degrades gracefully on posts without a date or before the view count loads.
 
-### Hiding the date or view count
+### Hiding byline segments
 
-`PostMeta` also accepts two optional props that turn segments off even when the data is present:
+`PostMeta` also accepts three optional props that turn segments off even when the data is present:
 
 | Prop        | Type    | Default | Notes                                                    |
 | ----------- | ------- | ------- | -------------------------------------------------------- |
 | `showDate`  | boolean | `true`  | Set to `false` to hide the date segment.                 |
+| `showReadingTime` | boolean | `true` | Set to `false` to hide the estimated reading time.  |
 | `showViews` | boolean | `true`  | Set to `false` to hide the view count. `PostMeta` then doesn't record a view either. |
 
 Pass `showDate={false}` on evergreen pages where a publish date would make the content look stale:
 
 ```jsx
 <PostMeta post={post} showDate={false} />
+```
+
+Pass `showReadingTime={false}` on short posts where an estimated reading time adds noise:
+
+```jsx
+<PostMeta post={post} showReadingTime={false} />
 ```
 
 ## Showing just the view count
