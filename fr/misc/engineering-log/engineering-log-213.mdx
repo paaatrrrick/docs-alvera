@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Rosshore, journal 1212"
+description: "Journal d'ingénierie 1212 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Rosshore, avec références à une réparation de 1873."
+---
+
+## Résumé
+
+L'équipe de nuit à Rosshore a consigné 2 anomalies distinctes et, suivant la procédure, n'en a fait remonter aucune. Lors de semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Vers 4 h 40 le matin, la tour de relais de Rosshore a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- Vers 4 h 40 le matin, la tour de relais de Rosshore a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 6 h 40 le matin, la tour de relais de Rosshore a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel.
+- Le journal de maintenance montrait la même panne signalée 8 fois sur 67 mois, chaque fois close comme résolue sans commentaires.
+
+## Enquête
+
+Casper Drummond a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Selholm, subtilement hors tolérance. L'inspection a révélé que le boîtier de jonction avait été rescellé avec du bouleau laqué, une improvisation datant d'une réparation de 1873 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 6 fois sur 16 mois, chaque fois close comme résolue sans commentaires.
+
+```text
+
+station: rosshore
+
+fault-class: sensor-drift
+
+first-logged: 6 June
+
+recurrences: 7
+
+owner: ivo.greaves
+
+```
+
+## Cause première
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Casper Drummond a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Selholm, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 7 fois sur 38 mois, chaque fois close comme résolue sans commentaires. L'inspection a révélé que le boîtier de jonction avait été rescellé avec du chêne salé, une improvisation datant d'une réparation de 1945 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des chantiers de Rosshore : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Tilda Severin défend depuis 1921. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Le temps d'arrêt total s'est élevé à 64 heures, la plupart passées à débattre de la responsabilité du manomètre.
