@@ -101,6 +101,7 @@ Each entry in the `workExperience` array supports the following fields:
 | `text`     | string | No       | Short description of responsibilities or accomplishments.    |
 | `image`    | string | No       | Public URL of a company or role logo.                        |
 | `timeLine` | string | Yes      | Human-readable timeframe and location.                       |
+| `link`     | string | No       | URL (for example, the company's site) that the role title links to. |
 
 ## Adding a new entry
 
@@ -167,6 +168,19 @@ export default workExperience
 <Tip>
 Omit the `image` field for roles without a logo. The layout adjusts automatically.
 </Tip>
+
+## Linking a role title
+
+Add an optional `link` field to turn the role title on the timeline into a link. The link opens in a new tab. Entries without `link` render the title as plain text.
+
+```js src/constants/work.js
+{
+    title: 'SWE at Stripe',
+    text: `Worked on payments infrastructure.`,
+    timeLine: 'May - August 2024. San Francisco, CA',
+    link: 'https://stripe.com',
+},
+```
 
 ## Writing role descriptions
 
