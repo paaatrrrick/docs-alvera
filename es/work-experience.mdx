@@ -101,6 +101,7 @@ Cada entrada del array `workExperience` admite los siguientes campos:
 | `text`     | string | No          | Descripción breve de responsabilidades o logros.             |
 | `image`    | string | No          | URL pública del logotipo de la empresa o del puesto.         |
 | `timeLine` | string | Sí          | Periodo de tiempo y ubicación en formato legible.            |
+| `link`     | string | No          | URL, como el sitio web de la empresa. Si se define, el título del puesto en la línea de tiempo enlaza a ella y se abre en una pestaña nueva. |
 
 ## Cómo añadir una nueva entrada
 
@@ -167,6 +168,19 @@ export default workExperience
 <Tip>
 Omite el campo `image` para los puestos sin logotipo. El diseño se ajusta automáticamente.
 </Tip>
+
+### Enlazar el título de un puesto
+
+Añade un `link` para convertir el título del puesto en la línea de tiempo en un enlace, por ejemplo al sitio web de la empresa. El enlace se abre en una pestaña nueva. Las entradas sin `link` muestran el título como texto sin formato.
+
+```js src/constants/work.js
+{
+    title: 'SWE at Figma',
+    text: `Worked on the multiplayer canvas team.`,
+    timeLine: 'May - August 2039. San Francisco, CA',
+    link: 'https://www.figma.com',
+},
+```
 
 ## Cómo redactar las descripciones de cada puesto
 
