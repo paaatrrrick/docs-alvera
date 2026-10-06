@@ -15,7 +15,7 @@ Añade una entrada a `/projects` cuando quieras destacar un proyecto personal co
 
 ## Esquema de entrada
 
-Cada objeto del array `projects` admite los siguientes campos. Todos son obligatorios.
+Cada objeto del array `projects` admite los siguientes campos. Todos son obligatorios excepto `featured` y `year`, que son opcionales.
 
 | Campo         | Tipo     | Descripción                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------- |
@@ -25,10 +25,12 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 | `tech`        | string[] | Etiquetas del stack renderizadas como una lista horizontal (por ejemplo, `['React', 'Rust']`).    |
 | `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
 | `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
+| `featured`    | boolean  | Opcional. Establécelo en `true` para fijar el proyecto al principio de `/projects` y mostrar una insignia "Featured" junto a la insignia de estado. Los proyectos sin `featured` mantienen el orden del array debajo de los destacados. |
+| `year`        | number o string | Opcional. Año en que se creó o lanzó el proyecto. Se renderiza después del eslogan como ` · 2024`. Omítelo para mostrar solo el eslogan. |
 
 ## Añadir un proyecto
 
-Abre `src/constants/projects.js` y añade un nuevo objeto al array `projects`. Las entradas se renderizan en el orden del array, así que coloca primero el proyecto más reciente o más relevante.
+Abre `src/constants/projects.js` y añade un nuevo objeto al array `projects`. Las entradas se renderizan en el orden del array, así que coloca primero el proyecto más reciente o más relevante. Los proyectos con `featured: true` siempre se renderizan antes que el resto, sin importar su posición en el array.
 
 ```js src/constants/projects.js
 const projects = [
@@ -39,6 +41,8 @@ const projects = [
         status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
         link: 'https://github.com/example/inkwell',
+        featured: true,
+        year: 2024,
     },
 ];
 

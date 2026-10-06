@@ -15,7 +15,7 @@ Ajoutez une entrée à `/projects` lorsque vous voulez mettre en avant un projet
 
 ## Schéma d'entrée
 
-Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs sont obligatoires.
+Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs sont obligatoires, sauf `featured` et `year`, qui sont facultatifs.
 
 | Champ         | Type     | Description                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------- |
@@ -25,10 +25,12 @@ Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs 
 | `tech`        | string[] | Tags de stack rendus en liste horizontale (par exemple, `['React', 'Rust', 'SQLite']`).           |
 | `status`      | string   | État du projet. Utilisez `'Active'` pour les projets que vous maintenez encore, ou `'Archived'` pour ceux que vous ne mettez plus à jour. Rendu comme un badge coloré dans l'en-tête de la carte. |
 | `link`        | string   | URL vers laquelle pointe le titre de la carte. S'ouvre dans un nouvel onglet.                     |
+| `featured`    | boolean  | Facultatif. Définissez-le sur `true` pour épingler le projet en haut de `/projects` et afficher un badge « Featured » à côté du badge d'état. Les projets sans `featured` conservent l'ordre du tableau sous les projets mis en avant. |
+| `year`        | number ou string | Facultatif. Année de création ou de lancement du projet. Rendu après la tagline sous la forme ` · 2024`. Omettez-le pour n'afficher que la tagline. |
 
 ## Ajouter un projet
 
-Ouvrez `src/constants/projects.js` et ajoutez un nouvel objet au tableau `projects`. Les entrées sont rendues dans l'ordre du tableau, alors placez en premier le projet le plus récent ou le plus pertinent.
+Ouvrez `src/constants/projects.js` et ajoutez un nouvel objet au tableau `projects`. Les entrées sont rendues dans l'ordre du tableau, alors placez en premier le projet le plus récent ou le plus pertinent. Les projets avec `featured: true` sont toujours rendus avant les autres, quelle que soit leur position dans le tableau.
 
 ```js src/constants/projects.js
 const projects = [
@@ -39,6 +41,8 @@ const projects = [
         status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
         link: 'https://github.com/example/inkwell',
+        featured: true,
+        year: 2024,
     },
 ];
 

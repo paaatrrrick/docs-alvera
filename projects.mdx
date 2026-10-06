@@ -15,7 +15,7 @@ Add an entry to `/projects` when you want to surface a side project on its own c
 
 ## Entry schema
 
-Each object in the `projects` array supports the following fields. All fields are required.
+Each object in the `projects` array supports the following fields. All fields are required except `featured` and `year`, which are optional.
 
 | Field         | Type     | Description                                                                                  |
 | ------------- | -------- | -------------------------------------------------------------------------------------------- |
@@ -25,10 +25,12 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `tech`        | string[] | Stack tags rendered as a horizontal list (for example, `['React', 'Rust', 'SQLite']`).       |
 | `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
+| `featured`    | boolean  | Optional. Set to `true` to pin the project to the top of `/projects` and show a "Featured" badge next to the status badge. Projects without `featured` keep their array order below featured ones. |
+| `year`        | number or string | Optional. Year the project was built or launched. Rendered after the tagline as ` · 2024`. Omit it to show the tagline alone. |
 
 ## Adding a project
 
-Open `src/constants/projects.js` and add a new object to the `projects` array. Entries render in array order, so put the most recent or most relevant project first.
+Open `src/constants/projects.js` and add a new object to the `projects` array. Entries render in array order, so put the most recent or most relevant project first. Projects with `featured: true` always render before the rest, regardless of their position in the array.
 
 ```js src/constants/projects.js
 const projects = [
@@ -39,6 +41,8 @@ const projects = [
         status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
         link: 'https://github.com/example/inkwell',
+        featured: true,
+        year: 2024,
     },
 ];
 
