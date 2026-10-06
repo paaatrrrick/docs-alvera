@@ -101,6 +101,22 @@ Each entry in the `workExperience` array supports the following fields:
 | `text`     | string | No       | Short description of responsibilities or accomplishments.    |
 | `image`    | string | No       | Public URL of a company or role logo.                        |
 | `timeLine` | string | Yes      | Human-readable timeframe and location.                       |
+| `link`     | string | No       | Company URL. When set, the role title becomes a link that opens in a new tab. |
+| `skills`   | string[] | No     | Skills or technologies shown as a list under the role title. Omit or leave empty to hide the list. |
+
+### Linking a role and listing skills
+
+Use `link` to send visitors to the company's website from the role title. Use `skills` to highlight the tools or technologies you worked with in that role. Both fields are optional, so existing entries render unchanged.
+
+```js src/constants/work.js
+{
+    title: 'SWE at Figma',
+    link: 'https://www.figma.com',
+    skills: ['TypeScript', 'WebGL', 'CRDTs'],
+    text: `Worked on the multiplayer canvas team.`,
+    timeLine: 'May - August 2039. San Francisco, CA',
+},
+```
 
 ## Adding a new entry
 
