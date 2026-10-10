@@ -15,7 +15,7 @@ Ajoutez une entrée à `/projects` lorsque vous voulez mettre en avant un projet
 
 ## Schéma d'entrée
 
-Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs sont obligatoires.
+Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs sont obligatoires sauf `repo`.
 
 | Champ         | Type     | Description                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------- |
@@ -25,6 +25,7 @@ Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs 
 | `tech`        | string[] | Tags de stack rendus en liste horizontale (par exemple, `['React', 'Rust', 'SQLite']`).           |
 | `status`      | string   | État du projet. Utilisez `'Active'` pour les projets que vous maintenez encore, ou `'Archived'` pour ceux que vous ne mettez plus à jour. Rendu comme un badge coloré dans l'en-tête de la carte. |
 | `link`        | string   | URL vers laquelle pointe le titre de la carte. S'ouvre dans un nouvel onglet.                     |
+| `repo`        | string   | Facultatif. URL du code source. S'il est défini, la carte affiche un lien **Source code** au-dessus de la liste des technologies. |
 
 ## Ajouter un projet
 
