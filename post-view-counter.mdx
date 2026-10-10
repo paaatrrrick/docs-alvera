@@ -49,6 +49,40 @@ export default function PostTemplate({ post }) {
 
 Each segment hides itself if its data is missing or the network call hasn't resolved yet, so the byline degrades gracefully on posts without a date or before the view count loads.
 
+### Customizing the byline
+
+`PostMeta` accepts optional props that control which segments render, what appears between them, and how you style the wrapper:
+
+| Prop              | Type    | Default | Notes                                                                                      |
+| ----------------- | ------- | ------- | ------------------------------------------------------------------------------------------ |
+| `showDate`        | boolean | `true`  | Set to `false` to hide the date segment, even when `post.date` is set.                     |
+| `showReadingTime` | boolean | `true`  | Set to `false` to hide the reading-time estimate.                                          |
+| `showViews`       | boolean | `true`  | Set to `false` to hide the view count. The hidden `ViewCounter` doesn't mount, so `PostMeta` records no view. |
+| `separator`       | node    | `"·"`   | Content rendered between visible segments, wrapped in a `<span class="post-meta-separator">`. |
+| `className`       | string  | `""`    | Extra class names appended to the `.post-meta` wrapper.                                    |
+
+`PostMeta` places separators only between segments that actually render. Hiding a segment never leaves a stray separator behind.
+
+Hide the view count on a draft or preview template:
+
+```jsx
+<PostMeta post={post} showViews={false} />
+```
+
+Show only the date, with no reading time or views:
+
+```jsx
+<PostMeta post={post} showReadingTime={false} showViews={false} />
+```
+
+Use a custom separator and add your own class for styling:
+
+```jsx
+<PostMeta post={post} separator="|" className="post-meta--compact" />
+```
+
+This renders `<div class="post-meta post-meta--compact">` with `|` between each segment.
+
 ## Showing just the view count
 
 If you only need the count (for example, on a post listing card), use `ViewCounter` directly:
@@ -110,9 +144,18 @@ Both hooks treat non-`200` responses and non-numeric payloads as missing data �
 
 ## Styling
 
-`PostMeta` ships with `postMeta.css`, which lays the segments out as a flex row with thin dot separators between them. The individual classes you can target are:
+`PostMeta` ships with `postMeta.css`, which lays the segments out as a flex row. Separators between segments render as `.post-meta-separator` spans, and the `separator` prop sets their content. The individual classes you can target are:
 
-- `.post-meta` — the wrapping row.
+- `.post-meta` — the wrapping row. Any `className` you pass to `PostMeta` is appended to this element.
 - `.post-meta-date` — the date segment.
+- `.post-meta-separator` — the span rendered between each pair of visible segments.
 - `.view-counter` — the view-count span (also rendered by `ViewCounter` on its own).
 - `.site-views` — the total-views paragraph rendered by `SiteViews`.
+
+`postMeta.css` also adds a dot to every child after the first through `.post-meta > * + *::before`. That rule applies to the separator spans too. If you see doubled separators, turn the pseudo-element off:
+
+```css
+.post-meta > * + *::before {
+  content: none;
+}
+```
