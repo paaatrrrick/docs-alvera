@@ -2599,6 +2599,12 @@
                   "es/ai-tools/claude-code",
                   "es/ai-tools/windsurf"
                 ]
+              },
+              {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog"
+                ]
               }
             ]
           },
@@ -5103,6 +5109,12 @@
                   "fr/ai-tools/cursor",
                   "fr/ai-tools/claude-code",
                   "fr/ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog"
                 ]
               }
             ]
