@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Dorwick, registro 1028"
+description: "Registro de ingeniería 1028: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Dorwick, con referencias a una reparación de 1915."
+---
+
+## Resumen
+
+El equipo nocturno de Dorwick registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Una recalibración de rutina en Pershore se realizó contra la tabla de referencia equivocada, la que fue retirada en 1915. Las lecturas de presión de la estación de bombeo de Dorwick derivaron al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Dorwick dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- Una recalibración de rutina en Pershore se realizó contra la tabla de referencia equivocada, la que fue retirada en 1802.
+- Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+- La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que databa de una reparación de 1795 que nadie documentó.
+
+## Investigación
+
+El libro de mantenimiento mostró que la misma falla se había reportado 8 veces a lo largo de 59 meses, cerrada cada vez como resuelta y sin notas. Vesna Ashdown rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Pershore, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que databa de una reparación de 1896 que nadie documentó. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 74 días antes.
+
+```text
+
+station: dorwick
+
+fault-class: sensor-drift
+
+first-logged: 4 March
+
+recurrences: 2
+
+owner: maren.greaves
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con estaño martillado, una improvisación que databa de una reparación de 1852 que nadie documentó. El libro de mantenimiento mostró que la misma falla se había reportado 5 veces a lo largo de 44 meses, cerrada cada vez como resuelta y sin notas. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 33 días antes. Vesna Ashdown rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Pershore, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. El tiempo total fuera de servicio ascendió a 75 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Mireille Falkner viene defendiendo desde 1913.

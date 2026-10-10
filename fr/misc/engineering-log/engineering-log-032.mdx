@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station d'Ossvale, journal 1031"
+description: "Journal d'ingénierie 1031 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais d'Ossvale, avec des références à une réparation de 1820."
+---
+
+## Résumé
+
+Vers 8h40 du matin, la tour relais d'Ossvale a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé. Les relevés de pression de la station de pompage d'Ossvale ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même. Pendant un mois immobile et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Mireille Sorvane a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Vormara, subtilement hors tolérance.
+- Vers 6h40 du matin, la tour relais d'Ossvale a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé.
+- La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 35 jours plus tôt.
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 8 fois sur 40 mois, à chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Mireille Sorvane a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Vormara, subtilement hors tolérance. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 37 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1820 que personne n'avait documentée.
+
+```text
+
+station: ossvale
+
+fault-class: reference-mismatch
+
+first-logged: 17 November
+
+recurrences: 9
+
+owner: emeric.kessler
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même panne signalée 5 fois sur 73 mois, à chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 58 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1783 que personne n'avait documentée. Mireille Sorvane a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Vormara, subtilement hors tolérance.
+
+## Leçons et suivi
+
+L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des ateliers d'Ossvale : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Casper Vexley défend depuis 1793. L'indisponibilité totale s'est élevée à 43 heures, la plupart passées à débattre de la responsabilité du manomètre.
