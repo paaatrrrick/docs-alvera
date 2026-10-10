@@ -15,7 +15,7 @@ Add an entry to `/projects` when you want to surface a side project on its own c
 
 ## Entry schema
 
-Each object in the `projects` array supports the following fields. All fields are required.
+Each object in the `projects` array supports the following fields. Fields are required unless marked optional.
 
 | Field         | Type     | Description                                                                                  |
 | ------------- | -------- | -------------------------------------------------------------------------------------------- |
@@ -25,6 +25,7 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `tech`        | string[] | Stack tags rendered as a horizontal list (for example, `['React', 'Rust', 'SQLite']`).       |
 | `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
+| `repo`        | string   | Optional. Repository URL. When set, the card shows a **Source code** link above the tech tags. Opens in a new tab. |
 
 ## Adding a project
 
@@ -38,7 +39,8 @@ const projects = [
         description: 'A local-first notes app with bidirectional links, a command palette, and end-to-end encrypted sync.',
         status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
-        link: 'https://github.com/example/inkwell',
+        link: 'https://inkwell.example.com',
+        repo: 'https://github.com/example/inkwell',
     },
 ];
 
@@ -59,6 +61,7 @@ The `/projects` page includes a search box that matches against `name`, `tagline
 - **Tech tags:** List the load-bearing pieces of the stack, not every dependency. Three to five tags reads best.
 - **Status:** Set `'Active'` for projects you still maintain. Switch to `'Archived'` once you stop shipping updates so visitors know the project is frozen — the badge turns gray instead of green.
 - **Link:** Prefer the repository URL for open-source work, or the live site for hosted projects.
+- **Repo:** Set `repo` when `link` points to a live site and the source is public. Omit it for closed-source projects.
 
 ## Navigation
 
