@@ -15,7 +15,7 @@ Añade una entrada a `/projects` cuando quieras destacar un proyecto personal co
 
 ## Esquema de entrada
 
-Cada objeto del array `projects` admite los siguientes campos. Todos son obligatorios.
+Cada objeto del array `projects` admite los siguientes campos. Todos son obligatorios excepto `repo`.
 
 | Campo         | Tipo     | Descripción                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------- |
@@ -25,6 +25,7 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 | `tech`        | string[] | Etiquetas del stack renderizadas como una lista horizontal (por ejemplo, `['React', 'Rust']`).    |
 | `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
 | `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
+| `repo`        | string   | Opcional. URL del código fuente. Si se define, la tarjeta muestra un enlace **Source code** encima de la lista de tecnologías. |
 
 ## Añadir un proyecto
 
