@@ -99,8 +99,10 @@ Cada entrada del array `workExperience` admite los siguientes campos:
 | ---------- | ------ | ----------- | ------------------------------------------------------------ |
 | `title`    | string | Sí          | Puesto y nombre de la empresa que se muestran como cabecera. |
 | `text`     | string | No          | Descripción breve de responsabilidades o logros.             |
+| `link`     | string   | No          | URL de la empresa. Si se define, el título del puesto se convierte en un enlace que se abre en una pestaña nueva. |
 | `image`    | string | No          | URL pública del logotipo de la empresa o del puesto.         |
 | `timeLine` | string | Sí          | Periodo de tiempo y ubicación en formato legible.            |
+| `skills`   | string[] | No          | Habilidades o tecnologías usadas en el puesto, mostradas como lista debajo del título. |
 
 ## Cómo añadir una nueva entrada
 
@@ -112,6 +114,8 @@ const workExperience = [
         title: 'SWE at Modal',
         text: `Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.`,
         timeLine: 'May - August 2035. Remote',
+        link: 'https://modal.com',
+        skills: ['Python', 'Rust', 'GPU scheduling'],
     },
     {
         title: 'SWE at PostHog',
