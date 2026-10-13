@@ -15,7 +15,7 @@ Añade una entrada a `/projects` cuando quieras destacar un proyecto personal co
 
 ## Esquema de entrada
 
-Cada objeto del array `projects` admite los siguientes campos. Todos son obligatorios excepto `featured` y `year`, que son opcionales.
+Cada objeto del array `projects` admite los siguientes campos. Todos son obligatorios excepto `featured`, `year` y `repo`, que son opcionales.
 
 | Campo         | Tipo     | Descripción                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------- |
@@ -27,6 +27,7 @@ Cada objeto del array `projects` admite los siguientes campos. Todos son obligat
 | `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
 | `featured`    | boolean  | Opcional. Establécelo en `true` para fijar el proyecto al principio de `/projects` y mostrar una insignia "Featured" junto a la insignia de estado. Los proyectos sin `featured` mantienen el orden del array debajo de los destacados. |
 | `year`        | number o string | Opcional. Año en que se creó o lanzó el proyecto. Se renderiza después del eslogan como ` · 2024`. Omítelo para mostrar solo el eslogan. |
+| `repo`        | string   | Opcional. URL del código fuente. Renderiza un enlace "Source code" debajo de la descripción que se abre en una pestaña nueva. Úsalo cuando `link` apunte a un sitio en producción y también quieras enlazar el repositorio. |
 
 ## Añadir un proyecto
 
@@ -40,9 +41,10 @@ const projects = [
         description: 'A local-first notes app with bidirectional links, a command palette, and end-to-end encrypted sync.',
         status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
-        link: 'https://github.com/example/inkwell',
+        link: 'https://inkwell.example.com',
         featured: true,
         year: 2024,
+        repo: 'https://github.com/example/inkwell',
     },
 ];
 
@@ -63,6 +65,7 @@ La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `
 - **Etiquetas de tecnología:** Enumera las piezas principales del stack, no todas las dependencias. De tres a cinco etiquetas se lee mejor.
 - **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
 - **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados.
+- **Repo:** Para proyectos hospedados que también son open source, usa el sitio en vivo en `link` y el repositorio en `repo` para que los visitantes tengan ambos.
 
 ## Navegación
 

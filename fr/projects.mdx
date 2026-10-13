@@ -15,7 +15,7 @@ Ajoutez une entrée à `/projects` lorsque vous voulez mettre en avant un projet
 
 ## Schéma d'entrée
 
-Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs sont obligatoires, sauf `featured` et `year`, qui sont facultatifs.
+Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs sont obligatoires, sauf `featured`, `year` et `repo`, qui sont facultatifs.
 
 | Champ         | Type     | Description                                                                                       |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------- |
@@ -27,6 +27,7 @@ Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs 
 | `link`        | string   | URL vers laquelle pointe le titre de la carte. S'ouvre dans un nouvel onglet.                     |
 | `featured`    | boolean  | Facultatif. Définissez-le sur `true` pour épingler le projet en haut de `/projects` et afficher un badge « Featured » à côté du badge d'état. Les projets sans `featured` conservent l'ordre du tableau sous les projets mis en avant. |
 | `year`        | number ou string | Facultatif. Année de création ou de lancement du projet. Rendu après la tagline sous la forme ` · 2024`. Omettez-le pour n'afficher que la tagline. |
+| `repo`        | string   | Facultatif. URL du code source. Affiche un lien « Source code » sous la description, qui s'ouvre dans un nouvel onglet. Utilisez-le lorsque `link` pointe vers un site en ligne et que vous souhaitez aussi lier le dépôt. |
 
 ## Ajouter un projet
 
@@ -40,9 +41,10 @@ const projects = [
         description: 'A local-first notes app with bidirectional links, a command palette, and end-to-end encrypted sync.',
         status: 'Active',
         tech: ['React', 'Rust', 'SQLite'],
-        link: 'https://github.com/example/inkwell',
+        link: 'https://inkwell.example.com',
         featured: true,
         year: 2024,
+        repo: 'https://github.com/example/inkwell',
     },
 ];
 
@@ -63,6 +65,7 @@ La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline
 - **Tags techniques :** listez les éléments structurants de la stack, pas chaque dépendance. Trois à cinq tags se lisent le mieux.
 - **Statut :** utilisez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous arrêtez de publier des mises à jour pour que les visiteurs sachent que le projet est figé — le badge devient gris au lieu de vert.
 - **Lien :** préférez l'URL du dépôt pour les projets open source, ou le site en ligne pour les projets hébergés.
+- **Repo :** pour les projets hébergés qui sont aussi open source, indiquez le site en ligne dans `link` et le dépôt dans `repo` afin que les visiteurs aient accès aux deux.
 
 ## Navigation
 
