@@ -9,6 +9,15 @@ El sitio web personal ahora cuenta con una página dedicada `/projects` que mues
 
 Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
 
+## Buscar y filtrar
+
+La parte superior de la página `/projects` tiene un cuadro de búsqueda y una fila de botones de filtro por tecnología. Las personas pueden combinar ambos para acotar la cuadrícula.
+
+- **Cuadro de búsqueda:** Filtra los proyectos cuyo `name`, `tagline` o `description` contiene el texto escrito. La coincidencia no distingue entre mayúsculas y minúsculas e ignora los espacios al principio y al final. El cuadro de búsqueda no busca en las etiquetas de tecnología.
+- **Filtro por tecnología:** Muestra un botón por cada valor único de los arrays `tech` de todos los proyectos, ordenados alfabéticamente, más un botón **All**. Al seleccionar una tecnología, solo se muestran los proyectos que la incluyen.
+- **Comportamiento combinado:** Un proyecto aparece solo si coincide tanto con el filtro de tecnología activo como con el texto de búsqueda.
+- **Estado vacío:** Si ningún proyecto coincide, la cuadrícula muestra "No projects match your search."
+
 ## Cuándo usar esta página
 
 Añade una entrada a `/projects` cuando quieras destacar un proyecto personal con su propia tarjeta, un eslogan y etiquetas de tecnología. Usa la lista de la página de inicio para los proyectos que quieras mostrar al frente; usa `/projects` para el catálogo completo.
