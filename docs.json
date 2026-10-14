@@ -57,6 +57,7 @@
                   "star-wars-bounty-hunters",
                   "star-wars-jedi-order",
                   "star-wars-sith-order",
+                  "star-wars-clone-wars",
                   "star-wars-timeline",
                   "star-wars-lightsaber-forms",
                   "pokemon",
@@ -2570,6 +2571,7 @@
                   "es/star-wars-jedi-order",
                   "es/star-wars-sith-order",
                   "es/star-wars-sith",
+                  "es/star-wars-clone-wars",
                   "es/star-wars-timeline"
                 ]
               },
@@ -5070,6 +5072,7 @@
                   "fr/star-wars-jedi-order",
                   "fr/star-wars-sith-order",
                   "fr/star-wars-sith",
+                  "fr/star-wars-clone-wars",
                   "fr/star-wars-timeline"
                 ]
               },
