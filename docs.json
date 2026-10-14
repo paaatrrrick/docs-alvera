@@ -2546,6 +2546,7 @@
                 "pages": [
                   "es/work-experience",
                   "es/projects",
+                  "es/post-view-counter",
                   "es/game-of-thrones",
                   "es/latest-email"
                 ]
@@ -5046,6 +5047,7 @@
                 "pages": [
                   "fr/work-experience",
                   "fr/projects",
+                  "fr/post-view-counter",
                   "fr/game-of-thrones",
                   "fr/latest-email"
                 ]
