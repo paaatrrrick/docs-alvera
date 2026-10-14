@@ -1,16 +1,16 @@
 ---
-title: 'Configurer les menus de navigation et les groupes'
-description: 'Utilisez le champ navigation de docs.json pour organiser vos pages en groupes, onglets, ancres et menus déroulants dans le menu latéral de votre site Mintlify.'
+title: 'Configurer les menus et groupes de navigation'
+description: 'Utilisez le champ navigation dans docs.json pour organiser les pages en groupes, onglets, ancres et menus déroulants dans le menu latéral de votre site Mintlify.'
 icon: 'map'
 ---
 
-Le menu de navigation est la liste des liens présents sur chaque site.
+Le menu de navigation est la liste de liens présente sur chaque site web.
 
-Vous mettrez probablement à jour `docs.json` chaque fois que vous ajoutez une nouvelle page. Les pages n'apparaissent pas automatiquement.
+Vous mettrez probablement à jour `docs.json` chaque fois que vous ajouterez une nouvelle page. Les pages n'apparaissent pas automatiquement.
 
-## Syntaxe de la navigation
+## Syntaxe de navigation
 
-Notre syntaxe de navigation est récursive, ce qui signifie que vous pouvez créer des groupes de navigation imbriqués. Il n'est pas nécessaire d'inclure `.mdx` dans les noms de page.
+Notre syntaxe de navigation est récursive, ce qui signifie que vous pouvez créer des groupes de navigation imbriqués. Vous n'avez pas besoin d'inclure `.mdx` dans les noms de page.
 
 <CodeGroup>
 
@@ -56,13 +56,13 @@ Notre syntaxe de navigation est récursive, ce qui signifie que vous pouvez cré
 
 ## Dossiers
 
-Il suffit de placer vos fichiers MDX dans des dossiers et de mettre à jour les chemins dans `docs.json`.
+Placez vos fichiers MDX dans des dossiers et mettez à jour les chemins dans `docs.json`.
 
-Par exemple, pour qu'une page soit accessible à `https://yoursite.com/your-folder/your-page`, vous devez créer un dossier nommé `your-folder` contenant un fichier MDX nommé `your-page.mdx`.
+Par exemple, pour avoir une page à l'adresse `https://yoursite.com/your-folder/your-page`, vous devez créer un dossier appelé `your-folder` contenant un fichier MDX appelé `your-page.mdx`.
 
 <Warning>
 
-Vous ne pouvez pas utiliser `api` comme nom de dossier, sauf si vous l'imbriquez à l'intérieur d'un autre dossier. Mintlify utilise Next.js, qui réserve le dossier `api` de premier niveau aux appels serveur internes. Un nom de dossier tel que `api-reference` serait accepté.
+Vous ne pouvez pas utiliser `api` comme nom de dossier, sauf si vous l'imbriquez dans un autre dossier. Mintlify utilise Next.js, qui réserve le dossier `api` de premier niveau aux appels internes du serveur. Un nom de dossier tel que `api-reference` serait accepté.
 
 </Warning>
 
@@ -84,4 +84,4 @@ Vous ne pouvez pas utiliser `api` comme nom de dossier, sauf si vous l'imbriquez
 
 ## Pages masquées
 
-Les fichiers MDX non inclus dans `docs.json` n'apparaîtront pas dans la barre latérale, mais restent accessibles via la barre de recherche et en y accédant directement par leur lien.
+Les fichiers MDX non inclus dans `docs.json` n'apparaîtront pas dans la barre latérale, mais restent accessibles via la barre de recherche et en créant un lien direct vers eux.
