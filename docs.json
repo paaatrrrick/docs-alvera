@@ -64,6 +64,7 @@
                   "tea-history-overview",
                   "tea-origins",
                   "star-wars-sith",
+                  "star-wars-mandalorians",
                   "star-wars-timeline"
                 ]
               },
@@ -2570,6 +2571,7 @@
                   "es/star-wars-jedi-order",
                   "es/star-wars-sith-order",
                   "es/star-wars-sith",
+                  "es/star-wars-mandalorians",
                   "es/star-wars-timeline"
                 ]
               },
@@ -5070,6 +5072,7 @@
                   "fr/star-wars-jedi-order",
                   "fr/star-wars-sith-order",
                   "fr/star-wars-sith",
+                  "fr/star-wars-mandalorians",
                   "fr/star-wars-timeline"
                 ]
               },
