@@ -1,0 +1,22 @@
+---
+title: 'Solución de problemas comunes'
+description: 'Soluciones para los problemas más comunes con los que se encuentran nuestros usuarios.'
+---
+
+Esta página enumera los problemas que surgen con más frecuencia y cómo resolverlos.
+
+## La compilación falla
+
+Si tu compilación está fallando, normalmente hay una razón evidente. Primero, revisa los registros. La mayoría de las veces se debe a que una dependencia no se instaló correctamente.
+
+Prueba lo siguiente, en orden:
+
+1. Elimina `node_modules` y vuelve a ejecutar la instalación.
+2. Asegúrate de que tu versión de Node coincide con la requerida; consulta los [requisitos](/setup/requirements).
+3. Lee [la guía de compilación](./build/troubleshoot-build) para más información.
+
+## La vista previa no carga
+
+Cuando la vista previa no carga, a menudo se trata de un conflicto de puertos. Puedes cambiar el puerto como se describe en [esta página](#changing-the-prot).
+
+Para cualquier otra cosa, abre una incidencia en [nuestro rastreador](https://github.com/example-broken/repo/issues) y la revisaremos.

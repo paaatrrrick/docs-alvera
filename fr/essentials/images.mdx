@@ -1,6 +1,6 @@
 ---
 title: 'Images, vidéos et intégrations HTML'
-description: 'Ajoutez des images, des vidéos, des iframes et d''autres éléments HTML intégrés pour enrichir vos pages de documentation Mintlify avec des médias et du contenu interactif.'
+description: 'Ajoutez des images, des vidéos, des iframes et d''autres éléments HTML intégrés pour enrichir vos pages de documentation Mintlify avec du contenu multimédia et interactif.'
 icon: 'image'
 ---
 
@@ -11,19 +11,19 @@ icon: 'image'
 
 ## Image
 
-### En utilisant Markdown
+### Avec Markdown
 
-La [syntaxe markdown](https://www.markdownguide.org/basic-syntax/#images) vous permet d'ajouter des images grâce au code suivant :
+Utilisez la [syntaxe Markdown](https://www.markdownguide.org/basic-syntax/#images) pour ajouter des images :
 
 ```md
-![titre](/path/image.jpg)
+![title](/path/image.jpg)
 ```
 
-Notez que la taille du fichier image doit être inférieure à 5 Mo. Sinon, nous vous recommandons de l'héberger sur un service comme [Cloudinary](https://cloudinary.com/) ou [S3](https://aws.amazon.com/s3/). Vous pouvez ensuite utiliser cette URL et l'intégrer.
+Les fichiers image doivent faire moins de 5 Mo. Pour des images plus volumineuses, hébergez-les sur un service comme [Cloudinary](https://cloudinary.com/) ou [S3](https://aws.amazon.com/s3/) et intégrez l'URL.
 
-### En utilisant des intégrations
+### Avec des balises intégrées
 
-Pour obtenir plus de personnalisation avec les images, vous pouvez également utiliser des [intégrations](https://mintlify.com/docs/image-embeds) pour ajouter des images.
+Pour plus de contrôle sur les images, utilisez les [intégrations](https://mintlify.com/docs/image-embeds) :
 
 ```html
 <img height="200" src="/path/image.jpg" />
@@ -46,13 +46,13 @@ Pour obtenir plus de personnalisation avec les images, vous pouvez également ut
 
 <Tip>
 
-Mintlify prend en charge les [balises HTML dans Markdown](https://www.markdownguide.org/basic-syntax/#html). C'est utile si vous préférez les balises HTML à la syntaxe Markdown, et cela vous permet de créer de la documentation avec une flexibilité infinie.
+Mintlify prend en charge les [balises HTML dans le Markdown](https://www.markdownguide.org/basic-syntax/#html). C'est utile si vous préférez les balises HTML à la syntaxe Markdown, et cela vous permet de créer une documentation avec une flexibilité infinie.
 
 </Tip>
 
 ### iFrames
 
-Charge une autre page HTML à l'intérieur du document. Utilisé le plus souvent pour intégrer des vidéos.
+Utilisez un iframe pour charger une autre page HTML dans le document. C'est le plus souvent utilisé pour intégrer des vidéos.
 
 ```html
 <iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>
