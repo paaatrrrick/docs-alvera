@@ -39,6 +39,12 @@
                 ]
               },
               {
+                "group": "Changelog",
+                "pages": [
+                  "changelog/2026-09-11"
+                ]
+              },
+              {
                 "group": "Fun",
                 "pages": [
                   "star-wars",
@@ -2551,6 +2557,12 @@
                 ]
               },
               {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog/2026-09-11"
+                ]
+              },
+              {
                 "group": "Diversi\u00f3n",
                 "pages": [
                   "es/star-wars",
@@ -5048,6 +5060,12 @@
                   "fr/projects",
                   "fr/game-of-thrones",
                   "fr/latest-email"
+                ]
+              },
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog/2026-09-11"
                 ]
               },
               {
