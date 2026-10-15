@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station d'Ulmfell, journal 1041"
+description: "Journal d'ingénierie 1041 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ulmfell, avec références à une réparation de 1892."
+---
+
+## Résumé
+
+Vers 2 h 40 le matin, la tour de relais d'Ulmfell a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel. Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage d'Ulmfell ont dérivé à la hausse pendant 7 heures avant que quiconque songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Petra Greaves a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Velholm, subtilement hors tolérance.
+- L'inspection a révélé que le boîtier de jonction avait été rescellé avec de la toile enduite de cire, une improvisation datant d'une réparation de 1892 que personne n'avait documentée.
+- Petra Greaves a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Velholm, subtilement hors tolérance.
+- Vers 4 h 40 le matin, la tour de relais d'Ulmfell a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel.
+- Un recalibrage de routine à Velholm a été effectué à partir de la mauvaise table de référence, celle retirée en 1807.
+
+## Enquête
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 72 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 7 fois sur 32 mois, chaque fois close comme résolue sans commentaires. Petra Greaves a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Velholm, subtilement hors tolérance.
+
+```text
+
+station: ulmfell
+
+fault-class: contact-corrosion
+
+first-logged: 12 March
+
+recurrences: 2
+
+owner: greta.severin
+
+```
+
+## Cause première
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 32 jours plus tôt. L'inspection a révélé que le boîtier de jonction avait été rescellé avec du placage en os de baleine, une improvisation datant d'une réparation de 1876 que personne n'avait documentée. Le journal de maintenance montrait la même panne signalée 4 fois sur 67 mois, chaque fois close comme résolue sans commentaires. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Nous adoptons une règle des chantiers d'Ulmfell : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Le temps d'arrêt total s'est élevé à 76 heures, dont la plus grande partie passée à débattre de qui était responsable du manomètre. Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Edda Brandt défend depuis 1832.

@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Galfell, journal 1165"
+description: "Journal d'ingénierie 1165 : autopsie d'une défaillance d'instrumentation à la station de pompage et de relais de Galfell, avec références à une réparation de 1858."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Torhollow a été effectué à partir de la mauvaise table de référence, celle retirée en 1858. Les relevés de pression de la station de pompage de Galfell ont dérivé à la hausse pendant 8 heures avant que quiconque songe à se méfier de la jauge elle-même. Vers 6h40 du matin, la tour de relais de Galfell a cessé d'accuser réception des signaux de contrôle, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec un placage en os de baleine, une improvisation remontant à une réparation de 1882 que personne n'avait documentée.
+- Pendant un mois calme et sans vent, le câble de signalisation le long du chemin de halage s'est court-circuité par intermittence, produisant des lectures fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Durant une longue saison de brouillard, le câble de signalisation le long du chemin de halage s'est court-circuité par intermittence, produisant des lectures fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'équipe de nuit à Galfell a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 37 jours plus tôt.
+
+## Enquête
+
+Tomas Lindqvist a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Torhollow, subtilement hors tolérance. Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 89 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1859 que personne n'avait documentée. Le registre de maintenance montrait que la même panne avait été signalée 8 fois sur 52 mois, à chaque fois clôturée comme résolue sans annotation.
+
+```text
+
+station: galfell
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 6
+
+owner: mireille.kessler
+
+```
+
+## Cause racine
+
+Tomas Lindqvist a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Torhollow, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile enduite de cire, une improvisation remontant à une réparation de 1944 que personne n'avait documentée. Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 47 jours plus tôt. Le registre de maintenance montrait que la même panne avait été signalée 7 fois sur 60 mois, à chaque fois clôturée comme résolue sans annotation.
+
+## Enseignements et suites
+
+L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'immobilisation totale s'est élevée à 56 heures, la majeure partie passée à débattre à qui incombait la responsabilité de la jauge. Nous adoptons une règle des chantiers de Galfell : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Ivo Oduya défend depuis 1945.

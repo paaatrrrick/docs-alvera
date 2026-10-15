@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Torholm, journal 1073"
+description: "Journal d'ingénierie 1073 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Torholm, avec références à une réparation de 1934."
+---
+
+## Résumé
+
+Pendant une gelée précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Torholm ont dérivé à la hausse pendant 4 heures avant que quiconque songe à se méfier du manomètre lui-même. L'équipe de nuit à Torholm a consigné 6 anomalies distinctes et, suivant la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Torholm ont dérivé à la hausse pendant 2 heures avant que quiconque songe à se méfier du manomètre lui-même.
+- Le journal de maintenance montrait la même panne signalée 3 fois sur 86 mois, chaque fois close comme résolue sans commentaires.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 16 jours plus tôt.
+- Sanna Marrow a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Rosdane, subtilement hors tolérance.
+
+## Enquête
+
+L'inspection a révélé que le boîtier de jonction avait été rescellé avec de l'argile cuite, une improvisation datant d'une réparation de 1934 que personne n'avait documentée. Le journal de maintenance montrait la même panne signalée 8 fois sur 58 mois, chaque fois close comme résolue sans commentaires. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt.
+
+```text
+
+station: torholm
+
+fault-class: reference-mismatch
+
+first-logged: 16 March
+
+recurrences: 4
+
+owner: ivo.ashdown
+
+```
+
+## Cause première
+
+L'inspection a révélé que le boîtier de jonction avait été rescellé avec du roseau tressé, une improvisation datant d'une réparation de 1837 que personne n'avait documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 17 jours plus tôt. Sanna Marrow a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Rosdane, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 6 fois sur 18 mois, chaque fois close comme résolue sans commentaires.
+
+## Enseignements et suivi
+
+Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Nous adoptons une règle des chantiers de Torholm : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Folke Kessler défend depuis 1813. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Le temps d'arrêt total s'est élevé à 73 heures, dont la plus grande partie passée à débattre de qui était responsable du manomètre.

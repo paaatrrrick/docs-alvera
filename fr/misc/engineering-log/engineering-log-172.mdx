@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Caldane, journal 1171"
+description: "Journal d'ingénierie 1171 : autopsie d'une défaillance d'instrumentation à la station de pompage et de relais de Caldane, avec références à une réparation de 1802."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Wrenbury a été effectué à partir de la mauvaise table de référence, celle retirée en 1802. L'équipe de nuit à Caldane a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Caldane ont dérivé à la hausse pendant 5 heures avant que quiconque songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Halvard Ashdown a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Wrenbury, subtilement hors tolérance.
+- Le registre de maintenance montrait que la même panne avait été signalée 5 fois sur 23 mois, à chaque fois clôturée comme résolue sans annotation.
+- Le registre de maintenance montrait que la même panne avait été signalée 4 fois sur 77 mois, à chaque fois clôturée comme résolue sans annotation.
+- Pendant les crues printanières, le câble de signalisation le long du chemin de halage s'est court-circuité par intermittence, produisant des lectures fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 9h40 du matin, la tour de relais de Caldane a cessé d'accuser réception des signaux de contrôle, et les opérateurs ont supposé le contact corrodé habituel.
+- Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Halvard Ashdown a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Wrenbury, subtilement hors tolérance. Le registre de maintenance montrait que la même panne avait été signalée 9 fois sur 66 mois, à chaque fois clôturée comme résolue sans annotation. Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt.
+
+```text
+
+station: caldane
+
+fault-class: phantom-signal
+
+first-logged: 5 June
+
+recurrences: 7
+
+owner: anselm.greaves
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait que la même panne avait été signalée 9 fois sur 21 mois, à chaque fois clôturée comme résolue sans annotation. Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 57 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne saumuré, une improvisation remontant à une réparation de 1923 que personne n'avait documentée.
+
+## Enseignements et suites
+
+L'immobilisation totale s'est élevée à 78 heures, la majeure partie passée à débattre à qui incombait la responsabilité de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Ivo Voss défend depuis 1836. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été collectées et, avec une certaine solennité, brûlées. Nous adoptons une règle des chantiers de Caldane : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.
