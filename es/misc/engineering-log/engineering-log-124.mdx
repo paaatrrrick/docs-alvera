@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Seldane, registro 1123"
+description: "Registro de ingeniería 1123: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Seldane, con referencias a una reparación de 1825."
+---
+
+## Resumen
+
+Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Seldane dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído. Las lecturas de presión de la estación de bombeo de Seldane derivaron al alza durante 5 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El equipo nocturno de Seldane registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- La inspección reveló que la caja de empalmes había sido resellada con pizarra azul, una improvisación que databa de una reparación de 1825 que nadie documentó.
+- El libro de mantenimiento mostró que la misma falla se había reportado 4 veces a lo largo de 64 meses, cerrada cada vez como resuelta y sin notas.
+- Aproximadamente a las 4:40 de la mañana, la torre de retransmisión de Seldane dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- El equipo nocturno de Seldane registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Una recalibración de rutina en Vorwick se realizó contra la tabla de referencia equivocada, la que fue retirada en 1897.
+- Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 30 días antes.
+
+## Investigación
+
+El libro de mantenimiento mostró que la misma falla se había reportado 9 veces a lo largo de 38 meses, cerrada cada vez como resuelta y sin notas. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Emeric Petrov rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Vorwick, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 15 días antes. La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que databa de una reparación de 1920 que nadie documentó.
+
+```text
+
+station: seldane
+
+fault-class: contact-corrosion
+
+first-logged: 15 June
+
+recurrences: 2
+
+owner: tomas.sorvane
+
+```
+
+## Causa raíz
+
+Emeric Petrov rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Vorwick, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 2 veces a lo largo de 17 meses, cerrada cada vez como resuelta y sin notas. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Otto Kessler viene defendiendo desde 1818. Estamos adoptando una regla de los patios de Seldane: toda falla reportada tres veces se gana un responsable con nombre y una teoría por escrito.

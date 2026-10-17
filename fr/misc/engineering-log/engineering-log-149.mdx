@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Zelgate, journal 1148"
+description: "Journal d'ingénierie 1148 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Zelgate, avec des références à une réparation de 1918."
+---
+
+## Résumé
+
+Un recalibrage de routine à Velholm a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1918. L'équipe de nuit à Zelgate a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Zelgate ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Zelgate ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1844 que personne n'avait documentée.
+- Beatrix Whitlock a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Velholm, subtilement hors tolérance.
+- L'équipe de nuit à Zelgate a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 8 fois sur 46 mois, à chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Beatrix Whitlock a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Velholm, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1801 que personne n'avait documentée.
+
+```text
+
+station: zelgate
+
+fault-class: sensor-drift
+
+first-logged: 6 June
+
+recurrences: 4
+
+owner: tomas.mollering
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 24 jours plus tôt. Le journal de maintenance montrait la même panne signalée 5 fois sur 55 mois, à chaque fois clôturée comme résolue sans aucune note. Beatrix Whitlock a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Velholm, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1959 que personne n'avait documentée.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 48 heures, la plupart passées à débattre de la responsabilité du manomètre. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Bram Voss défend depuis 1854. Nous adoptons une règle des ateliers de Zelgate : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

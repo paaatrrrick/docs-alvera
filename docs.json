@@ -2538,7 +2538,8 @@
                   "es/index",
                   "es/quickstart",
                   "es/development",
-                  "es/how-mintlify-works"
+                  "es/how-mintlify-works",
+                  "es/glossary"
                 ]
               },
               {
@@ -2546,6 +2547,7 @@
                 "pages": [
                   "es/work-experience",
                   "es/projects",
+                  "es/post-view-counter",
                   "es/game-of-thrones",
                   "es/latest-email"
                 ]
@@ -2569,8 +2571,13 @@
                   "es/star-wars-bounty-hunters",
                   "es/star-wars-jedi-order",
                   "es/star-wars-sith-order",
+                  "es/pokemon",
+                  "es/history-of-tea",
+                  "es/tea-history-overview",
+                  "es/tea-origins",
                   "es/star-wars-sith",
-                  "es/star-wars-timeline"
+                  "es/star-wars-timeline",
+                  "es/star-wars-lightsaber-forms"
                 ]
               },
               {
@@ -2595,6 +2602,12 @@
                   "es/ai-tools/cursor",
                   "es/ai-tools/claude-code",
                   "es/ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog"
                 ]
               }
             ]
@@ -5038,7 +5051,8 @@
                   "fr/index",
                   "fr/quickstart",
                   "fr/development",
-                  "fr/how-mintlify-works"
+                  "fr/how-mintlify-works",
+                  "fr/glossary"
                 ]
               },
               {
@@ -5046,6 +5060,7 @@
                 "pages": [
                   "fr/work-experience",
                   "fr/projects",
+                  "fr/post-view-counter",
                   "fr/game-of-thrones",
                   "fr/latest-email"
                 ]
@@ -5069,8 +5084,13 @@
                   "fr/star-wars-bounty-hunters",
                   "fr/star-wars-jedi-order",
                   "fr/star-wars-sith-order",
+                  "fr/pokemon",
+                  "fr/history-of-tea",
+                  "fr/tea-history-overview",
+                  "fr/tea-origins",
                   "fr/star-wars-sith",
-                  "fr/star-wars-timeline"
+                  "fr/star-wars-timeline",
+                  "fr/star-wars-lightsaber-forms"
                 ]
               },
               {
@@ -5095,6 +5115,12 @@
                   "fr/ai-tools/cursor",
                   "fr/ai-tools/claude-code",
                   "fr/ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog"
                 ]
               }
             ]

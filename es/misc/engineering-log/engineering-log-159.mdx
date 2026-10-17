@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Fengate, registro 1158"
+description: "Registro de ingeniería 1158: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Fengate, con referencias a una reparación de 1872."
+---
+
+## Resumen
+
+El equipo nocturno de Fengate registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Una recalibración de rutina en Narmore se realizó contra la tabla de referencia equivocada, la que fue retirada en 1872. Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+
+## Cronología
+
+- Una recalibración de rutina en Narmore se realizó contra la tabla de referencia equivocada, la que fue retirada en 1784.
+- El libro de mantenimiento mostró que la misma falla se había reportado 8 veces a lo largo de 21 meses, cerrada cada vez como resuelta y sin notas.
+- El equipo nocturno de Fengate registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- El equipo nocturno de Fengate registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que databa de una reparación de 1904 que nadie documentó. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 22 días antes. Petra Greaves rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Narmore, sutilmente fuera de tolerancia. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: fengate
+
+fault-class: sensor-drift
+
+first-logged: 1 June
+
+recurrences: 6
+
+owner: anselm.marrow
+
+```
+
+## Causa raíz
+
+Petra Greaves rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Narmore, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que databa de una reparación de 1914 que nadie documentó. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 16 días antes.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Sanna Voss viene defendiendo desde 1955. El tiempo total fuera de servicio ascendió a 43 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro.
