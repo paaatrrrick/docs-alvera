@@ -1,0 +1,65 @@
+---
+title: "Medir el tamaño de las páginas de documentación"
+description: "Cómo medimos el tamaño de las páginas de documentación en los distintos planes de clientes, los tamaños típicos y dónde centrar los próximos esfuerzos de reducción."
+---
+
+<Note>
+  Esta página refleja notas de investigación internas de Notion. Se incluye aquí para probar la integración con Notion.
+</Note>
+
+## Por qué medir el tamaño de las páginas es complicado
+
+Cuando un cliente pregunta "¿cuál es el tamaño de nuestra página?", no tenemos una buena respuesta, y no podemos mejorar lo que no medimos. Este documento se propone responder a esa pregunta.
+
+- Los clientes tienen tamaños de página muy diferentes.
+- Local, staging, producción y producción en incógnito dan tamaños distintos.
+- La herramienta que uses para medir el tamaño de la página cambia el resultado.
+- La métrica que uses para definir el tamaño de la página importa.
+
+## Experimento
+
+La mayoría de los clientes interpretan el tamaño de la página mirando la pestaña Network, así que eso es lo que deberíamos medir: en concreto, la cantidad transferida.
+
+Medimos 170 URLs de clientes (31 Enterprise y 139 Pro) usando [experte.com](https://www.experte.com/).
+
+### Resultados
+
+| Métrica         | Todos  | Pro    | Enterprise |
+| --------------- | ------ | ------ | ---------- |
+| Recuento        | 170,00 | 139,00 | 31,00      |
+| Media (MB)      | 2,21   | 2,15   | 2,52       |
+| Percentil 10    | 1,34   | 1,33   | 1,38       |
+| Percentil 25    | 1,38   | 1,37   | 1,53       |
+| Percentil 50    | 1,56   | 1,52   | 1,68       |
+| Percentil 75    | 2,26   | 2,16   | 2,78       |
+| Percentil 90    | 3,69   | 3,61   | 3,67       |
+| Percentil 97    | 8,79   | 8,56   | 7,43       |
+
+**Otros detalles:**
+
+- Elegimos experte porque sus cifras eran casi idénticas a las de una pestaña Network en incógnito. Otras herramientas, como los navegadores locales sin interfaz, subestimaban el tamaño de la página.
+- Extrajimos páginas al azar de Mongo y buscamos sus URLs. Filtramos los subdominios de vista previa y casos similares.
+- Excluimos los planes Hobby por la alta densidad de páginas sin uso real.
+
+## Conclusiones
+
+**La mayoría de los clientes tienen un tamaño de página justo por debajo de 2 MB.** Varía mucho.
+
+Alrededor del 70 % de las páginas están por debajo de 2 MB: no es horrible, pero tampoco es bueno. A partir de ahí, el tamaño se dispara.
+
+Para reducir el tamaño de las páginas, deberíamos centrarnos en dos cosas:
+
+- **A:** Bajar la línea base de 2 MB.
+- **B:** Reducir el 30 % de páginas más grandes.
+
+Hemos hecho mucho de A (eliminando shiki, crypto-js), pero necesitamos más de B.
+
+## Los clientes populares tienen páginas grandes
+
+Muchas de las páginas de más de 2,5 MB pertenecen a nuestros clientes más populares: Anthropic, Lovable, Auth0, Coinbase, Pinecone e incluso Mintlify. Cuando las páginas alcanzan ese tamaño, no sería extraño ver más abandono de clientes.
+
+## Próximos pasos
+
+- Reducir el tamaño de la mayoría de las páginas y del 15 % superior.
+- Definir objetivos claros para estas cifras.
+- Considerar un trabajo programado que mida cada página semanalmente.
