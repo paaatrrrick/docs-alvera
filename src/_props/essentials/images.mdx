@@ -1,0 +1,45 @@
+---
+title: 'Images, videos, and HTML embeds'
+description: 'Add images, videos, iframes, and other embedded HTML elements to enrich Mintlify documentation pages with media and interactive content.'
+icon: 'image'
+---
+
+<img style={{ borderRadius: '0.5rem' }} src="https://mintlify-assets.b-cdn.net/bigbend.jpg" />
+
+## Image
+
+### Using Markdown
+
+Use [Markdown syntax](https://www.markdownguide.org/basic-syntax/#images) to add images:
+
+```md
+![title](/path/image.jpg)
+```
+
+Image files must be smaller than 5MB. For larger images, host them on a service like [Cloudinary](https://cloudinary.com/) or [S3](https://aws.amazon.com/s3/) and embed the URL.
+
+### Using embeds
+
+For more control over images, use [embeds](https://mintlify.com/docs/image-embeds):
+
+```html
+<img height="200" src="/path/image.jpg" />
+```
+
+## Embeds and HTML elements
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4KzFe50RQkQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ width: '100%', borderRadius: '0.5rem' }} />
+
+<br />
+
+<Tip>
+  Mintlify supports [HTML tags in Markdown](https://www.markdownguide.org/basic-syntax/#html). This is helpful if you prefer HTML tags to Markdown syntax, and lets you create documentation with infinite flexibility.
+</Tip>
+
+### iFrames
+
+Use an iframe to load another HTML page within the document. This is most commonly used to embed videos.
+
+```html
+<iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>
+```
