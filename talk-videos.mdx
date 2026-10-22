@@ -3,4 +3,65 @@ title: "Talk videos"
 description: "Embed recordings of your talks."
 ---
 
-Draft for the Talk Videos launch on November 3, 2026.
+<Note>
+This page is a draft for the Talk Videos launch on November 3, 2026. Everything for the launch lands on the `release/talk-videos` branch and merges on launch day.
+</Note>
+
+## Overview
+
+Talk Videos let a talk on your personal website embed its recording from YouTube or Vimeo 🎥. Both players load in privacy-friendly mode, so visitors aren't tracked just for viewing the page.
+
+## Turn it on
+
+Talk Videos ship turned off. To enable them, set the `REACT_APP_TALK_VIDEOS` environment variable to `on` when you build the site:
+
+```bash .env
+REACT_APP_TALK_VIDEOS=on
+```
+
+Any other value, or leaving the variable unset, keeps Talk Videos off. Because Create React App reads `REACT_APP_` variables at build time, rebuild and redeploy the site after you change it.
+
+## Supported providers
+
+A recording comes from one of two providers. Each one uses its privacy-friendly embed:
+
+| Provider | Value | Embed URL |
+| --- | --- | --- |
+| YouTube | `youtube` | `https://www.youtube-nocookie.com/embed/<id>` |
+| Vimeo | `vimeo` | `https://player.vimeo.com/video/<id>?dnt=1` |
+
+YouTube embeds use the no-cookie domain. Vimeo embeds add `dnt=1`, which turns on Vimeo's do-not-track mode.
+
+The `<id>` is the video ID from the provider's URL. For `https://www.youtube.com/watch?v=dQw4w9WgXcQ`, the ID is `dQw4w9WgXcQ`. For `https://vimeo.com/76979871`, the ID is `76979871`.
+
+## Build an embed URL
+
+`embedUrl` takes a provider, a video ID and an optional start time, and returns the URL to load in the player.
+
+| Field | Required | Description |
+| --- | --- | --- |
+| `provider` | Yes | `youtube` or `vimeo`. |
+| `id` | Yes | The video ID on that provider. |
+| `start` | No | Where playback starts, in seconds. Defaults to `0`, the beginning of the video. |
+
+```js
+import { embedUrl } from '../talks/videos';
+
+embedUrl({ provider: 'youtube', id: 'dQw4w9WgXcQ' });
+// https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ
+
+embedUrl({ provider: 'vimeo', id: '76979871', start: 90 });
+// https://player.vimeo.com/video/76979871?dnt=1&start=90
+```
+
+Use `start` to skip an intro and drop viewers straight into your talk ⏩. A `start` of `0` or less leaves the start time out of the URL.
+
+Any other provider throws an error:
+
+```text
+Unsupported video provider "twitch". Use youtube or vimeo.
+```
+
+<Note>
+The Talks page doesn't show embedded videos yet. Adding recordings to talks on the page is planned for a later part of the launch.
+</Note>
