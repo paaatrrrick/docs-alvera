@@ -33,6 +33,21 @@ The site expects a [webmention.io](https://webmention.io) endpoint, because it r
 
 The tag is part of the page template, so every page advertises the endpoint even while `REACT_APP_WEBMENTIONS` is off. Other sites can start sending mentions before you show them.
 
+## Webmentions section
+
+When `REACT_APP_WEBMENTIONS` is `on`, a post can show a Webmentions section with the reactions it got from other sites 💬. The section shows:
+
+1. One line with the like and repost counts, for example **3 likes · 1 reposts**.
+2. A numbered list of replies. Each reply shows the author's name, linked to the reply on the other site, then a colon and the reply text.
+
+Mentions that are not likes, reposts or replies are not shown in the section.
+
+The section stays hidden while the mentions load. If webmention.io returns an error or can't be reached, the section stays hidden and the rest of the page loads normally.
+
+<Note>
+The section isn't added to blog post pages yet. Adding it to posts is planned for a later part of the launch.
+</Note>
+
 ## Fetch mentions for a post
 
 `fetchMentions(postUrl)` loads the mentions for one post from the webmention.io API and returns them grouped by type. It fetches up to 100 mentions per post.
