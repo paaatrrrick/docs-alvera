@@ -9,8 +9,133 @@ This page is a draft for the Guestbook launch on November 5, 2026. Everything fo
 
 ## Overview
 
-TODO: what the guestbook is and who it is for.
+The guestbook lets visitors leave a short note on your personal website 👋. Each entry has a name and a message. Entries are listed newest first, 20 per page.
+
+For now, entries are stored in the visitor's browser (`localStorage`), so each browser only sees the entries signed from it.
 
 ## Turn it on
 
-TODO: the flag that enables it.
+The guestbook ships turned off. To enable it, set the `REACT_APP_GUESTBOOK` environment variable to `on` when you build the site:
+
+```bash .env
+REACT_APP_GUESTBOOK=on
+```
+
+Any other value, or leaving the variable unset, keeps the guestbook off. Because Create React App reads `REACT_APP_` variables at build time, rebuild and redeploy the site after you change it.
+
+## Sign the guestbook
+
+Once the guestbook is on, visitors find it at `/guestbook`. When the guestbook is off, that address shows the site's regular **Not Found** page.
+
+To sign it, a visitor:
+
+1. Enters their name in the **Name** field.
+2. Writes a note in the **Message** field. A counter under the field shows how many of the 280 characters are used.
+3. Clicks **Sign the guestbook**.
+
+The new entry shows up right away at the top of the list ✍️, unless it is held for review (see [Moderation](#moderation)). The message field clears after a successful sign, and the name stays filled in. If a check fails, the error message appears above the button and nothing is saved.
+
+Below the form, the page shows the total number of published entries, then each entry with its name, the date it was signed and the message.
+
+### Reactions
+
+Each entry has four reaction buttons: 👋 ❤️ 🔥 😂. Clicking one adds a reaction to that entry, and the button shows the running count next to the emoji. Visitors can react as many times as they like.
+
+### Paging
+
+The page lists 20 entries at a time, newest first. When there are more than 20, **Newer** and **Older** buttons appear under the list with **Page X of Y** between them.
+
+## Entry limits
+
+The guestbook trims leading and trailing spaces from both fields, then checks each entry before saving it.
+
+| Field     | Rule                     |
+| --------- | ------------------------ |
+| `name`    | Required. Up to 40 characters. |
+| `message` | Required. Up to 280 characters. |
+
+When an entry fails a check, it is not saved and the visitor sees one of these messages:
+
+| Code               | Message shown                               |
+| ------------------ | ------------------------------------------- |
+| `name_required`    | Add your name.                              |
+| `name_too_long`    | Names are limited to 40 characters.         |
+| `message_required` | Write a message.                            |
+| `message_too_long` | Messages are limited to 280 characters.     |
+| `rate_limited`     | You can sign 3 times a day. Come back tomorrow. |
+
+### Daily limit
+
+Each browser can sign the guestbook 3 times a day. The count resets at midnight UTC. Entries held for review count toward the limit, and attempts that fail a field check do not.
+
+## Moderation
+
+By default, every entry is published as soon as it is signed. You can hold entries for review with two optional environment variables. Like `REACT_APP_GUESTBOOK`, both are read at build time, so rebuild the site after changing them.
+
+| Variable                               | Effect |
+| -------------------------------------- | ------ |
+| `REACT_APP_GUESTBOOK_BLOCKED_WORDS`    | Comma-separated list of words. An entry whose name or message contains any of them (ignoring case) is held for review instead of published. |
+| `REACT_APP_GUESTBOOK_REQUIRE_APPROVAL` | Set to `true` to hold every entry for review. Any other value leaves it off. |
+
+```bash .env
+REACT_APP_GUESTBOOK=on
+REACT_APP_GUESTBOOK_BLOCKED_WORDS=spam, casino
+REACT_APP_GUESTBOOK_REQUIRE_APPROVAL=true
+```
+
+Blocked words match anywhere in the text, so `spam` also catches `spammer`.
+
+Held entries do not appear on `/guestbook` or in its entry count. To review them, open `/guestbook/moderation`. The **Guestbook moderation** page lists each held entry with **Publish** and **Hide** buttons:
+
+- **Publish** adds the entry to the guestbook.
+- **Hide** keeps it off the guestbook.
+
+When nothing is held, the page shows **Nothing waiting for review.** Like `/guestbook`, the moderation page shows **Not Found** when the guestbook is off.
+
+<Note>
+Because entries are stored in the browser, the moderation page lists the held entries saved in the browser you open it in.
+</Note>
+
+## Using the guestbook in a component
+
+The `useGuestbook` hook gives a component the current page of entries and a `sign` function for adding one.
+
+```jsx
+import { useGuestbook } from "../hooks/useGuestbook";
+
+export default function GuestbookList() {
+  const { entries, page, pages, goToPage, sign, error } = useGuestbook();
+
+  const handleSubmit = (name, message) => {
+    if (sign({ name, message })) {
+      // Saved. The list refreshes on the current page.
+    }
+  };
+
+  return (
+    <div>
+      {entries.map((entry) => (
+        <p key={entry.id}>
+          <strong>{entry.name}</strong>: {entry.message}
+        </p>
+      ))}
+      {error && <p role="alert">{error}</p>}
+      <button disabled={page >= pages} onClick={() => goToPage(page + 1)}>
+        Older entries
+      </button>
+    </div>
+  );
+}
+```
+
+The hook returns:
+
+| Value      | Type     | Description                                                                 |
+| ---------- | -------- | --------------------------------------------------------------------------- |
+| `entries`  | object[] | Published entries on the current page. Each has `id`, `name`, `message` and `createdAt`. |
+| `total`    | number   | Number of published entries across all pages.                                |
+| `pages`    | number   | Number of pages. Always at least `1`.                                        |
+| `page`     | number   | Current page, starting at `1`.                                               |
+| `goToPage` | function | Loads the given page number.                                                 |
+| `sign`     | function | Validates and saves `{ name, message }`. Returns `true` when the entry is saved, including when it is held for review, and `false` when a check or the daily limit stops it. |
+| `error`    | string   | Message from the last failed `sign` call, or an empty string.                |
