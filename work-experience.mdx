@@ -102,6 +102,7 @@ Each entry in the `workExperience` array supports the following fields:
 | `image`    | string | No       | Public URL of a company or role logo.                        |
 | `timeLine` | string | Yes      | Human-readable timeframe and location.                       |
 | `link`     | string | No       | URL, such as the company's site. When set, the role title on the timeline links to it and opens in a new tab. |
+| `skills`   | string[] | No     | Skills shown as a short list under the role title on the timeline. |
 
 ## Adding a new entry
 
@@ -179,6 +180,19 @@ Add a `link` to turn the role title on the timeline into a link, for example to 
     text: `Worked on the multiplayer canvas team.`,
     timeLine: 'May - August 2039. San Francisco, CA',
     link: 'https://www.figma.com',
+},
+```
+
+### Listing skills for a role
+
+Add a `skills` array to show a short list of skills under the role title on the timeline. Entries without `skills`, or with an empty array, show no list.
+
+```js src/constants/work.js
+{
+    title: 'SWE at Figma',
+    text: `Worked on the multiplayer canvas team.`,
+    timeLine: 'May - August 2039. San Francisco, CA',
+    skills: ['TypeScript', 'Rust'],
 },
 ```
 
