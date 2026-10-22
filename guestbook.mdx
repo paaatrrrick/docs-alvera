@@ -23,6 +23,24 @@ REACT_APP_GUESTBOOK=on
 
 Any other value, or leaving the variable unset, keeps the guestbook off. Because Create React App reads `REACT_APP_` variables at build time, rebuild and redeploy the site after you change it.
 
+## Sign the guestbook
+
+Once the guestbook is on, visitors find it at `/guestbook`. When the guestbook is off, that address shows the site's regular **Not Found** page.
+
+To sign it, a visitor:
+
+1. Enters their name in the **Name** field.
+2. Writes a note in the **Message** field. A counter under the field shows how many of the 280 characters are used.
+3. Clicks **Sign the guestbook**.
+
+The new entry shows up right away at the top of the list ✍️. The message field clears after a successful sign, and the name stays filled in. If a check fails, the error message appears above the button and nothing is saved.
+
+Below the form, the page shows the total number of entries, then each entry with its name, the date it was signed and the message.
+
+### Paging
+
+The page lists 20 entries at a time, newest first. When there are more than 20, **Newer** and **Older** buttons appear under the list with **Page X of Y** between them.
+
 ## Entry limits
 
 The guestbook trims leading and trailing spaces from both fields, then checks each entry before saving it.
