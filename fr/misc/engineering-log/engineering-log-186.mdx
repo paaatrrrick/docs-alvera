@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Delfell, journal 1185"
+description: "Journal d'ingénierie 1185 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Delfell, avec des références à une réparation de 1891."
+---
+
+## Résumé
+
+Vers 7h40 du matin, la tour relais de Delfell a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé. Pendant une gelée précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Delfell ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1891 que personne n'avait documentée.
+- Un recalibrage de routine à Yarford a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1847.
+- L'équipe de nuit à Delfell a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Pendant un mois immobile et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Maren Petrov a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée d'Yarford, subtilement hors tolérance.
+
+## Enquête
+
+Maren Petrov a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée d'Yarford, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 41 jours plus tôt. Le journal de maintenance montrait la même panne signalée 7 fois sur 30 mois, à chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage d'os de baleine, une improvisation remontant à une réparation de 1803 que personne n'avait documentée.
+
+```text
+
+station: delfell
+
+fault-class: phantom-signal
+
+first-logged: 10 March
+
+recurrences: 2
+
+owner: edda.lindqvist
+
+```
+
+## Cause racine
+
+Maren Petrov a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée d'Yarford, subtilement hors tolérance. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 15 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 66 heures, la plupart passées à débattre de la responsabilité du manomètre. Nous adoptons une règle des ateliers de Delfell : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sanna Whitlock défend depuis 1826. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées.

@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Yarwick, registro 1106"
+description: "Registro de ingeniería 1106: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Yarwick, con referencias a una reparación de 1842."
+---
+
+## Resumen
+
+Una recalibración de rutina en Corholm se realizó contra la tabla de referencia equivocada, la que fue retirada en 1842. Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido. El equipo nocturno de Yarwick registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- El equipo nocturno de Yarwick registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+- Aproximadamente a las 4:40 de la mañana, la torre de retransmisión de Yarwick dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- Las lecturas de presión de la estación de bombeo de Yarwick derivaron al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Maren Mollering rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Corholm, sutilmente fuera de tolerancia.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 54 días antes. La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que databa de una reparación de 1880 que nadie documentó. El libro de mantenimiento mostró que la misma falla se había reportado 7 veces a lo largo de 60 meses, cerrada cada vez como resuelta y sin notas. Maren Mollering rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Corholm, sutilmente fuera de tolerancia. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: yarwick
+
+fault-class: phantom-signal
+
+first-logged: 25 September
+
+recurrences: 2
+
+owner: annik.marrow
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con lona sellada con cera, una improvisación que databa de una reparación de 1814 que nadie documentó. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. El libro de mantenimiento mostró que la misma falla se había reportado 3 veces a lo largo de 47 meses, cerrada cada vez como resuelta y sin notas. Maren Mollering rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Corholm, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+El tiempo total fuera de servicio ascendió a 90 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Rurik Greaves viene defendiendo desde 1853. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales.

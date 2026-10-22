@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Narfell, registro 1102"
+description: "Registro de ingeniería 1102: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Narfell, con referencias a una reparación de 1824."
+---
+
+## Resumen
+
+El equipo nocturno de Narfell registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Narfell dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído. Las lecturas de presión de la estación de bombeo de Narfell derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Una recalibración de rutina en Selton se realizó contra la tabla de referencia equivocada, la que fue retirada en 1824.
+- Maren Marrow rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Selton, sutilmente fuera de tolerancia.
+- El libro de mantenimiento mostró que la misma falla se había reportado 9 veces a lo largo de 52 meses, cerrada cada vez como resuelta y sin notas.
+- Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 22 días antes.
+
+## Investigación
+
+El libro de mantenimiento mostró que la misma falla se había reportado 5 veces a lo largo de 68 meses, cerrada cada vez como resuelta y sin notas. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 73 días antes. Maren Marrow rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Selton, sutilmente fuera de tolerancia. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que databa de una reparación de 1932 que nadie documentó.
+
+```text
+
+station: narfell
+
+fault-class: sensor-drift
+
+first-logged: 20 June
+
+recurrences: 8
+
+owner: petra.mollering
+
+```
+
+## Causa raíz
+
+Maren Marrow rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Selton, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 28 días antes. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El tiempo total fuera de servicio ascendió a 39 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Sanna Kessler viene defendiendo desde 1915. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales.

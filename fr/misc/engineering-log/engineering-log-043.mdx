@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Cormore, journal 1042"
+description: "Journal d'ingénierie 1042 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Cormore, avec des références à une réparation de 1849."
+---
+
+## Résumé
+
+Vers 6h40 du matin, la tour relais de Cormore a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé. Pendant une gelée précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Cormore ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+
+## Chronologie
+
+- La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 16 jours plus tôt.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1849 que personne n'avait documentée.
+- Les relevés de pression de la station de pompage de Cormore ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+- Sigrid Quist a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée d'Ulmvale, subtilement hors tolérance.
+- Un recalibrage de routine à Ulmvale a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1953.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne salé, une improvisation remontant à une réparation de 1799 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 5 fois sur 63 mois, à chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 23 jours plus tôt.
+
+```text
+
+station: cormore
+
+fault-class: reference-mismatch
+
+first-logged: 8 November
+
+recurrences: 6
+
+owner: anselm.holloway
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1886 que personne n'avait documentée. Le journal de maintenance montrait la même panne signalée 4 fois sur 88 mois, à chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 16 jours plus tôt.
+
+## Leçons et suivi
+
+L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Cormore : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 52 heures, la plupart passées à débattre de la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Dario Mollering défend depuis 1835.

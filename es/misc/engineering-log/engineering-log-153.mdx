@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Vorshore, registro 1152"
+description: "Registro de ingeniería 1152: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Vorshore, con referencias a una reparación de 1916."
+---
+
+## Resumen
+
+Aproximadamente a las 9:40 de la mañana, la torre de retransmisión de Vorshore dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído. El equipo nocturno de Vorshore registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Durante semanas de lluvia horizontal, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Vorshore derivaron al alza durante 8 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Una recalibración de rutina en Erifell se realizó contra la tabla de referencia equivocada, la que fue retirada en 1916.
+- Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+- Una recalibración de rutina en Erifell se realizó contra la tabla de referencia equivocada, la que fue retirada en 1786.
+- Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+- La inspección reveló que la caja de empalmes había sido resellada con papel prensado de algas, una improvisación que databa de una reparación de 1915 que nadie documentó.
+
+## Investigación
+
+Annik Holloway rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Erifell, sutilmente fuera de tolerancia. La inspección reveló que la caja de empalmes había sido resellada con compuesto de fibra de cuerda, una improvisación que databa de una reparación de 1885 que nadie documentó. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 61 días antes. El libro de mantenimiento mostró que la misma falla se había reportado 5 veces a lo largo de 15 meses, cerrada cada vez como resuelta y sin notas.
+
+```text
+
+station: vorshore
+
+fault-class: sensor-drift
+
+first-logged: 19 March
+
+recurrences: 2
+
+owner: folke.drummond
+
+```
+
+## Causa raíz
+
+El libro de mantenimiento mostró que la misma falla se había reportado 4 veces a lo largo de 52 meses, cerrada cada vez como resuelta y sin notas. La inspección reveló que la caja de empalmes había sido resellada con hierro de turbera, una improvisación que databa de una reparación de 1896 que nadie documentó. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 71 días antes. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Anselm Holloway viene defendiendo desde 1917. El tiempo total fuera de servicio ascendió a 38 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales.

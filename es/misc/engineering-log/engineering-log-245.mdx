@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Wrencrest, registro 1244"
+description: "Registro de ingeniería 1244: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Wrencrest, con referencias a una reparación de 1884."
+---
+
+## Resumen
+
+El equipo nocturno de Wrencrest registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido. Una recalibración de rutina en Dordane se realizó contra la tabla de referencia equivocada, la que fue retirada en 1884.
+
+## Cronología
+
+- Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 30 días antes.
+- El libro de mantenimiento mostró que la misma falla se había reportado 6 veces a lo largo de 84 meses, cerrada cada vez como resuelta y sin notas.
+- Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Wrencrest dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- Durante una helada temprana, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con chapa de hueso de ballena, una improvisación que databa de una reparación de 1822 que nadie documentó. Bram Lindqvist rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Dordane, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 4 veces a lo largo de 88 meses, cerrada cada vez como resuelta y sin notas. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 36 días antes.
+
+```text
+
+station: wrencrest
+
+fault-class: contact-corrosion
+
+first-logged: 16 March
+
+recurrences: 5
+
+owner: liesl.halloran
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que databa de una reparación de 1860 que nadie documentó. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 49 días antes. Bram Lindqvist rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Dordane, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Casper Drummond viene defendiendo desde 1804. El tiempo total fuera de servicio ascendió a 52 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales.

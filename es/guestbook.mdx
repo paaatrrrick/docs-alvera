@@ -1,0 +1,141 @@
+---
+title: "Libro de visitas"
+description: "Permite que las personas que visitan el sitio firmen un libro de visitas. Lanzamiento el 5 de noviembre."
+---
+
+<Note>
+Esta página es un borrador para el lanzamiento del Libro de visitas el 5 de noviembre de 2026. Todo lo relacionado con el lanzamiento se consolida en la rama `release/guestbook` y se fusiona el día del lanzamiento.
+</Note>
+
+## Resumen
+
+El libro de visitas permite que quienes visitan tu sitio web personal dejen una nota breve 👋. Cada entrada tiene un nombre y un mensaje. Las entradas se muestran de la más reciente a la más antigua, 20 por página.
+
+Por ahora, las entradas se guardan en el navegador de cada visitante (`localStorage`), así que cada navegador solo ve las entradas firmadas desde él.
+
+## Activarlo
+
+El libro de visitas viene desactivado. Para habilitarlo, define la variable de entorno `REACT_APP_GUESTBOOK` con el valor `on` al compilar el sitio:
+
+```bash .env
+REACT_APP_GUESTBOOK=on
+```
+
+Cualquier otro valor, o dejar la variable sin definir, mantiene el libro de visitas desactivado. Como Create React App lee las variables `REACT_APP_` en tiempo de compilación, recompila y vuelve a desplegar el sitio después de cambiarla.
+
+## Firmar el libro de visitas
+
+Cuando el libro de visitas está activado, las personas lo encuentran en `/guestbook`. Cuando está desactivado, esa dirección muestra la página habitual de **Not Found** del sitio.
+
+Para firmarlo, un visitante:
+
+1. Escribe su nombre en el campo **Name**.
+2. Escribe una nota en el campo **Message**. Un contador debajo del campo indica cuántos de los 280 caracteres se han usado.
+3. Hace clic en **Sign the guestbook**.
+
+La nueva entrada aparece de inmediato arriba de la lista ✍️, salvo que quede retenida para revisión (consulta [Moderación](#moderation)). El campo del mensaje se vacía tras una firma correcta, y el nombre permanece. Si alguna comprobación falla, el mensaje de error aparece encima del botón y no se guarda nada.
+
+Debajo del formulario, la página muestra el número total de entradas publicadas y, a continuación, cada entrada con su nombre, la fecha en que se firmó y el mensaje.
+
+### Reacciones
+
+Cada entrada tiene cuatro botones de reacción: 👋 ❤️ 🔥 😂. Al pulsar uno se añade una reacción a esa entrada y el botón muestra el total acumulado junto al emoji. Las personas pueden reaccionar tantas veces como quieran.
+
+### Paginación
+
+La página muestra 20 entradas a la vez, de la más reciente a la más antigua. Cuando hay más de 20, aparecen los botones **Newer** y **Older** debajo de la lista, con **Page X of Y** entre ellos.
+
+## Límites de las entradas
+
+El libro de visitas recorta los espacios iniciales y finales de ambos campos y luego comprueba cada entrada antes de guardarla.
+
+| Campo     | Regla                     |
+| --------- | ------------------------- |
+| `name`    | Obligatorio. Hasta 40 caracteres. |
+| `message` | Obligatorio. Hasta 280 caracteres. |
+
+Cuando una entrada no supera una comprobación, no se guarda y la persona ve uno de estos mensajes:
+
+| Código             | Mensaje mostrado                            |
+| ------------------ | ------------------------------------------- |
+| `name_required`    | Add your name.                              |
+| `name_too_long`    | Names are limited to 40 characters.         |
+| `message_required` | Write a message.                            |
+| `message_too_long` | Messages are limited to 280 characters.     |
+| `rate_limited`     | You can sign 3 times a day. Come back tomorrow. |
+
+### Límite diario
+
+Cada navegador puede firmar el libro de visitas 3 veces al día. El contador se reinicia a medianoche UTC. Las entradas retenidas para revisión cuentan para el límite; los intentos que no pasan una comprobación de campo, no.
+
+## Moderación
+
+De forma predeterminada, cada entrada se publica en cuanto se firma. Puedes retener entradas para revisión con dos variables de entorno opcionales. Al igual que `REACT_APP_GUESTBOOK`, ambas se leen en tiempo de compilación, así que recompila el sitio después de cambiarlas.
+
+| Variable                               | Efecto |
+| -------------------------------------- | ------ |
+| `REACT_APP_GUESTBOOK_BLOCKED_WORDS`    | Lista de palabras separadas por comas. Una entrada cuyo nombre o mensaje contenga alguna de ellas (sin distinguir mayúsculas) queda retenida para revisión en lugar de publicarse. |
+| `REACT_APP_GUESTBOOK_REQUIRE_APPROVAL` | Define `true` para retener todas las entradas para revisión. Cualquier otro valor lo deja desactivado. |
+
+```bash .env
+REACT_APP_GUESTBOOK=on
+REACT_APP_GUESTBOOK_BLOCKED_WORDS=spam, casino
+REACT_APP_GUESTBOOK_REQUIRE_APPROVAL=true
+```
+
+Las palabras bloqueadas coinciden en cualquier parte del texto, por lo que `spam` también atrapa `spammer`.
+
+Las entradas retenidas no aparecen en `/guestbook` ni en su recuento de entradas. Para revisarlas, abre `/guestbook/moderation`. La página **Guestbook moderation** lista cada entrada retenida con los botones **Publish** y **Hide**:
+
+- **Publish** añade la entrada al libro de visitas.
+- **Hide** la deja fuera del libro de visitas.
+
+Cuando no hay nada retenido, la página muestra **Nothing waiting for review.** Al igual que `/guestbook`, la página de moderación muestra **Not Found** cuando el libro de visitas está desactivado.
+
+<Note>
+Como las entradas se guardan en el navegador, la página de moderación lista las entradas retenidas guardadas en el navegador en el que la abres.
+</Note>
+
+## Usar el libro de visitas en un componente
+
+El hook `useGuestbook` proporciona a un componente la página actual de entradas y una función `sign` para añadir una.
+
+```jsx
+import { useGuestbook } from "../hooks/useGuestbook";
+
+export default function GuestbookList() {
+  const { entries, page, pages, goToPage, sign, error } = useGuestbook();
+
+  const handleSubmit = (name, message) => {
+    if (sign({ name, message })) {
+      // Saved. The list refreshes on the current page.
+    }
+  };
+
+  return (
+    <div>
+      {entries.map((entry) => (
+        <p key={entry.id}>
+          <strong>{entry.name}</strong>: {entry.message}
+        </p>
+      ))}
+      {error && <p role="alert">{error}</p>}
+      <button disabled={page >= pages} onClick={() => goToPage(page + 1)}>
+        Older entries
+      </button>
+    </div>
+  );
+}
+```
+
+El hook devuelve:
+
+| Valor      | Tipo     | Descripción                                                                 |
+| ---------- | -------- | --------------------------------------------------------------------------- |
+| `entries`  | object[] | Entradas publicadas en la página actual. Cada una tiene `id`, `name`, `message` y `createdAt`. |
+| `total`    | number   | Número de entradas publicadas en todas las páginas.                         |
+| `pages`    | number   | Número de páginas. Siempre al menos `1`.                                    |
+| `page`     | number   | Página actual, empezando por `1`.                                           |
+| `goToPage` | function | Carga el número de página indicado.                                         |
+| `sign`     | function | Valida y guarda `{ name, message }`. Devuelve `true` cuando la entrada se guarda, incluso si queda retenida para revisión, y `false` cuando una comprobación o el límite diario lo impiden. |
+| `error`    | string   | Mensaje de la última llamada a `sign` fallida, o una cadena vacía.          |
