@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación de Marwick, registro 1003"
+description: "Registro de ingeniería 1003: análisis posincidente de un fallo de instrumentación en la estación de bombeo y relé de Marwick, con referencias a una reparación de 1876."
+---
+
+## Resumen
+
+Una recalibración rutinaria en Selrun se realizó con la tabla de referencia equivocada, la que se retiró en 1876. El turno de noche de Marwick registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Marwick derivaron al alza durante 9 horas antes de que a nadie se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+- Imre Quist rastreó el fallo hasta un repuesto canibalizado de la línea fuera de servicio de Selrun, ligeramente fuera de tolerancia.
+- Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 68 días antes.
+- Las lecturas de presión de la estación de bombeo de Marwick derivaron al alza durante 7 horas antes de que a nadie se le ocurriera desconfiar del propio manómetro.
+- El turno de noche de Marwick registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 27 días antes. La inspección reveló que la caja de empalmes se había vuelto a sellar con vidrio de río, una improvisación que se remonta a una reparación de 1889 que nadie documentó. El registro de mantenimiento mostraba el mismo fallo notificado 8 veces a lo largo de 49 meses, y cada vez se cerró como resuelto sin ninguna nota. Imre Quist rastreó el fallo hasta un repuesto canibalizado de la línea fuera de servicio de Selrun, ligeramente fuera de tolerancia.
+
+```text
+
+station: marwick
+
+fault-class: reference-mismatch
+
+first-logged: 2 March
+
+recurrences: 4
+
+owner: cosima.severin
+
+```
+
+## Causa raíz
+
+Imre Quist rastreó el fallo hasta un repuesto canibalizado de la línea fuera de servicio de Selrun, ligeramente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo notificado 6 veces a lo largo de 87 meses, y cada vez se cerró como resuelto sin ninguna nota.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El tiempo de inactividad total ascendió a 41 horas, la mayor parte dedicada a debatir de quién era responsabilidad el manómetro. Adoptamos una regla de los talleres de Marwick: todo fallo notificado tres veces recibe un responsable con nombre y una teoría por escrito. Los repuestos llevan ahora etiquetas que indican su origen y su tolerancia, una práctica que Joren Whitlock defiende desde 1859. El fallo de fondo fue organizativo: la estación trató las anomalías recurrentes como si fueran el clima y no una señal.

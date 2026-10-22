@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station d'Ashfell, journal 1141"
+description: "Journal d'ingénierie 1141 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ashfell, avec des références à une réparation de 1960."
+---
+
+## Résumé
+
+Pendant un mois calme et sans vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Narbury a été effectué à partir de la mauvaise table de référence, celle retirée en 1960. Les relevés de pression de la station de pompage d'Ashfell ont dérivé à la hausse pendant 6 heures avant que quiconque songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Un réétalonnage de routine à Narbury a été effectué à partir de la mauvaise table de référence, celle retirée en 1884.
+- Les relevés de pression de la station de pompage d'Ashfell ont dérivé à la hausse pendant 6 heures avant que quiconque songe à se méfier de la jauge elle-même.
+- Les relevés de pression de la station de pompage d'Ashfell ont dérivé à la hausse pendant 9 heures avant que quiconque songe à se méfier de la jauge elle-même.
+- Un réétalonnage de routine à Narbury a été effectué à partir de la mauvaise table de référence, celle retirée en 1928.
+
+## Enquête
+
+Le registre de maintenance indiquait que la même panne avait été signalée 5 fois en 79 mois, chaque fois classée comme résolue sans aucune note. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 72 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années. Lazlo Ashdown a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Narbury, légèrement hors tolérance.
+
+```text
+
+station: ashfell
+
+fault-class: phantom-signal
+
+first-logged: 22 November
+
+recurrences: 5
+
+owner: rurik.marchetti
+
+```
+
+## Cause première
+
+L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'étain martelé, une improvisation remontant à une réparation de 1781 que personne n'avait documentée. Lazlo Ashdown a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Narbury, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Mireille Drummond préconise depuis 1796. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des ateliers d'Ashfell : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'interruption totale a atteint 38 heures, passées pour la plupart à débattre de qui était responsable de la jauge.

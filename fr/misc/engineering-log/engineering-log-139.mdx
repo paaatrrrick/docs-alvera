@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station d'Yardane, journal 1138"
+description: "Journal d'ingénierie 1138 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Yardane, avec des références à une réparation de 1911."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage d'Yardane ont dérivé à la hausse pendant 4 heures avant que quiconque songe à se méfier de la jauge elle-même. Vers 6 h 40 du matin, la tour de relais d'Yardane a cessé d'accuser réception des signaux de vie, et les opérateurs ont soupçonné l'habituel contact corrodé. L'équipe de nuit d'Yardane a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage d'Yardane ont dérivé à la hausse pendant 2 heures avant que quiconque songe à se méfier de la jauge elle-même.
+- Le registre de maintenance indiquait que la même panne avait été signalée 8 fois en 87 mois, chaque fois classée comme résolue sans aucune note.
+- Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt.
+- L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du bouleau laqué, une improvisation remontant à une réparation de 1911 que personne n'avait documentée.
+- Le registre de maintenance indiquait que la même panne avait été signalée 4 fois en 12 mois, chaque fois classée comme résolue sans aucune note.
+- L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du roseau tressé, une improvisation remontant à une réparation de 1836 que personne n'avait documentée.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du fer des marais, une improvisation remontant à une réparation de 1803 que personne n'avait documentée. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 14 jours plus tôt. Anselm Brandt a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Torford, légèrement hors tolérance.
+
+```text
+
+station: yardane
+
+fault-class: reference-mismatch
+
+first-logged: 7 March
+
+recurrences: 3
+
+owner: beatrix.kessler
+
+```
+
+## Cause première
+
+Anselm Brandt a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Torford, légèrement hors tolérance. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 20 jours plus tôt. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du composite de fibre de corde, une improvisation remontant à une réparation de 1933 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des ateliers d'Yardane : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'interruption totale a atteint 21 heures, passées pour la plupart à débattre de qui était responsable de la jauge. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées.

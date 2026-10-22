@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Yarwick, journal 1106"
+description: "Journal d'ingénierie 1106 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Yarwick, avec des références à une réparation de 1842."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Corholm a été effectué à partir de la mauvaise table de référence, celle retirée en 1842. Pendant les vents d'est secs, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Yarwick a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- L'équipe de nuit de Yarwick a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 4 h 40 du matin, la tour relais de Yarwick a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- Les relevés de pression de la station de pompage de Yarwick ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Maren Mollering a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Corholm, légèrement hors tolérance.
+
+## Enquête
+
+La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 54 jours plus tôt. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du roseau tressé, une improvisation remontant à une réparation de 1880 que personne n'avait documentée. Le registre de maintenance montrait la même panne signalée 7 fois en 60 mois, chaque fois clôturée comme résolue sans aucune note. Maren Mollering a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Corholm, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: yarwick
+
+fault-class: phantom-signal
+
+first-logged: 25 September
+
+recurrences: 2
+
+owner: annik.marrow
+
+```
+
+## Cause première
+
+L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de la toile scellée à la cire, une improvisation remontant à une réparation de 1814 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 3 fois en 47 mois, chaque fois clôturée comme résolue sans aucune note. Maren Mollering a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Corholm, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+L'arrêt total a atteint 90 heures, passées pour l'essentiel à débattre de qui était responsable du manomètre. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Rurik Greaves préconise depuis 1853. La défaillance profonde était organisationnelle : la station traitait les anomalies récurrentes comme une simple météo plutôt que comme un signal.

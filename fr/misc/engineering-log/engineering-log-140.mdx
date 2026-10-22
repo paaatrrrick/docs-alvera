@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Perford, journal 1139"
+description: "Journal d'ingénierie 1139 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Perford, avec des références à une réparation de 1833."
+---
+
+## Résumé
+
+Pendant une longue saison de brouillard, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Velwick a été effectué à partir de la mauvaise table de référence, celle retirée en 1833. Les relevés de pression de la station de pompage de Perford ont dérivé à la hausse pendant 4 heures avant que quiconque songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Pendant les vents d'est secs, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Tomas Marrow a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Velwick, légèrement hors tolérance.
+- L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'étain martelé, une improvisation remontant à une réparation de 1909 que personne n'avait documentée.
+- Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 34 jours plus tôt.
+- Vers 9 h 40 du matin, la tour de relais de Perford a cessé d'accuser réception des signaux de vie, et les opérateurs ont soupçonné l'habituel contact corrodé.
+- Vers 9 h 40 du matin, la tour de relais de Perford a cessé d'accuser réception des signaux de vie, et les opérateurs ont soupçonné l'habituel contact corrodé.
+
+## Enquête
+
+Le registre de maintenance indiquait que la même panne avait été signalée 2 fois en 86 mois, chaque fois classée comme résolue sans aucune note. Tomas Marrow a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Velwick, légèrement hors tolérance. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 90 jours plus tôt. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de la toile cirée, une improvisation remontant à une réparation de 1791 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: perford
+
+fault-class: phantom-signal
+
+first-logged: 20 June
+
+recurrences: 8
+
+owner: tilda.lindqvist
+
+```
+
+## Cause première
+
+Tomas Marrow a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Velwick, légèrement hors tolérance. Le registre de maintenance indiquait que la même panne avait été signalée 4 fois en 42 mois, chaque fois classée comme résolue sans aucune note. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 47 jours plus tôt.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Edda Kessler préconise depuis 1838. Nous adoptons une règle des ateliers de Perford : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'interruption totale a atteint 72 heures, passées pour la plupart à débattre de qui était responsable de la jauge. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées.

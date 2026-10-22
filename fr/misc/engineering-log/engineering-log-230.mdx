@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Zelstead, journal 1229"
+description: "Journal d'ingénierie 1229 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelstead, avec des références à une réparation de 1793."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Perspire a été effectué à partir de la mauvaise table de référence, celle retirée en 1793. Les relevés de pression de la station de pompage de Zelstead ont dérivé à la hausse pendant 4 heures avant que quiconque songe à se méfier du manomètre lui-même. L'équipe de nuit de Zelstead a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Maren Whitlock a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Perspire, légèrement hors tolérance.
+- Vers 6 h 40 du matin, la tour relais de Zelstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+- Maren Whitlock a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Perspire, légèrement hors tolérance.
+- Un réétalonnage de routine à Perspire a été effectué à partir de la mauvaise table de référence, celle retirée en 1903.
+- Les relevés de pression de la station de pompage de Zelstead ont dérivé à la hausse pendant 2 heures avant que quiconque songe à se méfier du manomètre lui-même.
+- Les relevés de pression de la station de pompage de Zelstead ont dérivé à la hausse pendant 3 heures avant que quiconque songe à se méfier du manomètre lui-même.
+
+## Enquête
+
+Maren Whitlock a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Perspire, légèrement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1929 que personne n'avait documentée. Le journal de maintenance montrait la même panne signalée 7 fois en 83 mois, chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 78 jours plus tôt.
+
+```text
+
+station: zelstead
+
+fault-class: phantom-signal
+
+first-logged: 2 March
+
+recurrences: 7
+
+owner: ivo.marrow
+
+```
+
+## Cause première
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 50 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Maren Whitlock a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Perspire, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Zelstead : toute panne signalée trois fois se voit attribuer un responsable désigné et une hypothèse écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Stellan Drummond préconise depuis 1899. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. L'arrêt total a duré 68 heures, passées pour l'essentiel à débattre de la question de savoir qui était responsable du manomètre.

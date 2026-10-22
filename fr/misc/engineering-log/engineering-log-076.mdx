@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station d'Ossspire, journal 1075"
+description: "Journal d'ingénierie 1075 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ossspire, avec des références à une réparation de 1925."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Pervale a été effectué à partir de la mauvaise table de référence, celle retirée en 1925. Les relevés de pression de la station de pompage d'Ossspire ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Pendant les vents d'est secs, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- Un réétalonnage de routine à Pervale a été effectué à partir de la mauvaise table de référence, celle retirée en 1946.
+- Un réétalonnage de routine à Pervale a été effectué à partir de la mauvaise table de référence, celle retirée en 1884.
+- L'équipe de nuit d'Ossspire a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû être faite 87 jours plus tôt. Oona Vexley a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Pervale, légèrement hors tolérance. Le registre de maintenance montrait la même panne signalée 9 fois en 43 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: ossspire
+
+fault-class: phantom-signal
+
+first-logged: 18 March
+
+recurrences: 5
+
+owner: tomas.oduya
+
+```
+
+## Cause première
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1919 que personne n'avait documentée. Le registre de maintenance montrait la même panne signalée 8 fois en 89 mois, chaque fois clôturée comme résolue sans aucune note. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû être faite 83 jours plus tôt. Oona Vexley a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Pervale, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. Nous adoptons une règle des ateliers d'Ossspire : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. L'arrêt total s'est élevé à 79 heures, passées pour la plupart à débattre de qui était responsable de la jauge.

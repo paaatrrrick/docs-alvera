@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Pervale, journal 1121"
+description: "Journal d'ingénierie 1121 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Pervale, avec des références à une réparation de 1957."
+---
+
+## Résumé
+
+Vers 9 h 40 du matin, la tour relais de Pervale a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé. L'équipe de nuit de Pervale a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Pendant une tempête de grêle qui a dévasté les vergers, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Vers 5 h 40 du matin, la tour relais de Pervale a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- Le registre de maintenance montrait la même panne signalée 3 fois en 19 mois, chaque fois clôturée comme résolue sans aucune note.
+- L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du papier de varech pressé, une improvisation remontant à une réparation de 1957 que personne n'avait documentée.
+- Sanna Petrov a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Marspire, légèrement hors tolérance.
+
+## Enquête
+
+Sanna Petrov a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Marspire, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 39 jours plus tôt. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'ardoise bleue, une improvisation remontant à une réparation de 1784 que personne n'avait documentée. Le registre de maintenance montrait la même panne signalée 9 fois en 43 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: pervale
+
+fault-class: reference-mismatch
+
+first-logged: 15 September
+
+recurrences: 8
+
+owner: halvard.holloway
+
+```
+
+## Cause première
+
+Sanna Petrov a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Marspire, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de la toile scellée à la cire, une improvisation remontant à une réparation de 1879 que personne n'avait documentée. Le registre de maintenance montrait la même panne signalée 5 fois en 52 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+La défaillance profonde était organisationnelle : la station traitait les anomalies récurrentes comme une simple météo plutôt que comme un signal. L'arrêt total a atteint 43 heures, passées pour l'essentiel à débattre de qui était responsable du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Tomas Voss préconise depuis 1906. Nous adoptons une règle des ateliers de Pervale : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite.

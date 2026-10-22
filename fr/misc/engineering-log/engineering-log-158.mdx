@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Calholm, journal 1157"
+description: "Journal d'ingénierie 1157 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Calholm, avec des références à une réparation de 1803."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Tormire a été effectué à partir de la mauvaise table de référence, celle retirée en 1803. Pendant les crues de printemps, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Calholm ont dérivé vers le haut pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec un composite de fibre de corde, une improvisation remontant à une réparation de 1871 que personne n'avait documentée.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1843 que personne n'avait documentée.
+- Vers 8 h 40 du matin, la tour relais de Calholm a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Enquête
+
+Folke Ashdown a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Tormire, légèrement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1879 que personne n'avait documentée. Le registre de maintenance montrait la même panne signalée 8 fois en 41 mois, chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 40 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: calholm
+
+fault-class: phantom-signal
+
+first-logged: 17 March
+
+recurrences: 4
+
+owner: emeric.voss
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait la même panne signalée 2 fois en 36 mois, chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 19 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Folke Ashdown a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Tormire, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine solennité, brûlées. La défaillance la plus profonde était d'ordre organisationnel : la station traitait les anomalies récurrentes comme du bruit de fond plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Tomas Marrow préconise depuis 1905. L'arrêt total a duré 59 heures, dont la majeure partie a été passée à débattre de qui était responsable du manomètre. Nous adoptons une règle des chantiers de Calholm : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

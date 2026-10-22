@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Jorfell, journal 1047"
+description: "Journal d'ingénierie 1047 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Jorfell, avec des références à une réparation de 1827."
+---
+
+## Résumé
+
+L'équipe de nuit de Jorfell a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Un réétalonnage de routine à Velmore a été effectué avec la mauvaise table de référence, celle qui avait été retirée en 1827. Vers 3 h 40 du matin, la tour relais de Jorfell a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Chronologie
+
+- Vers 6 h 40 du matin, la tour relais de Jorfell a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- Pendant un mois calme et sans vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Folke Quist a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velmore, légèrement hors tolérance.
+- Pendant les crues de printemps, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- Pendant une longue saison de brouillard, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+Le registre de maintenance indiquait la même panne signalée 2 fois en 66 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile scellée à la cire, une improvisation remontant à une réparation de 1858 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Folke Quist a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velmore, légèrement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être faite 32 jours plus tôt.
+
+```text
+
+station: jorfell
+
+fault-class: sensor-drift
+
+first-logged: 9 June
+
+recurrences: 9
+
+owner: greta.vexley
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être faite 35 jours plus tôt. Le registre de maintenance indiquait la même panne signalée 5 fois en 34 mois, chaque fois clôturée comme résolue sans aucune note. Folke Quist a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Velmore, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Edda Marchetti préconise depuis 1854. Le temps d'arrêt total s'est élevé à 39 heures, passées pour l'essentiel à débattre de qui était responsable du manomètre. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme des caprices de la météo plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. Nous adoptons une règle en vigueur dans les ateliers de Jorfell : toute panne signalée trois fois se voit attribuer un responsable nommément désigné et une hypothèse écrite.

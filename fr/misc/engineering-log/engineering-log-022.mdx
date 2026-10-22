@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station d'Ulmspire, journal 1021"
+description: "Journal d'ingénierie 1021 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais d'Ulmspire, avec des références à une réparation de 1911."
+---
+
+## Résumé
+
+L'équipe de nuit d'Ulmspire a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Un réétalonnage de routine à Corton a été effectué à partir de la mauvaise table de référence, celle retirée en 1911. Vers 5 h 40 du matin, la tour de relais d'Ulmspire a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 9 h 40 du matin, la tour de relais d'Ulmspire a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Le registre de maintenance montrait le même défaut signalé 5 fois en 58 mois, chaque fois clôturé comme résolu sans la moindre note.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 66 jours plus tôt.
+
+## Enquête
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 70 jours plus tôt. Le registre de maintenance montrait le même défaut signalé 8 fois en 53 mois, chaque fois clôturé comme résolu sans la moindre note. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du papier de varech pressé, une improvisation remontant à une réparation de 1858 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: ulmspire
+
+fault-class: reference-mismatch
+
+first-logged: 12 November
+
+recurrences: 3
+
+owner: otto.kessler
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait le même défaut signalé 3 fois en 90 mois, chaque fois clôturé comme résolu sans la moindre note. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du fer des marais, une improvisation remontant à une réparation de 1947 que personne n'avait documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 75 jours plus tôt. Petra Mollering a attribué le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Corton, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+L'arrêt total s'est élevé à 26 heures, passées pour la plupart à débattre de qui était responsable du manomètre. Nous adoptons une règle venue des ateliers d'Ulmspire : tout défaut signalé trois fois se voit attribuer un responsable désigné et une théorie écrite. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Otto Voss préconise depuis 1934. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées.

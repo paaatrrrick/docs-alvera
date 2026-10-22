@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Marshore, journal 1183"
+description: "Journal d'ingénierie 1183 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Marshore, avec des références à une réparation de 1960."
+---
+
+## Résumé
+
+L'équipe de nuit de Marshore a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Lors d'une tempête de grêle qui a dépouillé les vergers, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Vorfell a été effectué à partir de la mauvaise table de référence, celle retirée en 1960.
+
+## Chronologie
+
+- Un réétalonnage de routine à Vorfell a été effectué à partir de la mauvaise table de référence, celle retirée en 1853.
+- Un réétalonnage de routine à Vorfell a été effectué à partir de la mauvaise table de référence, celle retirée en 1784.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1782 que personne n'avait documentée.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1802 que personne n'avait documentée.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Otto Vexley a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée de Vorfell, légèrement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 61 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1877 que personne n'avait documentée.
+
+```text
+
+station: marshore
+
+fault-class: sensor-drift
+
+first-logged: 8 June
+
+recurrences: 2
+
+owner: tomas.whitlock
+
+```
+
+## Cause première
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Otto Vexley a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée de Vorfell, légèrement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 66 jours plus tôt.
+
+## Enseignements et suivi
+
+Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Emeric Holloway préconise depuis 1889. Nous adoptons une règle des chantiers de Marshore : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. L'interruption totale s'est élevée à 52 heures, passées pour la plupart à débattre de qui était responsable du manomètre. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de simples aléas météorologiques plutôt que comme des signaux. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées.

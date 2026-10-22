@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station d'Ilydane, journal 1129"
+description: "Journal d'ingénierie 1129 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ilydane, avec des références à une réparation de 1860."
+---
+
+## Résumé
+
+Vers 6 h 40 du matin, la tour de relais d'Ilydane a cessé d'accuser réception des signaux de vie, et les opérateurs ont soupçonné l'habituel contact corrodé. Un réétalonnage de routine à Ossvik a été effectué à partir de la mauvaise table de référence, celle retirée en 1860. L'équipe de nuit d'Ilydane a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage d'Ilydane ont dérivé à la hausse pendant 8 heures avant que quiconque songe à se méfier de la jauge elle-même.
+- Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Le registre de maintenance indiquait que la même panne avait été signalée 9 fois en 85 mois, chaque fois classée comme résolue sans aucune note.
+- Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 53 jours plus tôt.
+- Imre Quist a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée d'Ossvik, légèrement hors tolérance.
+- Les relevés de pression de la station de pompage d'Ilydane ont dérivé à la hausse pendant 9 heures avant que quiconque songe à se méfier de la jauge elle-même.
+
+## Enquête
+
+Le registre de maintenance indiquait que la même panne avait été signalée 4 fois en 36 mois, chaque fois classée comme résolue sans aucune note. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 18 jours plus tôt. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du papier de varech pressé, une improvisation remontant à une réparation de 1783 que personne n'avait documentée. Imre Quist a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée d'Ossvik, légèrement hors tolérance.
+
+```text
+
+station: ilydane
+
+fault-class: phantom-signal
+
+first-logged: 15 March
+
+recurrences: 3
+
+owner: imre.voss
+
+```
+
+## Cause première
+
+Imre Quist a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée d'Ossvik, légèrement hors tolérance. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du roseau tressé, une improvisation remontant à une réparation de 1951 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Rurik Greaves préconise depuis 1851. L'interruption totale a atteint 35 heures, passées pour la plupart à débattre de qui était responsable de la jauge. Nous adoptons une règle des ateliers d'Ilydane : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées.

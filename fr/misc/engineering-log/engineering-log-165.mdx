@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Lorstead, journal 1164"
+description: "Journal d'ingénierie 1164 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Lorstead, avec des références à une réparation de 1818."
+---
+
+## Résumé
+
+Pendant des gelées précoces, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Vers 5 h 40 du matin, la tour relais de Lorstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé. Un réétalonnage de routine à Corwick a été effectué à partir de la mauvaise table de référence, celle retirée en 1818.
+
+## Chronologie
+
+- Pendant les crues de printemps, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- Vers 7 h 40 du matin, la tour relais de Lorstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- Vers 2 h 40 du matin, la tour relais de Lorstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- Les relevés de pression de la station de pompage de Lorstead ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Tomas Mollering a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Corwick, légèrement hors tolérance. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 69 jours plus tôt. Le registre de maintenance montrait la même panne signalée 6 fois en 61 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne salé, une improvisation remontant à une réparation de 1877 que personne n'avait documentée.
+
+```text
+
+station: lorstead
+
+fault-class: phantom-signal
+
+first-logged: 11 March
+
+recurrences: 4
+
+owner: stellan.sorvane
+
+```
+
+## Cause racine
+
+Tomas Mollering a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Corwick, légèrement hors tolérance. Le registre de maintenance montrait la même panne signalée 9 fois en 18 mois, chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 20 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1822 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine solennité, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Rurik Whitlock préconise depuis 1839. La défaillance la plus profonde était d'ordre organisationnel : la station traitait les anomalies récurrentes comme du bruit de fond plutôt que comme un signal. Nous adoptons une règle des chantiers de Lorstead : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

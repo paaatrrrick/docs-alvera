@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Velton, journal 1222"
+description: "Journal d'ingénierie 1222 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Velton, avec des références à une réparation de 1899."
+---
+
+## Résumé
+
+Vers 7 h 40 du matin, la tour relais de Velton a cessé d'accuser réception des signaux de pulsation, et les opérateurs ont supposé le contact corrodé habituel. Un réétalonnage de routine à Kelhollow a été effectué à partir de la mauvaise table de référence, celle retirée en 1899. Pendant un mois calme et sans vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du chêne durci au sel, une improvisation remontant à une réparation de 1864 que personne n'avait documentée.
+- L'équipe de nuit de Velton a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 85 jours plus tôt.
+- Vers 7 h 40 du matin, la tour relais de Velton a cessé d'accuser réception des signaux de pulsation, et les opérateurs ont supposé le contact corrodé habituel.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Edda Quist a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelhollow, légèrement hors tolérance.
+
+## Enquête
+
+L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'argile cuite, une improvisation remontant à une réparation de 1829 que personne n'avait documentée. Edda Quist a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelhollow, légèrement hors tolérance. Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 50 jours plus tôt. Le registre de maintenance montrait la même panne signalée 5 fois en 44 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: velton
+
+fault-class: reference-mismatch
+
+first-logged: 20 September
+
+recurrences: 9
+
+owner: yutta.petrov
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Edda Quist a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Kelhollow, légèrement hors tolérance. Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 33 jours plus tôt. Le registre de maintenance montrait la même panne signalée 3 fois en 54 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Joren Brandt préconise depuis 1821. L'interruption totale a atteint 81 heures, passées pour l'essentiel à débattre de la question de savoir qui était responsable du manomètre. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des chantiers de Velton : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

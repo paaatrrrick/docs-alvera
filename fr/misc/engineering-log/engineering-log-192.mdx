@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station d'Ossdane, journal 1191"
+description: "Journal d'ingénierie 1191 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais d'Ossdane, avec des références à une réparation de 1838."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage d'Ossdane ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 3 h 40 du matin, la tour relais d'Ossdane a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Un réétalonnage de routine à Calmara a été effectué à partir de la mauvaise table de référence, celle retirée en 1838.
+
+## Chronologie
+
+- Le registre de maintenance montrait que la même panne avait été signalée 3 fois sur 71 mois, et chaque fois clôturée comme résolue sans aucune note.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 66 jours plus tôt.
+- Vers 9 h 40 du matin, la tour relais d'Ossdane a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Mireille Marchetti a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée de Calmara, légèrement hors tolérance.
+- Pendant un mois calme et sans vent, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 6 h 40 du matin, la tour relais d'Ossdane a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+Mireille Marchetti a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée de Calmara, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 84 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1920 que personne n'avait documentée. Le registre de maintenance montrait que la même panne avait été signalée 8 fois sur 28 mois, et chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: ossdane
+
+fault-class: reference-mismatch
+
+first-logged: 15 November
+
+recurrences: 6
+
+owner: bram.ashdown
+
+```
+
+## Cause première
+
+Le registre de maintenance montrait que la même panne avait été signalée 4 fois sur 31 mois, et chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 46 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne salé, une improvisation remontant à une réparation de 1917 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de simples aléas météorologiques plutôt que comme des signaux. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Maren Whitlock préconise depuis 1837. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. Nous adoptons une règle des chantiers d'Ossdane : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite.

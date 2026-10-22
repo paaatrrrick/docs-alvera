@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Zelspire, journal 1192"
+description: "Journal d'ingénierie 1192 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Zelspire, avec des références à une réparation de 1905."
+---
+
+## Résumé
+
+L'équipe de nuit de Zelspire a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Zelspire ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 8 h 40 du matin, la tour relais de Zelspire a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Lors d'une gelée précoce, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'équipe de nuit de Zelspire a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Les relevés de pression de la station de pompage de Zelspire ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 17 jours plus tôt.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 54 jours plus tôt.
+- Vers 4 h 40 du matin, la tour relais de Zelspire a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1905 que personne n'avait documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 81 jours plus tôt. Imre Sorvane a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée de Roscrest, légèrement hors tolérance. Le registre de maintenance montrait que la même panne avait été signalée 3 fois sur 46 mois, et chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: zelspire
+
+fault-class: sensor-drift
+
+first-logged: 5 March
+
+recurrences: 2
+
+owner: tilda.drummond
+
+```
+
+## Cause première
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 67 jours plus tôt. Imre Sorvane a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée de Roscrest, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait que la même panne avait été signalée 3 fois sur 14 mois, et chaque fois clôturée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Maren Greaves préconise depuis 1875. Nous adoptons une règle des chantiers de Zelspire : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. L'interruption totale s'est élevée à 42 heures, passées pour la plupart à débattre de qui était responsable du manomètre. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de simples aléas météorologiques plutôt que comme des signaux. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées.

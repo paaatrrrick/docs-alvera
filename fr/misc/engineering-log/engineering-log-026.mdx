@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Fenshore, journal 1025"
+description: "Journal d'ingénierie 1025 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Fenshore, avec des références à une réparation de 1860."
+---
+
+## Résumé
+
+L'équipe de nuit de Fenshore a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Un réétalonnage de routine à Eriford a été effectué avec la mauvaise table de référence, celle qui avait été retirée en 1860. Les relevés de pression de la station de pompage de Fenshore ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Vers 2 h 40 du matin, la tour relais de Fenshore a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- Les relevés de pression de la station de pompage de Fenshore ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être faite 77 jours plus tôt.
+- Pendant les vents d'est secs, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 3 h 40 du matin, la tour relais de Fenshore a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- Vers 9 h 40 du matin, la tour relais de Fenshore a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Enquête
+
+Le registre de maintenance indiquait la même panne signalée 9 fois en 63 mois, chaque fois clôturée comme résolue sans aucune note. Bram Halloran a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Eriford, légèrement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être faite 61 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1863 que personne n'avait documentée.
+
+```text
+
+station: fenshore
+
+fault-class: reference-mismatch
+
+first-logged: 16 June
+
+recurrences: 9
+
+owner: annik.severin
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être faite 34 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage d'os de baleine, une improvisation remontant à une réparation de 1942 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Casper Mollering préconise depuis 1873. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme des caprices de la météo plutôt que comme un signal. Le temps d'arrêt total s'est élevé à 49 heures, passées pour l'essentiel à débattre de qui était responsable du manomètre. Nous adoptons une règle en vigueur dans les ateliers de Fenshore : toute panne signalée trois fois se voit attribuer un responsable nommément désigné et une hypothèse écrite.

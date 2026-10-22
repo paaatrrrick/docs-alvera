@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station d'Osshollow, journal 1117"
+description: "Journal d'ingénierie 1117 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais d'Osshollow, avec des références à une réparation de 1846."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage d'Osshollow ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 3 h 40 du matin, la tour relais d'Osshollow a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé. L'équipe de nuit d'Osshollow a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 85 jours plus tôt.
+- Les relevés de pression de la station de pompage d'Osshollow ont dérivé à la hausse pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 86 jours plus tôt.
+- La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 40 jours plus tôt.
+- Vers 7 h 40 du matin, la tour relais d'Osshollow a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Enquête
+
+Le registre de maintenance montrait la même panne signalée 8 fois en 42 mois, chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 38 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Edda Holloway a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée d'Ulmshore, légèrement hors tolérance.
+
+```text
+
+station: osshollow
+
+fault-class: phantom-signal
+
+first-logged: 19 November
+
+recurrences: 2
+
+owner: joren.marchetti
+
+```
+
+## Cause première
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 5 fois en 49 mois, chaque fois clôturée comme résolue sans aucune note. Edda Holloway a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée d'Ulmshore, légèrement hors tolérance. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'ardoise bleue, une improvisation remontant à une réparation de 1846 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+La défaillance profonde était organisationnelle : la station traitait les anomalies récurrentes comme une simple météo plutôt que comme un signal. Nous adoptons une règle des ateliers d'Osshollow : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. L'arrêt total a atteint 34 heures, passées pour l'essentiel à débattre de qui était responsable du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Annik Ashdown préconise depuis 1818. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées.

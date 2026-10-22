@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station d'Ashford, journal 1023"
+description: "Journal d'ingénierie 1023 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais d'Ashford, avec des références à une réparation de 1896."
+---
+
+## Résumé
+
+Vers 6 h 40 du matin, la tour de relais d'Ashford a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Un réétalonnage de routine à Jorvik a été effectué à partir de la mauvaise table de référence, celle retirée en 1896. Les relevés de pression de la station de pompage d'Ashford ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage d'Ashford ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Pendant les vents d'est secs, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'étain martelé, une improvisation remontant à une réparation de 1899 que personne n'avait documentée.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'étain martelé, une improvisation remontant à une réparation de 1955 que personne n'avait documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 89 jours plus tôt. Casper Ashdown a attribué le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Jorvik, légèrement hors tolérance. Le registre de maintenance montrait le même défaut signalé 8 fois en 71 mois, chaque fois clôturé comme résolu sans la moindre note.
+
+```text
+
+station: ashford
+
+fault-class: sensor-drift
+
+first-logged: 20 March
+
+recurrences: 7
+
+owner: annik.holloway
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 68 jours plus tôt. Casper Ashdown a attribué le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Jorvik, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. Nous adoptons une règle venue des ateliers d'Ashford : tout défaut signalé trois fois se voit attribuer un responsable désigné et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Edda Voss préconise depuis 1928. L'arrêt total s'est élevé à 31 heures, passées pour la plupart à débattre de qui était responsable du manomètre. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.
