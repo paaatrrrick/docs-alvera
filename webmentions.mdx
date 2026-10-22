@@ -3,4 +3,64 @@ title: "Webmentions"
 description: "Show likes, reposts and replies from other sites under blog posts."
 ---
 
-Draft for the Webmentions launch on October 27, 2026.
+<Note>
+This page is a draft for the Webmentions launch on October 27, 2026. Everything for the launch lands on the `release/webmentions` branch and merges on launch day.
+</Note>
+
+## Overview
+
+[Webmention](https://www.w3.org/TR/webmention/) is a web standard that lets another site tell yours when it links to one of your posts 🔗. With Webmentions turned on, your personal website advertises an endpoint that receives these notifications and fetches the mentions for each post, grouped into likes, reposts, replies and mentions.
+
+## Turn it on
+
+Webmentions ship turned off. To enable them, set the `REACT_APP_WEBMENTIONS` environment variable to `on` when you build the site:
+
+```bash .env
+REACT_APP_WEBMENTIONS=on
+```
+
+Any other value, or leaving the variable unset, keeps Webmentions off. Because Create React App reads `REACT_APP_` variables at build time, rebuild and redeploy the site after you change it.
+
+## Set your endpoint
+
+Other sites find where to send mentions through a `<link rel="webmention">` tag in the `<head>` of every page. The tag points at the URL in `REACT_APP_WEBMENTION_ENDPOINT`:
+
+```bash .env
+REACT_APP_WEBMENTION_ENDPOINT=https://webmention.io/patrickfoster.dev/webmention
+```
+
+The site expects a [webmention.io](https://webmention.io) endpoint, because it reads mentions back from the webmention.io API. Sign in to webmention.io with your domain to get your endpoint URL, then set it here.
+
+The tag is part of the page template, so every page advertises the endpoint even while `REACT_APP_WEBMENTIONS` is off. Other sites can start sending mentions before you show them.
+
+## Fetch mentions for a post
+
+`fetchMentions(postUrl)` loads the mentions for one post from the webmention.io API and returns them grouped by type. It fetches up to 100 mentions per post.
+
+```js
+import { fetchMentions } from '../webmentions/fetchMentions';
+
+const mentions = await fetchMentions('https://patrickfoster.dev/blog/my-post');
+
+console.log(`${mentions.like.length} likes, ${mentions.reply.length} replies`);
+```
+
+Each mention is sorted into one of four groups, based on how the other site linked to your post:
+
+| Group     | The other site's post                      |
+| --------- | ------------------------------------------ |
+| `like`    | Likes your post (`like-of`).               |
+| `repost`  | Reposts your post (`repost-of`).           |
+| `reply`   | Replies to your post (`in-reply-to`).      |
+| `mention` | Links to your post in any other way.       |
+
+All four groups are always present, as empty arrays when a post has no mentions of that type. Each mention has these fields:
+
+| Field       | Description                                                    |
+| ----------- | -------------------------------------------------------------- |
+| `author`    | Name of the author. `Someone` when the mention has no author name. |
+| `url`       | Link to the post that mentioned yours.                         |
+| `published` | When that post was published.                                  |
+| `text`      | Text of the mention. An empty string when there is none.       |
+
+If the webmention.io API responds with an error, `fetchMentions` throws an error with the message `Webmentions unavailable (<status>)`, for example `Webmentions unavailable (503)`.
