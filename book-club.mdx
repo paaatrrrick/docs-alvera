@@ -1,6 +1,59 @@
 ---
 title: "Book club"
-description: "Monthly reading picks and meetups."
+description: "Run a monthly book club on your personal website: set each month's pick, its meeting date and a link to join the call. Launching November 10."
 ---
 
-Draft for the Book Club launch on November 10, 2026.
+<Note>
+This page is a draft for the Book Club launch on November 10, 2026. Everything for the launch lands on the `release/bookclub` branch and merges on launch day.
+</Note>
+
+## Overview
+
+The book club gives your personal website one reading pick per month 📚. Each pick has a book title, the date the club meets to discuss it and a link visitors use to join the call.
+
+## Turn it on
+
+The book club ships turned off. To enable it, set the `REACT_APP_BOOKCLUB` environment variable to `on` when you build the site:
+
+```bash .env
+REACT_APP_BOOKCLUB=on
+```
+
+Any other value, or leaving the variable unset, keeps the book club off. Because Create React App reads `REACT_APP_` variables at build time, rebuild and redeploy the site after you change it.
+
+## Add a monthly pick
+
+Picks live in the `monthlyPicks` array in `src/bookclub/picks.js`. To schedule a book, add an object with these fields:
+
+| Field         | Format       | Description                                  |
+| ------------- | ------------ | -------------------------------------------- |
+| `month`       | `YYYY-MM`    | The month the pick is for.                   |
+| `title`       | Text         | The book's title.                            |
+| `meetingDate` | `YYYY-MM-DD` | The day the club meets to discuss the book.  |
+| `joinUrl`     | URL          | The link visitors open to join the meeting.  |
+
+```js src/bookclub/picks.js
+export const monthlyPicks = [
+    { month: '2026-11', title: 'The Pragmatic Programmer', meetingDate: '2026-11-20', joinUrl: 'https://cal.com/patrick/bookclub' },
+    { month: '2026-12', title: 'A Philosophy of Software Design', meetingDate: '2026-12-18', joinUrl: 'https://cal.com/patrick/bookclub' },
+];
+```
+
+You can add picks for future months ahead of time 🗓️. Each one becomes the current pick when its month starts.
+
+## How the current pick is chosen
+
+The `currentPick()` helper returns the pick whose `month` matches the current month, or `null` when no pick matches. The current month is read in UTC, so a new pick takes over at midnight UTC on the first of the month, not at midnight in your local time zone.
+
+Give each month a single pick. When two picks share the same `month`, `currentPick()` returns the one listed first.
+
+To check a specific date, pass it to `currentPick()`:
+
+```js
+import { BOOKCLUB_ENABLED, currentPick } from '../bookclub/picks';
+
+if (BOOKCLUB_ENABLED) {
+    const pick = currentPick(new Date('2026-11-05'));
+    // { month: '2026-11', title: 'The Pragmatic Programmer', meetingDate: '2026-11-20', joinUrl: 'https://cal.com/patrick/bookclub' }
+}
+```
