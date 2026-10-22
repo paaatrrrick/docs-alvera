@@ -24,7 +24,8 @@
                   "index",
                   "quickstart",
                   "development",
-                  "how-mintlify-works"
+                  "how-mintlify-works",
+                  "glossary"
                 ]
               },
               {
@@ -57,6 +58,7 @@
                   "star-wars-jedi-order",
                   "star-wars-sith-order",
                   "star-wars-timeline",
+                  "star-wars-lightsaber-forms",
                   "pokemon",
                   "history-of-tea",
                   "tea-history-overview",
@@ -87,6 +89,12 @@
                   "ai-tools/cursor",
                   "ai-tools/claude-code",
                   "ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Changelog",
+                "pages": [
+                  "changelog"
                 ]
               }
             ]
