@@ -1,35 +1,35 @@
 ---
-title: "Page projets : structure et mises à jour"
-description: "Comment la page dédiée /projects est configurée à partir du tableau projects, avec le schéma d'entrée et un exemple de code."
+title: "Page Projets : structure et mises à jour"
+description: "Comment la page vitrine dédiée /projects est configurée à partir du tableau projects, avec le schéma des entrées et un exemple de code."
 ---
 
-## Vue d'ensemble
+## Présentation
 
-Le site personnel dispose désormais d'une page dédiée `/projects` qui présente les projets personnels dans une grille responsive. Chaque carte affiche le nom du projet, une accroche d'une ligne, une description plus longue, la stack technique sous forme de tags et un lien vers le dépôt ou le site en ligne.
+Le site personnel dispose désormais d'une page `/projects` dédiée qui présente les projets personnels dans une grille responsive. Chaque carte affiche le nom du projet, un slogan d'une ligne, une description plus détaillée, la stack technique sous forme de tags et un lien vers le dépôt ou le site en ligne.
 
-Les entrées proviennent du tableau `projects` dans `src/constants/projects.js` et sont rendues par le composant `Projects` à la route `/projects`. La page coexiste avec la page d'accueil pour que les visiteurs puissent parcourir le catalogue complet de projets sans faire défiler la landing page.
+Les entrées proviennent du tableau `projects` dans `src/constants/projects.js` et sont affichées par le composant `Projects` sur la route `/projects`. La page coexiste avec la page d'accueil afin que les visiteurs puissent parcourir la liste complète des projets sans faire défiler la page d'accueil.
 
 ## Quand utiliser cette page
 
-Ajoutez une entrée à `/projects` lorsque vous voulez mettre en avant un projet personnel avec sa propre carte, une accroche et des tags techniques. Utilisez la liste de la page d'accueil pour les projets que vous voulez mettre en avant ; utilisez `/projects` pour le catalogue complet.
+Ajoutez une entrée à `/projects` lorsque vous souhaitez mettre en avant un projet personnel sur sa propre carte, avec un slogan et des tags techniques. Utilisez la liste de la page d'accueil pour les projets que vous voulez mettre en vedette ; utilisez `/projects` pour le catalogue complet.
 
-## Schéma d'entrée
+## Schéma des entrées
 
-Chaque objet du tableau `projects` accepte les champs suivants. Tous les champs sont obligatoires, sauf ceux indiqués comme facultatifs.
+Chaque objet du tableau `projects` prend en charge les champs suivants. Tous les champs sont obligatoires, sauf mention contraire.
 
-| Champ         | Type     | Description                                                                                       |
-| ------------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `name`        | string   | Nom du projet rendu comme titre et lien de la carte.                                              |
-| `tagline`     | string   | Résumé d'une ligne affiché directement sous le nom.                                               |
-| `description` | string   | Paragraphe plus long qui explique ce que fait le projet et à qui il s'adresse.                    |
-| `tech`        | string[] | Tags de stack rendus en liste horizontale (par exemple, `['React', 'Rust', 'SQLite']`).           |
-| `status`      | string   | État du projet. Utilisez `'Active'` pour les projets que vous maintenez encore, ou `'Archived'` pour ceux que vous ne mettez plus à jour. Rendu comme un badge coloré dans l'en-tête de la carte. |
-| `link`        | string   | URL vers laquelle pointe le titre de la carte. S'ouvre dans un nouvel onglet.                     |
-| `repo`        | string   | Facultatif. URL du dépôt. Lorsqu'il est défini, la carte affiche un lien **Source code** à côté de la liste des technologies. S'ouvre dans un nouvel onglet. |
+| Champ         | Type     | Description                                                                                  |
+| ------------- | -------- | -------------------------------------------------------------------------------------------- |
+| `name`        | string   | Nom du projet, affiché comme titre de la carte et texte du lien.                                     |
+| `tagline`     | string   | Résumé d'une ligne affiché directement sous le nom.                                              |
+| `description` | string   | Paragraphe plus long expliquant ce que fait le projet et à qui il s'adresse.                       |
+| `tech`        | string[] | Tags de la stack affichés sous forme de liste horizontale (par exemple, `['React', 'Rust', 'SQLite']`).       |
+| `status`      | string   | Cycle de vie du projet. Utilisez `'Active'` pour les projets que vous maintenez encore ou `'Archived'` pour ceux qui ne reçoivent plus de mises à jour. Affiché sous forme de badge coloré dans l'en-tête de la carte. |
+| `link`        | string   | URL vers laquelle pointe le titre de la carte. S'ouvre dans un nouvel onglet. Utilisez le dépôt ou le site en ligne.          |
+| `repo`        | string   | Facultatif. URL du dépôt. Lorsqu'il est défini, la carte affiche un lien **Code source** à côté de la liste des technologies. S'ouvre dans un nouvel onglet. |
 
 ## Ajouter un projet
 
-Ouvrez `src/constants/projects.js` et ajoutez un nouvel objet au tableau `projects`. Les entrées sont rendues dans l'ordre du tableau, alors placez en premier le projet le plus récent ou le plus pertinent.
+Ouvrez `src/constants/projects.js` et ajoutez un nouvel objet au tableau `projects`. Les entrées s'affichent dans l'ordre du tableau : placez donc le projet le plus récent ou le plus pertinent en premier.
 
 ```js src/constants/projects.js
 const projects = [
@@ -48,26 +48,26 @@ export default projects;
 ```
 
 <Tip>
-Gardez `tagline` assez court pour tenir sur une ligne en mobile — visez moins de 60 caractères. Réservez l'argumentaire plus long pour `description`.
+Gardez `tagline` suffisamment court pour tenir sur une seule ligne sur mobile — visez moins de 60 caractères. Réservez la présentation plus longue à `description`.
 </Tip>
 
 ## Conseils de rédaction
 
-La page `/projects` inclut un champ de recherche qui filtre sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, espace du problème ou mots-clés de stack qui ne sont pas déjà dans les tags — pour que les projets remontent dans les résultats.
+La page `/projects` comprend un champ de recherche qui porte sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, domaine du problème ou mots-clés de stack qui ne figurent pas déjà dans les tags — afin que les projets apparaissent dans les résultats de recherche.
 
-- **Nom :** utilisez le nom canonique du projet. Évitez les préfixes emoji ; le design de la carte repose sur une hiérarchie typographique nette.
-- **Accroche :** commencez par la catégorie ou la mécanique principale (« Gestionnaire de favoris auto-hébergé », pas « Un projet que j'ai fait »).
-- **Description :** une ou deux phrases. Indiquez ce que fait le projet et le public visé.
-- **Tags techniques :** listez les éléments structurants de la stack, pas chaque dépendance. Trois à cinq tags se lisent le mieux.
-- **Statut :** utilisez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous arrêtez de publier des mises à jour pour que les visiteurs sachent que le projet est figé — le badge devient gris au lieu de vert.
-- **Lien :** préférez l'URL du dépôt pour les projets open source, ou le site en ligne pour les projets hébergés. Si un projet hébergé est aussi open source, faites pointer `link` vers le site en ligne et renseignez `repo` avec l'URL du dépôt.
+- **Nom :** utilisez le nom officiel du projet. Évitez les préfixes emoji ; le design de la carte repose sur une hiérarchie typographique épurée.
+- **Slogan :** commencez par la catégorie ou le mécanisme principal (« Gestionnaire de favoris auto-hébergé », et non « Un projet que j'ai créé »).
+- **Description :** une ou deux phrases. Indiquez ce que fait le projet et son public ou son cas d'usage.
+- **Tags techniques :** listez les éléments essentiels de la stack, pas chaque dépendance. Trois à cinq tags, c'est ce qui se lit le mieux.
+- **Statut :** définissez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous cessez de publier des mises à jour, afin que les visiteurs sachent que le projet est figé — le badge passe alors du vert au gris.
+- **Lien :** privilégiez l'URL du dépôt pour les projets open source, ou le site en ligne pour les projets hébergés. Pour les projets hébergés qui sont également open source, faites pointer `link` vers le site en ligne et définissez `repo` sur l'URL du dépôt.
 
 ## Navigation
 
-La page est branchée dans `src/App.js` ainsi :
+La page est configurée dans `src/App.js` comme suit :
 
 ```js src/App.js
 <Route exact path='/projects' component={Projects} />
 ```
 
-Faites un lien vers cette page depuis n'importe où sur le site avec `/projects`. La page inclut un lien « ← Back home » dans son en-tête pour les visiteurs qui arrivent directement sur la route.
+Créez un lien vers celle-ci depuis n'importe quel endroit du site avec `/projects`. La page comprend un lien « ← Retour à l'accueil » dans son en-tête pour les visiteurs qui arrivent directement sur la route.

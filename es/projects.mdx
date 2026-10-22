@@ -1,35 +1,35 @@
 ---
 title: "Página de proyectos: estructura y actualizaciones"
-description: "Cómo se configura la página dedicada /projects a partir del array projects, incluyendo el esquema de entrada y un ejemplo de código."
+description: "Cómo se configura la página dedicada /projects a partir del array projects, incluido el esquema de las entradas y un ejemplo de código."
 ---
 
-## Resumen
+## Descripción general
 
-El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo.
+El sitio web personal ahora tiene una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula adaptable. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, la pila tecnológica como etiquetas y un enlace al repositorio o al sitio en vivo.
 
-Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
+Las entradas proceden del array `projects` en `src/constants/projects.js` y las renderiza el componente `Projects` en la ruta `/projects`. La página se encuentra junto a la página de inicio para que los visitantes puedan explorar la lista completa de proyectos sin tener que desplazarse por la página de inicio.
 
 ## Cuándo usar esta página
 
-Añade una entrada a `/projects` cuando quieras destacar un proyecto personal con su propia tarjeta, un eslogan y etiquetas de tecnología. Usa la lista de la página de inicio para los proyectos que quieras mostrar al frente; usa `/projects` para el catálogo completo.
+Añade una entrada a `/projects` cuando quieras mostrar un proyecto personal en su propia tarjeta con un eslogan y etiquetas tecnológicas. Usa la lista de la página de inicio para los proyectos que quieras destacar en primer plano; usa `/projects` para el catálogo completo.
 
-## Esquema de entrada
+## Esquema de las entradas
 
-Cada objeto del array `projects` admite los siguientes campos. Todos son obligatorios salvo los marcados como opcionales.
+Cada objeto del array `projects` admite los siguientes campos. Todos los campos son obligatorios salvo que se indique que son opcionales.
 
-| Campo         | Tipo     | Descripción                                                                                       |
-| ------------- | -------- | ------------------------------------------------------------------------------------------------- |
-| `name`        | string   | Nombre del proyecto que se renderiza como encabezado y enlace de la tarjeta.                      |
-| `tagline`     | string   | Resumen de una línea que aparece justo debajo del nombre.                                         |
-| `description` | string   | Párrafo más largo que explica qué hace el proyecto y a quién va dirigido.                         |
-| `tech`        | string[] | Etiquetas del stack renderizadas como una lista horizontal (por ejemplo, `['React', 'Rust']`).    |
-| `status`      | string   | Estado del proyecto. Usa `'Active'` para proyectos que sigues manteniendo o `'Archived'` para los que ya no actualizas. Se renderiza como una insignia de color en la cabecera de la tarjeta. |
-| `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva.                    |
-| `repo`        | string   | Opcional. URL del repositorio. Si se define, la tarjeta muestra un enlace **Source code** junto a la lista de tecnologías. Se abre en una pestaña nueva. |
+| Campo         | Tipo     | Descripción                                                                                  |
+| ------------- | -------- | -------------------------------------------------------------------------------------------- |
+| `name`        | string   | Nombre del proyecto que se muestra como encabezado de la tarjeta y texto del enlace.                                     |
+| `tagline`     | string   | Resumen de una línea que se muestra justo debajo del nombre.                                              |
+| `description` | string   | Párrafo más largo que explica qué hace el proyecto y a quién va dirigido.                       |
+| `tech`        | string[] | Etiquetas de la pila tecnológica que se muestran como una lista horizontal (por ejemplo, `['React', 'Rust', 'SQLite']`).       |
+| `status`      | string   | Ciclo de vida del proyecto. Usa `'Active'` para los proyectos que todavía mantienes o `'Archived'` para aquellos en los que ya no publicas actualizaciones. Se muestra como una insignia de color en el encabezado de la tarjeta. |
+| `link`        | string   | URL a la que enlaza el encabezado de la tarjeta. Se abre en una pestaña nueva. Usa el repositorio o el sitio en vivo.          |
+| `repo`        | string   | Opcional. URL del repositorio. Cuando se establece, la tarjeta muestra un enlace **Código fuente** junto a la lista de tecnologías. Se abre en una pestaña nueva. |
 
 ## Añadir un proyecto
 
-Abre `src/constants/projects.js` y añade un nuevo objeto al array `projects`. Las entradas se renderizan en el orden del array, así que coloca primero el proyecto más reciente o más relevante.
+Abre `src/constants/projects.js` y añade un nuevo objeto al array `projects`. Las entradas se muestran en el orden del array, así que coloca primero el proyecto más reciente o más relevante.
 
 ```js src/constants/projects.js
 const projects = [
@@ -48,26 +48,26 @@ export default projects;
 ```
 
 <Tip>
-Mantén `tagline` lo bastante corto para caber en una sola línea en móvil — apunta a menos de 60 caracteres. Reserva la presentación más larga para `description`.
+Mantén el `tagline` lo bastante corto como para que quepa en una línea en móviles: intenta que tenga menos de 60 caracteres. Reserva la presentación más larga para `description`.
 </Tip>
 
-## Guía de redacción
+## Pautas de redacción
 
-La página `/projects` incluye un cuadro de búsqueda que coincide con `name`, `tagline` y `description`, combinado con el filtro por tecnología. Redacta esos tres campos con las palabras que una persona buscaría realmente — categoría de producto, espacio del problema o palabras clave del stack que no estén ya en las etiquetas — para que los proyectos aparezcan en los resultados.
+La página `/projects` incluye un cuadro de búsqueda que busca coincidencias en `name`, `tagline` y `description`, combinado con el filtro de tecnologías. Redacta esos tres campos con las palabras que un visitante escribiría realmente —categoría del producto, ámbito del problema o palabras clave de la pila que no sean ya etiquetas— para que los proyectos aparezcan en la búsqueda.
 
-- **Nombre:** Usa el nombre canónico del proyecto. Evita prefijos con emoji; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
-- **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que hice").
-- **Descripción:** Una o dos oraciones. Indica qué hace y a quién va dirigido.
-- **Etiquetas de tecnología:** Enumera las piezas principales del stack, no todas las dependencias. De tres a cinco etiquetas se lee mejor.
-- **Estado:** Usa `'Active'` para proyectos que sigues manteniendo. Cambia a `'Archived'` cuando dejes de publicar actualizaciones para que las personas sepan que el proyecto está congelado — la insignia pasa de verde a gris.
-- **Enlace:** Prefiere la URL del repositorio para proyectos open source o el sitio en vivo para proyectos hospedados. Si un proyecto hospedado también es open source, apunta `link` al sitio en vivo y define `repo` con la URL del repositorio.
+- **Nombre:** Usa el nombre canónico del proyecto. Evita los prefijos con emojis; el diseño de la tarjeta se basa en una jerarquía tipográfica limpia.
+- **Eslogan:** Empieza por la categoría o la mecánica principal ("Gestor de marcadores autoalojado", no "Un proyecto que he creado").
+- **Descripción:** Una o dos frases. Menciona qué hace y el público o caso de uso.
+- **Etiquetas tecnológicas:** Enumera las piezas fundamentales de la pila, no todas las dependencias. Entre tres y cinco etiquetas es lo que mejor se lee.
+- **Estado:** Establece `'Active'` para los proyectos que todavía mantienes. Cámbialo a `'Archived'` cuando dejes de publicar actualizaciones para que los visitantes sepan que el proyecto está congelado: la insignia pasa de verde a gris.
+- **Enlace:** Da preferencia a la URL del repositorio para el trabajo de código abierto, o al sitio en vivo para los proyectos alojados. Para los proyectos alojados que también son de código abierto, haz que `link` apunte al sitio en vivo y establece `repo` con la URL del repositorio.
 
 ## Navegación
 
-La página se registra en `src/App.js` como:
+La página está configurada en `src/App.js` así:
 
 ```js src/App.js
 <Route exact path='/projects' component={Projects} />
 ```
 
-Enlaza a la página desde cualquier parte del sitio con `/projects`. La página incluye un enlace "← Back home" en su encabezado para quienes lleguen directamente a la ruta.
+Enlázala desde cualquier parte del sitio con `/projects`. La página incluye un enlace "← Volver al inicio" en su encabezado para los visitantes que llegan directamente a la ruta.
