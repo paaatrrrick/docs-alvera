@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Torgate, journal 1233"
+description: "Journal d'ingénierie 1233 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Torgate, avec des références à une réparation de 1790."
+---
+
+## Résumé
+
+Pendant les vents d'est secs, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. L'équipe de nuit de Torgate a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur. Vers 6 h 40 du matin, la tour relais de Torgate a cessé d'accuser réception des signaux de battement, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Chronologie
+
+- Le journal de maintenance montrait la même panne signalée 9 fois sur 31 mois, chaque fois clôturée comme résolue sans aucune note.
+- L'équipe de nuit de Torgate a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 76 jours plus tôt.
+- Les relevés de pression de la station de pompage de Torgate ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 19 jours plus tôt.
+- Vesna Mollering a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Wrenspire, subtilement hors tolérance.
+
+## Enquête
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 47 jours plus tôt. Le journal de maintenance montrait la même panne signalée 9 fois sur 85 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1790 que personne n'a documentée. Vesna Mollering a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Wrenspire, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: torgate
+
+fault-class: phantom-signal
+
+first-logged: 6 June
+
+recurrences: 6
+
+owner: anselm.severin
+
+```
+
+## Cause racine
+
+Vesna Mollering a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Wrenspire, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1940 que personne n'a documentée.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Torgate : toute panne signalée trois fois se voit attribuer un responsable désigné et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Le temps d'arrêt total s'est élevé à 44 heures, dont la majeure partie passée à débattre de qui était responsable du manomètre. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Maren Mollering préconise depuis 1840. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.

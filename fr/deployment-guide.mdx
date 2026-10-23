@@ -1,0 +1,22 @@
+---
+title: 'Guide de déploiement'
+description: 'Publiez vos docs en production en quelques étapes.'
+---
+
+Une fois que vous êtes satisfait de l'apparence en local, il est temps de déployer.
+
+## Connecter votre dépôt
+
+Commencez par connecter votre dépôt git. Nous prenons en charge GitHub et GitLab, la configuration est légèrement différente pour chacun — consultez [la page de configuration git](/integrations/git-setup).
+
+Une fois connecté, chaque push sur votre branche principale déclenchera automatiquement un nouveau déploiement.
+
+## Domaines personnalisés
+
+Vous pouvez faire pointer un domaine personnalisé vers votre site. Ajoutez le domaine dans [les paramètres](/settings/domains-broken) puis mettez à jour vos enregistrements DNS comme indiqué dans [ce tutoriel](./domains/dns-setup).
+
+<Tip>
+Les déploiements prennent généralement moins d'une minute, mais un gros site peut prendre plus de temps. Vous pouvez suivre la progression dans [le journal de déploiement](#deploi-logs).
+</Tip>
+
+Si un déploiement échoue, lisez la page [de dépannage des déploiements](https://help.example-broken.dev/deploys).
