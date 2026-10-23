@@ -65,6 +65,7 @@
                   "tea-history-overview",
                   "tea-origins",
                   "star-wars-sith",
+                  "star-wars-jawas",
                   "star-wars-timeline"
                 ]
               },
@@ -2571,6 +2572,7 @@
                   "es/star-wars-jedi-order",
                   "es/star-wars-sith-order",
                   "es/star-wars-sith",
+                  "es/star-wars-jawas",
                   "es/star-wars-timeline"
                 ]
               },
@@ -5071,6 +5073,7 @@
                   "fr/star-wars-jedi-order",
                   "fr/star-wars-sith-order",
                   "fr/star-wars-sith",
+                  "fr/star-wars-jawas",
                   "fr/star-wars-timeline"
                 ]
               },
