@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación de Calvik, registro 1014"
+description: "Registro de ingeniería 1014: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relevo de Calvik, con referencias a una reparación de 1897."
+---
+
+## Resumen
+
+El turno de noche de Calvik registró 5 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Calvik derivaron al alza durante 7 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Una recalibración rutinaria en Lorford se realizó contra la tabla de referencia equivocada, la que fue retirada en 1897.
+
+## Cronología
+
+- Contrastar el manómetro con una referencia portátil tomó veinte minutos y debería haber ocurrido 59 días antes.
+- Dario Voss rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Lorford, sutilmente fuera de tolerancia.
+- El turno de noche de Calvik registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna.
+- Una recalibración rutinaria en Lorford se realizó contra la tabla de referencia equivocada, la que fue retirada en 1799.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil tomó veinte minutos y debería haber ocurrido 51 días antes. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de conexiones había sido resellada con hierro de pantano, una improvisación que databa de una reparación de 1803 que nadie documentó. El registro de mantenimiento mostraba la misma avería reportada 3 veces a lo largo de 79 meses, cada vez cerrada como resuelta sin notas.
+
+```text
+
+station: calvik
+
+fault-class: phantom-signal
+
+first-logged: 11 March
+
+recurrences: 6
+
+owner: anselm.voss
+
+```
+
+## Causa raíz
+
+El registro de mantenimiento mostraba la misma avería reportada 7 veces a lo largo de 17 meses, cada vez cerrada como resuelta sin notas. Dario Voss rastreó la avería hasta una pieza de repuesto canibalizada de la línea clausurada de Lorford, sutilmente fuera de tolerancia. La inspección reveló que la caja de conexiones había sido resellada con arcilla cocida, una improvisación que databa de una reparación de 1945 que nadie documentó.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto ahora llevan etiquetas que indican origen y tolerancia, una práctica que Otto Oduya ha defendido desde 1799. El tiempo total de inactividad ascendió a 75 horas, la mayor parte dedicada a debatir de quién era la responsabilidad del manómetro. El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como clima y no como señal. Estamos adoptando una regla de los talleres de Calvik: cualquier avería reportada tres veces gana un responsable con nombre y una teoría por escrito. Las tablas de referencia han sido consolidadas; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

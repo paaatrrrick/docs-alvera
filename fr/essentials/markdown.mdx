@@ -1,23 +1,23 @@
 ---
 title: 'Référence de la syntaxe Markdown pour Mintlify'
-description: 'Référence des titres, du formatage du texte, des listes, des liens, des citations et autres mises en forme Markdown standard prises en charge dans les pages de documentation Mintlify.'
+description: 'Référence pour les titres, la mise en forme du texte, les listes, les liens, les citations et les autres formats Markdown standard pris en charge dans les pages de documentation Mintlify.'
 icon: 'text-size'
 ---
 
 ## Titres
 
-Idéal pour les en-têtes de section.
+À privilégier pour les en-têtes de section.
 
 ```md
-## Titres
+## Titles
 ```
 
 ### Sous-titres
 
-Idéal pour les en-têtes de sous-section.
+À privilégier pour les en-têtes de sous-section.
 
 ```md
-### Sous-titres
+### Subtitles
 ```
 
 <Tip>
@@ -26,50 +26,50 @@ Chaque **titre** et **sous-titre** crée une ancre et apparaît également dans 
 
 </Tip>
 
-## Formatage du texte
+## Mise en forme du texte
 
-Nous prenons en charge la majorité des formatages markdown. Il suffit d'ajouter `**`, `_` ou `~` autour du texte pour le mettre en forme.
+Mintlify prend en charge la plupart des formats Markdown. Ajoutez `**`, `_` ou `~` autour du texte pour le mettre en forme.
 
-| Style         | Comment l'écrire   | Résultat        |
-| ------------- | ------------------ | --------------- |
-| Gras          | `**gras**`         | **gras**        |
-| Italique      | `_italique_`       | _italique_      |
-| Barré         | `~barré~`          | ~barré~         |
+| Style         | Comment l'écrire  | Résultat        |
+| ------------- | ----------------- | --------------- |
+| Gras          | `**bold**`        | **gras**        |
+| Italique      | `_italic_`        | _italique_      |
+| Barré         | `~strikethrough~` | ~barré~         |
 
-Vous pouvez les combiner. Par exemple, écrivez `**_gras et italique_**` pour obtenir du texte **_gras et italique_**.
+Vous pouvez les combiner. Par exemple, écrivez `**_bold and italic_**` pour obtenir du texte **_gras et italique_**.
 
-Vous devez utiliser du HTML pour écrire du texte en exposant et en indice. Autrement dit, ajoutez `<sup>` ou `<sub>` autour de votre texte.
+Vous devez utiliser du HTML pour écrire du texte en exposant et en indice. C'est-à-dire, ajoutez `<sup>` ou `<sub>` autour de votre texte.
 
 | Taille du texte | Comment l'écrire         | Résultat               |
 | --------------- | ------------------------ | ---------------------- |
-| Exposant        | `<sup>exposant</sup>`    | <sup>exposant</sup>    |
-| Indice          | `<sub>indice</sub>`      | <sub>indice</sub>      |
+| Exposant        | `<sup>superscript</sup>` | <sup>exposant</sup>    |
+| Indice          | `<sub>subscript</sub>`   | <sub>indice</sub>      |
 
 ## Liens vers des pages
 
-Vous pouvez ajouter un lien en encadrant le texte de `[]()`. Vous écririez `[lien vers google](https://google.com)` pour [lien vers google](https://google.com).
+Vous pouvez ajouter un lien en entourant du texte avec `[]()`. Vous écririez `[link to google](https://google.com)` pour créer un [lien vers google](https://google.com).
 
-Les liens vers des pages de votre documentation doivent être relatifs à la racine. Vous devez essentiellement inclure le chemin complet du dossier. Par exemple, `[lien vers texte](/writing-content/text)` renvoie vers la page « Text » dans notre section des composants.
+Les liens vers les pages de votre documentation doivent être relatifs à la racine. En résumé, vous devez inclure le chemin complet du dossier. Par exemple, `[link to text](/writing-content/text)` renvoie vers la page « Text » de notre section composants.
 
-Les liens relatifs comme `[lien vers texte](../text)` s'ouvriront plus lentement car nous ne pouvons pas les optimiser aussi facilement.
+Les liens relatifs comme `[link to text](../text)` s'ouvriront plus lentement, car nous ne pouvons pas les optimiser aussi facilement.
 
 ## Citations
 
-### Une seule ligne
+### Sur une seule ligne
 
 Pour créer une citation, ajoutez un `>` devant un paragraphe.
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> Dorothy la suivit à travers de nombreuses belles pièces de son château.
 
 ```md
 > Dorothy followed her through many of the beautiful rooms in her castle.
 ```
 
-### Plusieurs lignes
+### Sur plusieurs lignes
 
-> Dorothy followed her through many of the beautiful rooms in her castle.
+> Dorothy la suivit à travers de nombreuses belles pièces de son château.
 >
-> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+> La Sorcière lui ordonna de nettoyer les marmites et les bouilloires, de balayer le sol et d'entretenir le feu avec du bois.
 
 ```md
 > Dorothy followed her through many of the beautiful rooms in her castle.
@@ -79,7 +79,7 @@ Pour créer une citation, ajoutez un `>` devant un paragraphe.
 
 ### LaTeX
 
-Mintlify prend en charge [LaTeX](https://www.latex-project.org) via le composant Latex.
+Mintlify prend en charge [LaTeX](https://www.latex-project.org) grâce au composant Latex.
 
 <Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
 
