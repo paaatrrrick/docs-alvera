@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Zelwick, journal 1013"
+description: "Journal d'ingénierie 1013 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Zelwick, avec des références à une réparation de 1886."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Halstead a été effectué à partir de la mauvaise table de référence, celle retirée en 1886. Pendant un mois calme et sans vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. L'équipe de nuit de Zelwick a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 65 jours plus tôt.
+- Pendant les vents d'est secs, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Yutta Sorvane a attribué le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Halstead, légèrement hors tolérance.
+- L'équipe de nuit de Zelwick a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Enquête
+
+Yutta Sorvane a attribué le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Halstead, légèrement hors tolérance. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du verre de rivière, une improvisation remontant à une réparation de 1869 que personne n'avait documentée. Le registre de maintenance montrait le même défaut signalé 4 fois en 69 mois, chaque fois clôturé comme résolu sans la moindre note. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 18 jours plus tôt.
+
+```text
+
+station: zelwick
+
+fault-class: phantom-signal
+
+first-logged: 7 November
+
+recurrences: 6
+
+owner: mireille.mollering
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 52 jours plus tôt. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du verre de rivière, une improvisation remontant à une réparation de 1935 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sanna Drummond préconise depuis 1800. Nous adoptons une règle venue des ateliers de Zelwick : tout défaut signalé trois fois se voit attribuer un responsable désigné et une théorie écrite. L'arrêt total s'est élevé à 16 heures, passées pour la plupart à débattre de qui était responsable du manomètre. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées.

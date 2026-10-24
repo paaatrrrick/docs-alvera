@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Lorreach, journal 1057"
+description: "Journal d'ingénierie 1057 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Lorreach, avec des références à une réparation de 1846."
+---
+
+## Résumé
+
+Pendant des semaines de pluie battante à l'horizontale, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Lorreach ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à se méfier de la jauge elle-même. L'équipe de nuit de Lorreach a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Vers 3 h 40 du matin, la tour relais de Lorreach a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+- Vers 3 h 40 du matin, la tour relais de Lorreach a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+- Les relevés de pression de la station de pompage de Lorreach ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 80 jours plus tôt.
+
+## Enquête
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 86 jours plus tôt. Anselm Mollering a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ericrest, légèrement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne durci au sel, une improvisation remontant à une réparation de 1846 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: lorreach
+
+fault-class: contact-corrosion
+
+first-logged: 6 June
+
+recurrences: 4
+
+owner: rurik.halloran
+
+```
+
+## Cause profonde
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 65 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 6 fois en 55 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Lorreach : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Ivo Quist préconise depuis 1792. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. L'interruption totale a atteint 77 heures, dont la majeure partie passée à débattre de qui avait la responsabilité de la jauge.

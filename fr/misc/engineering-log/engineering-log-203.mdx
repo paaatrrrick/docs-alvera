@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Narhollow, journal 1202"
+description: "Journal d'ingénierie 1202 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Narhollow, avec des références à une réparation de 1909."
+---
+
+## Résumé
+
+Vers 5 h 40 du matin, la tour relais de Narhollow a cessé d'accuser réception des signaux de pulsation, et les opérateurs ont supposé le contact corrodé habituel. Les relevés de pression de la station de pompage de Narhollow ont dérivé vers le haut pendant 2 heures avant que quiconque ne songe à se méfier du manomètre lui-même. L'équipe de nuit de Narhollow a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du bouleau laqué, une improvisation remontant à une réparation de 1909 que personne n'avait documentée.
+- Vers 9 h 40 du matin, la tour relais de Narhollow a cessé d'accuser réception des signaux de pulsation, et les opérateurs ont supposé le contact corrodé habituel.
+- Un réétalonnage de routine à Vorrun a été effectué à partir de la mauvaise table de référence, celle retirée en 1929.
+- L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'ardoise bleue, une improvisation remontant à une réparation de 1848 que personne n'avait documentée.
+- Le registre de maintenance montrait la même panne signalée 9 fois en 26 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 9 fois en 46 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du chêne durci au sel, une improvisation remontant à une réparation de 1825 que personne n'avait documentée. Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 54 jours plus tôt. Dario Brandt a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Vorrun, légèrement hors tolérance.
+
+```text
+
+station: narhollow
+
+fault-class: reference-mismatch
+
+first-logged: 14 November
+
+recurrences: 3
+
+owner: oona.mollering
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 4 fois en 28 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du fer des marais, une improvisation remontant à une réparation de 1913 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. Nous adoptons une règle des chantiers de Narhollow : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Yutta Voss préconise depuis 1879. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.

@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Quilvik, journal 1142"
+description: "Journal d'ingénierie 1142 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Quilvik, avec des références à une réparation de 1818."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Quilvik ont dérivé à la hausse pendant 8 heures avant que quiconque songe à se méfier de la jauge elle-même. L'équipe de nuit de Quilvik a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Pendant un mois calme et sans vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- Maren Whitlock a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Lorbury, légèrement hors tolérance.
+- Le registre de maintenance indiquait que la même panne avait été signalée 3 fois en 33 mois, chaque fois classée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage de Quilvik ont dérivé à la hausse pendant 5 heures avant que quiconque songe à se méfier de la jauge elle-même.
+- Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 56 jours plus tôt.
+
+## Enquête
+
+Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 23 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années. Maren Whitlock a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Lorbury, légèrement hors tolérance. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du chêne salé, une improvisation remontant à une réparation de 1818 que personne n'avait documentée. Le registre de maintenance indiquait que la même panne avait été signalée 6 fois en 49 mois, chaque fois classée comme résolue sans aucune note.
+
+```text
+
+station: quilvik
+
+fault-class: contact-corrosion
+
+first-logged: 8 June
+
+recurrences: 8
+
+owner: dario.voss
+
+```
+
+## Cause première
+
+L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du verre de rivière, une improvisation remontant à une réparation de 1843 que personne n'avait documentée. Le registre de maintenance indiquait que la même panne avait été signalée 4 fois en 12 mois, chaque fois classée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années. Maren Whitlock a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Lorbury, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Dario Whitlock préconise depuis 1808. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Quilvik : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

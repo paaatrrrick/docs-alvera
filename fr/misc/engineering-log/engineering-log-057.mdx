@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Calspire, journal 1056"
+description: "Journal d'ingénierie 1056 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Calspire, avec des références à une réparation de 1914."
+---
+
+## Résumé
+
+L'équipe de nuit de Calspire a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Vers 7 h 40 du matin, la tour relais de Calspire a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel. Un réétalonnage de routine à Narholm a été effectué à partir de la mauvaise table de référence, celle retirée en 1914.
+
+## Chronologie
+
+- Anselm Drummond a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narholm, légèrement hors tolérance.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 35 jours plus tôt.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 61 jours plus tôt.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 72 jours plus tôt.
+- Le registre de maintenance montrait la même panne signalée 7 fois en 67 mois, chaque fois clôturée comme résolue sans aucune note.
+- Le registre de maintenance montrait la même panne signalée 4 fois en 16 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+Anselm Drummond a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narholm, légèrement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt. Le registre de maintenance montrait la même panne signalée 6 fois en 30 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec un composite de fibres de corde, une improvisation remontant à une réparation de 1934 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: calspire
+
+fault-class: contact-corrosion
+
+first-logged: 25 November
+
+recurrences: 8
+
+owner: cosima.drummond
+
+```
+
+## Cause profonde
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 26 jours plus tôt. Le registre de maintenance montrait la même panne signalée 8 fois en 45 mois, chaque fois clôturée comme résolue sans aucune note. Anselm Drummond a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Narholm, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Calspire : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme du bruit météorologique plutôt que comme un signal. L'interruption totale a atteint 74 heures, dont la majeure partie passée à débattre de qui avait la responsabilité de la jauge. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées.

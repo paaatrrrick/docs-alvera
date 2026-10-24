@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station d'Ilystead, journal 1219"
+description: "Journal d'ingénierie 1219 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ilystead, avec des références à une réparation de 1874."
+---
+
+## Résumé
+
+L'équipe de nuit d'Ilystead a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage d'Ilystead ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Corgate a été effectué à partir de la mauvaise table de référence, celle retirée en 1874.
+
+## Chronologie
+
+- Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 26 jours plus tôt.
+- Le registre de maintenance montrait la même panne signalée 8 fois en 70 mois, chaque fois clôturée comme résolue sans aucune note.
+- Le registre de maintenance montrait la même panne signalée 7 fois en 61 mois, chaque fois clôturée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage d'Ilystead ont dérivé vers le haut pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Vers 9 h 40 du matin, la tour relais d'Ilystead a cessé d'accuser réception des signaux de pulsation, et les opérateurs ont supposé le contact corrodé habituel.
+- Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 32 jours plus tôt.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 8 fois en 12 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'ardoise bleue, une improvisation remontant à une réparation de 1811 que personne n'avait documentée. Anselm Lindqvist a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Corgate, légèrement hors tolérance. Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 68 jours plus tôt.
+
+```text
+
+station: ilystead
+
+fault-class: contact-corrosion
+
+first-logged: 23 November
+
+recurrences: 5
+
+owner: mireille.halloran
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait la même panne signalée 6 fois en 43 mois, chaque fois clôturée comme résolue sans aucune note. Anselm Lindqvist a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Corgate, légèrement hors tolérance. Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 27 jours plus tôt. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du fer des marais, une improvisation remontant à une réparation de 1793 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des chantiers d'Ilystead : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Tilda Brandt préconise depuis 1860.

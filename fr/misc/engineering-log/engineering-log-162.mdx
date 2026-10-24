@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Fenspire, journal 1161"
+description: "Journal d'ingénierie 1161 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Fenspire, avec des références à une réparation de 1835."
+---
+
+## Résumé
+
+Vers 9 h 40 du matin, la tour relais de Fenspire a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé. L'équipe de nuit de Fenspire a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Fenspire ont dérivé vers le haut pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Pendant les vents d'est secs, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne salé, une improvisation remontant à une réparation de 1835 que personne n'avait documentée.
+- Pendant les grandes marées d'automne, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Le registre de maintenance montrait la même panne signalée 9 fois en 54 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1790 que personne n'avait documentée. Le registre de maintenance montrait la même panne signalée 5 fois en 61 mois, chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 47 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Greta Halloran a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Brendane, légèrement hors tolérance.
+
+```text
+
+station: fenspire
+
+fault-class: reference-mismatch
+
+first-logged: 21 September
+
+recurrences: 4
+
+owner: cosima.brandt
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 35 jours plus tôt. Greta Halloran a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Brendane, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec un placage d'os de baleine, une improvisation remontant à une réparation de 1812 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Dario Voss préconise depuis 1865. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine solennité, brûlées. L'arrêt total a duré 81 heures, dont la majeure partie a été passée à débattre de qui était responsable du manomètre. La défaillance la plus profonde était d'ordre organisationnel : la station traitait les anomalies récurrentes comme du bruit de fond plutôt que comme un signal. Nous adoptons une règle des chantiers de Fenspire : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Kelwick, journal 1143"
+description: "Journal d'ingénierie 1143 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Kelwick, avec des références à une réparation de 1932."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Tamrun a été effectué à partir de la mauvaise table de référence, celle retirée en 1932. Pendant les vents d'est secs, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Vers 5 h 40 du matin, la tour de relais de Kelwick a cessé d'accuser réception des signaux de vie, et les opérateurs ont soupçonné l'habituel contact corrodé.
+
+## Chronologie
+
+- Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 33 jours plus tôt.
+- Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 53 jours plus tôt.
+- Le registre de maintenance indiquait que la même panne avait été signalée 7 fois en 25 mois, chaque fois classée comme résolue sans aucune note.
+- L'équipe de nuit de Kelwick a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 13 jours plus tôt.
+- Pendant les crues de printemps, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+Liesl Holloway a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Tamrun, légèrement hors tolérance. Le registre de maintenance indiquait que la même panne avait été signalée 5 fois en 85 mois, chaque fois classée comme résolue sans aucune note. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 86 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: kelwick
+
+fault-class: phantom-signal
+
+first-logged: 28 March
+
+recurrences: 9
+
+owner: dario.drummond
+
+```
+
+## Cause première
+
+Le registre de maintenance indiquait que la même panne avait été signalée 4 fois en 54 mois, chaque fois classée comme résolue sans aucune note. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 27 jours plus tôt. Liesl Holloway a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Tamrun, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Kelwick : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Bram Greaves préconise depuis 1937. L'interruption totale a atteint 56 heures, passées pour la plupart à débattre de qui était responsable de la jauge. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Velmara, journal 1193"
+description: "Journal d'ingénierie 1193 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Velmara, avec des références à une réparation de 1899."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Halfell a été effectué à partir de la mauvaise table de référence, celle retirée en 1899. Vers 4 h 40 du matin, la tour relais de Velmara a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Lors d'une gelée précoce, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Un réétalonnage de routine à Halfell a été effectué à partir de la mauvaise table de référence, celle retirée en 1796.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 88 jours plus tôt.
+- L'équipe de nuit de Velmara a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 56 jours plus tôt.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'argile cuite, une improvisation remontant à une réparation de 1962 que personne n'avait documentée. Le registre de maintenance montrait que la même panne avait été signalée 5 fois sur 42 mois, et chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 17 jours plus tôt. Tomas Marrow a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée de Halfell, légèrement hors tolérance.
+
+```text
+
+station: velmara
+
+fault-class: contact-corrosion
+
+first-logged: 24 November
+
+recurrences: 6
+
+owner: beatrix.petrov
+
+```
+
+## Cause première
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Tomas Marrow a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée de Halfell, légèrement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 46 jours plus tôt. Le registre de maintenance montrait que la même panne avait été signalée 3 fois sur 29 mois, et chaque fois clôturée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de simples aléas météorologiques plutôt que comme des signaux. Nous adoptons une règle des chantiers de Velmara : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Lazlo Oduya préconise depuis 1905. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. L'interruption totale s'est élevée à 64 heures, passées pour la plupart à débattre de qui était responsable du manomètre.

@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station d'Erigate, journal 1072"
+description: "Journal d'ingénierie 1072 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais d'Erigate, avec des références à une réparation de 1815."
+---
+
+## Résumé
+
+L'équipe de nuit de Erigate a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Lors d'une gelée précoce, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Ilyfell a été effectué à partir de la mauvaise table de référence, celle retirée en 1815.
+
+## Chronologie
+
+- Vers 8 h 40 du matin, la tour relais d'Erigate a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+- Folke Kessler a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ilyfell, légèrement hors tolérance.
+- Un réétalonnage de routine à Ilyfell a été effectué à partir de la mauvaise table de référence, celle retirée en 1916.
+- Pendant un mois calme et sans vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 8 h 40 du matin, la tour relais d'Erigate a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+- Les relevés de pression de la station de pompage d'Erigate ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Enquête
+
+Folke Kessler a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ilyfell, légèrement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1947 que personne n'avait documentée. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 45 jours plus tôt. Le registre de maintenance montrait la même panne signalée 3 fois en 21 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: erigate
+
+fault-class: contact-corrosion
+
+first-logged: 23 March
+
+recurrences: 4
+
+owner: casper.ashdown
+
+```
+
+## Cause profonde
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt. Folke Kessler a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ilyfell, légèrement hors tolérance. Le registre de maintenance montrait la même panne signalée 4 fois en 58 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+L'interruption totale a atteint 24 heures, dont la majeure partie passée à débattre de qui avait la responsabilité de la jauge. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. Nous adoptons une règle des ateliers d'Erigate : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme du bruit météorologique plutôt que comme un signal.

@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Kelshore, journal 1199"
+description: "Journal d'ingénierie 1199 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Kelshore, avec des références à une réparation de 1868."
+---
+
+## Résumé
+
+Vers 9 h 40 du matin, la tour relais de Kelshore a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. Les relevés de pression de la station de pompage de Kelshore ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Quilmire a été effectué à partir de la mauvaise table de référence, celle retirée en 1868.
+
+## Chronologie
+
+- L'équipe de nuit de Kelshore a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 44 jours plus tôt.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1799 que personne n'avait documentée.
+- Lors d'une gelée précoce, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des marais, une improvisation remontant à une réparation de 1836 que personne n'avait documentée. Annik Severin a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée de Quilmire, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait que la même panne avait été signalée 4 fois sur 28 mois, et chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: kelshore
+
+fault-class: contact-corrosion
+
+first-logged: 4 September
+
+recurrences: 5
+
+owner: petra.holloway
+
+```
+
+## Cause première
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1828 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de simples aléas météorologiques plutôt que comme des signaux. Nous adoptons une règle des chantiers de Kelshore : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. L'interruption totale s'est élevée à 19 heures, passées pour la plupart à débattre de qui était responsable du manomètre. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Edda Halloran préconise depuis 1866.

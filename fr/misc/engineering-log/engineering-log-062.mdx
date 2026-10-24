@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station d'Halstead, journal 1061"
+description: "Journal d'ingénierie 1061 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais d'Halstead, avec des références à une réparation de 1836."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Galford a été effectué à partir de la mauvaise table de référence, celle retirée en 1836. Les relevés de pression de la station de pompage d'Halstead ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Vers 6 h 40 du matin, la tour relais d'Halstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Pendant les crues de printemps, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 88 jours plus tôt.
+- Vers 7 h 40 du matin, la tour relais d'Halstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile cirée, une improvisation remontant à une réparation de 1797 que personne n'avait documentée. Edda Ashdown a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Galford, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 17 jours plus tôt. Le registre de maintenance montrait la même panne signalée 7 fois en 55 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: halstead
+
+fault-class: phantom-signal
+
+first-logged: 7 September
+
+recurrences: 2
+
+owner: mireille.oduya
+
+```
+
+## Cause profonde
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1882 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 3 fois en 47 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+L'interruption totale a atteint 84 heures, dont la majeure partie passée à débattre de qui avait la responsabilité de la jauge. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Halvard Severin préconise depuis 1837. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme du bruit météorologique plutôt que comme un signal. Nous adoptons une règle des ateliers d'Halstead : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite.

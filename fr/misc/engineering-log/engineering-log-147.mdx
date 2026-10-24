@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station d'Erimore, journal 1146"
+description: "Journal d'ingénierie 1146 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Erimore, avec des références à une réparation de 1903."
+---
+
+## Résumé
+
+Pendant des semaines de pluie oblique, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Vers 6 h 40 du matin, la tour de relais d'Erimore a cessé d'accuser réception des signaux de vie, et les opérateurs ont soupçonné l'habituel contact corrodé. L'équipe de nuit d'Erimore a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- Pendant les vents d'est secs, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Vesna Petrov a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Quilmore, légèrement hors tolérance. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du composite de fibre de corde, une improvisation remontant à une réparation de 1903 que personne n'avait documentée. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 43 jours plus tôt. Le registre de maintenance indiquait que la même panne avait été signalée 6 fois en 15 mois, chaque fois classée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, imprimée et punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: erimore
+
+fault-class: sensor-drift
+
+first-logged: 28 September
+
+recurrences: 6
+
+owner: stellan.sorvane
+
+```
+
+## Cause première
+
+Le registre de maintenance indiquait que la même panne avait été signalée 5 fois en 82 mois, chaque fois classée comme résolue sans aucune note. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de la toile cirée, une improvisation remontant à une réparation de 1900 que personne n'avait documentée. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 29 jours plus tôt.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sigrid Drummond préconise depuis 1952. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. Nous adoptons une règle des ateliers d'Erimore : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. L'interruption totale a atteint 49 heures, passées pour la plupart à débattre de qui était responsable de la jauge.

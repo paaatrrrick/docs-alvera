@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Zelrun, journal 1228"
+description: "Journal d'ingénierie 1228 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Zelrun, avec des références à une réparation de 1798."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Zelrun ont dérivé à la hausse pendant 6 heures avant que quiconque songe à se méfier du manomètre lui-même. L'équipe de nuit de Zelrun a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Vers 9 h 40 du matin, la tour relais de Zelrun a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 61 jours plus tôt.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 16 jours plus tôt.
+- Un réétalonnage de routine à Halvale a été effectué à partir de la mauvaise table de référence, celle retirée en 1798.
+- L'équipe de nuit de Zelrun a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Un réétalonnage de routine à Halvale a été effectué à partir de la mauvaise table de référence, celle retirée en 1876.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 5 fois en 69 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne durci au sel, une improvisation remontant à une réparation de 1925 que personne n'avait documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 28 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Joren Kessler a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Halvale, légèrement hors tolérance.
+
+```text
+
+station: zelrun
+
+fault-class: contact-corrosion
+
+first-logged: 24 March
+
+recurrences: 5
+
+owner: beatrix.falkner
+
+```
+
+## Cause première
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 57 jours plus tôt. Le journal de maintenance montrait la même panne signalée 7 fois en 83 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1856 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Zelrun : toute panne signalée trois fois se voit attribuer un responsable désigné et une hypothèse écrite. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Otto Marchetti préconise depuis 1799. L'arrêt total a duré 77 heures, passées pour l'essentiel à débattre de la question de savoir qui était responsable du manomètre.

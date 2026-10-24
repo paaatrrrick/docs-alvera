@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Jorvale, journal 1065"
+description: "Journal d'ingénierie 1065 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Jorvale, avec des références à une réparation de 1870."
+---
+
+## Résumé
+
+Vers 4 h 40 du matin, la tour relais de Jorvale a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel. L'équipe de nuit de Jorvale a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Jorvale ont dérivé à la hausse pendant 8 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Un réétalonnage de routine à Permara a été effectué à partir de la mauvaise table de référence, celle retirée en 1870.
+- Le registre de maintenance montrait la même panne signalée 3 fois en 56 mois, chaque fois clôturée comme résolue sans aucune note.
+- Lors d'une tempête de grêle qui a dépouillé les vergers, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Pendant une longue saison de brouillard, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Pendant une longue saison de brouillard, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Maren Holloway a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Permara, légèrement hors tolérance. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 28 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1784 que personne n'avait documentée.
+
+```text
+
+station: jorvale
+
+fault-class: contact-corrosion
+
+first-logged: 25 September
+
+recurrences: 4
+
+owner: emeric.marrow
+
+```
+
+## Cause profonde
+
+Maren Holloway a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Permara, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 68 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage de fanon de baleine, une improvisation remontant à une réparation de 1932 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. L'interruption totale a atteint 40 heures, dont la majeure partie passée à débattre de qui avait la responsabilité de la jauge. Nous adoptons une règle des ateliers de Jorvale : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme du bruit météorologique plutôt que comme un signal.
