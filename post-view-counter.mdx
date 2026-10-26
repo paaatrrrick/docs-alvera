@@ -7,9 +7,9 @@ description: "How the personal website tracks per-post views, total site reads, 
 
 The personal website ships a small suite of components and hooks for tracking and displaying how many times posts have been read:
 
-- **`ViewCounter`** — renders the read count for a single post, backed by the `useViewCount` hook.
-- **`SiteViews`** — renders the aggregate read count across every post, backed by the `useTotalViews` hook.
-- **`PostMeta`** — the combined byline shown under a post title (date, estimated reading time, view count).
+- **`ViewCounter`**: renders the read count for a single post, backed by the `useViewCount` hook.
+- **`SiteViews`**: renders the aggregate read count across every post, backed by the `useTotalViews` hook.
+- **`PostMeta`**: the combined byline shown under a post title (date, estimated reading time, view count).
 
 All three talk to a shared views service at `https://api.paaatrrrick.com/views`. The service returns `null`-safe data, so each component renders nothing while the network call is in flight or if the request fails.
 
@@ -63,7 +63,7 @@ It renders a `<span class="view-counter">` with the count formatted via `toLocal
 
 ### Reading without recording a view
 
-By default, mounting `ViewCounter` records a view. If you want to read the count without incrementing it — for example, on an admin dashboard or a listing page — call `useViewCount` directly with `increment: false`:
+By default, mounting `ViewCounter` records a view. If you want to read the count without incrementing it (for example, on an admin dashboard or a listing page), call `useViewCount` directly with `increment: false`:
 
 ```jsx
 import { useViewCount } from "../hooks/useViewCount";
@@ -76,7 +76,7 @@ function PostCard({ post }) {
 
 ## Showing total site views
 
-`SiteViews` renders a one-line summary of the total reads across every post. Drop it anywhere you want the aggregate number — a footer, an about page, a home-page stat strip:
+`SiteViews` renders a one-line summary of the total reads across every post. Drop it anywhere you want the aggregate number: a footer, an about page, a home-page stat strip:
 
 ```jsx
 import SiteViews from "../components/SiteViews";
@@ -106,13 +106,13 @@ Response bodies use these shapes:
 { "total": 12480 }
 ```
 
-Both hooks treat non-`200` responses and non-numeric payloads as missing data — they keep state at `null` so the components render nothing rather than show a broken number. The base URL is configured in the hooks as `https://api.paaatrrrick.com/views`.
+Both hooks treat non-`200` responses and non-numeric payloads as missing data. They keep state at `null` so the components render nothing rather than show a broken number. The base URL is configured in the hooks as `https://api.paaatrrrick.com/views`.
 
 ## Styling
 
 `PostMeta` ships with `postMeta.css`, which lays the segments out as a flex row with thin dot separators between them. The individual classes you can target are:
 
-- `.post-meta` — the wrapping row.
-- `.post-meta-date` — the date segment.
-- `.view-counter` — the view-count span (also rendered by `ViewCounter` on its own).
-- `.site-views` — the total-views paragraph rendered by `SiteViews`.
+- `.post-meta`: the wrapping row.
+- `.post-meta-date`: the date segment.
+- `.view-counter`: the view-count span (also rendered by `ViewCounter` on its own).
+- `.site-views`: the total-views paragraph rendered by `SiteViews`.
