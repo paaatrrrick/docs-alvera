@@ -1,10 +1,10 @@
 ---
 title: "Guestbook"
-description: "Let visitors sign a guestbook on the site. Launching November 5."
+description: "Let visitors sign a guestbook on the site."
 ---
 
 <Note>
-This page is a draft for the Guestbook launch on November 5, 2026. Everything for the launch lands on the `release/guestbook` branch and merges on launch day.
+The guestbook code is part of the site, but it stays off until you set `REACT_APP_GUESTBOOK=on`. See [Turn it on](#turn-it-on).
 </Note>
 
 ## Overview
@@ -36,6 +36,10 @@ To sign it, a visitor:
 The new entry shows up right away at the top of the list ✍️, unless it is held for review (see [Moderation](#moderation)). The message field clears after a successful sign, and the name stays filled in. If a check fails, the error message appears above the button and nothing is saved.
 
 Below the form, the page shows the total number of published entries, then each entry with its name, the date it was signed and the message.
+
+<Warning>
+The **RSS** link at the top of `/guestbook` points to `/guestbook/feed.xml`, but the site build does not generate that file yet. Entries are also stored only in each visitor's browser. Don't rely on a guestbook RSS feed for now.
+</Warning>
 
 ### Reactions
 
