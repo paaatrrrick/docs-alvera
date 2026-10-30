@@ -7,10 +7,10 @@ This glossary defines the terms used throughout these docs. Skim it once, then r
 
 ## Terms
 
-- **Deployment**: A published version of your site. Each push to your main branch creates a new deployment.
-- **Preview**: A temporary build of a pull request. Use it to review changes before they go live.
+- **Deployment**: A published version of your site. Mintlify creates a new deployment each time you merge to your deploy branch.
+- **Preview**: A temporary build of a pull request. Use it to review changes before you merge them. To preview locally instead, run `mint dev`.
 - **Navigation**: The sidebar structure that organizes your pages. You define it in `docs.json`.
-- **Snippet**: A reusable block of content that you can include on multiple pages.
+- **Snippet**: A reusable block of content that lives in the `snippets/` folder. You can import it into any page.
 - **Frontmatter**: The YAML block at the top of an MDX file. It sets page metadata such as `title` and `description`.
 
 If you are just getting started, read the [quickstart](/quickstart) first. Then set up your environment with the [local development guide](/development).
