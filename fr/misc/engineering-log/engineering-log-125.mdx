@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Lormara, journal 1124"
+description: "Journal d'ingénierie 1124 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Lormara, avec des références à une réparation de 1835."
+---
+
+## Résumé
+
+Vers 5 h 40 du matin, la tour relais de Lormara a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé. Pendant une longue saison de brouillard, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Narvik a été effectué à partir de la mauvaise table de référence, celle retirée en 1835.
+
+## Chronologie
+
+- L'équipe de nuit de Lormara a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Le registre de maintenance montrait la même panne signalée 6 fois en 71 mois, chaque fois clôturée comme résolue sans aucune note.
+- Lazlo Whitlock a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Narvik, légèrement hors tolérance.
+- Vers 8 h 40 du matin, la tour relais de Lormara a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- Pendant une longue saison de brouillard, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+Le registre de maintenance montrait la même panne signalée 7 fois en 37 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Lazlo Whitlock a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Narvik, légèrement hors tolérance. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'étain martelé, une improvisation remontant à une réparation de 1795 que personne n'avait documentée. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 82 jours plus tôt.
+
+```text
+
+station: lormara
+
+fault-class: reference-mismatch
+
+first-logged: 21 June
+
+recurrences: 9
+
+owner: halvard.kessler
+
+```
+
+## Cause première
+
+Lazlo Whitlock a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Narvik, légèrement hors tolérance. Le registre de maintenance montrait la même panne signalée 2 fois en 80 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Lormara : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. La défaillance profonde était organisationnelle : la station traitait les anomalies récurrentes comme une simple météo plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique qu'Otto Severin préconise depuis 1925.

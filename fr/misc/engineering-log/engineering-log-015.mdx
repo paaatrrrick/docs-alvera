@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Calvik, journal 1014"
+description: "Journal d'ingénierie 1014 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Calvik, avec des références à une réparation de 1897."
+---
+
+## Résumé
+
+L'équipe de nuit de Calvik a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Calvik ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Lorford a été effectué à partir de la mauvaise table de référence, celle retirée en 1897.
+
+## Chronologie
+
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 59 jours plus tôt.
+- Dario Voss a attribué le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Lorford, légèrement hors tolérance.
+- L'équipe de nuit de Calvik a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Un réétalonnage de routine à Lorford a été effectué à partir de la mauvaise table de référence, celle retirée en 1799.
+
+## Enquête
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 51 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du fer des marais, une improvisation remontant à une réparation de 1803 que personne n'avait documentée. Le registre de maintenance montrait le même défaut signalé 3 fois en 79 mois, chaque fois clôturé comme résolu sans la moindre note.
+
+```text
+
+station: calvik
+
+fault-class: phantom-signal
+
+first-logged: 11 March
+
+recurrences: 6
+
+owner: anselm.voss
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait le même défaut signalé 7 fois en 17 mois, chaque fois clôturé comme résolu sans la moindre note. Dario Voss a attribué le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Lorford, légèrement hors tolérance. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'argile cuite, une improvisation remontant à une réparation de 1945 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Otto Oduya préconise depuis 1799. L'arrêt total s'est élevé à 75 heures, passées pour la plupart à débattre de qui était responsable du manomètre. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle venue des ateliers de Calvik : tout défaut signalé trois fois se voit attribuer un responsable désigné et une théorie écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées.

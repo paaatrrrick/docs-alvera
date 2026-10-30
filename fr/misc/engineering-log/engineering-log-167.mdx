@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Wrenton, journal 1166"
+description: "Journal d'ingénierie 1166 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenton, avec des références à une réparation de 1850."
+---
+
+## Résumé
+
+Vers 9 h 40 du matin, la tour relais de Wrenton a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé. Pendant des gelées précoces, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Wrenton ont dérivé vers le haut pendant 6 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Wrenton ont dérivé vers le haut pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Vers 2 h 40 du matin, la tour relais de Wrenton a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- L'équipe de nuit de Wrenton a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt.
+- La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 23 jours plus tôt.
+
+## Enquête
+
+Le registre de maintenance montrait la même panne signalée 3 fois en 27 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1850 que personne n'avait documentée. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 14 jours plus tôt.
+
+```text
+
+station: wrenton
+
+fault-class: reference-mismatch
+
+first-logged: 4 November
+
+recurrences: 8
+
+owner: halvard.whitlock
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 7 fois en 57 mois, chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 45 jours plus tôt. Annik Oduya a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Marhollow, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des chantiers de Wrenton : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Annik Holloway préconise depuis 1933. La défaillance la plus profonde était d'ordre organisationnel : la station traitait les anomalies récurrentes comme du bruit de fond plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine solennité, brûlées. L'arrêt total a duré 23 heures, dont la majeure partie a été passée à débattre de qui était responsable du manomètre.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Zelreach, journal 1005"
+description: "Journal d'ingénierie 1005 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Zelreach, avec des références à une réparation de 1822."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Permore a été effectué à partir de la mauvaise table de référence, celle retirée en 1822. Vers 6 h 40 du matin, la tour de relais de Zelreach a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé. L'équipe de nuit de Zelreach a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Pendant des semaines de pluie chassée à l'horizontale par le vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 7 h 40 du matin, la tour de relais de Zelreach a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Pendant les grandes marées d'automne, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Pendant des semaines de pluie chassée à l'horizontale par le vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du chêne salé, une improvisation remontant à une réparation de 1933 que personne n'avait documentée. Lazlo Holloway a attribué le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Permore, légèrement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 78 jours plus tôt. Le registre de maintenance montrait le même défaut signalé 5 fois en 48 mois, chaque fois clôturé comme résolu sans la moindre note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: zelreach
+
+fault-class: sensor-drift
+
+first-logged: 21 June
+
+recurrences: 4
+
+owner: emeric.marchetti
+
+```
+
+## Cause racine
+
+Le registre de maintenance montrait le même défaut signalé 5 fois en 27 mois, chaque fois clôturé comme résolu sans la moindre note. Lazlo Holloway a attribué le défaut à une pièce de rechange récupérée sur la ligne désaffectée de Permore, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être effectuée 70 jours plus tôt.
+
+## Enseignements et suivi
+
+La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sanna Whitlock préconise depuis 1920. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. L'arrêt total s'est élevé à 77 heures, passées pour la plupart à débattre de qui était responsable du manomètre.

@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Halrun, journal 1048"
+description: "Journal d'ingénierie 1048 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Halrun, avec des références à une réparation de 1819."
+---
+
+## Résumé
+
+L'équipe de nuit de Halrun a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Un réétalonnage de routine à Ulmvik a été effectué avec la mauvaise table de référence, celle qui avait été retirée en 1819. Vers 4 h 40 du matin, la tour relais de Halrun a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Halrun ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- L'équipe de nuit de Halrun a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1846 que personne n'avait documentée.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1875 que personne n'avait documentée.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne durci au sel, une improvisation remontant à une réparation de 1887 que personne n'avait documentée. Le registre de maintenance indiquait la même panne signalée 6 fois en 67 mois, chaque fois clôturée comme résolue sans aucune note. Ivo Petrov a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ulmvik, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: halrun
+
+fault-class: contact-corrosion
+
+first-logged: 4 March
+
+recurrences: 5
+
+owner: yutta.whitlock
+
+```
+
+## Cause racine
+
+Ivo Petrov a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ulmvik, légèrement hors tolérance. Le registre de maintenance indiquait la même panne signalée 4 fois en 43 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû être faite 20 jours plus tôt.
+
+## Enseignements et suivi
+
+Nous adoptons une règle en vigueur dans les ateliers de Halrun : toute panne signalée trois fois se voit attribuer un responsable nommément désigné et une hypothèse écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Imre Sorvane préconise depuis 1910. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. Le temps d'arrêt total s'est élevé à 28 heures, passées pour l'essentiel à débattre de qui était responsable du manomètre. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme des caprices de la météo plutôt que comme un signal.

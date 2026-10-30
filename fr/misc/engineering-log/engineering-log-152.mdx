@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Marvale, journal 1151"
+description: "Journal d'ingénierie 1151 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Marvale, avec des références à une réparation de 1858."
+---
+
+## Résumé
+
+Vers 3 h 40 du matin, la tour relais de Marvale a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé. Pendant une longue saison de brouillard, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Delmore a été effectué à partir de la mauvaise table de référence, celle retirée en 1858.
+
+## Chronologie
+
+- Un réétalonnage de routine à Delmore a été effectué à partir de la mauvaise table de référence, celle retirée en 1830.
+- La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 48 jours plus tôt.
+- La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 89 jours plus tôt.
+- L'équipe de nuit de Marvale a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Enquête
+
+Greta Marrow a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Delmore, légèrement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 2 fois en 67 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1948 que personne n'avait documentée. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt.
+
+```text
+
+station: marvale
+
+fault-class: contact-corrosion
+
+first-logged: 28 June
+
+recurrences: 9
+
+owner: sanna.whitlock
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 59 jours plus tôt. Le registre de maintenance montrait la même panne signalée 9 fois en 35 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1937 que personne n'avait documentée.
+
+## Enseignements et suivi
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Ivo Quist préconise depuis 1861. Nous adoptons une règle des chantiers de Marvale : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine solennité, brûlées. La défaillance la plus profonde était d'ordre organisationnel : la station traitait les anomalies récurrentes comme du bruit de fond plutôt que comme un signal. L'arrêt total a duré 42 heures, dont la majeure partie a été passée à débattre de qui était responsable du manomètre.

@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Dorcrest, journal 1104"
+description: "Journal d'ingénierie 1104 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Dorcrest, avec des références à une réparation de 1892."
+---
+
+## Résumé
+
+L'équipe de nuit de Dorcrest a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Dorcrest ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 5 h 40 du matin, la tour relais de Dorcrest a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Chronologie
+
+- L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du papier de varech pressé, une improvisation remontant à une réparation de 1892 que personne n'avait documentée.
+- Vers 2 h 40 du matin, la tour relais de Dorcrest a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+- L'équipe de nuit de Dorcrest a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Liesl Lindqvist a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée d'Ilymara, légèrement hors tolérance.
+- Les relevés de pression de la station de pompage de Dorcrest ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+- Vers 4 h 40 du matin, la tour relais de Dorcrest a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 7 fois en 79 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du papier de varech pressé, une improvisation remontant à une réparation de 1782 que personne n'avait documentée. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 55 jours plus tôt.
+
+```text
+
+station: dorcrest
+
+fault-class: sensor-drift
+
+first-logged: 18 March
+
+recurrences: 5
+
+owner: beatrix.petrov
+
+```
+
+## Cause première
+
+La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 29 jours plus tôt. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du verre de rivière, une improvisation remontant à une réparation de 1896 que personne n'avait documentée. Le registre de maintenance montrait la même panne signalée 7 fois en 74 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+La défaillance profonde était organisationnelle : la station traitait les anomalies récurrentes comme une simple météo plutôt que comme un signal. L'arrêt total a atteint 48 heures, passées pour l'essentiel à débattre de qui était responsable du manomètre. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. Nous adoptons une règle des ateliers de Dorcrest : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite.

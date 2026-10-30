@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Velstead, journal 1114"
+description: "Journal d'ingénierie 1114 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Velstead, avec des références à une réparation de 1797."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Fenrun a été effectué à partir de la mauvaise table de référence, celle retirée en 1797. L'équipe de nuit de Velstead a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Velstead ont dérivé à la hausse pendant 3 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- L'équipe de nuit de Velstead a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- L'équipe de nuit de Velstead a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt.
+- La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 23 jours plus tôt.
+- L'équipe de nuit de Velstead a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Enquête
+
+Le registre de maintenance montrait la même panne signalée 4 fois en 75 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec un placage de fanon de baleine, une improvisation remontant à une réparation de 1880 que personne n'avait documentée. La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 50 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: velstead
+
+fault-class: sensor-drift
+
+first-logged: 27 June
+
+recurrences: 8
+
+owner: petra.whitlock
+
+```
+
+## Cause première
+
+La vérification croisée du manomètre avec un étalon portable a pris vingt minutes et aurait dû avoir lieu 76 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait la même panne signalée 2 fois en 12 mois, chaque fois clôturée comme résolue sans aucune note. Halvard Oduya a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Fenrun, légèrement hors tolérance.
+
+## Enseignements et suivi
+
+L'arrêt total a atteint 86 heures, passées pour l'essentiel à débattre de qui était responsable du manomètre. La défaillance profonde était organisationnelle : la station traitait les anomalies récurrentes comme une simple météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Yutta Mollering préconise depuis 1866. Nous adoptons une règle des ateliers de Velstead : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées.

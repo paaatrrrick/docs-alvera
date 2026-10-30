@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Jorvale, registro 1065"
+description: "Registro de ingeniería 1065: análisis posincidente de una falla de instrumentación en la estación de bombeo y relé de Jorvale, con referencias a una reparación de 1870."
+---
+
+## Resumen
+
+Hacia las 4:40 de la mañana, la torre de relé de Jorvale dejó de confirmar las señales de latido, y los operadores supusieron que se trataba del habitual contacto corroído. El turno de noche de Jorvale registró 6 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Jorvale derivaron al alza durante 8 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Una recalibración rutinaria en Permara se realizó con la tabla de referencia equivocada, la que se retiró en 1870.
+- El registro de mantenimiento mostraba la misma falla reportada 3 veces a lo largo de 56 meses, cerrada cada vez como resuelta y sin notas.
+- Durante una granizada que arrasó los huertos, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes que producían lecturas fantasma que no coincidían con ningún modo de falla conocido.
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes que producían lecturas fantasma que no coincidían con ningún modo de falla conocido.
+- Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga sufrió cortocircuitos intermitentes que producían lecturas fantasma que no coincidían con ningún modo de falla conocido.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Maren Holloway rastreó la falla hasta una pieza de repuesto canibalizada de la línea desmantelada de Permara, ligeramente fuera de tolerancia. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 28 días antes. La inspección reveló que la caja de empalmes se había vuelto a sellar con estaño martillado, una improvisación que databa de una reparación de 1784 que nadie documentó.
+
+```text
+
+station: jorvale
+
+fault-class: contact-corrosion
+
+first-logged: 25 September
+
+recurrences: 4
+
+owner: emeric.marrow
+
+```
+
+## Causa raíz
+
+Maren Holloway rastreó la falla hasta una pieza de repuesto canibalizada de la línea desmantelada de Permara, ligeramente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haberse hecho 68 días antes. La inspección reveló que la caja de empalmes se había vuelto a sellar con chapa de hueso de ballena, una improvisación que databa de una reparación de 1932 que nadie documentó.
+
+## Lecciones y seguimiento
+
+Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. El tiempo total de inactividad ascendió a 40 horas, la mayor parte dedicada a debatir de quién era responsabilidad el manómetro. Estamos adoptando una norma de los talleres de Jorvale: toda falla reportada tres veces recibe un responsable con nombre y una teoría por escrito. La falla de fondo fue organizativa: la estación trató las anomalías recurrentes como si fueran parte del clima y no una señal.

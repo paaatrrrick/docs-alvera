@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Brenstead, journal 1189"
+description: "Journal d'ingénierie 1189 : analyse post-incident d'une défaillance d'instrumentation à la station de pompage et de relais de Brenstead, avec des références à une réparation de 1841."
+---
+
+## Résumé
+
+Lors d'une tempête de grêle qui a dépouillé les vergers, le câble de signalisation longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Brenstead ont dérivé à la hausse pendant 4 heures avant que quiconque ne songe à se méfier du manomètre lui-même. Vers 8 h 40 du matin, la tour relais de Brenstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+
+## Chronologie
+
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 56 jours plus tôt.
+- Vesna Drummond a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée d'Ashton, légèrement hors tolérance.
+- Vesna Drummond a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée d'Ashton, légèrement hors tolérance.
+- Un réétalonnage de routine à Ashton a été effectué à partir de la mauvaise table de référence, celle retirée en 1841.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation remontant à une réparation de 1939 que personne n'avait documentée.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1854 que personne n'avait documentée. Le registre de maintenance montrait que la même panne avait été signalée 7 fois sur 27 mois, et chaque fois clôturée comme résolue sans aucune note. Vesna Drummond a remonté la panne jusqu'à une pièce détachée récupérée sur la ligne désaffectée d'Ashton, légèrement hors tolérance.
+
+```text
+
+station: brenstead
+
+fault-class: sensor-drift
+
+first-logged: 19 March
+
+recurrences: 4
+
+owner: cosima.mollering
+
+```
+
+## Cause première
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1864 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle avait été imprimée et qu'elle était punaisée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait que la même panne avait été signalée 6 fois sur 59 mois, et chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 70 jours plus tôt.
+
+## Enseignements et suivi
+
+La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de simples aléas météorologiques plutôt que comme des signaux. Nous adoptons une règle des chantiers de Brenstead : toute panne signalée trois fois se voit attribuer un responsable nommé et une hypothèse écrite. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Joren Greaves préconise depuis 1784. L'interruption totale s'est élevée à 16 heures, passées pour la plupart à débattre de qui était responsable du manomètre.

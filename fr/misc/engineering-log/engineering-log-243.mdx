@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Vorton, journal 1242"
+description: "Journal d'ingénierie 1242 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Vorton, avec des références à une réparation de 1959."
+---
+
+## Résumé
+
+Pendant une averse de grêle qui a dépouillé les vergers, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Vorton ont dérivé à la hausse pendant 7 heures avant que quiconque songe à se méfier du manomètre lui-même. Un réétalonnage de routine à Zelford a été effectué à partir de la mauvaise table de référence, celle retirée en 1959.
+
+## Chronologie
+
+- Les relevés de pression de la station de pompage de Vorton ont dérivé à la hausse pendant 2 heures avant que quiconque songe à se méfier du manomètre lui-même.
+- L'équipe de nuit de Vorton a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne durci au sel, une improvisation remontant à une réparation de 1935 que personne n'avait documentée.
+- Pendant un mois calme et sans vent, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 55 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 7 fois en 28 mois, chaque fois clôturée comme résolue sans aucune note. Petra Petrov a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Zelford, légèrement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1805 que personne n'avait documentée.
+
+```text
+
+station: vorton
+
+fault-class: contact-corrosion
+
+first-logged: 11 March
+
+recurrences: 3
+
+owner: joren.oduya
+
+```
+
+## Cause première
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1934 que personne n'avait documentée. Petra Petrov a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Zelford, légèrement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 30 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+L'arrêt total a duré 12 heures, passées pour l'essentiel à débattre de la question de savoir qui était responsable du manomètre. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées. Nous adoptons une règle des ateliers de Vorton : toute panne signalée trois fois se voit attribuer un responsable désigné et une hypothèse écrite. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Rurik Vexley préconise depuis 1889.

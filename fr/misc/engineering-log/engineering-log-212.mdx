@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Quilshore, journal 1211"
+description: "Journal d'ingénierie 1211 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Quilshore, avec des références à une réparation de 1964."
+---
+
+## Résumé
+
+Un réétalonnage de routine à Ilyvik a été effectué à partir de la mauvaise table de référence, celle retirée en 1964. Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Quilshore ont dérivé vers le haut pendant 8 heures avant que quiconque ne songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Vers 2 h 40 du matin, la tour relais de Quilshore a cessé d'accuser réception des signaux de pulsation, et les opérateurs ont supposé le contact corrodé habituel.
+- Sanna Mollering a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ilyvik, légèrement hors tolérance.
+- Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 35 jours plus tôt.
+
+## Enquête
+
+L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du fer des marais, une improvisation remontant à une réparation de 1947 que personne n'avait documentée. Sanna Mollering a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ilyvik, légèrement hors tolérance. Vérifier le manomètre à l'aide d'une référence portable a pris vingt minutes et aurait dû être fait 29 jours plus tôt. Le registre de maintenance montrait la même panne signalée 2 fois en 46 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: quilshore
+
+fault-class: phantom-signal
+
+first-logged: 6 November
+
+recurrences: 9
+
+owner: tomas.petrov
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Sanna Mollering a remonté la panne jusqu'à une pièce de rechange récupérée sur la ligne désaffectée d'Ilyvik, légèrement hors tolérance. L'inspection a révélé que le boîtier de raccordement avait été rescellé avec de l'argile cuite, une improvisation remontant à une réparation de 1866 que personne n'avait documentée. Le registre de maintenance montrait la même panne signalée 3 fois en 40 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+Les tables de référence ont été regroupées ; les éditions retirées ont été rassemblées puis, non sans une certaine cérémonie, brûlées. L'interruption totale a atteint 87 heures, passées pour l'essentiel à débattre de la question de savoir qui était responsable du manomètre. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Imre Quist préconise depuis 1922.

@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Halholm, journal 1135"
+description: "Journal d'ingénierie 1135 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Halholm, avec des références à une réparation de 1886."
+---
+
+## Résumé
+
+L'équipe de nuit de Halholm a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Pendant une tempête de grêle qui a dépouillé les vergers, le câble de signal longeant le chemin de halage a subi des courts-circuits intermittents, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Halholm ont dérivé à la hausse pendant 4 heures avant que quiconque songe à se méfier de la jauge elle-même.
+
+## Chronologie
+
+- Vers 5 h 40 du matin, la tour de relais de Halholm a cessé d'accuser réception des signaux de vie, et les opérateurs ont soupçonné l'habituel contact corrodé.
+- L'équipe de nuit de Halholm a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Un réétalonnage de routine à Zelmore a été effectué à partir de la mauvaise table de référence, celle retirée en 1886.
+- Vers 6 h 40 du matin, la tour de relais de Halholm a cessé d'accuser réception des signaux de vie, et les opérateurs ont soupçonné l'habituel contact corrodé.
+- Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 18 jours plus tôt.
+
+## Enquête
+
+L'inspection a révélé que le boîtier de raccordement avait été rescellé avec du fer des marais, une improvisation remontant à une réparation de 1791 que personne n'avait documentée. Beatrix Drummond a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Zelmore, légèrement hors tolérance. Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 54 jours plus tôt. Le registre de maintenance indiquait que la même panne avait été signalée 6 fois en 65 mois, chaque fois classée comme résolue sans aucune note.
+
+```text
+
+station: halholm
+
+fault-class: sensor-drift
+
+first-logged: 13 June
+
+recurrences: 8
+
+owner: sigrid.vexley
+
+```
+
+## Cause première
+
+Vérifier la jauge à l'aide d'une référence portable a pris vingt minutes et aurait dû avoir lieu 60 jours plus tôt. Beatrix Drummond a attribué la panne à une pièce de rechange récupérée sur la ligne désaffectée de Zelmore, légèrement hors tolérance. Le registre de maintenance indiquait que la même panne avait été signalée 9 fois en 25 mois, chaque fois classée comme résolue sans aucune note.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des ateliers de Halholm : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Beatrix Severin préconise depuis 1875. L'interruption totale a atteint 61 heures, passées pour la plupart à débattre de qui était responsable de la jauge. Les tables de référence ont été regroupées ; les éditions retirées ont été collectées puis, non sans une certaine cérémonie, brûlées.
