@@ -2550,7 +2550,8 @@
                   "es/projects",
                   "es/post-view-counter",
                   "es/game-of-thrones",
-                  "es/latest-email"
+                  "es/latest-email",
+                  "es/guestbook"
                 ]
               },
               {
@@ -5064,7 +5065,8 @@
                   "fr/projects",
                   "fr/post-view-counter",
                   "fr/game-of-thrones",
-                  "fr/latest-email"
+                  "fr/latest-email",
+                  "fr/guestbook"
                 ]
               },
               {
