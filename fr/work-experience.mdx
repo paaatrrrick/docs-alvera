@@ -3,13 +3,13 @@ title: "Section expérience professionnelle : structure et mises à jour"
 description: "Comment la liste d'expériences professionnelles du site personnel est configurée à partir du tableau workExperience, avec un journal des modifications des ajouts et révisions récents de postes."
 ---
 
-## Vue d'ensemble
+## Vue d'ensemble {#overview}
 
 La section expérience professionnelle affiche une liste chronologique de postes sur la page d'accueil du site personnel. Chaque entrée est générée à partir du tableau `workExperience` et affiche un titre, une description facultative, une image de logo facultative et une chaîne de chronologie.
 
 Cette page documente les ajouts récents à cette liste afin que les visiteurs et les contributeurs sachent ce qui a changé et comment les nouvelles entrées sont configurées.
 
-## Ce qui a changé
+## Ce qui a changé {#what-changed}
 
 Une nouvelle entrée **SWE chez Figma** a été ajoutée au tableau `workExperience`, couvrant le travail au sein de l'équipe du canevas multijoueur : améliorations de la présence des curseurs en temps réel et optimisations du pipeline de rendu pour les fichiers de design très volumineux. Elle rejoint **SWE chez Modal** (runtime GPU serverless) et les entrées ajoutées précédemment (**SWE chez PostHog**, **SWE chez Supabase**, **SWE chez Linear**, **SWE chez Vercel**, **SWE chez Airbnb**, **SWE chez Shopify**, **SWE chez Notion**), chacune destinée à être modifiée sur place. Les entrées Anthropic et Stripe avaient déjà été mises à jour avec des descriptions plus longues mettant en avant des contributions spécifiques et la collaboration entre équipes. Les ajouts antérieurs à la liste sont également résumés ci-dessous.
 
@@ -91,7 +91,7 @@ Une nouvelle entrée **SWE chez Figma** a été ajoutée au tableau `workExperie
   **Chronologie :** mai - août 2023. Seattle, WA
 </Card>
 
-## Schéma des entrées
+## Schéma des entrées {#entry-schema}
 
 Chaque entrée du tableau `workExperience` prend en charge les champs suivants :
 
@@ -102,7 +102,7 @@ Chaque entrée du tableau `workExperience` prend en charge les champs suivants :
 | `image`    | string | Non         | URL publique du logo de l'entreprise ou du poste.            |
 | `timeLine` | string | Oui         | Période et lieu lisibles par un humain.                      |
 
-## Ajouter une nouvelle entrée
+## Ajouter une nouvelle entrée {#adding-a-new-entry}
 
 Ouvrez `src/constants/work.js` et ajoutez un nouvel objet au début du tableau `workExperience`. Les nouvelles entrées apparaissent en haut de la liste sur la page d'accueil.
 
@@ -168,7 +168,7 @@ export default workExperience
 Omettez le champ `image` pour les postes sans logo. La mise en page s'adapte automatiquement.
 </Tip>
 
-## Rédiger les descriptions de poste
+## Rédiger les descriptions de poste {#writing-role-descriptions}
 
 Utilisez le champ `text` pour communiquer l'impact, et pas seulement les responsabilités.
 
@@ -177,6 +177,6 @@ Utilisez le champ `text` pour communiquer l'impact, et pas seulement les respons
 - Soulignez la collaboration entre équipes lorsqu'elle apporte du contexte au poste.
 - Limitez la description à deux ou trois phrases pour que la page d'accueil reste facile à parcourir.
 
-## Quand mettre à jour cette liste
+## Quand mettre à jour cette liste {#when-to-update-this-list}
 
 Ajoutez une nouvelle entrée chaque fois que vous commencez ou terminez un poste, ou que vous souhaitez en mettre un en avant sur le site personnel. Classez les entrées par ordre antichronologique afin que le poste le plus récent apparaisse en premier.

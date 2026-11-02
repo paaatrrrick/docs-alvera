@@ -5,7 +5,7 @@ description: "Comprenez l'architecture de Mintlify et la manière dont votre doc
 
 Mintlify transforme un dépôt Git de fichiers MDX en un site de documentation rapide et consultable par recherche. Cette page explique les différents éléments en jeu pour que vous sachiez ce qui se passe en coulisses.
 
-## Les éléments principaux
+## Les éléments principaux {#the-core-pieces}
 
 <CardGroup cols={2}>
   <Card title="Contenu" icon="file-lines">
@@ -22,7 +22,7 @@ Mintlify transforme un dépôt Git de fichiers MDX en un site de documentation r
   </Card>
 </CardGroup>
 
-## Du commit à la page publiée
+## Du commit à la page publiée {#from-commit-to-published-page}
 
 1. **Vous rédigez le contenu.** Les pages sont écrites en MDX, c'est-à-dire du Markdown enrichi de composants React comme `<Card>`, `<Tabs>` et `<Accordion>`.
 2. **Vous configurez la navigation.** `docs.json` définit les onglets, les groupes, le thème et les éléments globaux comme la barre de navigation et le pied de page.
@@ -30,7 +30,7 @@ Mintlify transforme un dépôt Git de fichiers MDX en un site de documentation r
 4. **Mintlify génère le site.** Le contenu est validé, les liens sont vérifiés et le site est compilé en ressources statiques.
 5. **Le site est mis en ligne.** La nouvelle build est déployée sur votre domaine, généralement en quelques secondes.
 
-## Développement local
+## Développement local {#local-development}
 
 Utilisez la CLI Mintlify pour prévisualiser les modifications avant de faire un push :
 
@@ -45,14 +45,14 @@ mint validate
 mint broken-links
 ```
 
-## Modèle de rédaction
+## Modèle de rédaction {#authoring-model}
 
 - **Fichiers MDX** — chaque page est un fichier `.mdx` avec un frontmatter YAML (`title`, `description`).
 - **Composants** — Mintlify fournit des composants intégrés pour les encadrés, les onglets, les groupes de code, les accordéons, les cartes, et plus encore.
 - **Snippets** — le contenu réutilisable se trouve dans `snippets/` et peut être importé dans n'importe quelle page.
 - **Images et ressources** — référencées par un chemin relatif depuis la racine du dépôt.
 
-## Configuration
+## Configuration {#configuration}
 
 `docs.json` est la source de vérité unique pour la structure du site :
 
@@ -61,7 +61,7 @@ mint broken-links
 - `navbar`, `footer` — liens globaux et réseaux sociaux.
 - `contextual` — contrôle le menu « Copier / Ouvrir dans ChatGPT » de chaque page.
 
-## Recherche et IA
+## Recherche et IA {#search-and-ai}
 
 Chaque site publié comprend :
 
@@ -69,7 +69,7 @@ Chaque site publié comprend :
 - **Un chat IA** qui répond aux questions en utilisant votre documentation comme contexte.
 - **Des intégrations MCP et LLM** pour que des outils comme Cursor et Claude puissent faire référence à votre documentation.
 
-## Environnements de déploiement
+## Environnements de déploiement {#deployment-environments}
 
 | Environnement | Déclencheur | Utilisation |
 | ----------- | ------- | ---------- |
@@ -77,7 +77,7 @@ Chaque site publié comprend :
 | Aperçu | Pull request | Examiner les modifications avant la fusion |
 | Production | Fusion dans la branche de déploiement | Votre site en ligne |
 
-## Étapes suivantes
+## Étapes suivantes {#next-steps}
 
 <CardGroup cols={2}>
   <Card title="Démarrage rapide" icon="rocket" href="/fr/quickstart">

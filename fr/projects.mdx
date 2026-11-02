@@ -3,17 +3,17 @@ title: "Page Projets : structure et mises à jour"
 description: "Comment la page vitrine dédiée /projects est configurée à partir du tableau projects, avec le schéma des entrées et un exemple de code."
 ---
 
-## Présentation
+## Présentation {#overview}
 
 Le site personnel dispose désormais d'une page `/projects` dédiée qui présente les projets personnels dans une grille responsive. Chaque carte affiche le nom du projet, un slogan d'une ligne, une description plus détaillée, la stack technique sous forme de tags et un lien vers le dépôt ou le site en ligne.
 
 Les entrées proviennent du tableau `projects` dans `src/constants/projects.js` et sont affichées par le composant `Projects` sur la route `/projects`. La page coexiste avec la page d'accueil afin que les visiteurs puissent parcourir la liste complète des projets sans faire défiler la page d'accueil.
 
-## Quand utiliser cette page
+## Quand utiliser cette page {#when-to-use-this-page}
 
 Ajoutez une entrée à `/projects` lorsque vous souhaitez mettre en avant un projet personnel sur sa propre carte, avec un slogan et des tags techniques. Utilisez la liste de la page d'accueil pour les projets que vous voulez mettre en vedette ; utilisez `/projects` pour le catalogue complet.
 
-## Schéma des entrées
+## Schéma des entrées {#entry-schema}
 
 Chaque objet du tableau `projects` prend en charge les champs suivants. Tous les champs sont obligatoires, sauf mention contraire.
 
@@ -27,7 +27,7 @@ Chaque objet du tableau `projects` prend en charge les champs suivants. Tous les
 | `link`        | string   | URL vers laquelle pointe le titre de la carte. S'ouvre dans un nouvel onglet. Utilisez le dépôt ou le site en ligne.          |
 | `repo`        | string   | Facultatif. URL du dépôt. Lorsqu'il est défini, la carte affiche un lien **Code source** à côté de la liste des technologies. S'ouvre dans un nouvel onglet. |
 
-## Ajouter un projet
+## Ajouter un projet {#adding-a-project}
 
 Ouvrez `src/constants/projects.js` et ajoutez un nouvel objet au tableau `projects`. Les entrées s'affichent dans l'ordre du tableau : placez donc le projet le plus récent ou le plus pertinent en premier.
 
@@ -51,7 +51,7 @@ export default projects;
 Gardez `tagline` suffisamment court pour tenir sur une seule ligne sur mobile — visez moins de 60 caractères. Réservez la présentation plus longue à `description`.
 </Tip>
 
-## Conseils de rédaction
+## Conseils de rédaction {#writing-guidance}
 
 La page `/projects` comprend un champ de recherche qui porte sur `name`, `tagline` et `description`, combiné au filtre par technologie. Rédigez ces trois champs avec les mots qu'un visiteur taperait réellement — catégorie de produit, domaine du problème ou mots-clés de stack qui ne figurent pas déjà dans les tags — afin que les projets apparaissent dans les résultats de recherche.
 
@@ -62,7 +62,7 @@ La page `/projects` comprend un champ de recherche qui porte sur `name`, `taglin
 - **Statut :** définissez `'Active'` pour les projets que vous maintenez encore. Passez à `'Archived'` lorsque vous cessez de publier des mises à jour, afin que les visiteurs sachent que le projet est figé — le badge passe alors du vert au gris.
 - **Lien :** privilégiez l'URL du dépôt pour les projets open source, ou le site en ligne pour les projets hébergés. Pour les projets hébergés qui sont également open source, faites pointer `link` vers le site en ligne et définissez `repo` sur l'URL du dépôt.
 
-## Navigation
+## Navigation {#navigation}
 
 La page est configurée dans `src/App.js` comme suit :
 

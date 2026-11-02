@@ -3,7 +3,7 @@ title: "Compteur de vues des articles, vues totales du site et ligne de métadon
 description: "Comment le site personnel suit les vues par article et les lectures totales du site, et affiche sous chaque article la ligne indiquant la date, le temps de lecture et le nombre de vues."
 ---
 
-## Présentation
+## Présentation {#overview}
 
 Le site personnel fournit un petit ensemble de composants et de hooks pour suivre et afficher le nombre de lectures des articles :
 
@@ -13,7 +13,7 @@ Le site personnel fournit un petit ensemble de composants et de hooks pour suivr
 
 Ces trois éléments communiquent avec un service de vues partagé à l'adresse `https://api.paaatrrrick.com/views`. Le service renvoie des données tolérantes à `null`, de sorte que chaque composant n'affiche rien tant que l'appel réseau est en cours ou si la requête échoue.
 
-## Quand utiliser chaque élément
+## Quand utiliser chaque élément {#when-to-use-each-piece}
 
 | Composant / hook         | À utiliser lorsque…                                                                       |
 | ------------------------ | ------------------------------------------------------------------------------- |
@@ -21,7 +21,7 @@ Ces trois éléments communiquent avec un service de vues partagé à l'adresse 
 | `SiteViews` / `useTotalViews`  | Vous voulez le nombre total de lectures sur l'ensemble du site (par ex. pied de page, page « À propos »). |
 | `PostMeta`               | Vous affichez un modèle d'article et voulez la ligne standard date · temps de lecture · vues. |
 
-## Ajouter la ligne de métadonnées à un modèle d'article
+## Ajouter la ligne de métadonnées à un modèle d'article {#adding-the-byline-to-a-post-template}
 
 `PostMeta` est la méthode recommandée pour afficher le nombre de vues d'un article. Il regroupe la date, le temps de lecture et le compteur de vues sur une seule ligne, afin que chaque modèle n'ait pas à câbler lui-même chacun de ces éléments.
 
@@ -49,7 +49,7 @@ export default function PostTemplate({ post }) {
 
 Chaque segment se masque si ses données sont manquantes ou si l'appel réseau n'a pas encore abouti, de sorte que la ligne de métadonnées se dégrade proprement pour les articles sans date ou avant le chargement du nombre de vues.
 
-## Afficher uniquement le nombre de vues
+## Afficher uniquement le nombre de vues {#showing-just-the-view-count}
 
 Si vous n'avez besoin que du nombre (par exemple sur une carte de liste d'articles), utilisez directement `ViewCounter` :
 
@@ -61,7 +61,7 @@ import ViewCounter from "../components/ViewCounter";
 
 Il affiche un `<span class="view-counter">` contenant le nombre formaté via `toLocaleString()` (ainsi `1234` s'affiche sous la forme `1,234 views`). Tant que la requête est en attente, il renvoie `null` et n'affiche rien.
 
-### Lire sans enregistrer de vue
+### Lire sans enregistrer de vue {#reading-without-recording-a-view}
 
 Par défaut, le montage de `ViewCounter` enregistre une vue. Si vous souhaitez lire le nombre sans l'incrémenter — par exemple sur un tableau de bord d'administration ou une page de liste — appelez directement `useViewCount` avec `increment: false` :
 
@@ -74,7 +74,7 @@ function PostCard({ post }) {
 }
 ```
 
-## Afficher le total des vues du site
+## Afficher le total des vues du site {#showing-total-site-views}
 
 `SiteViews` affiche un résumé d'une ligne du nombre total de lectures de tous les articles. Placez-le où vous voulez afficher ce total — un pied de page, une page « À propos », un bandeau de statistiques sur la page d'accueil :
 
@@ -86,7 +86,7 @@ import SiteViews from "../components/SiteViews";
 
 Il affiche un `<p class="site-views">` avec un texte comme `12,480 total reads across all posts.`, ou rien tant que la requête est en cours.
 
-## Endpoints d'API attendus par les hooks
+## Endpoints d'API attendus par les hooks {#api-endpoints-the-hooks-expect}
 
 Les hooks appellent un service de vues partagé. Si vous changez de backend, celui-ci doit exposer la même structure sur les mêmes chemins.
 
@@ -108,7 +108,7 @@ Les corps de réponse ont les structures suivantes :
 
 Les deux hooks traitent les réponses autres que `200` et les données non numériques comme des données manquantes — ils conservent l'état à `null` afin que les composants n'affichent rien plutôt qu'un nombre erroné. L'URL de base est configurée dans les hooks sous la forme `https://api.paaatrrrick.com/views`.
 
-## Style
+## Style {#styling}
 
 `PostMeta` est fourni avec `postMeta.css`, qui dispose les segments sur une ligne flex avec de fins séparateurs en forme de point entre eux. Les classes que vous pouvez cibler sont :
 

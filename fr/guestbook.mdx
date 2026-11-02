@@ -7,13 +7,13 @@ description: "Permettez aux visiteurs de signer un livre d'or sur le site. Lance
 Cette page est un brouillon pour le lancement du livre d'or le 5 novembre 2026. Tout ce qui concerne le lancement arrive sur la branche `release/guestbook` et est fusionné le jour du lancement.
 </Note>
 
-## Vue d'ensemble
+## Vue d'ensemble {#overview}
 
 Le livre d'or permet aux visiteurs de laisser un court message sur votre site personnel 👋. Chaque entrée comporte un nom et un message. Les entrées sont affichées de la plus récente à la plus ancienne, 20 par page.
 
 Pour l'instant, les entrées sont stockées dans le navigateur du visiteur (`localStorage`), donc chaque navigateur ne voit que les entrées signées depuis celui-ci.
 
-## L'activer
+## L'activer {#turn-it-on}
 
 Le livre d'or est désactivé par défaut. Pour l'activer, définissez la variable d'environnement `REACT_APP_GUESTBOOK` sur `on` lors de la compilation du site :
 
@@ -23,7 +23,7 @@ REACT_APP_GUESTBOOK=on
 
 Toute autre valeur, ou une variable non définie, laisse le livre d'or désactivé. Comme Create React App lit les variables `REACT_APP_` au moment de la compilation, recompilez et redéployez le site après l'avoir modifiée.
 
-## Signer le livre d'or
+## Signer le livre d'or {#sign-the-guestbook}
 
 Une fois le livre d'or activé, les visiteurs le trouvent à l'adresse `/guestbook`. Lorsque le livre d'or est désactivé, cette adresse affiche la page **Not Found** habituelle du site.
 
@@ -33,19 +33,19 @@ Pour le signer, un visiteur :
 2. Écrit un message dans le champ **Message**. Un compteur sous le champ indique combien des 280 caractères sont utilisés.
 3. Clique sur **Sign the guestbook**.
 
-La nouvelle entrée apparaît immédiatement en haut de la liste ✍️, sauf si elle est retenue pour vérification (voir [Modération](#modération)). Le champ du message se vide après une signature réussie, et le nom reste renseigné. Si une vérification échoue, le message d'erreur apparaît au-dessus du bouton et rien n'est enregistré.
+La nouvelle entrée apparaît immédiatement en haut de la liste ✍️, sauf si elle est retenue pour vérification (voir [Modération](#moderation)). Le champ du message se vide après une signature réussie, et le nom reste renseigné. Si une vérification échoue, le message d'erreur apparaît au-dessus du bouton et rien n'est enregistré.
 
 Sous le formulaire, la page affiche le nombre total d'entrées publiées, puis chaque entrée avec son nom, sa date de signature et son message.
 
-### Réactions
+### Réactions {#reactions}
 
 Chaque entrée possède quatre boutons de réaction : 👋 ❤️ 🔥 😂. Un clic sur l'un d'eux ajoute une réaction à cette entrée, et le bouton affiche le total à côté de l'emoji. Les visiteurs peuvent réagir autant de fois qu'ils le souhaitent.
 
-### Pagination
+### Pagination {#paging}
 
 La page affiche 20 entrées à la fois, de la plus récente à la plus ancienne. Lorsqu'il y en a plus de 20, les boutons **Newer** et **Older** apparaissent sous la liste, avec **Page X of Y** entre les deux.
 
-## Limites des entrées
+## Limites des entrées {#entry-limits}
 
 Le livre d'or supprime les espaces au début et à la fin des deux champs, puis vérifie chaque entrée avant de l'enregistrer.
 
@@ -64,11 +64,11 @@ Lorsqu'une entrée échoue à une vérification, elle n'est pas enregistrée et 
 | `message_too_long` | Messages are limited to 280 characters.     |
 | `rate_limited`     | You can sign 3 times a day. Come back tomorrow. |
 
-### Limite quotidienne
+### Limite quotidienne {#daily-limit}
 
 Chaque navigateur peut signer le livre d'or 3 fois par jour. Le compteur est remis à zéro à minuit UTC. Les entrées retenues pour vérification comptent dans la limite, contrairement aux tentatives qui échouent à une vérification de champ.
 
-## Modération
+## Modération {#moderation}
 
 Par défaut, chaque entrée est publiée dès qu'elle est signée. Vous pouvez retenir des entrées pour vérification avec deux variables d'environnement facultatives. Comme `REACT_APP_GUESTBOOK`, elles sont lues au moment de la compilation, donc recompilez le site après les avoir modifiées.
 
@@ -96,7 +96,7 @@ Lorsque rien n'est retenu, la page affiche **Nothing waiting for review.** Comme
 Comme les entrées sont stockées dans le navigateur, la page de modération liste les entrées retenues enregistrées dans le navigateur où vous l'ouvrez.
 </Note>
 
-## Utiliser le livre d'or dans un composant
+## Utiliser le livre d'or dans un composant {#using-the-guestbook-in-a-component}
 
 Le hook `useGuestbook` fournit à un composant la page d'entrées actuelle et une fonction `sign` pour en ajouter une.
 

@@ -5,7 +5,7 @@ description: 'Recevez des événements en temps réel de notre plateforme dans v
 
 Les webhooks permettent à votre application d'être notifiée lorsqu'un événement se produit, sans avoir à interroger constamment notre API.
 
-## Fonctionnement
+## Fonctionnement {#how-it-works}
 
 Lorsqu'un événement se produit, nous envoyons une requête HTTP POST à l'URL que vous avez configurée. Le payload contient le type d'événement et les données.
 
@@ -19,7 +19,7 @@ Pour configurer un webhook :
 Vous devez vérifier la signature de chaque requête afin que personne ne puisse usurper notre identité. Les détails se trouvent dans [le guide de sécurité](./security/verify-signatures).
 </Note>
 
-## Nouvelles tentatives
+## Nouvelles tentatives {#retries}
 
 Si votre endpoint renvoie une erreur, nous réessayons jusqu'à 5 fois avec un backoff exponentiel. Ensuite, nous abandonnons et marquons l'envoi comme échoué ; vous pouvez le voir dans [les logs](#webhook-logz).
 

@@ -3,13 +3,13 @@ title: "Sección de experiencia laboral: estructura y actualizaciones"
 description: "Cómo se configura la lista de experiencia laboral del sitio web personal a partir del array workExperience, además de un registro de cambios de las incorporaciones y ediciones recientes de puestos."
 ---
 
-## Descripción general
+## Descripción general {#overview}
 
 La sección de experiencia laboral muestra una lista cronológica de puestos en la página de inicio del sitio web personal. Cada entrada se genera a partir del array `workExperience` y muestra un título, una descripción opcional, una imagen de logotipo opcional y una cadena de cronología.
 
 Esta página documenta las incorporaciones recientes a esa lista para que los visitantes y colaboradores sepan qué ha cambiado y cómo se configuran las nuevas entradas.
 
-## Qué ha cambiado
+## Qué ha cambiado {#what-changed}
 
 Se añadió una nueva entrada **SWE en Figma** al array `workExperience`, que abarca el trabajo en el equipo de lienzo multijugador: mejoras en la presencia de cursores en tiempo real y optimizaciones del pipeline de renderizado para archivos de diseño muy grandes. Se suma a **SWE en Modal** (entorno de ejecución de GPU serverless) y a las entradas añadidas anteriormente (**SWE en PostHog**, **SWE en Supabase**, **SWE en Linear**, **SWE en Vercel**, **SWE en Airbnb**, **SWE en Shopify**, **SWE en Notion**), cada una pensada para editarse directamente. Las entradas de Anthropic y Stripe se actualizaron previamente con descripciones más extensas que destacan contribuciones específicas y la colaboración entre equipos. Las incorporaciones anteriores a la lista también se resumen a continuación.
 
@@ -91,7 +91,7 @@ Se añadió una nueva entrada **SWE en Figma** al array `workExperience`, que ab
   **Cronología:** mayo - agosto de 2023. Seattle, WA
 </Card>
 
-## Esquema de las entradas
+## Esquema de las entradas {#entry-schema}
 
 Cada entrada del array `workExperience` admite los siguientes campos:
 
@@ -102,7 +102,7 @@ Cada entrada del array `workExperience` admite los siguientes campos:
 | `image`    | string | No          | URL pública del logotipo de la empresa o del puesto.         |
 | `timeLine` | string | Sí          | Periodo y ubicación en formato legible.                      |
 
-## Añadir una nueva entrada
+## Añadir una nueva entrada {#adding-a-new-entry}
 
 Abre `src/constants/work.js` y añade un nuevo objeto al principio del array `workExperience`. Las nuevas entradas aparecen en la parte superior de la lista en la página de inicio.
 
@@ -168,7 +168,7 @@ export default workExperience
 Omite el campo `image` para los puestos sin logotipo. El diseño se ajusta automáticamente.
 </Tip>
 
-## Redactar descripciones de puestos
+## Redactar descripciones de puestos {#writing-role-descriptions}
 
 Usa el campo `text` para comunicar el impacto, no solo las responsabilidades.
 
@@ -177,6 +177,6 @@ Usa el campo `text` para comunicar el impacto, no solo las responsabilidades.
 - Destaca la colaboración entre equipos cuando aporte contexto al puesto.
 - Limita la descripción a dos o tres frases para que la página de inicio siga siendo fácil de recorrer.
 
-## Cuándo actualizar esta lista
+## Cuándo actualizar esta lista {#when-to-update-this-list}
 
 Añade una nueva entrada siempre que empieces o termines un puesto, o quieras destacarlo en el sitio web personal. Ordena las entradas en orden cronológico inverso para que el puesto más reciente aparezca primero.

@@ -7,13 +7,13 @@ description: "Permite que los visitantes firmen un libro de visitas en el sitio.
 Esta página es un borrador para el lanzamiento del libro de visitas el 5 de noviembre de 2026. Todo lo relacionado con el lanzamiento llega a la rama `release/guestbook` y se fusiona el día del lanzamiento.
 </Note>
 
-## Descripción general
+## Descripción general {#overview}
 
 El libro de visitas permite que los visitantes dejen una nota breve en tu sitio web personal 👋. Cada entrada tiene un nombre y un mensaje. Las entradas se muestran de la más reciente a la más antigua, 20 por página.
 
 Por ahora, las entradas se guardan en el navegador del visitante (`localStorage`), así que cada navegador solo ve las entradas firmadas desde él.
 
-## Actívalo
+## Actívalo {#turn-it-on}
 
 El libro de visitas viene desactivado. Para activarlo, establece la variable de entorno `REACT_APP_GUESTBOOK` en `on` al compilar el sitio:
 
@@ -23,7 +23,7 @@ REACT_APP_GUESTBOOK=on
 
 Cualquier otro valor, o dejar la variable sin definir, mantiene el libro de visitas desactivado. Como Create React App lee las variables `REACT_APP_` en tiempo de compilación, vuelve a compilar y desplegar el sitio después de cambiarla.
 
-## Firmar el libro de visitas
+## Firmar el libro de visitas {#sign-the-guestbook}
 
 Cuando el libro de visitas está activado, los visitantes lo encuentran en `/guestbook`. Cuando está desactivado, esa dirección muestra la página **Not Found** habitual del sitio.
 
@@ -33,19 +33,19 @@ Para firmarlo, un visitante:
 2. Escribe una nota en el campo **Message**. Un contador debajo del campo muestra cuántos de los 280 caracteres se han usado.
 3. Hace clic en **Sign the guestbook**.
 
-La nueva entrada aparece de inmediato al principio de la lista ✍️, salvo que quede retenida para revisión (consulta [Moderación](#moderación)). El campo de mensaje se vacía después de firmar correctamente, y el nombre se mantiene. Si una comprobación falla, el mensaje de error aparece encima del botón y no se guarda nada.
+La nueva entrada aparece de inmediato al principio de la lista ✍️, salvo que quede retenida para revisión (consulta [Moderación](#moderation)). El campo de mensaje se vacía después de firmar correctamente, y el nombre se mantiene. Si una comprobación falla, el mensaje de error aparece encima del botón y no se guarda nada.
 
 Debajo del formulario, la página muestra el número total de entradas publicadas y, a continuación, cada entrada con su nombre, la fecha en que se firmó y el mensaje.
 
-### Reacciones
+### Reacciones {#reactions}
 
 Cada entrada tiene cuatro botones de reacción: 👋 ❤️ 🔥 😂. Al hacer clic en uno se añade una reacción a esa entrada, y el botón muestra el recuento acumulado junto al emoji. Los visitantes pueden reaccionar tantas veces como quieran.
 
-### Paginación
+### Paginación {#paging}
 
 La página muestra 20 entradas a la vez, de la más reciente a la más antigua. Cuando hay más de 20, aparecen los botones **Newer** y **Older** debajo de la lista, con **Page X of Y** entre ellos.
 
-## Límites de las entradas
+## Límites de las entradas {#entry-limits}
 
 El libro de visitas elimina los espacios al principio y al final de ambos campos y luego comprueba cada entrada antes de guardarla.
 
@@ -64,11 +64,11 @@ Cuando una entrada no supera una comprobación, no se guarda y el visitante ve u
 | `message_too_long` | Messages are limited to 280 characters.     |
 | `rate_limited`     | You can sign 3 times a day. Come back tomorrow. |
 
-### Límite diario
+### Límite diario {#daily-limit}
 
 Cada navegador puede firmar el libro de visitas 3 veces al día. El recuento se reinicia a medianoche UTC. Las entradas retenidas para revisión cuentan para el límite, y los intentos que no superan una comprobación de campo no cuentan.
 
-## Moderación
+## Moderación {#moderation}
 
 De forma predeterminada, cada entrada se publica en cuanto se firma. Puedes retener entradas para revisión con dos variables de entorno opcionales. Al igual que `REACT_APP_GUESTBOOK`, ambas se leen en tiempo de compilación, así que vuelve a compilar el sitio después de cambiarlas.
 
@@ -96,7 +96,7 @@ Cuando no hay nada retenido, la página muestra **Nothing waiting for review.** 
 Como las entradas se guardan en el navegador, la página de moderación muestra las entradas retenidas guardadas en el navegador en el que la abres.
 </Note>
 
-## Usar el libro de visitas en un componente
+## Usar el libro de visitas en un componente {#using-the-guestbook-in-a-component}
 
 El hook `useGuestbook` proporciona a un componente la página actual de entradas y una función `sign` para añadir una.
 

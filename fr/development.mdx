@@ -32,7 +32,7 @@ Un aperçu local de votre documentation sera disponible à l'adresse `http://loc
 </Step>
 </Steps>
 
-## Ports personnalisés
+## Ports personnalisés {#custom-ports}
 
 Par défaut, Mintlify utilise le port 3000. Vous pouvez personnaliser le port sur lequel Mintlify s'exécute à l'aide de l'option `--port`. Par exemple, pour exécuter Mintlify sur le port 3333, utilisez cette commande :
 
@@ -46,7 +46,7 @@ Si vous tentez d'exécuter Mintlify sur un port déjà utilisé, il utilisera le
 Port 3000 is already in use. Trying 3001 instead.
 ```
 
-## Versions de Mintlify
+## Versions de Mintlify {#mintlify-versions}
 
 Chaque version de la CLI est associée à une version spécifique de Mintlify. Si votre aperçu local ne correspond pas à la version de production, mettez à jour la CLI :
 
@@ -54,7 +54,7 @@ Chaque version de la CLI est associée à une version spécifique de Mintlify. S
 npm mint update
 ```
 
-## Valider les liens
+## Valider les liens {#validating-links}
 
 Utilisez la CLI pour trouver les liens cassés dans votre documentation :
 
@@ -62,7 +62,7 @@ Utilisez la CLI pour trouver les liens cassés dans votre documentation :
 mint broken-links
 ```
 
-## Déploiement
+## Déploiement {#deployment}
 
 Si le déploiement réussit, vous devriez voir ceci :
 
@@ -70,11 +70,11 @@ Si le déploiement réussit, vous devriez voir ceci :
   <img src="/images/checks-passed.png" alt="Capture d'écran d'un message de confirmation de déploiement indiquant que toutes les vérifications ont réussi." style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
-## Formatage du code
+## Formatage du code {#code-formatting}
 
 Nous vous suggérons d'utiliser des extensions dans votre IDE pour reconnaître et formater le MDX. Si vous utilisez VSCode, envisagez l'[extension MDX pour VSCode](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) pour la coloration syntaxique, et [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) pour le formatage du code.
 
-## Dépannage
+## Dépannage {#troubleshooting}
 
 <AccordionGroup>
   <Accordion title="Erreur : impossible de charger le module « sharp » avec le runtime darwin-arm64">

@@ -5,7 +5,7 @@ description: "Comprende la arquitectura de Mintlify y cómo tu documentación pa
 
 Mintlify convierte un repositorio de Git con archivos MDX en un sitio de documentación rápido y con búsqueda. Esta página explica las distintas piezas para que sepas qué ocurre internamente.
 
-## Las piezas principales
+## Las piezas principales {#the-core-pieces}
 
 <CardGroup cols={2}>
   <Card title="Contenido" icon="file-lines">
@@ -22,7 +22,7 @@ Mintlify convierte un repositorio de Git con archivos MDX en un sitio de documen
   </Card>
 </CardGroup>
 
-## Del commit a la página publicada
+## Del commit a la página publicada {#from-commit-to-published-page}
 
 1. **Escribes el contenido.** Las páginas se escriben en MDX, que es Markdown más componentes de React como `<Card>`, `<Tabs>` y `<Accordion>`.
 2. **Configuras la navegación.** `docs.json` define las pestañas, los grupos, el tema y los elementos globales como la barra de navegación y el pie de página.
@@ -30,7 +30,7 @@ Mintlify convierte un repositorio de Git con archivos MDX en un sitio de documen
 4. **Mintlify compila el sitio.** El contenido se valida, los enlaces se comprueban y el sitio se compila en recursos estáticos.
 5. **El sitio se publica.** La nueva compilación se despliega en tu dominio, normalmente en cuestión de segundos.
 
-## Desarrollo local
+## Desarrollo local {#local-development}
 
 Usa la CLI de Mintlify para previsualizar los cambios antes de hacer push:
 
@@ -45,14 +45,14 @@ mint validate
 mint broken-links
 ```
 
-## Modelo de autoría
+## Modelo de autoría {#authoring-model}
 
 - **Archivos MDX** — cada página es un archivo `.mdx` con frontmatter YAML (`title`, `description`).
 - **Componentes** — Mintlify incluye componentes integrados para avisos, pestañas, grupos de código, acordeones, tarjetas y más.
 - **Snippets** — el contenido reutilizable se encuentra en `snippets/` y se puede importar en cualquier página.
 - **Imágenes y recursos** — se referencian mediante una ruta relativa desde la raíz del repositorio.
 
-## Configuración
+## Configuración {#configuration}
 
 `docs.json` es la única fuente de verdad para la estructura del sitio:
 
@@ -61,7 +61,7 @@ mint broken-links
 - `navbar`, `footer` — enlaces globales y redes sociales.
 - `contextual` — controla el menú "Copy / Open in ChatGPT" de cada página.
 
-## Búsqueda e IA
+## Búsqueda e IA {#search-and-ai}
 
 Cada sitio publicado incluye:
 
@@ -69,7 +69,7 @@ Cada sitio publicado incluye:
 - **Chat con IA** que responde preguntas usando tu documentación como contexto.
 - **Integraciones de MCP y LLM** para que herramientas como Cursor y Claude puedan consultar tu documentación.
 
-## Entornos de despliegue
+## Entornos de despliegue {#deployment-environments}
 
 | Entorno | Activador | Úsalo para |
 | ----------- | ------- | ---------- |
@@ -77,7 +77,7 @@ Cada sitio publicado incluye:
 | Vista previa | Pull request | Revisar cambios antes de fusionarlos |
 | Producción | Merge a la rama de despliegue | Tu sitio en vivo |
 
-## Próximos pasos
+## Próximos pasos {#next-steps}
 
 <CardGroup cols={2}>
   <Card title="Inicio rápido" icon="rocket" href="/es/quickstart">

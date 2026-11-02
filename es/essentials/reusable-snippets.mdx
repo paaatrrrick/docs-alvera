@@ -8,7 +8,7 @@ import SnippetIntro from '/es/snippets/snippet-intro.mdx';
 
 <SnippetIntro />
 
-## Crear un fragmento personalizado
+## Crear un fragmento personalizado {#creating-a-custom-snippet}
 
 **Requisitos previos**: crea tu archivo de fragmento en el directorio `snippets`.
 
@@ -19,7 +19,7 @@ import SnippetIntro from '/es/snippets/snippet-intro.mdx';
   componente.
 </Note>
 
-### Exportación predeterminada
+### Exportación predeterminada {#default-export}
 
 1. Añade a tu archivo de fragmento el contenido que quieras reutilizar en varias
    ubicaciones. Opcionalmente, puedes añadir variables que se pueden rellenar mediante props
@@ -52,7 +52,7 @@ Lorem ipsum dolor sit amet.
 <MySnippet word="bananas" />
 ```
 
-### Variables reutilizables
+### Variables reutilizables {#reusable-variables}
 
 1. Exporta una variable desde tu archivo de fragmento:
 
@@ -75,7 +75,7 @@ import { myName, myObject } from '/snippets/path/to/custom-variables.mdx';
 Hello, my name is {myName} and I like {myObject.fruit}.
 ```
 
-### Componentes reutilizables
+### Componentes reutilizables {#reusable-components}
 
 1. Dentro de tu archivo de fragmento, crea un componente que reciba props exportando
    tu componente en forma de función flecha.
