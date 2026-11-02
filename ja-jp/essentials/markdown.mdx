@@ -1,0 +1,88 @@
+---
+title: 'Mintlify の Markdown 構文リファレンス'
+description: 'Mintlify のドキュメントページでサポートされている見出し、テキストのスタイル、リスト、リンク、引用ブロック、その他の標準的な Markdown 書式のリファレンスです。'
+icon: 'text-size'
+---
+
+## タイトル {#titles}
+
+セクションの見出しに最適です。
+
+```md
+## Titles
+```
+
+### サブタイトル {#subtitles}
+
+サブセクションの見出しに最適です。
+
+```md
+### Subtitles
+```
+
+<Tip>
+
+各**タイトル**と**サブタイトル**はアンカーを作成し、右側の目次にも表示されます。
+
+</Tip>
+
+## テキストの書式 {#text-formatting}
+
+Mintlify はほとんどの Markdown 書式をサポートしています。テキストを `**`、`_`、`~` で囲むと書式を設定できます。
+
+| スタイル      | 書き方            | 結果            |
+| ------------- | ----------------- | --------------- |
+| 太字          | `**bold**`        | **bold**        |
+| 斜体          | `_italic_`        | _italic_        |
+| 取り消し線    | `~strikethrough~` | ~strikethrough~ |
+
+これらは組み合わせることができます。たとえば、`**_bold and italic_**` と書くと **_bold and italic_** のテキストになります。
+
+上付き文字と下付き文字を書くには HTML を使用する必要があります。つまり、テキストを `<sup>` または `<sub>` で囲みます。
+
+| テキストサイズ | 書き方                   | 結果                   |
+| -------------- | ------------------------ | ---------------------- |
+| 上付き文字     | `<sup>superscript</sup>` | <sup>superscript</sup> |
+| 下付き文字     | `<sub>subscript</sub>`   | <sub>subscript</sub>   |
+
+## ページへのリンク {#linking-to-pages}
+
+テキストを `[]()` で囲むとリンクを追加できます。`[link to google](https://google.com)` と書くと [link to google](https://google.com) になります。
+
+ドキュメント内のページへのリンクは、ルート相対パスである必要があります。基本的には、フォルダーのパス全体を含める必要があります。たとえば、`[link to text](/writing-content/text)` はコンポーネントセクションの「Text」ページにリンクします。
+
+`[link to text](../text)` のような相対リンクは、最適化が難しいため開くのが遅くなります。
+
+## 引用ブロック {#blockquotes}
+
+### 1 行 {#singleline}
+
+引用ブロックを作成するには、段落の前に `>` を追加します。
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### 複数行 {#multiline}
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX {#latex}
+
+Mintlify は Latex コンポーネントを通じて [LaTeX](https://www.latex-project.org) をサポートしています。
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```

@@ -1,0 +1,182 @@
+---
+title: "Work experience section: structure and updates"
+description: "How the personal website's work experience list is configured from the workExperience array, plus a changelog of recent role additions and edits."
+---
+
+## Overview
+
+The work experience section displays a chronological list of roles on the personal website's home page. Each entry is rendered from the `workExperience` array and shows a title, optional description, optional logo image, and a timeline string.
+
+This page documents recent additions to that list so visitors and contributors know what changed and how new entries are configured.
+
+## What changed
+
+A new **SWE at Figma** entry was added to the `workExperience` array, covering work on the multiplayer canvas team — real-time cursor presence improvements and rendering pipeline optimizations for very large design files. It joins **SWE at Modal** (serverless GPU runtime) and previously added entries (**SWE at PostHog**, **SWE at Supabase**, **SWE at Linear**, **SWE at Vercel**, **SWE at Airbnb**, **SWE at Shopify**, **SWE at Notion**), each meant to be edited in place. The Anthropic and Stripe entries were previously updated with longer descriptions that highlight specific contributions and cross-team collaboration. Earlier additions to the list are also summarized below.
+
+<Card title="SWE at Figma" icon="pen-nib">
+  Worked on the multiplayer canvas team. Shipped improvements to real-time cursor presence and helped optimize the rendering pipeline for very large design files.
+
+  **Timeline:** May - August 2039. San Francisco, CA
+</Card>
+
+<Card title="SWE at Modal" icon="bolt">
+  Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.
+
+  **Timeline:** May - August 2035. Remote
+</Card>
+
+<Card title="SWE at PostHog" icon="chart-mixed">
+  Worked on the product analytics surface, with a focus on funnels and session replay performance for high-volume customers.
+
+  **Timeline:** May - August 2034. Remote
+</Card>
+
+<Card title="SWE at Supabase" icon="database">
+  Worked on the Postgres-backed auth service. Shipped improvements to row-level-security tooling and helped tighten the developer experience around social auth providers.
+
+  **Timeline:** May - August 2033. Remote
+</Card>
+
+<Card title="SWE at Linear" icon="bars-progress">
+  Worked on the issue triage workflow.
+
+  **Timeline:** May - August 2036. Remote
+</Card>
+
+<Card title="SWE at Vercel" icon="triangle">
+  Worked on the edge runtime and deployment pipeline.
+
+  **Timeline:** May - August 2035. Remote
+</Card>
+
+<Card title="SWE at Airbnb" icon="house">
+  Worked on the host onboarding flow.
+
+  **Timeline:** May - August 2031. San Francisco, CA
+</Card>
+
+<Card title="SWE at Shopify" icon="store">
+  Worked on merchant analytics dashboards.
+
+  **Timeline:** May - August 2032. Remote
+</Card>
+
+<Card title="SWE at Notion" icon="pen-to-square">
+  Worked on the collaborative editing engine.
+
+  **Timeline:** May - August 2033. New York, NY
+</Card>
+
+<Card title="SWE at Anthropic" icon="microchip-ai">
+  Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.
+
+  **Timeline:** May - August 2026. San Francisco, CA
+</Card>
+
+<Card title="SWE at Stripe" icon="credit-card">
+  Worked on payments infrastructure. Helped build and ship features on the core payments API, with a focus on reliability and latency. Partnered with the platform team on internal tooling that streamlined deploys.
+
+  **Timeline:** May - August 2024. San Francisco, CA
+</Card>
+
+<Card title="SWE at OpenAI" icon="microchip-ai">
+  Software engineering role focused on building large language models.
+
+  **Timeline:** May - August 2025. Seattle, WA
+</Card>
+
+<Card title="GoDaddy Software Engineer Intern" icon="code">
+  A/B tested features on GoDaddy's checkout page.
+
+  **Timeline:** May - August 2023. Seattle, WA
+</Card>
+
+## Entry schema
+
+Each entry in the `workExperience` array supports the following fields:
+
+| Field      | Type   | Required | Description                                               |
+| ---------- | ------ | -------- | --------------------------------------------------------- |
+| `title`    | string | Yes      | Role and company name shown as the entry header.          |
+| `text`     | string | No       | Short description of responsibilities or accomplishments. |
+| `image`    | string | No       | Public URL of a company or role logo.                     |
+| `timeLine` | string | Yes      | Human-readable timeframe and location.                    |
+
+## Adding a new entry
+
+Open `src/constants/work.js` and prepend a new object to the `workExperience` array. New entries appear at the top of the list on the home page.
+
+```js src/constants/work.js
+const workExperience = [
+    {
+        title: 'SWE at Modal',
+        text: `Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.`,
+        timeLine: 'May - August 2035. Remote',
+    },
+    {
+        title: 'SWE at PostHog',
+        text: `Worked on the product analytics surface, with a focus on funnels and session replay performance for high-volume customers.`,
+        timeLine: 'May - August 2034. Remote',
+    },
+    {
+        title: 'SWE at Supabase',
+        text: `Worked on the Postgres-backed auth service. Shipped improvements to row-level-security tooling and helped tighten the developer experience around social auth providers.`,
+        timeLine: 'May - August 2033. Remote',
+    },
+    {
+        title: 'SWE at Linear',
+        text: `Worked on the issue triage workflow.`,
+        timeLine: 'May - August 2036. Remote',
+    },
+    {
+        title: 'SWE at Vercel',
+        text: `Worked on the edge runtime and deployment pipeline.`,
+        timeLine: 'May - August 2035. Remote',
+    },
+    {
+        title: 'SWE at Airbnb',
+        text: `Worked on the host onboarding flow.`,
+        timeLine: 'May - August 2031. San Francisco, CA',
+    },
+    {
+        title: 'SWE at Shopify',
+        text: `Worked on merchant analytics dashboards.`,
+        timeLine: 'May - August 2032. Remote',
+    },
+    {
+        title: 'SWE at Notion',
+        text: `Worked on the collaborative editing engine.`,
+        timeLine: 'May - August 2033. New York, NY',
+    },
+    {
+        title: 'SWE at Anthropic',
+        text: `Built Claude. Contributed to model training infrastructure and improved evaluation pipelines for safer model releases. Collaborated with researchers across the alignment and pretraining teams.`,
+        timeLine: 'May - August 2026. San Francisco, CA',
+    },
+    {
+        title: 'SWE at Stripe',
+        text: `Worked on payments infrastructure. Helped build and ship features on the core payments API, with a focus on reliability and latency. Partnered with the platform team on internal tooling that streamlined deploys.`,
+        timeLine: 'May - August 2024. San Francisco, CA',
+    },
+    // ...existing entries
+]
+
+export default workExperience
+```
+
+<Tip>
+  Omit the `image` field for roles without a logo. The layout adjusts automatically.
+</Tip>
+
+## Writing role descriptions
+
+Use the `text` field to communicate impact, not just responsibilities.
+
+* Lead with the highest-impact contribution.
+* Mention concrete focus areas (for example, reliability, latency, evaluation pipelines).
+* Call out cross-team collaboration when it adds context to the role.
+* Keep the description to two or three sentences so the home page stays scannable.
+
+## When to update this list
+
+Add a new entry whenever you start, finish, or want to highlight a role on the personal website. Order entries reverse-chronologically so the most recent role appears first.
