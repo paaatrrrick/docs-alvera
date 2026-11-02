@@ -1,11 +1,11 @@
 ---
 title: "Comment fonctionne Mintlify"
-description: "Comprenez l'architecture de Mintlify et comment vos fichiers MDX deviennent un site publié, du dépôt Git au déploiement et à l'aperçu."
+description: "Comprenez l'architecture de Mintlify et comment vos fichiers MDX dans Git deviennent un site publié, y compris la compilation, le déploiement et l'aperçu."
 ---
 
 Mintlify transforme un dépôt Git de fichiers MDX en un site de documentation rapide et indexé pour la recherche. Cette page explique les différents éléments pour que vous sachiez ce qui se passe en coulisses.
 
-## Les éléments principaux
+## Les éléments principaux {#the-core-pieces}
 
 <CardGroup cols={2}>
   <Card title="Contenu" icon="file-lines">
@@ -22,7 +22,7 @@ Mintlify transforme un dépôt Git de fichiers MDX en un site de documentation r
   </Card>
 </CardGroup>
 
-## Du commit à la page publiée
+## Du commit à la page publiée {#from-commit-to-published-page}
 
 1. **Vous rédigez le contenu.** Les pages sont écrites en MDX, c'est-à-dire du Markdown enrichi de composants React comme `<Card>`, `<Tabs>` et `<Accordion>`.
 2. **Vous configurez la navigation.** `docs.json` définit les onglets, les groupes, le thème et les éléments globaux comme la barre de navigation et le pied de page.
@@ -30,7 +30,7 @@ Mintlify transforme un dépôt Git de fichiers MDX en un site de documentation r
 4. **Mintlify compile le site.** Le contenu est validé, les liens sont vérifiés et le site est compilé en ressources statiques.
 5. **Le site est mis en ligne.** Le nouveau build est déployé sur votre domaine, généralement en quelques secondes.
 
-## Développement local
+## Développement local {#local-development}
 
 Utilisez la CLI Mintlify pour prévisualiser les changements avant de pousser :
 
@@ -45,14 +45,14 @@ mint validate
 mint broken-links
 ```
 
-## Modèle de rédaction
+## Modèle de rédaction {#authoring-model}
 
 - **Fichiers MDX** — chaque page est un fichier `.mdx` avec un frontmatter YAML (`title`, `description`).
 - **Composants** — Mintlify fournit des composants intégrés pour les encadrés, onglets, groupes de code, accordéons, cartes, et plus encore.
 - **Snippets** — le contenu réutilisable vit dans `snippets/` et peut être importé dans n'importe quelle page.
 - **Images et ressources** — référencées par chemin relatif depuis la racine du dépôt.
 
-## Configuration
+## Configuration {#configuration}
 
 `docs.json` est la source unique de vérité pour la structure du site :
 
@@ -61,7 +61,7 @@ mint broken-links
 - `navbar`, `footer` — liens globaux et réseaux sociaux.
 - `contextual` — contrôle le menu "Copier / Ouvrir dans ChatGPT" de chaque page.
 
-## Recherche et IA
+## Recherche et IA {#search-and-ai}
 
 Chaque site publié inclut :
 
@@ -69,7 +69,7 @@ Chaque site publié inclut :
 - **Chat IA** qui répond aux questions en utilisant votre documentation comme contexte.
 - **Intégrations MCP et LLM** pour que des outils comme Cursor et Claude puissent consulter votre documentation.
 
-## Environnements de déploiement
+## Environnements de déploiement {#deployment-environments}
 
 | Environnement | Déclencheur | À utiliser pour |
 | ------------- | ----------- | --------------- |
@@ -77,13 +77,13 @@ Chaque site publié inclut :
 | Aperçu | Pull request | Examiner les changements avant la fusion |
 | Production | Fusion sur la branche de déploiement | Votre site en ligne |
 
-## Étapes suivantes
+## Étapes suivantes {#next-steps}
 
 <CardGroup cols={2}>
-  <Card title="Démarrage rapide" icon="rocket" href="/quickstart">
+  <Card title="Démarrage rapide" icon="rocket" href="/fr/quickstart">
     Configurez votre site en trois étapes.
   </Card>
-  <Card title="Rédiger du contenu" icon="pen" href="/essentials/markdown">
+  <Card title="Rédiger du contenu" icon="pen" href="/fr/essentials/markdown">
     Découvrez les composants MDX à votre disposition.
   </Card>
 </CardGroup>

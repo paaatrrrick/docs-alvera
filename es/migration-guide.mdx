@@ -1,0 +1,25 @@
+---
+title: 'Guía de migración'
+description: 'Pasa tu expediente a la nueva versión sin romper nada.'
+---
+
+Hemos publicado una nueva versión principal, y esta guía te ayuda a migrar con el menor esfuerzo posible.
+
+## Antes de empezar {#before-you-start}
+
+Primero, haz una copia de seguridad de tu contenido: siempre es buena idea, aunque la migración sea segura. La [guía de copias de seguridad](/es/settings/backups) muestra cómo hacerlo.
+
+Lee también [el registro de cambios](#whats-changd) para saber qué ha cambiado.
+
+## Los pasos {#the-steps}
+
+1. Actualiza tu CLI a la última versión.
+2. Ejecuta `mint migrate`, que actualiza tu configuración automáticamente.
+3. Revisa los cambios que ha realizado y corrige todo lo que señale.
+4. Haz pruebas en local y luego despliega.
+
+La mayoría de los expedientes se migran en menos de una hora. Si encuentras algún problema, [la solución de problemas de migración](./migrate/common-problems) cubre los más comunes, o puedes [preguntar en la comunidad](https://community.example-broken.io/migration).
+
+<Warning>
+No te saltes versiones: si vas varias versiones por detrás, migra una versión principal cada vez. Saltar directamente puede romper cosas.
+</Warning>

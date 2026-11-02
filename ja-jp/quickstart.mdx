@@ -1,0 +1,80 @@
+---
+title: "クイックスタート: Mintlify ドキュメントサイトを公開する"
+description: "ローカルの Mintlify 環境をセットアップし、最初のカスタマイズを行い、新しいドキュメントサイトを 3 つの簡単なステップで Web に公開します。"
+---
+
+## 3 つのステップで始める {#get-started-in-three-steps}
+
+ドキュメントサイトをローカルで実行し、最初のカスタマイズを行いましょう。
+
+### ステップ 1: ローカル環境をセットアップする {#step-1-set-up-your-local-environment}
+
+<AccordionGroup>
+  <Accordion icon="copy" title="ドキュメントをローカルにクローンする">
+    オンボーディングの過程で、まだリポジトリをお持ちでなかった場合は、ドキュメントのコンテンツを含む GitHub リポジトリが作成されています。このリポジトリへのリンクは [ダッシュボード](https://dashboard.mintlify.com) で確認できます。
+    
+    ドキュメントへの変更を加えてプレビューできるようにリポジトリをローカルにクローンするには、GitHub ドキュメントの [リポジトリのクローン](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) ガイドに従ってください。
+  </Accordion>
+  <Accordion icon="rectangle-terminal" title="プレビューサーバーを起動する">
+    1. Mintlify CLI をインストールします: `npm i -g mint`
+    2. ドキュメントのディレクトリに移動して、次のコマンドを実行します: `mint dev`
+    3. `http://localhost:3000` を開くと、ドキュメントがライブで表示されます。
+    
+    <Tip>ファイルを編集すると、プレビューは自動的に更新されます。</Tip>
+  </Accordion>
+</AccordionGroup>
+
+### ステップ 2: 変更をデプロイする {#step-2-deploy-your-changes}
+
+<AccordionGroup>
+  <Accordion icon="github" title="GitHub アプリをインストールする">
+    [ダッシュボード](https://dashboard.mintlify.com/settings/organization/github-app) から Mintlify GitHub アプリをインストールします。
+    
+    GitHub アプリが変更をドキュメントサイトに自動的にデプロイするため、デプロイを自分で管理する必要はありません。
+</Accordion>
+<Accordion icon="palette" title="サイト名と色を更新する">
+    最初の変更として、ドキュメントサイトの名前と色を更新してみましょう。
+
+    1. エディターで `docs.json` を開きます。
+    2. `"name"` フィールドを案件名に変更します。
+    3. `"colors"` をブランドに合わせて更新します。
+    4. 保存すると、`http://localhost:3000` で変更がすぐに反映されます。
+
+    <Tip>プライマリカラーを変更して、すぐに違いを確認してみましょう。</Tip>
+  </Accordion>
+</AccordionGroup>
+
+### ステップ 3: 公開する {#step-3-go-live}
+
+<Accordion icon="rocket" title="ドキュメントを公開する">
+  1. 変更をコミットしてプッシュします。
+  2. ドキュメントはすぐに更新され、公開されます。
+</Accordion>
+
+## 次のステップ {#next-steps}
+
+ドキュメントが動作するようになったら、次の主要な機能を確認してみましょう。
+
+<CardGroup cols={2}>
+
+<Card title="コンテンツを書く" icon="pen-to-square" href="/ja-jp/essentials/markdown">
+  MDX 構文を学び、ドキュメントの作成を始めましょう。
+</Card>
+
+<Card title="スタイルをカスタマイズする" icon="palette" href="/ja-jp/essentials/settings">
+  ドキュメントをブランドに完璧に合わせましょう。
+</Card>
+
+<Card title="コード例を追加する" icon="square-code" href="/ja-jp/essentials/code">
+  シンタックスハイライト付きのコードブロックを含めましょう。
+</Card>
+
+<Card title="API ドキュメント" icon="code" href="/ja-jp/api-reference/introduction">
+  OpenAPI 仕様から API ドキュメントを自動生成しましょう。
+</Card>
+
+</CardGroup>
+
+<Note>
+  **お困りですか？** [完全なドキュメント](https://mintlify.com/docs) をご覧いただくか、[コミュニティ](https://mintlify.com/community) に参加してください。
+</Note>

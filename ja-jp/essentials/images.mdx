@@ -1,0 +1,59 @@
+---
+title: '画像、動画、HTML の埋め込み'
+description: '画像、動画、iframe、その他の埋め込み HTML 要素を追加して、Mintlify のドキュメントページをメディアやインタラクティブなコンテンツで充実させます。'
+icon: 'image'
+---
+
+<img
+  style={{ borderRadius: '0.5rem' }}
+  src="https://mintlify-assets.b-cdn.net/bigbend.jpg"
+/>
+
+## 画像 {#image}
+
+### Markdown を使用する {#using-markdown}
+
+[Markdown 構文](https://www.markdownguide.org/basic-syntax/#images)を使用して画像を追加します。
+
+```md
+![title](/path/image.jpg)
+```
+
+画像ファイルは 5MB 未満である必要があります。それより大きな画像は、[Cloudinary](https://cloudinary.com/) や [S3](https://aws.amazon.com/s3/) などのサービスでホストし、その URL を埋め込んでください。
+
+### 埋め込みを使用する {#using-embeds}
+
+画像をより細かく制御するには、[埋め込み](https://mintlify.com/docs/image-embeds)を使用します。
+
+```html
+<img height="200" src="/path/image.jpg" />
+```
+
+## 埋め込みと HTML 要素 {#embeds-and-html-elements}
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/4KzFe50RQkQ"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  style={{ width: '100%', borderRadius: '0.5rem' }}
+></iframe>
+
+<br />
+
+<Tip>
+
+Mintlify は [Markdown 内の HTML 付箋](https://www.markdownguide.org/basic-syntax/#html)をサポートしています。これは Markdown 構文よりも HTML 付箋を好む場合に便利で、無限の柔軟性でドキュメントを作成できます。
+
+</Tip>
+
+### iFrame {#iframes}
+
+iframe を使用すると、ドキュメント内に別の HTML ページを読み込めます。最も一般的な用途は動画の埋め込みです。
+
+```html
+<iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>
+```
