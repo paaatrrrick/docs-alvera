@@ -1,0 +1,30 @@
+---
+title: 'Guía de despliegue'
+description: 'Lleva tu documentación a producción en unos pocos pasos.'
+---
+
+Cuando estés conforme con cómo se ve todo en local, es hora de desplegar.
+
+## Conectar tu repositorio {#connecting-your-repo}
+
+Primero, conecta tu repositorio de git. Admitimos GitHub y GitLab, y la configuración es ligeramente distinta para cada uno. Consulta [la página de configuración de git](/es/integrations/git-setup).
+
+Una vez conectado, cada push a tu rama principal activará automáticamente un nuevo despliegue.
+
+## Dominios personalizados {#custom-domains}
+
+Puedes apuntar un dominio personalizado a tu sitio. Añade el dominio en [configuración](/es/settings/domains-broken) y luego actualiza tu registro DNS como se muestra en [esta guía paso a paso](./domains/dns-setup).
+
+<Tip>
+Los despliegues suelen tardar menos de un minuto, pero un sitio grande puede tardar más. Puedes seguir el progreso en [el registro de despliegue](#deploi-logs).
+</Tip>
+
+Si un despliegue falla, lee la página de [solución de problemas de despliegue](https://help.example-broken.dev/deploys).
+
+## Tiempo de despliegue {#deployment-timing}
+
+La mayoría de los despliegues terminan en menos de un minuto. Los sitios más grandes con muchas páginas pueden tardar unos minutos más.
+
+## Reversiones {#rollbacks}
+
+Si un despliegue rompe algo, puedes revertir al despliegue anterior desde el panel.
