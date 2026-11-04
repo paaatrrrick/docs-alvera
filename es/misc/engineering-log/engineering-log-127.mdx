@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación Delbury, registro 1126"
+description: "Registro de ingeniería 1126: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Delbury, con referencias a una reparación de 1792."
+---
+
+## Resumen
+
+Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Delbury dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído. Una recalibración de rutina en Ashshore se realizó contra la tabla de referencia equivocada, la que fue retirada en 1792. Las lecturas de presión de la estación de bombeo de Delbury derivaron al alza durante 6 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+- La inspección reveló que la caja de empalmes había sido resellada con papel prensado de algas, una improvisación que databa de una reparación de 1913 que nadie documentó.
+- El equipo nocturno de Delbury registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- El equipo nocturno de Delbury registró 9 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Las lecturas de presión de la estación de bombeo de Delbury derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Una recalibración de rutina en Ashshore se realizó contra la tabla de referencia equivocada, la que fue retirada en 1909.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 79 días antes. El libro de mantenimiento mostró que la misma falla se había reportado 2 veces a lo largo de 56 meses, cerrada cada vez como resuelta y sin notas. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con compuesto de fibra de cuerda, una improvisación que databa de una reparación de 1833 que nadie documentó. Greta Petrov rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Ashshore, sutilmente fuera de tolerancia.
+
+```text
+
+station: delbury
+
+fault-class: reference-mismatch
+
+first-logged: 2 November
+
+recurrences: 8
+
+owner: otto.mollering
+
+```
+
+## Causa raíz
+
+Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Greta Petrov rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Ashshore, sutilmente fuera de tolerancia. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 71 días antes.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Imre Holloway viene defendiendo desde 1882. El tiempo total fuera de servicio ascendió a 18 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro.

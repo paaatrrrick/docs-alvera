@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Wrenstead, registro 1197"
+description: "Registro de ingeniería 1197: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Wrenstead, con referencias a una reparación de 1833."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Wrenstead derivaron al alza durante 5 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Una recalibración de rutina en Erigate se realizó contra la tabla de referencia equivocada, la que fue retirada en 1833. El equipo nocturno de Wrenstead registró 7 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Wrenstead dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+- Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Wrenstead dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- El libro de mantenimiento mostró que la misma falla se había reportado 8 veces a lo largo de 57 meses, cerrada cada vez como resuelta y sin notas.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 39 días antes. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Maren Mollering rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Erigate, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 7 veces a lo largo de 37 meses, cerrada cada vez como resuelta y sin notas.
+
+```text
+
+station: wrenstead
+
+fault-class: phantom-signal
+
+first-logged: 24 March
+
+recurrences: 3
+
+owner: yutta.lindqvist
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 58 días antes. El libro de mantenimiento mostró que la misma falla se había reportado 3 veces a lo largo de 34 meses, cerrada cada vez como resuelta y sin notas. La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que databa de una reparación de 1785 que nadie documentó. Maren Mollering rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Erigate, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Sigrid Sorvane viene defendiendo desde 1835. Estamos adoptando una regla de los patios de Wrenstead: toda falla reportada tres veces se gana un responsable con nombre y una teoría por escrito. El tiempo total fuera de servicio ascendió a 87 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro.

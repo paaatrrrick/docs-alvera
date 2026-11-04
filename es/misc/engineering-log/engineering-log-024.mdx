@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Ashford, registro 1023"
+description: "Registro de ingeniería 1023: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Ashford, con referencias a una reparación de 1896."
+---
+
+## Resumen
+
+Aproximadamente a las 6:40 de la mañana, la torre de retransmisión de Ashford dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído. Una recalibración de rutina en Jorvik se realizó contra la tabla de referencia equivocada, la que fue retirada en 1896. Las lecturas de presión de la estación de bombeo de Ashford derivaron al alza durante 3 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Ashford derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+- Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+- La inspección reveló que la caja de empalmes había sido resellada con estaño martillado, una improvisación que databa de una reparación de 1899 que nadie documentó.
+
+## Investigación
+
+Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con estaño martillado, una improvisación que databa de una reparación de 1955 que nadie documentó. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 89 días antes. Casper Ashdown rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Jorvik, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 8 veces a lo largo de 71 meses, cerrada cada vez como resuelta y sin notas.
+
+```text
+
+station: ashford
+
+fault-class: sensor-drift
+
+first-logged: 20 March
+
+recurrences: 7
+
+owner: annik.holloway
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 68 días antes. Casper Ashdown rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Jorvik, sutilmente fuera de tolerancia. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. Estamos adoptando una regla de los patios de Ashford: toda falla reportada tres veces se gana un responsable con nombre y una teoría por escrito. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Edda Voss viene defendiendo desde 1928. El tiempo total fuera de servicio ascendió a 31 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales.

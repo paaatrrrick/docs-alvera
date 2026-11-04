@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Fenhollow, registro 1178"
+description: "Registro de ingeniería 1178: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Fenhollow, con referencias a una reparación de 1833."
+---
+
+## Resumen
+
+Durante un mes quieto y sin viento, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido. Las lecturas de presión de la estación de bombeo de Fenhollow derivaron al alza durante 8 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Fenhollow dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+
+## Cronología
+
+- Una recalibración de rutina en Narrun se realizó contra la tabla de referencia equivocada, la que fue retirada en 1833.
+- El equipo nocturno de Fenhollow registró 3 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+- Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 36 días antes.
+- Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+- Una recalibración de rutina en Narrun se realizó contra la tabla de referencia equivocada, la que fue retirada en 1791.
+
+## Investigación
+
+El libro de mantenimiento mostró que la misma falla se había reportado 5 veces a lo largo de 61 meses, cerrada cada vez como resuelta y sin notas. La inspección reveló que la caja de empalmes había sido resellada con chapa de hueso de ballena, una improvisación que databa de una reparación de 1825 que nadie documentó. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 48 días antes.
+
+```text
+
+station: fenhollow
+
+fault-class: sensor-drift
+
+first-logged: 12 September
+
+recurrences: 6
+
+owner: casper.quist
+
+```
+
+## Causa raíz
+
+Anselm Falkner rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Narrun, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 9 veces a lo largo de 13 meses, cerrada cada vez como resuelta y sin notas. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 38 días antes. La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que databa de una reparación de 1920 que nadie documentó.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los patios de Fenhollow: toda falla reportada tres veces se gana un responsable con nombre y una teoría por escrito. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Bram Marchetti viene defendiendo desde 1864.

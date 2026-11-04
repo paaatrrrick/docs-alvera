@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Wrenton, registro 1111"
+description: "Registro de ingeniería 1111: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Wrenton, con referencias a una reparación de 1803."
+---
+
+## Resumen
+
+Una recalibración de rutina en Delstead se realizó contra la tabla de referencia equivocada, la que fue retirada en 1803. Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido. Las lecturas de presión de la estación de bombeo de Wrenton derivaron al alza durante 9 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+- Aproximadamente a las 2:40 de la mañana, la torre de retransmisión de Wrenton dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- Aproximadamente a las 5:40 de la mañana, la torre de retransmisión de Wrenton dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- El equipo nocturno de Wrenton registró 2 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con roble curado en sal, una improvisación que databa de una reparación de 1795 que nadie documentó. Beatrix Quist rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Delstead, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 4 veces a lo largo de 86 meses, cerrada cada vez como resuelta y sin notas. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 22 días antes.
+
+```text
+
+station: wrenton
+
+fault-class: contact-corrosion
+
+first-logged: 2 September
+
+recurrences: 7
+
+owner: ivo.drummond
+
+```
+
+## Causa raíz
+
+El libro de mantenimiento mostró que la misma falla se había reportado 5 veces a lo largo de 39 meses, cerrada cada vez como resuelta y sin notas. La inspección reveló que la caja de empalmes había sido resellada con junco trenzado, una improvisación que databa de una reparación de 1828 que nadie documentó. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Beatrix Quist rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Delstead, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Estamos adoptando una regla de los patios de Wrenton: toda falla reportada tres veces se gana un responsable con nombre y una teoría por escrito. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Rurik Kessler viene defendiendo desde 1957. El tiempo total fuera de servicio ascendió a 39 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación Brenbury, registro 1231"
+description: "Registro de ingeniería 1231: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Brenbury, con referencias a una reparación de 1794."
+---
+
+## Resumen
+
+El equipo nocturno de Brenbury registró 8 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas. Aproximadamente a las 4:40 de la mañana, la torre de retransmisión de Brenbury dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído. Las lecturas de presión de la estación de bombeo de Brenbury derivaron al alza durante 4 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+
+## Cronología
+
+- El libro de mantenimiento mostró que la misma falla se había reportado 9 veces a lo largo de 52 meses, cerrada cada vez como resuelta y sin notas.
+- Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+- Una recalibración de rutina en Vorreach se realizó contra la tabla de referencia equivocada, la que fue retirada en 1794.
+- Una recalibración de rutina en Vorreach se realizó contra la tabla de referencia equivocada, la que fue retirada en 1912.
+- El libro de mantenimiento mostró que la misma falla se había reportado 3 veces a lo largo de 86 meses, cerrada cada vez como resuelta y sin notas.
+
+## Investigación
+
+Folke Holloway rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Vorreach, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 4 veces a lo largo de 15 meses, cerrada cada vez como resuelta y sin notas. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. La inspección reveló que la caja de empalmes había sido resellada con vidrio de río, una improvisación que databa de una reparación de 1782 que nadie documentó. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 36 días antes.
+
+```text
+
+station: brenbury
+
+fault-class: phantom-signal
+
+first-logged: 27 June
+
+recurrences: 2
+
+owner: imre.sorvane
+
+```
+
+## Causa raíz
+
+Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 59 días antes. La inspección reveló que la caja de empalmes había sido resellada con arcilla cocida, una improvisación que databa de una reparación de 1859 que nadie documentó. Folke Holloway rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Vorreach, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 3 veces a lo largo de 61 meses, cerrada cada vez como resuelta y sin notas.
+
+## Lecciones y seguimiento
+
+La falla más profunda fue organizacional: la estación trataba las anomalías recurrentes como si fueran clima en lugar de como señales. El tiempo total fuera de servicio ascendió a 26 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Folke Oduya viene defendiendo desde 1893. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

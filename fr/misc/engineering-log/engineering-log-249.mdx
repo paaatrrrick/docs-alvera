@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station d'Ossmore, journal 1248"
+description: "Journal d'ingénierie 1248 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais d'Ossmore, avec des références à une réparation de 1781."
+---
+
+## Résumé
+
+L'équipe de nuit à Ossmore a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage d'Ossmore ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même. Vers 4h40 du matin, la tour relais d'Ossmore a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Chronologie
+
+- Pendant les vents secs d'est, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 71 jours plus tôt.
+- Le journal de maintenance montrait la même panne signalée 9 fois sur 48 mois, à chaque fois clôturée comme résolue sans aucune note.
+- Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- L'équipe de nuit à Ossmore a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 80 jours plus tôt. Le journal de maintenance montrait la même panne signalée 8 fois sur 30 mois, à chaque fois clôturée comme résolue sans aucune note. Halvard Quist a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Zelreach, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: ossmore
+
+fault-class: phantom-signal
+
+first-logged: 19 November
+
+recurrences: 8
+
+owner: joren.drummond
+
+```
+
+## Cause racine
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1781 que personne n'avait documentée. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 75 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Halvard Quist a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Zelreach, subtilement hors tolérance.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers d'Ossmore : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Anselm Falkner défend depuis 1884.

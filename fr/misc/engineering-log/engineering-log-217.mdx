@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Tamholm, journal 1216"
+description: "Journal d'ingénierie 1216 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Tamholm, avec des références à une réparation de 1958."
+---
+
+## Résumé
+
+Un recalibrage de routine à Lorvik a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1958. L'équipe de nuit à Tamholm a consigné 4 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Les relevés de pression de la station de pompage de Tamholm ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+
+## Chronologie
+
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Le journal de maintenance montrait la même panne signalée 9 fois sur 79 mois, à chaque fois clôturée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage de Tamholm ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+- Vers 9h40 du matin, la tour relais de Tamholm a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 9 fois sur 37 mois, à chaque fois clôturée comme résolue sans aucune note. Yutta Vexley a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Lorvik, subtilement hors tolérance. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 69 jours plus tôt. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 18 jours plus tôt.
+
+```text
+
+station: tamholm
+
+fault-class: reference-mismatch
+
+first-logged: 7 June
+
+recurrences: 8
+
+owner: dario.mollering
+
+```
+
+## Cause racine
+
+Le journal de maintenance montrait la même panne signalée 5 fois sur 16 mois, à chaque fois clôturée comme résolue sans aucune note. Yutta Vexley a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Lorvik, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 73 heures, la plupart passées à débattre de la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Ivo Holloway défend depuis 1895. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Tamholm : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.
