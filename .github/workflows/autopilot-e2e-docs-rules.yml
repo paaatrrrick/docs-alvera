@@ -1,0 +1,17 @@
+name: autopilot-e2e-docs-rules
+on:
+  pull_request:
+    paths: ['misc/autopilot-e2e/**']
+jobs:
+  docs-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Slow suite warm-up
+        run: sleep 100
+      - name: Check docs rules
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: python3 .github/scripts/autopilot_e2e_rules.py
