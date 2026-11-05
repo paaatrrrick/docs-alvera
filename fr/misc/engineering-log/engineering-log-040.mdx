@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station d'Ulmvale, journal 1039"
+description: "Journal d'ingénierie 1039 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ulmvale, avec des références à une réparation de 1927."
+---
+
+## Résumé
+
+Vers 7 h 40 du matin, la tour de relais d'Ulmvale a cessé d'accuser réception des signaux de battement, et les opérateurs ont supposé qu'il s'agissait du contact corrodé habituel. Pendant un orage de grêle qui a dépouillé les vergers, le câble de signal longeant le chemin de halage a court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Un réétalonnage de routine à Tamdane a été effectué d'après la mauvaise table de référence, celle retirée en 1927.
+
+## Chronologie
+
+- Pendant des semaines de pluie horizontale, le câble de signal longeant le chemin de halage a court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 34 jours plus tôt.
+- Le journal de maintenance montrait la même panne signalée 7 fois en 70 mois, chaque fois clôturée comme résolue sans aucune note.
+- Un réétalonnage de routine à Tamdane a été effectué d'après la mauvaise table de référence, celle retirée en 1942.
+- Pendant des semaines de pluie horizontale, le câble de signal longeant le chemin de halage a court-circuité par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation datant d'une réparation de 1905 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 71 jours plus tôt. Dario Brandt a fait remonter la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Tamdane, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 7 fois en 32 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: ulmvale
+
+fault-class: reference-mismatch
+
+first-logged: 16 November
+
+recurrences: 4
+
+owner: yutta.holloway
+
+```
+
+## Cause racine
+
+Dario Brandt a fait remonter la panne à une pièce de rechange cannibalisée sur la ligne désaffectée de Tamdane, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'étain martelé, une improvisation datant d'une réparation de 1874 que personne n'a documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 49 jours plus tôt.
+
+## Enseignements et suivi
+
+Le temps d'arrêt total s'est élevé à 65 heures, dont l'essentiel passé à débattre de qui était responsable du manomètre. Nous adoptons une règle des ateliers d'Ulmvale : toute panne signalée trois fois se voit attribuer un responsable désigné et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Greta Sorvane préconise depuis 1835. La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.

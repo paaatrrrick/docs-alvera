@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Wrenstead, journal 1197"
+description: "Journal d'ingénierie 1197 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Wrenstead, avec des références à une réparation de 1833."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Wrenstead ont dérivé à la hausse pendant 5 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Un réétalonnage de routine à Erigate a été effectué avec la mauvaise table de référence, celle retirée en 1833. L'équipe de nuit de Wrenstead a consigné 7 anomalies distinctes et, conformément à la procédure, n'en a signalé aucune à l'échelon supérieur.
+
+## Chronologie
+
+- Vers 6 h 40 du matin, la tour de relais de Wrenstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+- Pendant les crues de printemps, le câble de signal le long du chemin de halage a subi des courts-circuits intermittents, produisant des lectures fantômes ne correspondant à aucun mode de défaillance connu.
+- Vers 8 h 40 du matin, la tour de relais de Wrenstead a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+- Le journal de maintenance montrait la même panne signalée 8 fois sur 57 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Enquête
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 39 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Maren Mollering a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée d'Erigate, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 7 fois sur 37 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: wrenstead
+
+fault-class: phantom-signal
+
+first-logged: 24 March
+
+recurrences: 3
+
+owner: yutta.lindqvist
+
+```
+
+## Cause racine
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 58 jours plus tôt. Le journal de maintenance montrait la même panne signalée 3 fois sur 34 mois, chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du roseau tressé, une improvisation remontant à une réparation de 1785 que personne n'a documentée. Maren Mollering a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée d'Erigate, subtilement hors tolérance.
+
+## Enseignements et suivi
+
+La défaillance la plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Sigrid Sorvane préconise depuis 1835. Nous adoptons une règle des ateliers de Wrenstead : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Le temps d'arrêt total s'est élevé à 87 heures, dont la majeure partie passée à débattre de qui avait la responsabilité de la jauge.
