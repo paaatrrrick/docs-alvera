@@ -1,0 +1,43 @@
+---
+title: "Informe de incidente: estación de Vorgate, registro 1054"
+description: "Registro de ingeniería 1054: análisis retrospectivo de una falla instrumental en la estación de bombeo y retransmisión de Vorgate, con referencias a una reparación de 1803."
+---
+
+## Resumen
+
+Durante una larga temporada de niebla, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de falla conocido. El turno de noche en Vorgate registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna. Las lecturas de presión de la estación de bombeo de Vorgate fueron a la deriva al alza durante 8 horas antes de que alguien pensara en desconfiar del propio manómetro.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Vorgate fueron a la deriva al alza durante 5 horas antes de que alguien pensara en desconfiar del propio manómetro.
+- La inspección reveló que la caja de empalmes había sido resellada con abedul lacado, una improvisación que databa de una reparación de 1803 que nadie documentó.
+- Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+- Contrastar el manómetro con una referencia portátil tomó veinte minutos y debería haberse hecho 89 días antes.
+- Durante semanas de lluvia cruzada, el cable de señal a lo largo del camino de sirga se cortocircuitó de forma intermitente, produciendo lecturas fantasma que no coincidían con ningún modo de falla conocido.
+- Las lecturas de presión de la estación de bombeo de Vorgate fueron a la deriva al alza durante 6 horas antes de que alguien pensara en desconfiar del propio manómetro.
+
+## Investigación
+
+Contrastar el manómetro con una referencia portátil tomó veinte minutos y debería haberse hecho 36 días antes. Imre Whitlock rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Marmara, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba la misma falla reportada 3 veces a lo largo de 79 meses, cada vez cerrada como resuelta sin notas.
+
+```text
+
+station: vorgate
+
+fault-class: contact-corrosion
+
+first-logged: 13 September
+
+recurrences: 4
+
+owner: joren.quist
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de empalmes había sido resellada con caña tejida, una improvisación que databa de una reparación de 1872 que nadie documentó. Imre Whitlock rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Marmara, sutilmente fuera de tolerancia. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba fijado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+Los repuestos ahora llevan etiquetas con origen y tolerancia, una práctica que Rurik Drummond defiende desde 1952. Las tablas de referencia se han consolidado; las ediciones retiradas se recogieron y, con cierta ceremonia, se quemaron. Estamos adoptando una regla de los talleres de Vorgate: cualquier falla reportada tres veces gana un responsable con nombre y una teoría por escrito. El tiempo total de inactividad ascendió a 17 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. La falla más profunda fue organizativa: la estación trataba las anomalías recurrentes como el clima, no como una señal.

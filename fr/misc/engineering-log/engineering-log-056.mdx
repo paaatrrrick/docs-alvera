@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station d'Eristead, journal 1055"
+description: "Journal d'ingénierie 1055 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Eristead, avec références à une réparation de 1941."
+---
+
+## Résumé
+
+Un recalibrage de routine à Rosmore a été effectué à partir de la mauvaise table de référence, celle retirée en 1941. Les relevés de pression de la station de pompage d'Eristead ont dérivé à la hausse pendant 3 heures avant que quiconque songe à se méfier du manomètre lui-même. Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- L'équipe de nuit à Eristead a consigné 8 anomalies distinctes et, suivant la procédure, n'en a fait remonter aucune.
+- Les relevés de pression de la station de pompage d'Eristead ont dérivé à la hausse pendant 4 heures avant que quiconque songe à se méfier du manomètre lui-même.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Greta Whitlock a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Rosmore, subtilement hors tolérance.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 3 fois sur 81 mois, chaque fois close comme résolue sans commentaires. L'inspection a révélé que le boîtier de jonction avait été rescellé avec de l'argile cuite, une improvisation datant d'une réparation de 1803 que personne n'avait documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 89 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Greta Whitlock a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Rosmore, subtilement hors tolérance.
+
+```text
+
+station: eristead
+
+fault-class: reference-mismatch
+
+first-logged: 15 November
+
+recurrences: 3
+
+owner: imre.ashdown
+
+```
+
+## Cause première
+
+Greta Whitlock a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Rosmore, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 8 fois sur 16 mois, chaque fois close comme résolue sans commentaires. L'inspection a révélé que le boîtier de jonction avait été rescellé avec un placage en os de baleine, une improvisation datant d'une réparation de 1789 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Nous adoptons une règle des chantiers d'Eristead : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Le temps d'arrêt total s'est élevé à 52 heures, dont la plus grande partie passée à débattre de qui était responsable du manomètre. Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Yutta Ashdown défend depuis 1861.

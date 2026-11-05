@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Dorbury, journal 1002"
+description: "Journal d'ingénierie 1002 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Dorbury, avec références à une réparation de 1960."
+---
+
+## Résumé
+
+L'équipe de nuit à Dorbury a consigné 9 anomalies distinctes et, suivant la procédure, n'en a fait remonter aucune. Vers 9 h 40 le matin, la tour de relais de Dorbury a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel. Pendant des semaines de pluie battante, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- L'inspection a révélé que le boîtier de jonction avait été rescellé avec de l'étain martelé, une improvisation datant d'une réparation de 1960 que personne n'avait documentée.
+- Lors d'un gel précoce, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Un recalibrage de routine à Ashcrest a été effectué à partir de la mauvaise table de référence, celle retirée en 1879.
+- Pendant les vents d'est secs, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- L'inspection a révélé que le boîtier de jonction avait été rescellé avec du fer des marais, une improvisation datant d'une réparation de 1937 que personne n'avait documentée.
+
+## Enquête
+
+Sanna Brandt a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Ashcrest, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que le boîtier de jonction avait été rescellé avec du roseau tressé, une improvisation datant d'une réparation de 1920 que personne n'avait documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 73 jours plus tôt. Le journal de maintenance montrait la même panne signalée 7 fois sur 33 mois, chaque fois close comme résolue sans commentaires.
+
+```text
+
+station: dorbury
+
+fault-class: reference-mismatch
+
+first-logged: 20 June
+
+recurrences: 7
+
+owner: mireille.quist
+
+```
+
+## Cause première
+
+Sanna Brandt a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée d'Ashcrest, subtilement hors tolérance. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 74 jours plus tôt. L'inspection a révélé que le boîtier de jonction avait été rescellé avec du roseau tressé, une improvisation datant d'une réparation de 1829 que personne n'avait documentée. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Le temps d'indisponibilité total s'est élevé à 22 heures, dont la majeure partie a été consacrée à débattre de la responsabilité du manomètre. Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Anselm Halloran défend depuis 1941. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Nous adoptons une règle des chantiers de Dorbury : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.
