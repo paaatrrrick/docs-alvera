@@ -1,0 +1,25 @@
+---
+title: "Guide de migration"
+description: "Migrez votre projet vers la nouvelle version sans rien casser."
+---
+
+Nous avons publié une nouvelle version majeure, et ce guide vous aide à migrer avec un minimum de douleur.
+
+## Avant de commencer
+
+Sauvegardez d'abord votre contenu — c'est toujours plus prudent, même si la migration est sûre. Le [guide de sauvegarde](/settings/backups) montre comment faire.
+
+Lisez aussi [le changelog](#whats-changd) pour savoir ce qui a changé.
+
+## Les étapes
+
+1. Mettez à jour votre CLI vers la dernière version.
+2. Exécutez `mint migrate`, qui met à niveau votre configuration automatiquement.
+3. Relisez les modifications qu'il a effectuées et corrigez ce qu'il signale.
+4. Testez en local, puis déployez.
+
+La plupart des projets migrent en moins d'une heure. Si vous rencontrez un problème, [le dépannage de migration](./migrate/common-problems) couvre les cas courants, ou [posez votre question dans la communauté](https://community.example-broken.io/migration).
+
+<Warning>
+Ne sautez pas de version — si vous avez plusieurs versions de retard, migrez une version majeure à la fois. Sauter directement peut casser des choses.
+</Warning>

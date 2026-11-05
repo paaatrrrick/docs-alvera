@@ -1,0 +1,18 @@
+---
+title: 'Referencia de códigos de error'
+description: 'Una lista de los códigos de error que devuelve nuestra API y qué significan.'
+---
+
+Cuando algo va mal, nuestra API devuelve un código de error. Esta página explica qué significa cada uno para que puedas depurar más rápido.
+
+## Códigos comunes
+
+- **400** — Tu petición estaba mal formada. Comprueba que todos los campos obligatorios estén presentes; consulta [el formato de las peticiones](/api/request-format).
+- **401** — No estás autenticado. Asegúrate de que tu clave de API sea válida; más información en [la documentación de autenticación](#authentcation).
+- **404** — Lo que solicitaste no existe. Vuelve a comprobar el ID que pasaste.
+- **429** — Demasiadas peticiones; ve más despacio (consulta [los límites de tasa](./rate-limits-info)).
+- **500** — Algo se rompió por nuestra parte. Estos son raros, pero si sigue ocurriendo [avísanos](https://status.example-broken.dev/report).
+
+## Obtener más detalles
+
+Cada respuesta de error incluye un campo `message` con una explicación legible para personas. Si aun así no queda claro, la [página de resolución de problemas](/help/troubleshoot-errors) puede ayudar.

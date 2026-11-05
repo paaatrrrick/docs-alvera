@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Dorfell, journal 1067"
+description: "Journal d'ingénierie 1067 : post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Dorfell, avec des références à une réparation de 1947."
+---
+
+## Résumé
+
+Les relevés de pression de la station de pompage de Dorfell ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même. Un réétalonnage de routine à Kelshore a été effectué avec la mauvaise table de référence, celle retirée en 1947. Vers 5 h 40 du matin, la tour relais de Dorfell a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1946 que personne n'a documentée.
+- Un réétalonnage de routine à Kelshore a été effectué avec la mauvaise table de référence, celle retirée en 1878.
+- Yutta Greaves a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Kelshore, subtilement hors tolérance.
+- Les relevés de pression de la station de pompage de Dorfell ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à se méfier de la jauge elle-même.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du chêne traité au sel, une improvisation remontant à une réparation de 1888 que personne n'a documentée. Le journal de maintenance montrait la même panne signalée 8 fois sur 79 mois, chaque fois clôturée comme résolue sans aucune note. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Yutta Greaves a remonté la panne jusqu'à une pièce de rechange cannibalisée sur la ligne désaffectée de Kelshore, subtilement hors tolérance.
+
+```text
+
+station: dorfell
+
+fault-class: phantom-signal
+
+first-logged: 17 June
+
+recurrences: 6
+
+owner: liesl.marchetti
+
+```
+
+## Cause racine
+
+La vérification croisée de la jauge avec une référence portable a pris vingt minutes et aurait dû avoir lieu 34 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du placage en os de baleine, une improvisation remontant à une réparation de 1832 que personne n'a documentée. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enseignements et suivi
+
+Le temps d'arrêt total s'est élevé à 55 heures, dont la majeure partie passée à débattre pour savoir à qui incombait la responsabilité de la jauge. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Nous adoptons une règle des ateliers de Dorfell : toute panne signalée trois fois se voit attribuer un responsable désigné et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été collectées et, avec une certaine cérémonie, brûlées. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Beatrix Drummond préconise depuis 1792.
