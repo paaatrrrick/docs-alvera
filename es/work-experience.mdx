@@ -101,6 +101,22 @@ Cada entrada del array `workExperience` admite los siguientes campos:
 | `text`     | string | No          | Descripción breve de responsabilidades o logros.             |
 | `image`    | string | No          | URL pública del logotipo de la empresa o del puesto.         |
 | `timeLine` | string | Sí          | Periodo de tiempo y ubicación en formato legible.            |
+| `link`     | string | No          | URL de la empresa. Si se define, el título del puesto se convierte en un enlace que se abre en una nueva pestaña. |
+| `skills`   | string[] | No        | Habilidades o tecnologías que se muestran como lista debajo del título del puesto. Omítelo o déjalo vacío para ocultar la lista. |
+
+### Enlazar un puesto y listar habilidades
+
+Usa `link` para que los visitantes accedan al sitio web de la empresa desde el título del puesto. Usa `skills` para destacar las herramientas o tecnologías con las que trabajaste en ese puesto. Ambos campos son opcionales, por lo que las entradas existentes se muestran sin cambios.
+
+```js src/constants/work.js
+{
+    title: 'SWE at Figma',
+    link: 'https://www.figma.com',
+    skills: ['TypeScript', 'WebGL', 'CRDTs'],
+    text: `Worked on the multiplayer canvas team.`,
+    timeLine: 'May - August 2039. San Francisco, CA',
+},
+```
 
 ## Cómo añadir una nueva entrada
 

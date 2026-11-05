@@ -101,6 +101,22 @@ Chaque entrée du tableau `workExperience` prend en charge les champs suivants :
 | `text`     | string | Non         | Brève description des responsabilités ou accomplissements.   |
 | `image`    | string | Non         | URL publique d'un logo d'entreprise ou de poste.             |
 | `timeLine` | string | Oui         | Chronologie et lieu en format lisible.                       |
+| `link`     | string | Non         | URL de l'entreprise. Si elle est définie, le titre du poste devient un lien qui s'ouvre dans un nouvel onglet. |
+| `skills`   | string[] | Non       | Compétences ou technologies affichées sous forme de liste sous le titre du poste. Omettez-le ou laissez-le vide pour masquer la liste. |
+
+### Ajouter un lien et des compétences à un poste
+
+Utilisez `link` pour permettre aux visiteurs d'accéder au site de l'entreprise depuis le titre du poste. Utilisez `skills` pour mettre en avant les outils ou technologies utilisés dans ce poste. Les deux champs sont facultatifs : les entrées existantes s'affichent sans changement.
+
+```js src/constants/work.js
+{
+    title: 'SWE at Figma',
+    link: 'https://www.figma.com',
+    skills: ['TypeScript', 'WebGL', 'CRDTs'],
+    text: `Worked on the multiplayer canvas team.`,
+    timeLine: 'May - August 2039. San Francisco, CA',
+},
+```
 
 ## Ajouter une nouvelle entrée
 
