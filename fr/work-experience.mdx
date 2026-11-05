@@ -99,8 +99,10 @@ Chaque entrée du tableau `workExperience` prend en charge les champs suivants :
 | ---------- | ------ | ----------- | ------------------------------------------------------------ |
 | `title`    | string | Oui         | Nom du poste et de l'entreprise affiché comme en-tête.       |
 | `text`     | string | Non         | Brève description des responsabilités ou accomplissements.   |
+| `link`     | string   | Non         | URL de l'entreprise. Si défini, le titre du poste devient un lien qui s'ouvre dans un nouvel onglet. |
 | `image`    | string | Non         | URL publique d'un logo d'entreprise ou de poste.             |
 | `timeLine` | string | Oui         | Chronologie et lieu en format lisible.                       |
+| `skills`   | string[] | Non         | Compétences ou technologies utilisées dans le poste, affichées sous forme de liste sous le titre. |
 
 ## Ajouter une nouvelle entrée
 
@@ -112,6 +114,8 @@ const workExperience = [
         title: 'SWE at Modal',
         text: `Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.`,
         timeLine: 'May - August 2035. Remote',
+        link: 'https://modal.com',
+        skills: ['Python', 'Rust', 'GPU scheduling'],
     },
     {
         title: 'SWE at PostHog',
