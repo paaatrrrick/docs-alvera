@@ -1,11 +1,11 @@
 ---
 title: "Projects page: structure and updates"
-description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema and a code example."
+description: "How the dedicated /projects showcase page is configured from the projects array, including the entry schema, status badges, and a code example."
 ---
 
 ## Overview
 
-The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site.
+The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, an Active or Archived status badge, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site.
 
 Entries are sourced from the `projects` array in `src/constants/projects.js` and rendered by the `Projects` component at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
 
