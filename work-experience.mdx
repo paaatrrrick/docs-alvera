@@ -101,6 +101,7 @@ Each entry in the `workExperience` array supports the following fields:
 | `text`     | string | No       | Short description of responsibilities or accomplishments.    |
 | `image`    | string | No       | Public URL of a company or role logo.                        |
 | `timeLine` | string | Yes      | Human-readable timeframe and location.                       |
+| `skills`   | string[] | No     | Short list of skills shown under the role title.             |
 
 ## Adding a new entry
 
@@ -167,6 +168,19 @@ export default workExperience
 <Tip>
 Omit the `image` field for roles without a logo. The layout adjusts automatically.
 </Tip>
+
+### Listing skills
+
+Add an optional `skills` array to show a short list of skills under the role title. Entries without `skills` render unchanged.
+
+```js src/constants/work.js
+{
+    title: 'SWE at Modal',
+    text: `Worked on the serverless GPU runtime.`,
+    timeLine: 'May - August 2035. Remote',
+    skills: ['TypeScript', 'Rust'],
+},
+```
 
 ## Writing role descriptions
 
