@@ -1,0 +1,13 @@
+---
+title: "Week of September 15, 2026"
+description: "This week: a new /projects showcase page, Active/Archived status badges, and search on the projects grid."
+---
+
+## New features
+
+- **Projects showcase page.** A dedicated `/projects` route now lists every side project in a responsive grid. Each card shows the project name, tagline, description, tech stack, and a link to the repository or live site. See [Projects page: structure and updates](/projects) for the entry schema and writing guidance.
+- **Search on the projects page.** A search box at the top of `/projects` matches against project name, tagline, and description. It combines with the tech filter so you can narrow to, for example, "React" projects mentioning "notes."
+
+## Updates
+
+- **Active and Archived status badges.** Every project card now displays a colored status badge in its header. `Active` renders in green for projects that are still maintained; `Archived` renders in gray once a project is frozen. Set the `status` field on each entry to control the badge. See the [entry schema](/projects#entry-schema) for details.
