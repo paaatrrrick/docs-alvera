@@ -26,10 +26,12 @@ Each object in the `projects` array supports the following fields. All fields ar
 | `status`      | string   | Project lifecycle. Use `'Active'` for projects you still maintain or `'Archived'` for ones you no longer ship updates to. Rendered as a colored badge in the card header. |
 | `link`        | string   | URL the card heading links to. Opens in a new tab. Use the repository or live site.          |
 | `repo`        | string   | Optional. Repository URL. When set, the card shows a **Source code** link next to the tech list. Opens in a new tab. |
+| `featured`    | boolean  | Optional. When `true`, the project is pinned above non-featured projects and its card header shows a **Featured** badge next to the status badge. |
+| `year`        | number or string | Optional. Year shown after the tagline, separated by a middle dot (for example, `· 2024`). |
 
 ## Adding a project
 
-Open `src/constants/projects.js` and add a new object to the `projects` array. Entries render in array order, so put the most recent or most relevant project first.
+Open `src/constants/projects.js` and add a new object to the `projects` array. Entries render in array order, so put the most recent or most relevant project first. Projects with `featured: true` always render before the rest, in their array order.
 
 ```js src/constants/projects.js
 const projects = [
