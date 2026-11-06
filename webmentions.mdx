@@ -31,6 +31,8 @@ REACT_APP_WEBMENTION_ENDPOINT=https://webmention.io/patrickfoster.dev/webmention
 
 The site expects a [webmention.io](https://webmention.io) endpoint, because it reads mentions back from the webmention.io API. Sign in to webmention.io with your domain to get your endpoint URL, then set it here.
 
+The tag has no fallback URL. Create React App fills in `%REACT_APP_WEBMENTION_ENDPOINT%` in `public/index.html` at build time, so if the variable is unset, the tag keeps that placeholder and other sites can't find your endpoint. Set `REACT_APP_WEBMENTION_ENDPOINT` before you build.
+
 The tag is part of the page template, so every page advertises the endpoint even while `REACT_APP_WEBMENTIONS` is off. Other sites can start sending mentions before you show them.
 
 ## Webmentions section
