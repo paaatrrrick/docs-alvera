@@ -21,6 +21,8 @@ REACT_APP_TALK_VIDEOS=on
 
 Any other value, or leaving the variable unset, keeps Talk Videos off. Because Create React App reads `REACT_APP_` variables at build time, rebuild and redeploy the site after you change it.
 
+The site exposes the setting as the `TALK_VIDEOS_ENABLED` constant in `src/talks/videos.js`. `embedUrl` doesn't check it, so it builds embed URLs whether or not the flag is on.
+
 ## Supported providers
 
 A recording comes from one of two providers. Each one uses its privacy-friendly embed:
