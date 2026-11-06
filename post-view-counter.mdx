@@ -49,6 +49,24 @@ export default function PostTemplate({ post }) {
 
 Each segment hides itself if its data is missing or the network call hasn't resolved yet, so the byline degrades gracefully on posts without a date or before the view count loads.
 
+### Customizing the byline
+
+`PostMeta` also accepts these optional props:
+
+| Prop              | Type                | Notes                                                                                      |
+| ----------------- | ------------------- | ------------------------------------------------------------------------------------------ |
+| `showDate`        | boolean (optional)  | Defaults to `true`. Set to `false` to hide the date segment.                               |
+| `showReadingTime` | boolean (optional)  | Defaults to `true`. Set to `false` to hide the reading-time segment.                       |
+| `showViews`       | boolean (optional)  | Defaults to `true`. Set to `false` to hide the view count. `ViewCounter` is not mounted, so no view is recorded. |
+| `separator`       | string (optional)   | Defaults to `·`. Rendered between visible segments in a `.post-meta-separator` span.       |
+| `className`       | string (optional)   | Extra class names added to the wrapping `.post-meta` element alongside the base class.     |
+
+For example, to show only the date and reading time with a pipe between them:
+
+```jsx
+<PostMeta post={post} showViews={false} separator="|" className="post-meta-compact" />
+```
+
 ## Showing just the view count
 
 If you only need the count (for example, on a post listing card), use `ViewCounter` directly:
@@ -114,5 +132,6 @@ Both hooks treat non-`200` responses and non-numeric payloads as missing data �
 
 - `.post-meta` — the wrapping row.
 - `.post-meta-date` — the date segment.
+- `.post-meta-separator` — the span that holds the `separator` text between segments.
 - `.view-counter` — the view-count span (also rendered by `ViewCounter` on its own).
 - `.site-views` — the total-views paragraph rendered by `SiteViews`.
