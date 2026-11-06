@@ -1,0 +1,59 @@
+---
+title: "Club de lectura"
+description: "Organiza un club de lectura mensual en tu sitio web personal: define la lectura de cada mes, la fecha de su reunión y un enlace para unirse a la llamada. Se lanza el 10 de noviembre."
+---
+
+<Note>
+Esta página es un borrador para el lanzamiento del club de lectura el 10 de noviembre de 2026. Todo lo del lanzamiento llega a la rama `release/bookclub` y se fusiona el día del lanzamiento.
+</Note>
+
+## Resumen {#overview}
+
+El club de lectura le da a tu sitio web personal una lectura por mes 📚. Cada lectura tiene el título de un libro, la fecha en que el club se reúne para comentarlo y un enlace que los visitantes usan para unirse a la llamada.
+
+## Actívalo {#turn-it-on}
+
+El club de lectura viene desactivado. Para activarlo, define la variable de entorno `REACT_APP_BOOKCLUB` como `on` al compilar el sitio:
+
+```bash .env
+REACT_APP_BOOKCLUB=on
+```
+
+Cualquier otro valor, o dejar la variable sin definir, mantiene el club de lectura desactivado. Como Create React App lee las variables `REACT_APP_` al compilar, vuelve a compilar y desplegar el sitio después de cambiarla.
+
+## Añade una lectura mensual {#add-a-monthly-pick}
+
+Las lecturas están en el array `monthlyPicks` de `src/bookclub/picks.js`. Para programar un libro, añade un objeto con estos campos:
+
+| Campo         | Formato      | Descripción                                        |
+| ------------- | ------------ | -------------------------------------------------- |
+| `month`       | `YYYY-MM`    | El mes al que corresponde la lectura.              |
+| `title`       | Texto        | El título del libro.                               |
+| `meetingDate` | `YYYY-MM-DD` | El día en que el club se reúne para comentarlo.    |
+| `joinUrl`     | URL          | El enlace que abren los visitantes para unirse.    |
+
+```js src/bookclub/picks.js
+export const monthlyPicks = [
+    { month: '2026-11', title: 'The Pragmatic Programmer', meetingDate: '2026-11-20', joinUrl: 'https://cal.com/patrick/bookclub' },
+    { month: '2026-12', title: 'A Philosophy of Software Design', meetingDate: '2026-12-18', joinUrl: 'https://cal.com/patrick/bookclub' },
+];
+```
+
+Puedes añadir lecturas para meses futuros con antelación 🗓️. Cada una se convierte en la lectura actual cuando empieza su mes.
+
+## Cómo se elige la lectura actual {#how-the-current-pick-is-chosen}
+
+La función auxiliar `currentPick()` devuelve la lectura cuyo `month` coincide con el mes actual, o `null` cuando ninguna coincide. El mes actual se lee en UTC, así que una nueva lectura toma el relevo a medianoche UTC del primer día del mes, no a medianoche en tu zona horaria local.
+
+Asigna una sola lectura a cada mes. Cuando dos lecturas comparten el mismo `month`, `currentPick()` devuelve la que aparece primero.
+
+Para comprobar una fecha concreta, pásala a `currentPick()`:
+
+```js
+import { BOOKCLUB_ENABLED, currentPick } from '../bookclub/picks';
+
+if (BOOKCLUB_ENABLED) {
+    const pick = currentPick(new Date('2026-11-05'));
+    // { month: '2026-11', title: 'The Pragmatic Programmer', meetingDate: '2026-11-20', joinUrl: 'https://cal.com/patrick/bookclub' }
+}
+```
