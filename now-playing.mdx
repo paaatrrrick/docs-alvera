@@ -3,4 +3,62 @@ title: "Now playing"
 description: "Show what you are listening to on Spotify."
 ---
 
-Draft for the Now Playing launch on November 14, 2026.
+<Note>
+This page is a draft for the Now Playing launch on November 14, 2026. Everything for the launch lands on the `release/now-playing` branch and merges on launch day.
+</Note>
+
+## Overview
+
+The Now Playing widget shows the song you are listening to on Spotify in the footer of your personal website 🎧. It displays the album art, the track title and the artist, and links to the song. When nothing is playing, the widget is hidden.
+
+## Turn it on
+
+The widget ships turned off. To enable it, set the `REACT_APP_NOW_PLAYING` environment variable to `on` when you build the site:
+
+```bash .env
+REACT_APP_NOW_PLAYING=on
+```
+
+Any other value, or leaving the variable unset, keeps the widget off. Because Create React App reads `REACT_APP_` variables at build time, rebuild and redeploy the site after you change it.
+
+## What visitors see
+
+While a song is playing, the footer shows a link with the album art at 32 by 32 pixels followed by **Listening to** _track_ **by** _artist_. Clicking the link opens the song.
+
+The widget renders nothing when:
+
+- The `REACT_APP_NOW_PLAYING` variable is not `on`.
+- Nothing is playing.
+- The request for the current track fails.
+
+## Refresh interval
+
+The widget fetches the current track as soon as the page loads, then again every 30 seconds while the page is open. A new song shows up within 30 seconds of it starting, and the widget hides within 30 seconds of playback stopping.
+
+## The now playing endpoint
+
+The widget reads the current track from `/api/now-playing` on the same domain as the site. The endpoint must answer in one of these ways:
+
+| Status         | Meaning                       | What the widget does |
+| -------------- | ----------------------------- | -------------------- |
+| `200`          | A song is playing.            | Shows the track from the response body. |
+| `204`          | Nothing is playing.           | Hides the widget.    |
+| Any other code | The track is unavailable.     | Hides the widget until the next refresh. |
+
+A `200` response returns a JSON object with these fields:
+
+| Field      | Description                                  |
+| ---------- | -------------------------------------------- |
+| `title`    | The track title.                             |
+| `artist`   | The artist name.                             |
+| `albumArt` | URL of the album art image.                  |
+| `url`      | URL of the song that the widget links to.    |
+
+```json Example response
+{
+  "title": "Harvest Moon",
+  "artist": "Neil Young",
+  "albumArt": "https://i.scdn.co/image/example",
+  "url": "https://open.spotify.com/track/example"
+}
+```
