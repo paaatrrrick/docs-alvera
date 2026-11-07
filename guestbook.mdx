@@ -9,7 +9,7 @@ This page is a draft for the Guestbook launch on November 5, 2026. Everything fo
 
 ## Overview
 
-The guestbook lets visitors leave a short note on your personal website 👋. Each entry has a name and a message. Entries are listed newest first, 20 per page.
+The guestbook lets visitors leave a short note on your personal website 👋. Each entry has a name and a message. Entries are listed 20 per page, newest first by default, and visitors can sort each page by reactions instead.
 
 For now, entries are stored in the visitor's browser (`localStorage`), so each browser only sees the entries signed from it.
 
@@ -35,15 +35,24 @@ To sign it, a visitor:
 
 The new entry shows up right away at the top of the list ✍️, unless it is held for review (see [Moderation](#moderation)). The message field clears after a successful sign, and the name stays filled in. If a check fails, the error message appears above the button and nothing is saved.
 
-Below the form, the page shows the total number of published entries, then each entry with its name, the date it was signed and the message.
+Below the form, the page shows the total number of published entries and the sort toggle, then each entry with its name, the date it was signed and the message.
 
 ### Reactions
 
 Each entry has four reaction buttons: 👋 ❤️ 🔥 😂. Clicking one adds a reaction to that entry, and the button shows the running count next to the emoji. Visitors can react as many times as they like.
 
+### Sorting
+
+A toggle next to the entry count switches the order of the list:
+
+- **Newest** (default): the most recently signed entries first.
+- **Most reactions**: entries with the most reactions first, counting all four emoji together. Entries with the same count stay newest first.
+
+Sorting applies to the 20 entries on the current page. It does not change which entries land on which page. The chosen order stays in place when visitors move between pages and goes back to **Newest** when the page reloads.
+
 ### Paging
 
-The page lists 20 entries at a time, newest first. When there are more than 20, **Newer** and **Older** buttons appear under the list with **Page X of Y** between them.
+The guestbook splits entries into pages of 20, newest first, whichever sort is selected. When there are more than 20, **Newer** and **Older** buttons appear under the list with **Page X of Y** between them.
 
 ## Entry limits
 
