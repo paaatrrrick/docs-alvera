@@ -32,7 +32,7 @@ Une prévisualisation locale de votre documentation sera disponible à l'adresse
 </Step>
 </Steps>
 
-## Ports personnalisés
+## Ports personnalisés {#custom-ports}
 
 Par défaut, Mintlify utilise le port 3000. Vous pouvez personnaliser le port utilisé par Mintlify grâce à l'option `--port`. Par exemple, pour exécuter Mintlify sur le port 3333, utilisez cette commande :
 
@@ -46,23 +46,23 @@ Si vous tentez d'exécuter Mintlify sur un port déjà utilisé, il utilisera le
 Port 3000 is already in use. Trying 3001 instead.
 ```
 
-## Versions de Mintlify
+## Versions de Mintlify {#mintlify-versions}
 
-Veuillez noter que chaque version de la CLI est associée à une version spécifique de Mintlify. Si votre prévisualisation locale ne correspond pas à la version de production, mettez à jour la CLI :
+Chaque version de la CLI est associée à une version spécifique de Mintlify. Si votre prévisualisation locale ne correspond pas à la version de production, mettez à jour la CLI :
 
 ```bash
 npm mint update
 ```
 
-## Validation des liens
+## Validation des liens {#validating-links}
 
-La CLI peut vous aider à valider les liens de votre documentation. Pour identifier les liens cassés, utilisez la commande suivante :
+Utilisez la CLI pour trouver les liens cassés dans votre documentation :
 
 ```bash
 mint broken-links
 ```
 
-## Déploiement
+## Déploiement {#deployment}
 
 Si le déploiement réussit, vous devriez voir ceci :
 
@@ -70,11 +70,11 @@ Si le déploiement réussit, vous devriez voir ceci :
   <img src="/images/checks-passed.png" alt="Capture d'écran d'un message de confirmation de déploiement indiquant que toutes les vérifications ont réussi." style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
-## Mise en forme du code
+## Mise en forme du code {#code-formatting}
 
 Nous vous suggérons d'utiliser des extensions dans votre IDE pour reconnaître et mettre en forme le MDX. Si vous utilisez VSCode, envisagez l'[extension MDX VSCode](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) pour la coloration syntaxique, et [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) pour la mise en forme du code.
 
-## Dépannage
+## Dépannage {#troubleshooting}
 
 <AccordionGroup>
   <Accordion title='Erreur : Could not load the "sharp" module using the darwin-arm64 runtime'>
