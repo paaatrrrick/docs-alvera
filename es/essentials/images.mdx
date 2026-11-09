@@ -9,27 +9,27 @@ icon: 'image'
   src="https://mintlify-assets.b-cdn.net/bigbend.jpg"
 />
 
-## Imagen
+## Imagen {#image}
 
-### Usando Markdown
+### Usando Markdown {#using-markdown}
 
-La [sintaxis Markdown](https://www.markdownguide.org/basic-syntax/#images) te permite añadir imágenes con el siguiente código
+Usa la [sintaxis Markdown](https://www.markdownguide.org/basic-syntax/#images) para añadir imágenes:
 
 ```md
 ![title](/path/image.jpg)
 ```
 
-Ten en cuenta que el tamaño del archivo de imagen debe ser inferior a 5 MB. De lo contrario, recomendamos alojarlas en un servicio como [Cloudinary](https://cloudinary.com/) o [S3](https://aws.amazon.com/s3/). Después, podrás usar esa URL e incrustarla.
+Los archivos de imagen deben pesar menos de 5 MB. Para imágenes más grandes, alójalas en un servicio como [Cloudinary](https://cloudinary.com/) o [S3](https://aws.amazon.com/s3/) e incrusta la URL.
 
-### Usando incrustaciones
+### Usando incrustaciones {#using-embeds}
 
-Para obtener más opciones de personalización con las imágenes, también puedes usar [incrustaciones](https://mintlify.com/docs/image-embeds) para añadir imágenes
+Para tener más control sobre las imágenes, usa [incrustaciones](https://mintlify.com/docs/image-embeds):
 
 ```html
 <img height="200" src="/path/image.jpg" />
 ```
 
-## Incrustaciones y elementos HTML
+## Incrustaciones y elementos HTML {#embeds-and-html-elements}
 
 <iframe
   width="560"
@@ -50,9 +50,9 @@ Mintlify admite [etiquetas HTML en Markdown](https://www.markdownguide.org/basic
 
 </Tip>
 
-### iFrames
+### iFrames {#iframes}
 
-Carga otra página HTML dentro del documento. Se usa más comúnmente para incrustar vídeos.
+Usa un iframe para cargar otra página HTML dentro del documento. Se usa sobre todo para incrustar vídeos.
 
 ```html
 <iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>

@@ -8,9 +8,9 @@ import SnippetIntro from '/snippets/snippet-intro.mdx';
 
 <SnippetIntro />
 
-## Créer un extrait personnalisé
+## Créer un extrait personnalisé {#creating-a-custom-snippet}
 
-**Prérequis** : vous devez créer votre fichier d'extrait dans le répertoire `snippets`.
+**Prérequis** : créez votre fichier d'extrait dans le répertoire `snippets`.
 
 <Note>
   Toute page située dans le répertoire `snippets` sera traitée comme un extrait et ne
@@ -19,7 +19,7 @@ import SnippetIntro from '/snippets/snippet-intro.mdx';
   composant.
 </Note>
 
-### Export par défaut
+### Export par défaut {#default-export}
 
 1. Ajoutez à votre fichier d'extrait le contenu que vous souhaitez réutiliser à plusieurs
    endroits. Vous pouvez éventuellement ajouter des variables qui seront remplies via des props
@@ -52,7 +52,7 @@ Lorem ipsum dolor sit amet.
 <MySnippet word="bananas" />
 ```
 
-### Variables réutilisables
+### Variables réutilisables {#reusable-variables}
 
 1. Exportez une variable depuis votre fichier d'extrait :
 
@@ -75,7 +75,7 @@ import { myName, myObject } from '/snippets/path/to/custom-variables.mdx';
 Hello, my name is {myName} and I like {myObject.fruit}.
 ```
 
-### Composants réutilisables
+### Composants réutilisables {#reusable-components}
 
 1. Dans votre fichier d'extrait, créez un composant qui accepte des props en exportant
    votre composant sous la forme d'une fonction fléchée.
