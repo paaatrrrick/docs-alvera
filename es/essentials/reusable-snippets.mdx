@@ -8,9 +8,9 @@ import SnippetIntro from '/snippets/snippet-intro.mdx';
 
 <SnippetIntro />
 
-## Crear un snippet personalizado
+## Crear un snippet personalizado {#creating-a-custom-snippet}
 
-**Precondición**: Debes crear tu archivo de snippet en el directorio `snippets`.
+**Requisitos previos**: Crea tu archivo de snippet en el directorio `snippets`.
 
 <Note>
   Cualquier página en el directorio `snippets` será tratada como un snippet y no
@@ -19,7 +19,7 @@ import SnippetIntro from '/snippets/snippet-intro.mdx';
   llámalo como un componente.
 </Note>
 
-### Exportación por defecto
+### Exportación por defecto {#default-export}
 
 1. Añade al archivo de snippet el contenido que quieras reutilizar en múltiples
    ubicaciones. Opcionalmente, puedes añadir variables que se rellenarán mediante props
@@ -52,7 +52,7 @@ Lorem ipsum dolor sit amet.
 <MySnippet word="bananas" />
 ```
 
-### Variables reutilizables
+### Variables reutilizables {#reusable-variables}
 
 1. Exporta una variable desde tu archivo de snippet:
 
@@ -75,7 +75,7 @@ import { myName, myObject } from '/snippets/path/to/custom-variables.mdx';
 Hello, my name is {myName} and I like {myObject.fruit}.
 ```
 
-### Componentes reutilizables
+### Componentes reutilizables {#reusable-components}
 
 1. Dentro de tu archivo de snippet, crea un componente que reciba props exportando
    tu componente como una función flecha.
