@@ -35,11 +35,24 @@ To sign it, a visitor:
 
 The new entry shows up right away at the top of the list ✍️, unless it is held for review (see [Moderation](#moderation)). The message field clears after a successful sign, and the name stays filled in. If a check fails, the error message appears above the button and nothing is saved.
 
-Below the form, the page shows the total number of published entries, then each entry with its name, the date it was signed and the message.
+Below the form, a toolbar shows the total number of published entries on the left and the sort toggle on the right. Then comes each entry with its name, the date it was signed and the message.
 
 ### Reactions
 
 Each entry has four reaction buttons: 👋 ❤️ 🔥 😂. Clicking one adds a reaction to that entry, and the button shows the running count next to the emoji. Visitors can react as many times as they like.
+
+### Sorting
+
+The sort toggle above the list has two options:
+
+- **Newest** (the default) lists entries newest first.
+- **Most reactions** lists entries by their total reactions across all four emojis, highest first. Entries with the same total stay newest first.
+
+<Frame>
+  <img src="/images/guestbook-sort-toggle.png" alt="The guestbook with the entry count on the left and the Newest and Most reactions sort toggle on the right, above entries sorted by reactions" />
+</Frame>
+
+Sorting reorders only the 20 entries on the current page 🔀. Paging still goes newest first, so **Most reactions** does not pull popular entries forward from older pages. The choice is not saved, so the toggle goes back to **Newest** when the visitor reloads the page.
 
 ### Paging
 
