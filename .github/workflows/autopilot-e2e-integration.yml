@@ -1,0 +1,24 @@
+name: autopilot-e2e-integration
+on:
+  pull_request:
+    paths: ['misc/autopilot-e2e/flaky-*']
+permissions:
+  actions: read
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Integration suite
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          sleep 40
+          runs=$(gh api "repos/${{ github.repository }}/actions/workflows/autopilot-e2e-integration.yml/runs?branch=$HEAD_REF&per_page=100" --jq '.total_count')
+          echo "attempt $GITHUB_RUN_ATTEMPT, runs for branch: $runs"
+          if [ "$GITHUB_RUN_ATTEMPT" = "1" ] && [ "$runs" -le 1 ]; then
+            echo "::error title=integration::npm ERR! code ECONNRESET network request to https://registry.npmjs.org/@acme%2fsdk failed, reason: socket hang up (transient upstream error, safe to retry)"
+            exit 1
+          fi
+          echo "integration suite passed"
