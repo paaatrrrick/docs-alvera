@@ -2539,7 +2539,8 @@
                   "es/index",
                   "es/quickstart",
                   "es/development",
-                  "es/how-mintlify-works"
+                  "es/how-mintlify-works",
+                  "es/glossary"
                 ]
               },
               {
@@ -2571,7 +2572,8 @@
                   "es/star-wars-jedi-order",
                   "es/star-wars-sith-order",
                   "es/star-wars-sith",
-                  "es/star-wars-timeline"
+                  "es/star-wars-timeline",
+                  "es/star-wars-lightsaber-forms"
                 ]
               },
               {
@@ -2596,6 +2598,12 @@
                   "es/ai-tools/cursor",
                   "es/ai-tools/claude-code",
                   "es/ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Registro de cambios",
+                "pages": [
+                  "es/changelog"
                 ]
               }
             ]
@@ -5039,7 +5047,8 @@
                   "fr/index",
                   "fr/quickstart",
                   "fr/development",
-                  "fr/how-mintlify-works"
+                  "fr/how-mintlify-works",
+                  "fr/glossary"
                 ]
               },
               {
@@ -5071,7 +5080,8 @@
                   "fr/star-wars-jedi-order",
                   "fr/star-wars-sith-order",
                   "fr/star-wars-sith",
-                  "fr/star-wars-timeline"
+                  "fr/star-wars-timeline",
+                  "fr/star-wars-lightsaber-forms"
                 ]
               },
               {
@@ -5096,6 +5106,12 @@
                   "fr/ai-tools/cursor",
                   "fr/ai-tools/claude-code",
                   "fr/ai-tools/windsurf"
+                ]
+              },
+              {
+                "group": "Journal des modifications",
+                "pages": [
+                  "fr/changelog"
                 ]
               }
             ]
@@ -7521,6 +7537,40 @@
                   "fr/misc/almanac/almanac-248",
                   "fr/misc/almanac/almanac-249",
                   "fr/misc/almanac/almanac-250"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "ja-jp",
+        "tabs": [
+          {
+            "tab": "\u30ac\u30a4\u30c9",
+            "groups": [
+              {
+                "group": "\u306f\u3058\u3081\u306b",
+                "pages": [
+                  "ja-jp/glossary"
+                ]
+              },
+              {
+                "group": "\u500b\u4eba\u30b5\u30a4\u30c8",
+                "pages": [
+                  "ja-jp/projects"
+                ]
+              },
+              {
+                "group": "\u304a\u697d\u3057\u307f",
+                "pages": [
+                  "ja-jp/star-wars-lightsaber-forms"
+                ]
+              },
+              {
+                "group": "\u5909\u66f4\u5c65\u6b74",
+                "pages": [
+                  "ja-jp/changelog"
                 ]
               }
             ]
