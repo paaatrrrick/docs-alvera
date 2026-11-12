@@ -1,0 +1,89 @@
+---
+title: "Mintlify の仕組み"
+description: "Mintlify の背後にあるアーキテクチャと、Git 内の MDX ファイルがビルド、デプロイ、プレビューを経て公開サイトになるまでの流れを理解します。"
+---
+
+Mintlify は、MDX ファイルの Git リポジトリを、高速で検索可能なドキュメントサイトに変換します。このページでは、内部で何が起きているかを理解できるよう、構成要素について説明します。
+
+## 主要な構成要素 {#the-core-pieces}
+
+<CardGroup cols={2}>
+  <Card title="コンテンツ" icon="file-lines">
+    MDX ページと `docs.json` 設定は Git リポジトリに格納されます。
+  </Card>
+  <Card title="ビルドパイプライン" icon="gears">
+    プッシュするたびに、Mintlify がコンテンツを静的サイトにコンパイルします。
+  </Card>
+  <Card title="ホストされたサイト" icon="globe">
+    コンパイルされたサイトは、Mintlify のサブドメインまたはカスタムドメインで配信されます。
+  </Card>
+  <Card title="ダッシュボード" icon="gauge">
+    ダッシュボードでは、デプロイ、アナリティクス、インテグレーションを管理します。
+  </Card>
+</CardGroup>
+
+## コミットから公開ページまで {#from-commit-to-published-page}
+
+1. **コンテンツを書く。** ページは MDX で作成します。MDX は、Markdown に `<Card>`、`<Tabs>`、`<Accordion>` などの React コンポーネントを加えたものです。
+2. **ナビゲーションを設定する。** `docs.json` では、タブ、グループ、テーマ、およびナビゲーションバーやフッターなどのグローバル要素を定義します。
+3. **GitHub にプッシュする。** Mintlify の GitHub アプリが、デプロイブランチ上の変更を検出します。
+4. **Mintlify がサイトをビルドする。** コンテンツが検証され、リンクがチェックされ、サイトが静的アセットにコンパイルされます。
+5. **サイトが公開される。** 新しいビルドがドメインにデプロイされます。通常は数秒以内に完了します。
+
+## ローカル開発 {#local-development}
+
+プッシュする前に、Mintlify CLI を使用して変更をプレビューします。
+
+```bash
+mint dev
+```
+
+これにより、ドキュメントがホットリロード付きで `http://localhost:3000` に配信されます。問題を早期に発見するには、次を実行します。
+
+```bash
+mint validate
+mint broken-links
+```
+
+## オーサリングモデル {#authoring-model}
+
+- **MDX ファイル** — すべてのページは、YAML フロントマター（`title`、`description`）を持つ `.mdx` ファイルです。
+- **コンポーネント** — Mintlify には、コールアウト、タブ、コードグループ、アコーディオン、カードなどの組み込みコンポーネントが用意されています。
+- **スニペット** — 再利用可能なコンテンツは `snippets/` に置かれ、任意のページにインポートできます。
+- **画像とアセット** — リポジトリのルートからの相対パスで参照します。
+
+## 設定 {#configuration}
+
+`docs.json` は、サイト構造に関する唯一の信頼できる情報源です。
+
+- `navigation` — タブ、グループ、ページの順序。
+- `colors`、`logo`、`favicon` — ブランディング。
+- `navbar`、`footer` — グローバルリンクとソーシャルリンク。
+- `contextual` — 各ページの「Copy / Open in ChatGPT」メニューを制御します。
+
+## 検索と AI {#search-and-ai}
+
+公開されたすべてのサイトには、次の機能が含まれます。
+
+- **全文検索** — ビルドのたびに自動的にインデックスが作成されます。
+- **AI チャット** — ドキュメントをコンテキストとして使用して質問に回答します。
+- **MCP と LLM のインテグレーション** — Cursor や Claude などのツールがドキュメントを参照できます。
+
+## デプロイ環境 {#deployment-environments}
+
+| 環境 | トリガー | 用途 |
+| ----------- | ------- | ---------- |
+| ローカル | `mint dev` | 変更の下書きとプレビュー |
+| プレビュー | プルリクエスト | マージ前の変更のレビュー |
+| 本番 | デプロイブランチへのマージ | 公開中のサイト |
+
+## 次のステップ {#next-steps}
+
+<CardGroup cols={2}>
+  <Card title="クイックスタート" icon="rocket" href="/ja-jp/quickstart">
+    3 つのステップでサイトをセットアップします。
+  </Card>
+  <Card title="コンテンツの作成" icon="pen" href="/ja-jp/essentials/markdown">
+    利用可能な MDX コンポーネントについて学びます。
+  </Card>
+</CardGroup>
