@@ -2570,6 +2570,7 @@
                   "es/star-wars-bounty-hunters",
                   "es/star-wars-jedi-order",
                   "es/star-wars-sith-order",
+                  "es/pokemon",
                   "es/star-wars-sith",
                   "es/star-wars-timeline"
                 ]
@@ -5070,6 +5071,7 @@
                   "fr/star-wars-bounty-hunters",
                   "fr/star-wars-jedi-order",
                   "fr/star-wars-sith-order",
+                  "fr/pokemon",
                   "fr/star-wars-sith",
                   "fr/star-wars-timeline"
                 ]
@@ -7521,6 +7523,66 @@
                   "fr/misc/almanac/almanac-248",
                   "fr/misc/almanac/almanac-249",
                   "fr/misc/almanac/almanac-250"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "ja-jp",
+        "tabs": [
+          {
+            "tab": "\u30ac\u30a4\u30c9",
+            "groups": [
+              {
+                "group": "\u306f\u3058\u3081\u306b",
+                "pages": [
+                  "ja-jp/development",
+                  "ja-jp/how-mintlify-works",
+                  "ja-jp/glossary"
+                ]
+              },
+              {
+                "group": "\u500b\u4eba\u30b5\u30a4\u30c8",
+                "pages": [
+                  "ja-jp/projects",
+                  "ja-jp/latest-email"
+                ]
+              },
+              {
+                "group": "\u304a\u697d\u3057\u307f",
+                "pages": [
+                  "ja-jp/star-wars-characters",
+                  "ja-jp/star-wars-factions",
+                  "ja-jp/star-wars-ships",
+                  "ja-jp/star-wars-planets",
+                  "ja-jp/star-wars-eras",
+                  "ja-jp/star-wars-droids",
+                  "ja-jp/star-wars-weapons",
+                  "ja-jp/star-wars-creatures",
+                  "ja-jp/star-wars-vehicles",
+                  "ja-jp/star-wars-battles",
+                  "ja-jp/star-wars-senate",
+                  "ja-jp/star-wars-bounty-hunters",
+                  "ja-jp/star-wars-sith-order",
+                  "ja-jp/star-wars-timeline",
+                  "ja-jp/pokemon",
+                  "ja-jp/star-wars-sith"
+                ]
+              },
+              {
+                "group": "\u30ab\u30b9\u30bf\u30de\u30a4\u30ba",
+                "pages": [
+                  "ja-jp/essentials/navigation"
+                ]
+              },
+              {
+                "group": "\u30b3\u30f3\u30c6\u30f3\u30c4\u306e\u4f5c\u6210",
+                "pages": [
+                  "ja-jp/essentials/markdown",
+                  "ja-jp/essentials/images",
+                  "ja-jp/essentials/reusable-snippets"
                 ]
               }
             ]
