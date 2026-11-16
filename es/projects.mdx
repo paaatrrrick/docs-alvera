@@ -1,6 +1,6 @@
 ---
-title: "Página de proyectos: estructura y actualizaciones"
-description: "Cómo se configura la página dedicada /projects a partir del array projects, incluyendo el esquema de entrada y un ejemplo de código."
+title: "Página de proyectos: esquema, búsqueda y filtro por tecnología"
+description: "Configura la página /projects: esquema del array projects, comportamiento del cuadro de búsqueda, botones de filtro por tecnología y estado vacío."
 ---
 
 ## Resumen
@@ -8,6 +8,15 @@ description: "Cómo se configura la página dedicada /projects a partir del arra
 El sitio web personal ahora cuenta con una página dedicada `/projects` que muestra los proyectos personales en una cuadrícula responsiva. Cada tarjeta muestra el nombre del proyecto, un eslogan de una línea, una descripción más larga, el stack tecnológico como etiquetas y un enlace al repositorio o sitio en vivo.
 
 Las entradas provienen del array `projects` en `src/constants/projects.js` y se renderizan mediante el componente `Projects` en la ruta `/projects`. La página convive con la página de inicio para que las personas puedan explorar el catálogo completo de proyectos sin desplazarse por la landing.
+
+## Filtro y búsqueda
+
+Encima de la cuadrícula, la página expone dos controles que se combinan (AND):
+
+- **Cuadro de búsqueda:** un `<input type="search">` de texto libre que filtra las tarjetas por `name`, `tagline` o `description`. La coincidencia no distingue mayúsculas y usa una subcadena recortada, por lo que las palabras parciales funcionan.
+- **Filtro por tecnología:** botones generados a partir de la unión del array `tech` de cada proyecto, más una opción `All` que restablece el filtro. El botón activo se resalta y se marca con `aria-pressed`.
+
+Cuando ningún proyecto coincide con la combinación actual de búsqueda y tecnología, la cuadrícula muestra un estado vacío con el texto `No projects match your search.` Borra el cuadro de búsqueda o vuelve al filtro `All` para ver la lista completa de nuevo.
 
 ## Cuándo usar esta página
 

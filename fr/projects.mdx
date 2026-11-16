@@ -1,6 +1,6 @@
 ---
-title: "Page projets : structure et mises à jour"
-description: "Comment la page dédiée /projects est configurée à partir du tableau projects, avec le schéma d'entrée et un exemple de code."
+title: "Page projets : schéma, recherche et filtre par technologie"
+description: "Configurez la page /projects : schéma du tableau projects, comportement du champ de recherche, boutons de filtre par technologie et état vide."
 ---
 
 ## Vue d'ensemble
@@ -8,6 +8,15 @@ description: "Comment la page dédiée /projects est configurée à partir du ta
 Le site personnel dispose désormais d'une page dédiée `/projects` qui présente les projets personnels dans une grille responsive. Chaque carte affiche le nom du projet, une accroche d'une ligne, une description plus longue, la stack technique sous forme de tags et un lien vers le dépôt ou le site en ligne.
 
 Les entrées proviennent du tableau `projects` dans `src/constants/projects.js` et sont rendues par le composant `Projects` à la route `/projects`. La page coexiste avec la page d'accueil pour que les visiteurs puissent parcourir le catalogue complet de projets sans faire défiler la landing page.
+
+## Filtre et recherche
+
+Au-dessus de la grille, la page expose deux contrôles qui se combinent (AND) :
+
+- **Champ de recherche :** un `<input type="search">` en texte libre qui filtre les cartes par `name`, `tagline` ou `description`. La correspondance est insensible à la casse et utilise une sous-chaîne rognée, donc les mots partiels fonctionnent.
+- **Filtre par technologie :** boutons générés à partir de l'union du tableau `tech` de chaque projet, plus une option `All` qui réinitialise le filtre. Le bouton actif est mis en évidence et marqué avec `aria-pressed`.
+
+Lorsqu'aucun projet ne correspond à la combinaison actuelle de recherche et de technologie, la grille affiche un état vide avec le texte `No projects match your search.` Videz le champ de recherche ou revenez au filtre `All` pour revoir la liste complète.
 
 ## Quand utiliser cette page
 
