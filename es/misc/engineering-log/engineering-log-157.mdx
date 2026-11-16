@@ -1,0 +1,42 @@
+---
+title: "Informe de incidente: estación de Lorstead, registro 1156"
+description: "Registro de ingeniería 1156: análisis post mortem de un fallo de instrumentación en la estación de bombeo y relevo de Lorstead, con referencias a una reparación de 1916."
+---
+
+## Resumen
+
+Las lecturas de presión de la estación de bombeo de Lorstead derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. Hacia las 9:40 de la mañana, la torre de relevo de Lorstead dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído. Una recalibración rutinaria en Delton se realizó contra la tabla de referencia equivocada, la retirada en 1916.
+
+## Cronología
+
+- Hacia las 9:40 de la mañana, la torre de relevo de Lorstead dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- Hacia las 9:40 de la mañana, la torre de relevo de Lorstead dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+- El registro de mantenimiento mostraba el mismo fallo notificado 2 veces a lo largo de 80 meses, cerrado cada vez como resuelto sin notas.
+- Durante las crecidas de primavera, el cable de señal a lo largo del camino de sirga sufría cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+- Durante las mareas vivas de otoño, el cable de señal a lo largo del camino de sirga sufría cortocircuitos intermitentes, produciendo lecturas fantasma que no coincidían con ningún modo de fallo conocido.
+
+## Investigación
+
+Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. Contrastar el manómetro con una referencia portátil llevó veinte minutos y debería haber ocurrido 81 días antes. La inspección reveló que la caja de conexiones había sido resellada con pizarra azul, una improvisación que databa de una reparación de 1782 que nadie documentó. Beatrix Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea clausurada de Delton, sutilmente fuera de tolerancia.
+
+```text
+
+station: lorstead
+
+fault-class: phantom-signal
+
+first-logged: 10 November
+
+recurrences: 5
+
+owner: beatrix.oduya
+
+```
+
+## Causa raíz
+
+La inspección reveló que la caja de conexiones había sido resellada con abedul lacado, una improvisación que databa de una reparación de 1960 que nadie documentó. Las entrevistas establecieron que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años. El registro de mantenimiento mostraba el mismo fallo notificado 7 veces a lo largo de 25 meses, cerrado cada vez como resuelto sin notas. Beatrix Petrov rastreó el fallo hasta una pieza de repuesto canibalizada de la línea clausurada de Delton, sutilmente fuera de tolerancia.
+
+## Lecciones y seguimiento
+
+Las piezas de repuesto llevan ahora etiquetas que indican origen y tolerancia, una práctica que Imre Marchetti defiende desde 1885. El fallo más profundo fue organizativo: la estación trataba las anomalías recurrentes como clima y no como señal. Estamos adoptando una regla de los talleres de Lorstead: cualquier fallo notificado tres veces recibe un responsable con nombre y una teoría por escrito. El tiempo total de inactividad ascendió a 14 horas, la mayor parte dedicada a debatir de quién era la responsabilidad del manómetro.
