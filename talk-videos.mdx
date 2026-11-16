@@ -1,0 +1,84 @@
+---
+title: "Talk videos: embed YouTube and Vimeo recordings"
+description: "Embed a talk recording from YouTube or Vimeo on the personal website, start playback at a timestamp, and turn the feature on with an env flag."
+---
+
+## Overview
+
+Talks on the personal website can embed a recording of the talk. You can embed videos from two providers:
+
+- **YouTube.** Videos load from the privacy-enhanced `youtube-nocookie.com` player, so YouTube doesn't set tracking cookies until a visitor plays the video.
+- **Vimeo.** Videos load with do-not-track enabled (`dnt=1`), so Vimeo doesn't track the visitor's session.
+
+You can also start playback at a specific point in the recording. This is useful when your talk begins partway through a longer conference stream.
+
+The `embedUrl` helper in `src/talks/videos.js` builds the player URL for each recording.
+
+## Enable talk videos
+
+Talk videos launch on November 3, 2026, behind a feature flag. Set `REACT_APP_TALK_VIDEOS` to `on` in your environment to turn them on.
+
+```bash .env
+REACT_APP_TALK_VIDEOS=on
+```
+
+Any other value, or leaving the variable unset, keeps talk videos off. Restart the dev server or rebuild the site after you change the value. Create React App reads `REACT_APP_` variables at build time.
+
+## Video fields
+
+Pass an object with the following fields to `embedUrl`.
+
+| Field      | Type   | Description                                                                                          |
+| ---------- | ------ | ---------------------------------------------------------------------------------------------------- |
+| `provider` | string | Video host. Use `'youtube'` or `'vimeo'`.                                                            |
+| `id`       | string | Video ID from the provider. For YouTube, this is the `v` value in the watch URL. For Vimeo, it's the number at the end of the video URL. |
+| `start`    | number | Optional. Number of seconds into the video to start playback. Defaults to `0`, which starts at the beginning. |
+
+## Embed a recording
+
+Build the embed URL with `embedUrl` and pass it to an `iframe`. Check `TALK_VIDEOS_ENABLED` first so the video only renders when the flag is on.
+
+```jsx
+import { TALK_VIDEOS_ENABLED, embedUrl } from "../talks/videos";
+
+const TalkVideo = ({ title, video }) => {
+    if (!TALK_VIDEOS_ENABLED || !video) return null;
+
+    return (
+        <iframe
+            src={embedUrl(video)}
+            title={title}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+        />
+    );
+};
+
+// Starts the YouTube recording 2 minutes and 5 seconds in
+<TalkVideo
+    title="Building local-first apps"
+    video={{ provider: "youtube", id: "dQw4w9WgXcQ", start: 125 }}
+/>;
+```
+
+The examples below show the URL that `embedUrl` returns for each provider.
+
+| Input                                                 | Embed URL                                                      |
+| ----------------------------------------------------- | -------------------------------------------------------------- |
+| `{ provider: 'youtube', id: 'dQw4w9WgXcQ' }`          | `https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ`           |
+| `{ provider: 'youtube', id: 'dQw4w9WgXcQ', start: 125 }` | `https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?start=125` |
+| `{ provider: 'vimeo', id: '76979871', start: 30 }`    | `https://player.vimeo.com/video/76979871?dnt=1&start=30`       |
+
+<Tip>
+To convert a timestamp to seconds, multiply the minutes by 60 and add the seconds. For example, `12:30` is `750`.
+</Tip>
+
+## Unsupported providers
+
+`embedUrl` throws an error for any provider other than `youtube` or `vimeo`:
+
+```text
+Unsupported video provider "twitch". Use youtube or vimeo.
+```
+
+Provider names are case-sensitive, so `'YouTube'` also throws this error. Use lowercase values.
