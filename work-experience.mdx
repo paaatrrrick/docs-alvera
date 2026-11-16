@@ -5,7 +5,7 @@ description: "How the personal website's work experience list is configured from
 
 ## Overview
 
-The work experience section displays a chronological list of roles on the personal website's home page. Each entry is rendered from the `workExperience` array and shows a title, optional description, optional logo image, and a timeline string.
+The work experience section displays a chronological list of roles on the personal website's home page. Each entry is rendered from the `workExperience` array and shows a title, optional description, optional logo image, optional company link, optional skills list, and a timeline string.
 
 This page documents recent additions to that list so visitors and contributors know what changed and how new entries are configured.
 
@@ -99,8 +99,10 @@ Each entry in the `workExperience` array supports the following fields:
 | ---------- | ------ | -------- | ------------------------------------------------------------ |
 | `title`    | string | Yes      | Role and company name shown as the entry header.             |
 | `text`     | string | No       | Short description of responsibilities or accomplishments.    |
+| `link`     | string   | No       | Company URL. When set, the role title becomes a link that opens in a new tab. |
 | `image`    | string | No       | Public URL of a company or role logo.                        |
 | `timeLine` | string | Yes      | Human-readable timeframe and location.                       |
+| `skills`   | string[] | No       | Skills or technologies used in the role, rendered as a list under the role title. |
 
 ## Adding a new entry
 
@@ -112,6 +114,8 @@ const workExperience = [
         title: 'SWE at Modal',
         text: `Worked on the serverless GPU runtime. Helped land scheduling improvements for batched inference jobs and made the local-to-cloud dev loop faster for ML engineers.`,
         timeLine: 'May - August 2035. Remote',
+        link: 'https://modal.com',
+        skills: ['Python', 'Rust', 'GPU scheduling'],
     },
     {
         title: 'SWE at PostHog',
