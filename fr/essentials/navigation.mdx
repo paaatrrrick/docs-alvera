@@ -8,7 +8,7 @@ Le menu de navigation est la liste des liens présents sur chaque site.
 
 Vous mettrez probablement à jour `docs.json` chaque fois que vous ajoutez une nouvelle page. Les pages n'apparaissent pas automatiquement.
 
-## Syntaxe de la navigation
+## Syntaxe de la navigation {#navigation-syntax}
 
 Notre syntaxe de navigation est récursive, ce qui signifie que vous pouvez créer des groupes de navigation imbriqués. Il n'est pas nécessaire d'inclure `.mdx` dans les noms de page.
 
@@ -54,9 +54,9 @@ Notre syntaxe de navigation est récursive, ce qui signifie que vous pouvez cré
 
 </CodeGroup>
 
-## Dossiers
+## Dossiers {#folders}
 
-Il suffit de placer vos fichiers MDX dans des dossiers et de mettre à jour les chemins dans `docs.json`.
+Placez vos fichiers MDX dans des dossiers et mettez à jour les chemins dans `docs.json`.
 
 Par exemple, pour qu'une page soit accessible à `https://yoursite.com/your-folder/your-page`, vous devez créer un dossier nommé `your-folder` contenant un fichier MDX nommé `your-page.mdx`.
 
@@ -82,6 +82,6 @@ Vous ne pouvez pas utiliser `api` comme nom de dossier, sauf si vous l'imbriquez
 }
 ```
 
-## Pages masquées
+## Pages masquées {#hidden-pages}
 
 Les fichiers MDX non inclus dans `docs.json` n'apparaîtront pas dans la barre latérale, mais restent accessibles via la barre de recherche et en y accédant directement par leur lien.
