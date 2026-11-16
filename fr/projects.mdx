@@ -1,7 +1,11 @@
 ---
 title: "Page projets : structure et mises à jour"
-description: "Comment la page dédiée /projects est configurée à partir du tableau projects, avec le schéma d'entrée et un exemple de code."
+description: "Comment la page dédiée /projects est configurée à partir du tableau projects, avec le schéma d'entrée, les badges d'état et un exemple de code."
 ---
+
+<Update label="2026-06-24">
+  Chaque carte de projet affiche désormais un badge d'état **Active** ou **Archived** dans l'en-tête de la carte, alimenté par un nouveau champ obligatoire `status` sur les entrées de `src/constants/projects.js`. `Active` s'affiche en vert ; `Archived` s'affiche en gris.
+</Update>
 
 ## Vue d'ensemble
 
