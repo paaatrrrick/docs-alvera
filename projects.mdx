@@ -5,13 +5,26 @@ description: "How the dedicated /projects showcase page is configured from the p
 
 ## Overview
 
-The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site.
+The personal website now has a dedicated `/projects` page that showcases side projects in a responsive grid. Each card shows the project name, a one-line tagline, a longer description, the tech stack as tags, and a link to the repository or live site. A search box and a tech filter above the grid let visitors narrow the list.
 
 Entries are sourced from the `projects` array in `src/constants/projects.js` and rendered by the `Projects` component at the `/projects` route. The page sits alongside the home page so visitors can browse the full project list without scrolling the landing page.
 
 ## When to use this page
 
 Add an entry to `/projects` when you want to surface a side project on its own card with a tagline and tech tags. Use the home page list for projects you want featured front-and-center; use `/projects` for the complete catalog.
+
+## Search and filtering
+
+Two controls sit between the page header and the grid: a search box and a row of tech filter buttons.
+
+- **Search box:** Filters cards as the visitor types. A card stays visible when the query appears in its `name`, `tagline`, or `description`. Matching is case-insensitive and ignores leading and trailing whitespace. Clearing the box restores every card allowed by the tech filter.
+- **Tech filter:** One button per unique tag across all `tech` arrays, sorted alphabetically, plus an `All` button that clears the filter. Clicking a tag shows only projects whose `tech` array includes it.
+
+The two controls combine. A card renders only when it includes the active tech tag and matches the search query. For example, selecting `React` and typing `notes` shows only React projects whose text mentions notes.
+
+When no project passes both filters, the grid shows the empty state message "No projects match your search." Visitors can clear the search box or switch the filter back to `All` to see cards again.
+
+Neither control needs configuration. Search and the filter read the same fields defined in the entry schema below, so new entries are searchable as soon as they are added.
 
 ## Entry schema
 
