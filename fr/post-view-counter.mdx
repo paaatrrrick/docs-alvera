@@ -1,0 +1,118 @@
+---
+title: "Compteur de vues, vues du site et signature d'article"
+description: "Comment le site personnel suit les vues par article, les lectures totales du site, et affiche la date, le temps de lecture et les vues sous chaque article."
+---
+
+## Vue d'ensemble
+
+Le site personnel suit la fréquence à laquelle les articles sont lus et fait remonter ces chiffres dans l'interface grâce à trois éléments de base :
+
+- **`ViewCounter`** — affiche le nombre de lectures d'un article donné et enregistre la visite, appuyé par le hook `useViewCount`.
+- **`SiteViews`** — affiche le nombre total de lectures cumulées sur l'ensemble des articles, appuyé par le hook `useTotalViews`.
+- **`PostMeta`** — la signature standard sous le titre d'un article, combinant la date de publication, le temps de lecture estimé et le nombre de vues.
+
+Les trois appellent un service de vues partagé à `https://api.paaatrrrick.com/views`. Les hooks sont sûrs vis-à-vis de `null` : les composants n'affichent rien pendant qu'une requête est en cours ou en cas d'échec, de sorte qu'une API lente ou hors service ne casse jamais la page.
+
+## Quand utiliser chaque élément
+
+| Composant / hook         | À utiliser quand…                                                               |
+| ------------------------ | ------------------------------------------------------------------------------- |
+| `ViewCounter` / `useViewCount` | Vous voulez le nombre de lectures d'un seul article, et vous voulez que la visite soit enregistrée. |
+| `SiteViews` / `useTotalViews`  | Vous voulez le nombre total de lectures sur tout le site (par ex. pied de page, page à propos). |
+| `PostMeta`               | Vous rendez un gabarit d'article et voulez la signature standard date · temps de lecture · vues. |
+
+## Ajouter la signature à un gabarit d'article
+
+`PostMeta` est la manière recommandée de faire apparaître le nombre de vues sur un article. Il regroupe la date, le temps de lecture et le compteur de vues sur une seule ligne, de sorte que chaque gabarit n'a pas à câbler chaque élément séparément.
+
+```jsx
+import PostMeta from "../components/PostMeta";
+
+export default function PostTemplate({ post }) {
+  return (
+    <article>
+      <h1>{post.title}</h1>
+      <PostMeta post={post} />
+      {/* …post body… */}
+    </article>
+  );
+}
+```
+
+`PostMeta` attend que l'objet post fournisse :
+
+| Champ   | Type              | Notes                                                                 |
+| ------- | ----------------- | --------------------------------------------------------------------- |
+| `id`    | string            | Utilisé comme clé du compteur de vues. Requis pour le suivi des vues. |
+| `date`  | string (optionnel) | Affiché tel quel lorsqu'il est présent. À omettre pour masquer le segment de date. |
+| `body`  | string[] (optionnel) | Concaténé et transmis à l'estimateur de temps de lecture.            |
+
+Chaque segment se masque lui-même si ses données sont manquantes ou si l'appel réseau n'a pas encore abouti, si bien que la signature se dégrade proprement sur les articles sans date ou avant que le nombre de vues ne soit chargé.
+
+## Afficher uniquement le nombre de vues
+
+Si vous avez seulement besoin du compte (par exemple, sur une carte de liste d'articles), utilisez `ViewCounter` directement :
+
+```jsx
+import ViewCounter from "../components/ViewCounter";
+
+<ViewCounter postId={post.id} />
+```
+
+Il rend un `<span class="view-counter">` avec le compte formaté via `toLocaleString()` (donc `1234` s'affiche comme `1,234 views`). Pendant que la requête est en attente, il renvoie `null` et n'affiche rien.
+
+### Lire sans enregistrer une vue
+
+Par défaut, monter `ViewCounter` enregistre une vue. Si vous voulez lire le compte sans l'incrémenter — par exemple, sur un tableau de bord d'administration ou une page de liste — appelez `useViewCount` directement avec `increment: false` :
+
+```jsx
+import { useViewCount } from "../hooks/useViewCount";
+
+function PostCard({ post }) {
+  const count = useViewCount(post.id, { increment: false });
+  return <li>{post.title} — {count?.toLocaleString() ?? "—"} views</li>;
+}
+```
+
+## Afficher le nombre total de vues du site
+
+`SiteViews` affiche un résumé sur une ligne du total des lectures sur l'ensemble des articles. Placez-le partout où vous voulez le chiffre global — un pied de page, une page à propos, une bande de statistiques en page d'accueil :
+
+```jsx
+import SiteViews from "../components/SiteViews";
+
+<SiteViews />
+```
+
+Il rend un `<p class="site-views">` avec un texte tel que `12,480 total reads across all posts.`, ou rien pendant que la requête est en cours.
+
+## Endpoints d'API attendus par les hooks
+
+Les hooks appellent un service de vues partagé. Si vous remplacez le backend, il doit exposer la même forme sur les mêmes chemins.
+
+| Méthode | Endpoint                  | Utilisé par     | Comportement                                                                               |
+| ------- | ------------------------- | --------------- | ------------------------------------------------------------------------------------------ |
+| `POST`  | `/views/:postId`          | `useViewCount` (par défaut) | Enregistre une vue pour `postId` et renvoie le nouveau compte.                    |
+| `GET`   | `/views/:postId`          | `useViewCount` avec `{ increment: false }` | Renvoie le compte actuel pour `postId` sans l'incrémenter.       |
+| `GET`   | `/views/total`            | `useTotalViews` | Renvoie le nombre de lectures cumulées sur l'ensemble des articles.                        |
+
+Les corps de réponse utilisent ces formes :
+
+```json
+// /views/:postId
+{ "count": 1234 }
+
+// /views/total
+{ "total": 12480 }
+```
+
+Les deux hooks traitent les réponses différentes de `200` et les charges utiles non numériques comme des données manquantes — ils gardent l'état à `null` afin que les composants n'affichent rien plutôt que de montrer un nombre cassé. L'URL de base est configurée dans les hooks à `https://api.paaatrrrick.com/views`.
+
+## Style
+
+`PostMeta` est livré avec `postMeta.css`, qui dispose les segments en ligne flex avec de fins séparateurs en forme de point entre eux. Les classes individuelles que vous pouvez cibler sont :
+
+- `.post-meta` — la ligne enveloppante.
+- `.post-meta-date` — le segment de date.
+- `.view-counter` — le span du nombre de vues (également rendu par `ViewCounter` de son côté).
+- `.site-views` — le paragraphe des vues totales rendu par `SiteViews`.
