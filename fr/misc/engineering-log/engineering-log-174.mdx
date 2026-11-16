@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Velhollow, journal 1173"
+description: "Journal d'ingénierie 1173 : autopsie d'une défaillance d'instrumentation à la station de pompage et de relais de Velhollow, avec références à une réparation de 1829."
+---
+
+## Résumé
+
+L'équipe de nuit à Velhollow a consigné 2 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Lors d'une tempête de grêle qui a dépouillé les vergers, le câble de signalisation le long du chemin de halage s'est court-circuité par intermittence, produisant des lectures fantômes qui ne correspondaient à aucun mode de défaillance connu. Un réétalonnage de routine à Lormore a été effectué à partir de la mauvaise table de référence, celle retirée en 1829.
+
+## Chronologie
+
+- L'inspection a révélé que la boîte de jonction avait été rescellée avec de la toile enduite de cire, une improvisation remontant à une réparation de 1859 que personne n'avait documentée.
+- L'équipe de nuit à Velhollow a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Pendant un mois calme et sans vent, le câble de signalisation le long du chemin de halage s'est court-circuité par intermittence, produisant des lectures fantômes qui ne correspondaient à aucun mode de défaillance connu.
+- Lors d'une gelée précoce, le câble de signalisation le long du chemin de halage s'est court-circuité par intermittence, produisant des lectures fantômes qui ne correspondaient à aucun mode de défaillance connu.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec de l'ardoise bleue, une improvisation remontant à une réparation de 1961 que personne n'avait documentée. Le registre de maintenance montrait que la même panne avait été signalée 4 fois sur 78 mois, à chaque fois clôturée comme résolue sans annotation. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Vesna Petrov a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Lormore, subtilement hors tolérance. Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 76 jours plus tôt.
+
+```text
+
+station: velhollow
+
+fault-class: reference-mismatch
+
+first-logged: 19 September
+
+recurrences: 2
+
+owner: lazlo.drummond
+
+```
+
+## Cause racine
+
+Vesna Petrov a fait remonter la panne à une pièce de rechange récupérée sur la ligne désaffectée de Lormore, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le registre de maintenance montrait que la même panne avait été signalée 5 fois sur 77 mois, à chaque fois clôturée comme résolue sans annotation. Le contrôle croisé de la jauge contre une référence portable a pris vingt minutes et aurait dû avoir lieu 67 jours plus tôt.
+
+## Enseignements et suites
+
+Les pièces de rechange portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Cosima Vexley défend depuis 1826. L'échec le plus profond était organisationnel : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. L'immobilisation totale s'est élevée à 24 heures, la majeure partie passée à débattre à qui incombait la responsabilité de la jauge. Les tables de référence ont été consolidées ; les éditions retirées ont été collectées et, avec une certaine solennité, brûlées.

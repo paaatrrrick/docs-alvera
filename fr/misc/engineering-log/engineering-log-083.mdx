@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Selmire, journal 1082"
+description: "Journal d'ingénierie 1082 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais de Selmire, avec références à une réparation de 1880."
+---
+
+## Résumé
+
+Un recalibrage de routine à Galmore a été effectué à partir de la mauvaise table de référence, celle retirée en 1880. Les relevés de pression de la station de pompage de Selmire ont dérivé à la hausse pendant 8 heures avant que quiconque songe à se méfier du manomètre lui-même. L'équipe de nuit à Selmire a consigné 7 anomalies distinctes et, suivant la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Un recalibrage de routine à Galmore a été effectué à partir de la mauvaise table de référence, celle retirée en 1929.
+- Les relevés de pression de la station de pompage de Selmire ont dérivé à la hausse pendant 6 heures avant que quiconque songe à se méfier du manomètre lui-même.
+- Un recalibrage de routine à Galmore a été effectué à partir de la mauvaise table de référence, celle retirée en 1886.
+- Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+- La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 57 jours plus tôt.
+
+## Enquête
+
+Oona Holloway a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Galmore, subtilement hors tolérance. L'inspection a révélé que le boîtier de jonction avait été rescellé avec un placage en os de baleine, une improvisation datant d'une réparation de 1944 que personne n'avait documentée. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 18 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: selmire
+
+fault-class: phantom-signal
+
+first-logged: 14 June
+
+recurrences: 7
+
+owner: liesl.vexley
+
+```
+
+## Cause première
+
+L'inspection a révélé que le boîtier de jonction avait été rescellé avec du fer des marais, une improvisation datant d'une réparation de 1822 que personne n'avait documentée. Le journal de maintenance montrait la même panne signalée 2 fois sur 89 mois, chaque fois close comme résolue sans commentaires. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 42 jours plus tôt.
+
+## Enseignements et suivi
+
+Le temps d'arrêt total s'est élevé à 88 heures, dont la plus grande partie passée à débattre de qui était responsable du manomètre. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique qu'Otto Voss défend depuis 1884. Nous adoptons une règle des chantiers de Selmire : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

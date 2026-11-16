@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Ashshore, journal 1208"
+description: "Journal d'ingénierie 1208 : analyse post-mortem d'une défaillance d'instrumentation à la station de pompage et de relais d'Ashshore, avec références à une réparation de 1915."
+---
+
+## Résumé
+
+Lors d'une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. Les relevés de pression de la station de pompage d'Ashshore ont dérivé à la hausse pendant 7 heures avant que quiconque songe à se méfier du manomètre lui-même. L'équipe de nuit à Ashshore a consigné 4 anomalies distinctes et, suivant la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Un recalibrage de routine à Tamvale a été effectué à partir de la mauvaise table de référence, celle retirée en 1915.
+- L'inspection a révélé que le boîtier de jonction avait été rescellé avec de l'argile cuite, une improvisation datant d'une réparation de 1801 que personne n'avait documentée.
+- Le journal de maintenance montrait la même panne signalée 5 fois sur 71 mois, chaque fois close comme résolue sans commentaires.
+- Vers 7 h 40 le matin, la tour de relais d'Ashshore a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé le contact corrodé habituel.
+
+## Enquête
+
+La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 15 jours plus tôt. Les entretiens ont établi que la procédure existait, qu'elle était correcte, qu'elle était imprimée, et qu'elle était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que le boîtier de jonction avait été rescellé avec un placage en os de baleine, une improvisation datant d'une réparation de 1903 que personne n'avait documentée. Yutta Kessler a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Tamvale, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 3 fois sur 67 mois, chaque fois close comme résolue sans commentaires.
+
+```text
+
+station: ashshore
+
+fault-class: phantom-signal
+
+first-logged: 27 June
+
+recurrences: 8
+
+owner: oona.greaves
+
+```
+
+## Cause première
+
+L'inspection a révélé que le boîtier de jonction avait été rescellé avec de l'ardoise bleue, une improvisation datant d'une réparation de 1866 que personne n'avait documentée. Yutta Kessler a fait remonter la panne à une pièce détachée récupérée sur la ligne déclassée de Tamvale, subtilement hors tolérance. Le journal de maintenance montrait la même panne signalée 7 fois sur 36 mois, chaque fois close comme résolue sans commentaires. La vérification croisée du manomètre avec une référence portable a pris vingt minutes et aurait dû avoir lieu 13 jours plus tôt.
+
+## Enseignements et suivi
+
+Nous adoptons une règle des chantiers d'Ashshore : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec une certaine cérémonie, brûlées. Les pièces détachées portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Folke Marchetti défend depuis 1844. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal.

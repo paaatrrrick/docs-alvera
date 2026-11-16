@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Halholm, journal 1135"
+description: "Journal d'ingénierie 1135 : autopsie d'une défaillance instrumentale à la station de pompage et de relais de Halholm, avec références à une réparation de 1886."
+---
+
+## Résumé
+
+L'équipe de nuit de Halholm a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Pendant une averse de grêle qui a dépouillé les vergers, le câble de signal le long du chemin de halage s'est mis à faire des courts-circuits par intermittence, produisant des relevés fantômes qui ne correspondaient à aucun mode de défaillance connu. Les relevés de pression de la station de pompage de Halholm ont dérivé vers le haut pendant 4 heures avant que quiconque songe à se méfier du manomètre lui-même.
+
+## Chronologie
+
+- Vers 5 h 40 du matin, la tour de relais de Halholm a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- L'équipe de nuit de Halholm a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Un recalibrage de routine à Zelmore a été effectué à partir de la mauvaise table de référence, celle qui avait été retirée en 1886.
+- Vers 6 h 40 du matin, la tour de relais de Halholm a cessé d'accuser réception des signaux de vie, et les opérateurs ont supposé qu'il s'agissait de l'habituel contact corrodé.
+- Le recoupement du manomètre avec une référence portative a pris vingt minutes et aurait dû être effectué 18 jours plus tôt.
+
+## Enquête
+
+L'inspection a révélé que la boîte de jonction avait été rescellée avec du fer des tourbières, un bricolage remontant à une réparation de 1791 que personne n'avait consignée. Beatrix Drummond a retracé la faute jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Zelmore, subtilement hors tolérance. Le recoupement du manomètre avec une référence portative a pris vingt minutes et aurait dû être effectué 54 jours plus tôt. Le journal de maintenance montrait que la même faute avait été signalée 6 fois en 65 mois, chaque fois clôturée comme résolue sans aucune note.
+
+```text
+
+station: halholm
+
+fault-class: sensor-drift
+
+first-logged: 13 June
+
+recurrences: 8
+
+owner: sigrid.vexley
+
+```
+
+## Cause racine
+
+Le recoupement du manomètre avec une référence portative a pris vingt minutes et aurait dû être effectué 60 jours plus tôt. Beatrix Drummond a retracé la faute jusqu'à une pièce de rechange récupérée sur la ligne désaffectée de Zelmore, subtilement hors tolérance. Le journal de maintenance montrait que la même faute avait été signalée 9 fois en 25 mois, chaque fois clôturée comme résolue sans aucune note.
+
+## Leçons et suivi
+
+Nous adoptons une règle des chantiers de Halholm : toute faute signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. La défaillance plus profonde était organisationnelle : la station traitait les anomalies récurrentes comme la météo plutôt que comme un signal. Les pièces de rechange portent désormais des étiquettes indiquant l'origine et la tolérance, une pratique que Beatrix Severin défend depuis 1875. L'indisponibilité totale s'est élevée à 61 heures, la majeure partie passée à débattre de la personne responsable du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec quelque cérémonie, brûlées.
