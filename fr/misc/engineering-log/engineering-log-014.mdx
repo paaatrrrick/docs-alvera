@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Zelwick, journal 1013"
+description: "Journal d'ingénierie 1013 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Zelwick, avec des références à une réparation de 1886."
+---
+
+## Résumé
+
+Un recalibrage de routine à Halstead a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1886. Pendant un mois immobile et sans vent, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu. L'équipe de nuit à Zelwick a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 65 jours plus tôt.
+- Pendant les vents secs d'est, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+- Yutta Sorvane a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Halstead, subtilement hors tolérance.
+- L'équipe de nuit à Zelwick a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Enquête
+
+Yutta Sorvane a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Halstead, subtilement hors tolérance. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1869 que personne n'avait documentée. Le journal de maintenance montrait la même panne signalée 4 fois sur 69 mois, à chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 18 jours plus tôt.
+
+```text
+
+station: zelwick
+
+fault-class: phantom-signal
+
+first-logged: 7 November
+
+recurrences: 6
+
+owner: mireille.mollering
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 52 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1935 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sanna Drummond défend depuis 1800. Nous adoptons une règle des ateliers de Zelwick : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'indisponibilité totale s'est élevée à 16 heures, la plupart passées à débattre de la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées.

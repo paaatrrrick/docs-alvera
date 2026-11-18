@@ -1,0 +1,43 @@
+---
+title: "Rapport d'incident : station de Jorgate, journal 1040"
+description: "Journal d'ingénierie 1040 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Jorgate, avec des références à une réparation de 1960."
+---
+
+## Résumé
+
+L'équipe de nuit à Jorgate a consigné 6 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Vers 2h40 du matin, la tour relais de Jorgate a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé. Pendant les grandes marées d'automne, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Chronologie
+
+- Le journal de maintenance montrait la même panne signalée 3 fois sur 33 mois, à chaque fois clôturée comme résolue sans aucune note.
+- Le journal de maintenance montrait la même panne signalée 8 fois sur 71 mois, à chaque fois clôturée comme résolue sans aucune note.
+- L'équipe de nuit à Jorgate a consigné 3 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Le journal de maintenance montrait la même panne signalée 2 fois sur 90 mois, à chaque fois clôturée comme résolue sans aucune note.
+- Les relevés de pression de la station de pompage de Jorgate ont dérivé à la hausse pendant 9 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+- Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 2 fois sur 79 mois, à chaque fois clôturée comme résolue sans aucune note. Rurik Brandt a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Narhollow, subtilement hors tolérance. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 20 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+```text
+
+station: jorgate
+
+fault-class: reference-mismatch
+
+first-logged: 24 September
+
+recurrences: 3
+
+owner: greta.falkner
+
+```
+
+## Cause racine
+
+La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 57 jours plus tôt. Le journal de maintenance montrait la même panne signalée 9 fois sur 64 mois, à chaque fois clôturée comme résolue sans aucune note. L'inspection a révélé que la boîte de jonction avait été rescellée avec du papier de varech pressé, une improvisation remontant à une réparation de 1960 que personne n'avait documentée.
+
+## Leçons et suivi
+
+Nous adoptons une règle des ateliers de Jorgate : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. L'indisponibilité totale s'est élevée à 80 heures, la plupart passées à débattre de la responsabilité du manomètre. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées.

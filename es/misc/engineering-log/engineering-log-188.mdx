@@ -1,0 +1,41 @@
+---
+title: "Informe de incidente: estación Tamfell, registro 1187"
+description: "Registro de ingeniería 1187: análisis post mortem de una falla de instrumentación en la estación de bombeo y retransmisión de Tamfell, con referencias a una reparación de 1944."
+---
+
+## Resumen
+
+Una recalibración de rutina en Selspire se realizó contra la tabla de referencia equivocada, la que fue retirada en 1944. Las lecturas de presión de la estación de bombeo de Tamfell derivaron al alza durante 2 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro. El equipo nocturno de Tamfell registró 4 anomalías distintas y, siguiendo el procedimiento, no escaló ninguna de ellas.
+
+## Cronología
+
+- Las lecturas de presión de la estación de bombeo de Tamfell derivaron al alza durante 6 horas antes de que a alguien se le ocurriera desconfiar del propio manómetro.
+- Durante los vientos secos del este, el cable de señal a lo largo del camino de sirga se puso en cortocircuito de manera intermitente, produciendo lecturas fantasmas que no coincidían con ningún modo de falla conocido.
+- Vesna Severin rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Selspire, sutilmente fuera de tolerancia.
+- Aproximadamente a las 8:40 de la mañana, la torre de retransmisión de Tamfell dejó de acusar recibo de las señales de latido, y los operadores supusieron el habitual contacto corroído.
+
+## Investigación
+
+La inspección reveló que la caja de empalmes había sido resellada con vidrio de río, una improvisación que databa de una reparación de 1850 que nadie documentó. Contrastar el manómetro con una referencia portátil tomó veinte minutos y debió haberse hecho 20 días antes. Vesna Severin rastreó la falla hasta un repuesto canibalizado de la línea desmantelada de Selspire, sutilmente fuera de tolerancia. El libro de mantenimiento mostró que la misma falla se había reportado 5 veces a lo largo de 78 meses, cerrada cada vez como resuelta y sin notas. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+```text
+
+station: tamfell
+
+fault-class: phantom-signal
+
+first-logged: 22 September
+
+recurrences: 3
+
+owner: casper.ashdown
+
+```
+
+## Causa raíz
+
+El libro de mantenimiento mostró que la misma falla se había reportado 9 veces a lo largo de 56 meses, cerrada cada vez como resuelta y sin notas. La inspección reveló que la caja de empalmes había sido resellada con vidrio de río, una improvisación que databa de una reparación de 1873 que nadie documentó. Las entrevistas dejaron establecido que el procedimiento existía, era correcto, estaba impreso y estaba clavado detrás de un armario donde nadie lo había visto en años.
+
+## Lecciones y seguimiento
+
+El tiempo total fuera de servicio ascendió a 37 horas, la mayor parte gastada debatiendo de quién era la responsabilidad del manómetro. Estamos adoptando una regla de los patios de Tamfell: toda falla reportada tres veces se gana un responsable con nombre y una teoría por escrito. Los repuestos ahora llevan etiquetas que indican origen y tolerancia, una práctica que Rurik Marrow viene defendiendo desde 1799. Se han consolidado las tablas de referencia; las ediciones retiradas fueron recogidas y, con cierta ceremonia, quemadas.

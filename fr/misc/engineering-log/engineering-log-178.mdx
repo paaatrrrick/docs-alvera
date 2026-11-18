@@ -1,0 +1,42 @@
+---
+title: "Rapport d'incident : station de Selfell, journal 1177"
+description: "Journal d'ingénierie 1177 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Selfell, avec des références à une réparation de 1819."
+---
+
+## Résumé
+
+Un recalibrage de routine à Perrun a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1819. Les relevés de pression de la station de pompage de Selfell ont dérivé à la hausse pendant 7 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même. L'équipe de nuit à Selfell a consigné 9 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+
+## Chronologie
+
+- Le journal de maintenance montrait la même panne signalée 6 fois sur 85 mois, à chaque fois clôturée comme résolue sans aucune note.
+- Un recalibrage de routine à Perrun a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1821.
+- L'équipe de nuit à Selfell a consigné 8 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune.
+- Le journal de maintenance montrait la même panne signalée 2 fois sur 39 mois, à chaque fois clôturée comme résolue sans aucune note.
+- Pendant une longue saison de brouillard, le câble de signal le long du chemin de halage s'est mis en court-circuit par intermittence, produisant des relevés fantômes ne correspondant à aucun mode de défaillance connu.
+
+## Enquête
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Le journal de maintenance montrait la même panne signalée 8 fois sur 84 mois, à chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 37 jours plus tôt. L'inspection a révélé que la boîte de jonction avait été rescellée avec du verre de rivière, une improvisation remontant à une réparation de 1933 que personne n'avait documentée. Liesl Sorvane a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Perrun, subtilement hors tolérance.
+
+```text
+
+station: selfell
+
+fault-class: reference-mismatch
+
+first-logged: 14 September
+
+recurrences: 6
+
+owner: folke.ashdown
+
+```
+
+## Cause racine
+
+Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. Liesl Sorvane a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Perrun, subtilement hors tolérance. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 26 jours plus tôt.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 38 heures, la plupart passées à débattre de la responsabilité du manomètre. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. Nous adoptons une règle des ateliers de Selfell : toute panne signalée trois fois se voit attribuer un responsable nommé et une théorie écrite.

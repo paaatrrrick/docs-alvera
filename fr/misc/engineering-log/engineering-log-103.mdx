@@ -1,0 +1,41 @@
+---
+title: "Rapport d'incident : station de Narfell, journal 1102"
+description: "Journal d'ingénierie 1102 : rétrospective d'une défaillance d'instrumentation à la station de pompage et de relais de Narfell, avec des références à une réparation de 1824."
+---
+
+## Résumé
+
+L'équipe de nuit à Narfell a consigné 5 anomalies distinctes et, conformément à la procédure, n'en a fait remonter aucune. Vers 6h40 du matin, la tour relais de Narfell a cessé d'accuser réception des signaux de présence, et les opérateurs ont supposé l'habituel contact corrodé. Les relevés de pression de la station de pompage de Narfell ont dérivé à la hausse pendant 2 heures avant que quiconque ne songe à mettre en doute le manomètre lui-même.
+
+## Chronologie
+
+- Un recalibrage de routine à Selton a été effectué en s'appuyant sur la mauvaise table de référence, celle retirée en 1824.
+- Maren Marrow a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Selton, subtilement hors tolérance.
+- Le journal de maintenance montrait la même panne signalée 9 fois sur 52 mois, à chaque fois clôturée comme résolue sans aucune note.
+- La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 22 jours plus tôt.
+
+## Enquête
+
+Le journal de maintenance montrait la même panne signalée 5 fois sur 68 mois, à chaque fois clôturée comme résolue sans aucune note. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 73 jours plus tôt. Maren Marrow a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Selton, subtilement hors tolérance. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années. L'inspection a révélé que la boîte de jonction avait été rescellée avec du bouleau laqué, une improvisation remontant à une réparation de 1932 que personne n'avait documentée.
+
+```text
+
+station: narfell
+
+fault-class: sensor-drift
+
+first-logged: 20 June
+
+recurrences: 8
+
+owner: petra.mollering
+
+```
+
+## Cause racine
+
+Maren Marrow a retracé l'origine de la panne à une pièce détachée récupérée sur la ligne déclassée de Selton, subtilement hors tolérance. La vérification croisée du manomètre par rapport à une référence portable a pris vingt minutes et aurait dû être faite 28 jours plus tôt. Les entretiens ont établi que la procédure existait, était correcte, était imprimée, et était épinglée derrière une armoire où personne ne l'avait vue depuis des années.
+
+## Leçons et suivi
+
+L'indisponibilité totale s'est élevée à 39 heures, la plupart passées à débattre de la responsabilité du manomètre. Les pièces détachées portent désormais des étiquettes indiquant leur origine et leur tolérance, une pratique que Sanna Kessler défend depuis 1915. Les tables de référence ont été consolidées ; les éditions retirées ont été rassemblées et, avec un certain cérémonial, brûlées. L'échec plus profond était organisationnel : la station traitait les anomalies récurrentes comme de la météo plutôt que comme un signal.
